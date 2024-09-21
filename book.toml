@@ -8,6 +8,7 @@ multilingual = false
 [output.html]
 mathjax-support = true
 default-theme = "light"
+site-url = "/SmolBook/"
 preferred-dark-theme = "navy"
 git-repository-icon = "fa-code-fork"
 git-repository-url = "https://codeberg.org/SmolLemon/SmolBook"

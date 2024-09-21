@@ -8,7 +8,7 @@ Nên nhớ rằng ngôn ngữ lập trình chỉ là một phần nhỏ trong qu
 
 ## Lập trình C++
 
-Đối với C++ nói riêng và ngôn ngữ lập trình nói chung, những kiến thức về *[nhập xuất dữ liệu](IO.md)*, *câu lệnh lặp*, *lệnh rẽ nhánh*, *chương trình con* là quá đủ để giải quyết hầu hết các yêu cầu về cài đặt của thuật toán. Những tính năng cụ thể về ngôn ngữ lập trình ví vụ như *Con trỏ*, *Tham chiếu*,... trong C++ có thể học sau.
+Đối với C++ nói riêng và ngôn ngữ lập trình nói chung, những kiến thức về *[nhập xuất dữ liệu](io.md)*, *câu lệnh lặp*, *lệnh rẽ nhánh*, *chương trình con* là quá đủ để giải quyết hầu hết các yêu cầu về cài đặt của thuật toán. Những tính năng cụ thể về ngôn ngữ lập trình ví vụ như *Con trỏ*, *Tham chiếu*,... trong C++ có thể học sau.
 
 [Một số mẹo khi lập trình C++ trong lập trình thi đấu](cpp-tips-and-tricks.md).
 
