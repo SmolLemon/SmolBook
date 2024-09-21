@@ -1,0 +1,44 @@
+# Lập trình
+
+Đã là lập trình thi đấu thì phải có lập trình!
+
+Ngôn ngữ lập trình C++ là một trong ngôn ngữ được sử dụng phổ biến, nếu không muốn nói là phổ biến nhất trong lập trình thi đấu. Chính vì thế, tất cả các đoạn code được viết trong Smol Book đều sẽ được viết trên C++, tương thích với tiêu chuẩn C++14 để phù hợp với **[Themis [Θέμις]- Chương trình chấm bài tự động](https://dsapblog.wordpress.com/2013/12/24/themis/)** - phần mềm chấm thi *chính thức* của Bộ Giáo dục và Đào tạo, thường xuyên được sử dụng để chấm thi trong các kỳ thi Học sinh giỏi cấp Tỉnh, Khu vực và Quốc gia.
+
+Nên nhớ rằng ngôn ngữ lập trình chỉ là một phần nhỏ trong quá trình giải bài, điều quan trọng quan trọng là phải biết cách tư duy thuật toán và biết hiện thực hóa nó qua chương trình mình viết nên.
+
+## Lập trình C++
+
+Đối với C++ nói riêng và ngôn ngữ lập trình nói chung, những kiến thức về *[nhập xuất dữ liệu](IO.md)*, *câu lệnh lặp*, *lệnh rẽ nhánh*, *chương trình con* là quá đủ để giải quyết hầu hết các yêu cầu về cài đặt của thuật toán. Những tính năng cụ thể về ngôn ngữ lập trình ví vụ như *Con trỏ*, *Tham chiếu*,... trong C++ có thể học sau.
+
+[Một số mẹo khi lập trình C++ trong lập trình thi đấu](cpp-tips-and-tricks.md).
+
+## Cài đặt môi trường code C++
+
+Để chạy chương trình code C++ thì cần 2 phần mềm chính:
+
+- Trình biên dịch C++ (Compiler)
+- Trình soạn thảo văn bản (Text editor)
+
+**GNU Compiler Collection (GCC)** là một trình biên dịch C++ vô cùng phổ biến.
+
+Người dùng Windows có thể tải MinGW để sử dụng GCC.
+
+Người dùng GNU+Linux/MacOS có thể tải về g++ thông qua package manager tương ứng.
+
+[Codeblock](https://www.codeblocks.org/) là một IDE cài sẵn trình biên dịch C++, được sử dụng rộng rãi trong các máy thi tại Việt Nam. Bạn có thể tải về Codeblock và bắt đầu viết chương trình.
+
+### Cài đặt Codeblock cho lập trình thi đấu
+
+Codeblock trong các máy thi thường là mới được tải về trong máy hoặc đã quay lại cài đặt mặc định. Trình biên dịch trong Codeblock mặc định sẽ chạy phiên bản C++98 (hơn 26 năm về trước). 
+
+Để Codeblock chạy chương trình của ta với các tiêu chuẩn mới hơn của C++, ta cài đặt theo các bước sau:
+
+- Từ thanh menu, chọn `Settings -> Compiler`.
+- Ở phần `Select compiler` chọn GNU GCC Compiler làm trình biên dịch cho các chương trình C++.
+- Ở phần `Compiler Flags`, đánh dấu tích <input type="checkbox" disabled checked /> ở phần `Have g++ follow the C++14 ISO C++ language standard [-std=c++14]`
+
+Ngoài việc thêm flag `-std=c++14` cho trình biên dịch chạy theo tiêu chuẩn C++14, ta còn thêm một số flag để giúp ta trong việc lập trình:
+
+- `Enable all common compiler warnings (overrides many other settings) [-Wall]`
+- `Enable extra compiler warnings [-Wextra]`
+- `Optimize even more (for speed) [-O2]`

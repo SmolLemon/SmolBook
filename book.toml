@@ -1,0 +1,21 @@
+[book]
+title = "Smol Book"
+authors = ["Smol Lemon"]
+description = "Smol Book: A Smol Guidebook for Competitive Programmers"
+language = "vi"
+multilingual = false
+
+[output.html]
+mathjax-support = true
+default-theme = "light"
+preferred-dark-theme = "navy"
+site-url = ""
+git-repository-icon = "fa-code-fork"
+git-repository-url = "https://codeberg.org/SmolLemon/SmolBook"
+# edit-url-template = "https://codeberg.org/SmolLemon/SmolBook/_edit/master/{path}"
+
+[output.html.search]
+limit-results = 15
+
+[output.html.print]
+enable = false
