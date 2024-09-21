@@ -9,7 +9,6 @@ multilingual = false
 mathjax-support = true
 default-theme = "light"
 preferred-dark-theme = "navy"
-site-url = ""
 git-repository-icon = "fa-code-fork"
 git-repository-url = "https://codeberg.org/SmolLemon/SmolBook"
 # edit-url-template = "https://codeberg.org/SmolLemon/SmolBook/_edit/master/{path}"

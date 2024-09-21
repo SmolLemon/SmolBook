@@ -115,7 +115,7 @@ Khi này, \\(2 + 9 = 11 \\), mảng tồn tại cặp số có tổng bằng \\(
 
 Bài toán được phát biểu như sau:
 
-> Cho một mảng \\(n\\) phần tử nguyên dương và một số \\(x\\). Tìm mảng con có tổng giá trị bằng \\(x\\) hoặc thông báo rằng cặp số ấy không tồn tại.
+> Cho một mảng \\(n\\) phần tử nguyên dương và một số \\(x\\). Tìm mảng con có tổng giá trị bằng \\(x\\) hoặc thông báo rằng mảng con ấy không tồn tại.
 
 Cách giải bài toán này gần giống với bài toán 2SUM ở trên: 
 
