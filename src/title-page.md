@@ -2,7 +2,7 @@
 
 Đây là phiên bản web của dự án Smol Book. Bản hoàn chỉnh sẽ sớm được hoàn thành.
 
-Nếu giao diện của Smol Book có phần bối rối thì xin hãy đọc phần [hướng dẫn sử dụng](./guide.md) để biết thêm chi tiết về cách tương tác với trang web.
+Nếu giao diện của Smol Book có phần bối rối thì xin hãy đọc phần [hướng dẫn sử dụng](./guide.md) để biết thêm chi tiết về cách tương tác với trang.
 
 Sử dụng theme `Light` để có trải nghiệm tốt nhất.
 
