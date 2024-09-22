@@ -6,7 +6,7 @@
 
 ## Giới thiệu
 
-Dự án Smol Book được viết nên như một cuốn cẩm nang dễ hiểu về **lập trình thi đấu** cho các bạn học sinh và những người có hứng thú với bộ môn này.
+Dự án Smol Book được viết nên như một cuốn cẩm nang dễ hiểu về **lập trình thi đấu** dành cho các bạn học sinh và những người có hứng thú với bộ môn này.
 
 ## Chạy cục bộ
 

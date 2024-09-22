@@ -4,7 +4,7 @@ Chào mừng đến với Smol Book!
 
 ## Mục tiêu
 
-Mục tiêu của dự án này là viết nên như một cuốn cẩm nang dễ hiểu về **lập trình thi đấu** cho các bạn học sinh và những người có hứng thú với bộ môn này.
+Mục tiêu của dự án này là viết nên một cuốn cẩm nang dễ hiểu về **lập trình thi đấu** dành cho các bạn học sinh và những người có hứng thú với bộ môn này.
 
 ## Đóng góp
 
