@@ -25,19 +25,21 @@ Người dùng Windows có thể tải MinGW để sử dụng GCC.
 
 Người dùng GNU+Linux/MacOS có thể tải về g++ thông qua package manager tương ứng.
 
-[Codeblock](https://www.codeblocks.org/) là một IDE cài sẵn trình biên dịch C++, được sử dụng rộng rãi trong các máy thi tại Việt Nam. Bạn có thể tải về Codeblock và bắt đầu viết chương trình.
+[Codeblocks](https://www.codeblocks.org/) là một IDE được sử dụng rộng rãi trong các máy thi tại Việt Nam. Bạn có thể tải về Codeblocks và bắt đầu viết chương trình.
 
-### Cài đặt Codeblock cho lập trình thi đấu
+### Cài đặt Codeblocks cho lập trình thi đấu
 
-Codeblock trong các máy thi thường là mới được tải về trong máy hoặc đã quay lại cài đặt mặc định. Trình biên dịch trong Codeblock mặc định sẽ chạy phiên bản C++98 (hơn 26 năm về trước). 
+Trên các máy Windows, để sử dụng Codeblocks, ta truy cập [trang web](https://www.codeblocks.org/downloads/binaries/) của Codeblocks và tải về phiên bản mingw-setup bằng 1 trong 2 đường dẫn mà trang chỉ ta đến. Sau đó, tải về Codeblocks.
 
-Để Codeblock chạy chương trình của ta với các tiêu chuẩn mới hơn của C++, ta cài đặt theo các bước sau:
+Codeblocks trong các máy thi thường hoặc là mới được tải về hoặc là đang sử dụng các cài đặt mặc định. Mặc định, Codeblocks sẽ cho trình biên dịch C++ biên dịch chương trình của ta theo tiêu chuẩn C++98 (hơn 26 năm về trước). 
+
+Để Codeblocks chạy chương trình của ta với theo những tiêu chuẩn mới hơn của C++, ta thực hiện các bước sau:
 
 - Từ thanh menu, chọn `Settings -> Compiler`.
-- Ở phần `Select compiler` chọn GNU GCC Compiler làm trình biên dịch cho các chương trình C++.
+- Ở phần `Select compiler` chọn `GNU GCC Compiler` làm trình biên dịch C++.
 - Ở phần `Compiler Flags`, đánh dấu tích <input type="checkbox" disabled checked /> ở phần `Have g++ follow the C++14 ISO C++ language standard [-std=c++14]`
 
-Ngoài việc thêm flag `-std=c++14` cho trình biên dịch chạy theo tiêu chuẩn C++14, ta còn thêm một số flag để giúp ta trong việc lập trình:
+Ngoài việc thêm flag `-std=c++14` để trình biên dịch biên dịch theo tiêu chuẩn C++14, ta còn thêm một số flag để giúp ta trong việc lập trình:
 
 - `Enable all common compiler warnings (overrides many other settings) [-Wall]`
 - `Enable extra compiler warnings [-Wextra]`

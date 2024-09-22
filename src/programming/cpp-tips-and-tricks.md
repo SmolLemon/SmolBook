@@ -13,7 +13,7 @@ cin.tie(NULL);
 
 2 câu lệnh này giúp tăng tốc chương trình bằng cách thay đổi cách nhập xuất của nó.
 
-- `ios_base::sync_with_stdio(false)` tắt đồng bộ giữa cách nhập xuất của C và C++. Tính năng này giúp ta có thể sử dụng linh hoạt giữa hai cách nhập xuất khác nhau. Khi tắt tính năng này, trương trình của bạn sẽ chạy nhanh hơn nếu bạn phải nhập xuất nhiều dữ liệu. Lưu ý rằng nếu tắt đồng bộ thì không nên sử dụng lẫn lộn 2 cách nhập xuất.
+- `ios_base::sync_with_stdio(false)` tắt đồng bộ giữa cách nhập xuất của C và C++. Tính năng này giúp ta có thể sử dụng linh hoạt giữa hai cách nhập xuất khác nhau. Khi tắt tính năng này, chương trình của ta sẽ chạy nhanh hơn nếu bài toán yêu cầu nhập xuất dữ liệu nhiều lần. Lưu ý rằng nếu tắt đồng bộ thì không nên sử dụng lẫn lộn 2 cách nhập xuất.
 - `cin.tie(NULL)` tắt  đồng bộ giữa `cin` và `cout`. `tie()` được dùng để đảm bảo tất cả các dữ liệu của `cout` sẽ được xuất ra màn hình trước khi thực hiện `cin` nhập dữ liệu. Điều này sẽ giúp ích cho các chương trình cần tương tác nhiều, nhưng cũng vì thế mà chương trình của ta sẽ chạy chậm đi. Ta tắt tính năng này để gia tăng tốc độ chương trình.
 
 ## Sử dụng `'\n'` thay thế cho `endl`
