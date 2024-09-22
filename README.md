@@ -24,4 +24,4 @@ Dự án vẫn còn trong giai đoạn phát triển nên rất mong được nh
 
 ## Bản quyền 
 
-[Smol Book](./title-page.md) của [Smol Lemon](https://codeberg.org/SmolLemon) được phát hành theo những điều kiện và điều khoản của [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+[Smol Book](https://codeberg.org/SmolLemon/SmolBook) của [Smol Lemon](https://codeberg.org/SmolLemon) được phát hành theo những điều kiện và điều khoản của [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
