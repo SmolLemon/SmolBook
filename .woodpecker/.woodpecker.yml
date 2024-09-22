@@ -22,7 +22,6 @@ steps:
       - git config --global user.name "Woodpecker CI"
       - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/$CI_REPO.git $CI_REPO_NAME
       - cp -ar $MDBOOK_OUTPUT/. $CI_REPO_NAME/
-      - cp .domains $CI_REPO_NAME || true
       - cd $CI_REPO_NAME
       - git add .
       - git commit -m "Woodpecker CI ${CI_BUILD_CREATED}"
