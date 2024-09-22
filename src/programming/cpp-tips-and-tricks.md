@@ -92,13 +92,26 @@ Dòng lệnh này có ý nghĩa: `"\n "` là một xâu kí tự, trong khi ta c
 
 ## Viết số lớn
 
-Sẽ có nhiều bài yêu cầu ta phải tạo một mảng lớn (như \\(10^6\\) chẳng hạn), nhiều người có thể sẽ viết một mảng `a` và số \\(10^6\\) cộng thêm một số nhỏ: `a[1000010]`. Kiểu viết này tuy không sai nhưng rất dễ xảy ra lỗi, nhất là khi viết đi viết lại số `1000010`.
+Sẽ có nhiều bài yêu cầu ta phải tạo một mảng lớn (như \\(10^6\\) chẳng hạn), nhiều người có thể sẽ viết một mảng `a` và số \\(10^6\\) cộng thêm một số nhỏ như 10: `a[1000010]`. Kiểu viết này tuy không sai nhưng rất dễ xảy ra lỗi.
 
-Ta tạo một hằng số `N` tượng trưng cho kích thước của mảng. Ta cho `N = 1e6 + 10` với giá trị bằng `1000000`, vừa dễ nhìn vừa khó mắc lỗi.
+```C++
+/*
+Cách viết này rất dễ sai vì rất dễ viết nhầm
+VD:
+a[1000010] nhưng lại viết thành a[10000010]
+*/
+int a[1000010], b[1000010], c[1000010];  
+int d[1000010], e[1000010], f[1000010];
+```
+
+Đồng thời, khi sửa lại kích thước mảng cũng rất khó khăn khi ta phải sửa lại tất cả các số ấy. Nếu ta muốn đổi kích thước của các mảng ví dụ trên thì ta viết lại 6 lần!
+
+Ta tạo một hằng số `N` tượng trưng cho kích thước của mảng. Ta cho `N = 1e6 + 10` với giá trị bằng `1000010`, vừa dễ nhìn vừa khó mắc lỗi, đồng thời cũng dễ sửa hơn.
 
 ```C++
 const int N = 1e6 + 10;
-int a[N];
+int a[N], b[N], c[N];
+int d[N], e[N], f[N];
 ```
 
 Chữ `e` (hoặc `E`) trong đoạn code là [E notation](https://en.wikipedia.org/wiki/Scientific_notation#E_notation). Khi viết \\(mEn\\) sẽ có giá trị: \\(m \times n^E\\).

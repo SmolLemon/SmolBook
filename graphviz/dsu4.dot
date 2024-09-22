@@ -1,0 +1,16 @@
+graph G {
+fontname="Helvetica,Arial,sans-serif"
+node [fontname="Helvetica,Arial,sans-serif"]
+edge [fontname="Helvetica,Arial,sans-serif"]
+node [shape=circle];
+
+1;2;3;4;5;6;
+
+2 -- 1;
+2 -- 3;
+1 -- 4;
+
+
+overlap=false
+fontsize=12;
+}

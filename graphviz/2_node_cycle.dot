@@ -1,0 +1,13 @@
+graph G {
+fontname="Helvetica,Arial,sans-serif"
+node [fontname="Helvetica,Arial,sans-serif"]
+edge [fontname="Helvetica,Arial,sans-serif"]
+layout = neato
+node [shape=circle];
+
+1 -- 2;
+1 -- 2;
+
+overlap=false
+fontsize=6;
+}

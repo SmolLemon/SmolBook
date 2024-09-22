@@ -2,7 +2,7 @@
 
 [Smol Book](./title-page.md)
 [Giới thiệu](./introduction.md)
-[Hướng dẫn sử dụng Smol Book](./guide.md)
+[Hướng dẫn tương tác](./guide.md)
 
 # Mục lục
 
@@ -17,3 +17,8 @@
   - [Thuật toán sắp xếp](./basic/sorting.md)
   - [Thuật toán tìm kiếm nhị phân](./basic/binary-search.md)
   - [Kĩ thuật hai con trỏ](./basic/two-pointers.md)
+- [Cấu trúc dữ liệu](./data-structures/README.md)
+  - [Bảng thưa (Sparse Table)](./data-structures/sparse-table.md)
+  - [Disjoint Set Union](./data-structures/dsu.md)
+- [Lí thuyết đồ thị](./graph-theory/README.md)
+  - [Đồ thị](./graph-theory/overview.md)

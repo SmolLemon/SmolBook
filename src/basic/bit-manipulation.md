@@ -135,9 +135,9 @@ Bản chân trị cho thao tác NOT:
 
 Khi thực hiện thao tác NOT với `bool`, ta có để sử dụng thao tác `!x` để trả giá trị ngược lại của biến `bool`. Khi dùng `!` với số nguyên như `int` hay `long long`, nó sẽ trả về 1 nếu số nguyên có giá trị 0, và trả về 0 nếu số nguyên có giá trị khác 0.
 
-### Toán tử thao tác dịch bit sang trái (\\(\ll\\))
+### Toán tử thao tác dịch trái (\\(\ll\\))
 
-Toán tử thao tác dịch bit sang trái `a << n` xóa thêm n bit số 0 vào đầu dãy bit.
+Toán tử thao tác dịch trái `a << n` xóa thêm n bit số 0 vào đầu dãy bit.
 
 Ví dụ:
 
@@ -146,9 +146,9 @@ a =   101 (Thập phân: 5) -> Dịch sang trái 2 bit
   = 10100 (Thập phân: 20)
 ```
 
-### Toán tử thao tác dịch bit sang phải (\\(\gg\\))
+### Toán tử thao tác dịch phải (\\(\gg\\))
 
-Toán tử thao tác dịch bit sang phải `a >> n` xóa n bit vào đầu dãy bit.
+Toán tử thao tác dịch phải `a >> n` xóa n bit vào đầu dãy bit.
 
 Ví dụ:
 

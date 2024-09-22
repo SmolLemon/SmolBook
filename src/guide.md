@@ -1,4 +1,4 @@
-# Hướng dẫn sử dụng Smol Book
+# Hướng dẫn tương tác
 
 Trang này được viết để hướng dẫn người dùng cách tương tác với [Smol Book](./title-page.md).
 
