@@ -14,7 +14,7 @@ cin.tie(NULL);
 2 câu lệnh này giúp tăng tốc chương trình bằng cách thay đổi cách nhập xuất của nó.
 
 - `ios_base::sync_with_stdio(false)` tắt đồng bộ giữa cách nhập xuất của C và C++. Tính năng này giúp ta có thể sử dụng linh hoạt giữa hai cách nhập xuất khác nhau. Khi tắt tính năng này, chương trình của ta sẽ chạy nhanh hơn nếu bài toán yêu cầu nhập xuất dữ liệu nhiều lần. Lưu ý rằng nếu tắt đồng bộ thì không nên sử dụng lẫn lộn 2 cách nhập xuất.
-- `cin.tie(NULL)` tắt  đồng bộ giữa `cin` và `cout`. `tie()` được dùng để đảm bảo tất cả các dữ liệu của `cout` sẽ được xuất ra màn hình trước khi thực hiện `cin` nhập dữ liệu. Điều này sẽ giúp ích cho các chương trình cần tương tác nhiều, nhưng cũng vì thế mà chương trình của ta sẽ chạy chậm đi. Ta tắt tính năng này để gia tăng tốc độ chương trình.
+- `cin.tie(NULL)` tắt  đồng bộ giữa `cin` và `cout`. `tie()` được dùng để đảm bảo tất cả các dữ liệu của `cout` sẽ được xuất ra màn hình trước khi thực hiện `cin` nhập dữ liệu. Điều này sẽ giúp ích cho các chương trình cần sự tương tác giữa người và chương trình, hoặc chương trình và chương trình - thứ mà ngoài dạng bài toán tương tác ra thì không cần thiết trong lập trình thi đấu. Việc tương tác này sẽ chương trình của ta sẽ chạy chậm đi. Ta tắt tính năng này để gia tăng tốc độ chương trình.
 
 ## Sử dụng `'\n'` thay thế cho `endl`
 
@@ -22,7 +22,7 @@ Trong lập trình thi đấu, sẽ tốt hơn nếu ta sử dụng `'\n'` để
 
 Ta có thể hiểu `endl` giống như khi ta viết `'\n' << flush`.
 
-`flush` là thao tác đẩy dữ liệu từ bộ đệm đầu ra (output buffer) ra thiết bị đầu ra. Nói cách khác, nó đảm bảo rằng tất cả dữ liệu đang chờ trong bộ đệm được ghi ngay lập tức.
+`flush` là thao tác đẩy dữ liệu từ bộ đệm đầu ra (output buffer) ra thiết bị đầu ra. Nói cách khác, nó đảm bảo rằng tất cả dữ liệu đang chờ trong bộ đệm sẽ được ghi ra màn hình.
 
 Khi `flush` thường xuyên sẽ giảm hiệu suất của ta, việc dùng`'\n'` để xuống dòng trong các chương trình sẽ cho ta tốc độ chạy code nhanh hơn so với việc sử dụng `endl`.
 
@@ -138,3 +138,137 @@ Ta có thể rút gọn lại thành:
 int a, b;
 int ans = a < b ? b : a;
 ```
+
+## For auto 
+
+<div class="warning">
+Mẹo chỉ áp dụng với tiêu chuẩn C++17.
+</div>
+
+Giả sử ta có một `vector` chứa `pair`, và ta muốn in ra các giá trị của từng `pair` trong vector, ta làm như sau:
+
+```C++
+vector<pair<int, int>> arr = {{1, 2}, {3, 4}, {5, 6}};
+for(auto x : arr){
+	cout << x.first << ' ' << x.second << '\n';
+} 
+```
+
+Thay vào đó, ta có thể viết theo cách khác:
+```C++
+for(auto [x, y] : arr){
+	cout << x << ' ' << y << '\n';
+}
+```
+
+
+## Khai báo hàm ở dưới hàm `main()`
+
+> Xin nói trước rằng đây không hẳn là một mẹo và nói đúng hơn thì nó là một sở thích cá nhân khi viết code lập trình thi đấu của tác giả.
+
+Các chương trình C++ khi khai báo các chương trình con thường sẽ viết như sau:
+
+```C++
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+void foo(){
+	[...]
+}
+
+int main () {
+	foo();
+	
+	return 0;
+}
+```
+
+Ta cũng có thể khai báo theo cách khác:
+
+```C++
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+void foo();
+
+int main () {
+	foo();
+	
+	return 0;
+}
+
+void foo(){
+	[...]
+}
+```
+
+Tại sao lại khai báo hàm dưới hàm `main()`?
+
+Ta có một số lợi ích khi khai báo hàm theo cách này:
+
+**Lợi ích 1:** Dễ phân tích code.
+
+Với cách viết này, ta có thể phân tích code từ trên xuống một cách dễ dàng: Ta biết được các hàm có trong chương trình ở ngay đầu chương trình một cách ngắn gọn (mỗi dòng 1 hàm), biết được các hàm được sử dụng như thế nào trong hàm `main()` ngay sau đó, và biết cách hoạt động của các hàm ở cuối chương trình. Còn cách viết ở trên thì ta phải lướt lên lướt xuống để làm được những điều tương tự.
+
+**Lợi ích 2:** Không xuất hiện lỗi khi có các hàm phụ thuộc lẫn nhau.
+
+Ta có chương trình sau:
+
+```C++
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+bool odd(int x){
+	if(x == 0) return 0;
+	if(x == 1) return 1;
+	return even(x - 1);
+}
+
+bool even(int x){
+	if(x == 0) return 1;
+	if(x == 1) return 0;
+	return odd(x - 1);
+}
+
+int main() {
+	cout << odd(5);
+	return 0;
+}
+```
+
+Chương trình ở trên sẽ không chạy được do hàm `odd()` được khai báo trước hàm `even()`, từ đó "không thấy được" hàm ấy.
+
+Vẫn đề đó sẽ không tồn tại nếu ta viết theo cách sau:
+
+```C++
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+bool odd(int x);
+bool even(int x);
+
+int main() {
+	cout << odd(5);
+	return 0;
+}
+
+bool odd(int x){
+	if(x == 0) return 0;
+	if(x == 1) return 1;
+	return even(x - 1);
+}
+
+bool even(int x){
+	if(x == 0) return 1;
+	if(x == 1) return 0;
+	return odd(x - 1);
+}
+```
+
+Bằng cách khai báo các hàm ở dưới hàm main, ta tránh được lỗi xảy ra khi các hàm phụ thuộc lẫn nhau.
+
+Tuy nhiên, cách viết này cũng tồn tại một vài bất lợi, cụ thể là khi sửa các hàm ta phải sửa tận 2 chỗ thay vì 1.
