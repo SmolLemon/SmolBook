@@ -90,7 +90,7 @@ for(int i = 1; i <= 100'000; ++i){
 }
 ```
 
-Sẽ có độ phức tạp thời gian là \\(O(1)\\), mặc dừ đang thực hiện một vòng lặp.
+Sẽ có độ phức tạp thời gian là \\(O(1)\\), mặc dù đang thực hiện một vòng lặp.
 
 #### Các yếu tố khác
 

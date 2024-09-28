@@ -25,3 +25,7 @@
   - [Disjoint Set Union](./data-structures/dsu.md)
 - [Lí thuyết đồ thị](./graph-theory/README.md)
   - [Đồ thị](./graph-theory/overview.md)
+  - [Các thuật toán tìm kiếm trên đồ thị](./graph-theory/graph-traversal.md)
+    - [Thuật toán tìm kiếm theo chiều sâu (Depth-First Search - DFS)]()
+    - [Thuật toán tìm kiếm theo chiều rộng (Breadth-First Search - BFS)]()
+    - [Ứng dụng của các thuật toán tìm kiếm]()

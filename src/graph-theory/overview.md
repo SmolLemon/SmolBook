@@ -158,13 +158,14 @@ Ta cùng điểm qua một số khái niệm, tính chất liên quan đến đ�
 > 		- \\(v_k\\) được gọi là **đỉnh cuối (ending point)** của \\(w\\), ta nói \\(w\\) *kết thúc* tại tại đỉnh \\(v_k\\).
 > 		- Cho hai đỉnh \\(p\\) và \\(q\\) thuộc \\(G\\), ta nói **đường đi từ** \\(p\\) **đến** \\(q\\) là đường đi bắt đầu từ đỉnh \\(p\\) và kết thúc tại đỉnh \\(q\\).
 >
+> 1. Một **đường đi khép kín (closed walk)** của \\(G\\) một đường đi mà đỉnh cuối trùng với đỉnh đầu. Hay nói cách khác, là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) với \\(v_0 = v_k\\). 
+>
 > 1. Một **chu trình (cycle)** của \\(G\\) là một đường đi khép kín \\((v_0, v_1, v_2,..., v_k)\\) với \\(k \ge 3\\) và các đỉnh \\((v_0, v_1, v_2,..., v_{k - 1})\\) đôi một phân biệt.
 >      Một số trường hợp đặc biệt:
 >      - Nếu \\(G\\) là một đồ thị có hướng hoặc là một đa đồ thị, \\(G\\) tồn tại chu trình có 2 đỉnh khi trong đồ thị tồn tại hai đỉnh \\(a\\) và \\(b\\) được nối với nhau bởi 2 cạnh song song. Ví dụ: ![2_node_cycle](../images/2_node_cycle.svg)
 >      - \\(G\\) tồn tại chu trình có 1 đỉnh nếu trong đồ thị tồn tại cạnh khuyên. Ví dụ: ![1_node_cycle](../images/1_node_cycle.svg)
 >
-> 1. Một **đường đi khép kín (closed walk)** của \\(G\\) một đường đi mà đỉnh cuối trùng với đỉnh đầu. Hay nói cách khác, là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) với \\(v_0 = v_k\\). 
-
+> 1. Một đường đi (chu trình) là *sơ cấp* nếu nó không đi qua đỉnh nào hai lần trở lên. Một đường đi (chu trình) là *đơn giản* nếu nó không đi qua cạnh nào hai lần trở lên.
 
 ### Tính liên thông, khớp, cầu
 

@@ -96,7 +96,7 @@ Ta có số lượng hình chữ nhật \\(a \times b\\) nhiều nhất có th�
 - \\(f(x) = 1\\) nếu \\(\left\lfloor \frac{x}{a} \right\rfloor \times \left\lfloor \frac{x}{b} \right\rfloor \le n\\)
 - \\(f(x) = 0\\) trong trường hợp ngược lại.
 
-Việc còn lại bây giờ là tìm kiếm nhị phân số \\(x\\) nhỏ nhất.
+Việc còn lại bây giờ là tìm kiếm nhị phân số \\(x\\) nhỏ nhất mà \\(f(x) = 1\\).
 
 ## Tìm kiếm nhị phân với số thực
 
