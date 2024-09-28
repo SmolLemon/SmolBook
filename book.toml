@@ -14,7 +14,7 @@ git-repository-icon = "fa-code-fork"
 git-repository-url = "https://codeberg.org/SmolLemon/SmolBook"
 
 [output.html.search]
-limit-results = 15
+limit-results = 16
 
 [output.html.print]
 enable = false
