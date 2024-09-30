@@ -355,7 +355,7 @@ bitset<kích_thước> tên_bitset(số_thập_phân);
 bitset<kích_thước> tên_bitset(xâu_nhị_phân);
 ```
 
-Ta còn có thể thực hiện các thao tác bit trên bitset giống như với số nguyên. Ngoài ra để truy cập bit ta có thể dùng dấu ngoặc vuông `[]`.
+Ta còn có thể thực hiện các thao tác bit trên bitset giống như với số nguyên. Ngoài ra để truy cập bit ta có thể sử dụng thao tác `[]`.
 
 Ví dụ:
 

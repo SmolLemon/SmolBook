@@ -39,7 +39,7 @@ Các phương thức trên đều có độ phức tạp \\(O(1)\\), ngoại tr�
 
 Với nhiều thao tác như thế, deque hoàn toàn có thể thực hiện các thao tác của stack và queue.
 
-Thực thế, nếu bạn đọc thông tin về [stack](https://en.cppreference.com/w/cpp/container/stack) và [queue](https://en.cppreference.com/w/cpp/container/queue) trên [cppreference.com](https://cppreference.com) thì ẩn trong 2 CDTL chính là deque.  
+Thực tế, nếu bạn đọc thông tin về [stack](https://en.cppreference.com/w/cpp/container/stack) và [queue](https://en.cppreference.com/w/cpp/container/queue) trên [cppreference.com](https://cppreference.com) thì ẩn trong 2 CDTL chính là deque.  
 
 ### BFS 0 - 1
 

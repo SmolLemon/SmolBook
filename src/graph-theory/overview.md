@@ -1,5 +1,7 @@
 # Đồ thị
 
+*Được xuất hiện trên [VNOI Wiki](https://wiki.vnoi.info/algo/graph-theory/graph)*
+
 ## Định nghĩa
 
 Hình ảnh dưới đây là một ví dụ về một đồ thị:
