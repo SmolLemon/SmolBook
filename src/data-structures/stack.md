@@ -107,7 +107,7 @@ Ta có:
 
 ## Ứng dụng
 
-Dưới đây là một số ứng dụng của stack trong lập trình thi đấu:
+Dưới đây là một số ứng dụng của stack.
 
 ### Xử lí các sự kiện theo trình tự LIFO
 
@@ -140,9 +140,115 @@ int main () {
 }
 ```
 
-### Expression Parsing
+### Ký pháp nghịch đảo Ba Lan 
 
-Các bạn có thể xem bài viết về nó tại [đây](https://cp-algorithms.com/string/expression_parsing.html).
+**Ký pháp nghịch đảo Ba Lan (Reverse Polish notation - RPN)** hay **kí pháp hậu tố (postfix notation)**, là một phương pháp viết các biểu thức toán học, với các toán tử (ta sẽ giới hạn với các toán tử cộng, trừ, nhân, chia) được viết sau các toán hạng. Từ **Ba lan** trong tên gọi dùng để chỉ quốc tịch của người phát minh ra kí pháp là [Jan Łukasiewicz](https://en.wikipedia.org/wiki/Jan_%C5%81ukasiewicz).
+
+Giả sử ta có biểu thức được viết ở dạng **kí pháp trung tố (infix notation)** - được viết ở giữa các toán hạng:
+
+\\[4 \times (1 + 2 \times (9 / 3) - 5)\\] 
+
+thì khi viết theo RPN sẽ được biểu diễn thành:
+
+\\[4\ 1\ 2\ 9\ 3\ / \times +\ 5 - \times \\]
+
+Cái lợi của RPN chính là ta có thể tính toán một biểu thức mội cách dễ dàng trong thời gian tuyến tính. 
+
+Ta sử dụng một stack. Khi duyệt biểu thức từ trái sang phải, nếu phần tử được xét đến là một toán hạng, ta thêm phần tử ấy vào stack. Nếu là một toán tử thì ta sẽ thực hiện việc tính 2 toán hạng ở đỉnh stack với toán tử tương ứng. Sau đó, thêm kết quả tương ứng vào stack của ta. Sau khi duyệt xong, phần tử ở đỉnh stack (đồng thời cũng là phần tử duy nhất còn trong stack) sẽ là giá trị của biểu thức.
+
+```C++
+stack<int> st;
+// Giả sử xâu s là một RPN lưu các toán hạng là các số từ 
+// 0 đến 9 và các toán tử và toán hạng được viết liền nhau
+string s;
+
+for(char c : s){
+	if(isdigit(c)){
+		st.push(c - '0');
+	}else{
+		int a = st.top(); st.pop();
+		int b = st.top(); st.pop();
+		switch (c){
+			case '+': {st.push(a + b); break};
+			case '-': {st.push(a - b); break};
+			case '*': {st.push(a * b); break};
+			case '/': {st.push(a / b); break};
+		}
+	}
+}
+cout << st.top();
+```
+
+#### Chuyển từ trung tố sang hậu tố
+
+Để chuyển một biểu thức từ hạng trung tố sang hậu tố, ta sử dụng **thuật toán shunting yard** của Dijkstra. 
+
+Ta có code được viết như sau:
+
+```C++
+int priority(char c){
+	if (c == '*' || c == '/') return 2;
+	if (c == '+' || c == '-') return 1;
+	return 0; // c == '('
+}
+
+string s;
+stack<char> st;
+for(char c : s){
+	if(isdigit(c)) {
+		cout << c << ' ';
+	} else if(c == '(') {
+		st.push(c);
+	} else if(c == ')'){
+		while(st.size() && st.top() != '(') {
+			cout << st.top() << ' ';
+			st.pop();
+		}
+		st.pop();
+	}
+	else {
+		while(st.size() && st.top() != '(' && priority(st.top()) >= priority(c)) {
+			cout << st.top() << ' ';
+			st.pop();
+		}
+		st.push(c);
+	} 
+}
+while(st.size()) {
+	cout << st.top() << ' ';
+	st.pop();
+}
+```
+
+Qua đoạn code trên, ta thấy thuật toán hoạt động vô cùng đơn giản trong thời gian tuyến tính. 
+- Nếu phần tử đang xét là một toán hạng, ta in thẳng các toán hạng. 
+- Nếu là dấu mở ngoặc, ta thêm dấu ấy vào stack. 
+- Nếu là toán tử thì trước khi thêm toán hạng ấy vào stack, ta sẽ thực hiện việc in và loại bỏ các toán tử có thứ tự ưu tiên lớn hơn hoặc bằng toán tử đang xét (thứ tự ưu tiên của các toán tử cộng trừ nhân chia giống với quy tắc thực hiện tính biểu thức: nhân chia trước, cộng trừ sau, thực hiện các phép tính từ trái sang phải) cho tới khi ta không còn có thể loại bỏ toán tử khỏi stack hoặc phần tử ở đỉnh stack là dấu mở ngoặc. 
+- Nếu là dấu đóng ngoặc, loại bỏ và in ra các phần tử có trong stack cho tới khi phần tử ở đỉnh là dấu mở ngoặc, và loại bỏ dấu mở ngoặc này khỏi stack. 
+- Sau khi kết thúc duyệt, nếu stack không rỗng thì in nốt các toán hạng còn lại trong stack cho tới khi stack rỗng.
+
+Ta cũng ví dụ bằng biểu thức ở đầu:
+
+|Phần tử |Thao tác|Stack|Dữ liệu ra|Ghi chú|
+|---|---|---|---|---|
+|4|In số 4||4||
+|\\(\times\\)|Thêm vào stack|\\(\times\\)|4||
+|\\((\\)|Thêm vào stack|\\(\times\\) (|4||
+|1|In số 1|\\(\times\\) (|4 1||
+|+|Thêm vào stack|\\(\times\\) ( + |4 1||
+|2|In số 2|\\(\times\\) ( + |4 1 2||
+|\\(\times\\)|Thêm vào stack|\\(\times\\) ( + \\(\times\\)|4 1 2|Thứ hạng ưu tiên của \\(\times\\) lớn hơn +|
+|\\((\\)|Thêm vào stack|\\(\times\\) ( + \\(\times\\) (|4 1 2||
+|9|In số 9|\\(\times\\) ( + \\(\times\\) (|4 1 2 9||
+|/|Thêm vào stack|\\(\times\\) ( + \\(\times\\) ( /|4 1 2 9||
+|3|In số 3|\\(\times\\) ( + \\(\times\\) ( /|4 1 2 9 3||
+|\\()\\)|In, loại bỏ các toán tử|\\(\times\\) ( + \\(\times\\)|4 1 2 9 3 / |Loại bỏ cho tới khi gặp "(", đồng thời xóa luôn "("|
+|-|Thêm vào stack|\\(\times\\) ( -|4 1 2 9 3 / \\(\times\\) + |Loại bỏ các toán tử có thứ tự ưu tiên lớn hơn hoặc bằng|
+|5|In ra 5|\\(\times\\) ( -|4 1 2 9 3 / \\(\times\\) + 5 ||
+|\\()\\)|In, loại bỏ các toán tử |\\(\times\\)|4 1 2 9 3 / \\(\times\\) + 5 - ||
+|Kết thúc|In các toán tử còn lại||4 1 2 9 3 / \\(\times\\) + 5 - \\(\times\\)||
+
+Sau khi kết thúc thuật toán shunting yard, ta thành công chuyển đổi biểu thức từ dạng kí pháp trung tố thành kí pháp hậu tố.
 
 ### Dãy ngoặc đúng 
 
@@ -204,6 +310,7 @@ int main () {
 	return 0;
 }
 ```
+
 Trước tiên `main()` sẽ được thêm vào call stack, tiếp theo là `f(5)`, `f(4)` cho tới `f(1)`. Khi này ta có hình minh họa:
 
 ```
@@ -219,32 +326,33 @@ Trước tiên `main()` sẽ được thêm vào call stack, tiếp theo là `f(
 
 Sau khi hàm `f(1)` thực hiện xong, nó sẽ trả về giá trị và được xóa khỏi call stack. Tiếp đến là `f(2)`,`f(3)` tới `f(5)` và chương trình của ta đã chạy xong!
 
-Nếu ta gọi các hàm quá nhiều, call sẽ tràn bộ nhớ và ta có lỗi và ta nhận về lỗi **Stack Overflow**.
+Nếu ta gọi các hàm quá nhiều, call stack sẽ tràn bộ nhớ và ta nhận về lỗi [**Stack Overflow**](https://en.wikipedia.org/wiki/Stack_overflow).
 
-Để giải quyết việc này, ta thực hiện việc khử đệ quy. Thay vì để máy tính tự tạo một call stack, ta sẽ tự tạo call stack trong chương trình của ta.
+Để giải quyết việc này, ta thực hiện việc khử đệ quy. Thay vì để máy tính tự tạo một call stack, ta sẽ tự tạo call stack trong bộ nhớ chương trình của ta.
 
-Ta lấy ví dụ về thuật toán DFS sử dụng stack:
+Ta có cài đặt [thuật toán DFS](../graph-theory/dfs.md) sử dụng stack:
 
 ```C++
-// Giả sử đã có vector<int> adj[N] và bool vst[N];
+// Giả sử ta lưu đồ thị bằng danh sách kề
 
-void dfs(int s){
+void dfs(int u){
 	stack<int> st;
-	st.push(s);
+	st.push(u);
 	while(st.size()){
 		int u = st.top(); st.pop();
-		vst[u] = 1;
-		// Xử lí u
+		visited[u] = 1;
+
+		// Xử lí đỉnh u
 
 		for(int v : adj[u]){
-			if(vst[v]) continue;
+			if(visited[v]) continue;
 			st.push(v);
 		}
 	}
 }
 ```
 
-Ta áp dụng việc khử đệ quy khi hàm đệ quy quá sâu và có thể xảy ra lỗi stack Overflow.
+Ta áp dụng việc khử đệ quy khi hàm đệ quy quá sâu và có thể xảy ra lỗi Stack Overflow.
 
 ### Stack đơn điệu
 

@@ -204,7 +204,7 @@ Hàm sort cũng có thể sắp xếp được `string`, với các kí tự đ�
 ```C++
 string s = "sorting";
 sort(s.begin(), s.end());
-cout << s; // In ra 'ginorst'
+cout << s; // 'ginorst'
 ```
 
 ### Phép so sánh trong hàm sort C++
@@ -221,11 +221,11 @@ v.push_back({1, 2});
 sort(v.begin(), v.end());
 ```
 
-Sau khi sắp xếp xong mảng `v` sẽ có thứ tự các phần tử `(1, 2)`, `(1, 5)`, `(2, 3)`.
+Sau khi sắp xếp xong mảng `v` sẽ có các phần tử được xắp xếp theo thứ tự lần lượt là `(1, 2)`, `(1, 5)`, `(2, 3)`.
 
 ### Struct
 
-`struct` trong C++ mặc định không có thao tác so sánh. Vì vậy ta phải tự viết thao tác cho riêng mình.
+`struct` trong C++ mặc định không có thao tác so sánh. Vì vậy ta phải tự viết thao tác với mỗi `struct` mà ta muốn thực hiện việc sắp xếp bằng hàm `sort`.
 
 Ví dụ:
 
@@ -243,7 +243,8 @@ struct phanso {
 
 Ta có thể viết hàm so sánh để sắp xếp các phần tử:
 
-Ví dụ
+Ví dụ:
+
 ```C++
 bool cmp(const phanso &a, const phanso &b){
 	return a.x * b.y < a.x * b.y;
@@ -255,4 +256,4 @@ int main(){
 }
 ```
 
-Mảng `a` sau khi sắp xếp xong sẽ cho ta `(1, 2)`, `(2, 3)`, `(4, 2)`.
+Mảng `a` sau khi sắp xếp xong sẽ cho ta các phần tử theo thứ tự: `(1, 2)`, `(2, 3)`, `(4, 2)`.

@@ -25,9 +25,9 @@ Người dùng Windows có thể tải MinGW để sử dụng GCC.
 
 Người dùng GNU+Linux/MacOS có thể tải về g++ thông qua package manager tương ứng.
 
-[Codeblocks](https://www.codeblocks.org/) là một IDE được sử dụng rộng rãi trong các máy thi tại Việt Nam.
+[Codeblocks](https://www.codeblocks.org/) là một IDE được sử dụng rộng rãi trong các máy thi.
 
-Trên các máy Windows, để tải về Codeblocks, ta truy cập [trang web](https://www.codeblocks.org/downloads/binaries/) của Codeblocks và tải về phiên bản mingw-setup bằng 1 trong 2 đường dẫn mà trang chỉ ta đến. Sau đó, tải về Codeblocks.
+Trên các máy Windows, để tải về Codeblocks, ta truy cập [trang web](https://www.codeblocks.org/downloads/binaries/) của Codeblocks và tải về phiên bản mingw-setup bằng 1 trong 2 đường dẫn mà trang chỉ ta đến, sau đó thực hiện việc tải Codeblocks.
 
 ### Cài đặt Codeblocks cho lập trình thi đấu
 

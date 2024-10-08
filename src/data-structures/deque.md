@@ -21,8 +21,8 @@ Các phương thức phổ biến của deque:
 - Các thao tác chính:
 	- `push_back(x)`: Thêm phần tử `x` vào cuối deque
 	- `push_front(x)`: Thêm phần tử `x` vào đầu deque
-	- `pop_back()`: Loại bỏ một phần tử ở cuối deque
-	- `pop_front()`: Loại bỏ một phần tử ở đầu deque
+	- `pop_back()`: Loại bỏ phần tử ở cuối deque
+	- `pop_front()`: Loại bỏ phần tử ở đầu deque
 	- `back()`: Trả về giá trị của phần tử ở cuối queue
 	- `front()`: Trả về giá trị của phần tử ở đầu queue
 - Các thao tác khác:

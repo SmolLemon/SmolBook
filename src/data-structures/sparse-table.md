@@ -38,20 +38,20 @@ Từ đây, ta có ý tưởng xây dựng bảng thưa: Thay vì lưu trữ to�
 
 ### Xây dựng bảng thưa
 
-Để xây dựng bảng thưa, ta có mảng 2 chiều `sp`. `sp[i][k]` sẽ bằng GTNN của các phần tử trong khoảng \\([i, i + 2^k)\\). 
+Để xây dựng bảng thưa, ta có mảng 2 chiều `sp`. `sp[k][i]` sẽ bằng GTNN của các phần tử trong khoảng \\([i, i + 2^k)\\). 
 
 Ví dụ: 
-- `sp[3][0] = min(a[3]) = a[3]`.
-- `sp[3][1] = min(a[3], a[4])`.
-- `sp[3][2] = min(a[3], a[4], a[5], a[6])`.
+- `sp[0][3] = min(a[3]) = a[3]`.
+- `sp[1][3] = min(a[3], a[4])`.
+- `sp[2][3] = min(a[3], a[4], a[5], a[6])`.
 - ...
-- `sp[3][k] = min(a[3], a[4], ..., a[3 + 2^k - 2], a[3 + 2^k - 1])`.
+- `sp[k][3] = min(a[3], a[4], ..., a[3 + 2^k - 2], a[3 + 2^k - 1])`.
 
 Nhận xét: số phần tử của `sp` sẽ không quá \\(O(n\log{n})\\). Nếu các phần tử được tính trong \\(O(1)\\) thì việc tạo mảng `sp` sẽ có độ phức tạp \\(O(n\log{n})\\).
 
 Ta có công thức tính `sp[i][k]` như sau: 
-- \\(sp[i][0] = a[i]\\)
-- \\(sp[i][k] = min(sp[i][k - 1], sp[i + 2 ^ {k - 1}][k - 1])\\)
+- \\(sp[0][i] = a[i]\\)
+- \\(sp[k][i] = min(sp[k - 1][i], sp[k - 1][i + 2 ^ {k - 1}])\\)
 
 Ta ví dụ với mảng `a` có 12 phần tử: `a = [1, 4, 2, 3, 7, 2, 6, 3, 5, 8, 9, 0]`
 
@@ -67,11 +67,11 @@ Vì sao lại có một số phần tử lại không được tính? Ví dụ v
 ```C++
 void BuildSparseTable(){
 	for(int i = 1; i <= n; ++i){
-		sp[i][0] = a[i];
+		sp[0][i] = a[i];
 	}
 	for(int k = 1; (1 << k) <= n; ++k){
 		for(int i = 1; i + (1 << k) - 1 <= n; ++i){
-			sp[i][k] = min(sp[i][k - 1], sp[i + (1 << (k - 1))][k - 1]);
+			sp[k][i] = min(sp[k - 1][i], sp[k - 1][i + (1 << (k - 1))]);
 		}
 	}
 }
@@ -92,7 +92,7 @@ int RMQ(int l, int r){
 	int mn = INT_MAX;
 	while(l <= r){
 		int lg = __lg(r - l + 1);
-		mn = min(mn, sp[l][lg]);
+		mn = min(mn, sp[lg][l]);
 		l = l + (1 << lg);
 	}
 	return mn;
@@ -115,7 +115,7 @@ Vì hàm `min` là một hàm cho phép việc trùng lặp, ta thực hiện vi
 ```C++
 int RMQ(int l, int r){
 	int lg = __lg(r - l + 1);
-	return min(sp[l][lg], sp[r - (1 << lg) + 1][lg]);
+	return min(sp[lg][l], sp[lg][r - (1 << lg) + 1]);
 }
 ```
 
