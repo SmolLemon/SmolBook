@@ -4,8 +4,6 @@
 
 Ngôn ngữ lập trình C++ là một trong ngôn ngữ được sử dụng phổ biến, nếu không muốn nói là phổ biến nhất trong lập trình thi đấu. Chính vì thế, tất cả các đoạn code được viết trong Smol Book đều sẽ được viết trên C++, tương thích với tiêu chuẩn C++14 để phù hợp với **[Themis [Θέμις]- Chương trình chấm bài tự động](https://dsapblog.wordpress.com/2013/12/24/themis/)** - phần mềm chấm thi *chính thức* của Bộ Giáo dục và Đào tạo, thường xuyên được sử dụng để chấm thi trong các kỳ thi Học sinh giỏi cấp Tỉnh, Khu vực và Quốc gia.
 
-Nên nhớ rằng ngôn ngữ lập trình chỉ là một phần nhỏ trong quá trình giải bài, điều quan trọng quan trọng là phải biết cách tư duy thuật toán và biết hiện thực hóa nó qua chương trình mình viết nên.
-
 ## Lập trình C++
 
 Đối với C++ nói riêng và ngôn ngữ lập trình nói chung, những kiến thức về *[nhập xuất dữ liệu](io.md)*, *câu lệnh lặp*, *lệnh rẽ nhánh*, *chương trình con* là quá đủ để giải quyết hầu hết các yêu cầu về cài đặt của thuật toán. Những tính năng cụ thể về ngôn ngữ lập trình ví vụ như *Con trỏ*, *Tham chiếu*,... trong C++ có thể học sau.

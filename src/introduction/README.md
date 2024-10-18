@@ -4,7 +4,17 @@
 
 ## Tổng quan
 
-Một bài toán về lập trình thi đấu sẽ yêu cầu thí sinh viết ra một chương trình máy tính với khả năng giải quyết bài toán ấy mà không vượt quá các giới hạn về thời gian và bộ nhớ được cho. Những bài này mang tính toán học và có tính thực tiễn. Các bài toán thường sẽ liên quan đến những chủ đề khác nhau: tổ hợp, lí thuyết số, lí thuyết đồ thị, lí thuyết trò chơi, xử lí xâu, cấu trúc dữ liệu,... 
+Việc giải một bài toán về lập trình thi đấu sẽ bao gồm 2 bước chính: Thiết kế thuật toán và cài đặt thuật toán.
+
+Việc **thiết kế thuật toán** sẽ yêu cầu ta thiết kế một thuật toán phù hợp để giải quyết bài toán. Nó yêu cầu ta phải có kĩ năng tư duy giải quyết vấn đề và cả tư duy toán học. Thuật toán cần phải nhanh và hiệu quả để có thể giải quyết được bài toán.
+
+Thông thường, các bài toán thường sẽ liên quan đến những chủ đề khác nhau: tổ hợp, lí thuyết số, lí thuyết đồ thị, lí thuyết trò chơi, xử lí xâu, cấu trúc dữ liệu,... và việc áp dụng những kiến thức này cộng thêm với các hướng giải quyết mới sẽ giúp bạn thiết kể được một thuật toán hiệu quả.
+
+Việc **cài đặt thuật toán** là quá trình thực hiện hóa thuật toán mà ta đã nghĩ ra. Sự hiểu biết về ngôn ngữ lập trình và cách áp dụng nó vào việc cài đặt thuật toán mà một yêu cầu hết sức quan trọng trong quá trình giải quyết bài toán.	 
+
+Các chương trình cần được viết một cách ngắn gọn và xúc tích bởi trong các cuộc thi lập trình, thời gian là có hạn. Đồng thời, các chương trình cũng rất là ngắn (nhiều nhất cũng chỉ tầm vài trong dòng).
+
+### Một chương trình điển hình
 
 Một chương trình máy tính được viết ra bởi thí sinh để giải một bài toán cụ thể sẽ lấy dữ liệu nhập (**input**) và xuất dữ liệu (**output**) chứa đáp án đúng tương ứng. 
 
@@ -12,9 +22,9 @@ Ta ví dụ với bài toán "A cộng B" trên [VNOJ - VNOI Online Judge](https
 
 ![Bài toán A + B](../images/A_+_B_VNOJ.png)
 
-Bài toán cho ta 2 số A và B và yêu cầu ta tính tổng của hai số ấy. Dữ liệu vào sẽ là 2 số A và B trên 1 dòng và yêu cầu ta in ra tổng hai số.
+Bài toán cho ta 2 số A và B và yêu cầu ta tính tổng của hai số ấy. Dữ liệu nhập sẽ là 2 số A và B trên 1 dòng và yêu cầu ta in ra tổng hai số.
 
-Khi ta nộp chương trình ta viết ra, máy chấm của VNOJ sẽ chạy chương trình với một danh sách các dữ liệu nhập (tạm gọi là testcase) và kiểm tra đáp án mà chương trình in ra với mỗi testcase tương ứng. Với mỗi testcase, máy chấm sẽ trả về cho ta một trong các kết quả sau đây:
+Khi ta nộp chương trình, máy chấm sẽ chạy chương trình với một danh sách các dữ liệu nhập (tạm gọi là testcase) và kiểm tra đáp án mà chương trình in ra với mỗi testcase tương ứng. Với mỗi testcase, máy chấm sẽ trả về cho ta một trong các kết quả sau đây:
 
 |Kết quả|Ý nghĩa|
 |---|---|
@@ -29,7 +39,7 @@ Khi ta nộp chương trình ta viết ra, máy chấm của VNOJ sẽ chạy ch
 
 Tùy theo *thể thức* mà điểm cho mỗi bài sẽ khác nhau. Có thể thức sẽ tính điểm theo `số lượng testcase AC/số lượng testcase`, có thể thức chỉ cho điểm khi ta AC toàn bộ các testcase. 
 
-## Vì sao cần rèn luyện lập trình thi đấu?
+## Vì sao cần lập trình thi đấu?
 
 Việc giải các bài toán và tham gia các cuộc thi lập trình thi đấu có thể giúp các thí sinh có hứng thú với các ngành liên quan đến khoa học máy tính. Những kiến thức học được từ lập trình thi đấu cũng cải thiện khả năng lập trình và tư duy logic của các lập trình viên, giúp họ có lợi thế trong công việc.
 
@@ -49,6 +59,7 @@ Mục đích của các cuộc thi này nhằm động viên, khuyến khích h�
 
 Kỳ thi do Hội các trường THPT chuyên khu vực duyên hải và đồng bằng Bắc Bộ tổ chức hằng năm. 
 Kỳ thi là dịp phát hiện học sinh giỏi, học sinh xuất sắc các bộ môn để các trường THPT chuyên có kế hoạch lựa chọn, bồi dưỡng các em tham gia các kỳ thi học sinh giỏi quốc gia, khu vực và quốc tế. Đồng thời là dịp để đội ngũ cán bộ quản lý và giáo viên các trường THPT chuyên trao đổi, chia sẻ kinh nghiệm, nâng cao trình độ chuyên môn bồi dưỡng môn chuyên và học sinh giỏi.[^2].
+
 ### Kì thi chọn Học sinh giỏi Quốc gia (môn Tin học)
 
 **Kỳ thi chọn học sinh giỏi quốc gia trung học phổ thông** (viết tắt là Kỳ thi HSGQG) là kỳ thi chọn học sinh giỏi cấp quốc gia dành cho học sinh bậc trung học phổ thông do Bộ Giáo dục và Đào tạo tổ chức vào khoảng từ tháng 12 đến tháng 1 hằng năm. Những học sinh đạt điểm cao nhất trong kỳ thi này ở một vài bộ môn được Bộ Giáo dục và Đào tạo triệu tập tại Hà Nội, Việt Nam để tham gia kỳ thi chọn các học sinh vào đội tuyển Quốc gia Việt Nam tham dự các cuộc thi Olympic khu vực và quốc tế.[^3].
@@ -67,9 +78,11 @@ Kỳ thi là dịp phát hiện học sinh giỏi, học sinh xuất sắc các 
 
 **International Collegiate Programming Contest**, hay **ICPC**, là một cuộc thi lập trình dành cho sinh viên. Đây là cuộc thi lập trình lâu đời nhất, lớn nhất và danh tiếng nhất thế giới. Hằng năm, cuộc thi thu hút hơn 50000 thí sinh từ hơn 3000 trường đại học khác nhau trên toàn thế giới. [^4]
 
-## Các trang web lập trình thi đấu
+Mặc dù cuộc thi chỉ giới hạn cho các trường đại học, ở Việt Nam, ban tổ chức ICPC Việt Nam cũng tổ chức Kì thi ICPC cho các bạn học sinh THPT trên khắp cả nước.
 
-Ngoài các cuộc thi lập trình thi đấu, nhiều trang web được tạo ra nhằm hỗ trợ và cung cấp nhiều điều bổ ích cho các thí sinh trên toàn thế giới. Các trang như [VNOJ](https://oj.vnoi.info/), [Codeforces](https://codeforces.com/), [Atcoder](https://atcoder.jp/),... là một trong những ví dụ điển hình. Các trang này tổ chức các cuộc thi online, có nhiều dạng bài phong phú, một số trang còn hỗ trợ tìm kiếm việc làm liên quan đến lập trình!
+### Các cuộc thi online
+
+Ngoài các cuộc thi lập trình thi đấu trực tiếp, nhiều trang web được tạo ra nhằm hỗ trợ và cung cấp nhiều điều bổ ích cho các thí sinh trên toàn thế giới. Các trang như [VNOJ](https://oj.vnoi.info/), [Codeforces](https://codeforces.com/), [Atcoder](https://atcoder.jp/),... là một trong những ví dụ điển hình. Các trang này tổ chức các cuộc thi online, có nhiều dạng bài phong phú, một số trang còn hỗ trợ tìm kiếm việc làm liên quan đến lập trình!
 
 --- 
 

@@ -144,7 +144,7 @@ int main () {
 
 **Ký pháp nghịch đảo Ba Lan (Reverse Polish notation - RPN)** hay **kí pháp hậu tố (postfix notation)**, là một phương pháp viết các biểu thức toán học, với các toán tử (ta sẽ giới hạn với các toán tử cộng, trừ, nhân, chia) được viết sau các toán hạng. Từ **Ba lan** trong tên gọi dùng để chỉ quốc tịch của người phát minh ra kí pháp là [Jan Łukasiewicz](https://en.wikipedia.org/wiki/Jan_%C5%81ukasiewicz).
 
-Giả sử ta có biểu thức được viết ở dạng **kí pháp trung tố (infix notation)** - được viết ở giữa các toán hạng:
+Giả sử ta có biểu thức được viết ở dạng **kí pháp trung tố (infix notation)** - toán tử được viết ở giữa các toán hạng:
 
 \\[4 \times (1 + 2 \times (9 / 3) - 5)\\] 
 

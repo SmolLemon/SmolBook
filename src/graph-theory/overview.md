@@ -62,11 +62,13 @@ Một đồ thị là **vô hướng (undirected)** khi cạnh không được c
 
 ### Đồ thị có hướng
 
-Một đồ thị là **có hướng (directed)** khi cạnh được chỉ định hướng. Điều này có nghĩa rằng nếu đồ thị tồn tại một cạnh \\(uv\\), ta chỉ có thể đi theo hướng \\(u \rightarrow v\\). Khi này, 2 cạnh \\(uv\\) và \\(vu\\) phân biệt.
+Một đồ thị là **có hướng (directed)** khi cạnh được chỉ định hướng. Điều này có nghĩa rằng nếu đồ thị tồn tại một cạnh \\(uv\\), ta chỉ có thể đi theo hướng \\(u \rightarrow v\\). Khi này, 2 cạnh \\(uv\\) và \\(vu\\) phân biệt. 
 
 <center>
 <img src="../images/directed_graph.svg" alt="Đồ thị có hướng"/>
 </center>
+
+Ta có thể gọi các cạnh có hướng là **cung (arc)**.
 
 ### Đồ thị có trọng số
 

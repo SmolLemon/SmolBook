@@ -1,4 +1,4 @@
-# Smol Book: A Smol Guidebook for Competitive Programmers
+# Smol Book - Cẩm nang Lập trình Thi đấu
 
 <a href="https://codeberg.org/SmolLemon/SmolBook">
     <img alt="Get it on Codeberg" src="https://get-it-on.codeberg.org/get-it-on-blue-on-white.png" height="60">
@@ -6,7 +6,7 @@
 
 ## Giới thiệu
 
-Dự án Smol Book được viết nên như một cuốn cẩm nang dễ hiểu về **lập trình thi đấu** dành cho các bạn học sinh và những người có hứng thú với bộ môn này.
+Smol Book là một cuốn cẩm nang về **lập trình thi đấu** dành cho các bạn học sinh và những người có hứng thú với bộ môn này.
 
 ## Chạy cục bộ
 
@@ -18,9 +18,6 @@ $ cargo install mdbook
 $ cd SmolBook 
 $ mdbook serve --open
 ```
-## Đóng góp
-
-Dự án vẫn còn trong giai đoạn phát triển nên rất mong được nhận đóng góp từ người đọc.
 
 ## Bản quyền 
 

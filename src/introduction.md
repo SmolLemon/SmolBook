@@ -1,14 +1,6 @@
 # Giới thiệu
 
-Chào mừng đến với Smol Book!
-
-## Mục tiêu
-
-Mục tiêu của dự án này là viết nên một cuốn cẩm nang dễ hiểu về **lập trình thi đấu** dành cho các bạn học sinh và những người có hứng thú với bộ môn này.
-
-## Đóng góp
-
-Dự án vẫn còn trong giai đoạn phát triển nên rất mong được nhận đóng góp từ người đọc.
+Smol Book là một cuốn cẩm nang về **lập trình thi đấu** dành cho các bạn học sinh và những người có hứng thú với bộ môn này.
 
 ## Bản quyền 
 

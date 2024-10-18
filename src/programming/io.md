@@ -62,3 +62,65 @@ Ta có thể sử dụng lẫn lộn cả hai cách nhập trong chương trình
 	freopen("[tên file nhập]", "r", stdin); // Lấy dữ liệu từ file
 	freopen("[tên file xuất]", "w", stdout); // Xuất dữ liệu ra file
 ```
+
+## Một số yêu cầu đặc biệt cho mỗi bài
+
+### Nhập nhiều số với số lượng không xác định
+
+Đối với các bài có số lượng dữ liệu nhập không xác định, ta có thể viết code như sau:
+
+```C++
+int n;
+while(cin >> n){ // Kết thúc vòng lặp nếu không còn nhập số
+	/* code */
+}
+```
+
+### Nhập xâu trên một dòng
+
+Giả sử đề yêu cầu ta nhập một xâu có trên một hàng, ví dụ như:
+
+```
+abc def
+```
+
+Và ta viết dòng lệnh:
+
+```C++
+string s; cin >> s;
+```
+
+Xâu `s` của ta sẽ chỉ lưu `abc` thay vì `abc def` như ta mong muốn. Đấy là bởi vì `cin` sẽ chỉ nhập các kí tự liên tiếp cho tới khi có dấu cách, xuống dòng hoặc đến cuối file.
+
+Để có thể nhập toàn bộ kí tự có trên một dòng, ta dùng lệnh `getline`:
+
+```C++
+string s; getline(cin, s);
+```
+
+### Nhập nhiều số với số lượng không xác định trên nhiều dòng
+
+Đây là kết hợp giữa hai dạng trên. 
+
+Ta có bài toán yêu cầu ta tính tổng các số trên mỗi hàng với số lượng không xác định.
+
+```
+1 2 3 4
+989 2435 146
+23 56 19 86 29 10
+```
+
+Các dòng 1, 2, 3 lần lượt có tổng là 10, 3570 và 223.
+
+Để giải quyết bài toán này, ta sử dụng `stringstream`:
+
+```C++
+string s;
+while (getline(cin, s)) {
+	stringstream line(s);
+	int sum = 0;
+	int x;
+	while(line >> x) sum += x;
+	cout << sum << endl;
+}
+```
