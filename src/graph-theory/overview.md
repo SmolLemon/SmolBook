@@ -242,7 +242,7 @@ Ta giả sử dữ liệu nhập của một đồ thị là một danh sách c�
 </center>
 
 
-### Ma trận kề (Adjacency matrix)
+### Ma trận kề (Adjacency Matrix)
 
 Ma trận kề là một cấu trúc đơn giản được dùng để lưu một đồ thị bất kì.
 
@@ -278,7 +278,7 @@ int main() {
 }
 ```
 
-### Danh sách kề (Adjacency list)
+### Danh sách kề (Adjacency List)
 
 Danh sách kề là cách lưu trữ đồ thị phổ biến trong lập trình thi đấu. Để biểu diễn đồ thị bằng danh sách kề, ta tạo \\(N\\) mảng giá trị, mảng giá trị thứ \\(u\\) lưu danh sách các đỉnh kề với đỉnh \\(u\\).
 
@@ -314,7 +314,7 @@ vector<pair<int, int>> adj[N];
 adj[1].push_back({2, 3}); // lưu cạnh (1, 2) có trọng số 3
 ```
 
-### Danh sách cạnh (Edge list)
+### Danh sách cạnh (Edge List)
 
 Danh sách cạnh được dùng để lưu các cạnh trong đồ thị.
 

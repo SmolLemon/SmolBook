@@ -169,10 +169,10 @@ for(char c : s){
 		int a = st.top(); st.pop();
 		int b = st.top(); st.pop();
 		switch (c){
-			case '+': {st.push(a + b); break};
-			case '-': {st.push(a - b); break};
-			case '*': {st.push(a * b); break};
-			case '/': {st.push(a / b); break};
+			case '+': {st.push(a + b); break; }
+			case '-': {st.push(a - b); break; }
+			case '*': {st.push(a * b); break; }
+			case '/': {st.push(a / b); break; }
 		}
 	}
 }
