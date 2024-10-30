@@ -12,7 +12,7 @@ Thông thường, các bài toán thường sẽ liên quan đến những chủ
 
 Việc **cài đặt thuật toán** là quá trình thực hiện hóa thuật toán mà ta đã nghĩ ra. Sự hiểu biết về ngôn ngữ lập trình và cách áp dụng nó vào việc cài đặt thuật toán mà một yêu cầu hết sức quan trọng trong quá trình giải quyết bài toán.	 
 
-Các chương trình cần được viết một cách ngắn gọn và xúc tích bởi trong các cuộc thi lập trình, thời gian là có hạn. Đồng thời, các chương trình cũng rất là ngắn (nhiều nhất cũng chỉ tầm vài trong dòng).
+Các chương trình cần được viết một cách ngắn gọn và xúc tích (một chương trình dài nhất cũng chỉ tầm vài trăm dòng) bởi trong các cuộc thi lập trình, thời gian là có hạn. Đồng thời, các chương trình cũng phải thỏa mãn những giới hạn mà bài toán đề ra về thời gian thực thi chương trình và giới hạn bộ nhớ mà chương trình được phép sử dụng.
 
 ### Một chương trình điển hình
 

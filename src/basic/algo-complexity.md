@@ -1,12 +1,12 @@
 # Độ phức tạp thuật toán
 
-Trong các cuộc thi lập trình thi đấu, ta bắt gặp nhiều bài toán với yêu cầu phải in ra đáp án theo các giới hạn thời gian và bộ nhớ. Vậy làm sao để biết được thuật toán của ta nằm trong những giới hạn này?
+Khi viết chương trình giải quyết các bài toán, ta cần phải tuân thủ những giới hạn mà bài toán đặt ra về thời gian và bộ nhớ. Vậy làm sao để biết được chương trình của ta chạy trong bao lâu, và sử dụng bao nhiêu bộ nhớ?
 
-Để ước tính thời gian và bộ nhớ mà một thuật toán sử dụng, ta sử dụng khái niệm: Độ phức tạp của thuật toán.
+Để ước tính thời gian và bộ nhớ mà một thuật toán sử dụng, ta cần phải biết về *độ phức tạp của thuật toán*.
 
 ## Giới thiệu
 
-Các máy tính khác nhau sẽ có tốc độ xử lí khác nhau - có máy nhanh, máy chậm, có máy chạy vừa vừa. Giả sử có 2 anh A và B cùng chạy một chương trình máy tính. Máy của anh A chạy trong 6 giây, song máy của anh B lại mất 9 giây.
+Các máy tính khác nhau sẽ có tốc độ xử lí khác nhau - một số máy thì chạy nhanh, một số khác thì chậm, còn lại chạy vừa vừa. Có những trường hợp như 2 anh A và B cùng chạy một chương trình máy tính, cùng một thuật toán, nhưng máy của anh A lại chạy trong 6 giây, còn máy của anh B lại mất tới 9 giây.
 
 <center>
 <img src="../images/6_hay_9.jpg" alt="6 hay 9 giây?"/>
