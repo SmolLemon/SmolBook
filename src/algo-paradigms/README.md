@@ -1,6 +1,6 @@
 # Các mô hình thuật toán
 
-Một mô hình thuật toán là một khuôn mẫu, một cách tiếp cận chung trong việc xây dựng các thuật toán khác nhau. Nói cách khác, nó là một "công thức" mà chúng ta có thể áp dụng để tạo ra các thuật toán mới, giải quyết những vấn đề phức tạp.
+Một mô hình thuật toán là một khuôn mẫu, một cách tiếp cận chung trong việc xây dựng các thuật toán khác nhau. Nói cách khác, nó là một "công thức" mà chúng ta có thể áp dụng để tạo ra các thuật toán giải quyết những bài toán phức tạp.
 
 Ta tưởng tượng một mô hình thuật toán giống như một dàn bài khi viết văn vậy:
 - Dàn bài là một khung sườn cơ bản giúp tổ chức các ý tưởng chính của một bài văn trước khi thực hiện việc viết chi tiết.
