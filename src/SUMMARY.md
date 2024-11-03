@@ -24,7 +24,7 @@
   - [Bảng thưa (Sparse Table)](./data-structures/sparse-table.md)
   - [Disjoint Set Union](./data-structures/dsu.md)
 - [Các mô hình thuật toán](./algo-paradigms/README.md)
-  - [Duyệt toàn bộ]()
+  - [Duyệt toàn bộ](./algo-paradigms/complete-search.md)
   - [Tham lam]()
   - [Chia để trị]()
   - [Quy hoạch động]()

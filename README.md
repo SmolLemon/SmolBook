@@ -6,7 +6,7 @@
 
 ## Giới thiệu
 
-[Smol Book](https://smollemon.codeberg.page/SmolBook/) là một cuốn cẩm nang về **lập trình thi đấu** dành cho các bạn học sinh và những người có hứng thú với bộ môn này.
+[Smol Book](https://smollemon.codeberg.page/SmolBook/) là một cẩm nang về **lập trình thi đấu** dành cho các bạn học sinh và những người có hứng thú với bộ môn này.
 
 ## Chạy cục bộ
 

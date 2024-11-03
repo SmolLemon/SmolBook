@@ -130,104 +130,104 @@ Ta cùng điểm qua một số khái niệm, tính chất liên quan đến đ�
 
 ### Đỉnh kề, cạnh liền thuộc, đỉnh
 
-> Cho một đồ thị \\(G = (V, E)\\):
-> 
-> 1. Hai đỉnh \\(u\\) và \\(v\\) của \\(G\\) **kề nhau (adjacent)** khi \\(uv \in E\\), hay \\(uv\\) là một cạnh của \\(G\\). Khi này, ta nói cạnh \\(uv\\) là cạnh **liên thuộc (incident)** với hai đỉnh \\(u\\) và \\(v\\), đồng thời \\(u\\), \\(v\\) là hai **đỉnh đầu mút (endpoints)** của cạnh \\(uv\\).
-> 
-> 1. Cho đỉnh \\(u \in V\\), các đỉnh **hàng xóm (neighbours)** với đỉnh \\(u\\) là tất cả các đỉnh \\(v \in V\\) thỏa mãn \\(uv \in E\\), hay tất cả các đỉnh \\(v\\) kề với \\(u\\).
-> 
-> 1. Cho đỉnh \\(u \in V\\), **bậc (degree)** của đỉnh \\(u\\) chính là số lượng hàng xóm của đỉnh \\(u\\). Kí hiệu: \\(deg(u)\\). Ta có một số bổ đề về bậc như [bổ đề bắt tay](https://en.wikipedia.org/wiki/Handshaking_lemma): 
-> \\[\sum_{u \in V} deg(u) = 2|E|\\]
-> 	Nếu \\(G\\) là một đồ thị có hướng, ta định nghĩa: 
-> 		- **Bán bậc ra (out-degree)** của đỉnh \\(u\\), kí hiệu \\(deg^+(u)\\), là số lượng cạnh xuất phát từ đỉnh \\(u\\), hay giá trị của \\(|\{v \in V | uv \in E\}|\\).
-> 		- **Bán bậc vào (in-degree)** của đỉnh \\(u\\) kí hiệu \\(deg^-(u)\\), là số lượng cạnh kết thúc tại đỉnh \\(u\\), hay giá trị của \\(|\{v \in V | vu \in E\}|\\).
->
-> 		Trong đồ thị có hướng, tổng bán bậc vào của tất cả các đỉnh luôn bằng tổng bán bậc ra của tất cả các đỉnh (vì mỗi cạnh có một đỉnh bắt đầu và một đỉnh kết thúc).
+Cho một đồ thị \\(G = (V, E)\\):
+
+**1.** Hai đỉnh \\(u\\) và \\(v\\) của \\(G\\) **kề nhau (adjacent)** khi \\(uv \in E\\), hay \\(uv\\) là một cạnh của \\(G\\). Khi này, ta nói cạnh \\(uv\\) là cạnh **liên thuộc (incident)** với hai đỉnh \\(u\\) và \\(v\\), đồng thời \\(u\\), \\(v\\) là hai **đỉnh đầu mút (endpoints)** của cạnh \\(uv\\).
+
+**2.** Cho đỉnh \\(u \in V\\), các đỉnh **hàng xóm (neighbours)** với đỉnh \\(u\\) là tất cả các đỉnh \\(v \in V\\) thỏa mãn \\(uv \in E\\), hay tất cả các đỉnh \\(v\\) kề với \\(u\\).
+
+**3.** Cho đỉnh \\(u \in V\\), **bậc (degree)** của đỉnh \\(u\\) chính là số lượng hàng xóm của đỉnh \\(u\\). Kí hiệu: \\(deg(u)\\). Ta có một số bổ đề về bậc như [bổ đề bắt tay](https://en.wikipedia.org/wiki/Handshaking_lemma): 
+\\[\sum_{u \in V} deg(u) = 2|E|\\]
+Nếu \\(G\\) là một đồ thị có hướng, ta định nghĩa: 
+- **Bán bậc ra (out-degree)** của đỉnh \\(u\\), kí hiệu \\(deg^+(u)\\), là số lượng cạnh xuất phát từ đỉnh \\(u\\), hay giá trị của \\(|\{v \in V | uv \in E\}|\\).
+- **Bán bậc vào (in-degree)** của đỉnh \\(u\\) kí hiệu \\(deg^-(u)\\), là số lượng cạnh kết thúc tại đỉnh \\(u\\), hay giá trị của \\(|\{v \in V | vu \in E\}|\\).
+
+Trong đồ thị có hướng, tổng bán bậc vào của tất cả các đỉnh luôn bằng tổng bán bậc ra của tất cả các đỉnh (vì mỗi cạnh có một đỉnh bắt đầu và một đỉnh kết thúc).
 
 ### Đường đi, chu trình
 
-> Cho một đồ thị \\(G = (V, E)\\):
-> 
-> 1. Một **đường đi (walk)** (trong \\(G\\)) là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) thuộc \\(G\\) và các cạnh \\((v_0v_1, v_1v_2,..., v_{k - 1}v_k)\\) là các cạnh thuộc đồ thị.
-> 
->     Một **trail** là một đường đi trong đó tất cả các cạnh trên đường đi đôi một phân biệt.
->     
->     Một **path** là một đường đi trong đó tất cả các đỉnh trên đường đi đôi một phân biệt (suy ra các cạnh trên đường đi cũng đôi một phân biệt).
-> 
-> 1. Với \\(w = (v_0, v_1, v_2,..., v_k)\\) là một đường đi trong \\(G\\), ta có:
-> 		- \\(v_0, v_1, v_2,..., v_k\\) là các **đỉnh** của \\(w\\).
-> 		- \\(v_0v_1, v_1v_2,..., v_{k - 1}v_k\\) là các **cạnh** của \\(w\\).
-> 		- **Độ dài (khoảng cách)** của đường đi \\(w\\) là một số nguyên không âm \\(k\\) (\\(k\\) tương đương với số cạnh trên đường đi, và \\(k + 1\\) tương đương với số đỉnh). Nếu \\(G\\) có trọng số, độ dài của đường đi là tổng trọng số của các cạnh trên đường đi.
-> 		- \\(v_0\\) được gọi là **đỉnh đầu (starting point)** của \\(w\\), ta nói \\(w\\) *bắt đầu* tại tại đỉnh \\(v_0\\).
-> 		- \\(v_k\\) được gọi là **đỉnh cuối (ending point)** của \\(w\\), ta nói \\(w\\) *kết thúc* tại tại đỉnh \\(v_k\\).
-> 		- Cho hai đỉnh \\(p\\) và \\(q\\) thuộc \\(G\\), ta nói **đường đi từ** \\(p\\) **đến** \\(q\\) là đường đi bắt đầu từ đỉnh \\(p\\) và kết thúc tại đỉnh \\(q\\).
->
-> 1. Một **đường đi khép kín (closed walk)** của \\(G\\) một đường đi mà đỉnh cuối trùng với đỉnh đầu. Hay nói cách khác, là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) với \\(v_0 = v_k\\). 
->
-> 1. Một **chu trình (cycle)** của \\(G\\) là một đường đi khép kín \\((v_0, v_1, v_2,..., v_k)\\) với \\(k \ge 3\\) và các đỉnh \\((v_0, v_1, v_2,..., v_{k - 1})\\) đôi một phân biệt.
->      Một số trường hợp đặc biệt:
->      - Nếu \\(G\\) là một đồ thị có hướng hoặc là một đa đồ thị, \\(G\\) tồn tại chu trình có 2 đỉnh khi trong đồ thị tồn tại hai đỉnh \\(a\\) và \\(b\\) được nối với nhau bởi 2 cạnh song song. Ví dụ: ![2_node_cycle](../images/2_node_cycle.svg)
->      - \\(G\\) tồn tại chu trình có 1 đỉnh nếu trong đồ thị tồn tại cạnh khuyên. Ví dụ: ![1_node_cycle](../images/1_node_cycle.svg)
->
-> 1. Một đường đi (chu trình) là *sơ cấp* nếu nó không đi qua đỉnh nào hai lần trở lên. Một đường đi (chu trình) là *đơn giản* nếu nó không đi qua cạnh nào hai lần trở lên.
+Cho một đồ thị \\(G = (V, E)\\):
+
+**1.** Một **đường đi (walk)** (trong \\(G\\)) là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) thuộc \\(G\\) và các cạnh \\((v_0v_1, v_1v_2,..., v_{k - 1}v_k)\\) là các cạnh thuộc đồ thị.
+
+Một **trail** là một đường đi trong đó tất cả các cạnh trên đường đi đôi một phân biệt.
+    
+Một **path** là một đường đi trong đó tất cả các đỉnh trên đường đi đôi một phân biệt (suy ra các cạnh trên đường đi cũng đôi một phân biệt).
+
+**2.** Với \\(w = (v_0, v_1, v_2,..., v_k)\\) là một đường đi trong \\(G\\), ta có:
+- \\(v_0, v_1, v_2,..., v_k\\) là các **đỉnh** của \\(w\\).
+- \\(v_0v_1, v_1v_2,..., v_{k - 1}v_k\\) là các **cạnh** của \\(w\\).
+- **Độ dài (khoảng cách)** của đường đi \\(w\\) là một số nguyên không âm \\(k\\) (\\(k\\) tương đương với số cạnh trên đường đi, và \\(k + 1\\) tương đương với số đỉnh). Nếu \\(G\\) có trọng số, độ dài của đường đi là tổng trọng số của các cạnh trên đường đi.
+- \\(v_0\\) được gọi là **đỉnh đầu (starting point)** của \\(w\\), ta nói \\(w\\) *bắt đầu* tại tại đỉnh \\(v_0\\).
+- \\(v_k\\) được gọi là **đỉnh cuối (ending point)** của \\(w\\), ta nói \\(w\\) *kết thúc* tại tại đỉnh \\(v_k\\).
+- Cho hai đỉnh \\(p\\) và \\(q\\) thuộc \\(G\\), ta nói **đường đi từ** \\(p\\) **đến** \\(q\\) là đường đi bắt đầu từ đỉnh \\(p\\) và kết thúc tại đỉnh \\(q\\).
+
+**3.** Một **đường đi khép kín (closed walk)** của \\(G\\) một đường đi mà đỉnh cuối trùng với đỉnh đầu. Hay nói cách khác, là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) với \\(v_0 = v_k\\). 
+
+**4.** Một **chu trình (cycle)** của \\(G\\) là một đường đi khép kín \\((v_0, v_1, v_2,..., v_k)\\) với \\(k \ge 3\\) và các đỉnh \\((v_0, v_1, v_2,..., v_{k - 1})\\) đôi một phân biệt.
+Một số trường hợp đặc biệt:
+- Nếu \\(G\\) là một đồ thị có hướng hoặc là một đa đồ thị, \\(G\\) tồn tại chu trình có 2 đỉnh khi trong đồ thị tồn tại hai đỉnh \\(a\\) và \\(b\\) được nối với nhau bởi 2 cạnh song song. Ví dụ: ![2_node_cycle](../images/2_node_cycle.svg)
+- \\(G\\) tồn tại chu trình có 1 đỉnh nếu trong đồ thị tồn tại cạnh khuyên. Ví dụ: ![1_node_cycle](../images/1_node_cycle.svg)
+
+**5.** Một đường đi (chu trình) là *sơ cấp* nếu nó không đi qua đỉnh nào hai lần trở lên. Một đường đi (chu trình) là *đơn giản* nếu nó không đi qua cạnh nào hai lần trở lên.
 
 ### Tính liên thông, khớp, cầu
 
-> Cho một đồ thị \\(G = (V, E)\\):
-> 
-> 1. Hai đỉnh \\(u\\) và \\(v\\) của \\(G\\) **liên thông** nếu tồn tại ít nhất 1 đường đi từ \\(u\\) đến \\(v\\).
->
-> 1. \\(G\\) **liên thông (connected)** khi mọi cặp đỉnh của \\(G\\) tồn tại đường đi. 
->       \\(G\\) **song liên thông (biconnected)** nếu nó liên thông và không có đỉnh khớp, nghĩa là nếu xóa một đỉnh bất kì thì đồ thị vẫn liên thông.
->
-> 1. Đối với một đồ thị có hướng:
-> 		- Một đồ thị có hướng \\(G\\) được gọi là **liên thông mạnh (strongly connected)** nếu mọi cặp đỉnh của \\(G\\) tồn tại đường đi.
-> 		- Một đồ thị có hướng \\(G\\) được gọi là **liên thông yếu (weakly connected)** nếu khi ta xem đồ thị \\(G\\) là một đồ thị vô hướng thì \\(G\\) liên thông.
-> 
-> 1. Đỉnh \\(u\\) thuộc \\(G\\) được gọi là **khớp (articulation point)** nếu khi ta xóa bỏ đỉnh \\(u\\) khỏi đồ thị thì \\(G\\) không còn liên thông.
->
-> 1. Cạnh \\(uv\\) thuộc \\(G\\) được gọi là **cầu (bridge)** nếu khi ta xóa bỏ cạnh \\(uv\\) khỏi đồ thị thì \\(G\\) không còn liên thông.
->
-> 1. Nếu \\(G\\) không liên thông, \\(G\\) sẽ tồn tại nhiều đồ thị con liên thông, rời nhau. Mỗi đồ thị con đó được gọi là một **thành phần liên thông (TPLT) (connected component)** của \\(G\\).
+Cho một đồ thị \\(G = (V, E)\\):
+
+**1.** Hai đỉnh \\(u\\) và \\(v\\) của \\(G\\) **liên thông** nếu tồn tại ít nhất 1 đường đi từ \\(u\\) đến \\(v\\).
+
+**2.** \\(G\\) **liên thông (connected)** khi mọi cặp đỉnh của \\(G\\) tồn tại đường đi. 
+\\(G\\) **song liên thông (biconnected)** nếu nó liên thông và không có đỉnh khớp, nghĩa là nếu xóa một đỉnh bất kì thì đồ thị vẫn liên thông.
+
+**3.** Đối với một đồ thị có hướng:
+- Một đồ thị có hướng \\(G\\) được gọi là **liên thông mạnh (strongly connected)** nếu mọi cặp đỉnh của \\(G\\) tồn tại đường đi.
+- Một đồ thị có hướng \\(G\\) được gọi là **liên thông yếu (weakly connected)** nếu khi ta xem đồ thị \\(G\\) là một đồ thị vô hướng thì \\(G\\) liên thông.
+
+**4.** Đỉnh \\(u\\) thuộc \\(G\\) được gọi là **khớp (articulation point)** nếu khi ta xóa bỏ đỉnh \\(u\\) khỏi đồ thị thì \\(G\\) không còn liên thông.
+
+**5.** Cạnh \\(uv\\) thuộc \\(G\\) được gọi là **cầu (bridge)** nếu khi ta xóa bỏ cạnh \\(uv\\) khỏi đồ thị thì \\(G\\) không còn liên thông.
+
+**6.** Nếu \\(G\\) không liên thông, \\(G\\) sẽ tồn tại nhiều đồ thị con liên thông, rời nhau. Mỗi đồ thị con đó được gọi là một **thành phần liên thông (TPLT) (connected component)** của \\(G\\).
 
 ### Cây
 
 Đối với các đồ thị cây, ta có thêm một số định nghĩa và tính chất:
 
-> Cho một đồ thị \\(G = (V, E)\\):
-> 
-> 1. \\(G\\) là cây khi nó thỏa mãn ít nhất 2 điều kiện dưới đây:
-> 		- \\(G\\) không có chu trình
-> 		- \\(G\\) liên thông
-> 		- Số cạnh bằng số đỉnh trừ 1 hay \\(|E(G)| = |V(G)| - 1\\) 
-> 
-> 1. \\(G\\) là một **rừng cây (forest)** khi \\(G\\) có nhiều hơn 1 TPLT, mỗi TPLT là một cây.
-> 
-> 1. Chỉ tồn tại **một** đường đi độc nhất nối 2 đỉnh bất kì trên \\(G\\).
-> 
-> 1. Thêm một cạnh bất kì chưa có trong \\(G\\) sẽ xuất hiện một chu trình. 
->
-> 		Đồng thời, việc xóa một cạnh bất kì trong \\(G\\) sẽ làm tăng số TPLT của cây \\(\rightarrow\\) tất cả các cạnh của \\(G\\) đều là cạnh cầu.
+Cho một đồ thị \\(G = (V, E)\\):
+
+**1.** \\(G\\) là cây khi nó thỏa mãn ít nhất 2 điều kiện dưới đây:
+- \\(G\\) không có chu trình
+- \\(G\\) liên thông
+- Số cạnh bằng số đỉnh trừ 1 hay \\(|E(G)| = |V(G)| - 1\\) 
+
+**2.** \\(G\\) là một **rừng cây (forest)** khi \\(G\\) có nhiều hơn 1 TPLT, mỗi TPLT là một cây.
+
+**3.** Chỉ tồn tại **một** đường đi độc nhất nối 2 đỉnh bất kì trên \\(G\\).
+
+**4.** Thêm một cạnh bất kì chưa có trong \\(G\\) sẽ xuất hiện một chu trình. 
+
+Đồng thời, việc xóa một cạnh bất kì trong \\(G\\) sẽ làm tăng số TPLT của cây \\(\rightarrow\\) tất cả các cạnh của \\(G\\) đều là cạnh cầu.
 
 #### Gốc, lá, quan hệ giữa các đỉnh trong cây
 
-> Cho một đồ thị cây \\(T = (V, E)\\):
-> 
-> 1. **Gốc (root)** của \\(T\\) là một đỉnh thuộc \\(T\\) được lựa chọn làm gốc. Thông thường, các bài toán đều chọn đỉnh 1 làm gốc của cây, nếu bài toán không chỉ rõ gốc của cây là đỉnh nào, hãy giả sử nó là đỉnh 1. Một số cây có thể không có gốc.
-> 
-> 1. **Đỉnh lá (leaf)** của \\(T\\) là các đỉnh có bậc bằng 1.
->  
-> 1. Nếu \\(T\\) có gốc, các đỉnh thuộc \\(T\\) sẽ hình thành quan hệ **cha/con (parent/child)**. 
-> Cụ thể:
-> 		- Với mỗi cặp cạnh \\(uv\\) bất kì: nếu khoảng cách tới gốc của \\(v\\) ngắn hơn hơn khoảng cách tới gốc của \\(u\\), đỉnh \\(v\\) sẽ là **cha (parent)** của đỉnh \\(u\\). Nếu khoảng cách tới gốc của \\(v\\) dài hơn thì đỉnh \\(v\\) sẽ là **con (child)** của đỉnh \\(u\\).
-> 		- Một đỉnh có thể có nhiều con, nhưng chỉ có một cha.
-> 		- Đỉnh gốc và đỉnh lá là ngoại lệ của tính chất trên, với đỉnh gốc không có cha, đỉnh lá không có con.
-> 		- Đỉnh có khoảng cách tới gốc ngắn hơn sẽ là **tổ tiên (ancestor)** của đỉnh có khoảng cách tới gốc xa hơn. Ngược lại, đỉnh xa hơn sẽ là **hậu duệ (descendant)** của đỉnh gần hơn.
-> 		- **Tổ tiên thứ k (Kth-ancestor)** của một đỉnh \\(u\\) là một đỉnh \\(v\\) có hậu duệ là đỉnh \\(u\\) và khoảng cách của 2 đỉnh đúng bằng k.
->
-> 1. Khoảng cách từ gốc đến một đỉnh được gọi là **chiều cao (height)** hoặc **chiều sâu (depth)** của đỉnh. Chiều cao của cây \\(T\\) là giá trị của đỉnh có chiều cao lớn nhất.
->
-> 1. **Đường kính (diameter)** của cây \\(T\\) là khoảng cách lớn nhất giữa hai đỉnh trong cây.
+Cho một đồ thị cây \\(T = (V, E)\\):
+
+**1.** **Gốc (root)** của \\(T\\) là một đỉnh thuộc \\(T\\) được lựa chọn làm gốc. Thông thường, các bài toán đều chọn đỉnh 1 làm gốc của cây, nếu bài toán không chỉ rõ gốc của cây là đỉnh nào, hãy giả sử nó là đỉnh 1. Một số cây có thể không có gốc.
+
+**2.** **Đỉnh lá (leaf)** của \\(T\\) là các đỉnh có bậc bằng 1.
+ 
+**3.** Nếu \\(T\\) có gốc, các đỉnh thuộc \\(T\\) sẽ hình thành quan hệ **cha/con (parent/child)**. 
+Cụ thể:
+- Với mỗi cặp cạnh \\(uv\\) bất kì: nếu khoảng cách tới gốc của \\(v\\) ngắn hơn hơn khoảng cách tới gốc của \\(u\\), đỉnh \\(v\\) sẽ là **cha (parent)** của đỉnh \\(u\\). Nếu khoảng cách tới gốc của \\(v\\) dài hơn thì đỉnh \\(v\\) sẽ là **con (child)** của đỉnh \\(u\\).
+- Một đỉnh có thể có nhiều con, nhưng chỉ có một cha.
+- Đỉnh gốc và đỉnh lá là ngoại lệ của tính chất trên, với đỉnh gốc không có cha, đỉnh lá không có con.
+- Đỉnh có khoảng cách tới gốc ngắn hơn sẽ là **tổ tiên (ancestor)** của đỉnh có khoảng cách tới gốc xa hơn. Ngược lại, đỉnh xa hơn sẽ là **hậu duệ (descendant)** của đỉnh gần hơn.
+- **Tổ tiên thứ k (Kth-ancestor)** của một đỉnh \\(u\\) là một đỉnh \\(v\\) có hậu duệ là đỉnh \\(u\\) và khoảng cách của 2 đỉnh đúng bằng k.
+
+**4.** Khoảng cách từ gốc đến một đỉnh được gọi là **chiều cao (height)** hoặc **chiều sâu (depth)** của đỉnh. Chiều cao của cây \\(T\\) là giá trị của đỉnh có chiều cao lớn nhất.
+
+**5.** **Đường kính (diameter)** của cây \\(T\\) là khoảng cách lớn nhất giữa hai đỉnh trong cây.
 
 ## Tổ chức dữ liệu
 

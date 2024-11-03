@@ -24,7 +24,7 @@ Ta ví dụ với bài toán "A cộng B" trên [VNOJ - VNOI Online Judge](https
 
 Bài toán cho ta 2 số A và B và yêu cầu ta tính tổng của hai số ấy. Dữ liệu nhập sẽ là 2 số A và B trên 1 dòng và yêu cầu ta in ra tổng hai số.
 
-Khi ta nộp chương trình, máy chấm sẽ chạy chương trình với một danh sách các dữ liệu nhập (tạm gọi là testcase) và kiểm tra đáp án mà chương trình in ra với mỗi testcase tương ứng. Với mỗi testcase, máy chấm sẽ trả về cho ta một trong các kết quả sau đây:
+Khi ta nộp chương trình, máy chấm sẽ chạy chương trình với một danh sách các dữ liệu nhập (testcase) và kiểm tra đáp án mà chương trình in ra với đáp án của mỗi testcase tương ứng. Với mỗi testcase, máy chấm sẽ trả về cho ta một trong các kết quả sau đây:
 
 |Kết quả|Ý nghĩa|
 |---|---|
@@ -38,6 +38,10 @@ Khi ta nộp chương trình, máy chấm sẽ chạy chương trình với mộ
 |<span style="color:Red">Internal Error (IE)</span>| Lỗi đến từ hệ thống máy chấm.|
 
 Tùy theo *thể thức* mà điểm cho mỗi bài sẽ khác nhau. Có thể thức sẽ tính điểm theo `số lượng testcase AC/số lượng testcase`, có thể thức chỉ cho điểm khi ta AC toàn bộ các testcase. 
+
+#### Subtask
+
+Một số bài toán sẽ chia các testcase theo các nhóm khác nhau, giúp thí sinh giành được một phần điểm số cho bài toán. Các nhóm testcase này được gọi là subtask. Các subtask thường sẽ chứa những testcase có giới hạn nhỏ hơn giới hạn bài toán, hoặc có một số tính chất đặc biệt nào đó, hoặc cả hai.
 
 ## Vì sao cần lập trình thi đấu?
 
