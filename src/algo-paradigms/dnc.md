@@ -93,7 +93,7 @@ Bài toán: Cho \\(n\\) điểm trên Hệ tọa độ Descartes. Tìm và in ra
 <img src="../images/Closest_pair_of_points.svg" alt="Cặp điểm gần nhất"/>
 </center>
 
-Ở ví dụ trên, hai đỉnh được tô màu đỏ sẽ cho ta cặp điểm có khoảng cách nhỏ nhất.
+Ở ví dụ trên, hai điểm được tô màu đỏ sẽ cho ta cặp điểm có khoảng cách nhỏ nhất.
 
 Một thuật toán đơn giản sẽ giải quyết bài toán này bằng cách xét tất cả các cặp điểm và tìm khoảng cách nhỏ nhất giữa các cặp điểm ấy. Độ phức tạp của thuật toán khi này sẽ là \\(O(n^2)\\). 
 
