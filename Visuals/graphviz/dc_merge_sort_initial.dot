@@ -1,0 +1,11 @@
+digraph G { 
+	node[shape=record]; 
+	s30 [label="18"];
+	s31 [label="43"]; 
+	s32 [label="6"];
+	s33 [label="15"];
+	s34 [label="9"];
+	s35 [label="37"];
+	s36 [label="10"];
+	s37 [label="42"];
+} 

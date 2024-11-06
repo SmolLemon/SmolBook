@@ -82,7 +82,7 @@ Thuật toán sắp xếp có thể được tối ưu xuống còn \\(O(n \log{
 
 ### Sắp xếp trộn (Merge sort)
 
-Thuật toán sắp xếp trộn (Merge sort) là cách sắp xếp sử dụng kĩ thuật [chia để trị](../algo-paradigm/d&c.md).
+Thuật toán sắp xếp trộn (Merge sort) là một thuật toán sắp xếp áp dụng mô hình [chia để trị](../algo-paradigms/dnc.md).
 
 Mô tả thuật toán:
 
@@ -137,7 +137,7 @@ Minh họa bằng video: [Merge-sort with Transylvanian-saxon (German) folk danc
 
 ### Sắp xếp nhanh (QuickSort)
 
-Thuật toán sắp xếp nhanh là một thuật toán sử dụng kĩ thuật chia để trị. Mặc dù độ phức tạp của thuật toán chậm nhất là \\(O(n^{2})\\) thuật toán lại có độ phức tạp trung bình là \\(O(n \log{n})\\), và khi so sánh trên máy thì nhanh hơn sắp xếp trộn trong nhiều trường hợp.
+Thuật toán sắp xếp nhanh là một thuật toán áp dụng mô hình chia để trị. Mặc dù độ phức tạp của thuật toán chậm nhất là \\(O(n^{2})\\) thuật toán lại có độ phức tạp trung bình là \\(O(n \log{n})\\), và khi so sánh trên máy thì nhanh hơn sắp xếp trộn trong nhiều trường hợp.
 
 Mô tả thuật toán:
 

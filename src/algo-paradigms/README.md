@@ -8,7 +8,7 @@ Ta tưởng tượng một mô hình thuật toán giống như một dàn bài 
 
 Những dạng bài văn khác nhau sẽ cần có những dàn bài khác nhau, các mô hình thuật toán cũng vậy. Ta sẽ tìm hiểu một số mô hình thuật toán phổ biến trong lập trình thi đấu như:
 
-- [Duyệt toàn bộ](./algo-paradigms/complete-search.md)
-- [Tham lam](./algo-paradigms/greedy.md)
-- [Chia để trị](./algo-paradigms/d&c.md)
-- [Quy hoạch động](./algo-paradigms/dp.md)
+- [Duyệt toàn bộ](complete-search.md)
+- [Tham lam](greedy.md)
+- [Chia để trị](dnc.md)
+- [Quy hoạch động](dp.md)

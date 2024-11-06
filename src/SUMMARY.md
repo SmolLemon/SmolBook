@@ -26,7 +26,7 @@
 - [Các mô hình thuật toán](./algo-paradigms/README.md)
   - [Duyệt toàn bộ](./algo-paradigms/complete-search.md)
   - [Tham lam]()
-  - [Chia để trị]()
+  - [Chia để trị](./algo-paradigms/dnc.md)
   - [Quy hoạch động]()
 - [Lí thuyết đồ thị](./graph-theory/README.md)
   - [Đồ thị](./graph-theory/overview.md)
