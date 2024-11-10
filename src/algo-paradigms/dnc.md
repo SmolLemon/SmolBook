@@ -104,10 +104,103 @@ Thuật toán của ta sẽ bao gồm các bước như sau:
 - Trị: Tìm khoảng cách Euclid nhỏ nhất đối với hai đỉnh bất kì với mỗi bên: \\(\delta_1\\) là khoảng cách Euclid nhỏ nhất của các điểm bên trái, \\(\delta_2\\) cho các đỉnh bên phải.
 - Hợp: Trả về \\(min(\delta_1, \delta_2)\\).
 
+<center>
+<img src="../images/Closest_pair_of_points_divide.svg" alt="Cặp điểm gần nhất"/>
+</center>
+
 Độ phức tạp của thuật toán sẽ là \\(O(n\log{n})\\).
 
 Chắc hẳn bạn sẽ có nghĩ rằng liệu như thế này có phải quá dễ không? Bạn nghĩ đúng rồi đấy! 
 
 Thuật toán ở trên của ta là một thuật toán sai, cụ thể là ở phần hợp. Ta quên xét đến trường hợp nếu một điểm bên trái và một điểm bên phải có thể hình thành cặp điểm có khoảng cách Euclid nhỏ nhất.
 
-Chắc chắn là việc kiểm tra từng điểm ở bên trái với từng điểm ở bên phải `midpoint` sẽ khiến thuật toán của ta chạy chậm hẳn đi: \\(O(n^2)\\). Vậy làm thế nào để có thể xử lý được trường hợp này?
+Thay vì phải tốn thời gian xét tất cả cặp điểm - điều sẽ khiến thuật toán của ta chạy chậm hẳn đi thành \\(O(n^2)\\), ta sẽ chỉ xét các điểm đặc biệt.
+
+Ta có: \\(\delta = min(\delta_1, \delta_2)\\).
+
+Đầu tiên, ta xét các điểm có khoảng cách với đường thẳng song song với trục Oy đi qua `midpoint` nhỏ hơn \\(\delta\\). Ta cho các đỉnh vào một danh sách.
+
+<center>
+<img src="../images/Closest_pair_of_points_delta.svg" alt="Cặp điểm gần nhất"/>
+</center>
+
+Sau đó, sắp xếp các đỉnh trong danh sách theo tọa độ \\(y\\) và bắt đầu tìm cặp điểm nhỏ nhất đối với các đỉnh này. 
+
+Ta có thể chứng minh được rằng với mỗi đỉnh ta đang xét, ta chỉ cần kiểm tra nhiều nhất 6 đỉnh (người đọc tự chứng minh).
+
+```C++
+#define point pair<double, double>
+
+double euclid(point x, point y) { 
+	// Tính khoảng cách euclid
+	return sqrtl((x.first - y.first) * (x.first - y.first) + 
+					(x.second - y.second) * (x.second - y.second)); 
+}
+
+double calc(vector<point> &points){
+	int n = points.size();
+	if(n <= 3){
+		// Vì N nhỏ (<= 3) nên ta có duyệt trâu
+		double delta = euclid(points[0], points[1]);
+		for(int i = 0; i < n; ++i){
+			for(int j = i + 1; j < n; ++j) {
+				double d = euclid(points[i], points[j]);
+				if(d < delta) delta = d;
+			}
+		}
+		// O(1)
+		return delta;
+	}
+
+	int mid = n / 2;
+	point midpoint = points[mid];
+	vector<point> points_left, points_right;
+
+	// Chia tập điểm làm hai phần 
+	for(int i = 0; i < n; ++i){
+		if(i < mid) points_left.push_back(points[i]);
+		else points_right.push_back(points[i]);
+	}
+	
+	double delta = min(calc(points_left), calc(points_right)); // 2T(n / 2)
+	
+	// Tìm các điểm có khoảng cách đến đường thẳng song song vơi trục Oy 
+	// đi qua midpoint nhỏ hơn delta
+	vector<point> inside;
+	for(int i = 0; i < n; ++i){
+		if(midpoint.first - delta <= points[i].first && 
+			points[i].first <= midpoint.first + delta){
+			inside.push_back(points[i]);
+		}
+	}
+
+	// Sắp xếp các điểm theo tọa độ y
+	sort(inside.begin(), inside.end(), [](point x, point y){
+		return x.second < y.second;
+	}); // O(n log n)
+	
+	// Tìm cặp đỉnh có khoảng cách nhỏ hơn delta 
+	int numInside = inside.size();
+	for(int i = 0; i < numInside; ++i){
+		for(int j = i + 1; j < min(numInside, i + 7); ++j){
+			ll d = euclid(inside[i], inside[j]);
+			if(d < delta) delta = d;
+		}
+	}
+	return delta;
+}
+
+double closest_pair(vector<point> &p){
+	vector<point> points = p;
+	sort(points.begin(), points.end()); // sắp xếp theo tọa độ x
+	return calc(points);
+}
+```
+
+Ta có thể tính được độ phức tạp của thuật toán này bằng định lí master. Ta có:
+
+\\[T(n) = 2T(n / 2) + O(n\log{n}) \rightarrow T(n) = O(n \log^2{n})\\]
+
+**Câu hỏi:** Liệu thuật toán có thể được giảm thành \\(O(n\log{n})\\) không?
+
+Có! Ta hoàn toàn có thể đạt được độ phức tạp \\(O(n\log{n})\\) nếu ta sắp xếp trước các điểm theo tọa độ \\(y\\) thay vì sắp xếp các đỉnh ấy sau mỗi lần thực hiện chia để trị.
