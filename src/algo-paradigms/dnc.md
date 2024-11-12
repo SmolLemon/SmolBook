@@ -4,9 +4,11 @@
 
 <br>
 
-Chia để trị là một mô hình thuật toán. Một thuật toán áp dụng mô hình chia sẽ trị sẽ giải quyết bài toán bằng cách chia bài toán thành các bài toán nhỏ hơn (thường là chia làm đôi). Từ những bài toán nhỏ hơn này ta kết hợp các đáp án của chúng lại với nhau để tìm được đáp án của bài toán ban đầu.
+**Chia để trị (Divide and Conquer)** là một mô hình thuật toán. Một thuật toán áp dụng mô hình chia sẽ trị sẽ giải quyết bài toán bằng cách chia bài toán thành các bài toán nhỏ hơn (thường là chia làm đôi). Từ những bài toán nhỏ hơn này ta kết hợp các đáp án của chúng lại với nhau để tìm được đáp án của bài toán ban đầu.
 
 Giống như khi ta đọc và nhớ một số điện thoại, ta không nhớ một lúc 10 chữ số `xxxxxxxxx` mà ta chia nó ra thành 3 phần nhỏ hơn `xxxx-xxx-xxx` để dễ ghi nhớ.
+
+Ta đã được thấy mô hình này được áp dụng ở các thuật toán như [tìm kiếm nhị phân](../basic/binary-search.md), [merge sort](../basic/sorting.md#sắp-xếp-trộn-merge-sort), [quicksort](../basic/sorting.md#sắp-xếp-nhanh-quicksort).
 
 ## Tư tưởng
 
