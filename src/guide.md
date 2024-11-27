@@ -20,6 +20,7 @@ Thanh menu cung cấp một số biểu tượng giúp người dùng tương t�
 | <i class="fa fa-paint-brush"></i> | Mở menu liệt kê danh sách theme. |
 | <i class="fa fa-search"></i> | Mở thanh tìm kiếm giúp tìm kiếm nội dung. |
 | <i class="fa fa-code-fork"></i> | Mở đường dẫn đến trang web lưu trữ mã nguồn của dự án. |
+| <i class="fa fa-edit"></i> | Mở trang để chỉnh sửa nội dung. |
 
 Bạn có thể nhấn vào thanh menu ở đầu trang để cuộn lên đầu trang.
 

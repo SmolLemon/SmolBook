@@ -56,7 +56,7 @@ với \\(n\\) là kích thước của dữ liệu, hai hằng số \\(a\\), \\(
 
 Sử dụng công thức này, có thể tích được độ phức tạp của các thuật toán. Ví dụ với thuật toán Merge Sort thì ta có: \\(T(n) = 2T(n / 2) + O(n)\\), từ đây suy ra độ phức tạp sẽ là \\(O(n \log{n})\\).
 
-Có thể xem thông tin về định lí Master tại các nguồn tài liệu khác.
+Có thể xem thông tin về định lí Master tại các nguồn tài liệu khác để hiểu thêm.
 
 ## Phần tử nhỏ thứ k
 

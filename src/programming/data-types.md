@@ -14,7 +14,7 @@
 
 ### Số nguyên
 
-`int`, `short int`, `long long` là dùng để lưu số nguyên. Các kiểu dữ liệu này có thể lưu các số nguyên *không dấu* (lưu các số nguyên không âm), hoặc *có dấu* (có thể lưu các số nguyên âm). 
+`int`, `short int`, `long long` dùng để lưu số nguyên. Các kiểu dữ liệu này có thể lưu các số nguyên *không dấu* (lưu các số nguyên không âm), hoặc *có dấu* (có thể lưu các số nguyên âm). 
 
 Để lưu các số nguyên không dấu, ta viết thêm `unsigned` ở đầu kiểu dữ liệu.
 
@@ -28,7 +28,7 @@ unsigned short int si;
 
 Khi lưu các số nguyên có dấu ta không cần viết `signed` ở đầu kiểu dữ liệu.
 
-> **Lưu ý**: Trong C++, phép `%` dùng để lấy phần dư của một số. Khi dùng phép `%` với số âm thì kết quả sẽ là 0 hoặc là một số âm. Nếu tìm modulo của một số âm bằng phép `%` thì ta thực hiện: `(a % b + b) % b`
+> **Lưu ý**: Trong C++, phép `%` dùng để lấy phần dư của một số. Khi dùng phép `%` với số âm thì kết quả sẽ là 0 hoặc là một số âm. Nếu tìm modulo của một số âm bằng phép `%` thì ta thực hiện: `((a % b) + b) % b`
 
 ### Số thực
 
@@ -42,9 +42,9 @@ if(0.1 + 0.2 == 0.3){
 }else cout << "False";
 ```
 
-Thì nó sẽ in ra `False` chứ không phải `True`.
+Thì nó sẽ in `False` chứ không phải `True`.
 
-Các bài tập yêu cầu in ra số thực sẽ chấp nhận kết quả chương trình của bạn nếu chệnh lệnh của đáp án của bạn và đáp án của bài nằm trong khoảng yêu cầu ví dự như \\(10^{-9}\\).
+Các bài tập yêu cầu in số thực sẽ chấp nhận kết quả chương trình của bạn nếu chệnh lệnh của đáp án của bạn và đáp án của bài nằm trong khoảng yêu cầu ví dự như \\(10^{-9}\\).
 
 - Nếu output là \\(x\\) và đáp án của test là \\(y\\) thì chênh lênh sẽ là \\(|x - y|\\)
 

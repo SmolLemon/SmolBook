@@ -25,6 +25,7 @@
   - [Cây phân đoạn (Segment Tree)]()
   - [Cây Chỉ số Nhị phân - Cây Fenwick]()
   - [Disjoint Set Union](./data-structures/dsu.md)
+  - [Bảng băm (Hash Table)]()
 - [Các mô hình thuật toán](./algo-paradigms/README.md)
   - [Duyệt toàn bộ](./algo-paradigms/complete-search.md)
   - [Tham lam](./algo-paradigms/greedy.md)
