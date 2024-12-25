@@ -1,5 +1,5 @@
-# Các kĩ thuật, thuật toán cơ bản
+# Nhập môn lập trình thi đấu
 
-Ta sẽ nói về một số thuật toán, kĩ thuật cơ bản trong lập trình thi đấu.
+Ta sẽ nói về một số kiến thức, kĩ thuật, thuật toán cơ bản trong lập trình thi đấu.
 
-Các kĩ thuật, thuật toán ở phần này tương đối đơn giản, nhưng lại có nhiều ứng dụng khi giải quyết các bài toán. 
+Nội dung ở phần này tương đối đơn giản, nhưng lại có nhiều ứng dụng khi giải quyết các bài toán. 
