@@ -2,25 +2,25 @@
  
 Toán học có vai trò quan trọng trong lập trình thi đấu. Việc bạn giỏi toán, hoặc có khá năng tư duy toán học tốt là một lợi thế so với những người khác.
 
-Ta sẽ nói về một số kiến thức có tính ứng dụng cao trong lập trình thi đấu.
+Ta sẽ nói về một số kiến thức cơ bản có tính ứng dụng cao trong lập trình thi đấu.
 
 ## Công thức tính tổng
 
 Ta có công thức tính tổng của một số dãy số:
 
-**Tổng của \\(n\\) số đầu tiên:** 
+**Tổng của \\(n\\) số tự nhiên đầu tiên:** 
 
-\\[\sum_{i = 1}^n i = \frac{n(n + 1)}{2}\\]
+\\[1 + 2 + ... + n = \frac{n(n + 1)}{2}\\]
 
-**Tổng lũy thừa của \\(n\\) số đầu tiên:** 
+**Tổng lũy thừa của \\(n\\) số tự nhiên đầu tiên:** 
 
-\\[\sum_{i = 1}^n i^2 = \frac{n(n + 1)(2n + 1)}{6}\\]
+\\[1^2 + 2^2 + ... + n^2 = \frac{n(n + 1)(2n + 1)}{6}\\]
 
-**Tổng một cấp số cộng \\((u_n)\\) với số hạng đầu \\(u_1\\) và công sai \\(d\\):**
+**Tổng của một cấp số cộng \\((u_n)\\) với số hạng đầu \\(u_1\\) và công sai \\(d\\):**
 
 \\[u_1 + u_2 + ... + u_n = \frac{n[2u_1 + (n - 1)d]}{2} = \frac{n(u_1 + u_n)}{2}\\]
 
-**Tổng một cấp số nhân \\((u_n)\\) với số hạng đầu \\(u_1\\) và công bội \\(q \neq 1\\):**
+**Tổng của một cấp số nhân \\((u_n)\\) với số hạng đầu \\(u_1\\) và công bội \\(q \neq 1\\):**
 
 \\[u_1 + u_2 + ... + u_n = \frac{u_1(q^n - 1)}{q - 1}\\]
 
@@ -31,7 +31,7 @@ Từ đây ta có tổng của \\(n\\) lũy thừa đầu tiên của 2 bằng:
 
 ## Lý thuyết tập hợp
 
-Một tập hợp chứa các phần tử. Ví dụ với tập hợp \\(X\\):
+Một tập hợp là một bộ các phần tử. Ví dụ với tập hợp \\(X\\):
 
 \\[X = \\{2, 3, 5\\}\\]
 
