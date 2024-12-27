@@ -12,7 +12,7 @@
   - [Các kiểu dữ liệu](./programming/data-types.md)
   - [Mẹo lập trình thi đấu C++](./programming/cpp-tips-and-tricks.md)
 - [Nhập môn lập trình thi đấu](./basic/README.md)
-  - [Kiến thức toán cơ bản]()
+  - [Kiến thức toán cơ bản](./basic/math.md)
   - [Độ phức tạp thuật toán](./basic/algo-complexity.md)
   - [Thao tác xử lý bit](./basic/bit-manipulation.md)
   - [Thuật toán sắp xếp](./basic/sorting.md)

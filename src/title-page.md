@@ -1,6 +1,6 @@
 # Smol Book
 
-Đây là phiên bản web của dự án Smol Book. Bản hoàn chỉnh sẽ sớm được hoàn thành.
+Dự án Smol Book đang được hoàn thiện 🚧.
 
 Có thể xem qua [hướng dẫn tương tác](./guide.md) để biết thêm chi tiết về cách tương tác với trang.
 
