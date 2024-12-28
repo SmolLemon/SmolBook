@@ -2,7 +2,7 @@
 
 ## Định nghĩa
 
-**Queue (hàng đợi)** là một cấu trúc dữ liệu lưu trữ các phần tử gồm 2 thao tác chính:
+**Queue (hàng đợi)** là một CTDL lưu trữ các phần tử gồm 2 thao tác chính:
 
 - **Push**: Thêm một phần tử vào *cuối* danh sách, và
 - **Pop**: Loại bỏ phần tử ở *đầu* danh sách

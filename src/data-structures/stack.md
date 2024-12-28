@@ -2,7 +2,7 @@
 
 ## Định nghĩa
 
-**Stack (ngăn xếp)** là một cấu trúc dữ liệu lưu trữ các phần tử gồm 2 thao tác chính:
+**Stack (ngăn xếp)** là một CTDL lưu trữ các phần tử gồm 2 thao tác chính:
   - **Push**: Thêm một phần tử vào *cuối* danh sách, và
   - **Pop**: Loại bỏ phần tử ở *cuối* danh sách.
 

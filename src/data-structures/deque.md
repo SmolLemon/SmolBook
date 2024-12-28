@@ -2,7 +2,7 @@
 
 ## Định nghĩa
 
-**Hàng đợi hai đầu (Double-ended queue - deque, dequeue)** là một cấu trúc dữ liệu cho phép việc thêm và loại bỏ phần tử ở đầu và cuối phần tử. 
+**Hàng đợi hai đầu (Double-ended queue - deque, dequeue)** là một CTDL cho phép việc thêm và loại bỏ phần tử ở đầu và cuối phần tử. 
 
 Deque cũng giống như một hàng đợi bình thường nhưng khác ở chỗ các phần tử ở cuối queue có thể được loại bỏ. Giống như khi bạn đi siêu thị và đứng xếp hàng tại quầy. Nếu có quá nhiều người xếp hàng chờ thanh toán thì bạn có thể rời từ cuối hàng và sang quầy khác.
 

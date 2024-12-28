@@ -3,28 +3,31 @@ clone:
     image: woodpeckerci/plugin-git
 
 when:
-  branch: main 
+  branch: master
   event: [push, cron]
 
 steps:
   build:
-    image: peaceiris/mdbook:latest
+    image: alpine:edge
     commands:
-      - mdbook build
+      - apk add --no-cache mdbook
+      - mdbook build 
 
   publish:
     image: bitnami/git
-    secrets: [mail, codeberg_token]
     environment:
-      - MDBOOK_OUTPUT=book
+      MDBOOK_OUTPUT: book
+      MAIL:
+        from_secret: mail
+      CODEBERG_TOKEN:
+        from_secret: codeberg_token
     commands:
       - git config --global user.email $MAIL
       - git config --global user.name "Woodpecker CI"
       - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/$CI_REPO.git $CI_REPO_NAME
       - cp -ar $MDBOOK_OUTPUT/. $CI_REPO_NAME/
+      - cp .domains $CI_REPO_NAME || true
       - cd $CI_REPO_NAME
       - git add .
       - git commit -m "Woodpecker CI ${CI_BUILD_CREATED}"
       - git push
-
-

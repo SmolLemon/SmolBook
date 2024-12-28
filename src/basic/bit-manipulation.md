@@ -267,7 +267,7 @@ N - 1 = 100000 (Nhị phân) = 32 (Thập phân)
         -> N không là một lũy thừa của 2
 ```
 
-#### Tìm biểu diễn giá trị của bit có giá trị nhỏ nhất
+#### Tìm bit có giá trị nhỏ nhất
 
 **Least significant bit (LSB)** hay bit có giá trị nhỏ nhất là bit có giá trị 1 đầu tiên trong dãy nhị phân xét từ phải sang trái. Để tìm được biểu diễn giá trị của bit này, ta sử dụng thao tác AND: `x & -x`. Nếu giá trị trả về là 0 thì không có bit nào có giá trị 1.
 
