@@ -3,7 +3,7 @@ clone:
     image: woodpeckerci/plugin-git
 
 when:
-  branch: master
+  branch: main
   event: [push, cron]
 
 steps:
