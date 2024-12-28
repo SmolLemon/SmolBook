@@ -8,10 +8,9 @@ when:
 
 steps:
   build:
-    image: alpine:edge
+    image: peaceiris/mdbook:latest
     commands:
-      - apk add --no-cache mdbook
-      - mdbook build 
+      - mdbook build
 
   publish:
     image: bitnami/git
