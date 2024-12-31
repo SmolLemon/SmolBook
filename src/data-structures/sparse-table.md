@@ -1,18 +1,18 @@
 # Bảng thưa (Sparse Table)
 
-Ta có bài toán ví dụ:
+Ta có bài toán sau:
 
 > Cho một mảng `a` có \\(N\\) phần tử và \\(Q\\) truy vấn có dạng `(l, r)`. Với mỗi truy vấn, tìm và in ra giá trị nhỏ nhất (GTNN) của các phần tử trong khoảng `[l, r]`.
 
-Bài toán này có tên là **Range Minimum Query (RMQ)**, dịch tạm: Truy vấn tìm GTNN trên đoạn. Ta có thể giải bài toán này bằng cách duyệt các phần tử từ `l` tới `r` và in ra GTNN trong khoảng đó. Độ phức tạp của thuật toán này là \\(O(NQ)\\). Tuy nhiên, ta có thể sử dụng một CTDL giúp giải quyết bài toán này và các bài toán trên đoạn khác một cách tối ưu. CDTL ấy có tên gọi là **bảng thưa**.
+Bài toán này có tên là **Range Minimum Query (RMQ)**, dịch tạm: Truy vấn tìm GTNN trên đoạn. Ta có thể giải bài toán này bằng cách duyệt các phần tử từ `l` tới `r` và in ra GTNN trong khoảng đó. Độ phức tạp của thuật toán này là \\(O(NQ)\\). Tuy nhiên, ta có thể sử dụng một kĩ thuật giúp giải quyết bài toán này và các bài toán trên đoạn khác một cách tối ưu. Kĩ thuật này có tên gọi là kĩ thuật **bảng thưa**.
 
-## Ý tưởng ban đầu
+## Ý tưởng
 
 Trước khi bàn về bảng thưa, ta cùng xét trường hợp nếu N nhỏ và Q lớn, ví dụ: \\(N \le 1000, Q \le 10^5\\). 
 
 Ta có `f(i, j)` là một hàm trả về GTNN trong đoạn `[i, j]`, ta lưu tất cả các giá trị của `f(i, j)` vào một mảng hai chiều `F`, với `F[i][j] = f(i, j)`. Giờ đây, các truy vấn có thể được thực hiện trong \\(O(1)\\) bằng cách in ra `F[l][r]`. 
 
-Thuật toán của ta giờ đây cần \\(O(N^2)\\) để tính các giá trị `f(i, j)`, và \\(O(Q)\\) để trả lời các truy vấn.
+Thuật toán của ta giờ đây cần \\(O(N^2)\\) để tính các giá trị `f(i, j)`, và mỗi truy vấn có độ phức tạp \\(O(1)\\).
 
 Gọi bảng `F` này là **bảng dày**. Để **bảng dày** này trở thành **bảng thưa**, ta cần phải tự hỏi xem: liệu có lần phải lưu hết tất cả các giá trị trong bảng dày này hay không?
 
@@ -79,11 +79,11 @@ void BuildSparseTable(){
 
 ### Xử lý truy vấn
 
-Đối với các hàm có tính chất [kết hợp](https://vi.wikipedia.org/wiki/T%C3%ADnh_k%E1%BA%BFt_h%E1%BB%A3p), các truy vấn có thể được xử lý trong \\(O(\log{n})\\).
+Đối với các hàm có tính chất [kết hợp](https://vi.wikipedia.org/wiki/T%C3%ADnh_k%E1%BA%BFt_h%E1%BB%A3p), hay các hàm có tính chất \\(f(f(x, y), z) = f(x, f(y, z))\\), các truy vấn có thể được xử lý trong \\(O(\log{n})\\).
 
 Ta sẽ chia đoạn `[l, r]` thành các phân đoạn có độ dài bằng các lũy thừa của 2 và tìm GTNN của các phân đoạn:
 
-VD: Truy vấn `[8, 17]` có GTNN bằng `min(sp[8][3], sp[16][1])`.
+VD: Truy vấn `[8, 17]` có GTNN bằng `min(sp[3][8], sp[1][16])`.
 
 Ta có thể tìm nhanh vị trí của giá trị bit lớn nhất của một số x trong C++ bằng cách sử dụng hàm `__lg(x)`.
 
@@ -99,18 +99,12 @@ int RMQ(int l, int r){
 }
 ```
 
-Đối với các hàm cho phép *trùng lặp* các phần tử, ta có thể thực hiện việc tính kết quả trong \\(O(1)\\).
+Đối với các hàm cho phép *trùng lặp* các phần tử, hay các hàm thỏa mãn \\(f(a, a) = a\\), ta có thể thực hiện việc tính kết quả trong \\(O(1)\\)..
 
-> Ta nói một hàm `f(x, y)` cho phép trùng lặp các phần tử nếu:
-> 
-> \\[f(a, a) = a\\]
->
-> thỏa mãn với mọi `a`.
+Ta thực hiện việc tìm GTNN như sau:
+- Gọi `k` là số nguyên lớn nhất sao cho \\(2^k \le r - l + 1\\), GTNN của đoạn `(l, r)` bằng:
 
-Vì hàm `min` là một hàm cho phép việc trùng lặp, ta thực hiện việc tìm GTNN như sau:
-- Gọi `k` là số nguyên lớn nhất sao cho \\(2^k \le r - l + 1\\), GTNN của đoạn `(l, r)` sẽ là:
-
-\\[sp[i][k] = min(sp[l][k], sp[r - 2 ^ {k} + 1][k])\\]
+\\[min(l, r) = min(sp[k][l], sp[k][r - 2 ^ {k} + 1])\\]
 
 ```C++
 int RMQ(int l, int r){

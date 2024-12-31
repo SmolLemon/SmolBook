@@ -8,7 +8,7 @@
 
 Giống như khi ta đọc và nhớ một số điện thoại, ta không nhớ một lúc 10 chữ số `xxxxxxxxx` mà ta chia nó ra thành 3 phần nhỏ hơn `xxxx-xxx-xxx` để dễ ghi nhớ.
 
-Ta đã được thấy mô hình này được áp dụng ở các thuật toán như [tìm kiếm nhị phân](../basic/binary-search.md), [merge sort](../basic/sorting.md#sắp-xếp-trộn-merge-sort), [quicksort](../basic/sorting.md#sắp-xếp-nhanh-quicksort).
+Ta đã được thấy mô hình này được áp dụng ở các thuật toán như [tìm kiếm nhị phân](../basic/binary-search.md), [merge sort](../basic/sorting.md#sắp-xếp-trộn-merge-sort), [quicksort](../basic/sorting.md#sắp-xếp-nhanh-quicksort), trong các CTDL như [Segment Tree](../data-structures/segment-tree.md).
 
 ## Tư tưởng
 

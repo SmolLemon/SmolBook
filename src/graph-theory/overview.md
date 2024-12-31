@@ -162,7 +162,7 @@ Một **path** là một đường đi trong đó tất cả các đỉnh trên 
 - \\(v_k\\) được gọi là **đỉnh cuối (ending point)** của \\(w\\), ta nói \\(w\\) *kết thúc* tại tại đỉnh \\(v_k\\).
 - Cho hai đỉnh \\(p\\) và \\(q\\) thuộc \\(G\\), ta nói **đường đi từ** \\(p\\) **đến** \\(q\\) là đường đi bắt đầu từ đỉnh \\(p\\) và kết thúc tại đỉnh \\(q\\).
 
-**3.** Một **đường đi khép kín (closed walk)** của \\(G\\) một đường đi mà đỉnh cuối trùng với đỉnh đầu. Hay nói cách khác, là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) với \\(v_0 = v_k\\). 
+**3.** Một **đường đi khép kín (closed walk, tour)** của \\(G\\) một đường đi mà đỉnh cuối trùng với đỉnh đầu. Hay nói cách khác, là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) với \\(v_0 = v_k\\). 
 
 **4.** Một **chu trình (cycle)** của \\(G\\) là một đường đi khép kín \\((v_0, v_1, v_2,..., v_k)\\) với \\(k \ge 3\\) và các đỉnh \\((v_0, v_1, v_2,..., v_{k - 1})\\) đôi một phân biệt.
 Một số trường hợp đặc biệt:

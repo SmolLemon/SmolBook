@@ -26,7 +26,7 @@ Một ý tưởng tối ưu đó chính là ta chia mảng `T` thành hai đoạ
 
 Bằng cách này, khi cập nhật giá trị, ta chỉ cần tính lại một trong hai đoạn `T1` hoặc `T2`.
 
-Cốt lõi của cây Fenwick sử dụng ý tưởng này: nó chia mảng `a` thành nhiều đoạn con khác nhau để dễ dàng cập nhật và tính giá trị cần tìm.
+Cốt lõi của cây Fenwick sẽ sử dụng ý tưởng này.
 
 ## Cây Fenwick
 
