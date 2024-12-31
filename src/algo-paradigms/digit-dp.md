@@ -1,4 +1,4 @@
-# Quy hoạch động chữ số - Digit DP
+# Quy hoạch động chữ số
 
 *Quy hoạch động chữ số* hay *Digit DP* chỉ các bài toán sử dụng quy hoạch động liên quan đến các chữ số.
 
