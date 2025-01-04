@@ -4,7 +4,7 @@
 
 ## Tổng quan
 
-Việc giải một bài toán về lập trình thi đấu sẽ bao gồm 2 bước chính: Thiết kế thuật toán và cài đặt thuật toán.
+Việc giải một bài toán về lập trình thi đấu sẽ bao gồm \\(2\\) bước chính: Thiết kế thuật toán và cài đặt thuật toán.
 
 Việc **thiết kế thuật toán** sẽ yêu cầu ta thiết kế một thuật toán phù hợp để giải quyết bài toán. Nó yêu cầu ta phải có kĩ năng tư duy giải quyết vấn đề và cả tư duy toán học. Thuật toán cần phải nhanh và hiệu quả để có thể giải quyết được bài toán.
 
@@ -22,7 +22,7 @@ Ta ví dụ với bài toán "A cộng B" trên [VNOJ - VNOI Online Judge](https
 
 ![Bài toán A + B](../images/A_+_B_VNOJ.png)
 
-Bài toán cho ta 2 số A và B và yêu cầu ta tính tổng của hai số ấy. Dữ liệu nhập sẽ là 2 số A và B trên 1 dòng và yêu cầu ta in ra tổng hai số.
+Bài toán cho ta \\(2\\) số \\(A\\) và \\(B\\) và yêu cầu ta tính tổng của hai số ấy. Dữ liệu nhập sẽ là \\(2\\) số \\(A\\) và \\(B\\) trên \\(1\\) dòng và yêu cầu ta in ra tổng hai số.
 
 Khi ta nộp chương trình, máy chấm sẽ chạy chương trình với một danh sách các dữ liệu nhập (testcase) và kiểm tra đáp án mà chương trình in ra với đáp án của mỗi testcase tương ứng. Với mỗi testcase, máy chấm sẽ trả về cho ta một trong các kết quả sau đây:
 

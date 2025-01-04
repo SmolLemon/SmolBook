@@ -2,7 +2,7 @@
 
 **Thuật toán tìm kiếm theo chiều rộng (Breadth-First Search - BFS)** là một thuật toán tìm kiếm trên đồ thị.
 
-## Tư tưởng
+## Thuật toán
 
 Xuất phát từ đỉnh gốc \\(s\\), thuật toán BFS sẽ thực hiện việc duyệt đồ thị *theo chiều rộng (breadth-first)*. Thuật toán bắt đầu bằng việc duyệt tất cả các đỉnh hàng xóm của đỉnh \\(s\\) (lớp thứ nhất), các đỉnh kề với các đỉnh hàng xóm của đỉnh \\(s\\) (lớp thứ hai), cứ tiếp tục như thế, từng lớp một, cho tới khi ta xét hết tất cả các đỉnh có thể duyệt được từ đỉnh \\(s\\). Chính vì tính chất duyệt theo từng lớp như thế nên thuật toán còn có tên gọi khác là *thuật toán loang*.
 
@@ -30,8 +30,8 @@ void bfs(int s){
 	q.push(s);
 	while(q.size() > 0) {
 		int u = q.front(); q.pop();
-		if(visited[u]) continue;
-		visited[u] = 1;
+		if(vst[u]) continue;
+		vst[u] = 1;
 
 		// xử lí đỉnh u
 		

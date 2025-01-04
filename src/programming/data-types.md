@@ -44,7 +44,7 @@ if(0.1 + 0.2 == 0.3){
 
 Thì nó sẽ in `False` chứ không phải `True`.
 
-Các bài tập yêu cầu in số thực sẽ chấp nhận kết quả chương trình của bạn nếu chệnh lệnh của đáp án của bạn và đáp án của bài nằm trong khoảng yêu cầu ví dự như \\(10^{-9}\\).
+Các bài tập yêu cầu in số thực sẽ chấp nhận kết quả chương trình của bạn nếu chệnh lệnh của đáp án của bạn và đáp án của bài nằm trong khoảng yêu cầu ví dụ như \\(10^{-9}\\).
 
 - Nếu output là \\(x\\) và đáp án của test là \\(y\\) thì chênh lênh sẽ là \\(|x - y|\\)
 
@@ -58,14 +58,14 @@ Bool lại dùng đến 8 bit để lưu \\(true/false\\) trong khi có thể d�
 
 `char` lưu kí tự theo bộ mã [ASCII](https://vi.wikipedia.org/wiki/ASCII)
 
-Ta có thể chuyển từ kí tự sang số bằng cách dùng câu lệnh `int([kí_tự])`, hoặc chuyển một số sang một kí tự bằng `char([số])`.
+Ta có thể chuyển từ kí tự sang số bằng cách dùng câu lệnh `int([kí_tự])`, hoặc chuyển một số sang một kí tự bằng `char([mã số])`.
 
-Một số thứ cần nhớ về ASCII:
+Mã số của các kí tự quen thuộc trong ASCII:
 
-- Mã số của các kí tự từ `1` đến `10` là từ 48 đến 57.
-- Mã số của các kí tự từ `a` đến `z` là từ 97 đến 122.
-- Mã số của các kí tự từ `A` đến `Z` là từ 65 đến 90.
-- Ta có thể chuyển từ kí tự in thường sang in hoa và ngược lại bằng cách trừ hoặc cộng 32.
+- Mã số của các kí tự từ `1` đến `10` là từ \\(48\\) đến \\(57\\).
+- Mã số của các kí tự từ `a` đến `z` là từ \\(97\\) đến \\(122\\).
+- Mã số của các kí tự từ `A` đến `Z` là từ \\(65\\) đến \\(90\\).
+- Ta có thể chuyển từ kí tự in thường sang in hoa và ngược lại bằng cách trừ hoặc cộng \\(32\\).
 
 
 ### Xâu kí tự

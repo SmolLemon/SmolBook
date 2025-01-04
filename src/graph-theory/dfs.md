@@ -2,7 +2,7 @@
 
 **Thuật toán tìm kiếm theo chiều sâu (Depth-First Search - DFS)** là một thuật toán tìm kiếm/duyệt trên đồ thị.
 
-## Tư tưởng
+## Thuật toán
 
 Xuất phát từ một đỉnh \\(u\\), thuật toán DFS sẽ thực hiện việc duyệt đồ thị *theo chiều sâu (depth-first)*. Ở mỗi bước, thuật toán sẽ chọn một đỉnh bất kì kề với đỉnh \\(u\\) mà chưa được duyệt. Sau đó, thuật toán sẽ thực hiện việc duyệt DFS một cách đệ quy đối với đỉnh ấy. Quá trình sẽ lặp lại cho đến khi tất cả hàng xóm của \\(u\\) đã được duyệt. Khi này, thuật toán "quay lui" và tiếp tục với các đỉnh hàng xóm chưa được duyệt khác, nếu có.
 
@@ -20,12 +20,12 @@ Tùy vào cách tổ chức đồ thị mà nó sẽ anh hưởng đến độ p
 
 ## Cài đặt
 
-Việc cài đặt DFS là một việc vô cùng đơn giản. Một chương trình thực hiện DFS điển hình sẽ sử dụng một mảng giá trị `visited` chứa \\(n\\) phần tử (\\(n\\) là số lượng đỉnh trong đồ thị) biểu thị nếu đỉnh \\(u\\) đã được duyệt hay chưa, và một danh sách kề `adj` lưu thông tin về đồ thị:
+Việc cài đặt DFS là một việc vô cùng đơn giản. Một chương trình thực hiện DFS điển hình sẽ sử dụng một mảng giá trị `vst` chứa \\(n\\) phần tử (\\(n\\) là số lượng đỉnh trong đồ thị) biểu thị nếu đỉnh \\(u\\) đã được duyệt hay chưa, và một danh sách kề `adj` lưu thông tin về đồ thị:
 
 ```C++
 void dfs(int u){
-	if(visited[u]) return;
-	visited[u] = 1;
+	if(vst[u]) return;
+	vst[u] = 1;
 
 	// xử lí đỉnh u
 	
@@ -45,8 +45,8 @@ void dfs(int s){
     st.push(s);
     while(st.size()){
         int u = st.top(); st.pop();
-        if(visited[u]) continue;
-        visited[u] = 1;
+        if(vst[u]) continue;
+        vst[u] = 1;
 
         // Xử lí đỉnh u
 

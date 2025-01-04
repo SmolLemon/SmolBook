@@ -40,7 +40,7 @@ Giả sử ta đã điền các chữ số ở trước \\(a_1\\) bằng các gi
 |---|---|---|---|
 |\\(2\\)|\\(1\\)|\\(\*\\)|\\(\*\\)|
 
-Ta thấy rằng \\(a_1\\) (và các số sau nó) chỉ có thể nhận giá trị chữ số từ \\(0\\) đến \\(x_1\\). Giả sử nếu \\(x_1 < 9\\) và ta gán một số lớn hơn \\(x_1\\) (như \\(x_1 + 1\\)) cho \\(a_1\\), thì dù \\(a_0\\) có được gán giá trị nào thì \\(A\\) cũng sẽ lớn hơn \\(X\\).
+Ta thấy rằng \\(a_1\\) chỉ có thể nhận giá trị chữ số từ \\(0\\) đến \\(x_1\\). Giả sử nếu \\(x_1 < 9\\) và ta gán một số lớn hơn \\(x_1\\) (như \\(x_1 + 1\\)) cho \\(a_1\\), thì dù \\(a_0\\) có được gán giá trị nào thì \\(A\\) cũng sẽ lớn hơn \\(X\\).
 
 Trường hợp không giới hạn sẽ xảy ra nếu các số trước \\(a_i\\) có giá trị bằng với các giá trị tương ứng ở số \\(X\\). Ở đây, \\(a_3 = x_3, a_2 = x_2\\) nên \\(a_1\\) có thế nhận giá trị như ở trên.
 
@@ -52,18 +52,17 @@ Trong đó:
 
 - \\(idx\\) là chỉ số ta cần điền
 - \\(smaller\\) bằng \\(0/1\\) với ý nghĩa:	
-	- \\(smaller = 0\\) nếu rơi vào trường hợp có giới hạn
-	- \\(smaller = 1\\) nếu rơi vào trường hợp còn lại.
+	- \\(smaller = 0\\) nếu rơi vào trường hợp có giới hạn.
+	- \\(smaller = 1\\) nếu rơi vào trường hợp không giới hạn.
 - \\(S_1, S_2, ...,S_k\\) là các tính chất của đoạn số \\(\overline{a_{n - 1}a_{n - 2}...a_{idx + 1}}\\).
 
 Khi này, ta sẽ gọi hàm \\(f\\) để tính \\(G(X)\\):
 
-\\[G(X) = f(n - 1, 0, ...)\\]
+\\[G(X) = f(n - 1, 0, S_1, S_2, ..., S_k)\\]
 
-Độ phức tạp của QHĐ chữ số thường sẽ có dạng: \\(O(D \times 2 \times N \times n(S_1) \times n(S_2) \times ... \times n(S_k))\\), trong đó:
+Độ phức tạp của QHĐ chữ số thường sẽ có dạng: \\(O(D \times 2 \times n \times S_1 \times S_2 \times ... \times S_k)\\), trong đó:
 - \\(D\\) là hệ số của số đang xét.
-- \\(N\\) là số chữ số của \\(X\\).
-- \\(n(x)\\) là số lượng các giá trị khác nhau mà \\(x\\) có thể nhận .
+- \\(n\\) là số chữ số của \\(X\\).
 
 Ta cùng xem qua một số bài toán ví dụ để hiểu rõ hơn.
 
@@ -213,11 +212,11 @@ Trước tiên ta sẽ giải quyết yêu cầu đầu tiên của bài toán.
 
 Ta có \\(3\\) trạng thái QHĐ: \\((idx, smaller, sum)\\).
 
-Nếu \\(idx = -1\\), hàm \\(f\\) sẽ trả về 1 nếu \\(sum = S\\) và trả về \\(0\\) trong các trường hợp còn lại.
+Nếu \\(idx = -1\\), hàm \\(f\\) sẽ trả về \\(1\\) nếu \\(sum = S\\) và trả về \\(0\\) trong các trường hợp còn lại.
 
 Việc chuyển đổi trạng thái \\((idx, smaller, sum)\\), sang \\((idx', smaller', sum')\\) sẽ tương tự ví dụ \\(1\\).
 
-Về yêu cầu thứ hai, ta sẽ thực hiện [tìm kiếm nhị phân](https://wiki.vnoi.info/algo/basic/Binary-Search), tìm \\(X\\) nhỏ nhất sao cho số lượng số trong khoảng \\([A, X]\\) thỏa mãn yêu cầu bài toán ít nhất bằng \\(1\\).
+Về yêu cầu thứ hai, ta sẽ thực hiện [tìm kiếm nhị phân](../basic/binary-search.md): tìm \\(X\\) nhỏ nhất sao cho số lượng số trong khoảng \\([A, X]\\) thỏa mãn yêu cầu bài toán ít nhất bằng \\(1\\).
 
 ```C++
 #include <bits/stdc++.h>
@@ -562,4 +561,13 @@ ll G(ll X){
 }
 ```
 
-Độ phức tạp của thuật toán này là \\(O(10 \times n)\\). 
+Độ phức tạp của thuật toán này là \\(O(10 \times 2 \times n)\\). 
+
+Ngoài các trạng thái biểu thị đoạn số \\(\overline{a_{n - 1}a_{n - 2}...a_{idx + 1}}\\) quen thuộc như \\(sum\\), ta còn có một số trạng thái phổ biến khác như:
+
+- \\(nonz\\): biểu thị nếu \\(\overline{a_{n - 1}a_{n - 2}...a_{idx + 1}}\\) là các chữ số không vô nghĩa. 
+- \\(prevDigit\\): biểu thị giá trị của \\(a_{idx + 1}\\).
+- \\(isRising\\): biểu thị nếu \\(a_{n - 1} \le a_{n - 2} \le ... \le a_{idx + 1}\\) đúng hoặc sai.
+- \\(isFalling\\): biểu thị nếu \\(a_{n - 1} \ge a_{n - 2} \ge ... \ge a_{idx + 1}\\) đúng hoặc sai.
+- \\(s\\): tập hợp các phần tử phân biệt \\(\\{a_{n - 1}, a_{n - 2}, ..., a_{idx + 1}\\}\\).
+- ...

@@ -12,7 +12,7 @@ Hình ảnh dưới đây là một ví dụ về một đồ thị:
 
 Những vòng tròn được gọi là các **đỉnh (vertices)** hoặc các **nút (nodes)**, và những đường thẳng nối những vòng tròn được gọi là các **cạnh (edges)**.
 
-Về cơ bản, đồ thị là một tập hợp hữu hạn gồm các **đỉnh** và được nối với nhau bởi các **cạnh** . 
+Về cơ bản, đồ thị là một tập hợp hữu hạn gồm các **đỉnh** và được nối với nhau bởi các **cạnh**. 
 
 Một đồ thị \\(G\\) sẽ được kí hiệu:
 
@@ -266,13 +266,13 @@ Ngoài ra:
 ```C++
 const int N = 1010; 
 int n, m;
-int adj[N][N];
+int mat[N][N];
 int main() {
 	cin >> n >> m;
 	for(int i = 0; i < m; ++i){
 		int a, b; cin >> a >> b;
-		adj[a][b] = 1; // Nếu đồ thị có trọng số thì đổi 1 thành w
-		adj[b][a] = 1; // Nếu đồ thị có hướng thì không cần viết dòng này
+		mat[a][b] = 1; // Nếu đồ thị có trọng số thì đổi 1 thành w
+		mat[b][a] = 1; // Nếu đồ thị có hướng thì không cần viết dòng này
 	}
 	return 0;
 }

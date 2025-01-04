@@ -2,17 +2,17 @@
 
 Ta có bài toán sau:
 
-> Cho một mảng `a` có \\(N\\) phần tử và \\(Q\\) truy vấn có dạng `(l, r)`. Với mỗi truy vấn, tìm và in ra giá trị nhỏ nhất (GTNN) của các phần tử trong khoảng `[l, r]`.
+> Cho một mảng `a` có \\(n\\) phần tử và \\(q\\) truy vấn có dạng `(l, r)`. Với mỗi truy vấn, tìm và in ra giá trị nhỏ nhất (GTNN) của các phần tử trong khoảng `[l, r]`.
 
-Bài toán này có tên là **Range Minimum Query (RMQ)**, dịch tạm: Truy vấn tìm GTNN trên đoạn. Ta có thể giải bài toán này bằng cách duyệt các phần tử từ `l` tới `r` và in ra GTNN trong khoảng đó. Độ phức tạp của thuật toán này là \\(O(NQ)\\). Tuy nhiên, ta có thể sử dụng một kĩ thuật giúp giải quyết bài toán này và các bài toán trên đoạn khác một cách tối ưu. Kĩ thuật này có tên gọi là kĩ thuật **bảng thưa**.
+Bài toán này có tên là **Range Minimum Query (RMQ)**, dịch tạm: Truy vấn tìm GTNN trên đoạn. Ta có thể giải bài toán này bằng cách duyệt các phần tử từ `l` tới `r` và in ra GTNN trong khoảng đó. Độ phức tạp của thuật toán này là \\(O(nq)\\). Tuy nhiên, ta có thể sử dụng một kĩ thuật giúp giải quyết bài toán này và các bài toán trên đoạn khác một cách tối ưu. Kĩ thuật này có tên gọi là kĩ thuật **bảng thưa**.
 
 ## Ý tưởng
 
-Trước khi bàn về bảng thưa, ta cùng xét trường hợp nếu N nhỏ và Q lớn, ví dụ: \\(N \le 1000, Q \le 10^5\\). 
+Trước khi bàn về bảng thưa, ta cùng xét trường hợp nếu \\(n\\) nhỏ và \\(q\\) lớn, ví dụ: \\(n \le 1000, q \le 10^5\\). 
 
 Ta có `f(i, j)` là một hàm trả về GTNN trong đoạn `[i, j]`, ta lưu tất cả các giá trị của `f(i, j)` vào một mảng hai chiều `F`, với `F[i][j] = f(i, j)`. Giờ đây, các truy vấn có thể được thực hiện trong \\(O(1)\\) bằng cách in ra `F[l][r]`. 
 
-Thuật toán của ta giờ đây cần \\(O(N^2)\\) để tính các giá trị `f(i, j)`, và mỗi truy vấn có độ phức tạp \\(O(1)\\).
+Thuật toán của ta giờ đây cần \\(O(n^2)\\) để tính các giá trị `f(i, j)`, và mỗi truy vấn có thể trả lời trong \\(O(1)\\).
 
 Gọi bảng `F` này là **bảng dày**. Để **bảng dày** này trở thành **bảng thưa**, ta cần phải tự hỏi xem: liệu có lần phải lưu hết tất cả các giá trị trong bảng dày này hay không?
 

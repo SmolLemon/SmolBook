@@ -1,4 +1,4 @@
-# Hướng dẫn tương tác
+# Hướng dẫn
 
 Trang này được viết để hướng dẫn người dùng cách tương tác với [Smol Book](./title-page.md).
 
