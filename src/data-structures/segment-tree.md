@@ -8,7 +8,7 @@ Mảng `a` ví dụ:
 
 \\[a = [5, 2, 7, 8, 3, 1, 4, 6]\\]
 
-Nếu như các truy vấn chỉ yêu cầu ta tìm GTNN của các đoạn thì bảng thưa là một lựa chọn phù hợp để giải quyết bài toán. Tuy nhiên nếu giá trị của các phần tử trong mảng cần tìm thay đổi, thì ta cần phải cập nhật phần tử và xây dựng lại bảng thưa, khiến cho bảng thưa không còn hiệu quả.
+Nếu như các truy vấn chỉ yêu cầu ta tìm GTNN của các đoạn thì bảng thưa là một lựa chọn phù hợp để giải quyết bài toán. Tuy nhiên nếu bài toán có thêm các truy vấn yêu cầu thay đổi giá trị của các phần tử trong mảng, thì ta cần phải cập nhật phần tử và xây dựng lại bảng thưa, khiến cho bảng thưa không còn hiệu quả.
 
 Ta sẽ nói về CTDL Cây phân đoạn (Segment Tree) - một CTDL linh hoạt giúp giải quyết bài toán này.
 
@@ -157,7 +157,6 @@ Bằng cách này, ta có thể giảm số lượng đỉnh mà ta cần đến
 </center>
 
 ```C++
-// cập nhật các phần tử khoảng [u, v] thành x
 void lazy(int id, int l, int r){
 	// nếu đỉnh id không lưu bất kì truy vấn cập nhật nào
 	if(lz[id] == -1) return;
@@ -167,6 +166,7 @@ void lazy(int id, int l, int r){
 	}
 	lz[id] = -1;
 }
+// cập nhật các phần tử khoảng [u, v] thành x
 void update(int id, int l, int r, int u, int v, int x){
 	lazy(id, l, r);
 	if(v < l || r < u) return;
