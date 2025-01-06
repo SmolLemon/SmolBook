@@ -10,7 +10,7 @@ Mảng `a` ví dụ:
 
 Nếu như các truy vấn chỉ yêu cầu ta tìm GTNN của các đoạn thì bảng thưa là một lựa chọn phù hợp để giải quyết bài toán. Tuy nhiên nếu bài toán có thêm các truy vấn yêu cầu thay đổi giá trị của các phần tử trong mảng, thì ta cần phải cập nhật phần tử và xây dựng lại bảng thưa, khiến cho bảng thưa không còn hiệu quả.
 
-Ta sẽ nói về CTDL Cây phân đoạn (Segment Tree) - một CTDL linh hoạt giúp giải quyết bài toán này.
+Ta sẽ nói về CTDL **Cây phân đoạn (Segment Tree)** - một CTDL linh hoạt giúp giải quyết bài toán này.
 
 ## Tư tưởng
 
@@ -54,7 +54,7 @@ void build(int p, int l, int r){
 }
 ```
 
-Để xây dựng segment tree, ta chỉ cần gọi `build(1, 1, n)`.
+Ta xây dựng segment tree bằng cách gọi `build(1, 1, n)`.
 
 <center>
 <img src="../images/segment_tree_build.png" alt="Segment Tree Build"/>
@@ -91,6 +91,8 @@ int ans(int id, int l, int r, int u, int v){
 }
 ```
 
+Để tìm GTNN của phân đoạn \\([l, r]\\), ta gọi `ans(1, 1, n, l, r)`.
+
 Độ phức tạp thuật toán sẽ là \\(O(\log{n})\\).
 
 ## Cập nhật giá trị 
@@ -118,6 +120,8 @@ void update(int id, int l, int r, int u, int v){
 }
 ```
 
+Để cập nhật giá trị của phần tử thứ \\(i\\) thành \\(x\\) , ta gọi `update(1, 1, n, i, x)`.
+
 Thuật toán của ta sẽ đi qua số lượng đỉnh bằng với chiều cao của cây nên có độ phức tạp \\(O(\log{n})\\).
 
 ### Cập nhật đoạn
@@ -136,7 +140,7 @@ Có thể thấy thao tác cập nhật \\(O(n)\\) này thì sẽ không hề hi
 	
 ### Cập nhật lười
 
-Cập nhật lười là một kĩ thuật giúp ta thực hiện truy vấn cập nhật đoạn hiệu quả trên segment tree.
+**Cập nhật lười**, hay **lazy propagation**, là một kĩ thuật giúp ta thực hiện truy vấn cập nhật đoạn hiệu quả trên segment tree.
 
 Giả sử ta thực hiện cập nhật phân đoạn trên một đỉnh, ta sẽ lưu cập nhật này và không cập nhật đỉnh ấy. 
 
@@ -181,6 +185,7 @@ void update(int id, int l, int r, int u, int v, int x){
 	st[id] = min(st[id << 1], st[id << 1 | 1]);
 }
 ```
+Để cập nhật giá trị của các phần tử từ \\(l\\) đến \\(r\\) thành \\(x\\) , ta gọi `update(1, 1, n, l, r, x)`.
 
 Độ phức tạp của truy vấn cập nhật đoạn giờ đây giảm xuống còn \\(O(\log{n})\\).
 

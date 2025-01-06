@@ -70,7 +70,7 @@ void Kahn(){
 
 Để có thứ tự tô-pô của một đồ thị có hướng, ta cần xác định nếu đồ thị có xuất hiện chu trình hay không. Nếu có chu trình, ta không thể tìm được thứ tự tô-pô và nếu không thì ngược lại
 
-Đối với DFS, ta cần thực hiện [tìm kiếm chu trình](graph-traversal-applications.md#tìm-kiếm-chu-trình) trong đồ thị nếu muồn tìm thứ tự tô-pô.
+Đối với DFS, ta cần phát hiện sự tồn tại của [chu trình](graph-traversal-applications.md#phát-hiện-chu-trình) trong đồ thị nếu muồn tìm thứ tự tô-pô.
 
 Đối với thuật toán Kahn, để xác định đồ thị có phải là DAG hay không, ta chạy thuận toán và xét kích cỡ của danh sách `topo`: nếu kích thước của `topo` bằng \\(n\\), đồ thị là một DAG và tồn tại thứ tự tô-pô. Nếu điều này không xảy ra, đồ thị của ta có chu trình và không phải DAG.
 

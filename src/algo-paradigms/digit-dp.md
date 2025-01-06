@@ -74,7 +74,7 @@ Tóm tắt: Cho hai số nguyên không âm \\(a\\) và \\(b\\), tính tổng ch
 
 Giới hạn: \\(0 \le a \le b \le 10^{15}\\).
 
-Ví dụ: \\([49, 52] = 4 + 9 + 5 + 0 + 5 + 1 + 5 + 2 = 31\\).
+Ví dụ: \\([49; 52] = 4 + 9 + 5 + 0 + 5 + 1 + 5 + 2 = 31\\).
 
 Ta có các trạng thái QHĐ: \\((idx, smaller, sum)\\) với \\(idx\\), \\(smaller\\) có định nghĩa như trên và \\(sum\\) là tổng của các chữ số đã điền.
 
@@ -141,7 +141,7 @@ ll G(ll X){
 }
 
 ```
-Độ phức tạp của thuật toán này là \\(O(10 \times n \times 2 \times (n \times 9))\\).
+Độ phức tạp của thuật toán này là \\(O(10 \times n \times 2 \times sum)\\).
 
 Ngoài cách giải QHĐ chữ số, ta cũng có thể [giải theo phương pháp khác](https://oj.vnoi.info/problem/fct003_digitsum#comment-5859).
 
@@ -202,77 +202,9 @@ ll G(string &X){
 ```
 Độ phức tạp của thuật toán này là \\(O(10 \times n \times 2 \times D)\\).
 
-### Ví dụ 3: [COCI 2007 - 2008 Contest 3 - Cudak](https://dmoj.ca/problem/coci07c3p5)
+### Ví dụ 3: [Số lượng số](https://oj.vnoi.info/problem/snad)
 
-Tóm tắt: Đếm số lượng số trong khoảng \\([A, B]\\) có tổng chữ số bằng \\(S\\), và tìm số nhỏ nhất trong khoảng thỏa mãn điều kiện.
-
-Giới hạn: \\(1 \le A \le B \le 10^{15}\\), \\(1\le S \le 135\\).
-
-Trước tiên ta sẽ giải quyết yêu cầu đầu tiên của bài toán.
-
-Ta có \\(3\\) trạng thái QHĐ: \\((idx, smaller, sum)\\).
-
-Nếu \\(idx = -1\\), hàm \\(f\\) sẽ trả về \\(1\\) nếu \\(sum = S\\) và trả về \\(0\\) trong các trường hợp còn lại.
-
-Việc chuyển đổi trạng thái \\((idx, smaller, sum)\\), sang \\((idx', smaller', sum')\\) sẽ tương tự ví dụ \\(1\\).
-
-Về yêu cầu thứ hai, ta sẽ thực hiện [tìm kiếm nhị phân](../basic/binary-search.md): tìm \\(X\\) nhỏ nhất sao cho số lượng số trong khoảng \\([A, X]\\) thỏa mãn yêu cầu bài toán ít nhất bằng \\(1\\).
-
-```C++
-#include <bits/stdc++.h>
-#define ll long long
-using namespace std;
-ll dp[2][16][136];
-int x[20];
-ll l, r; 
-ll s;
-
-ll f(int idx, bool smaller, int sum);
-ll G(ll X);
-
-int main () {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	cin >> l >> r >> s;
-	ll V = 0;
-	cout << G(r) - (V = G(l - 1)) << endl;
-	ll u = l, v = r, res = l;
-	while(u <= v){
-		ll mid = (u + v) >> 1;
-		if(G(mid) - V > 0) v = mid - 1, res = mid;
-		else u = mid + 1;
-	}
-	cout << res << endl;
-	return 0;
-}
-ll f(int idx, bool smaller, int sum){
-	if(idx < 0) return sum == s;
-	ll &memo = dp[smaller][idx][sum];
-	if(memo != -1) return memo;
-	int lim = smaller ? 9 : x[idx];
-	memo = 0;
-	for(int digit = 0; digit <= lim; ++digit){
-		memo += f(idx - 1, smaller || (digit < lim), sum + digit);
-	}	
-	return memo;
-}
-ll G(ll X){
-	if(X <= 0) return 0;
-	int n = 0; x[n] = 0;
-	for(; X > 0; ++n){
-		x[n] = X % 10;
-		X /= 10;
-	}
-	memset(dp, -1, sizeof(dp));
-	return f(n - 1, 0, 0);
-}
-```
-
-Độ phức tạp của thuật toán này là \\(O([10 \times n \times 2 \times (n \times 9)] + [10 \times n \times 2 \times (n \times 9)] \times \log(B - A))\\).
-
-### Ví dụ 4: [Số lượng số](https://oj.vnoi.info/problem/snad)
-
-Tóm tắt: Cho \\(T\\) cặp số \\([X, Y]\\), đếm số lượng số mà có tích của một số với tổng chữ số của nó đó nằm trong khoảng \\([X, Y]\\).
+Tóm tắt: Cho \\(T\\) cặp số \\([X; Y]\\), đếm số lượng số mà có tích của một số với tổng chữ số của nó đó nằm trong khoảng \\([X; Y]\\).
 
 Giới hạn: \\(T \lt 21\\), \\(0 \lt X \le Y \lt 10^{19}\\).
 
@@ -288,9 +220,15 @@ Từ đây, ta có thể viết lại công thức trên như sau:
 
 \\[\left\lfloor \frac{X}{d(A)}\right\rfloor \le A \le \left\lfloor \frac{Y}{d(A)}\right\rfloor\\]
 
-Qua công thức này, ta đã chuyển đổi bài toán sang bài toán Cudak ở ví dụ trên: Cho \\(S\\) chạy từ \\(1\\) đến \\(171\\), đếm số lượng số từ \\(\left\lfloor \frac{X}{S}\right\rfloor\\) đến \\(\left\lfloor \frac{Y}{S}\right\rfloor\\) có tổng chữ số bằng \\(S\\). 
+Qua công thức này, ta đã chuyển đổi bài toán sang một dạng khác đơn giản hơn: Cho \\(S\\) chạy từ \\(1\\) đến \\(171\\), đếm số lượng số từ \\(\left\lfloor \frac{X}{S}\right\rfloor\\) đến \\(\left\lfloor \frac{Y}{S}\right\rfloor\\) có tổng chữ số bằng \\(S\\). 
 
-Tổng các số đếm được sẽ là đáp án của bài toán gốc:
+Tổng các số đếm được sẽ là đáp án của bài toán gốc.
+
+Ta có \\(3\\) trạng thái QHĐ: \\((idx, smaller, sum)\\).
+
+Nếu \\(idx = -1\\), hàm \\(f\\) sẽ trả về \\(1\\) nếu \\(sum = S\\) và trả về \\(0\\) trong các trường hợp còn lại.
+
+Việc chuyển đổi trạng thái \\((idx, smaller, sum)\\), sang \\((idx', smaller', sum')\\) sẽ tương tự ví dụ \\(1\\).
 
 ```C++
 #include <bits/stdc++.h>
@@ -342,7 +280,7 @@ ll G(ll X){
 }
 ```
 
-Độ phức tạp của thuật toán này là \\(O([10 \times n \times 2 \times (n \times 9)] \times 171 \times T)\\).
+Độ phức tạp của thuật toán này là \\(O((10 \times n \times 2 \times sum) \times 171 \times T)\\).
 
 #### Tối ưu QHĐ chữ số
 
@@ -350,7 +288,7 @@ Nhiều bài toán QHĐ chữ số (giống như bài này) có thể yêu cầu
 
 Một cách tối ưu cực kì hay ho chính là ta sẽ chỉ thực hiện việc `memset` một lần ở ngoài hàm \\(G\\), đồng thời bỏ trạng thái \\(smaller\\) khi lưu kết quả của trạng thái. 
 
-Bằng cách này, ta có thể tận dụng được các trạng thái được tính sẵn ở các lần trước.
+Vì các giá trị của trạng thái QHĐ có \\(smaller = 0\\) phụ thuộc vào một số cụ thể, nên không thể sử dụng lại cho các số tiếp theo. Bằng cách loại bỏ trạng thái \\(smaller\\) khi lưu kết quả của trạng thái và xét riêng từng trường hợp \\(smaller\\), ta có thể sử dụng lại các kết quả đã được tính ở những lần trước.
 
 Có thể xem qua đoạn code của bài toán khi áp dụng cách cài đặt mới:
 
@@ -409,7 +347,89 @@ ll G(ll X, ll sum){
 
 ```
 
-Độ phức tạp của thuật toán giờ đây giảm xuống còn: \\(O([10 \times n \times (n \times 9)])\\).
+Độ phức tạp của thuật toán giờ đây giảm xuống còn: \\(O(10 \times n \times sum)\\)
+
+### Ví dụ 4: [NUMTSN - 369 Numbers](https://www.spoj.com/problems/NUMTSN/)
+
+Tóm tắt: Cho \\(T\\) cặp số \\(A\\) và \\(B\\), với mỗi cặp số, đếm số lượng số \\(369\\) nằm trong khoảng \\([A; B]\\), modulo \\(10^9 + 7\\).
+
+Một số \\(X\\) là số \\(369\\) khi số lượng chữ số \\(3\\) bằng số lượng chữ số \\(6\\) và bằng số lượng chữ số \\(9\\) và có ít nhất một chữ số \\(3\\). 
+
+Giới hạn: \\(T \lt 100\\), \\(1 \le A \le B \le 10^{50}\\).
+
+Ta có \\(5\\) trạng thái QHĐ: \\((idx, smaller, three, six, nine)\\) với \\(idx\\), \\(smaller\\) có định nghĩa như các ví dụ trước và \\(three\\), \\(six\\), \\(nine\\) là số lượng số \\(3\\), \\(6\\), và \\(9\\).
+
+Nếu \\(idx = -1\\), hàm \\(f\\) trả về \\(1\\) nếu \\(three > 0, three = six = nine\\), và \\(0\\) trong các trường hợp còn lại.
+
+Nếu trạng thái của ta đang là \\((idx, smaller, three, six, nine)\\), và ta điền \\(a_{idx} = v\\), ta sẽ chuyển trạng thái tiếp theo \\((idx', smaller', three', six', nine')\\):
+
+- \\(idx'\\), \\(smaller'\\) giống các ví dụ trước.
+- \\(three' = three + 1\\) nếu \\(v = 3\\) hoặc \\(three' = three\\) nếu \\(v \neq 3\\).
+- \\(six' = six + 1\\) nếu \\(v = 6\\) hoặc \\(six' = six\\) nếu \\(v \neq 6\\).
+- \\(nine' = nine + 1\\) nếu \\(v = 9\\) hoặc \\(nine' = nine\\) nếu \\(v \neq 9\\).
+
+Vì \\(A, B\\) là những số rất lớn, ta áp dụng cách tính thứ hai được nói ở phần lý thuyết: \\((G(b) - G(a) + g(a)) \mod{10^9 + 7}\\).
+
+```C++
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+const int MOD = 1e9 + 7;
+ll dp[51][51][51][51];
+int x[51];
+
+ll f(int idx, bool smaller, int three, int six, int nine);
+ll G(string &X);
+bool g(string &X);
+int main (int argc, char const *argv[]) {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	memset(dp, -1, sizeof(dp));
+	int t; cin >> t;
+	while(t--){
+		string a, b; cin >> a >> b;
+		cout << (G(b) - G(a) + g(a) + MOD) % MOD << '\n';
+	}	
+
+
+
+	
+	return 0;
+}
+ll f(int idx, bool smaller, int three, int six, int nine){
+	if(idx < 0) return three > 0 && three == six && three == nine;
+	ll &memo = dp[idx][three][six][nine];
+	if(smaller && memo != -1) return memo;
+	ll ans = 0;
+	int lim = smaller ? 9 : x[idx];
+	for(int i = 0; i <= lim; ++i){
+		ans += f(idx - 1, smaller || (i < lim), three + (i == 3), six + (i == 6), nine + (i == 9));
+		ans %= MOD;
+	}
+
+	if(smaller) memo = ans;
+	return ans;
+}
+
+ll G(string &X){
+	int n = 0; x[n] = 0;
+	for(int i = X.length() - 1; i >= 0; --i){
+		x[n++] = X[i] - '0';
+	}
+	return f(n - 1, 0, 0, 0, 0);
+}
+bool g(string &X){
+	int three = 0, six = 0, nine = 0;
+	for(char c : X){
+		three += c == '3';
+		six += c == '6';
+		nine += c == '9';
+	}
+	return three > 0 && three == six && three == nine;
+}
+```
+
+Độ phức tạp của thuật toán là: \\(O(10 \times n \times three \times six \times nine)\\).
 
 ### Ví dụ 5: [Số đặc biệt](https://lqdoj.edu.vn/problem/pearlnum)
 

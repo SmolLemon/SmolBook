@@ -1,6 +1,6 @@
 # Cây chỉ số nhị phân - Cây Fenwick (Fenwick Tree)
 
-Cây chỉ số nhị phân (Binary Index Tree) hay cây Fenwick (Fenwick Tree) là một CTDL giúp ta trả lời các truy vấn trên đoạn một cách hiệu quả. Mặc dù không "mạnh" bằng [Segment Tree](./segment-tree.md) nhưng CTDL này vẫn được sử dụng thường xuyên trong lập trình thi đấu vì có thể cài đặt nhanh và đơn giản hơn so với Segment Tree.
+**Cây chỉ số nhị phân (Binary Index Tree)** hay **cây Fenwick (Fenwick Tree)** là một CTDL giúp ta trả lời các truy vấn trên đoạn một cách hiệu quả. Mặc dù không "mạnh" bằng [Segment Tree](./segment-tree.md) nhưng CTDL này vẫn được sử dụng thường xuyên trong lập trình thi đấu vì có thể cài đặt nhanh và đơn giản hơn so với Segment Tree.
 
 ## Tư tưởng
 
