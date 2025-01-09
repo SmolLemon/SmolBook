@@ -19,8 +19,8 @@ deque<kiểu_dữ_liệu> Tên_deque;
 Các phương thức phổ biến của deque:
 
 - Các thao tác chính:
-	- `push_back(x)`: Thêm phần tử `x` vào cuối deque
-	- `push_front(x)`: Thêm phần tử `x` vào đầu deque
+	- `push_back(x)`: Thêm phần tử \\(x\\) vào cuối deque
+	- `push_front(x)`: Thêm phần tử \\(x\\) vào đầu deque
 	- `pop_back()`: Loại bỏ phần tử ở cuối deque
 	- `pop_front()`: Loại bỏ phần tử ở đầu deque
 	- `back()`: Trả về giá trị của phần tử ở cuối queue
@@ -39,7 +39,7 @@ Các phương thức trên đều có độ phức tạp \\(O(1)\\), ngoại tr�
 
 Với nhiều thao tác như thế, deque hoàn toàn có thể thực hiện các thao tác của stack và queue.
 
-Thực tế, nếu bạn đọc thông tin về [stack](https://en.cppreference.com/w/cpp/container/stack) và [queue](https://en.cppreference.com/w/cpp/container/queue) trên [cppreference.com](https://cppreference.com) thì ẩn trong 2 CDTL chính là deque.  
+Thực tế, nếu bạn đọc thông tin về [stack](https://en.cppreference.com/w/cpp/container/stack) và [queue](https://en.cppreference.com/w/cpp/container/queue) trên [cppreference.com](https://cppreference.com) thì ẩn trong \\(2\\) CDTL chính là deque.  
 
 ### BFS 0 - 1
 
@@ -49,26 +49,26 @@ Deque được dùng để giải quyết bài toàn tìm đường đi ngắn n
 
 Ta có bài toán:
 
-> Cho mảng `a` có n phần tử bắt đầu từ chỉ số 1. Với mỗi đoạn con có độ dài `k`, tìm phần tử nhỏ nhất với mỗi đoạn con này.
+> Cho mảng `a` có \\(n\\) phần tử bắt đầu từ chỉ số \\(1\\). Với mỗi đoạn con có độ dài \\(k\\), tìm phần tử nhỏ nhất với mỗi đoạn con này.
 
 Ví dụ với `n = 9` và `k = 3` và mảng `a`:
 
 \\[[1, 5, 6, 2, 8, 3, 4, 9]\\]
 
 Ta có giá trị nhỏ nhất của các đoạn \\([1, 3], [2, 4], ..., [7, 9]\\) lần lượt là: 
-- \\([1, 3]\\): 1
-- \\([2, 4]\\): 2
-- \\([3, 5]\\): 2
-- \\([4, 6]\\): 2
-- \\([5, 7]\\): 2
-- \\([6, 8]\\): 3
-- \\([7, 9]\\): 3
+- \\([1, 3]: 1\\)
+- \\([2, 4]: 2\\)
+- \\([3, 5]: 2\\)
+- \\([4, 6]: 2\\)
+- \\([5, 7]: 2\\)
+- \\([6, 8]: 3\\)
+- \\([7, 9]: 3\\)
 
 Có một cách giải quyết tối ưu bài toán này, áp dụng tư tưởng của [stack đơn điệu](stack.md#stack-đơn-điệu).
 
-Với mỗi `i`, ta thêm phần tử có chỉ số `i` vào cuối deque. Trước khi thêm vào, loại bỏ các phần tử ở cuối deque có giá trị lớn hơn phần tử sẽ được thêm vào. Khi này phần tử ở đầu deque là phần tử nhỏ nhất trong khoảng tử đầu mảng đến phần tử chỉ số `i`.
+Với mỗi \\(i\\), ta thêm phần tử có chỉ số \\(i\\) vào cuối deque. Trước khi thêm vào, loại bỏ các phần tử ở cuối deque có giá trị lớn hơn phần tử sẽ được thêm vào. Khi này phần tử ở đầu deque là phần tử nhỏ nhất trong khoảng tử đầu mảng đến phần tử chỉ số \\(i\\).
 
-Để giải quyết bài toán gốc, ta thực hiện việc xóa phần tử như sau: Xóa các phần tử ở đầu deque nếu chỉ số của phần tử ấy nhỏ hơn `i - k + 1`. Sau khi xóa xong, phần tử ở đầu deque sẽ là phần tử ở đầu hàng đợi hai đầu này.
+Để giải quyết bài toán gốc, ta thực hiện việc xóa phần tử như sau: Xóa các phần tử ở đầu deque nếu chỉ số của phần tử ấy nhỏ hơn \\(i - k + 1\\). Sau khi xóa xong, phần tử ở đầu deque sẽ là phần tử ở đầu hàng đợi hai đầu này.
 
 ```C++
 #include <bits/stdc++.h>

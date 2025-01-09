@@ -2,7 +2,7 @@
 
 ## Định nghĩa
 
-**Stack (ngăn xếp)** là một CTDL lưu trữ các phần tử gồm 2 thao tác chính:
+**Stack (ngăn xếp)** là một CTDL lưu trữ các phần tử gồm \\(2\\) thao tác chính:
   - **Push**: Thêm một phần tử vào *cuối* danh sách, và
   - **Pop**: Loại bỏ phần tử ở *cuối* danh sách.
 
@@ -15,7 +15,7 @@ Ta có thể hình dung stack như một chồng đĩa: Chiếc đĩa cuối cù
 Ta cài đặt stack bằng mảng:
 
 - Cho một mảng `st` và chỉ số `top`.
-- Để thêm một phần tử, gán `st[top]` với một giá trị và tăng chỉ số `top` lên 1. 
+- Để thêm một phần tử, gán `st[top]` với một giá trị và tăng chỉ số `top` lên \\(1\\). 
 - Để loại bỏ một phần tử, giảm chỉ số của `top` xuống 1.
 - Giá trị ở cuối mảng sẽ là giá trị ở đỉnh stack: `st[top]`
 - Stack rỗng khi trong mảng không có phần tử: `top = 0`
@@ -360,9 +360,9 @@ Stack đơn điệu là kiểu stack mà các phần tử từ đáy đến đ�
 
 Ta ví dụ một bài toán: 
 
-> Cho mảng `a` có n phần tử bắt đầu từ chỉ số 1. Với mỗi phần tử trong mảng, tìm phần tử gần nhất bên trái có giá trị lớn hơn phần tử đang xét. Nếu phần tử ấy không tồn tại thì in ra `-1`.
+> Cho mảng `a` có \\(n\\) phần tử bắt đầu từ chỉ số \\(1\\). Với mỗi phần tử trong mảng, tìm phần tử gần nhất bên trái có giá trị lớn hơn phần tử đang xét. Nếu phần tử ấy không tồn tại thì in ra \\(-1\\).
 
-Với cách giải thông thường, ta sẽ sử dụng 2 vòng lặp lồng nhau để giải bài toán.
+Với cách giải thông thường, ta sẽ sử dụng \\(2\\) vòng lặp lồng nhau để giải bài toán.
 
 ```C++
 #include <bits/stdc++.h>
@@ -390,7 +390,7 @@ int main () {
 
 Độ phức tạp thuật toán là \\(O(n^2)\\).
 
-Để tối ưu thuật toán, ta thực hiện các bước sau với mọi `i` từ 1 đến n:
+Để tối ưu thuật toán, ta thực hiện các bước sau với mọi \\(i\\) từ \\(1\\) đến \\(n\\):
 
 - Trước khi thêm vào \\(a_i\\), thực hiện loại bỏ các phần tử ở đỉnh stack cho đến khi đỉnh stack có giá trị lớn hơn \\(a_i\\) hoặc stack rỗng.
 - Nếu stack rỗng, ta in giá trị thông báo không có phần tử thỏa mãn, nếu không rỗng thì in ra phần tử ở đỉnh stack.
@@ -424,4 +424,4 @@ int main () {
 
 Độ phức tạp thuật toán là \\(O(n)\\).
 
-Mặc dù thuật toán của ta có 2 vòng lặp lồng nhau, nhưng nếu để ý kĩ thì mỗi phần tử trong mảng sẽ được `push` một lần và `pop` nhiều nhất 1 lần. Vậy nên độ phức tạp sẽ là \\(O(n)\\).
+Mặc dù thuật toán của ta có \\(2\\) vòng lặp lồng nhau, nhưng nếu để ý kĩ thì mỗi phần tử trong mảng sẽ được `push` một lần và `pop` nhiều nhất \\(1\\) lần. Vậy nên độ phức tạp sẽ là \\(O(n)\\).

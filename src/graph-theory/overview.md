@@ -54,7 +54,7 @@ Một đồ thị tồn tại các cạnh song song được gọi là **đa đ�
 
 ### Đồ thị vô hướng
 
-Một đồ thị là **vô hướng (undirected)** khi cạnh không được chỉ định hướng. Nếu đồ thị tồn tại một cạnh \\(uv\\), ta có thể đi theo hướng \\(u \rightarrow v\\) và hướng \\(v \rightarrow u\\). Khi này, việc viết 2 cạnh \\(uv\\) và \\(vu\\) là như nhau và ta chỉ cần viết 1 trong 2 cạnh.
+Một đồ thị là **vô hướng (undirected)** khi cạnh không được chỉ định hướng. Nếu đồ thị tồn tại một cạnh \\(uv\\), ta có thể đi theo hướng \\(u \rightarrow v\\) và hướng \\(v \rightarrow u\\). Khi này, việc viết \\(2\\) cạnh \\(uv\\) và \\(vu\\) là như nhau và ta chỉ cần viết \\(1\\) trong \\(2\\) cạnh.
 
 <center>
 <img src="../images/undirected_graph.svg" alt="Đồ thị vô hướng"/>
@@ -62,7 +62,7 @@ Một đồ thị là **vô hướng (undirected)** khi cạnh không được c
 
 ### Đồ thị có hướng
 
-Một đồ thị là **có hướng (directed)** khi cạnh được chỉ định hướng. Điều này có nghĩa rằng nếu đồ thị tồn tại một cạnh \\(uv\\), ta chỉ có thể đi theo hướng \\(u \rightarrow v\\). Khi này, 2 cạnh \\(uv\\) và \\(vu\\) phân biệt. 
+Một đồ thị là **có hướng (directed)** khi cạnh được chỉ định hướng. Điều này có nghĩa rằng nếu đồ thị tồn tại một cạnh \\(uv\\), ta chỉ có thể đi theo hướng \\(u \rightarrow v\\). Khi này, \\(2\\) cạnh \\(uv\\) và \\(vu\\) phân biệt. 
 
 <center>
 <img src="../images/directed_graph.svg" alt="Đồ thị có hướng"/>
@@ -80,7 +80,7 @@ Một đồ thị **có trọng số (weighted)** là một đồ thị có các
 
 ### Đồ thị không có trọng số
 
-Một đồ thị **không có trọng số (unweighted)** là một đồ thị các cạnh không được gán giá trị. Có thể nhìn dạng đồ thị này theo cách khác rằng đồ thị không trọng số là một đồ thị có trọng số với các cạnh được gán giá trị bằng nhau (Ví dụ như có trọng số bằng 1).
+Một đồ thị **không có trọng số (unweighted)** là một đồ thị các cạnh không được gán giá trị. Có thể nhìn dạng đồ thị này theo cách khác rằng đồ thị không trọng số là một đồ thị có trọng số với các cạnh được gán giá trị bằng nhau (Ví dụ như có trọng số bằng \\(1\\)).
 
 ### Đồ thị con
 
@@ -166,8 +166,8 @@ Một **path** là một đường đi trong đó tất cả các đỉnh trên 
 
 **4.** Một **chu trình (cycle)** của \\(G\\) là một đường đi khép kín \\((v_0, v_1, v_2,..., v_k)\\) với \\(k \ge 3\\) và các đỉnh \\((v_0, v_1, v_2,..., v_{k - 1})\\) đôi một phân biệt.
 Một số trường hợp đặc biệt:
-- Nếu \\(G\\) là một đồ thị có hướng hoặc là một đa đồ thị, \\(G\\) tồn tại chu trình có 2 đỉnh khi trong đồ thị tồn tại hai đỉnh \\(a\\) và \\(b\\) được nối với nhau bởi 2 cạnh song song. Ví dụ: ![2_node_cycle](../images/2_node_cycle.svg)
-- \\(G\\) tồn tại chu trình có 1 đỉnh nếu trong đồ thị tồn tại cạnh khuyên. Ví dụ: ![1_node_cycle](../images/1_node_cycle.svg)
+- Nếu \\(G\\) là một đồ thị có hướng hoặc là một đa đồ thị, \\(G\\) tồn tại chu trình có \\(2\\) đỉnh khi trong đồ thị tồn tại hai đỉnh \\(a\\) và \\(b\\) được nối với nhau bởi \\(2\\) cạnh song song. Ví dụ: ![2_node_cycle](../images/2_node_cycle.svg)
+- \\(G\\) tồn tại chu trình có \\(1\\) đỉnh nếu trong đồ thị tồn tại cạnh khuyên. Ví dụ: ![1_node_cycle](../images/1_node_cycle.svg)
 
 **5.** Một đường đi (chu trình) là *sơ cấp* nếu nó không đi qua đỉnh nào hai lần trở lên. Một đường đi (chu trình) là *đơn giản* nếu nó không đi qua cạnh nào hai lần trở lên.
 
@@ -175,7 +175,7 @@ Một số trường hợp đặc biệt:
 
 Cho một đồ thị \\(G = (V, E)\\):
 
-**1.** Hai đỉnh \\(u\\) và \\(v\\) của \\(G\\) **liên thông** nếu tồn tại ít nhất 1 đường đi từ \\(u\\) đến \\(v\\).
+**1.** Hai đỉnh \\(u\\) và \\(v\\) của \\(G\\) **liên thông** nếu tồn tại ít nhất \\(1\\) đường đi từ \\(u\\) đến \\(v\\).
 
 **2.** \\(G\\) **liên thông (connected)** khi mọi cặp đỉnh của \\(G\\) tồn tại đường đi. 
 \\(G\\) **song liên thông (biconnected)** nếu nó liên thông và không có đỉnh khớp, nghĩa là nếu xóa một đỉnh bất kì thì đồ thị vẫn liên thông.
@@ -196,14 +196,14 @@ Cho một đồ thị \\(G = (V, E)\\):
 
 Cho một đồ thị \\(G = (V, E)\\):
 
-**1.** \\(G\\) là cây khi nó thỏa mãn ít nhất 2 điều kiện dưới đây:
+**1.** \\(G\\) là cây khi nó thỏa mãn ít nhất \\(2\\) điều kiện dưới đây:
 - \\(G\\) không có chu trình
 - \\(G\\) liên thông
-- Số cạnh bằng số đỉnh trừ 1 hay \\(|E(G)| = |V(G)| - 1\\) 
+- Số cạnh bằng số đỉnh trừ \\(1\\) hay \\(|E(G)| = |V(G)| - 1\\) 
 
-**2.** \\(G\\) là một **rừng cây (forest)** khi \\(G\\) có nhiều hơn 1 TPLT, mỗi TPLT là một cây.
+**2.** \\(G\\) là một **rừng cây (forest)** khi \\(G\\) có nhiều hơn \\(1\\) TPLT, mỗi TPLT là một cây.
 
-**3.** Chỉ tồn tại **một** đường đi độc nhất nối 2 đỉnh bất kì trên \\(G\\).
+**3.** Chỉ tồn tại **một** đường đi độc nhất nối \\(2\\) đỉnh bất kì trên \\(G\\).
 
 **4.** Thêm một cạnh bất kì chưa có trong \\(G\\) sẽ xuất hiện một chu trình. 
 
@@ -213,7 +213,7 @@ Cho một đồ thị \\(G = (V, E)\\):
 
 Cho một đồ thị cây \\(T = (V, E)\\):
 
-**1.** **Gốc (root)** của \\(T\\) là một đỉnh thuộc \\(T\\) được lựa chọn làm gốc. Thông thường, các bài toán đều chọn đỉnh 1 làm gốc của cây, nếu bài toán không chỉ rõ gốc của cây là đỉnh nào, hãy giả sử nó là đỉnh 1. Một số cây có thể không có gốc.
+**1.** **Gốc (root)** của \\(T\\) là một đỉnh thuộc \\(T\\) được lựa chọn làm gốc. Thông thường, các bài toán đều chọn đỉnh \\(1\\) làm gốc của cây, nếu bài toán không chỉ rõ gốc của cây là đỉnh nào, hãy giả sử nó là đỉnh 1. Một số cây có thể không có gốc.
 
 **2.** **Đỉnh lá (leaf)** của \\(T\\) là các đỉnh có bậc bằng 1.
  
@@ -260,7 +260,7 @@ Ma trận kề là một cấu trúc đơn giản được dùng để lưu mộ
 |**6**|0|0|0|1|0|0|
 
 Ngoài ra:
-- Nếu đồ thị **có trọng số**, ta thay 1 bằng trọng số của cạnh tương ứng.
+- Nếu đồ thị **có trọng số**, ta thay \\(1\\) bằng trọng số của cạnh tương ứng.
 - Nếu đồ thị **vô hướng**, ta đánh dấu cả \\(A[x][y]\\) và \\(A[y][x]\\), còn nếu **có hướng** thì chỉ đánh dấu \\(A[x][y]\\).
 
 ```C++

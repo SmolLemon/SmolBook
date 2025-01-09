@@ -12,7 +12,7 @@ Ta có một đồ thị vô hướng:
 <img src="../images/simple_graph.svg" alt="Đơn đồ thị"/>
 </center>
 
-Giả sử ta bắt đầu thực hiện BFS từ đỉnh 1, thuật toán BFS sẽ duyệt đỉnh 1, sau đó, duyệt qua các đỉnh 2, 3 và 4, và cuối cùng là các đỉnh 3, 5 và 6.
+Giả sử ta bắt đầu thực hiện BFS từ đỉnh \\(1\\), thuật toán BFS sẽ duyệt đỉnh \\(1\\), sau đó, duyệt qua các đỉnh \\(2\\), \\(3\\) và \\(4\\), và cuối cùng là các đỉnh \\(3\\), \\(5\\) và \\(6\\).
 
 Độ phức tạp thời gian của thuật toán BFS cũng tương tự với độ phức tạp của thuật toán DFS.
 

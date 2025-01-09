@@ -18,11 +18,11 @@ Thì sau khi sắp xếp ta có mảng mới
 
 ## Các thuật toán sắp xếp \\(O(n^{2})\\)
 
-Các thuật toán sắp xếp \\(O(n^{2})\\) thường khá đơn giản - thường khá ngắn và sử dụng 2 vòng lặp lồng nhau. Ta sẽ tìm hiểu một số thuật toán sắp xếp \\(O(n^{2})\\) phổ biến.
+Các thuật toán sắp xếp \\(O(n^{2})\\) thường khá đơn giản - thường khá ngắn và sử dụng \\(2\\) vòng lặp lồng nhau. Ta sẽ tìm hiểu một số thuật toán sắp xếp \\(O(n^{2})\\) phổ biến.
 
 ### Sắp xếp nổi bọt (Bubble sort)
 
-Thuật toán sắp xếp nổi bọt hoạt động như sau: Ta xét cặp 2 phần tử liên tiếp. Nếu phần tử đứng trước lớn hơn phần tử đứng sau, hoán đổi vị trí 2 phần tử. 
+Thuật toán sắp xếp nổi bọt hoạt động như sau: Ta xét cặp \\(2\\) phần tử liên tiếp. Nếu phần tử đứng trước lớn hơn phần tử đứng sau, hoán đổi vị trí \\(2\\) phần tử. 
 
 Lặp lại cho đến khi nào không còn cặp phần tử nào có thể hoán đổi vị trí.
 
@@ -40,9 +40,9 @@ Minh họa bằng video: [Bubble-sort with Hungarian ("Csángó") folk dance](ht
 
 ### Sắp xếp chọn (Selection sort)
 
-thuật toán sắp xếp chọn hoạt động như sau: với mỗi vị trí `i` từ 1 đến \\(n\\), ta sẽ tìm số nhỏ nhất từ vị trí `i` đến vị trí `n` và hoán đổi phần tử ở vị trí `i` với phần tử ở vị trí số nhỏ nhất ấy.
+thuật toán sắp xếp chọn hoạt động như sau: với mỗi vị trí \\(i\\) từ \\(1\\) đến \\(n\\), ta sẽ tìm số nhỏ nhất từ vị trí \\(i\\) đến vị trí \\(n\\) và hoán đổi phần tử ở vị trí \\(i\\) với phần tử ở vị trí số nhỏ nhất ấy.
 
-Khi này, với mỗi lần hoàn tất duyệt phần tử thứ `i`, ta có `i` phần tử nhỏ nhất đã được sắp xếp tăng dần.
+Khi này, với mỗi lần hoàn tất duyệt phần tử thứ \\(i\\), ta có \\(i\\) phần tử nhỏ nhất đã được sắp xếp tăng dần.
 
 ```C++
 for(int i = 1; i < n; ++i){
@@ -60,9 +60,9 @@ Minh họa bằng video: [Select-sort with Gypsy folk dance](https://www.youtube
 
 ### Sắp xếp chèn (Insertion sort)
 
-Thuật toán sắp xếp chèn sẽ lần lượt sắp xếp 1 phần tử đầu tiên, sau đó là 2 phần tử, 3 phần tử, ..., cho tới khi toàn bộ \\(n\\) phần tử đã được sắp xếp.
+Thuật toán sắp xếp chèn sẽ lần lượt sắp xếp \\(1\\) phần tử đầu tiên, sau đó là \\(2\\) phần tử, \\(3\\) phần tử, ..., cho tới khi toàn bộ \\(n\\) phần tử đã được sắp xếp.
 
-Với mỗi phần tử có chỉ số `i` từ 2 đến \\(n\\), ta tìm chỉ số của phần tử lớn nhất không lớn hơn phần tử có chỉ số `i`, gọi là `j`. Sau đó, chèn phần tử có chỉ số `i` vào vị trí `j` trong mảng.
+Với mỗi phần tử có chỉ số \\(i\\) từ \\(2\\) đến \\(n\\), ta tìm chỉ số của phần tử lớn nhất không lớn hơn phần tử có chỉ số \\(i\\), gọi là \\(j\\). Sau đó, chèn phần tử có chỉ số \\(i\\) vào vị trí \\(j\\) trong mảng.
 
 ```C++
 for(int i = 2; i <= n; ++i){
@@ -86,11 +86,11 @@ Thuật toán sắp xếp trộn (Merge sort) là một thuật toán sắp xế
 
 Mô tả thuật toán:
 
-- Nếu kích cỡ mảng là 1, kết thúc sắp xếp.
-- Nếu kích cỡ lớn hơn 1:
-  - Chia đôi mảng thành 2 mảng con có kích thước \\(\left\lfloor \frac{n}{2} \right\rfloor \\) và \\(\left\lceil \frac{n}{2} \right\rceil \\)
-  - Sắp xếp 2 mảng con cách đệ quy bằng merge sort
-  - Hợp 2 mảng con lại thành một mảng đã sắp xếp
+- Nếu kích cỡ mảng là \\(1\\), kết thúc sắp xếp.
+- Nếu kích cỡ lớn hơn \\(1\\):
+  - Chia đôi mảng thành \\(2\\) mảng con có kích thước \\(\left\lfloor \frac{n}{2} \right\rfloor \\) và \\(\left\lceil \frac{n}{2} \right\rceil \\)
+  - Sắp xếp \\(2\\) mảng con cách đệ quy bằng merge sort
+  - Hợp \\(2\\) mảng con lại thành một mảng đã sắp xếp
 
 Độ phức tạp của thuật toán là \\(O(n \log{n})\\).
 
@@ -141,12 +141,12 @@ Thuật toán sắp xếp nhanh là một thuật toán áp dụng mô hình chi
 
 Mô tả thuật toán:
 
-- Nếu kích cỡ mảng là 1, kết thúc sắp xếp.
-- Nếu kích cỡ lớn hơn 1:
+- Nếu kích cỡ mảng là \\(1\\), kết thúc sắp xếp.
+- Nếu kích cỡ lớn hơn \\(1\\):
   - Chọn một phần tử bất kì trong mảng 
-  - Chia mảng ra thành 2 mảng con: Một mảng con chứa các số nhỏ hơn phần tử bất kì kia, một mảng con chứa các số còn lại
-  - Sắp xếp 2 mảng con một cách đệ quy bằng quicksort
-  - Hợp 2 con mảng con lại thành một mảng đã sắp xếp
+  - Chia mảng ra thành \\(2\\) mảng con: Một mảng con chứa các số nhỏ hơn phần tử bất kì kia, một mảng con chứa các số còn lại
+  - Sắp xếp \\(2\\) mảng con một cách đệ quy bằng quicksort
+  - Hợp \\(2\\) con mảng con lại thành một mảng đã sắp xếp
 
 ```C++
 int a[N];
@@ -194,7 +194,7 @@ Việc tự tay viết cả một thuật toán sắp xếp rất tốn thời g
 
 Hàm sort của C++ sẽ sắp xếp các số trong khoảng \\([l, r)\\).
 
-VD: sắp xếp các phần tử trong mảng `a` từ vị trí 0 đến `n - 1`.
+VD: sắp xếp các phần tử trong mảng `a` từ vị trí \\(0\\) đến \\(n - 1\\).
 ```C++
 sort(a, a + n);
 ```
@@ -237,7 +237,7 @@ struct phanso {
 	}
 };
 ```
-`struct` `phanso` ở ví dự trên có thao tác so sánh theo giá trị của `a / b`:
+`struct` `phanso` ở ví dự trên có thao tác so sánh theo giá trị của \\(\frac{a}{b}\\):
 
 ### Hàm so sánh
 

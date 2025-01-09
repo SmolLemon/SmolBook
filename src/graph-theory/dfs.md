@@ -12,9 +12,9 @@ Ta có một đồ thị vô hướng:
 <img src="../images/simple_graph.svg" alt="Đơn đồ thị"/>
 </center>
 
-Giả sử ta bắt đầu thực hiện DFS từ đỉnh 1, quá trình của thuật toán sẽ diễn ra như sau: \\(1 \rightarrow 2 \rightarrow 5 \rightarrow\\) (quay lui về \\(2\\)) \\(\rightarrow 6 \rightarrow\\) (quay lui về \\(2\\)) \\(\rightarrow 3 \rightarrow 4 \rightarrow\\) (quay lui về \\(3\\)) \\(\rightarrow\\) (quay lui về \\(2\\)) \\(\rightarrow\\) (quay lui về \\(1\\)).
+Giả sử ta bắt đầu thực hiện DFS từ đỉnh \\(1\\), quá trình của thuật toán sẽ diễn ra như sau: \\(1 \rightarrow 2 \rightarrow 5 \rightarrow\\) (quay lui về \\(2\\)) \\(\rightarrow 6 \rightarrow\\) (quay lui về \\(2\\)) \\(\rightarrow 3 \rightarrow 4 \rightarrow\\) (quay lui về \\(3\\)) \\(\rightarrow\\) (quay lui về \\(2\\)) \\(\rightarrow\\) (quay lui về \\(1\\)).
 
-Khi thực hiện thuật toán DFS, ta nhận thấy mỗi đỉnh của đồ thị sẽ được duyệt nhiều nhất 1 lần, và mỗi cạnh sẽ được duyệt nhiều nhất 2 lần đối với đồ thị vô hướng, hoặc 1 lần đối với đồ thị có hướng. 
+Khi thực hiện thuật toán DFS, ta nhận thấy mỗi đỉnh của đồ thị sẽ được duyệt nhiều nhất \\(1\\) lần, và mỗi cạnh sẽ được duyệt nhiều nhất \\(2\\) lần đối với đồ thị vô hướng, hoặc \\(1\\) lần đối với đồ thị có hướng. 
 
 Tùy vào cách tổ chức đồ thị mà nó sẽ anh hưởng đến độ phức tạp của thuật toán DFS, với các độ phức tạp thời gian \\(O(|V|^2)\\), \\(O(|V| + |E|)\\), \\(O(|V|\times |E|)\\) nếu ta sử dụng ma trận kề, danh sách kề hoặc danh sách cạnh theo thứ tự tương ứng.
 

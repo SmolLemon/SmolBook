@@ -2,7 +2,7 @@
 
 Trong các bài toán lập trình, bài sẽ yêu cầu ta nhập vào dữ liệu, và in ra kết quả tương ứng.
 
-Ta sẽ ví dụ 2 cách nhập xuất dữ liệu trong C++ thông qua bài ví dụ sau: 
+Ta sẽ ví dụ về cách nhập xuất dữ liệu trong C++ thông qua các bài ví dụ sau: 
 
 > Nhập hai số `a` và `b`, yêu cầu in ra tổng hai số.
 > 
@@ -110,7 +110,7 @@ Ta có bài toán yêu cầu ta tính tổng các số trên mỗi hàng với s
 23 56 19 86 29 10
 ```
 
-Các dòng 1, 2, 3 lần lượt có tổng là 10, 3570 và 223.
+Các dòng \\(1\\), \\(2\\), \\(3\\) lần lượt có tổng là \\(10\\), \\(3570\\) và \\(223\\).
 
 Để giải quyết bài toán này, ta sử dụng `stringstream`:
 

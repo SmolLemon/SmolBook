@@ -10,7 +10,7 @@ Ngôn ngữ lập trình C++ là một trong ngôn ngữ được sử dụng ph
 
 ## Cài đặt môi trường code C++
 
-Để chạy chương trình code C++ thì cần 2 phần mềm chính:
+Để chạy chương trình code C++ cần \\(2\\) phần mềm chính:
 
 - Trình biên dịch C++ (Compiler)
 - Trình soạn thảo văn bản (Text editor)
@@ -23,11 +23,15 @@ Người dùng GNU+Linux/MacOS có thể tải về g++ thông qua package manag
 
 Một trong các IDE được sử dụng rộng rãi trong các máy thi là [Code::Blocks](https://www.codeblocks.org/).
 
-Trên các máy Windows, để tải về Code::Blocks, ta truy cập [trang web](https://www.codeblocks.org/downloads/binaries/) của Code::Blocks và tải về phiên bản mingw-setup bằng 1 trong 2 đường dẫn mà trang chỉ ta đến, sau đó thực hiện việc tải Code::Blocks.
+Trên các máy Windows, để tải về Code::Blocks, ta truy cập [trang web](https://www.codeblocks.org/downloads/binaries/) của Code::Blocks và tải về phiên bản mingw-setup bằng \\(1\\) trong \\(2\\) đường dẫn mà trang chỉ ta đến, sau đó thực hiện việc tải Code::Blocks.
+
+<center>
+<img src="../images/codeblock_download_page.png" alt="Tải về Code::blocks"/>
+</center>
 
 ### Cài đặt Code::Blocks cho lập trình thi đấu
 
-Code::Blocks trong các máy thi thường hoặc là mới được tải về hoặc là đang sử dụng các cài đặt mặc định. Mặc định, Code::Blocks sẽ cho trình biên dịch C++ biên dịch chương trình của ta theo tiêu chuẩn C++98 (hơn 26 năm về trước). 
+Code::Blocks trong các máy thi thường hoặc là mới được tải về hoặc là đang sử dụng các cài đặt mặc định. Mặc định, Code::Blocks sẽ cho trình biên dịch C++ biên dịch chương trình của ta theo tiêu chuẩn C++98 (hơn \\(26\\) năm về trước). 
 
 Để Code::Blocks chạy chương trình của ta với theo những tiêu chuẩn mới hơn của C++, ta thực hiện các bước sau:
 

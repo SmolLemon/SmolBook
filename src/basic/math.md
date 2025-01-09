@@ -93,4 +93,4 @@ Logarit cơ số \\(b\\) của một số \\(x\\) có thể được xác địn
 
 Logarit tự nhiên \\(\ln(x)\\) là logarit cơ số \\(e \approx 2.71828\\). 
 
-Trong tin học, khi có hàm \\(\log\\) không có chú thích gì thêm, hãy mặc định nó là logarit cơ số 2.
+Trong tin học, khi có hàm \\(\log\\) không có chú thích gì thêm, hãy mặc định nó là logarit cơ số \\(2\\).

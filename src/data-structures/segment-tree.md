@@ -2,7 +2,7 @@
 
 Quay lại với bài toán ở phần [bảng thưa](./sparse-table.md):
 
-> Cho một mảng `a` có \\(n\\) phần tử và \\(q\\) truy vấn có dạng `(l, r)`. Với mỗi truy vấn, tìm và in ra giá trị nhỏ nhất (GTNN) của các phần tử trong khoảng `[l, r]`.
+> Cho một mảng `a` có \\(n\\) phần tử và \\(q\\) truy vấn có dạng `(l, r)`. Với mỗi truy vấn, tìm và in ra giá trị nhỏ nhất (GTNN) của các phần tử trong khoảng \\([l, r]\\).
 
 Mảng `a` ví dụ:
 
@@ -33,8 +33,8 @@ Mỗi đỉnh của cây sẽ lưu thông tin về một phân đoạn trên m�
 Để xây dựng segment tree, ta có hàm đệ quy `build(p, l, r)`.
 
 Hàm `build(p, l, r)` của ta hoạt động như sau:
-- Nếu \\(l = r\\), giá trị nhỏ nhất của đoạn \\([l, r]\\) chính là phần tử \\(a[l]\\): `st[p] = a[l]`.
-- Nếu \\(l \neq r\\), ta sẽ tính một cách đệ quy GTNN của hai đỉnh con và tính giá trị của đỉnh \\(p\\) từ giá trị của hai đỉnh con: `st[p] = min(st[p * 2], st[p * 2 + 1])`.
+- Nếu \\(l = r\\), giá trị nhỏ nhất của đoạn \\([l, r]\\) chính là phần tử \\(a[l]\\): \\(st[p] = a[l]\\).
+- Nếu \\(l \neq r\\), ta sẽ tính một cách đệ quy GTNN của hai đỉnh con và tính giá trị của đỉnh \\(p\\) từ giá trị của hai đỉnh con: \\(st[p] = min(st[p \times 2], st[p \times 2 + 1])\\).
 
 ```C++
 void build(int p, int l, int r){

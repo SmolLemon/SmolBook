@@ -8,6 +8,8 @@
 
 [Smol Book](https://smollemon.codeberg.page/SmolBook/) is a **competitive programming** guidebook for students and for those who are interested in this topic.
 
+Smol Book is published on [Codeberg](https://smollemon.codeberg.page/SmolBook/) and [Github](https://smollemon.github.io/SmolBook/).
+
 ### Running locally
 
 Smol Book uses [mdBook](https://rust-lang.github.io/mdBook/) to build the site. To run it locally on your machine, download mdBook and follow these steps:

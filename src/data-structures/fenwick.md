@@ -6,15 +6,15 @@
 
 Ta sẽ bắt đầu với bài toán sau:
 
-> Cho một mảng `a` có \\(n\\) phần tử và \\(q\\) truy vấn có dạng `(l, r)`. Với mỗi truy vấn, tìm và in ra tổng của các phần tử trong khoảng `[l, r]`. Chỉ số của mảng `a` bắt đầu từ \\(1\\).
+> Cho một mảng `a` có \\(n\\) phần tử và \\(q\\) truy vấn có dạng `(l, r)`. Với mỗi truy vấn, tìm và in ra tổng của các phần tử trong khoảng \\([l, r]\\). Chỉ số của mảng `a` bắt đầu từ \\(1\\).
 
 \\[a = [1, 5, 8, 2, 7, 3, 4, 6]\\]
 
-Nếu như giá trị của mảng không thay đổi thì ta có thể dễ dàng giải quyết bài toán bằng cách tạo một mảng `T` với `T[0] = 0`, `T[1] = a[1]` và `T[i] = T[i - 1] + a[i]` với mọi `i` lớn hơn 1 (mảng T này còn được gọi là mảng cộng dồn).
+Nếu như giá trị của mảng không thay đổi thì ta có thể dễ dàng giải quyết bài toán bằng cách tạo một mảng `T` với `T[0] = 0`, `T[1] = a[1]` và `T[i] = T[i - 1] + a[i]` với mọi \\(i\\) lớn hơn \\(1\\) (mảng `T` này còn được gọi là mảng cộng dồn).
 
 \\[T = [1, 6, 14, 16, 23, 26, 30, 36] \\]
 
-Khi này, ta có thể tính tổng các phần tử trong khoảng `[l, r]` bằng công thức: `query(l, r) = T[r] - T[l - 1]`.
+Khi này, ta có thể tính tổng các phần tử trong khoảng \\([l, r]\\) bằng công thức: `query(l, r) = T[r] - T[l - 1]`.
 
 Việc xây dựng mảng `T` có độ phức tạp \\(O(n)\\) và các truy vấn là \\(O(1)\\).
 
@@ -32,7 +32,7 @@ Cốt lõi của cây Fenwick sẽ sử dụng ý tưởng này.
 
 Mặc dù có tên gọi là "cây" Fenwick nhưng CTDL này lại được biểu diễn trên một mảng dữ liệu. 
 
-Ta có mảng `ft`, `ft[i]` sẽ lưu tổng của các phần tử có chỉ số nằm trong khoảng \\([i - LSB(i) + 1, i]\\), với hàm `LSB(i)` trả về [giá trị bit nhỏ nhất của `i`](../basic/bit-manipulation.html#tìm-bit-có-giá-trị-nhỏ-nhất). Ví dụ `ft[6]` có giá trị bằng tổng của `a[5]` và `a[6]`.
+Ta có mảng `ft`, `ft[i]` sẽ lưu tổng của các phần tử có chỉ số nằm trong khoảng \\([i - LSB(i) + 1, i]\\), với hàm `LSB(i)` trả về [giá trị bit nhỏ nhất của \\(i\\)](../basic/bit-manipulation.html#tìm-bit-có-giá-trị-nhỏ-nhất). Ví dụ `ft[6]` có giá trị bằng tổng của `a[5]` và `a[6]`.
 
 Từ đây ta có mảng `ft` được xây dựng từ mảng `a`:
 
@@ -69,9 +69,9 @@ int sum(int i){
 
 Hàm `sum(i)` này giúp ta có thể tính toán hiệu quả tổng của \\(i\\) số đầu tiên trong mảng `a`. Từ đây ta có thể tính `query(l, r) = sum(r) - sum(l - 1)`.
 
-Vì với mỗi thao tác ta xóa `LSB(i)` khỏi `i` nên độ phức tạp của hàm `sum` bằng \\(O(\log{n})\\). 
+Vì với mỗi thao tác ta xóa `LSB(i)` khỏi \\(i\\) nên độ phức tạp của hàm `sum` bằng \\(O(\log{n})\\). 
 
-Thực tế trong hầu hết trường hợp số thao tác mà `sum(i)` thực hiện sẽ nhỏ hơn \\(\log{i}\\) do không phải lúc nào `i` cũng có \\(\log{i}\\) bit được bật.
+Thực tế trong hầu hết trường hợp số thao tác mà `sum(i)` thực hiện sẽ nhỏ hơn \\(\log{i}\\) do không phải lúc nào \\(i\\) cũng có \\(\log{i}\\) bit được bật.
 
 ### Hàm `update(i, x)`
 
@@ -96,9 +96,9 @@ Tương tự với `sum(i)`, độ phức tạp của `update(i, x)` là \\(O(\l
 
 ### Xây dựng mảng `ft`
 
-Để xây dựng mảng `ft` cho cây Fenwick, ta có thể áp dụng 1 trong 2 phương pháp:
+Để xây dựng mảng `ft` cho cây Fenwick, ta có thể áp dụng \\(1\\) trong \\(2\\) phương pháp:
 
-**Phương pháp 1:** gán `ft[i] = 0` với mọi `i` từ \\(1\\) đến \\(n\\). Duyệt từ \\(1\\) đến \\(n\\), gọi hàm `update(i, a[i])`.
+**Phương pháp 1:** gán `ft[i] = 0` với mọi \\(i\\) từ \\(1\\) đến \\(n\\). Duyệt từ \\(1\\) đến \\(n\\), gọi hàm `update(i, a[i])`.
 
 ```C++
 for(int i = 1; i <= n; ++i){
@@ -106,9 +106,9 @@ for(int i = 1; i <= n; ++i){
 }
 ```
 
-Phương pháp 1 có độ phức tạp \\(O(n\log{n})\\).
+Phương pháp \\(1\\) có độ phức tạp \\(O(n\log{n})\\).
 
-**Phương pháp 2:** gán `ft[i] = a[i]` với mọi `i` từ \\(1\\) đến \\(n\\). Duyệt từ \\(1\\) đến \\(n\\), nếu \\(i + LSB(i) \le n\\), cập nhật `ft[i + LSB(i)] += ft[i]`. 
+**Phương pháp 2:** gán `ft[i] = a[i]` với mọi \\(i\\) từ \\(1\\) đến \\(n\\). Duyệt từ \\(1\\) đến \\(n\\), nếu \\(i + LSB(i) \le n\\), cập nhật `ft[i + LSB(i)] += ft[i]`. 
 
 ```C++
 for(int i = 1; i <= n; ++i){
@@ -118,4 +118,4 @@ for(int i = 1; i <= n; ++i){
 }
 ```
 
-Phương pháp 2 có độ phức tạp \\(O(n)\\).
+Phương pháp \\(2\\) có độ phức tạp \\(O(n)\\).

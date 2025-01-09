@@ -6,19 +6,19 @@ Khi viết chương trình giải quyết các bài toán, ta cần phải tuân
 
 ## Giới thiệu
 
-Các máy tính khác nhau sẽ có tốc độ xử lí khác nhau - một số máy thì chạy nhanh, một số khác thì chậm, còn lại chạy vừa vừa. Có những trường hợp như 2 anh A và B cùng chạy một chương trình máy tính, cùng một thuật toán, nhưng máy của anh A lại chạy trong 6 giây, còn máy của anh B lại mất tới 9 giây.
+Các máy tính khác nhau sẽ có tốc độ xử lí khác nhau - một số máy thì chạy nhanh, một số khác thì chậm, còn lại chạy vừa vừa. Có những trường hợp như \\(2\\) anh A và B cùng chạy một chương trình máy tính, cùng một thuật toán, nhưng máy của anh A lại chạy trong \\(6\\) giây, còn máy của anh B lại mất tới \\(9\\) giây.
 
 <center>
 <img src="../images/6_hay_9.jpg" alt="6 hay 9 giây?"/>
 </center>
 
-Để có thể có được một sự thống nhất trong việc xác định độ hiệu quả của một thuật toán, ta thực hiện việc tính độ phức tạp của thuật toán ấy.
+Để có được một sự thống nhất trong việc xác định độ hiệu quả của một thuật toán, ta thực hiện việc tính độ phức tạp của thuật toán ấy.
 
 ## Độ phức tạp thời gian 
 
-Độ phức tạp thời gian của một thuật toán sẽ ước tính thời gian chạy của một thuật toán dựa vào kích thức dữ liệu nhập để biết được nếu độ hiệu quả của thuật toán. Độ phức tạp thời gian được biểu diễn dưới dạng Big-O với kí hiệu \\(O(...)\\), ta thay thế 3 dấu chấm với kết quả của việc tính độ phức tạp thời gian. 
+Độ phức tạp thời gian của một thuật toán sẽ ước tính thời gian chạy của một thuật toán dựa vào kích thức dữ liệu nhập để biết được nếu độ hiệu quả của thuật toán. Độ phức tạp thời gian được biểu diễn dưới dạng Big-O với kí hiệu \\(O(...)\\), ta thay thế \\(3\\) dấu chấm với kết quả của việc tính độ phức tạp thời gian. 
 
-Thông thường, N dùng để tượng trưng cho kích thước dữ liệu nhập. Vì thời gian thực hiện thuật toán có thể thay đổi tùy vào những giá trị khác nhau có trong các dữ liệu nhập có cùng kích thước N, ta quan tâm nhiều nhất là trường hợp tệ nhất của thuật toán.
+Thông thường, \\(n\\) dùng để tượng trưng cho kích thước dữ liệu nhập. Vì thời gian thực hiện thuật toán có thể thay đổi tùy vào những giá trị khác nhau có trong các dữ liệu nhập có cùng kích thước \\(n\\), ta quan tâm nhiều nhất là trường hợp tệ nhất của thuật toán.
 
 ### Cách tính độ phức tạp thời gian
 
@@ -48,7 +48,7 @@ for(int i = 1; i <= n; ++i){
 }
 ```
 
-Từ đây, k vòng lặp lồng nhau có độ phức tạp thời gian là \\(O(n^k)\\).
+Từ đây, \\(k\\) vòng lặp lồng nhau có độ phức tạp thời gian là \\(O(n^k)\\).
 
 Việc tính độ phức tạp thời gian chỉ thể hiện qua độ lớn của đầu vào và bỏ qua các hằng số, nên các vòng lặp như:
 
@@ -64,7 +64,7 @@ for(int i = 1; i <= n; i += 2){
 }
 ```
 
-lặp với số lần lần lượt là \\(5 \times n\\), \\(\left\lceil \frac{n}{2} \right\rceil \\) vẫn có độ phức tạp thời gian là \\(O(n)\\).
+Lặp với số lần lần lượt là \\(5 \times n\\), \\(\left\lceil \frac{n}{2} \right\rceil \\) vẫn có độ phức tạp thời gian là \\(O(n)\\).
 
 Nếu chương trình có nhiều giai đoạn với các độ phức tạp khác nhau, ta sẽ chọn giai đoạn có độ phức tạp chậm nhất trong tất cả các giai đoạn làm độ phức tạp thời gian của cả thuật toán.
 
@@ -80,7 +80,7 @@ for(int i = 1; i <= n; ++i){
 }
 ```
 
-chương trình trên có 2 giai đoạn với độ phức tạp lần lượt là \\(O(n)\\) và \\(O(n^{2})\\). Vậy độ phức tạp thời gian của chương trình là \\(O(n^2) + O(n) = O(n^{2})\\).
+Chương trình trên có \\(2\\) giai đoạn với độ phức tạp lần lượt là \\(O(n)\\) và \\(O(n^{2})\\). Vậy độ phức tạp thời gian của chương trình là \\(O(n^2) + O(n) = O(n^{2})\\).
 
 Nên nhớ rằng độ phức tạp thời gian chỉ ước tính thời gian của thuật toán dựa trên kích thước đầu vào nên các chương trình như:
 
@@ -94,7 +94,7 @@ Sẽ có độ phức tạp thời gian là \\(O(1)\\), mặc dù đang thực h
 
 #### Các yếu tố khác
 
-Việc tính độ phức tạp thời gian không chỉ có mỗi 1 giá trị mà còn có thể nhiều hơn. Code dưới đây có độ phức tạp thời gian là \\(O(nm)\\).
+Việc tính độ phức tạp thời gian không chỉ có mỗi \\(1\\) giá trị mà còn có thể nhiều hơn. Code dưới đây có độ phức tạp thời gian là \\(O(nm)\\).
 
 ```c++
 for(int i = 1; i <= n; ++i){
@@ -106,9 +106,9 @@ for(int i = 1; i <= n; ++i){
 
 #### Đệ quy 
 
-Độ phức tạp của một hàm đệ quy được tính bằng số lần gọi đệ quy và độ phức tạp của mỗi lần gọi
+Độ phức tạp của một hàm đệ quy được tính bằng số lần gọi đệ quy và độ phức tạp của mỗi lần gọi.
 
-Hàm dưới đây sẽ in ra các số từ 1 đến n:
+Hàm dưới đây sẽ in ra các số từ \\(1\\) đến \\(n\\):
 
 ```c++
 void print(int n){
@@ -118,7 +118,7 @@ void print(int n){
 }
 ```
 
-Dễ thấy hàm này được gọi n lần và mỗi lần gọi có độ phức tạp thời gian là \\(O(1)\\). Từ đó ta suy ra được độ phức tạp thời gian của hàm sẽ là \\(O(n)\\).
+Dễ thấy hàm này được gọi \\(n\\) lần và mỗi lần gọi có độ phức tạp thời gian là \\(O(1)\\). Từ đó ta suy ra được độ phức tạp thời gian của hàm sẽ là \\(O(n)\\).
 
 Xét hàm dưới đây:
 
@@ -130,7 +130,7 @@ void f(int n){
 }
 ```
 
-Hàm \\(f(n)\\) sẽ được gọi 1 lần, \\(f(n - 1)\\) được gọi 2 lần, ..., \\(f(1)\\) được gọi \\(2^{n - 1}\\) lần.
+Hàm \\(f(n)\\) sẽ được gọi \\(1\\) lần, \\(f(n - 1)\\) được gọi \\(2\\) lần, ..., \\(f(1)\\) được gọi \\(2^{n - 1}\\) lần.
 
 Từ đó, độ phức tạp thời gian của thuật toán sẽ là:
 
@@ -153,9 +153,9 @@ Từ đó, độ phức tạp thời gian của thuật toán sẽ là:
 
 Ta có thể ước tính độ phức tạp thời gian để xác định xem thuật toán của ta có thể chạy được trong giới hạn thời gian hay không. Máy chấm thường sẽ thực hiện \\(10^8\\) phép tính/giây. Bài cho ta giới hạn 1 giây và ta chạy một thuật toán \\(O(n^2)\\) với \\(n = 10^5\\) thì máy chấm sẽ phải xử lí ít nhất \\((10^5)^{2}\\) = \\(10^{10}\\) phép tính và thời gian chạy sẽ là \\(\frac{10^{10}}{10^8} = 100\\) giây. Vậy là chương trình của ta đã chạy quá thời gian và nhận về lỗi TLE.
 
-Khi biết được giá trị N, ta có thể ước tính được độ phức tạp của thuật toán ta cần áp dụng:
+Khi biết được giá trị \\(n\\), ta có thể ước tính được độ phức tạp của thuật toán ta cần áp dụng:
 
-|Giá trị của n|Ước tính độ phức tạp|
+|Giá trị của \\(n\\)|Ước tính độ phức tạp|
 |---|---|
 |\\(n \leq 10\\)|\\(O(n!)\\)|
 |\\(n \leq 20\\)|\\(O(2^n)\\)|

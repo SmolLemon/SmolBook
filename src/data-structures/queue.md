@@ -2,7 +2,7 @@
 
 ## Định nghĩa
 
-**Queue (hàng đợi)** là một CTDL lưu trữ các phần tử gồm 2 thao tác chính:
+**Queue (hàng đợi)** là một CTDL lưu trữ các phần tử gồm \\(2\\) thao tác chính:
 
 - **Push**: Thêm một phần tử vào *cuối* danh sách, và
 - **Pop**: Loại bỏ phần tử ở *đầu* danh sách
@@ -21,7 +21,7 @@ queue<kiểu_dữ_liệu> Tên_queue;
 
 Các phương thức phổ biến của queue:
 
-- `push(x)`: Thêm phần tử `x` vào queue
+- `push(x)`: Thêm phần tử \\(x\\) vào queue
 - `pop()`: Loại bỏ một phần tử ở đầu queue
 - `front()`: Trả về giá trị của phần tử ở đầu queue
 - `back()`: Trả về giá trị của phần tử ở cuối queue

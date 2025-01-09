@@ -4,16 +4,16 @@ Dưới đây là một số mẹo cho C++ trong lập trình thi đấu.
 
 ## Fast I/O
 
-Trong hầu hết các bài nộp C++, ta thường bắt gặp 2 dòng lệnh phổ biến ở đầu hàm `main`:
+Trong hầu hết các bài nộp C++, ta thường bắt gặp \\(2\\) dòng lệnh phổ biến ở đầu hàm `main`:
 
 ```C++
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 ```
 
-2 câu lệnh này giúp tăng tốc chương trình bằng cách thay đổi cách nhập xuất của nó.
+\\(2\\) câu lệnh này giúp tăng tốc chương trình bằng cách thay đổi cách nhập xuất của nó.
 
-- `ios_base::sync_with_stdio(false)` tắt đồng bộ giữa cách nhập xuất của C và C++. Tính năng này giúp ta có thể sử dụng linh hoạt giữa hai cách nhập xuất khác nhau. Khi tắt tính năng này, chương trình của ta sẽ chạy nhanh hơn nếu bài toán yêu cầu nhập xuất dữ liệu nhiều lần. Lưu ý rằng nếu tắt đồng bộ thì không nên sử dụng lẫn lộn 2 cách nhập xuất.
+- `ios_base::sync_with_stdio(false)` tắt đồng bộ giữa cách nhập xuất của C và C++. Tính năng này giúp ta có thể sử dụng linh hoạt giữa hai cách nhập xuất khác nhau. Khi tắt tính năng này, chương trình của ta sẽ chạy nhanh hơn nếu bài toán yêu cầu nhập xuất dữ liệu nhiều lần. Lưu ý rằng nếu tắt đồng bộ thì không nên sử dụng đồng thời \\(2\\) cách nhập xuất.
 - `cin.tie(NULL)` tắt  đồng bộ giữa `cin` và `cout`. `tie()` được dùng để đảm bảo tất cả các dữ liệu của `cout` sẽ được xuất ra màn hình trước khi thực hiện `cin` nhập dữ liệu. Điều này sẽ giúp ích cho các chương trình cần sự tương tác giữa người và chương trình, hoặc chương trình và chương trình - thứ mà ngoài dạng bài toán tương tác ra thì không cần thiết trong lập trình thi đấu. Việc tương tác này sẽ chương trình của ta sẽ chạy chậm đi. Ta tắt tính năng này để gia tăng tốc độ chương trình.
 
 ## Sử dụng `'\n'` thay thế cho `endl`
@@ -67,7 +67,7 @@ VD:
 
 ### Xuống dòng
 
-Dưới đây là một đoạn của một chương trình in ra các giá trị của một mảng 2 chiều kích thước `n * m`:
+Dưới đây là một đoạn của một chương trình in ra các giá trị của một mảng \\(2\\) chiều kích thước `n * m`:
 
 ```C++
 for (int i = 1; i <= n; ++i) {
@@ -92,7 +92,7 @@ Dòng lệnh này có ý nghĩa: `"\n "` là một xâu kí tự, trong khi ta c
 
 ## Viết số lớn
 
-Sẽ có nhiều bài yêu cầu ta phải tạo một mảng lớn (như \\(10^6\\) chẳng hạn), nhiều người có thể sẽ viết một mảng `a` và số \\(10^6\\) cộng thêm một số nhỏ như 10: `a[1000010]`. Kiểu viết này tuy không sai nhưng rất dễ xảy ra lỗi.
+Sẽ có nhiều bài yêu cầu ta phải tạo một mảng lớn (như \\(10^6\\) chẳng hạn), nhiều người có thể sẽ viết một mảng `a` và số \\(10^6\\) cộng thêm một số nhỏ như \\(10\\): `a[1000010]`. Kiểu viết này tuy không sai nhưng rất dễ xảy ra lỗi.
 
 ```C++
 /*
@@ -114,7 +114,7 @@ int a[N], b[N], c[N];
 int d[N], e[N], f[N];
 ```
 
-Chữ `e` (hoặc `E`) trong đoạn code là [E notation](https://en.wikipedia.org/wiki/Scientific_notation#E_notation). Khi viết \\(mEn\\) sẽ có giá trị: \\(m \times n^E\\).
+Chữ `e` (hoặc `E`) trong đoạn code là [E notation](https://en.wikipedia.org/wiki/Scientific_notation#E_notation). Khi viết \\(mEn\\) sẽ có giá trị: \\(m \times n^{10}\\).
 
 VD: 
 - `1e6 = 10^6 = 1000000`
@@ -239,7 +239,7 @@ int main() {
 }
 ```
 
-Chương trình ở trên sẽ không chạy được do hàm `odd()` được khai báo trước hàm `even()`, từ đó "không thấy được" hàm ấy.
+Chương trình ở trên sẽ không chạy được do hàm `odd()` được khai báo trước hàm `even()`, từ đó "không thấy" hàm ấy.
 
 Vẫn đề đó sẽ không tồn tại nếu ta viết theo cách sau:
 
@@ -271,4 +271,4 @@ bool even(int x){
 
 Bằng cách khai báo các hàm ở dưới hàm main, ta tránh được lỗi xảy ra khi các hàm phụ thuộc lẫn nhau.
 
-Tuy nhiên, cách viết này cũng tồn tại một vài bất lợi, cụ thể là khi sửa các hàm ta phải sửa tận 2 chỗ thay vì 1.
+Tuy nhiên, cách viết này cũng tồn tại một vài bất lợi, cụ thể là khi sửa các hàm ta phải sửa tận \\(2\\) vị trí thay vì \\(1\\).

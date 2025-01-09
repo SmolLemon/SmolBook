@@ -2,23 +2,23 @@
 
 Bài toán mở đầu: 
 
-> Cho một mảng `a` chứa \\(n\\) phần tử phân biệt được sắp xếp tăng dần. Kiểm tra xem có tồn tại phần tử có giá trị `x` trong mảng hay không.
+> Cho một mảng `a` chứa \\(n\\) phần tử phân biệt được sắp xếp tăng dần. Kiểm tra xem có tồn tại phần tử có giá trị \\(x\\) trong mảng hay không.
 
-Để giải quyết bài toán này, ta có thể duyệt qua tất cả các phần tử và kiểm tra phần tử nào có giá trị bằng x, nhưng độ phức tạp thời gian sẽ là \\(O(n)\\). Ta có thể giải được bài toán này một cách tối ưu bằng các sử dụng thuật toán tìm kiếm nhị phân.
+Để giải quyết bài toán này, ta có thể duyệt qua tất cả các phần tử và kiểm tra phần tử nào có giá trị bằng \\(x\\), nhưng độ phức tạp thời gian sẽ là \\(O(n)\\). Ta có thể giải được bài toán này một cách tối ưu bằng các sử dụng thuật toán tìm kiếm nhị phân.
 
 ## Thuật toán
 
 Ta nhận xét, vì mảng `a` đã được sắp xếp tăng dần, nên phần tử đứng sau luôn lớn hơn phần tử đứng trước.
 
-Giả sử phần tử `a[i]` nhỏ hơn `x`, ta có thể nhận thấy ngay được rằng mọi phần tử đứng sau `a[i]` đều nhỏ hơn `x`.
+Giả sử phần tử `a[i]` nhỏ hơn \\(x\\), ta có thể nhận thấy ngay được rằng mọi phần tử đứng sau `a[i]` đều nhỏ hơn \\(x\\).
 
 Khi này, ta có thuật toán nhị phân:
 - Tìm giá trị của phần tử ở giữa mảng.
 - Xét trường hợp:
-	- Nếu phần tử bằng `x`, vậy ta kết luận có phần tử có giá trị bằng `x`. Khi này ta kết thúc tìm kiếm nhị phân. 
-	- Nếu phần tử nhỏ hơn `x`, phần tử ấy và mọi phần tử đứng sau nó đều nhỏ hơn `x`. Loại bỏ tất cả phần tử từ đầu mảng đến phần ở giữa ấy. 
-	- Nếu phần tử ấy lớn hơn `x`, phần tử ấy và mọi phần tử đứng trước nó đều lớn hơn `x`. Loại bỏ tất cả phần tử từ cuối mảng đến phần tử ấy. 
-- Tiếp tục thực hiện tìm kiếm nhị phân cho tới khi không còn phần tử nào để thực hiện việc tìm kiếm, khi này ta thông báo rằng mảng không tồn tại phần tử có giá trị `x`.
+	- Nếu phần tử bằng \\(x\\), vậy ta kết luận có phần tử có giá trị bằng \\(x\\). Khi này ta kết thúc tìm kiếm nhị phân. 
+	- Nếu phần tử nhỏ hơn \\(x\\), phần tử ấy và mọi phần tử đứng sau nó đều nhỏ hơn \\(x\\). Loại bỏ tất cả phần tử từ đầu mảng đến phần ở giữa ấy. 
+	- Nếu phần tử ấy lớn hơn \\(x\\), phần tử ấy và mọi phần tử đứng trước nó đều lớn hơn \\(x\\). Loại bỏ tất cả phần tử từ cuối mảng đến phần tử ấy. 
+- Tiếp tục thực hiện tìm kiếm nhị phân cho tới khi không còn phần tử nào để thực hiện việc tìm kiếm, khi này ta thông báo rằng mảng không tồn tại phần tử có giá trị \\(x\\).
 
 ```C++
 bool tknp(int a[], int n, int x){
@@ -37,7 +37,7 @@ Vì mỗi lần ta tìm kiếm ta giảm đi một nửa số phần tử trong 
 
 ## Tìm kiếm nhị phân trên hàm đơn điệu
 
-Ta có một hàm \\(f(x)\\) trả về một trong hai giá trị \\(true\\) hoặc \\(false\\). Trong nhiều bài toán, ta được yêu cầu tìm giá trị `x` lớn nhất hoặc nhỏ nhất sao cho \\(f(x) = true\\). Giống với bài toán tìm phần tử trên mảng, ta cũng có thể giải quyết dạng bài này bằng tìm kiếm nhị phân nếu hàm \\(f(x)\\) là một hàm đơn điệu, tức giá trị của hàm không giảm hoặc không tăng.
+Ta có một hàm \\(f(x)\\) trả về một trong hai giá trị \\(true\\) hoặc \\(false\\). Trong nhiều bài toán, ta được yêu cầu tìm giá trị \\(x\\) lớn nhất hoặc nhỏ nhất sao cho \\(f(x) = true\\). Giống với bài toán tìm phần tử trên mảng, ta cũng có thể giải quyết dạng bài này bằng tìm kiếm nhị phân nếu hàm \\(f(x)\\) là một hàm đơn điệu, tức giá trị của hàm không giảm hoặc không tăng.
 
 ### Tìm kiếm giá trị nhỏ nhất
 
@@ -45,7 +45,7 @@ Bài toán yêu cầu tìm một giá trị \\(k\\) mà \\(f(x) = false\\) với
 
 Ta có bảng sau:
 
-|x|0|1|...|k - 1|k|k + 1|...|
+|\\(x\\)|\\(0\\)|\\(1\\)|...|\\(k - 1\\)|\\(k\\)|\\(k + 1\\)|...|
 |---|---|---|---|---|---|---|---|
 |\\(f(x)\\)|\\(false\\)|\\(false\\)|...|\\(false\\)|\\(true\\)|\\(true\\)|...|
 
@@ -86,11 +86,11 @@ Dễ thấy, dạng bài toán này giống với tìm kiếm nhị phân trên 
 
 Ta sẽ ứng dụng cách giải quyết này cho bài toán sau:
 
-> Cho `n` hình chữ nhật kích thước \\(a \times b\\). Tính độ dài của hình vuông nhỏ nhất chứa tất cả `n` hình chữ nhật này.
+> Cho \\(n\\) hình chữ nhật kích thước \\(a \times b\\). Tính độ dài của hình vuông nhỏ nhất chứa tất cả \\(n\\) hình chữ nhật này.
 
-Ta tạo hàm \\(f(x)\\) trả về \\(true\\) nếu hình vuông cạnh \\(x\\) chứa được tất cả `n` hình chữ nhật, và \\(false\\) nếu không thể.
+Ta tạo hàm \\(f(x)\\) trả về \\(true\\) nếu hình vuông cạnh \\(x\\) chứa được tất cả \\(n\\) hình chữ nhật, và \\(false\\) nếu không thể.
 
-Ta biết được \\(f(x)\\) là một hàm đơn điệu vì nếu ta có thể xếp `n` hình chữ nhật vào hình vuông cạnh \\(x\\) thì ta cũng thực hiện được với hình vuông cạnh \\(x + 1\\).
+Ta biết được \\(f(x)\\) là một hàm đơn điệu vì nếu ta có thể xếp \\(n\\) hình chữ nhật vào hình vuông cạnh \\(x\\) thì ta cũng thực hiện được với hình vuông cạnh \\(x + 1\\).
 
 Ta có số lượng hình chữ nhật \\(a \times b\\) nhiều nhất có thể được xếp trong hình vuông cạnh \\(x\\) là \\(\left\lfloor \frac{x}{a} \right\rfloor \times \left\lfloor \frac{x}{b} \right\rfloor \\) **(người đọc tự chứng minh)**. Từ đây ta có hàm \\(f(x)\\):
 - \\(f(x) = 1\\) nếu \\(\left\lfloor \frac{x}{a} \right\rfloor \times \left\lfloor \frac{x}{b} \right\rfloor \le n\\)
@@ -120,9 +120,9 @@ Thay đổi `[iterator_count]` để tạo sự cân bằng giữa độ chính 
 
 C++ có các hàm dựa trên tìm kiếm nhị phân:
 
-- Hàm `lower_bound` trả về vị trí phần tử đầu tiên có giá trị lớn hơn hoặc bằng `x`
-- Hàm `upper_bound` trả về vị trí phần tử đầu tiên có giá trị lớn hơn `x`
-- Hàm `equal_range` trả về 2 vị trí `lower_bound` và `upper_bound`
+- Hàm `lower_bound` trả về vị trí phần tử đầu tiên có giá trị lớn hơn hoặc bằng \\(x\\)
+- Hàm `upper_bound` trả về vị trí phần tử đầu tiên có giá trị lớn hơn \\(x\\)
+- Hàm `equal_range` trả về \\(2\\) vị trí `lower_bound` và `upper_bound`
 
 ```C++
 auto idx = lower_bound(a, a + n, x) - a;
@@ -131,7 +131,7 @@ if(idx < n && a[idx] == x){
 }
 ```
 
-Code dưới đây đếm số phần tử có giá trị bằng `x`.
+Code dưới đây đếm số phần tử có giá trị bằng \\(x\\).
 
 ```C++
 auto l = lower_bound(a, a + n, x) - a;

@@ -2,16 +2,16 @@
 
 ## Định nghĩa
 
-CTDL **Disjoint Sets Union (DSU)** hay với tên gọi khác là **Union-Find Disjoint Sets (UFDS)** là một CTDL quản lí các tập hợp không giao nhau, tức là các tập hợp không có phần tử chung. CTDL này có thể trả lời *hiệu quả* nếu 2 phần tử có nằm trong cùng một tập hợp hay không, hoặc hợp 2 tập hợp lại với nhau.
+CTDL **Disjoint Sets Union (DSU)** hay với tên gọi khác là **Union-Find Disjoint Sets (UFDS)** là một CTDL quản lí các tập hợp không giao nhau, tức là các tập hợp không có phần tử chung. CTDL này có thể trả lời *hiệu quả* nếu \\(2\\) phần tử có nằm trong cùng một tập hợp hay không, hoặc hợp \\(2\\) tập hợp lại với nhau.
 
 Như tên gọi của mình, DSU bao gồm các thao tác chính:
-- **MakeSet**: Tạo một tập hợp có 1 phần tử là a.
+- **MakeSet**: Tạo một tập hợp có \\(1\\) phần tử là a.
 - **Union**: Hợp tập hợp chứa phần tử a và tập hợp chứa phần tử b thành một tập hợp, và
 - **Find**: Tìm phần tử đại diện của tập hợp chứa phần tử a.
 
 Mỗi tập hợp sẽ có một phần tử làm phần tử *đại diện*, dùng để xác định tập hợp mà nó nằm trong. Đây cũng là giá trị trả về của thao tác **Find**.
 
-Để kiểm tra nếu 2 phần tử có nằm trong cùng một tập hợp không thì ta kiểm tra nếu `Find(a) = Find(b)` hay nếu tập hợp chứa a và tập hợp chứa b đều có cùng một phần tử đại diện.
+Để kiểm tra nếu \\(2\\) phần tử có nằm trong cùng một tập hợp không thì ta kiểm tra nếu `Find(a) = Find(b)` hay nếu tập hợp chứa a và tập hợp chứa b đều có cùng một phần tử đại diện.
 
 ## Cài đặt
 
@@ -83,9 +83,9 @@ Như đã nói ở trên, trên trung bình, các cây có độ cao tương đ�
 
 #### Union theo thứ hạng
 
-Ta có Union theo thứ hạng: Khi Union tập hợp chứa a và tâp hợp chứa b, cây nào có thứ hạng cao hơn sẽ là cha của cây có thứ hạng thấp hơn, nếu 2 cây có thứ hạng bằng nhau thì gốc của đỉnh nào làm cha cũng được, nhưng thứ hạng của cây có đỉnh được chọn phải tăng thêm 1.
+Ta có Union theo thứ hạng: Khi Union tập hợp chứa a và tâp hợp chứa b, cây nào có thứ hạng cao hơn sẽ là cha của cây có thứ hạng thấp hơn, nếu \\(2\\) cây có thứ hạng bằng nhau thì gốc của đỉnh nào làm cha cũng được, nhưng thứ hạng của cây có đỉnh được chọn phải tăng thêm \\(1\\).
 
-Ta sẽ tạo một mảng `r` lưu thứ hạng của tập hợp chứa đỉnh i. Ban đầu, các giá trị trong `r` sẽ bằng 0.
+Ta sẽ tạo một mảng `r` lưu thứ hạng của tập hợp chứa đỉnh i. Ban đầu, các giá trị trong `r` sẽ bằng \\(0\\).
 
 Hàm `Find` sẽ tương tự với Find trong Quick-Union.
 
@@ -102,13 +102,13 @@ void Union(int a, int b){
 
 Ta có giả thiết: Một cây có thứ hạng \\(k\\) sẽ có ít nhất \\(2^{k}\\) đỉnh. 
 
-> Chứng minh: Nếu \\(k\\) bằng 0, thì điều này là chính xác vì khi cây có thứ hạng bằng 0 thì chỉ có 1 đỉnh. Ta cũng nhận thấy rằng để có cây có thứ hạng \\(k\\) thì nó phải được Union theo thứ hạng từ 2 cây có thứ hạng \\(k - 1\\), khi đó số đỉnh trong cây có thứ hạng \\(k\\) sẽ lớn hơn hoặc bằng \\(2^{k - 1} + 2^{k - 1} = 2^k\\).
+> Chứng minh: Nếu \\(k\\) bằng 0, thì điều này là chính xác vì khi cây có thứ hạng bằng 0 thì chỉ có \\(1\\) đỉnh. Ta cũng nhận thấy rằng để có cây có thứ hạng \\(k\\) thì nó phải được Union theo thứ hạng từ \\(2\\) cây có thứ hạng \\(k - 1\\), khi đó số đỉnh trong cây có thứ hạng \\(k\\) sẽ lớn hơn hoặc bằng \\(2^{k - 1} + 2^{k - 1} = 2^k\\).
 
 Từ đây ta có thể nhận định rằng thứ hạng cao nhất có thể khi liên tiếp thực hiện Union theo thứ hạng n phần tử là \\(\log{n}\\).
 
 #### Union theo kích thước
 
-Ta có Union theo kích thước: Khi Union tập hợp chứa a và tâp hợp chứa b, cây có nhiều đỉnh hơn sẽ là cha của gốc của cây có ít đỉnh hơn, nếu 2 cây có số lượng đỉnh bằng nhau thì lấy cây nào làm cha cũng được.
+Ta có Union theo kích thước: Khi Union tập hợp chứa a và tâp hợp chứa b, cây có nhiều đỉnh hơn sẽ là cha của gốc của cây có ít đỉnh hơn, nếu \\(2\\) cây có số lượng đỉnh bằng nhau thì lấy cây nào làm cha cũng được.
 
 Ta sẽ tạo một mảng `sz` lưu kích thước của tập hợp chứa đỉnh `i`. Ban đầu, các giá trị trong `sz` sẽ bằng 1.
 
@@ -157,7 +157,7 @@ int Find(int a){
 
 Hàm `Find` này chạy rất nhanh, với độ phức tạp \\(O(\log^* n)\\) trên trung bình nếu kết hợp với Union theo thứ hạng/kích thước hoặc \\(O(\log{n})\\) nếu sử dụng đơn lẻ. 
 
-\\(\log^* n\\) hay logarit lặp là số lần áp dụng hàm \\(\log_2\\) với chính nó cho tới khi giá trị đạt được không lớn hơn 1.
+\\(\log^* n\\) hay logarit lặp là số lần áp dụng hàm \\(\log_2\\) với chính nó cho tới khi giá trị đạt được không lớn hơn \\(1\\).
 
 VD: \\(65536 = 2^{16} \rightarrow 16 = 2^4 \rightarrow 4 = 2^2 \rightarrow 2 \rightarrow 1 \implies log^* 65536 = 4\\)
 

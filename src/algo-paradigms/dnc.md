@@ -6,13 +6,13 @@
 
 **Chia để trị (Divide and Conquer)** là một mô hình thuật toán. Một thuật toán áp dụng mô hình chia sẽ trị sẽ giải quyết bài toán bằng cách chia bài toán thành các bài toán nhỏ hơn (thường là chia làm đôi). Từ những bài toán nhỏ hơn này ta kết hợp các đáp án của chúng lại với nhau để tìm được đáp án của bài toán ban đầu.
 
-Giống như khi ta đọc và nhớ một số điện thoại, ta không nhớ một lúc 10 chữ số `xxxxxxxxx` mà ta chia nó ra thành 3 phần nhỏ hơn `xxxx-xxx-xxx` để dễ ghi nhớ.
+Giống như khi ta đọc và nhớ một số điện thoại, ta không nhớ một lúc \\(10\\) chữ số `xxxxxxxxx` mà ta chia nó ra thành \\(3\\) phần nhỏ hơn `xxxx-xxx-xxx` để dễ ghi nhớ.
 
 Ta đã được thấy mô hình này được áp dụng ở các thuật toán như [tìm kiếm nhị phân](../basic/binary-search.md), [merge sort](../basic/sorting.md#sắp-xếp-trộn-merge-sort), [quicksort](../basic/sorting.md#sắp-xếp-nhanh-quicksort), trong các CTDL như [segment tree](../data-structures/segment-tree.md).
 
 ## Tư tưởng
 
-Một thuật toán áp dụng chia để trị có 3 bước chính:
+Một thuật toán áp dụng chia để trị có \\(3\\) bước chính:
 
 - **Chia**: Chia nhỏ bài toán thành các bài toán con.
 - **Trị**: Giải các bài toán con. Nếu bài toán nhỏ ấy đủ nhỏ, ta sẽ tìm đáp án của bài toán nhỏ ấy. Nếu không thì giải bài toán con một cách đệ quy.
@@ -22,7 +22,7 @@ Một thuật toán áp dụng chia để trị có 3 bước chính:
 
 Ta đã được thấy mô hình chia để trị qua thuật toán [merge sort](../basic/sorting.md#sắp-xếp-trộn-merge-sort).
 
-Ta có một mảng 8 phần tử:
+Ta có một mảng \\(8\\) phần tử:
 
 <center>
 <img src="../images/dc_merge_sort_initial.svg" alt="Mảng chứa 8 phần tử"/>
@@ -60,9 +60,9 @@ Có thể xem thông tin về định lí Master tại các nguồn tài liệu 
 
 ## Phần tử nhỏ thứ k
 
-Bài toán: Cho một mảng `a` có \\(n\\) phần tử. Hãy tìm và in ra giá trị của phần tử nhỏ thứ \\(k\\) trong mảng (các phần tử bắt đầu từ 1).
+Bài toán: Cho một mảng `a` có \\(n\\) phần tử. Hãy tìm và in ra giá trị của phần tử nhỏ thứ \\(k\\) trong mảng (các phần tử bắt đầu từ \\(1\\)).
 
-VD: Phần tử nhỏ thứ 3 của mảng `a = [18, 43, 6, 15, 9, 37, 10, 42]` có giá trị bằng 10.
+VD: Phần tử nhỏ thứ \\(3\\) của mảng `a = [18, 43, 6, 15, 9, 37, 10, 42]` có giá trị bằng \\(10\\).
 
 Ta có thể sắp xếp lại các phần tử trong mảng bằng một thuật toán sắp xếp nào đấy ([QuickSort](../basic/sorting.md#sắp-xếp-nhanh-quicksort) - \\(O(n\log{n})\\)) và in ra phần tử thứ \\(k\\) trong mảng. 
 
@@ -75,7 +75,7 @@ Thuật toán của ta sẽ chọn một phần tử ngẫu nhiên trong mảng 
 - Trường hợp 2: \\(q \lt k\\): Đáp án của bài toán sẽ nằm ở bên trái \\(a[q]\\), hay các phần tử có chỉ số trong khoảng \\([1..q - 1]\\).
 - Trường hợp 3: \\(q \gt k\\): Đáp án của bài toán sẽ nằm ở bên phải \\(a[q]\\), hay các phần tử có chỉ số trong khoảng \\([q + 1..n]\\).
 
-Các trường hợp 2 và 3 sẽ được thuật toán xử lý một cách đệ quy cho tới khi tìm được đáp án. 
+Các trường hợp \\(2\\) và \\(3\\) sẽ được thuật toán xử lý một cách đệ quy cho tới khi tìm được đáp án. 
 
 Độ phức tạp thuật toán này sẽ là \\(O(n)\\).
 
