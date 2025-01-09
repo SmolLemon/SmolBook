@@ -12,7 +12,11 @@ site-url = "/SmolBook/"
 preferred-dark-theme = "navy"
 git-repository-icon = "fa-code-fork"
 git-repository-url = "https://codeberg.org/SmolLemon/SmolBook"
-edit-url-template = "https://codeberg.org/SmolLemon/SmolBook/_edit/main/{path}"
+edit-url-template = "https://github.com/SmolLemon/SmolBook/edit/main/{path}"
+
+[output.html.fold]
+enable = true
+level = 2
 
 [output.html.search]
 limit-results = 16

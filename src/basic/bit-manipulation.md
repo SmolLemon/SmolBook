@@ -2,9 +2,9 @@
 
 ## Số nhị phân
 
-Một số nhị phân là một số được biểu diễn trong hệ cơ số 2 - các được biểu diễn bằng 2 chữ số 0 và 1.
+Một số nhị phân là một số được biểu diễn trong hệ cơ số \\(2\\) - các được biểu diễn bằng \\(2\\) chữ số \\(0\\) và \\(1\\).
 
-Trong lập trình, kiểu dữ liệu lưu các số nguyên có `n` bit được dùng để lưu một dãy số nhị phân chứa `n` chữ số. Trong C++, `int` là một kiểu dữ liệu lưu các số nguyên có 32 bit, còn `long long` là 64 bit. Ta lấy ví dụ số 193 lưu trên kiểu dữ liệu `int` sẽ có dãy nhị phân:
+Trong lập trình, kiểu dữ liệu lưu các số nguyên có \\(n\\) bit được dùng để lưu một dãy số nhị phân chứa \\(n\\) chữ số. Trong C++, `int` là một kiểu dữ liệu lưu các số nguyên có \\(32\\) bit, còn `long long` là \\(64\\) bit. Ta lấy ví dụ số \\(193\\) lưu trên kiểu dữ liệu `int` sẽ có dãy nhị phân:
 
 \\[00000000000000000000000011000001\\]
 
@@ -16,21 +16,21 @@ Ví dụ, số nhị phân \\(1011_2\\) có giá trị bằng:
 
 \\[1011_2 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 = 11\\]
 
-Để biểu diễn giá trị âm trên dãy số nguyên, ta sử dụng **Two's complement (phần bù của 2)**. Khi này, giá trị của một dãy số nhị phân \\((b_k b_{k-1}... b_1 b_0)\\) là:
+Để biểu diễn giá trị âm trên dãy số nguyên, ta sử dụng **Two's complement (phần bù của \\(2\\))**. Khi này, giá trị của một dãy số nhị phân \\((b_k b_{k-1}... b_1 b_0)\\) là:
 
 \\[b_k \times {-2}^k + b_{k - 1} \times 2^{k - 1}  + ... + b_{1} \times 2^{1} + b_{0} \times 2^{0}\\]
 
-Ví dụ, ta có số -209 khi biểu diễn dưới dãy nhị phân (16 chữ số):
+Ví dụ, ta có số \\(-209\\) khi biểu diễn dưới dãy nhị phân (\\(16\\) chữ số):
 
 \\[1111111100101111\\]
 
-Khi không áp dụng phần bù của 2, một số nguyên `n` bit có thể lưu các giá trị từ 0 đến \\(2^n - 1\\), tức là ta lưu các số nguyên không âm. Để lưu dạng số này trong C++ ta khai báo `unsigned [int/long long/...] tên_biến;`.
+Khi không áp dụng phần bù của \\(2\\), một số nguyên \\(n\\) bit có thể lưu các giá trị từ \\(0\\) đến \\(2^n - 1\\), tức là ta lưu các số nguyên không âm. Để lưu dạng số này trong C++ ta khai báo `unsigned [int/long long/...] tên_biến;`.
 
 ```C++
 unsigned int x = 37;
 ```
 
-Khi áp dụng phần bù của 2, ta có thể lưu các giá trị trong khoảng từ \\({-2}^{n - 1}\\) đến \\(2^{n - 1} - 1\\). Khi này ta có thể lưu cả giá trị các số nguyên âm. Trong C++, ta khai báo `signed [int/long long/...] tên_biến`, ta có thể bỏ `signed`.
+Khi áp dụng phần bù của \\(2\\), ta có thể lưu các giá trị trong khoảng từ \\({-2}^{n - 1}\\) đến \\(2^{n - 1} - 1\\). Khi này ta có thể lưu cả giá trị các số nguyên âm. Trong C++, ta khai báo `signed [int/long long/...] tên_biến`, ta có thể bỏ `signed`.
 
 ```C++
 int x = 73;
@@ -38,7 +38,7 @@ int x = 73;
 
 Nếu số ta lưu giá trị lớn hơn giới hạn trên của kiểu dữ liệu, ta sẽ bị *tràn số*.
 
-Đối với các kiểu dữ liệu `signed`, số tiếp theo của \\(2^{n - 1} - 1\\) sẽ là \\(-2^{n - 1}\\). Đối với `unsigned` thì số tiếp theo của \\(2^n - 1\\) sẽ là 0.
+Đối với các kiểu dữ liệu `signed`, số tiếp theo của \\(2^{n - 1} - 1\\) sẽ là \\(-2^{n - 1}\\). Đối với `unsigned` thì số tiếp theo của \\(2^n - 1\\) sẽ là \\(0\\).
 
 ```C++
 int x = 2147483647;
@@ -51,7 +51,7 @@ cout << x << '\n'; // -2147483648
 
 ### Toán tử thao tác AND (\\(\land\\))
 
-Toán tử thao tác **AND** `x & y`  trả về một số có giá trị bit ở mỗi vị trí là kết quả của việc thực hiện phép lý phép toán luận lý **AND** với bit của x và y tương ứng - nếu 2 bit đều bằng 1 thì bit có giá trị là 1, không thì bit có giá trị là 0.
+Toán tử thao tác **AND** `x & y` trả về một số có giá trị bit ở mỗi vị trí là kết quả của việc thực hiện phép lý phép toán luận lý **AND** với các bit của \\(x\\) và \\(y\\) ở vị trí tương ứng - nếu \\(2\\) bit đều bằng \\(1\\) thì bit có giá trị là \\(1\\), không thì bit có giá trị \\(0\\).
 
 Ví dụ:
 ```
@@ -72,7 +72,7 @@ Bản chân trị cho thao tác AND:
 
 ### Toán tử thao tác OR (\\(\lor\\))
 
-Toán tử thao tác **OR** `x | y` trả về một số có giá trị bit ở mỗi vị trí là kết quả của việc thực hiện phép lý phép toán luận lý **OR** với bit của x và y tương ứng - nếu có ít nhất 1 bit trong 2 bit bằng 1 thì bit có giá trị là 1, không thì bit có giá trị là 0.
+Toán tử thao tác **OR** `x | y` trả về một số có giá trị bit ở mỗi vị trí là kết quả của việc thực hiện phép lý phép toán luận lý **OR** với các bit của \\(x\\) và \\(y\\) ở vị trí tương ứng - nếu có ít nhất \\(1\\) bit trong \\(2\\) bit bằng \\(1\\) thì bit có giá trị \\(1\\), không thì bit có giá trị \\(0\\).
 
 Ví dụ:
 
@@ -94,7 +94,7 @@ Bản chân trị cho thao tác OR:
 
 ### Toán tử thao tác XOR (\\(\oplus\\))
 
-Toán tử thao tác **XOR** `x ^ y`  trả về một số có giá trị bit ở mỗi vị trí là kết quả của việc thực hiện phép lý phép toán luận lý **XOR** với bit của x và y tương ứng - nếu hai bit của hai số có giá trị khác nhau, bit tương ứng có giá trị là 1, không thì bit có giá trị là 0.
+Toán tử thao tác **XOR** `x ^ y`  trả về một số có giá trị bit ở mỗi vị trí là kết quả của việc thực hiện phép lý phép toán luận lý **XOR** với các bit của \\(x\\) và \\(y\\) ở vị trí tương ứng - nếu - nếu hai bit của hai số có giá trị khác nhau, bit tương ứng có giá trị \\(1\\), không thì bit có giá trị \\(0\\).
 
 Ví dụ:
 
@@ -116,7 +116,7 @@ Bản chân trị cho thao tác XOR:
 
 ### Toán tử thao tác NOT (\\(\neg\\))
 
-Toán tử thao tác **NOT** `~x` về một số có giá trị bit ở mỗi vị trí là kết quả của việc thực hiện phép lý phép toán luận lý **NOT** với bit của x tương ứng - nếu bit có giá trị là 1 thì sẽ có giá trị 0 và ngược lại.
+Toán tử thao tác **NOT** `~x` về một số có giá trị bit ở mỗi vị trí là kết quả của việc thực hiện phép lý phép toán luận lý **NOT** với các bit của \\(x\\) ở vị trí tương ứng - nếu bit có giá trị là \\(1\\) thì sẽ có giá trị \\(0\\) và ngược lại.
 
 Ví dụ:
 
@@ -133,11 +133,11 @@ Bản chân trị cho thao tác NOT:
 |1|0|
 |0|1|
 
-Khi thực hiện thao tác NOT với `bool`, ta có để sử dụng thao tác `!x` để trả giá trị ngược lại của biến `bool`. Khi dùng `!` với số nguyên như `int` hay `long long`, nó sẽ trả về 1 nếu số nguyên có giá trị 0, và trả về 0 nếu số nguyên có giá trị khác 0.
+Khi thực hiện thao tác NOT với `bool`, ta có để sử dụng thao tác `!x` để trả giá trị ngược lại của biến `bool`. Khi dùng `!` với số nguyên như `int` hay `long long`, nó sẽ trả về \\(1\\) nếu số nguyên có giá trị \\(0\\), và trả về \\(0\\) nếu số nguyên có giá trị khác \\(0\\).
 
 ### Toán tử thao tác dịch trái (\\(\ll\\))
 
-Toán tử thao tác dịch trái `a << n` xóa thêm n bit số 0 vào đầu dãy bit.
+Toán tử thao tác dịch trái `a << n` xóa thêm \\(n\\) bit số \\(0\\) vào đầu dãy bit.
 
 Ví dụ:
 
@@ -148,7 +148,7 @@ a =   101 (Thập phân: 5) -> Dịch sang trái 2 bit
 
 ### Toán tử thao tác dịch phải (\\(\gg\\))
 
-Toán tử thao tác dịch phải `a >> n` xóa n bit vào đầu dãy bit.
+Toán tử thao tác dịch phải `a >> n` xóa \\(n\\) bit vào đầu dãy bit.
 
 Ví dụ:
 
@@ -159,11 +159,11 @@ a = 10101 (Thập phân: 21) -> Dịch sang phải 2 bit
 
 ## Ứng dụng của các thao tác xử lý bit
 
-Ta sẽ mặc định chỉ số đầu tiên có giá trị là 0 (0-based indexing).
+Ta sẽ mặc định chỉ số đầu tiên có giá trị là \\(0\\).
 
 ### Nhân/Chia với \\(2^x\\)
 
-Nếu chỉ nhân hoặc chia một số với một lũy thừa của 2, ta có thể dịch bit của số nguyên ấy. Mỗi lần dịch 1 bit sang trái sẽ tương đương với nhân số ấy với 2, mỗi lần dịch 1 bit sang phải sẽ tương đương với chia lấy phần nguyên cho 2.
+Nếu chỉ nhân hoặc chia một số với một lũy thừa của \\(2\\), ta có thể dịch bit của số nguyên ấy. Mỗi lần dịch 1 bit sang trái sẽ tương đương với nhân số ấy với \\(2\\), mỗi lần dịch \\(1\\) bit sang phải sẽ tương đương với chia lấy phần nguyên cho \\(2\\).
 
 ```
 S                  =  28 (Thập phân) =  0011100 (Nhị phân)
@@ -174,7 +174,7 @@ S = S / 4 = S >> 2 =   7 (Thập phân) =      111 (Nhị phân)
 
 ### Bitmask (Mảng bit)
 
-Bitmask là một một mảng lưu các giá trị bit. Bitmask còn có thể được dùng để làm một tập hợp lưu các giá trị. Ta có thể tạo một bitmask bằng `int` hoặc `long long` tương ứng với 32 bit và 64 bit.
+Bitmask là một một mảng lưu các giá trị bit. Bitmask còn có thể được dùng để làm một tập hợp lưu các giá trị. Ta có thể tạo một bitmask bằng `int` hoặc `long long` tương ứng với \\(32\\) bit và \\(64\\) bit.
 
 VD: 
 
@@ -183,13 +183,13 @@ VD:
 S = 11 (Thập phân) = 1|0|1|1 (Nhị phân)
 ```
 
-Như ta có thể thấy, khi S = 14 thì có thể biểu thị một tập hợp có các phần tử 0, 1, 3.
+Như ta có thể thấy, khi \\(S = 14\\) thì có thể biểu thị một tập hợp có các phần tử \\(0\\), \\(1\\), \\(3\\).
 
 Dưới đây là một số thao tác của bitmask:
 
-#### Bật bit thứ i
+#### Bật bit thứ \\(i\\)
 
-Để bật bit thứ `i` của S, ta sử dụng thao tác bit OR: `S = S | (1 << i)`.
+Để bật bit thứ \\(i\\) của \\(S\\), ta sử dụng thao tác bit OR: `S = S | (1 << i)`.
 
 ```
 S             = 0011001 (Nhị phân) = 25 (Thập phân)
@@ -198,9 +198,9 @@ i = 2, 1 << i = 0000100 (Nhị phân) =  4 (Thập phân)
               = 0011101 (Nhị phân) = 29 (Thập phân)
 ```
 
-#### Tắt bit thứ i
+#### Tắt bit thứ \\(i\\)
 
-Để tắt bit thứ `i` của S, ta sử dụng thao tác bit AND: `S = S & ~(1 << i)`.
+Để tắt bit thứ \\(i\\) của \\(S\\), ta sử dụng thao tác bit AND: `S = S & ~(1 << i)`.
 
 ```
 S                = 0011001 (Nhị phân) = 25 (Thập phân)
@@ -209,9 +209,9 @@ i = 2, ~(1 << i) = 1111011 (Nhị phân) =  4 (Thập phân)
                  = 0011001 (Nhị phân) = 25 (Thập phân)
 ```
 
-#### Đảo bit thứ i
+#### Đảo bit thứ \\(i\\)
 
-Để đảo bit thứ `i` của S, ta sử dụng thao tác bit XOR: `S = S ^ (1 << i)`:
+Để đảo bit thứ \\(i\\) của \\(S\\), ta sử dụng thao tác bit XOR: `S = S ^ (1 << i)`:
 
 ```
 S             = 0011101 (Nhị phân) = 29 (Thập phân) 
@@ -220,25 +220,25 @@ i = 2, 1 << i = 0000100 (Nhị phân) =  4 (Thập phân)
               = 0011001 (Nhị phân) = 25 (Thập phân)
 ```
 
-#### Lấy giá trị, kiểm tra bit thứ i
+#### Lấy giá trị, kiểm tra bit thứ \\(i\\)
 
-Để lấy giá trị bit thứ `i` của S, ta sử dụng thao tác bit AND: `T = S & (1 << i)`.
-- Nếu T bằng 0, bit thứ i có giá trị là 0
-- Nếu T khác 0, hay T bằng `1 << i`, bit thứ i có giá trị là 1
+Để lấy giá trị bit thứ \\(i\\) của \\(S\\), ta sử dụng thao tác bit AND: `T = S & (1 << i)`.
+- Nếu \\(T\\) bằng 0, bit thứ \\(i\\) có giá trị là \\(0\\)
+- Nếu \\(T\\) khác 0, hay \\(T\\) bằng `1 << i`, bit thứ \\(i\\) có giá trị là \\(1\\)
 
 ```
 S             = 0011101 (Nhị phân) = 29 (Thập phân)
 i = 2, 1 << i = 0000100 (Nhị phân) =  4 (Thập phân) 
                 ------- AND
               = 0000100 (Nhị phân) =  4 (Thập phân) 
-                -> Bit thứ i có giá trị 1
+                -> Bit thứ \\(i\\) có giá trị 1
 ```
 
-Ngoài ra còn có các kiểm tra khác cũng sử dụng thao tác bit AND: bit thứ `i` có giá trị `(S >> i) & 1`.
+Ngoài ra còn có các kiểm tra khác cũng sử dụng thao tác bit AND: bit thứ \\(i\\) có giá trị `(S >> i) & 1`.
 
-#### Bật n bit đầu tiên
+#### Bật \\(n\\) bit đầu tiên
 
-Để bật n bit đầu tiên, ta sử dụng dịch bit: `S = (1 << n) - 1`.
+Để bật \\(n\\) bit đầu tiên, ta có: `S = (1 << n) - 1`.
 
 ```
 n = 5, 1 << 5 = 100000 (Nhị phân) = 32 (Thập phân) 
@@ -247,11 +247,11 @@ n = 5, 1 << 5 = 100000 (Nhị phân) = 32 (Thập phân)
               =  11111 (Nhị phân) = 31 (Thập phân) 
 ```
 
-Từ ví dụ trên, ta còn rút thêm được một ứng dụng nữa: Xác định N có phải là một lũy thừa của 2.
+Từ ví dụ trên, ta còn rút thêm được một ứng dụng nữa: Xác định \\(N\\) có phải là một lũy thừa của \\(2\\).
 
 Để làm được điều này, ta sử dụng thao tác AND: `N & (N - 1)`:
-- Nếu `N & (N - 1)` bằng 0 và N khác 0, N là một lũy thừa của 2 
-- Nếu `N & (N - 1)` khác 0, N không là một lũy thừa của 2 
+- Nếu `N & (N - 1)` bằng \\(0\\) và \\(N\\) khác \\(0\\), \\(N\\) là một lũy thừa của \\(2\\)
+- Nếu `N & (N - 1)` khác \\(0\\), \\(N\\) không là một lũy thừa của \\(2\\) 
 
 ```
 N     = 100000 (Nhị phân) = 32 (Thập phân)
@@ -269,7 +269,7 @@ N - 1 = 100000 (Nhị phân) = 32 (Thập phân)
 
 #### Tìm bit có giá trị nhỏ nhất
 
-**Least significant bit (LSB)** hay bit có giá trị nhỏ nhất là bit có giá trị 1 đầu tiên trong dãy nhị phân xét từ phải sang trái. Để tìm được biểu diễn giá trị của bit này, ta sử dụng thao tác AND: `x & -x`. Nếu giá trị trả về là 0 thì không có bit nào có giá trị 1.
+**Least significant bit (LSB)** hay bit có giá trị nhỏ nhất là bit có giá trị \\(1\\) đầu tiên trong dãy nhị phân xét từ phải sang trái. Để tìm được biểu diễn giá trị của bit này, ta sử dụng thao tác AND: `x & -x`. Nếu giá trị trả về là \\(0\\) thì không có bit nào có giá trị \\(1\\).
 
 ```
 N  = 00100100 (Nhị phân) =  36 (Thập phân)
@@ -279,7 +279,7 @@ N  = 00100100 (Nhị phân) =  36 (Thập phân)
     -> Bit được bật bên phải nhất của N có giá trị biểu diễn là 4.
 ```
 
-Để tắt LSB, ta có 2 cách: `x = x - (x & -x)` hoặc `x = x & (x - 1)`
+Để tắt LSB, ta có \\(2\\) cách: `x = x - (x & -x)` hoặc `x = x & (x - 1)`
 
 ```
 N            = 00100100 (Nhị phân) =  36 (Thập phân)
@@ -292,6 +292,25 @@ N - (N & -N) = 00100000 (Nhị phân) =  32 (Thập phân)
 N - 1        = 11011011 (Nhị phân) =  35 (Thập phân)
 N & (N - 1)  = 00100000 (Nhị phân) =  32 (Thập phân)
              -> Bit được bật bên phải nhất đã được tắt 
+```
+
+#### Duyệt các tập con của bitmask
+
+Ta có một bitmask \\(mask\\) và giờ đây ta muốn duyệt các tập con của nó. Ta có cách thức vô cùng đơn giản:
+
+```C++
+for(int s = mask; s; s = (s - 1) & mask){
+    // Xét tập con
+}
+```
+
+Nếu muốn xét cả tập hợp rỗng, ta có thể chỉnh sửa lại:
+
+```C++
+for(int s = mask; ; s = (s - 1) & mask){
+    // Xét tập con
+    if(s == 0) break;
+}
 ```
 
 #### Các thao tác trong tập hợp
@@ -310,10 +329,10 @@ Bảng sau sẽ cho ta thấy các thao tác của tập hợp và cách áp d�
 ## Một số hàm liên quan đến bit trong C++
 
 Trình biên dịch g++ cung cấp cho ta một số hàm `builtin` cho các thao tác bit:
-- `__builtin_clz(x)`: số lượng bit `0` ở đầu số `x`.
-- `__builtin_ctz(x)`: số lượng bit `0` ở cuối số `x`.
-- `__builtin_popcount(x)`: số lượng bit `1` có trong số `x`.
-- `__builtin_parity(x)`: tính chẵn lẻ của số lượng bit `1` trong số `x`. 
+- `__builtin_clz(x)`: số lượng bit \\(0\\) ở đầu số \\(x\\).
+- `__builtin_ctz(x)`: số lượng bit \\(0\\) ở cuối số \\(x\\).
+- `__builtin_popcount(x)`: số lượng bit \\(1\\) có trong số \\(x\\).
+- `__builtin_parity(x)`: tính chẵn lẻ của số lượng bit \\(1\\) trong số \\(x\\). 
 
 ```C++
 int x = 12308; // 00000000000000000011000000010100
@@ -325,7 +344,7 @@ cout << __builtin_parity(x) << '\n'; // 0
 
 ## `<bitset>` trong C++
 
-`int` lưu được 32 bit, `long long` thì là 64. Nếu ta muốn lưu trữ nhiều bit hơn hoặc lưu số lương bit tùy ý thì ta sử dụng bitset trong thư viện `<bitset>`.
+`int` lưu được \\(32\\) bit, `long long` là \\(64\\). Nếu ta muốn lưu trữ nhiều bit hơn hoặc lưu số lương bit tùy ý thì ta sử dụng bitset trong thư viện `<bitset>`.
 
 Khai báo:
 
@@ -337,7 +356,7 @@ Kích thước của bitset phải cố định.
 
 Ta có thể gán các giá trị bit ban đầu cho bitset theo nhiều cách khác nhau:
 
-**1. Không gán trá trị:** khi này các bit sẽ có giá trị là 0.
+**1. Không gán trá trị:** khi này các bit sẽ có giá trị là \\(0\\).
 
 ```C++
 bitset<kích_thước> tên_bitset;

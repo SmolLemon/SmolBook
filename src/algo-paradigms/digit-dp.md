@@ -28,9 +28,9 @@ Giả sử ta đã điền các chữ số ở trước \\(a_1\\) bằng các gi
 |---|---|---|---|
 |\\(2\\)|\\(1\\)|\\(\*\\)|\\(\*\\)|
 
-Ta thấy rằng \\(a_1\\) (và các số sau nó) có thể nhận giá trị chữ số từ \\(0\\) đến \\(9\\).
+Trường hợp không giới hạn sẽ xảy ra nếu các số được điền trước \\(a_i\\) có thứ tự từ điển nhỏ hơn hẳn \\(X\\). Khi này, ta có thể điền \\(a_i\\) các chữ số từ \\(0\\) đến \\(9\\).
 
-Trường hợp không giới hạn sẽ xảy ra nếu các số trước \\(a_i\\) có giá trị khác với các giá trị tương ứng ở số \\(X\\). Ở đây, \\(a_3 \neq x_3\\) nên \\(a_1\\) có thế nhận giá trị như ở trên.
+Ở đây, vì \\(21 < 31\\) nên \\(a_1\\) rơi vào trường hợp không giới hạn. Vì vậy ta được quyền gán cho \\(a_1\\) các chữ số từ \\(0\\) đến \\(9\\). Ta có thể kết luận như vậy vì dù có gán \\(a_1\\) bằng chữ số nào đi nữa thì các số có dạng \\(\overline{21**}\\) cũng sẽ nhỏ hơn \\(X\\).
 
 #### Trường hợp có giới hạn
 
@@ -40,9 +40,9 @@ Giả sử ta đã điền các chữ số ở trước \\(a_1\\) bằng các gi
 |---|---|---|---|
 |\\(2\\)|\\(1\\)|\\(\*\\)|\\(\*\\)|
 
-Ta thấy rằng \\(a_1\\) chỉ có thể nhận giá trị chữ số từ \\(0\\) đến \\(x_1\\). Giả sử nếu \\(x_1 < 9\\) và ta gán một số lớn hơn \\(x_1\\) (như \\(x_1 + 1\\)) cho \\(a_1\\), thì dù \\(a_0\\) có được gán giá trị nào thì \\(A\\) cũng sẽ lớn hơn \\(X\\).
+Trường hợp không giới hạn sẽ xảy ra nếu các số được điền trước \\(a_i\\) là một tiền tố của số \\(X\\). Khi này, ta chỉ có thể điền \\(a_i\\) các chữ số từ \\(0\\) đến \\(x_i\\).
 
-Trường hợp không giới hạn sẽ xảy ra nếu các số trước \\(a_i\\) có giá trị bằng với các giá trị tương ứng ở số \\(X\\). Ở đây, \\(a_3 = x_3, a_2 = x_2\\) nên \\(a_1\\) có thế nhận giá trị như ở trên.
+Ở đây, ta có \\(31\\) là một tiền tố của \\(X\\) nên rơi vào trường hợp có giới hạn. Ta chỉ có thể gán cho \\(a_1\\) các chữ số từ \\(0\\) đến \\(x_1 = 4\\). Giả sử ta gán \\(a_1 = 5\\). Khi này, các số có dạng \\(\overline{315*}\\) sẽ có giá trị lớn hơn \\(X\\), và các số có dạng này là các số mà ta không cần xét đến.
 
 Từ \\(2\\) trường hợp trên, ta có các trạng thái QHĐ cần thiết để giải một bài toán QHĐ chữ số:
 
@@ -288,7 +288,7 @@ Nhiều bài toán QHĐ chữ số (giống như bài này) có thể yêu cầu
 
 Một cách tối ưu cực kì hay ho chính là ta sẽ chỉ thực hiện việc `memset` một lần ở ngoài hàm \\(G\\), đồng thời bỏ trạng thái \\(smaller\\) khi lưu kết quả của trạng thái. 
 
-Vì các giá trị của trạng thái QHĐ có \\(smaller = 0\\) phụ thuộc vào một số cụ thể, nên không thể sử dụng lại cho các số tiếp theo. Bằng cách loại bỏ trạng thái \\(smaller\\) khi lưu kết quả của trạng thái và xét riêng từng trường hợp \\(smaller\\), ta có thể sử dụng lại các kết quả đã được tính ở những lần trước.
+Vì các giá trị của trạng thái QHĐ có \\(smaller = 0\\) phụ thuộc vào một giá trị cụ thể, nên không thể sử dụng lại cho các số tiếp theo. Bằng cách loại bỏ trạng thái \\(smaller\\) khi lưu kết quả của trạng thái và xét riêng từng trường hợp \\(smaller\\), ta có thể sử dụng lại các kết quả đã được tính ở những lần trước.
 
 Có thể xem qua đoạn code của bài toán khi áp dụng cách cài đặt mới:
 

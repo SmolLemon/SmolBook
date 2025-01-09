@@ -59,7 +59,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "{{ path_to_root }}";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "{{ preferred_dark_theme }}" : "{{ default_theme }}";
+            var default_theme = "{{ default_theme }}";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -176,13 +176,16 @@
                         </a>
                         {{/if}}
                         {{#if git_repository_url}}
-                        <a href="{{git_repository_url}}" title="Git repository" aria-label="Git repository">
+                        <a href="{{git_repository_url}}" title="Kho lưu trữ Git" aria-label="Kho lưu trữ Git">
                             <i id="git-repository-button" class="fa {{git_repository_icon}}"></i>
+                        </a>
+                        <a href="https://github.com/SmolLemon/SmolBook" title="Kho lưu trữ Git" aria-label="Kho lưu trữ Git">
+                            <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
                         {{/if}}
                         {{#if git_repository_edit_url}}
-                        <a href="{{git_repository_edit_url}}" title="Suggest an edit" aria-label="Suggest an edit">
-                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        <a href="{{git_repository_edit_url}}" title="Đề xuất chỉnh sửa" aria-label="Đề xuất chỉnh sửa">
+                            <i id="git-edit-button" class="fa fa-pencil"></i>
                         </a>
                         {{/if}}
 

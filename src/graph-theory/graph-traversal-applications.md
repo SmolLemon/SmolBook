@@ -167,7 +167,7 @@ Xem chi tiết tại phần [thuật toán sắp xếp Tô-pô](topo.md).
 
 ## Phát hiện chu trình
 
-Đối với đồ thị vô hướng, việc xác định sự tồn tại của chu trình khá đơn giản: nếu đồ thị không có chu trình nếu nó là một [cây](overview.md#cây). Nếu không phải cây thì đồ thị chắc chắn có chu trình.
+Đối với đồ thị vô hướng, việc xác định sự tồn tại của chu trình khá đơn giản: đồ thị không có chu trình nếu nó là một [cây](overview.md#cây). Nếu không phải cây thì đồ thị chắc chắn có chu trình.
 
 Đối với đồ thị có hướng, ta sẽ giải quyết theo hướng khác bằng DFS.
 
@@ -226,7 +226,7 @@ Ban đầu, khi bắt đầu duyệt đỉnh \\(u\\), ta có \\(num[u] = low[u]\
 
 Từ những thông tin này, ta có thể xác định khớp cầu trên đồ thị.
 
-Một đỉnh \\(u\\) là đỉnh khớp khi tồn tại một đỉnh con trên cây DFS \\(v\\) sao cho \\(low[v] \ge num[u]\\). Điều này xảy ra khi \\(v\\) có thể đến được một đỉnh có \\(num\\) nhỏ hơn \\(num[u]\\) bằng cạnh ngược. Nếu điều này không xảy ra, thì để \\(v\\) có thể đi sang các đỉnh khác ngoài các đỉnh trong cây DFS con gốc \\(v\\), ta cần phải đi qua đỉnh \\(u\\), và khi xóa đỉnh \\(u\\) đi thì \\(v\\) không thể đi đến các đỉnh ấy \\(\rightarrow\\) đỉnh \\(u\\) là đỉnh khớp. 
+Một đỉnh \\(u\\) là đỉnh khớp khi tồn tại một đỉnh con trên cây DFS \\(v\\) sao cho \\(low[v] \ge num[u]\\). Nếu \\(low[v] \lt num[u]\\) thì \\(v\\) có thể đến được một đỉnh có \\(num\\) nhỏ hơn \\(num[u]\\) bằng cạnh ngược. Nếu điều này không xảy ra, thì để \\(v\\) có thể đi sang các đỉnh khác ngoài các đỉnh trong cây DFS con gốc \\(v\\), ta cần phải đi qua đỉnh \\(u\\), và khi xóa đỉnh \\(u\\) đi thì \\(v\\) không thể đi đến các đỉnh ấy \\(\rightarrow\\) đỉnh \\(u\\) là đỉnh khớp. 
 
 Một trường hợp nữa của đỉnh khớp là khi đỉnh gốc của cây DFS có ít nhất \\(2\\) đỉnh con thì đỉnh gốc cũng là đỉnh khớp.
 
@@ -239,8 +239,8 @@ Một cạnh \\(uv\\) là cạnh cầu khi \\(low[v] \gt num[u]\\) với cách g
 Ở hình trên, ta có đồ thị DFS sau khi duyệt đồ thị:
 - Số bên phải chỉ \\(low\\) của đỉnh \\(v\\).
 - Số bên trái chỉ \\(num\\) của đỉnh \\(u\\).
-- Cạnh vàng chỉ các cạnh thuộc cây DFS.
-- Cạnh đỏ chỉ các cạnh ngược không cây DFS.
+- Cạnh vàng chỉ các cạnh cây thuộc cây DFS.
+- Cạnh đỏ chỉ các cạnh ngược không thuộc cây DFS.
 - Các đỉnh viền xanh chỉ các đỉnh khớp. 
 - Các cạnh nét dứt chỉ các cạnh cầu. 
 
@@ -323,9 +323,9 @@ void scc(){
 }
 ```
 
-### Thuật toán Tarjan
+### Thuật toán của Tarjan
 
-Thuật toán Tarjan cũng là một thuật toán tìm kiếm TPLT mạnh.
+Thuật toán của Tarjan là một thuật toán tìm kiếm TPLT mạnh.
 
 Ta sẽ sử dụng \\(num\\) và \\(low\\) giống như phần khớp cầu, tuy nhiên việc cập nhật \\(low\\) sẽ có chút khác biệt. Ta chỉ cập nhât \\(low[u]\\) bằng \\(low[v]\\) nếu ta chưa xác định được \\(v\\) thuộc TPLT mạnh nào.
 

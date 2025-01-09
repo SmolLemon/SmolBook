@@ -68,7 +68,7 @@ Một đồ thị là **có hướng (directed)** khi cạnh được chỉ đ�
 <img src="../images/directed_graph.svg" alt="Đồ thị có hướng"/>
 </center>
 
-Ta có thể gọi các cạnh có hướng là **cung (arc)**.
+Ta có thể gọi các cạnh trong đồ thị có hướng là **cung (arc)**.
 
 ### Đồ thị có trọng số
 

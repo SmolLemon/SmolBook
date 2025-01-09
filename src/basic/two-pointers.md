@@ -41,32 +41,17 @@ Vì 2 là phần tử nhỏ hơn nên ta tiếp tục thuật toán:
 
 Và ta tiếp tục thuật toán cho tới khi cả 2 mảng đều rỗng.
 
-Để thực hiện thuật toán này, ta sử dụng kĩ thuật hai con trỏ. Ta tạo 2 con trỏ `i` và `j` cho 2 mảng `a` và `b`. 2 con trỏ này sẽ trỏ vào vị trí phần tử đầu tiên của 2 mảng. 
+Để thực hiện thuật toán này, ta sử dụng kĩ thuật hai con trỏ. Ta tạo 2 con trỏ \\(i\\) và \\(j\\) cho 2 mảng `a` và `b`. 2 con trỏ này sẽ trỏ vào vị trí phần tử đầu tiên của 2 mảng. 
 
 Mỗi lần một con trỏ trỏ đến phần tử được chọn, con trỏ đấy sẽ di chuyển đến vị trí tiếp theo trong mảng.
 
 \\[a = [\color{red}{\not{1}}, \overset{\underset{\downarrow}{i}}{3}, 4]\\]
 \\[b = [\underset{\overset{\uparrow}{j}}{2}, 5, 6]\\]
 
-Ta có n, m lần lượt là kích thước của mảng `a` và `b`, phần tử đầu tiên của 2 mảng có chỉ số 1.
+Ta có \\(n\\), \\(m\\) lần lượt là kích thước của mảng `a` và `b`, phần tử đầu tiên của 2 mảng có chỉ số 1. Mảng nào có con trỏ trỏ ra ngoài mảng thì ta sẽ thêm các phần tử còn lại của mảng kia vào mảng `c`.
 
 ```C++
-int i = 1, j = 1;
-while(i <= n && j <= m){
-	if(a[i] < b[j]){
-		c[i + j] = a[i];
-		++i;
-	}else{
-		c[i + j] = b[j];
-		++j;
-	}
-}
-```
-
-Mảng nào có con trỏ trỏ ra ngoài mảng thì ta sẽ thêm các phần tử còn lại của mảng kia vào mảng `c`.
-
-```C++
-while(i <= n && j <= m){
+while(i <= n || j <= m){
 	if(j > m || (i <= n && a[i] < b[j])){
 		c[i + j] = a[i];
 		++i;
@@ -95,15 +80,15 @@ Ta để hai con trỏ ở vị trí ban đầu.
 
 \\[[\overset{\underset{\downarrow}{i}}{\color{red}{1}}, 2, 3, 5, 8, 9, 12, \overset{\underset{\downarrow}{j}}{\color{red}{15}}]\\]
 
-Dễ thấy, \\(1 + 15 = 16 \gt 11\\). Vì vậy, ta dịch con trỏ `j` sang trái.
+Dễ thấy, \\(1 + 15 = 16 \gt 11\\). Vì vậy, ta dịch con trỏ \\(j\\) sang trái.
 
 \\[[\overset{\underset{\downarrow}{i}}{\color{red}{1}}, 2, 3, 5, 8, 9, \overset{\underset{\downarrow}{j}}{\color{red}{12}}, 15]\\]
 
-\\(1 + 12 = 13 \gt 11\\), tiếp tục dịch con trỏ `j` sang trái.
+\\(1 + 12 = 13 \gt 11\\), tiếp tục dịch con trỏ \\(j\\) sang trái.
 
 \\[[\overset{\underset{\downarrow}{i}}{\color{red}{1}}, 2, 3, 5, 8, \overset{\underset{\downarrow}{j}}{\color{red}{9}}, 12, 15]\\]
 
-\\(1 + 9 = 10 \lt 11\\), khi này dịch con trỏ `i` sang phải.
+\\(1 + 9 = 10 \lt 11\\), khi này dịch con trỏ \\(i\\) sang phải.
 
 \\[[1, \overset{\underset{\downarrow}{i}}{\color{red}{2}}, 3, 5, 8, \overset{\underset{\downarrow}{j}}{\color{red}{9}}, 12, 15]\\]
 
@@ -121,26 +106,21 @@ Cách giải bài toán này gần giống với bài toán 2SUM ở trên:
 
 Ta có \\(SUM(l, r)\\) là tổng giá trị các phần tử \\(a_l, a_{l + 1},..., a_{r - 1}, a_{r}\\).
 
-Hai con trỏ `i` và `j` của ta sẽ được đặt tại vị trí đầu mảng.
+Hai con trỏ \\(i\\) và \\(j\\) của ta sẽ được đặt tại vị trí đầu mảng.
 
-Nếu \\(SUM(i, j) < x\\), dịch `j` sang phải. Nếu \\(SUM(i, j) > x\\), dịch `i` sang phải. Nếu \\(SUM(i, j) = x\\), đã tìm được mảng con có tổng bằng \\(x\\).
+Nếu \\(SUM(i, j) < x\\), dịch \\(j\\) sang phải. Nếu \\(SUM(i, j) > x\\), dịch \\(i\\) sang phải. Nếu \\(SUM(i, j) = x\\), đã tìm được mảng con có tổng bằng \\(x\\).
 
 Ta ví dụ bằng mảng sau và một số \\(x = 11\\):
 
 \\[[1, 4, 2, 6, 3, 7, 5]\\]
 
-Ta để hai con trỏ ở vị trí ban đầu.
-
-\\[[\overset{\underset{\downarrow}{i, j}}{\color{red}{1}}, 4, 2, 6, 3, 7, 5]\\]
-
-Các bước thực hiện tiếp theo của thuật toán:
-
 | Nhận xét | Thao tác | Sau thao tác |
 |---|---|---|
-|\\(SUM(1, 1) = 1 < 11\\) | Dịch `j` sang phải.|\\([\overset{\underset{\downarrow}{i}}{\color{red}{1}}, \overset{\underset{\downarrow}{j}}{\color{red}{4}}, 2, 6, 3, 7, 5]\\)|
-|\\(SUM(1, 2) = 5 < 11\\) | Dịch `j` sang phải.|\\([\overset{\underset{\downarrow}{i}}{\color{red}{1}}, \color{red}{4}, \overset{\underset{\downarrow}{j}}{\color{red}{2}}, 6, 3, 7, 5]\\)|
-|\\(SUM(1, 3) = 7 < 11\\) | Dịch `j` sang phải.|\\([\overset{\underset{\downarrow}{i}}{\color{red}{1}}, \color{red}{4}, \color{red}{2}, \overset{\underset{\downarrow}{j}}{\color{red}{6}}, 3, 7, 5]\\)|
-|\\(SUM(1, 4) = 13 > 11\\) | Dịch `i` sang phải.|\\([1, \overset{\underset{\downarrow}{i}}{\color{red}{4}}, \color{red}{2}, \overset{\underset{\downarrow}{j}}{\color{red}{6}}, 3, 7, 5]\\)|
-|\\(SUM(2, 4) = 12 > 11\\) | Dịch `i` sang phải.|\\([1, 4, \overset{\underset{\downarrow}{i}}{\color{red}{2}}, \overset{\underset{\downarrow}{j}}{\color{red}{6}}, 3, 7, 5]\\)|
-|\\(SUM(3, 4) = 8 < 11\\) | Dịch `j` sang phải.|\\([1, 4, \overset{\underset{\downarrow}{i}}{\color{red}{2}}, \color{red}{6}, \overset{\underset{\downarrow}{j}}{\color{red}{3}}, 7, 5]\\)|
-|\\(SUM(3, 5) = 11\\)| Tồn tại mảng con có tổng bằng \\(x\\), kết thúc thuật toán.|\\([1, 4, \overset{\underset{\downarrow}{i}}{\color{red}{2}}, \color{red}{6}, \overset{\underset{\downarrow}{j}}{\color{red}{3}}, 7, 5]\\)|
+|| Đặt \\(i\\), \\(j\\) ở vị trí 1. |\\([\overset{\underset{\downarrow}{i, j}}{\color{red}{1}}, 4, 2, 6, 3, 7, 5]\\)|
+|\\(SUM(1, 1) = 1 < 11\\) | Dịch \\(j\\) sang phải.|\\([\overset{\underset{\downarrow}{i}}{\color{red}{1}}, \overset{\underset{\downarrow}{j}}{\color{red}{4}}, 2, 6, 3, 7, 5]\\)|
+|\\(SUM(1, 2) = 5 < 11\\) | Dịch \\(j\\) sang phải.|\\([\overset{\underset{\downarrow}{i}}{\color{red}{1}}, \color{red}{4}, \overset{\underset{\downarrow}{j}}{\color{red}{2}}, 6, 3, 7, 5]\\)|
+|\\(SUM(1, 3) = 7 < 11\\) | Dịch \\(j\\) sang phải.|\\([\overset{\underset{\downarrow}{i}}{\color{red}{1}}, \color{red}{4}, \color{red}{2}, \overset{\underset{\downarrow}{j}}{\color{red}{6}}, 3, 7, 5]\\)|
+|\\(SUM(1, 4) = 13 > 11\\) | Dịch \\(i\\) sang phải.|\\([1, \overset{\underset{\downarrow}{i}}{\color{red}{4}}, \color{red}{2}, \overset{\underset{\downarrow}{j}}{\color{red}{6}}, 3, 7, 5]\\)|
+|\\(SUM(2, 4) = 12 > 11\\) | Dịch \\(i\\) sang phải.|\\([1, 4, \overset{\underset{\downarrow}{i}}{\color{red}{2}}, \overset{\underset{\downarrow}{j}}{\color{red}{6}}, 3, 7, 5]\\)|
+|\\(SUM(3, 4) = 8 < 11\\) | Dịch \\(j\\) sang phải.|\\([1, 4, \overset{\underset{\downarrow}{i}}{\color{red}{2}}, \color{red}{6}, \overset{\underset{\downarrow}{j}}{\color{red}{3}}, 7, 5]\\)|
+|\\(SUM(3, 5) = 11\\)| Tồn tại mảng con có tổng bằng \\(x\\), kết thúc thuật toán.||
