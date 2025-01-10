@@ -4,7 +4,7 @@ Ta có bài toán sau:
 
 > Cho một mảng `a` có \\(n\\) phần tử và \\(q\\) truy vấn có dạng `(l, r)`. Với mỗi truy vấn, tìm và in ra giá trị nhỏ nhất (GTNN) của các phần tử trong khoảng \\([l, r]\\).
 
-Bài toán này có tên là **Range Minimum Query (RMQ)**, dịch tạm: Truy vấn tìm GTNN trên đoạn. Ta có thể giải bài toán này bằng cách duyệt các phần tử từ `l` tới `r` và in ra GTNN trong khoảng đó. Độ phức tạp của thuật toán này là \\(O(nq)\\). Tuy nhiên, ta có thể sử dụng một kĩ thuật giúp giải quyết bài toán này và các bài toán trên đoạn khác một cách tối ưu. Kĩ thuật này có tên gọi là kĩ thuật **bảng thưa**.
+Bài toán này có tên là **Range Minimum Query (RMQ)**, tạm dịch: Truy vấn tìm GTNN trên đoạn. Ta có thể giải bài toán này bằng cách duyệt các phần tử từ `l` tới `r` và in ra GTNN trong khoảng đó. Độ phức tạp của thuật toán này là \\(O(nq)\\). Tuy nhiên, ta có thể sử dụng một kĩ thuật giúp giải quyết bài toán này và các bài toán trên đoạn khác một cách tối ưu. Kĩ thuật này có tên gọi là kĩ thuật **bảng thưa**.
 
 ## Ý tưởng
 

@@ -178,7 +178,7 @@ Ta gọi `queen8(0)` để bắt đầu thuật toán.
 <center>
 <img src="../images/Eight-queens-animation.gif" alt="8 quân hậu"/>
 
-<sup>Ảnh của Hsilgneymerej trên [Wikimedia](https://commons.wikimedia.org/wiki/File:Eight-queens-animation.gif) - Public Domain</sup>
+<sup>Ảnh của Hsilgneymerej - [Wikimedia](https://commons.wikimedia.org/wiki/File:Eight-queens-animation.gif) - Public Domain</sup>
 </center>
 
 ## Chia đôi tập

@@ -4,12 +4,12 @@
 
 |Tên dữ liệu|Loại dữ liệu|Kích cỡ (bytes)|Dãy giá trị|
 |---|---|---|---|
-|`int`|Số nguyên 32 bit|\\(4\\)|\\(-2^{31}\\) đến \\(2^{31} - 1 \\)|
-|`short int`|Số nguyên 16 bit|\\(2\\)|\\(-2^{15}\\) đến \\(2^{15} - 1 \\)|
-|`long long`|Số nguyên 64 bit|\\(8\\)|\\(-2^{63}\\) đến \\(2^{63} - 1 \\)|
+|`int`|Số nguyên \\(32\\) bit|\\(4\\)|\\(-2^{31}\\) đến \\(2^{31} - 1 \\)|
+|`short int`|Số nguyên \\(16\\) bit|\\(2\\)|\\(-2^{15}\\) đến \\(2^{15} - 1 \\)|
+|`long long`|Số nguyên \\(64\\) bit|\\(8\\)|\\(-2^{63}\\) đến \\(2^{63} - 1 \\)|
 |`float`|Số thực độ chính xác đơn|\\(4\\)|\\(\approx -3.4 \times 10^{38}\\) đến \\(\approx 3.4 \times 10^{38}\\)|
 |`double`|Số thực độ chính xác kép|\\(8\\)|\\(\approx -1.7 \times 10^{308}\\) đến \\(\approx 1.7 \times 10^{308}\\)||`bool`|Giá trị đúng/sai|1|`true` hoặc `false` (0 hoặc 1)|
-|`char`|Kí tự|1|\\(-2^{7}\\) đến  \\(2^{7} - 1 \\)|
+|`char`|Kí tự|\\(1\\)|\\(-2^{7}\\) đến  \\(2^{7} - 1 \\)|
 
 
 ### Số nguyên

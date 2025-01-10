@@ -167,7 +167,7 @@ Vì trong hầu hết các trường hợp, \\(\log^* n\\) rất nhỏ nên ta c
 
 Bảng dưới đây so sánh độ phức tạp thời gian của 2 hàm `Find` và `Union` của các cách cài đặt DSU được nói ở trên:
 
-|Tên gọi|`Find`|`Union`|
+|Cách cài đặt|`Find`|`Union`|
 |---|---|---|
 |Quick-Find|\\(O(1)\\)|\\(O(n)\\)|
 |Quick-Union|\\(O(n)\\)|\\(O(n)\\)|

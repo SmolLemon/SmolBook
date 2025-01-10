@@ -41,14 +41,14 @@ Sẽ giúp làm ngắn code:
 ```c++
 long long a = 123456;
 long long b = 246802;
-cout << a + b << "\n";
+cout << a + b << '\n';
 ```
 thành:
 
 ```c++
 ll a = 123456;
 ll b = 246802;
-cout << a + b << "\n";
+cout << a + b << '\n';
 ```
 
 ### Macros
@@ -88,7 +88,7 @@ for (int i = 1; i <= n; ++i) {
 }
 ```
 
-Dòng lệnh này có ý nghĩa: `"\n "` là một xâu kí tự, trong khi ta chưa duyệt đến phần tử cuối cùng, điều kiện `j < m` thỏa mãn, chương trình in ra kí tự vị trí 1 của xâu: `' '` - dấu cách. Khi đã duyệt đến phần tử cuối cùng, điều kiện `j < m` không thỏa mãn, chương trình in ra kí tự vị trí 0 của xâu: `'\n'` - xuống dòng.
+Dòng lệnh này có ý nghĩa: `"\n "` là một xâu kí tự, trong khi ta chưa duyệt đến phần tử cuối cùng, điều kiện `j < m` thỏa mãn, chương trình in ra kí tự vị trí 1 của xâu: `' '` - dấu cách. Khi đã duyệt đến phần tử cuối cùng, điều kiện `j < m` không thỏa mãn, chương trình in ra kí tự vị trí \\(0\\) của xâu: `'\n'` - xuống dòng.
 
 ## Viết số lớn
 
@@ -163,8 +163,6 @@ for(auto [x, y] : arr){
 
 
 ## Khai báo hàm ở dưới hàm `main()`
-
-> Xin nói trước rằng đây không hẳn là một mẹo và nói đúng hơn thì nó là một sở thích cá nhân khi viết code lập trình thi đấu của tác giả.
 
 Các chương trình C++ khi khai báo các chương trình con thường sẽ viết như sau:
 

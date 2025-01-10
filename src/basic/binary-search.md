@@ -146,4 +146,10 @@ auto lu = equal_range(a, a + n, x);
 cout << lu.second - lu.first;
 ```
 
+Ta cũng có hàm `binary_search` kiểm tra nếu giá trị \\(x\\) tồn tại trong mảng `a` hay không.
+
+```C++
+cout << binary_search(a, a + n, x); // Trả về 1 nếu x có trong a và 0 nếu ngược lại
+```
+
 **Bonus**: [BINARY search with FLAMENCO dance](https://www.youtube.com/watch?v=iP897Z5Nerk)

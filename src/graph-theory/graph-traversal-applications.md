@@ -41,9 +41,9 @@ Trong nhiều phần mềm vẽ, tồn tại công cụ có tên gọi `bucket` 
 
 Thuật toán giúp công cụ này thành hiện thực có tên gọi là thuật toán **flood fill**.
 
-Thuật toán flood fill được sử dụng trên mặt phẳng 2 chiều. Xuất phát từ điểm \\((x, y)\\), thuật toán sẽ đi đến các đỉnh có chung tính chất với đỉnh này. Ta xuất phát từ một đỉnh sang 4 phía (Đông/Tây/Nam/Bắc) hoặc 8 phía (Đông/Tây/Nam/Bắc/Đông Nam/Đông Bắc/Tây Nam/Tây Bắc) của đỉnh.
+Thuật toán flood fill được sử dụng trên mặt phẳng \\(2\\) chiều. Xuất phát từ điểm \\((x, y)\\), thuật toán sẽ đi đến các đỉnh có chung tính chất với đỉnh này. Ta xuất phát từ một đỉnh sang \\(4\\) phía (Đông/Tây/Nam/Bắc) hoặc \\(8\\) phía (Đông/Tây/Nam/Bắc/Đông Nam/Đông Bắc/Tây Nam/Tây Bắc) của đỉnh.
 
-Đoạn code ví dụ dưới đây là một thuật toán flood fill sẽ tìm trên mặt phẳng 2 chiều kích thước \\(n \times m\\) những vùng có giá trị \\(0\\).
+Đoạn code ví dụ dưới đây là một thuật toán flood fill sẽ tìm trên mặt phẳng \\(2\\) chiều kích thước \\(n \times m\\) những vùng có giá trị \\(0\\).
 
 ```C++
 //                 D   T  N   B DN  DB  TN  TB

@@ -4,9 +4,11 @@ Trước khi đến với lí thuyết đồ thị, ta có một câu hỏi nh�
 
 > Thành phố Königsberg thuộc Phổ, nay là Kaliningrad thuộc Nga, là một thành phố nằm ở \\(2\\) bên sông Pregel và có \\(2\\) hòn đảo lớn Kneiphof và Lomse. Trước kia, \\(2\\) hòn đảo được kết nối với nhau và với \\(2\\) bên bờ sông bằng \\(7\\) cây cầu.
 > 
-> > ![Königsberg](../images/Konigsberg_Bridge.png)
-> > 
-> > Hình ảnh thành phố Königsberg
+> <center>
+> <img src="../images/Konigsberg_Bridge.png" alt="Königsberg"/>
+> 
+> <sup> Hình ảnh thành phố Königsberg - [Wikimedia](https://commons.wikimedia.org/wiki/File:Konigsberg_Bridge.png) - Public Domain</sup>
+> </center>
 >
 > Bài toán đặt ra ở đây là: Hãy tìm một con đường đi qua \\(7\\) cây cầu ít nhất một lần và chỉ một lần duy nhất.
 

@@ -111,9 +111,9 @@ Dưới đây là một số ứng dụng của stack.
 
 ### Xử lí các sự kiện theo trình tự LIFO
 
-Bài ví dụ: [Backspace](https://open.kattis.com/problems/backspace).
+Bài toán ví dụ: [Backspace](https://open.kattis.com/problems/backspace).
 
-Lời giải:
+Tóm tắt: Cho một xâu kí tự chứa các chữ cái và dấu `<`. Với mỗi chuỗi dấu `<` ta xóa các chữ cái ở trước chuỗi một số lượng bằng độ dài của chuỗi và đồng thời xóa chuỗi `<` khỏi xâu. Hãy in ra xâu kí tự sau khi thực hiện các thao tác trên.
 
 Ta dùng `string` để biểu diễn stack. Với mỗi kí tự được xét từ trái sang phải, nếu gặp dấu `<` thì xóa kí tự cuối trong xâu, nếu không thì thêm kí tự vào cuối xâu.
 
@@ -333,8 +333,6 @@ Nếu ta gọi các hàm quá nhiều, call stack sẽ tràn bộ nhớ và ta n
 Ta có cài đặt [thuật toán DFS](../graph-theory/dfs.md) sử dụng stack:
 
 ```C++
-// Giả sử ta lưu đồ thị bằng danh sách kề
-
 void dfs(int u){
 	stack<int> st;
 	st.push(u);
@@ -378,7 +376,7 @@ int main () {
 		cin >> a[i];
 	}
 	for(int i = 1; i <= n; ++i){
-		int id = -1; // Nếu không có phần tử thỏa mãn thì in ra -1
+		int id = -1;
 		for(int j = 1; j < i; ++j){
 			if(a[j] > a[i]) id = j;
 		}

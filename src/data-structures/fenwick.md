@@ -34,7 +34,7 @@ Mặc dù có tên gọi là "cây" Fenwick nhưng CTDL này lại được bi�
 
 Ta có mảng `ft`, `ft[i]` sẽ lưu tổng của các phần tử có chỉ số nằm trong khoảng \\([i - LSB(i) + 1, i]\\), với hàm `LSB(i)` trả về [giá trị bit nhỏ nhất của \\(i\\)](../basic/bit-manipulation.html#tìm-bit-có-giá-trị-nhỏ-nhất). Ví dụ `ft[6]` có giá trị bằng tổng của `a[5]` và `a[6]`.
 
-Từ đây ta có mảng `ft` được xây dựng từ mảng `a`:
+Từ đây, ta có mảng `ft` được xây dựng từ mảng `a`:
 
 <center>
 <img src="../images/fenwick.png" alt="Fenwick"/>

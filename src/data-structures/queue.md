@@ -7,7 +7,7 @@
 - **Push**: Thêm một phần tử vào *cuối* danh sách, và
 - **Pop**: Loại bỏ phần tử ở *đầu* danh sách
 
-Ta hiểu về queue giống như một queue (hàng đợi) ở ngoài đời vậy: Người đầu tiên xếp vào hàng sẽ là người đầu tiên ra khỏi hàng đợi, người thứ hai vào hàng sẽ là người thứ hai ra khỏi đó, v.v. Vì tích chất này, queue còn được gọi là danh sách **First In**, **First out - FIFO (Vào trước, ra trước)**. 
+Ta hiểu về queue giống như một queue (hàng đợi) ở ngoài đời vậy: Người đầu tiên xếp vào hàng sẽ là người đầu tiên ra khỏi hàng đợi, người thứ hai vào hàng sẽ là người thứ hai ra khỏi đó, v.v. Vì tính chất này, queue còn được gọi là danh sách **First In**, **First out - FIFO (Vào trước, ra trước)**. 
 
 ## Queue trong thư viện chuẩn
 

@@ -20,11 +20,19 @@ Ta có công thức tính tổng của một số dãy số:
 
 \\[u_1 + u_2 + ... + u_n = \frac{n[2u_1 + (n - 1)d]}{2} = \frac{n(u_1 + u_n)}{2}\\]
 
+Ví dụ: tính tổng \\(5\\) số hạng đầu tiên của một cấp số cộng \\(u_n\\) với số hạng đầu \\(4\\) và công sai \\(3\\):
+
+\\[4 + 7 + 10 + 13 + 16 = \frac{5[2\times4 + (5 - 1)3]}{2} = \frac{5(4 + 16)}{2} = 50\\]
+
 **Tổng của một cấp số nhân \\((u_n)\\) với số hạng đầu \\(u_1\\) và công bội \\(q \neq 1\\):**
 
 \\[u_1 + u_2 + ... + u_n = \frac{u_1(q^n - 1)}{q - 1}\\]
 
-Từ đây ta có tổng của \\(n\\) lũy thừa đầu tiên của 2 bằng:
+Ví dụ: tính tổng \\(4\\) số hạng đầu tiên của một cấp số nhân \\(u_n\\) với số hạng đầu \\(1\\) và công sai \\(5\\):
+
+\\[1 + 5 + 25 + 125 = \frac{1(5^4 - 1)}{5 - 1} = 156\\]
+
+Từ đây ta suy ra tổng của \\(n\\) lũy thừa đầu tiên của \\(2\\) bằng:
 
 \\[1 + 2 + ... + 2^{n - 1} = 2^n - 1\\]
 

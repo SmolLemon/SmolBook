@@ -213,9 +213,9 @@ Cho một đồ thị \\(G = (V, E)\\):
 
 Cho một đồ thị cây \\(T = (V, E)\\):
 
-**1.** **Gốc (root)** của \\(T\\) là một đỉnh thuộc \\(T\\) được lựa chọn làm gốc. Thông thường, các bài toán đều chọn đỉnh \\(1\\) làm gốc của cây, nếu bài toán không chỉ rõ gốc của cây là đỉnh nào, hãy giả sử nó là đỉnh 1. Một số cây có thể không có gốc.
+**1.** **Gốc (root)** của \\(T\\) là một đỉnh thuộc \\(T\\) được lựa chọn làm gốc. Thông thường, các bài toán đều chọn đỉnh \\(1\\) làm gốc của cây, nếu bài toán không chỉ rõ gốc của cây là đỉnh nào, hãy giả sử nó là đỉnh \\(1\\). Một số cây có thể không có gốc.
 
-**2.** **Đỉnh lá (leaf)** của \\(T\\) là các đỉnh có bậc bằng 1.
+**2.** **Đỉnh lá (leaf)** của \\(T\\) là các đỉnh có bậc bằng \\(1\\).
  
 **3.** Nếu \\(T\\) có gốc, các đỉnh thuộc \\(T\\) sẽ hình thành quan hệ **cha/con (parent/child)**. 
 Cụ thể:
@@ -223,7 +223,7 @@ Cụ thể:
 - Một đỉnh có thể có nhiều con, nhưng chỉ có một cha.
 - Đỉnh gốc và đỉnh lá là ngoại lệ của tính chất trên, với đỉnh gốc không có cha, đỉnh lá không có con.
 - Đỉnh có khoảng cách tới gốc ngắn hơn sẽ là **tổ tiên (ancestor)** của đỉnh có khoảng cách tới gốc xa hơn. Ngược lại, đỉnh xa hơn sẽ là **hậu duệ (descendant)** của đỉnh gần hơn.
-- **Tổ tiên thứ k (Kth-ancestor)** của một đỉnh \\(u\\) là một đỉnh \\(v\\) có hậu duệ là đỉnh \\(u\\) và khoảng cách của 2 đỉnh đúng bằng k.
+- **Tổ tiên thứ \\(k\\) (Kth-ancestor)** của một đỉnh \\(u\\) là một đỉnh \\(v\\) có hậu duệ là đỉnh \\(u\\) và khoảng cách của \\(2\\) đỉnh đúng bằng \\(k\\).
 
 **4.** Khoảng cách từ gốc đến một đỉnh được gọi là **chiều cao (height)** hoặc **chiều sâu (depth)** của đỉnh. Chiều cao của cây \\(T\\) là giá trị của đỉnh có chiều cao lớn nhất.
 
@@ -231,7 +231,7 @@ Cụ thể:
 
 ## Tổ chức dữ liệu
 
-Có 3 cách phổ biến để biểu diễn đồ thị trong chương trình: ma trận kề, danh sách kề và danh sách cạnh. Tùy theo đề bài mà ta sẽ áp dụng các cách lưu trữ khác nhau.
+Có \\(3\\) cách phổ biến để biểu diễn đồ thị trong chương trình: ma trận kề, danh sách kề và danh sách cạnh. Tùy theo đề bài mà ta sẽ áp dụng các cách lưu trữ khác nhau.
 
 Ta giả sử dữ liệu nhập của một đồ thị là một danh sách cạnh.
 
@@ -250,14 +250,14 @@ Ma trận kề là một cấu trúc đơn giản được dùng để lưu mộ
 - \\(A[u][v] = 1\\) nếu \\(uv \in E(G)\\)
 - \\(A[u][v] = 0\\) nếu \\(uv \notin E(G)\\)
 
-| |1|2|3|4|5|6|
+| |\\(1\\)|\\(2\\)|\\(3\\)|\\(4\\)|\\(5\\)|\\(6\\)|
 |---|---|---|---|---|---|---|
-|**1**|0|1|0|0|1|0|
-|**2**|1|0|1|0|1|0|
-|**3**|0|1|0|1|0|0|
-|**4**|0|0|1|0|1|1|
-|**5**|1|1|0|1|0|0|
-|**6**|0|0|0|1|0|0|
+|**\\(1\\)**|\\(0\\)|\\(1\\)|\\(0\\)|\\(0\\)|\\(1\\)|\\(0\\)|
+|**\\(2\\)**|\\(1\\)|\\(0\\)|\\(1\\)|\\(0\\)|\\(1\\)|\\(0\\)|
+|**\\(3\\)**|\\(0\\)|\\(1\\)|\\(0\\)|\\(1\\)|\\(0\\)|\\(0\\)|
+|**\\(4\\)**|\\(0\\)|\\(0\\)|\\(1\\)|\\(0\\)|\\(1\\)|\\(1\\)|
+|**\\(5\\)**|\\(1\\)|\\(1\\)|\\(0\\)|\\(1\\)|\\(0\\)|\\(0\\)|
+|**\\(6\\)**|\\(0\\)|\\(0\\)|\\(0\\)|\\(1\\)|\\(0\\)|\\(0\\)|
 
 Ngoài ra:
 - Nếu đồ thị **có trọng số**, ta thay \\(1\\) bằng trọng số của cạnh tương ứng.
@@ -307,7 +307,7 @@ int main() {
 }
 ```
 
-Nếu đồ thị *có trọng số* thì với mỗi cạnh `(a, b)` có trọng số `w`, ta lưu cặp giá trị `(b, w)` trong `adj[a]`. Có thể lưu cặp giá trị `(b, w)` bằng kiểu dữ liệu `pair`.
+Nếu đồ thị *có trọng số* thì với mỗi cạnh `(a, b)` có trọng số \\(w\\), ta lưu cặp giá trị `(b, w)` trong `adj[a]`. Có thể lưu cặp giá trị `(b, w)` bằng kiểu dữ liệu `pair`.
 
 ```C++
 vector<pair<int, int>> adj[N];
