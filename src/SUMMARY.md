@@ -1,6 +1,6 @@
 # Summary
 
-[Smol Book](./title-page.md)
+[Smol Book - Cẩm nang Lập trình Thi đấu](./title-page.md)
 [Giới thiệu](./introduction.md)
 [Hướng dẫn](./guide.md)
 

@@ -1,6 +1,6 @@
-# Smol Book
+# Smol Book - Cẩm nang Lập trình Thi đấu
 
-Dự án Smol Book đang được hoàn thiện 🚧.
+Dự án đang được hoàn thiện 🚧.
 
 Xem [hướng dẫn](./guide.md) để biết cách tương tác với trang.
 

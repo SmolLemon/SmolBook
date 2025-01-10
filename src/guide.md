@@ -34,3 +34,7 @@ Có thể nhấn vào thanh menu ở đầu trang để cuộn lên đầu trang
 Sử dụng phím mũi tên lên xuống để di chuyển giữa các kết quả tìm kiếm. Chọn vào kết quả mong muốn sẽ dẫn bạn đến trang đó.
 
 Sau khi trang được tải, kết quả tìm kiếm sẽ được in đậm. Nhấn phím `esc` hoặc nhấn vào từ được in đậm để thoát.
+
+## Code block
+
+Các chương trong Smol Book sẽ có những đoạn code được viết trên code block. Để sao chép nôi dung của code block, di chuyển chuột bên trên codeblock và ấn biểu tượng sao chép (<i class="fa fa-copy fa-button"></i>).

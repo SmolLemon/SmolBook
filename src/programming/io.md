@@ -63,6 +63,13 @@ Ta có thể sử dụng lẫn lộn cả hai cách nhập trong chương trình
 	freopen("[tên file xuất]", "w", stdout); // Xuất dữ liệu ra file
 ```
 
+Trong hầu hết các bài toán yêu cầu nhập xuất dữ liệu qua file, ta thường viết tên các file như sau:
+
+```C++
+	freopen("[tên chương trình].INP", "r", stdin);
+	freopen("[tên chương trình].OUT", "w", stdout); 
+```
+
 ## Một số yêu cầu đặc biệt cho mỗi bài
 
 ### Nhập nhiều số với số lượng không xác định

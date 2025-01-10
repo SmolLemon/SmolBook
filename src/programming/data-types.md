@@ -1,6 +1,6 @@
 # Các kiểu dữ liệu
 
-Ở C++ và nhiều ngôn ngữ lập trình ta sẽ bắt gặp các kiểu dữ liệu được biểu diễn ở dạng nhị phân như sau:
+Ở C++ và các ngôn ngữ lập trình khác, ta sẽ bắt gặp các kiểu dữ liệu được biểu diễn ở dạng nhị phân như sau:
 
 |Tên dữ liệu|Loại dữ liệu|Kích cỡ (bytes)|Dãy giá trị|
 |---|---|---|---|
