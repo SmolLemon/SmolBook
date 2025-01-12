@@ -34,7 +34,7 @@ void toposort(int u){
 
 ### Thuật toán Kahn
 
-Thuật toán Kahn là một thuật toán sắp xếp thứ tự tô-pô.
+Thuật toán Kahn là một thuật toán sắp xếp tô-pô.
 
 Thuật toán có cách thức hoạt động khá đơn giản:
 - Chọn một đỉnh \\(u\\) bất kì trong đồ thị có bán bậc vào bằng \\(0\\). Sau khi thêm đỉnh \\(u\\) vào danh sách thứ tự tô-pô, xóa đỉnh \\(u\\) khỏi đồ thị và các cạnh có đỉnh đầu mút bằng \\(u\\).
@@ -68,7 +68,7 @@ void Kahn(){
 
 ## Kiểm tra DAG
 
-Để có thứ tự tô-pô của một đồ thị có hướng, ta cần xác định nếu đồ thị có xuất hiện chu trình hay không. Nếu có chu trình, ta không thể tìm được thứ tự tô-pô và nếu không thì ngược lại
+Để tìm thứ tự tô-pô của một đồ thị có hướng, ta cần xác định nếu đồ thị có xuất hiện chu trình hay không. Nếu có chu trình, ta không thể tìm được thứ tự tô-pô và nếu không thì ngược lại
 
 Đối với DFS, ta cần phát hiện sự tồn tại của [chu trình](graph-traversal-applications.md#phát-hiện-chu-trình) trong đồ thị nếu muồn tìm thứ tự tô-pô.
 

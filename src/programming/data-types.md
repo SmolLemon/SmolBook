@@ -28,7 +28,7 @@ unsigned short int si;
 
 Khi lưu các số nguyên có dấu ta không cần viết `signed` ở đầu kiểu dữ liệu.
 
-> **Lưu ý**: Trong C++, phép `%` dùng để lấy phần dư của một số. Khi dùng phép `%` với số âm thì kết quả sẽ là \\(0\\) hoặc là một số âm. Nếu tìm modulo của một số âm bằng phép `%` thì ta thực hiện: `((a % b) + b) % b`
+> **Lưu ý**: Trong C++, phép `%` dùng để lấy phần dư của một số. Khi dùng phép `%` với số âm thì kết quả sẽ là \\(0\\) hoặc là một số âm. Để tìm modulo của một số âm bằng phép `%`, ta viết: `((a % b) + b) % b`
 
 ### Số thực
 

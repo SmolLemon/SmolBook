@@ -65,10 +65,10 @@ Bản chân trị cho thao tác AND:
 
 |\\(A\\)|\\(B\\)|\\(A \land B\\)|   
 |---|---|---|
-|1|1|1|
-|1|0|0|
-|0|1|0|
-|0|0|0|
+|\\(1\\)|\\(1\\)|\\(1\\)|
+|\\(1\\)|\\(0\\)|\\(0\\)|
+|\\(0\\)|\\(1\\)|\\(0\\)|
+|\\(0\\)|\\(0\\)|\\(0\\)|
 
 ### Toán tử thao tác OR (\\(\lor\\))
 
@@ -87,10 +87,10 @@ Bản chân trị cho thao tác OR:
 
 |\\(A\\)|\\(B\\)|\\(A \lor B\\)|   
 |---|---|---|
-|1|1|1|
-|1|0|1|
-|0|1|1|
-|0|0|0|
+|\\(1\\)|\\(1\\)|\\(1\\)|
+|\\(1\\)|\\(0\\)|\\(1\\)| 
+|\\(0\\)|\\(1\\)|\\(1\\)| 
+|\\(0\\)|\\(0\\)|\\(0\\)| 
 
 ### Toán tử thao tác XOR (\\(\oplus\\))
 
@@ -109,10 +109,10 @@ Bản chân trị cho thao tác XOR:
 
 |\\(A\\)|\\(B\\)|\\(A \oplus B\\)|   
 |---|---|---|
-|1|1|0|
-|1|0|1|
-|0|1|1|
-|0|0|0|
+|\\(1\\)|\\(1\\)|\\(0\\)| 
+|\\(1\\)|\\(0\\)|\\(1\\)| 
+|\\(0\\)|\\(1\\)|\\(1\\)| 
+|\\(0\\)|\\(0\\)|\\(0\\)| 
 
 ### Toán tử thao tác NOT (\\(\neg\\))
 
@@ -130,14 +130,14 @@ Bản chân trị cho thao tác NOT:
 
 |\\(A\\)|\\(\neg A\\)|   
 |---|---|
-|1|0|
-|0|1|
+|\\(1\\)|\\(0\\)|
+|\\(0\\)|\\(1\\)|
 
 Khi thực hiện thao tác NOT với `bool`, ta có để sử dụng thao tác `!x` để trả giá trị ngược lại của biến `bool`. Khi dùng `!` với số nguyên như `int` hay `long long`, nó sẽ trả về \\(1\\) nếu số nguyên có giá trị \\(0\\), và trả về \\(0\\) nếu số nguyên có giá trị khác \\(0\\).
 
 ### Toán tử thao tác dịch trái (\\(\ll\\))
 
-Toán tử thao tác dịch trái `a << n` xóa thêm \\(n\\) bit số \\(0\\) vào đầu dãy bit.
+Toán tử thao tác dịch trái `a << n` thêm \\(n\\) bit \\(0\\) vào đầu dãy bit.
 
 Ví dụ:
 
@@ -390,6 +390,7 @@ cout << a[5] << '\n';     // 1
 ```
 
 Một số câu lệnh của bitset:
+
 |Câu lệnh|Mô tả|
 |---|---|
 |`test(pos)`|Trả về giá trị của bit ở vị trí pos|

@@ -129,7 +129,7 @@ Phát biểu bài toán: Cho một bàn cờ vua kích thước \\(8 \times 8\\)
 
 Có \\(8 \times 8 = 64\\) ô trên bàn cờ, ta cần đặt \\(8\\) quân hậu trên các ô này. Ta có thể thử đặt \\(8\\) quân hậu trên \\(8\\) ô bất kì trong \\(64\\) ô và kiểm tra nếu nó hợp lệ hay không.
 
-Ta có số cách chọn \\(8\\) ô trong \\(64\\) ô là \\(\_{64} C_{8} \approx 4 \times 10^9\\) cách - hơi lớn =)).
+Ta có số cách chọn \\(8\\) ô trong \\(64\\) ô là \\(\_{64} C_{8} \approx 4 \times 10^9\\) cách - hơi lớn.
 
 #### Thuật toán \\(8^8\\)
 

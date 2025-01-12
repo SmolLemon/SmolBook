@@ -42,7 +42,7 @@ Giả sử ta đã điền các chữ số ở trước \\(a_1\\) bằng các gi
 
 Trường hợp không giới hạn sẽ xảy ra nếu các số được điền trước \\(a_i\\) là một tiền tố của số \\(X\\). Khi này, ta chỉ có thể điền \\(a_i\\) các chữ số từ \\(0\\) đến \\(x_i\\).
 
-Ở đây, ta có \\(31\\) là một tiền tố của \\(X\\) nên rơi vào trường hợp có giới hạn. Ta chỉ có thể gán cho \\(a_1\\) các chữ số từ \\(0\\) đến \\(x_1 = 4\\). Giả sử ta gán \\(a_1 = 5\\). Khi này, các số có dạng \\(\overline{315*}\\) sẽ có giá trị lớn hơn \\(X\\), và các số có dạng này là các số mà ta không cần xét đến.
+Ở đây, ta có \\(31\\) là một tiền tố của \\(X\\) nên rơi vào trường hợp có giới hạn. Ta chỉ có thể gán cho \\(a_1\\) các chữ số từ \\(0\\) đến \\(x_1 = 4\\). Giả sử ta gán \\(a_1 = 5\\). Khi này, các số có dạng \\(\overline{315*}\\) sẽ lớn hơn \\(X\\), và các số có dạng này là các số mà ta không cần xét đến.
 
 Từ \\(2\\) trường hợp trên, ta có các trạng thái QHĐ cần thiết để giải một bài toán QHĐ chữ số:
 

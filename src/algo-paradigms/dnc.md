@@ -58,13 +58,13 @@ Sử dụng công thức này, có thể tích được độ phức tạp của
 
 Có thể xem thông tin về định lí Master tại các nguồn tài liệu khác để hiểu thêm.
 
-## Phần tử nhỏ thứ k
+## Phần tử nhỏ thứ \\(k\\)
 
 Bài toán: Cho một mảng `a` có \\(n\\) phần tử. Hãy tìm và in ra giá trị của phần tử nhỏ thứ \\(k\\) trong mảng (các phần tử bắt đầu từ \\(1\\)).
 
 VD: Phần tử nhỏ thứ \\(3\\) của mảng `a = [18, 43, 6, 15, 9, 37, 10, 42]` có giá trị bằng \\(10\\).
 
-Ta có thể sắp xếp lại các phần tử trong mảng bằng một thuật toán sắp xếp nào đấy ([QuickSort](../basic/sorting.md#sắp-xếp-nhanh-quicksort) - \\(O(n\log{n})\\)) và in ra phần tử thứ \\(k\\) trong mảng. 
+Ta có thể sắp xếp lại các phần tử trong mảng bằng một thuật toán sắp xếp nào đấy (Ví dụ: [QuickSort](../basic/sorting.md#sắp-xếp-nhanh-quicksort) - \\(O(n\log{n})\\)) và in ra phần tử thứ \\(k\\) trong mảng. 
 
 Độ phức tạp của thuật toán sẽ là \\(O(n\log{n})\\).
 
