@@ -39,7 +39,7 @@
     - [Thuật toán tìm kiếm theo chiều rộng (Breadth-First Search - BFS)](./graph-theory/bfs.md)
     - [Ứng dụng của thuật toán tìm kiếm](./graph-theory/graph-traversal-applications.md)
   - [Thuật toán sắp xếp Tô-pô](./graph-theory/topo.md)
-  - [Các thuật toán tìm đường đi ngắn nhất]()
+  - [Các thuật toán tìm đường đi ngắn nhất](./graph-theory/shortest-path.md)
     - [Thuật toán Dijkstra]()
     - [Thuật toán Bellman-Ford]()
     - [Thuật toán Floyd-Warshall]()
