@@ -48,7 +48,7 @@ Thuật toán flood fill được sử dụng trên mặt phẳng \\(2\\) chiề
 ```C++
 //                 D   T  N   B DN  DB  TN  TB
 static int dx[] = {0,  0, 1, -1, 1, -1,  1, -1};
-static int dx[] = {1, -1, 0,  0, 1,  1, -1, -1};
+static int dy[] = {1, -1, 0,  0, 1,  1, -1, -1};
 int mat[N][M];
 bool vst[N][M];
 int n, m;
@@ -79,7 +79,7 @@ void find_region(){
 
 ## Tìm đường đi ngắn nhất trên đồ thị 
 
-BFS có thể tìm đường đi ngắn nhất từ một đỉnh \\(s\\) đến các đỉnh khác trên đồ thị, nếu định nghĩa khoảng cách từ một đỉnh \\(u\\) đến một đỉnh \\(v\\) là số cạnh mà nó cần đi qua.
+BFS có thể tìm đường đi ngắn nhất từ một đỉnh \\(s\\) đến các đỉnh khác trên đồ thị không trọng số, hoặc trên đồ thị có trọng số nếu định nghĩa khoảng cách từ đỉnh \\(u\\) đến đỉnh \\(v\\) là số cạnh mà nó cần đi qua.
 
 ```C++
 int dist[N];
@@ -242,7 +242,7 @@ Một cạnh \\(uv\\) là cạnh cầu khi \\(low[v] \gt num[u]\\) với cách g
 - Cạnh vàng chỉ các cạnh cây thuộc cây DFS.
 - Cạnh đỏ chỉ các cạnh ngược không thuộc cây DFS.
 - Các đỉnh viền xanh chỉ các đỉnh khớp. 
-- Các cạnh nét dứt chỉ các cạnh cầu. 
+- Các cạnh nét đứt chỉ các cạnh cầu. 
 
 ```C++
 int num[N], low[N], tdfs = 0; // tdfs: số đỉnh đã duyệt
@@ -337,7 +337,7 @@ Khi ta bắt đầu duyệt đỉnh \\(u\\), ta thêm \\(u\\) vào một stack. 
 <img src="../images/tarjan.png" alt="Tarjan"/>
 </center>
 
-Những đỉnh có cùng màu sắc trong hình là các đỉnh thuộc cùng một TPLT.
+Những đỉnh có cùng màu sắc trong hình là các đỉnh cùng thuộc một TPLT.
 
 ```C++
 int num[N], low[N], tdfs = 0;

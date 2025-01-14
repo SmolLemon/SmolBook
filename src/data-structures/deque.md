@@ -41,9 +41,9 @@ Với nhiều thao tác như thế, deque hoàn toàn có thể thực hiện c�
 
 Thực tế, nếu ta đọc thông tin về [stack](https://en.cppreference.com/w/cpp/container/stack) và [queue](https://en.cppreference.com/w/cpp/container/queue) trên [cppreference.com](https://cppreference.com) thì ẩn trong \\(2\\) CDTL chính là deque.  
 
-### BFS 0 - 1
+### BFS 0/1
 
-Deque được dùng để giải quyết bài toàn tìm đường đi ngắn nhất bằng BFS: [BFS 0 - 1](../graph-theory/dijkstra.md#bfs-01).
+Deque được dùng để giải quyết bài toàn tìm đường đi ngắn nhất bằng [BFS](../graph-theory/dijkstra.md#bfs-01).
 
 ### Deque trên đoạn tịnh tiến
 

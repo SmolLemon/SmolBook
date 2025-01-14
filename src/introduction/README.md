@@ -80,7 +80,7 @@ Kỳ thi là dịp phát hiện học sinh giỏi, học sinh xuất sắc các 
 
 ### ICPC
 
-**International Collegiate Programming Contest**, hay **ICPC**, là một cuộc thi lập trình dành cho sinh viên. Đây là cuộc thi lập trình lâu đời nhất, lớn nhất và danh tiếng nhất thế giới. Hằng năm, cuộc thi thu hút hơn 50000 thí sinh từ hơn 3000 trường đại học khác nhau trên toàn thế giới. [^4]
+**International Collegiate Programming Contest**, hay **ICPC**, là một cuộc thi lập trình dành cho sinh viên. Đây là cuộc thi lập trình lâu đời nhất, lớn nhất và danh tiếng nhất thế giới. Hằng năm, cuộc thi thu hút hơn 50000 thí sinh từ hơn 3000 trường đại học khác nhau trên toàn thế giới[^4].
 
 Mặc dù cuộc thi chỉ giới hạn cho các trường đại học, ở Việt Nam, ban tổ chức ICPC Việt Nam cũng tổ chức Kì thi ICPC cho các bạn học sinh THPT trên khắp cả nước.
 

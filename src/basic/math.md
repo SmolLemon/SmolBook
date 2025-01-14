@@ -10,15 +10,15 @@ Ta có công thức tính tổng của một số dãy số:
 
 **Tổng của \\(n\\) số tự nhiên đầu tiên:** 
 
-\\[1 + 2 + ... + n = \frac{n(n + 1)}{2}\\]
+\\[1 + 2 + \dots + n = \frac{n(n + 1)}{2}\\]
 
 **Tổng lũy thừa của \\(n\\) số tự nhiên đầu tiên:** 
 
-\\[1^2 + 2^2 + ... + n^2 = \frac{n(n + 1)(2n + 1)}{6}\\]
+\\[1^2 + 2^2 + \dots + n^2 = \frac{n(n + 1)(2n + 1)}{6}\\]
 
 **Tổng của một cấp số cộng \\((u_n)\\) với số hạng đầu \\(u_1\\) và công sai \\(d\\):**
 
-\\[u_1 + u_2 + ... + u_n = \frac{n[2u_1 + (n - 1)d]}{2} = \frac{n(u_1 + u_n)}{2}\\]
+\\[u_1 + u_2 + \dots + u_n = \frac{n[2u_1 + (n - 1)d]}{2} = \frac{n(u_1 + u_n)}{2}\\]
 
 Ví dụ: tính tổng \\(5\\) số hạng đầu tiên của một cấp số cộng \\(u_n\\) với số hạng đầu \\(4\\) và công sai \\(3\\):
 
@@ -26,7 +26,7 @@ Ví dụ: tính tổng \\(5\\) số hạng đầu tiên của một cấp số c
 
 **Tổng của một cấp số nhân \\((u_n)\\) với số hạng đầu \\(u_1\\) và công bội \\(q \neq 1\\):**
 
-\\[u_1 + u_2 + ... + u_n = \frac{u_1(q^n - 1)}{q - 1}\\]
+\\[u_1 + u_2 + \dots + u_n = \frac{u_1(q^n - 1)}{q - 1}\\]
 
 Ví dụ: tính tổng \\(4\\) số hạng đầu tiên của một cấp số nhân \\(u_n\\) với số hạng đầu \\(1\\) và công sai \\(5\\):
 
@@ -34,7 +34,7 @@ Ví dụ: tính tổng \\(4\\) số hạng đầu tiên của một cấp số n
 
 Từ đây ta suy ra tổng của \\(n\\) lũy thừa đầu tiên của \\(2\\) bằng:
 
-\\[1 + 2 + ... + 2^{n - 1} = 2^n - 1\\]
+\\[1 + 2 + \dots + 2^{n - 1} = 2^n - 1\\]
 
 
 ## Lý thuyết tập hợp
@@ -69,10 +69,10 @@ Nếu \\(Y \subset X\\) thì \\(X \setminus Y\\) được gọi là phần bù c
 
 Trong toán học ta cũng có kí hiệu cho các tập hợp số.
 
-- Tập hợp các số tự nhiên: \\(\mathbb{N} = \\{0, 1, 2, ... \\}\\)
-- Tập hợp các số nguyên: \\(\mathbb{Z} = \\{..., -2, -1, 0, 1, 2, ... \\}\\)
-- Tập hợp các số hữu tỉ: \\(\mathbb{Q} = \\{0, 7, \frac{1}{2} ... \\}\\)
-- Tập hợp các số vô tỉ: \\(\mathbb{R} = \\{\pi, e, \sqrt{2} ... \\}\\)
+- Tập hợp các số tự nhiên: \\(\mathbb{N} = \\{0, 1, 2, \dots \\}\\)
+- Tập hợp các số nguyên: \\(\mathbb{Z} = \\{\dots, -2, -1, 0, 1, 2, \dots \\}\\)
+- Tập hợp các số hữu tỉ: \\(\mathbb{Q} = \\{0, 7, \frac{1}{2} \dots \\}\\)
+- Tập hợp các số vô tỉ: \\(\mathbb{R} = \\{\pi, e, \sqrt{2} \dots \\}\\)
 
 Mối quan hệ giữa các tập hợp số: \\(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}\\)
 
@@ -81,7 +81,7 @@ Mối quan hệ giữa các tập hợp số: \\(\mathbb{N} \subset \mathbb{Z} \
 
 Định nghĩa của logarit được phát biểu như sau:
 
-> Cho \\(a\\) là một số thực khác 0 và một số thực \\(x\\). Số thực \\(k\\) để \\(a^k = x\\) được gọi là **logarit cơ số \\(a\\) của \\(x\\)**. Kí hiệu: \\(k = \log_a(x)\\).
+> Cho \\(a\\) là một số thực khác \\(0\\) và một số thực \\(x\\). Số thực \\(k\\) để \\(a^k = x\\) được gọi là **logarit cơ số \\(a\\) của \\(x\\)**. Kí hiệu: \\(k = \log_a(x)\\).
 
 Ta có thể hình dung \\(k = \log_a(x)\\) là số lần phải chia \\(x\\) cho \\(a\\) cho tới khi \\(x = 1\\).
 

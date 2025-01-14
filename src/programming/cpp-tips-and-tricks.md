@@ -160,7 +160,24 @@ for(auto [x, y] : arr){
 	cout << x << ' ' << y << '\n';
 }
 ```
+## `tie()`
 
+Trong nhiều trường hợp ta muốn gán các giá trị của `pair` hoặc `tuple` vào các biến để dễ nhìn, dễ viết:
+
+```C++
+int a, b;
+pair<int, int> pii;
+a = pii.first;
+b = pii.second;
+```
+
+Ta có thể sử dụng `tie` để rút gọn quá trình này:
+
+```C++
+int a, b;
+pair<int, int> pii;
+tie(a, b) = pii;
+```
 
 ## Khai báo hàm ở dưới hàm `main()`
 
@@ -172,7 +189,7 @@ Các chương trình C++ khi khai báo các chương trình con thường sẽ v
 using namespace std;
 
 void foo(){
-	[...]
+	// [...]
 }
 
 int main () {
@@ -198,7 +215,7 @@ int main () {
 }
 
 void foo(){
-	[...]
+	// [...]
 }
 ```
 
@@ -212,7 +229,7 @@ Với cách viết này, ta có thể phân tích code từ trên xuống một 
 
 **Lợi ích 2:** Không xuất hiện lỗi khi có các hàm phụ thuộc lẫn nhau.
 
-Ta có chương trình sau:
+Ta có chương trình sau kiểm tra tính chẵn lẻ của một số:
 
 ```C++
 #include <bits/stdc++.h>
@@ -239,7 +256,7 @@ int main() {
 
 Chương trình ở trên sẽ không chạy được do hàm `odd()` được khai báo trước hàm `even()`, từ đó "không thấy" hàm ấy.
 
-Vẫn đề đó sẽ không tồn tại nếu ta viết theo cách sau:
+Vấn đề này sẽ không tồn tại nếu ta viết theo cách sau:
 
 ```C++
 #include <bits/stdc++.h>
@@ -267,6 +284,6 @@ bool even(int x){
 }
 ```
 
-Bằng cách khai báo các hàm ở dưới hàm main, ta tránh được lỗi xảy ra khi các hàm phụ thuộc lẫn nhau.
+Bằng cách viết này, ta tránh được lỗi xảy ra khi các hàm phụ thuộc lẫn nhau.
 
-Tuy nhiên, cách viết này cũng tồn tại một vài bất lợi, cụ thể là khi sửa các hàm ta phải sửa tận \\(2\\) vị trí thay vì \\(1\\).
+Tuy nhiên, cũng tồn tại một vài bất lợi khi viết theo hướng này: khi sửa các hàm, ta phải sửa tận \\(2\\) vị trí thay vì \\(1\\).

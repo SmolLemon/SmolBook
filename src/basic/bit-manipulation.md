@@ -223,8 +223,8 @@ i = 2, 1 << i = 0000100 (Nhị phân) =  4 (Thập phân)
 #### Lấy giá trị, kiểm tra bit thứ \\(i\\)
 
 Để lấy giá trị bit thứ \\(i\\) của \\(S\\), ta sử dụng thao tác bit AND: `T = S & (1 << i)`.
-- Nếu \\(T\\) bằng 0, bit thứ \\(i\\) có giá trị là \\(0\\)
-- Nếu \\(T\\) khác 0, hay \\(T\\) bằng `1 << i`, bit thứ \\(i\\) có giá trị là \\(1\\)
+- Nếu \\(T\\) bằng \\(0\\), bit thứ \\(i\\) có giá trị là \\(0\\)
+- Nếu \\(T\\) khác \\(0\\), hay \\(T\\) bằng `1 << i`, bit thứ \\(i\\) có giá trị là \\(1\\)
 
 ```
 S             = 0011101 (Nhị phân) = 29 (Thập phân)
