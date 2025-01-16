@@ -185,11 +185,13 @@ Nếu đồ thị có trọng số âm của ta có chu trình âm, tức là c�
 
 Ở ví dụ trên, thuật toán vẫn chưa xét đỉnh \\(5\\) vì nó vẫn mải mê cập nhật đường đi ngắn nhất của các đỉnh còn lại.
 
-### Tìm con đường ngắn nhất
+## Tìm con đường ngắn nhất
 
 Nếu ta để ý thì sẽ thấy một mảng `p` bí ẩn ở trong các đoạn code. Mảng `p` này mang ý nghĩa: Để tìm được đường đi ngắn nhất từ \\(s\\) đến \\(u\\), ta cần tìm đường đi ngắn nhất từ \\(s\\) đến \\(p[u]\\), cộng thêm trọng số của cạnh \\({u, p[u]}\\).
 
 Sử dụng thông tin này ta có thể tìm được các đỉnh của (một) đường đi ngắn nhất từ đỉnh \\(s\\) đên một đỉnh bất kì.
+
+Hàm `printpath` dưới đây sẽ tìm một con đường ngắn nhất từ đỉnh \\(s\\) đến đỉnh \\(u\\) bằng cách gọi `printpath(s, u)`.
 
 ```C++
 void printpath(int s, int u){

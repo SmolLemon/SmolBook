@@ -41,7 +41,7 @@
   - [Các thuật toán tìm đường đi ngắn nhất](./graph-theory/shortest-path.md)
     - [Thuật toán Dijkstra](./graph-theory/dijkstra.md)
     - [Thuật toán Bellman-Ford](./graph-theory/bellman-ford.md)
-    - [Thuật toán Floyd-Warshall]()
+    - [Thuật toán Floyd-Warshall](./graph-theory/floyd-warshall.md)
   - [Thuật toán sắp xếp Tô-pô](./graph-theory/topo.md)
   - [Cây khung nhỏ nhất]()
   - [2-SAT]()

@@ -1,6 +1,6 @@
 # Thuật toán Bellman-Ford
 
-**Thuật toán Bellman-Ford** là một thuật toán tìm đường đi ngắn nhất từ một đỉnh. Thuật toán này thường bị lếp vế so với thuật toán Dijkstra khi nó có thể giải được bài toán với độ phức tạp nhỏ hơn - \\(O((|V| + |E|)\log{|V|})\\) - so với \\(O(|V||E|)\\) của Bellman-Ford. 
+**Thuật toán Bellman-Ford** là thuật toán tìm đường đi ngắn nhất từ một đỉnh. Thuật toán này thường bị lép vế so với thuật toán Dijkstra khi nó có thể giải được bài toán với độ phức tạp nhỏ hơn - \\(O((|V| + |E|)\log{|V|})\\) - so với \\(O(|V||E|)\\) của Bellman-Ford. 
 
 Tuy nhiên, thuật toán Bellman-Ford có thể giải quyết được trường hợp đồ thị có chu trình âm thay vì rơi vào một vòng lặp vô hạn như Dijkstra.
 
