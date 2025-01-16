@@ -284,6 +284,6 @@ bool even(int x){
 }
 ```
 
-Bằng cách viết này, ta tránh được lỗi xảy ra khi các hàm phụ thuộc lẫn nhau.
+Bằng cách này, ta tránh được lỗi xảy ra khi các hàm phụ thuộc lẫn nhau.
 
 Tuy nhiên, cũng tồn tại một vài bất lợi khi viết theo hướng này: khi sửa các hàm, ta phải sửa tận \\(2\\) vị trí thay vì \\(1\\).

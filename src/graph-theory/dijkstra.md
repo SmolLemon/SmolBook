@@ -1,14 +1,14 @@
 # Thuật toán Dijkstra
 
-*"What is the shortest way to travel from Rotterdam to Groningen. It is the algorithm for the shortest path, which I designed in about \\(20\\) minutes. One morning I was shopping in Amsterdam with my young fiancée, and tired, we sat down on the café terrace to drink a cup of coffee and I was just thinking about whether I could do this, and I then designed the algorithm for the shortest path. As I said, it was a \\(20\\)-minute invention. In fact, it was published in \\(1959\\), three years later. The publication is still quite nice. One of the reasons that it is so nice was that I designed it without pencil and paper. (...). Eventually, that algorithm became to my great amazement, one of the cornerstones of my fame."*
+*"What is the shortest way to travel from Rotterdam to Groningen. It is the algorithm for the shortest path, which I designed in about 20 minutes. One morning I was shopping in Amsterdam with my young fiancée, and tired, we sat down on the café terrace to drink a cup of coffee and I was just thinking about whether I could do this, and I then designed the algorithm for the shortest path. As I said, it was a 20-minute invention. In fact, it was published in 1959, three years later. The publication is still quite nice. One of the reasons that it is so nice was that I designed it without pencil and paper. (...). Eventually, that algorithm became to my great amazement, one of the cornerstones of my fame."*
 
 *- Thomas J. Misa, [An interview with Edsger W. Dijkstra](https://dl.acm.org/doi/pdf/10.1145/1787234.1787249)*
 
 <sup> Comment: Mê cái cách ông ấy nhấn mạnh việc thiết kế một thuật toán chỉ trong vòng \\(20\\) phút. **Tận 2 LẦN!!!** <sup>
 
-## Thuật toán
+**Thuật toán Dijkstra** là thuật toán [*tham lam*](../algo-paradigms/greedy.md) tìm đường đi ngắn nhất từ một đỉnh trên đồ thị.
 
-Thuật toán Dijkstra là thuật toán [*tham lam*](../algo-paradigms/greedy.md) tìm đường đi ngắn nhất từ một đỉnh trên đồ thị.
+## Thuật toán
 
 Ban đầu, thuật toán sẽ gán khoảng cách đến đỉnh bắt đầu \\(s\\) là \\(0\\), và \\(\infty\\) cho khoảng cách đến các đỉnh còn lại. Ở mỗi bước, thuật toán sẽ tìm đỉnh có khoảng cách ngắn nhất chưa được xét đến trên đồ thị, và cập nhật khoảng cách của các đỉnh kề cạnh với nó.
 
@@ -88,7 +88,7 @@ void dijkstra(int s){
 
 Một cách cài đặt phổ biến khác có sử dụng `priority_queue` để tìm đỉnh chưa xét có khoảng cách ngắn nhất.
 
-Không giống `set`, ta không thể xóa một phần tử bất kì trong `priority_queue`. Vì thế, ta sẽ áp dụng phương pháp "xóa lười". Giả sử ta thành công cập nhật \\(dist[v]\\), ta sẽ thêm vào `pq` một cặp \\(\\{dist[v], v\\}\\) mới, có \\(dist[v]\\) nhỏ hơn so với cặp \\(\\{dist[v], v\\}\\) cũ ở trong `pq`. Giả sử khi ta xét đến cặp \\(\\{dist[v], v\\}\\) cũ trong `pq`, ta có thể bỏ qua cặp giá trị này. 
+Không giống `set`, ta không thể xóa một phần tử bất kì trong `priority_queue`. Vì thế, ta sẽ áp dụng phương pháp "xóa lười". Giả sử ta thành công cập nhật \\(dist[v]\\), ta sẽ thêm vào `pq` một cặp \\(\\{dist_v, v\\}\\) mới, có \\(dist_v\\) nhỏ hơn so với cặp \\(\\{dist_v, v\\}\\) cũ ở trong `pq`. Giả sử khi ta xét đến cặp \\(\\{dist_v, v\\}\\) cũ trong `pq`, ta có thể bỏ qua cặp giá trị này. 
 
 ```C++
 void dijkstra(int s){
@@ -124,7 +124,7 @@ void dijkstra(int s){
 
 Độ phức tạp thuật toán tương tư cách cài đặt sử dụng `set`: \\(O((|E| + |V|) \log {|V|})\\).
 
-## Dijkstra trên đồ thị không tồn tại chu trình âm
+## Dijkstra trên đồ thị có trọng số âm
 
 Thuật toán Dijkstra không thể thực hiện việc tìm kiếm đường đi ngắn nhất trên đồ thị có trọng số âm.
 
@@ -136,7 +136,7 @@ Ta ví dụ với đồ thị sau:
 
 Dijkstra sẽ tính sai giá trị đường đi ngắn nhất từ đỉnh \\(1\\) đến hai đỉnh \\(4\\) và \\(5\\). 
 
-Ta có thể khắc phục vấn đề này bằng cách vẫn cho phép các đỉnh được ghé thăm cập nhật khoảng cách ngắn nhất của nó. Điều này sẽ giúp thuật toán của ta chạy được với cả các đồ thị có trọng số âm.
+Ta có thể khắc phục vấn đề này bằng cách vẫn cho phép các đỉnh được ghé thăm cập nhật khoảng cách ngắn nhất của nó, kể cả khi đỉnh đã được xét. Nếu một đỉnh được xét được cập nhật đường đi ngắn nhất, ta sẽ xem nó như là một đỉnh chưa xét. Điều này sẽ giúp thuật toán của ta chạy được với cả các đồ thị có trọng số âm.
 
 <center>
 <img src="../images/djikstra_neg_correct.png" alt="Dijkstra Chạy Đúng"/>
@@ -179,9 +179,15 @@ void dijkstra(int s){
 
 Nếu đồ thị có trọng số âm của ta có chu trình âm, tức là có một chu trình với khoảng cách âm, thì thuật toán Dijkstra được sửa đổi để có thể chạy trên đồ thị trọng số âm sẽ chạy trong một vòng lặp vô hạn khi thuật toán cố gắng xây dựng đường đi ngắn nhất bằng cách đi trên chu trình âm ấy vô hạn lần để cho ra kết quả nhỏ nhất.
 
+<center>
+<img src="../images/djikstra_neg_cycle.png" alt="Dijkstra Chu Trình Âm"/>
+</center>
+
+Ở ví dụ trên, thuật toán vẫn chưa xét đỉnh \\(5\\) vì nó vẫn mải mê cập nhật đường đi ngắn nhất của các đỉnh còn lại.
+
 ### Tìm con đường ngắn nhất
 
-Ta sẽ thấy một mảng `p` bí ẩn ở trong các đoạn code. Mảng `p` này mang ý nghĩa: Để tìm được đường đi ngắn nhất từ \\(s\\) đến \\(u\\), ta cần tìm đường đi ngắn nhất từ \\(s\\) đến \\(p[u]\\), cộng thêm trọng số của cạnh \\({u, p[u]}\\).
+Nếu ta để ý thì sẽ thấy một mảng `p` bí ẩn ở trong các đoạn code. Mảng `p` này mang ý nghĩa: Để tìm được đường đi ngắn nhất từ \\(s\\) đến \\(u\\), ta cần tìm đường đi ngắn nhất từ \\(s\\) đến \\(p[u]\\), cộng thêm trọng số của cạnh \\({u, p[u]}\\).
 
 Sử dụng thông tin này ta có thể tìm được các đỉnh của (một) đường đi ngắn nhất từ đỉnh \\(s\\) đên một đỉnh bất kì.
 
@@ -206,11 +212,11 @@ Thuật toán của ta sẽ có độ phức tạp thuật toán bằng \\(O((|E
 
 Hãy nhìn vào các đỉnh `pq` trong quá trình chạy thuật toán:
 
-\\[pq = \underbrace{u, \dots, u}\_{dist[u]}, \underbrace{v, \dots, v}\_{dist[u] + 1}\\]
+\\[pq = \underbrace{u, \dots, u}\_{dist_u}, \underbrace{v, \dots, v}\_{dist_u + 1}\\]
 
-Từ đây, ta có thể rút gọn việc thêm các cặp giá trị \\(\\{dist[v], v\\}\\) vào `pq` sau mỗi lần cập nhật như sau:
-- Nếu \\(dist[v] = dist[u] + 1\\), hay cạnh \\(uv\\) có trọng số là \\(1\\), thêm đỉnh \\(v\\) vào cuối `pq`.
-- Nếu \\(dist[v] = dist[u] + 0\\), hay cạnh \\(uv\\) có trọng số là \\(0\\), thêm đỉnh \\(v\\) vào đầu `pq`.
+Từ đây, ta có thể rút gọn việc thêm các cặp giá trị \\(\\{dist_v, v\\}\\) vào `pq` sau mỗi lần cập nhật như sau:
+- Nếu \\(dist_v = dist_u + 1\\), hay cạnh \\(uv\\) có trọng số là \\(1\\), thêm đỉnh \\(v\\) vào cuối `pq`.
+- Nếu \\(dist_v = dist_u + 0\\), hay cạnh \\(uv\\) có trọng số là \\(0\\), thêm đỉnh \\(v\\) vào đầu `pq`.
 
 Ta có thể bỏ giá trị \\(dist\\) và chỉ lưu các đỉnh vào trong `pq`. 
 
