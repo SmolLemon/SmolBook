@@ -4,7 +4,7 @@ Bài toán mở đầu:
 
 > Cho một mảng `a` chứa \\(n\\) phần tử phân biệt được sắp xếp tăng dần. Kiểm tra xem có tồn tại phần tử có giá trị \\(x\\) trong mảng hay không.
 
-Để giải quyết bài toán này, ta có thể duyệt qua tất cả các phần tử và kiểm tra phần tử nào có giá trị bằng \\(x\\), nhưng độ phức tạp thời gian sẽ là \\(O(n)\\). Ta có thể giải được bài toán này một cách tối ưu bằng các sử dụng thuật toán tìm kiếm nhị phân.
+Để giải quyết bài toán này, ta có thể duyệt qua tất cả các phần tử và kiểm tra phần tử nào có giá trị bằng \\(x\\), nhưng độ phức tạp thời gian sẽ là \\(O(n)\\). Ta có thể giải được bài toán này một cách tối ưu bằng **thuật toán tìm kiếm nhị phân**.
 
 ## Thuật toán
 

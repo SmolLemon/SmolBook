@@ -1,8 +1,8 @@
 # Summary
 
 [Smol Book - Cẩm nang Lập trình Thi đấu](./title-page.md)
-[Giới thiệu](./introduction.md)
 [Hướng dẫn](./guide.md)
+[Giới thiệu](./introduction.md)
 
 # Mục lục
 
@@ -65,3 +65,6 @@
   - [Ma trận]()
   - [Hình học]()
 - [Xâu]()
+- [Phụ lục]()
+  - [A - Danh sách thuật toán]()
+  - [B - Danh sách bài tập]()

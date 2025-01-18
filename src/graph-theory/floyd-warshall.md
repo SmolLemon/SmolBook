@@ -1,6 +1,6 @@
 # Thuật toán Floyd-Warshall
 
-**Thuật toán Floyd-Warshall** là thuật toán tìm đường đi ngắn nhất của *tất cả các cặp đỉnh* hay vì từ một đỉnh như hai thuật toán tìm đường đi ngắn nhất được nói ở phần trước - [Dijkstra](dijkstra.md) và [Bellman-Ford](bellman-ford.md). 
+**Thuật toán Floyd-Warshall** là thuật toán tìm đường đi ngắn nhất của *mọi cặp đỉnh* thay vì từ một đỉnh như hai thuật toán tìm đường đi ngắn nhất được nói ở phần trước - [Dijkstra](dijkstra.md) và [Bellman-Ford](bellman-ford.md). 
 
 ## Thuật toán
 
@@ -80,7 +80,7 @@ void FloydWarshall(){
 
 Độ phức tạp thuật toán là \\(O(|V|^3)\\).
 
-Sẽ có những lúc mà ta viết nhầm các vòng lặp lồng nhau trong thuật toán Floyd-Warshall - thay vì viết \\(k \rightarrow i \rightarrow j\\) thì lại viết nhầm thành \\(i \rightarrow j \rightarrow k\\) - cho ra kết quả sai. Dẫu vây, lỗi này có thể cho ra kết quả đúng bằng cách lặp lại vòng lặp \\(3\\) lần: [bài viết](https://arxiv.org/abs/1904.01210).
+Sẽ có những lúc mà ta viết nhầm các vòng lặp lồng nhau trong thuật toán Floyd-Warshall - thay vì viết \\(k \rightarrow i \rightarrow j\\) thì lại viết nhầm thành \\(i \rightarrow j \rightarrow k\\) - cho ra kết quả sai. Dẫu vậy, lỗi này vẫn có thể cho ra kết quả đúng bằng cách lặp lại vòng lặp \\(3\\) lần: [bài viết](https://arxiv.org/abs/1904.01210).
 
 ## Phát hiện chu trình âm
 

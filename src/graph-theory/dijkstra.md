@@ -212,7 +212,7 @@ Giả sử ta chạy thuật toán Dijkstra trên một đồ thị có trọng 
 
 Thuật toán của ta sẽ có độ phức tạp thuật toán bằng \\(O((|E| + |V|) \log {|V|})\\). 
 
-Hãy nhìn vào các đỉnh `pq` trong quá trình chạy thuật toán:
+Hãy nhìn vào các đỉnh trong `pq` trong quá trình chạy thuật toán:
 
 \\[pq = \underbrace{u, \dots, u}\_{dist_u}, \underbrace{v, \dots, v}\_{dist_u + 1}\\]
 

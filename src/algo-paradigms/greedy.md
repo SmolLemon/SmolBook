@@ -35,10 +35,11 @@ Thuật toán trên thỏa mãn hai tính chất của một thuật toán tham 
 - Cấu trúc con tối ưu: Lời giải tối ưu cho \\(670\\) nghìn đồng sử dụng đáp án của lời giải tối ưu cho \\(170\\) nghìn đồng. Lời giải cho \\(170\\) lại sử dụng đáp án của lời giải \\(70\\) nghìn đồng và cứ tiếp tục như thế.
 - Tính tham lam: Sử dụng thuật toán tham lam, ta có thể tìm ra kết quả tối ưu của bài toán (bỏ qua phần chứng minh).
 
-Tuy nhiên các thuật toán tham lam chỉ đúng với một số trường hợp như trường hợp trên. Giả sử các tờ tiền bị thay đổi thành:
+Tuy nhiên các thuật toán tham lam chỉ đúng với một số trường hợp như trường hợp trên. Giả sử các tờ tiền được thay đổi thành:
 
-\\[\\{1, 4, 9\\}\\]
+\\[\\{1, 3, 4\\}\\]
 
-Thì thuật toán tham lam sẽ không còn đúng nữa. Nếu \\(X = 16\\) thì thuật toán trên sẽ cần \\(5\\) tờ tiền \\(9 + 4 + 1 + 1 + 1\\), trong khi đáp án tối ưu là \\(4\\) tờ tiền \\(4 + 4 + 4 + 4\\).
+Thì thuật toán tham lam sẽ không còn đúng nữa. Nếu \\(X = 6\\) thì thuật toán trên sẽ cần \\(3\\) tờ tiền \\(4 + 1 + 1\\), trong khi đáp án tối ưu là \\(2\\) tờ tiền \\(3 + 3\\).
 
 ## Bài toán xếp lịch
+

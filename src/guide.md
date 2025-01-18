@@ -1,6 +1,6 @@
 # Hướng dẫn
 
-Trang này được viết để hướng dẫn người dùng cách tương tác với [Smol Book](./title-page.md).
+Trang này được viết để hướng dẫn người dùng cách tương tác với [Smol Book - Cẩm nang Lập trình Thi đấu](./title-page.md).
 
 Sử dụng theme `Light` để có trải nghiệm tốt nhất.
 
@@ -37,4 +37,4 @@ Sau khi trang được tải, kết quả tìm kiếm sẽ được in đậm. N
 
 ## Code block
 
-Các chương trong Smol Book sẽ có những đoạn code được viết trên code block. Để sao chép nôi dung của code block, di chuyển chuột bên trên codeblock và ấn biểu tượng sao chép <i class="fa fa-copy fa-button"></i>.
+Các chương trong Smol Book sẽ có những đoạn code được viết trên code block. Để sao chép nôi dung của code block, di chuyển chuột bên trên code block và ấn biểu tượng sao chép <i class="fa fa-copy fa-button"></i>.
