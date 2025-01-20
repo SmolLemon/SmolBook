@@ -10,7 +10,7 @@ Gọi \\(G(X)\\) là số lượng số nằm trong khoảng \\([0, X]\\) thỏa
 
 ### Xây dựng hàm \\(G(X)\\)
 
-Để xây dựng hàm \\(G(X)\\), ta sẽ xem các số trong khoảng \\([0, X]\\) như một xâu kí tự: Ta có \\(X = \overline{x_{n - 1}x_{n - 2}...x_{0}}\\) với \\(n\\) là số chữ số trong \\(X\\). Ta sẽ tạo các số \\(A = \overline{a_{n - 1}a_{n - 2}...a_{0}}\\) nhỏ hơn hoặc bằng \\(X\\), và ta thực hiện việc gán giá trị cho các chữ số của \\(A\\) theo chiều từ trái sang phải.
+Để xây dựng hàm \\(G(X)\\), ta sẽ xem các số trong khoảng \\([0, X]\\) như một xâu kí tự: Ta có \\(X = \overline{x_{n - 1}x_{n - 2}\dots x_{0}}\\) với \\(n\\) là số chữ số trong \\(X\\). Ta sẽ tạo các số \\(A = \overline{a_{n - 1}a_{n - 2}\dots a_{0}}\\) nhỏ hơn hoặc bằng \\(X\\), và ta thực hiện việc gán giá trị cho các chữ số của \\(A\\) theo chiều từ trái sang phải.
 
 Giả sử ta có \\(X = 3141\\):
 
@@ -40,13 +40,13 @@ Giả sử ta đã điền các chữ số ở trước \\(a_1\\) bằng các gi
 |---|---|---|---|
 |\\(2\\)|\\(1\\)|\\(\*\\)|\\(\*\\)|
 
-Trường hợp không giới hạn sẽ xảy ra nếu các số được điền trước \\(a_i\\) là một tiền tố của số \\(X\\). Khi này, ta chỉ có thể điền \\(a_i\\) các chữ số từ \\(0\\) đến \\(x_i\\).
+Trường hợp có giới hạn sẽ xảy ra nếu các số được điền trước \\(a_i\\) là một tiền tố của số \\(X\\). Khi này, ta chỉ có thể điền \\(a_i\\) các chữ số từ \\(0\\) đến \\(x_i\\).
 
 Ở đây, ta có \\(31\\) là một tiền tố của \\(X\\) nên rơi vào trường hợp có giới hạn. Ta chỉ có thể gán cho \\(a_1\\) các chữ số từ \\(0\\) đến \\(x_1 = 4\\). Giả sử ta gán \\(a_1 = 5\\). Khi này, các số có dạng \\(\overline{315*}\\) sẽ lớn hơn \\(X\\), và các số có dạng này là các số mà ta không cần xét đến.
 
 Từ \\(2\\) trường hợp trên, ta có các trạng thái QHĐ cần thiết để giải một bài toán QHĐ chữ số:
 
-\\[f(idx, smaller, S_1, S_2, ..., S_k) \\]
+\\[f(idx, smaller, S_1, S_2, \dots, S_k) \\]
 
 Trong đó:
 
@@ -54,21 +54,23 @@ Trong đó:
 - \\(smaller\\) bằng \\(0/1\\) với ý nghĩa:	
 	- \\(smaller = 0\\) nếu rơi vào trường hợp có giới hạn.
 	- \\(smaller = 1\\) nếu rơi vào trường hợp không giới hạn.
-- \\(S_1, S_2, ...,S_k\\) là các tính chất của đoạn số \\(\overline{a_{n - 1}a_{n - 2}...a_{idx + 1}}\\).
+- \\(S_1, S_2, \dots ,S_k\\) là các tính chất của đoạn số \\(\overline{a_{n - 1}a_{n - 2}\dots a_{idx + 1}}\\).
 
 Khi này, ta sẽ gọi hàm \\(f\\) để tính \\(G(X)\\):
 
-\\[G(X) = f(n - 1, 0, S_1, S_2, ..., S_k)\\]
+\\[G(X) = f(n - 1, 0, S_1, S_2, \dots , S_k)\\]
 
-Độ phức tạp của QHĐ chữ số thường sẽ có dạng: \\(O(D \times 2 \times n \times S_1 \times S_2 \times ... \times S_k)\\), trong đó:
+Độ phức tạp của QHĐ chữ số thường sẽ có dạng: \\(O(D \times 2 \times n \times S_1 \times S_2 \times \dots  \times S_k)\\), trong đó:
 - \\(D\\) là hệ số của số đang xét.
+- \\(2\\) là số trạng thái của \\(smaller\\).
 - \\(n\\) là số chữ số của \\(X\\).
+- \\(S_1, S_2, \dots ,S_k\\) là số trạng thái của các tính chất.
 
 Ta cùng xem qua một số bài toán ví dụ để hiểu rõ hơn.
 
-## Một số bài toán ví dụ
+## Thực hành
 
-### Ví dụ 1: [Free Contest Testing Round 3 - DIGITSUM](https://oj.vnoi.info/problem/fct003_digitsum)
+### Bài 1: [Free Contest Testing Round 3 - DIGITSUM](https://oj.vnoi.info/problem/fct003_digitsum)
 
 Tóm tắt: Cho hai số nguyên không âm \\(a\\) và \\(b\\), tính tổng chữ số của các số trong đoạn \\([a, b]\\).
 
@@ -145,7 +147,7 @@ ll G(ll X){
 
 Ngoài cách giải QHĐ chữ số, ta cũng có thể [giải theo phương pháp khác](https://oj.vnoi.info/problem/fct003_digitsum#comment-5859).
 
-### Ví dụ 2: [Atcoder Educational DP Contest S - Digit Sum](https://oj.vnoi.info/problem/atcoder_dp_s)
+### Bài 2: [Atcoder Educational DP Contest S - Digit Sum](https://oj.vnoi.info/problem/atcoder_dp_s)
 
 Tóm tắt: Cho hai số \\(K\\) và \\(D\\), đếm số lượng số từ \\(1\\) đến \\(K\\) có tổng chữ số chia hết cho \\(D\\), modulo \\(10^9 + 7\\).
 
@@ -202,7 +204,7 @@ ll G(string &X){
 ```
 Độ phức tạp của thuật toán này là \\(O(10 \times n \times 2 \times D)\\).
 
-### Ví dụ 3: [Số lượng số](https://oj.vnoi.info/problem/snad)
+### Bài 3: [Số lượng số](https://oj.vnoi.info/problem/snad)
 
 Tóm tắt: Cho \\(T\\) cặp số \\([X; Y]\\), đếm số lượng số mà có tích của một số với tổng chữ số của nó đó nằm trong khoảng \\([X; Y]\\).
 
@@ -349,7 +351,7 @@ ll G(ll X, ll sum){
 
 Độ phức tạp của thuật toán giờ đây giảm xuống còn: \\(O(10 \times n \times sum)\\)
 
-### Ví dụ 4: [NUMTSN - 369 Numbers](https://www.spoj.com/problems/NUMTSN/)
+### Bài 4: [NUMTSN - 369 Numbers](https://www.spoj.com/problems/NUMTSN/)
 
 Tóm tắt: Cho \\(T\\) cặp số \\(A\\) và \\(B\\), với mỗi cặp số, đếm số lượng số \\(369\\) nằm trong khoảng \\([A; B]\\), modulo \\(10^9 + 7\\).
 
@@ -431,7 +433,7 @@ bool g(string &X){
 
 Độ phức tạp của thuật toán là: \\(O(10 \times n \times three \times six \times nine)\\).
 
-### Ví dụ 5: [Số đặc biệt](https://lqdoj.edu.vn/problem/pearlnum)
+### Bài 5: [Số đặc biệt](https://lqdoj.edu.vn/problem/pearlnum)
 
 Tóm tắt: Ta có hàm \\(f(x)\\) trả về tổng bình phương các chữ số trong \\(x\\). Một số \\(x\\) được gọi là số đặc biệt nếu \\(x = 1\\) sau khi áp dụng không hoặc nhiều lần công thức: \\(x = f(x)\\). Cho \\(T\\) cặp số \\([L, R]\\), hãy cho biết số lượng số đặc biệt trong khoảng \\([L, R]\\).
 
@@ -468,8 +470,8 @@ int main (int argc, char const *argv[]) {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	memset(dp, -1, sizeof(dp));
-	// tìm các số đặc biệt <= 1458
 	for(int i = 1; i < N; ++i){
+		// xây dựng đồ thị với các cung: f(x) -> x
 		int x = i;
 		ll sum = 0;
 		while(x > 0){
@@ -479,6 +481,8 @@ int main (int argc, char const *argv[]) {
 		}
 		adj[sum].push_back(i);
 	}
+	
+	// tìm các số đặc biệt <= 1458
 	dfs(1);
 
 	int t; cin >> t;
@@ -489,6 +493,7 @@ int main (int argc, char const *argv[]) {
 	
 	return 0;
 }
+
 void dfs(int u){
 	if(special[u]) return;
 	special[u] = 1;
@@ -521,7 +526,7 @@ ll G(ll X){
 
 Độ phức tạp của thuật toán này là: \\(O([10 \times n \times (n \times 81)])\\).
 
-### Ví dụ 6: [LUCKY13](https://oj.vnoi.info/problem/lucky13)
+### Bài 6: [LUCKY13](https://oj.vnoi.info/problem/lucky13)
 
 Tóm tắt: Cho một hoặc nhiều cặp số nguyên không âm \\(A\\) và \\(B\\), đếm số lượng các số trong khoảng \\([A, B]\\) mà trong dạng biểu diễn không có số \\(13\\).
 
@@ -583,11 +588,11 @@ ll G(ll X){
 
 Độ phức tạp của thuật toán này là \\(O(10 \times 2 \times n)\\). 
 
-Ngoài các trạng thái biểu thị đoạn số \\(\overline{a_{n - 1}a_{n - 2}...a_{idx + 1}}\\) quen thuộc như \\(sum\\), ta còn có một số trạng thái phổ biến khác như:
+Ngoài các trạng thái biểu thị đoạn số \\(\overline{a_{n - 1}a_{n - 2}\dots a_{idx + 1}}\\) quen thuộc như \\(sum\\), ta còn có một số trạng thái phổ biến khác như:
 
-- \\(nonz\\): biểu thị nếu \\(\overline{a_{n - 1}a_{n - 2}...a_{idx + 1}}\\) là các chữ số không vô nghĩa. 
+- \\(nonz\\): biểu thị nếu \\(\overline{a_{n - 1}a_{n - 2}\dots a_{idx + 1}}\\) là các chữ số không vô nghĩa. 
 - \\(prevDigit\\): biểu thị giá trị của \\(a_{idx + 1}\\).
-- \\(isRising\\): biểu thị nếu \\(a_{n - 1} \le a_{n - 2} \le ... \le a_{idx + 1}\\) đúng hoặc sai.
-- \\(isFalling\\): biểu thị nếu \\(a_{n - 1} \ge a_{n - 2} \ge ... \ge a_{idx + 1}\\) đúng hoặc sai.
-- \\(s\\): tập hợp các phần tử phân biệt \\(\\{a_{n - 1}, a_{n - 2}, ..., a_{idx + 1}\\}\\).
-- ...
+- \\(isRising\\): biểu thị nếu \\(a_{n - 1} \le a_{n - 2} \le \dots  \le a_{idx + 1}\\) đúng hoặc sai.
+- \\(isFalling\\): biểu thị nếu \\(a_{n - 1} \ge a_{n - 2} \ge \dots  \ge a_{idx + 1}\\) đúng hoặc sai.
+- \\(s\\): tập hợp các phần tử phân biệt \\(\\{a_{n - 1}, a_{n - 2}, \dots , a_{idx + 1}\\}\\).
+- \\(\dots\\)

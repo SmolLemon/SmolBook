@@ -3,6 +3,7 @@
 [Smol Book - Cẩm nang Lập trình Thi đấu](./title-page.md)
 [Hướng dẫn](./guide.md)
 [Giới thiệu](./introduction.md)
+[Lời cảm ơn](./acknowledgements.md)
 
 # Mục lục
 
@@ -65,6 +66,6 @@
   - [Ma trận]()
   - [Hình học]()
 - [Xâu]()
-- [Phụ lục]()
-  - [A - Danh sách thuật toán]()
-  - [B - Danh sách bài tập]()
+
+[Phụ lục A - Danh sách thuật toán]()
+[Phụ lục B - Danh sách bài tập]()
