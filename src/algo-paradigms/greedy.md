@@ -43,3 +43,69 @@ Thì thuật toán tham lam sẽ không còn đúng nữa. Nếu \\(X = 6\\) th�
 
 ## Bài toán xếp lịch
 
+Các bài toán xếp lịch sẽ bao gồm một số sự kiện với \\(2\\) mốc thời gian bắt đầu và kết thúc cho mỗi sự kiện. Nhiệm vụ của ta là tìm một tập hợp các sự kiện sao cho các sự kiện không trùng nhau và số lượng sự kiện là nhiều nhất có thể.
+
+Ta ví dụ với các sự kiện sau:
+
+|Sự kiện thứ|Thời gian bắt đầu|Thời gian kết thúc|
+|---|---|---|
+|\\(1\\)|\\(1\\)|\\(3\\)|
+|\\(2\\)|\\(2\\)|\\(6\\)|
+|\\(3\\)|\\(3\\)|\\(10\\)|
+|\\(4\\)|\\(7\\)|\\(9\\)|
+
+<center>
+<img src="../images/schedule.png" alt="Xếp lịch"/>
+</center>
+
+Ta có thể chọn các sự kiện \\(2 - 4\\) để có số lượng sự kiện nhiều nhất không mâu thuẫn với nhau.
+
+Ta không thể chọn các sự kiện như \\(1 - 3 - 4\\) vì sự kiện \\(3\\) vẫn còn đang diễn ra khi sự kiện \\(4\\) bắt đầu.
+
+Hãy xem một số thuật toán tham lam giải quyết bài toán này:
+
+### Thuật toán thứ \\(1\\)
+
+Thuật toán thứ \\(1\\) tiếp cận bài toán bằng việc lựa chọn những sự kiện ngắn nhất có thể.
+
+<center>
+<img src="../images/schedule_1.png" alt="Thuật toán 1"/>
+</center>
+
+Tuy nhiên, thuật toán này sẽ cho kết quả sai như trường hợp dưới đây:
+
+<center>
+<img src="../images/schedule_1_counterexample.png" alt="Thuật toán 1"/>
+</center>
+
+Kết quả tối ưu của các sự kiện này là \\(2\\) vì ta có thể chọn hai sự kiện dài hơn thay vì một sự kiện ngắn.
+
+### Thuật toán thứ \\(2\\)
+
+Thuật toán thứ \\(2\\) tiếp cận bài toán bằng việc lựa chọn sự kiện tiếp theo có thời gian xảy ra sớm nhất có thể.
+
+<center>
+<img src="../images/schedule_2.png" alt="Thuật toán 2"/>
+</center>
+
+Tuy nhiên, thuật toán này sẽ cho kết quả sai như trường hợp dưới đây:
+
+<center>
+<img src="../images/schedule_2_counterexample.png" alt="Thuật toán 2"/>
+</center>
+
+Ta có thể chọn hai sự kiện xảy ra chậm hơn thay vì một sự kiện diễn ra đầu tiên.
+
+### Thuật toán thứ \\(3\\)
+
+Thuật toán thứ \\(3\\) tiếp cận bài toán bằng việc lựa chọn sự kiện tiếp theo có thời gian kết thúc sớm nhất có thể.
+
+<center>
+<img src="../images/schedule_3.png" alt="Thuật toán 3"/>
+</center>
+
+Thuật toán này sẽ luôn cho ra kết quả đúng. Ta có thể thấy rằng nếu ta chọn sự kiện tiếp theo kết thúc chậm hơn, thuật toán có thể hình thành đáp án có số lượng sự kiện nhỏ hơn hoặc bằng đáp án tối ưu.
+
+## Các thuật toán tham lam
+
+Một số thuật toán có thể áp dụng tham lam để giải quyết vấn đề như thuật toán [Dijkstra](../graph-theory/dijkstra.md) hay các thuật toán tìm [cây khung nhỏ nhất](../graph-theory/mst.md) như Kruskal hay Prim.

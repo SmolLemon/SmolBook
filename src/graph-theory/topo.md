@@ -37,7 +37,7 @@ void toposort(int u){
 Thuật toán Kahn là một thuật toán sắp xếp tô-pô.
 
 Thuật toán có cách thức hoạt động khá đơn giản:
-- Chọn một đỉnh \\(u\\) bất kì trong đồ thị có bán bậc vào bằng \\(0\\). Sau khi thêm đỉnh \\(u\\) vào danh sách thứ tự tô-pô, xóa đỉnh \\(u\\) khỏi đồ thị và các cạnh có đỉnh đầu mút bằng \\(u\\).
+- Chọn một đỉnh \\(u\\) bất kì trong đồ thị có bán bậc vào bằng \\(0\\). Sau khi thêm đỉnh \\(u\\) vào danh sách thứ tự tô-pô, xóa đỉnh \\(u\\) khỏi đồ thị và các cạnh có một trong hai đầu mút là \\(u\\).
 - Lặp lại quá trình trên cho tới khi không còn đỉnh trong đồ thị.
 
 ```C++

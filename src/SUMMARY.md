@@ -67,5 +67,7 @@
   - [Hình học]()
 - [Xâu]()
 
+---
+
 [Phụ lục A - Danh sách thuật toán]()
 [Phụ lục B - Danh sách bài tập]()

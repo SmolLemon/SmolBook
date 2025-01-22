@@ -89,7 +89,7 @@ Ví dụ, ta có: \\(6 = \log_2(64)\\):
 
 \\[64 \rightarrow 32 \rightarrow 16 \rightarrow 8 \rightarrow 4 \rightarrow 2 \rightarrow 1 \\]
 
-Số 64 cần 6 lần chia cho 2 để bằng 1, bằng giá trị của \\(\log_2(64)\\).
+Số \\(64\\) cần \\(6\\) lần chia cho \\(2\\) để bằng \\(1\\), bằng giá trị của \\(\log_2(64)\\).
 
 Một số công thức của logarit:
 - Tích: \\(\log_a(xy) = \log_a(x) + \log_a(y)\\)

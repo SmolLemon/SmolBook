@@ -28,7 +28,7 @@ Chương 7 nói về những kiến thức toán học cần thiết để áp d
 
 Chương 8 đồng thời cũng là chương cuối cùng nói về xâu kí tự và cách xử lí, tận dụng những thông tin có trong xâu.
 
-Cuối cùng nhưng không kém phần quan trọng, sẽ có phần phụ lục với những thông tin hữu ích trong quá trình sử dụng Smol Book. Phụ lục A chứa danh sách những thuật toán được ngắn đến trong Smol Book, và phụ lục B chứa các bài tập cho từng thuật toán.
+Ngoài ra, ta còn có phần phụ lục với những thông tin hữu ích trong quá trình sử dụng Smol Book. Phụ lục A chứa danh sách những thuật toán được ngắn đến trong Smol Book, và phụ lục B chứa các bài tập cho từng thuật toán.
 
 ## Mã nguồn
 

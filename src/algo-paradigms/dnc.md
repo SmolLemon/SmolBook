@@ -4,7 +4,7 @@
 
 <br>
 
-**Chia để trị (Divide and Conquer)** là một mô hình thuật toán. Một thuật toán áp dụng mô hình chia sẽ trị sẽ giải quyết bài toán bằng cách chia bài toán thành các bài toán nhỏ hơn (thường là chia làm đôi). Từ những bài toán nhỏ hơn này ta kết hợp các đáp án của chúng lại với nhau để tìm được đáp án của bài toán ban đầu.
+**Chia để trị (Divide and Conquer)** là một mô hình thuật toán. Một thuật toán áp dụng mô hình chia sẽ trị sẽ giải quyết bài toán bằng cách chia bài toán lớn thành các bài toán con rời nhau có kích thước nhỏ hơn (thường là chia làm đôi). Bằng việc giải được các bài toán nhỏ hơn này, ta có thể kết hợp chúng lại để tìm được đáp án của bài toán ban đầu.
 
 Giống như khi ta đọc và nhớ một số điện thoại, ta không nhớ một lúc \\(10\\) chữ số `xxxxxxxxx` mà ta chia nó ra thành \\(3\\) phần nhỏ hơn `xxxx-xxx-xxx` để dễ ghi nhớ.
 
@@ -82,6 +82,7 @@ Các trường hợp \\(2\\) và \\(3\\) sẽ được thuật toán xử lý m�
 Trong thư viện C++ tồn tại hàm `nth_element` có thể giải quyết bài toán này và cũng áp dụng thuật toán như trên.
 
 ```C++
+int k = 3;
 int a[] = {-1, 18, 43, 6, 15, 9, 37, 10, 42};
 nth_element(a + 1, a + k, a + 1 + n);
 cout << a[k]; // 10
