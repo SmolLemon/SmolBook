@@ -2,7 +2,7 @@
 
 **Duyệt toàn bộ (Complete search)**, hay với các tên gọi khác như *duyệt trâu*, *vét cạn*, *brute force*, là một mô hình thuật toán. Các thuật toán duyệt toàn bộ sẽ giải quyết bài toán bằng cách kiểm tra (gần như) toàn bộ không gian tìm kiếm của bài để tìm kiếm kết quả thỏa mãn, ví dụ như kiểm tra các phần tử, các cặp giá trị, các tập con, hoán vị, v.v. 
 
-Ưu điểm của duyệt toàn bộ là luôn đảm bảo tìm ra nghiệm đúng, chính xác. Tuy nhiên, thời gian thực thi lại lâu, độ phức tạp lớn. 
+Ưu điểm của duyệt toàn bộ là luôn đảm bảo cho ra kết quả chính xác. Tuy nhiên, thời gian thực thi lại lâu, độ phức tạp lớn. 
 
 Trong các cuộc thi lập trình, các thí sinh có xem xét việc cài đặt thuật toán theo mô hình duyệt toàn bộ khi không thể tìm ra thuật toán khác tốt hơn. Bằng cách này, thí sinh có thể giành điểm ở những subtask đầu tiên - các subtask dễ và có thể giải được bằng duyệt toàn bộ (nếu có). Ngoài ra, thí sinh cũng có thể cài đặt thuật toán duyệt toàn bộ kể cả khi tồn tại thuật toán tối ưu hơn nếu giới hạn của bài toán đủ nhỏ.
 
@@ -183,7 +183,7 @@ Ta gọi `queen8(0)` để bắt đầu thuật toán.
 
 ## Chia đôi tập
 
-Chia đôi tâp là một kĩ thuật tối ưu thuật toán bằng cách chia đôi không gian tìm kiếm ra làm hai và kết hợp kết quả từ hai không gian tìm kiếm lại với nhau để tìm đáp án của bài toán.
+**Chia đôi tập (Meet in the middle)** là một kĩ thuật tối ưu thuật toán bằng cách chia đôi không gian tìm kiếm ra làm hai và kết hợp kết quả từ hai không gian tìm kiếm lại với nhau để tìm đáp án của bài toán.
 
 Chia đôi tập giống như hai người bạn hẹn nhau đi chơi vậy.
 

@@ -2,13 +2,13 @@
 
 Chào mừng đến với *Smol Book - Cẩm nang Lập trình Thi đấu*, một cuốn cẩm nang về lập trình thi đấu. Được viết theo định dạng giống như sách, Smol Book được viết nên nhằm cung cấp những kiến thức về lập trình thi đấu, giúp bạn hiểu rõ hơn về định nghĩa và cách áp dụng nó cho những bài toán.
 
-## Smol Book dành cho ai?
+## Đối tượng hướng tới
 
-Những nội dung của Smol Book được viết giúp đỡ những người mới bắt đầu lập trình thi đấu có thể hiểu được những kiến thức trong bộ môn này một cách dễ dàng. Người đọc nên có chút ít kiến thức về lập trình.
+Những nội dung của Smol Book được viết với mục tiêu có thể giúp những người mới bắt đầu lập trình thi đấu có thể hiểu được những kiến thức trong bộ môn này một cách dễ dàng.
 
-## Cách sử dụng Smol Book
+## Nội dung
 
-Về cơ bản, Smol Book sẽ giả sử bạn sẽ đọc cuốn cẩm nang từ đầu đến cuối. Những ý tưởng nội dung của các chương sau được xây dựng từ những gì được nói ở các chương trước. Bằng cách này, những nội dung sẽ dễ hiểu hơn.
+Các chương trong Smol Book được viết với một giả định rằng bạn sẽ đọc cuốn cẩm nang từ đầu đến cuối. Những ý tưởng nội dung của các chương sau được xây dựng từ những gì được nói ở các chương trước.
 
 Có tổng cộng 8 chương trong Smol Book.
 
@@ -28,7 +28,7 @@ Chương 7 nói về những kiến thức toán học cần thiết để áp d
 
 Chương 8 đồng thời cũng là chương cuối cùng nói về xâu kí tự và cách xử lí, tận dụng những thông tin có trong xâu.
 
-Ngoài ra, ta còn có phần phụ lục với những thông tin hữu ích trong quá trình sử dụng Smol Book. Phụ lục A chứa danh sách những thuật toán được ngắn đến trong Smol Book, và phụ lục B chứa các bài tập cho từng thuật toán.
+Ngoài ra, Smol Book còn có phần phụ lục với những thông tin hữu ích trong quá trình sử dụng Smol Book. Phụ lục A chứa danh sách những thuật toán được ngắn đến trong Smol Book, và phụ lục B chứa các bài tập cho từng thuật toán.
 
 ## Mã nguồn
 

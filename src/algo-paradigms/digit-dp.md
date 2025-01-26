@@ -1,16 +1,16 @@
 # Quy hoạch động chữ số
 
-*Quy hoạch động chữ số* hay *Digit DP* chỉ các bài toán sử dụng quy hoạch động liên quan đến các chữ số.
+*Quy hoạch động chữ số* là kĩ thuật QHĐ nhằm giải quyết các bài toán liên quan đến chữ số.
 
 ## Lý thuyết
 
-Các bài QHĐ chữ số sẽ có mô tả như sau: Cho một khoảng số \\([a, b]\\), hãy đếm số lượng số trong khoảng thỏa mãn yêu cầu đề bài.
+Các bài QHĐ chữ số sẽ có mô tả như sau: Cho một khoảng số \\([a; b]\\), hãy đếm số lượng số trong khoảng thỏa mãn yêu cầu đề bài.
 
-Gọi \\(G(X)\\) là số lượng số nằm trong khoảng \\([0, X]\\) thỏa mãn yêu cầu đề bài. Khi này ta có thể tính được đáp án của bài toán bằng công thức: \\(G(b) - G(a - 1)\\) hoặc \\(G(b) - G(a) + g(a)\\) với \\(g(x)\\) là một hàm trả về \\(1\\) nếu \\(x\\) thỏa mãn yêu cầu và \\(0\\) nếu không thỏa mãn.
+Gọi \\(G(X)\\) là số lượng số nằm trong khoảng \\([0; X]\\) thỏa mãn yêu cầu đề bài. Khi này ta có thể tính được đáp án của bài toán bằng công thức: \\(G(b) - G(a - 1)\\) hoặc \\(G(b) - G(a) + g(a)\\) với \\(g(x)\\) là một hàm trả về \\(1\\) nếu \\(x\\) thỏa mãn yêu cầu và \\(0\\) nếu không thỏa mãn.
 
 ### Xây dựng hàm \\(G(X)\\)
 
-Để xây dựng hàm \\(G(X)\\), ta sẽ xem các số trong khoảng \\([0, X]\\) như một xâu kí tự: Ta có \\(X = \overline{x_{n - 1}x_{n - 2}\dots x_{0}}\\) với \\(n\\) là số chữ số trong \\(X\\). Ta sẽ tạo các số \\(A = \overline{a_{n - 1}a_{n - 2}\dots a_{0}}\\) nhỏ hơn hoặc bằng \\(X\\), và ta thực hiện việc gán giá trị cho các chữ số của \\(A\\) theo chiều từ trái sang phải.
+Để xây dựng hàm \\(G(X)\\), ta sẽ xem các số trong khoảng \\([0; X]\\) như một xâu kí tự: Ta có \\(X = \overline{x_{n - 1}x_{n - 2}\dots x_{0}}\\) với \\(n\\) là số chữ số trong \\(X\\). Ta sẽ tạo các số \\(A = \overline{a_{n - 1}a_{n - 2}\dots a_{0}}\\) nhỏ hơn hoặc bằng \\(X\\), và ta thực hiện việc gán giá trị cho các chữ số của \\(A\\) theo chiều từ trái sang phải.
 
 Giả sử ta có \\(X = 3141\\):
 
@@ -28,9 +28,9 @@ Giả sử ta đã điền các chữ số ở trước \\(a_1\\) bằng các gi
 |---|---|---|---|
 |\\(2\\)|\\(1\\)|\\(\*\\)|\\(\*\\)|
 
-Trường hợp không giới hạn sẽ xảy ra nếu các số được điền trước \\(a_i\\) có thứ tự từ điển nhỏ hơn hẳn \\(X\\). Khi này, ta có thể điền \\(a_i\\) các chữ số từ \\(0\\) đến \\(9\\).
+Trường hợp không giới hạn sẽ xảy ra nếu các số được điền trước \\(a_i\\) có thứ tự từ điển nhỏ hơn hẳn \\(X\\), hay \\(\overline{a_{n - 1}a_{n - 2}\dots a_{i + 1}} \lt \overline{x_{n - 1}x_{n - 2}\dots x_{i + 1}}\\). Khi này, ta có thể điền \\(a_i\\) các chữ số từ \\(0\\) đến \\(9\\).
 
-Ở đây, vì \\(21 < 31\\) nên \\(a_1\\) rơi vào trường hợp không giới hạn. Vì vậy ta được quyền gán cho \\(a_1\\) các chữ số từ \\(0\\) đến \\(9\\). Ta có thể kết luận như vậy vì dù có gán \\(a_1\\) bằng chữ số nào đi nữa thì các số có dạng \\(\overline{21**}\\) cũng sẽ nhỏ hơn \\(X\\).
+Ở đây, vì \\(21 < 31\\) nên \\(a_1\\) rơi vào trường hợp không giới hạn. Vì vậy ta có thể gán cho \\(a_1\\) các chữ số từ \\(0\\) đến \\(9\\). Ta có thể kết luận như vậy vì dù có gán \\(a_1\\) bằng chữ số nào đi nữa thì các số có dạng \\(\overline{21**}\\) cũng sẽ nhỏ hơn \\(X\\).
 
 #### Trường hợp có giới hạn
 
@@ -145,7 +145,7 @@ ll G(ll X){
 ```
 Độ phức tạp của thuật toán này là \\(O(10 \times n \times 2 \times sum)\\).
 
-Ngoài cách giải QHĐ chữ số, ta cũng có thể [giải theo phương pháp khác](https://oj.vnoi.info/problem/fct003_digitsum#comment-5859).
+Ngoài cách giải QHĐ chữ số, ta cũng có thể [giải bằng phương pháp khác](https://oj.vnoi.info/problem/fct003_digitsum#comment-5859).
 
 ### Bài 2: [Atcoder Educational DP Contest S - Digit Sum](https://oj.vnoi.info/problem/atcoder_dp_s)
 
@@ -524,7 +524,7 @@ ll G(ll X){
 }
 ```
 
-Độ phức tạp của thuật toán này là: \\(O([10 \times n \times (n \times 81)])\\).
+Độ phức tạp của thuật toán này là: \\(O(10 \times n \times sum)\\).
 
 ### Bài 6: [LUCKY13](https://oj.vnoi.info/problem/lucky13)
 

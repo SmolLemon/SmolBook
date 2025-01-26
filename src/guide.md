@@ -29,7 +29,7 @@ Có thể nhấn vào thanh menu ở đầu trang để cuộn lên đầu trang
 
 ## Tìm kiếm
 
-Để thực hiện việc tìm kiếm trên Smol Book, ấn vào biểu tượng tìm kiếm <i class="fa fa-search"></i> hoặc nhấn phím `s` trên bàn phím để tìm kiếm. Kết quả tìm kiếm sẽ được hiển thị trên thời gian thực. 
+Để thực hiện việc tìm kiếm trên Smol Book, ấn vào biểu tượng tìm kiếm (<i class="fa fa-search"></i>) hoặc nhấn phím `s` trên bàn phím để tìm kiếm. Kết quả tìm kiếm sẽ được hiển thị trên thời gian thực. 
 
 Sử dụng phím mũi tên lên xuống để di chuyển giữa các kết quả tìm kiếm. Chọn vào kết quả mong muốn sẽ dẫn bạn đến trang đó.
 
@@ -37,4 +37,4 @@ Sau khi trang được tải, kết quả tìm kiếm sẽ được in đậm. N
 
 ## Code block
 
-Các chương trong Smol Book sẽ có những đoạn code được viết trên code block. Để sao chép nôi dung của code block, di chuyển chuột bên trên code block và ấn biểu tượng sao chép <i class="fa fa-copy fa-button"></i>.
+Các chương trong Smol Book sẽ có những đoạn code được viết trên code block. Để sao chép nội dung của code block, di chuyển chuột bên trên code block và ấn biểu tượng sao chép (<i class="fa fa-copy fa-button"></i>).
