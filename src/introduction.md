@@ -14,7 +14,7 @@ Có tổng cộng 8 chương trong Smol Book, mỗi chương nói về một ch�
 
 Chương 1 giới thiệu về lập trình thi đấu - định nghĩa, cách giải một bài toán và các cuộc thi liên quan đến lập trình thi đấu. 
 
-Chương 2 giải thích những kiến thức lập trình liên quan đến lập trình thi đấu.
+Chương 2 hướng dẫn sơ bộ về ngôn ngữ lập trình C++, đồng thời giải thích những kiến thức lập trình C++ liên quan đến lập trình thi đấu.
 
 Chương 3 là phần nhập môn về lập trình thi đấu. Ta sẽ được giới thiệu về những kiến thức, kĩ thuật, thuật toán cơ bản, có tính ứng dụng cao trong lập trình thi đấu. 
 
