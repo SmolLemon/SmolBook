@@ -8,7 +8,7 @@
 # Mục lục
 
 - [Giới thiệu về lập trình thi đấu](./introduction/README.md)
-- [Lập trình](./programming/README.md)
+- [Lập trình C++](./programming/README.md)
   - [Nhập xuất dữ liệu](./programming/io.md)
   - [Các kiểu dữ liệu](./programming/data-types.md)
   - [Mẹo lập trình thi đấu C++](./programming/cpp-tips-and-tricks.md)

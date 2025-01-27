@@ -12,7 +12,7 @@ Các máy tính khác nhau sẽ có tốc độ xử lí khác nhau - một số
 <img src="../images/6_hay_9.jpg" alt="6 hay 9 giây?"/>
 </center>
 
-Để có được một sự thống nhất trong việc xác định độ hiệu quả của một thuật toán, ta thực hiện việc tính độ phức tạp của thuật toán ấy.
+Để có được một sự thống nhất trong việc xác định độ hiệu quả của một thuật toán, ta thực hiện việc tính độ phức tạp của thuật toán.
 
 ## Độ phức tạp thời gian 
 

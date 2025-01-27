@@ -2,21 +2,13 @@
 
 **Lập trình thi đấu**, tên tiếng anh là **competitive programming**, về cơ bản là một *bộ môn thể thao*, nơi thí sinh viết nên các chương trình máy tính để giải quyết các bài toán.
 
-## Tổng quan
+## Thuật toán
 
-Việc giải một bài toán về lập trình thi đấu sẽ bao gồm \\(2\\) bước chính: Thiết kế thuật toán và cài đặt thuật toán.
+Việc giải một bài toán về lập trình thi đấu, ta cần có **thuật toán (algorithm)**. Thuật toán là một tập hợp những chỉ dẫn, thường được thực hiện bằng máy tính, nhằm giải quyết một vấn đề nào đó.
 
-Việc **thiết kế thuật toán** sẽ yêu cầu ta thiết kế một thuật toán phù hợp để giải quyết bài toán. Nó yêu cầu ta phải có kĩ năng tư duy giải quyết vấn đề và cả tư duy toán học. Thuật toán cần phải nhanh và hiệu quả để có thể giải quyết được bài toán.
+Trong hầu hết các trường hợp, thuật toán có dạng như sau: 
 
-Thông thường, các bài toán thường sẽ liên quan đến những chủ đề khác nhau: tổ hợp, lí thuyết số, lí thuyết đồ thị, lí thuyết trò chơi, xử lí xâu, cấu trúc dữ liệu,... và việc áp dụng những kiến thức này cộng thêm với các hướng giải quyết mới sẽ giúp ta thiết kế được một thuật toán hiệu quả.
-
-Việc **cài đặt thuật toán** là quá trình thực hiện hóa thuật toán mà ta đã nghĩ ra. Sự hiểu biết về ngôn ngữ lập trình và cách áp dụng nó vào việc cài đặt thuật toán mà một yêu cầu hết sức quan trọng trong quá trình giải quyết bài toán.	 
-
-Các chương trình cần được viết một cách ngắn gọn và xúc tích (một chương trình dài nhất cũng chỉ tầm vài trăm dòng) bởi trong các cuộc thi lập trình, thời gian là có hạn. Đồng thời, các chương trình cũng phải thỏa mãn những giới hạn mà bài toán đề ra về thời gian thực thi chương trình và giới hạn bộ nhớ mà chương trình được phép sử dụng.
-
-### Một chương trình điển hình
-
-Một chương trình máy tính được viết ra bởi thí sinh để giải một bài toán cụ thể sẽ lấy dữ liệu nhập (**input**) và xuất dữ liệu (**output**) chứa đáp án đúng tương ứng. 
+> **dữ liệu đầu vào (input)** \\(\rightarrow\\) thuật toán xử lí dữ liệu đầu vào \\(\rightarrow\\) **dữ liệu đầu ra (output)**. 
 
 Ta ví dụ với bài toán [**A cộng B**](https://oj.vnoi.info/problem/post):
 
@@ -24,7 +16,38 @@ Ta ví dụ với bài toán [**A cộng B**](https://oj.vnoi.info/problem/post)
 
 Bài toán cho ta \\(2\\) số \\(A\\) và \\(B\\) và yêu cầu ta tính tổng của hai số ấy. Dữ liệu nhập sẽ là \\(2\\) số \\(A\\) và \\(B\\) trên \\(1\\) dòng và yêu cầu ta in ra tổng hai số.
 
-Khi ta nộp chương trình, máy chấm sẽ chạy chương trình với một danh sách các dữ liệu nhập (testcase) và kiểm tra đáp án mà chương trình in ra với đáp án của mỗi testcase tương ứng. Với mỗi testcase, máy chấm sẽ trả về cho ta một trong các kết quả sau đây:
+Để giải quyết bài toán này, ta thực hiện hai bước chính: **thiết kế thuật toán** và **cài đặt thuật toán**.
+
+Bước thứ nhất, **thiết kế thuật toán**, sẽ yêu cầu ta thiết kế một thuật toán phù hợp để giải quyết bài toán. Nó yêu cầu ta phải có kĩ năng tư duy giải quyết vấn đề và cả tư duy toán học. Thuật toán cần phải nhanh và hiệu quả để có thể giải quyết được bài toán.
+
+Thông thường, các bài toán thường sẽ liên quan đến những chủ đề khác nhau: tổ hợp, lí thuyết số, lí thuyết đồ thị, lí thuyết trò chơi, xử lí xâu, cấu trúc dữ liệu,... và việc áp dụng những kiến thức này cộng thêm với các hướng giải quyết mới sẽ giúp ta thiết kế được một thuật toán hiệu quả.
+
+Đối với bài toán này, thuật toán sẽ lấy hai số \\(A\\) và \\(B\\) từ dữ liệu nhập, làm phép cộng, và trả về tổng hai số.
+
+Bước thứ hai, **cài đặt thuật toán**, là quá trình thực hiện hóa thuật toán mà ta đã nghĩ ra. Sự hiểu biết về ngôn ngữ lập trình và cách áp dụng nó vào việc cài đặt thuật toán mà một yêu cầu hết sức quan trọng trong quá trình giải quyết bài toán.	 
+
+Các chương trình cần được viết một cách ngắn gọn và xúc tích (một chương trình dài nhất cũng chỉ tầm vài trăm dòng) bởi trong các cuộc thi lập trình, thời gian là có hạn. Đồng thời, các chương trình cũng phải thỏa mãn những giới hạn mà bài toán đề ra về thời gian thực thi chương trình và giới hạn bộ nhớ mà chương trình được phép sử dụng.
+
+Dưới đây là một chương trình C++ giải quyết bài toán *A cộng B*.
+
+```C++
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main (int argc, char const *argv[]) {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	int a, b; cin >> a >> b;
+	cout << a + b;	
+
+	return 0;
+}
+```
+
+## Các bài nộp và kết quả
+
+Khi ta nộp chương trình lên các *trình chấm*, máy chấm sẽ chạy chương trình của ta qua một danh sách các dữ liệu nhập (testcase) và kiểm tra đáp án mà chương trình in ra với đáp án của mỗi testcase tương ứng. Với mỗi testcase, máy chấm sẽ trả về cho ta một trong các kết quả sau đây:
 
 |Kết quả|Ý nghĩa|
 |---|---|
@@ -51,7 +74,7 @@ Việc giải các bài toán và tham gia các cuộc thi lập trình thi đ�
 
 Có vô số cuộc thi lập trình phổ biến trên toàn quốc và quốc tế. Ta cùng điểm qua một số cuộc thi tiêu biểu.
 
-### Kì thi Học sinh giỏi cấp trường/thành phố/tỉnh (môn Tin học)
+### Kì thi Học sinh giỏi các cấp (trường/thành phố/tỉnh/...) (môn Tin học)
 
 Mục đích của các cuộc thi này nhằm động viên, khuyến khích học sinh và giáo viên phát huy và nâng cao năng lực của bản thân, đồng thời phát hiện và bồi dưỡng những học sinh có năng khiếu ở các môn học.
 
