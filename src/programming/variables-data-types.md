@@ -112,3 +112,12 @@ bool b = 1;
 bool c = (5 < 7); // 5 < 7 đúng -> 1
 bool d = !b; // d = 0
 ```
+
+### auto
+
+Ta có thể sử dụng `auto` khi khai báo và gán giá trị cho các biến.
+
+```C++
+auto a = 5; // int
+auto b = 3.14; // float
+```

@@ -12,6 +12,7 @@
   - [Hello world!](./programming/hello-world.md)
   - [Biến và kiểu dữ liệu](./programming/variables-data-types.md)
   - [Nhập xuất dữ liệu](./programming/io.md)
+  - [Các thao tác](./programming/operators.md)
   - [Câu lệnh rẽ nhánh](./programming/if-else.md)
   - [Câu lệnh lặp](./programming/loop.md)
   - [Struct](./programming/struct.md)

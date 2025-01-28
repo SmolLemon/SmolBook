@@ -345,6 +345,8 @@ Ta có hai trường hợp có thể xảy ra:
 - Chọn món đồ thứ \\(idx\\): nếu ta có thể chọn món đồ thứ \\(idx\\) (\\(w_{idx} \le remW\\)), giá trị các món đồ mà ta đã chọn sẽ bằng \\(f(idx - 1, remW - w_{idx}) + v_{idx}\\).
 - Không chọn món đồ thứ \\(idx\\): nếu ta không chọn món đồ thứ \\(idx\\) (\\(w_{idx} \le remW\\)), giá trị các món đồ mà ta chọn sẽ bằng \\(f(idx - 1, remW)\\).
 
+Kết quả lớn hơn trong hai trường hợp sẽ là kết quả của hàm \\(f\\).
+
 Từ đây ta có công thức tính \\(f(idx, remW)\\):
 - \\(f(idx, remW) = 0\\) nếu \\(idx = 0\\) hoặc \\(remW = 0\\): không còn món đồ để chọn hoặc túi hết chỗ chứa.
 - \\(f(idx, remW) = max(f(idx - 1, remW), f(idx - 1, remW - w_{idx}) + v_{idx})\\).

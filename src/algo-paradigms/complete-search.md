@@ -11,9 +11,9 @@ Trong các cuộc thi lập trình, các thí sinh có xem xét việc cài đ�
 ## Sinh tập con
 
 Ta xem xét các bài toán yêu cầu ta sinh ra tất cả các tập con của danh sách \\(n\\) phần tử. Ví dụ với danh sách \\(3\\) phần tử thì ta sẽ có các tập con chứa chỉ số của các phần tử (bắt đầu tử chỉ số \\(0\\)): 
-\\[\emptyset, \\{0\\}, \\{1\\}, \\{2\\}, \\{0, 1\\}, \\{0, 2\\}, \\{1, 2\\}, \\{0, 1, 2\\}\\].
+\\[\emptyset, \\{0\\}, \\{1\\}, \\{2\\}, \\{0, 1\\}, \\{0, 2\\}, \\{1, 2\\}, \\{0, 1, 2\\}\\]
 
-Ta có thể sử dụng đệ quy để sinh các tập con.
+Ta sử dụng đệ quy để sinh các tập con.
 
 ```C++
 vector<int> subset;
@@ -34,7 +34,7 @@ void search(int idx) {
 }
 ```
 
-Ta có thể sử dụng [bitmask](../basic/bit-manipulation.md#bitmask-mảng-bit) để xét các tập con.
+Ta cũng có thể sử dụng [bitmask](../basic/bit-manipulation.md#bitmask-mảng-bit) để xét các tập con.
 
 Ví dụ: \\(5_{10} = 101_2\\) biểu thị tập hợp \\(\\{0, 2\\}\\). 
 

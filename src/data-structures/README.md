@@ -1,8 +1,8 @@
 # Cấu trúc dữ liệu
 
-Cấu trúc dữ liệu (CTDL) là phương thức lưu trữ và sắp xếp dữ liệu để có thể được sử dụng một cách hiệu quả. Nó là một thành phần quan trọng trong việc tạo ra các thuật toán mạnh và tối ưu bằng cách quản lí dữ liệu.
+Cấu trúc dữ liệu (CTDL) là phương thức lưu trữ và sắp xếp dữ liệu để có thể được sử dụng một cách hiệu quả. Nó là một thành phần quan trọng trong việc tạo ra các thuật toán mạnh và tối ưu khi thuật toán có thể sử dụng những dữ liệu đã được quản lí bằng cấu trúc dữ liệu một cách dễ dàng.
 
-Chọn CTDL phù hợp cho một thuật toán có thể tạo nên sự khác biệt giữa một chương trình "tạm ổn" và một chương trình "xuất sắc".
+Việc chọn CTDL phù hợp cho một thuật toán có thể tạo nên sự khác biệt giữa một chương trình "tạm ổn" và một chương trình "xuất sắc".
 
 Ta sẽ tìm hiểu các CTDL phổ biến trong lập trình thi đấu, hiểu được định nghĩa, cách cài đặt và áp dụng các loại cấu trúc dữ liệu khác nhau.
 

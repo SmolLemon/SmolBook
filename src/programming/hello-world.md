@@ -1,8 +1,8 @@
 # Hello world!
 
-Sau khi cài đặt Code::Blocks, ta tạo một dự án C++ bằng cách chọn `Create a new project` - `Console application` - `C++`. Ta đặt tên dự án và ta đã tạo thành công một dự án C++.
+Sau khi cài đặt Code::Blocks, ta tạo một dự án C++ bằng cách chọn `Create a new project` - `Console application` - `C++`. Sau khi đặt tên dự án, ta đã khởi tạo thành công một dự án C++.
 
-Sau khi đã tạo xong dự án, ta sẽ được chào đón bằng những lòng lệnh mặc định ở file `main.cpp`.
+Sau khi khởi tạo dự án, ta sẽ được chào đón bằng những dòng lệnh mặc định ở file `main.cpp`.
 
 ```C++
 #include <iostream>
@@ -26,11 +26,13 @@ Ta sẽ phân tích từng dòng lệnh của chương trình trên.
 
 Trình biên dịch sẽ thêm header `iostream` chứa các phương pháp nhập xuất từ *thư viện chuẩn* của C++. **Standard Template Library (STL)** hay thư viện chuẩn của C++ bao gồm template (khuôn mẫu) của các thuật toán, cấu trúc dữ liệu mà ta có thể sử dụng trong chương trình của ta. Với STL, ta không cần phải tự viết các khái niệm này. Ví dụ, thư viện `stack` có sẵn CTDL [stack](../data-structures/stack.md) để ta sử dụng thay vì phải tự viết.
 
-Để thuận tiện hơn trong quá trình viết chương trình, ta thêm header đặc biệt
-
-```C++
-#include <bits/stdc++.h>
-```
+> Để thuận tiện hơn khi lập trình, ở đầu chương trình C++, ta thêm header đặc biệt
+> 
+> ```C++
+> #include <bits/stdc++.h>
+> ```
+>
+> Header này thêm rất nhiều header khác trong C++, giúp ta không cần phải lăn tăn nên thêm thư viện nào cho chương trình.
 
 Dòng thứ ba,
 
