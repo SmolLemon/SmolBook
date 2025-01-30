@@ -621,11 +621,11 @@ function playground_text(playground, hidden = true) {
 
     clipboardSnippets.on('success', function (e) {
         e.clearSelection();
-        showTooltip(e.trigger, "Copied!");
+        showTooltip(e.trigger, "Sao chép thành công!");
     });
 
     clipboardSnippets.on('error', function (e) {
-        showTooltip(e.trigger, "Clipboard error!");
+        showTooltip(e.trigger, "Lỗi sao chép!");
     });
 })();
 
