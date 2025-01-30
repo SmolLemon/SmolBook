@@ -343,13 +343,14 @@ Ta có \\(f(idx, remW)\\) là giá trị mà ta đang có sau khi xét qua \\(id
 
 Ta có hai trường hợp có thể xảy ra:
 - Chọn món đồ thứ \\(idx\\): nếu ta có thể chọn món đồ thứ \\(idx\\) (\\(w_{idx} \le remW\\)), giá trị các món đồ mà ta đã chọn sẽ bằng \\(f(idx - 1, remW - w_{idx}) + v_{idx}\\).
-- Không chọn món đồ thứ \\(idx\\): nếu ta không chọn món đồ thứ \\(idx\\) (\\(w_{idx} \le remW\\)), giá trị các món đồ mà ta chọn sẽ bằng \\(f(idx - 1, remW)\\).
+- Không chọn món đồ thứ \\(idx\\): nếu ta không chọn món đồ thứ \\(idx\\), giá trị các món đồ mà ta chọn sẽ bằng \\(f(idx - 1, remW)\\).
 
 Kết quả lớn hơn trong hai trường hợp sẽ là kết quả của hàm \\(f\\).
 
 Từ đây ta có công thức tính \\(f(idx, remW)\\):
 - \\(f(idx, remW) = 0\\) nếu \\(idx = 0\\) hoặc \\(remW = 0\\): không còn món đồ để chọn hoặc túi hết chỗ chứa.
-- \\(f(idx, remW) = max(f(idx - 1, remW), f(idx - 1, remW - w_{idx}) + v_{idx})\\).
+- \\(f(idx, remW) = f(idx - 1, remW)\\) nếu \\(remW \lt w_{idx}\\).
+- \\(f(idx, remW) = max(f(idx - 1, remW), f(idx - 1, remW - w_{idx}) + v_{idx})\\) nếu \\(remW \ge w_{idx}\\).
 
 Kết quả của bài toán bằng \\(f(n, W)\\).
 
@@ -358,7 +359,7 @@ int memo[N][W];
 int n, W;
 
 int f(int idx, int rw){
-	if(idx < 1 || rw == 0) return 0;
+	if(idx == 0 || rw == 0) return 0;
 	if(memo[idx][rw] != -1) return memo[idx][rw];
 	int ans = f(idx - 1, rw); // không chọn món đồ thứ idx
 
