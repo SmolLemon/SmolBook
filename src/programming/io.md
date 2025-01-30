@@ -1,4 +1,4 @@
-# Nhập xuất dữ liệu
+# Nhập - xuất dữ liệu
 
 Ở các ví dụ trước ta đã biết được rằng `cout` có thể in các giá trị ra màn hình. Bây giờ, ta sẽ làm điều ngược lại: lấy dữ liệu bằng `cin`.
 
@@ -42,7 +42,7 @@ string a; cin >> a;
 string b; getline(cin, b);
 ```
 
-Thì `getline` sẽ đọc các kí tự còn lại sau  `hello` mà không phải `hello world!` như ta mong muốn. Để khắc phục vấn đề này, ta sử dụng `cin.ignore()`.
+Thì `getline` sẽ đọc các kí tự còn lại sau `hello` ở dòng \\(1\\) mà không phải `hello world!` ở dòng \\(2\\) như ta mong muốn. Để khắc phục vấn đề này, ta sử dụng `cin.ignore()`.
 
 ```C++
 string a; cin >> a;
@@ -61,9 +61,15 @@ while(cin >> x){
 }
 ```
 
-## Nhập từng từ một
+## Nhập vào từng từ trên dòng
 
-Một số bài toán có thể yêu cầu ta xét từng từ một trên mỗi dòng. Để xử lí trường hợp này, ta sử dụng `getline` để lấy dữ liệu của dòng, và dùng `stringstream` để tách từng từ:
+Một số bài toán có thể yêu cầu ta xét một số lượng từ không xác định trên một dòng. 
+
+```C++
+smol book is the best
+```
+
+Để xử lí trường hợp này, ta sử dụng `getline` để lấy dữ liệu của dòng, và dùng `stringstream` để tách từng từ có trên dòng ấy:
 
 ```C++
 string s;

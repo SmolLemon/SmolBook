@@ -1,4 +1,4 @@
-# Thao tác xử lý bit
+# Thao tác xử lí bit
 
 ## Số nhị phân
 

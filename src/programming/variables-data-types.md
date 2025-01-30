@@ -121,3 +121,55 @@ Ta có thể sử dụng `auto` khi khai báo và gán giá trị cho các biế
 auto a = 5; // int
 auto b = 3.14; // float
 ```
+
+## `pair` và `tuple`
+
+`pair` và `tuple` được sử dụng để lưu một số dữ liệu vào một biến.
+
+Với `pair`, ta có thể lưu \\(2\\) loại giá trị.
+
+```C++
+pair<int, double> x(3, 3.14); // một pair lưu một `int` và một `double`
+cout << x.first << '\n'; // giá trị thứ nhất
+cout << x.second << '\n'; // giá trị thứ hai 
+
+pair<int, double> y = make_pair(2, 2.718);
+pair<int, double> z = x;
+```
+
+Với `tuple`, ta có thể lưu với số lượng tùy ý.
+
+```C++
+tuple<int, int, int> a(2, 3, 4); // tuple lưu 3 `int`
+cout << get<0>(a); // 2
+cout << get<1>(a); // 3
+cout << get<2>(a); // 4
+tuple<int, int, int> b = make_tuple(5, 6, 7);
+```
+## `tie`
+
+Sẽ có lúc ta muốn gán nhiều biến với các giá trị khác nhau.
+
+```C++
+int a;
+double b;
+bool c;
+a = 5;
+b = 1.414;
+c = 0;
+```
+
+Ta có thể sử dụng `tie` để gán các giá trị này trong một dòng.
+
+```C++
+int a; 
+double b;
+bool c;
+tie(a, b, c) = make_tuple(5, 1.414, 0);
+```
+
+Trong C++17, ta còn có thể khai báo luôn các biến trong một dòng.
+
+```C++
+auto [a, b, c] = make_tuple(5, 1.414, 0);
+```
