@@ -28,7 +28,7 @@ struct Point{
 };
 ```
 
-Các cấu trúc không thể có các toán tử như các kiểu dữ liệu. Tuy vậy, ta tự viết các toán tử ấy trong một cấu trúc. 
+Các cấu trúc không thể có các toán tử như các kiểu dữ liệu. Ví dụ, với cấu trúc trên, ta không thể so sánh hai đỉnh `a` và `b` như  các kiểu dữ liệu được (ví dụ: `a < b`). Vì thế, ta phải tự viết các toán tử ấy trong một cấu trúc. 
 
 ```C++
 struct Point{
@@ -55,7 +55,8 @@ struct Point{
 	}
 
 	// trả về khoảng cách euclid với một điểm khác
-	// gọi: a.euclid(x) với x là một Point
+	// gọi ngoài cấu trúc: a.euclid(x) với x là một Point
+	// gọi trong cấu trúc: euclid(x)
 	double euclid(Point &a){ 
 		int u = x - a.x;
 		int v = y - a.y;
