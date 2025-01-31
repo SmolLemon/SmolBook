@@ -18,7 +18,7 @@
   - [Cấu trúc](./programming/struct.md)
   - [Mảng](./programming/array.md)
   - [Hàm](./programming/function.md)
-  - [Tiền xử lí](./programming/preprocessor.md)
+  - [Bộ tiền xử lí](./programming/preprocessor.md)
 - [Nhập môn lập trình thi đấu](./basic/README.md)
   - [Độ phức tạp thuật toán](./basic/algo-complexity.md)
   - [Thao tác xử lí bit](./basic/bit-manipulation.md)

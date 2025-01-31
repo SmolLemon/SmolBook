@@ -123,3 +123,14 @@ int a, b;
 scanf("%d%d", &a, &b);
 printf("%d", a + b);
 ```
+
+## Nhập - xuất dữ liệu trên file
+
+Để nhập - xuất dữ liệu trên file, ta chỉ cần thêm hai câu lệnh:
+
+```C++
+froepen("[tên_file_nhập]", "r", stdin); // file nhập
+froepen("[tên_file_xuất]", "w", stdout); // file xuất
+```
+
+và thực hiện nhập xuất bằng `cin/cout` một cách bình thường như trước khi có hai dòng trên/
