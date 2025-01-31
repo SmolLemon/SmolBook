@@ -133,4 +133,4 @@ froepen("[tên_file_nhập]", "r", stdin); // file nhập
 froepen("[tên_file_xuất]", "w", stdout); // file xuất
 ```
 
-và thực hiện nhập xuất bằng `cin/cout` một cách bình thường như trước khi có hai dòng trên/
+và thực hiện nhập xuất bằng `cin/cout` như trước khi có hai dòng lệnh trên.

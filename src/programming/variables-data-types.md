@@ -173,3 +173,7 @@ Trong C++17, ta còn có thể khai báo luôn các biến trong một dòng.
 ```C++
 auto [a, b, c] = make_tuple(5, 1.414, 0);
 ```
+
+## Cấu trúc
+
+Nếu không có kiểu dữ liệu nào có thể lưu thông tin mà ta mong muốn, ta có thể tự viết [cấu trúc](struct.md) cụ thể giúp lưu những thông tin ấy.

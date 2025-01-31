@@ -2,9 +2,9 @@
 
 **Bộ tiền xử lí (preprocessor)** là những chỉ thị để trình biên dịch tiền xử lý thông tin trước khi bắt đầu biên dịch thực sự. Ta đã được thấy một bộ tiền xử lí `#define` ở các đoạn code trước, thêm các đoạn code từ những file khác vào chương trình của ta.
 
-Ta sẽ tập trung vào việc sử dụng `#define`. Đây là mt bộ tiền xử lí thay thế các biểu tượng trong code thành các biểu tượng khác.
+Ta sẽ tập trung vào việc sử dụng `#define`. Đây là một bộ tiền xử lí thay thế các biểu tượng trong code thành các biểu tượng khác.
 
-Việc khai bào một `define` được viết như sau:
+Việc khai báo một `define` được viết như sau:
 
 ```C++
 #define biểu_tượng_cần_thay_thế biểu_tượng_thay_thế
@@ -70,7 +70,7 @@ using ll = long long;
 using str = string;
 ```
 
-Để các đoạn code minh hoạc dễ đọc hơn, Smol book chỉ sử dụng một macro duy nhất là 
+Để các đoạn code minh hoạ dễ đọc hơn, Smol book chỉ sử dụng một macro duy nhất là 
 
 ```C++
 #define ll long long
