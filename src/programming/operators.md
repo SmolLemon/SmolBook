@@ -12,7 +12,7 @@ int b = a;
 int c = a * b;
 ```
 
-## Toán tử toán học (`+`, '-', `*`, `/`, `%`)
+## Toán tử toán học (`+`, `-`, `*`, `/`, `%`)
 
 Các toán tử toán học sẽ thực hiện các phép tính toán học:
 
@@ -56,7 +56,7 @@ cout << a << '\n'; // "Smol Book"
 
 ## Toán tử tăng giảm (`++`, `--`)
 
-Đối với những trường hợp cần tăng hoặc giảm giá trị của một biến xuống một đơn vị, thay vì viết `x = x + 1` hoặc dùng toán tử hỗn hợp `x += 1`, ta có thể viết `x++`.
+Đối với những trường hợp cần tăng hoặc giảm một đơn vị giá trị của một biến, thay vì viết `x = x + 1` hoặc dùng toán tử hỗn hợp `x += 1`, ta có thể viết `x++`.
 
 Việc viết `x++` và `++x` sẽ khác nhau đôi chút - `x++` sẽ trả về cho ta giá trị `x` và tăng `x` lên một đơn vị, trong khi `++x` trả về cho ta giá trị `x + 1` và tăng `x` lên một đơn vị.
 

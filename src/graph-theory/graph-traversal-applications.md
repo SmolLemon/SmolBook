@@ -4,7 +4,7 @@ Hai thuật toán tìm kiếm trên đồ thị đã được nói ở phần tr
 
 ## Xây dựng cây khung của đồ thị
 
-Ta có một đồ thị \\(G = (V, E)\\). Nếu ta có một đồ thị \\(G' = G\\) và loại bỏ một số cạnh của \\(G'\\) sao cho \\(G'\\) là một cây và các đỉnh vẫn liên thông thì đồ thị \\(G'\\) được gọi là **cây khung** của \\(G\\).
+Một **cây khung (spanning tree)** của một đồ thị vô hướng, liên thông \\(G\\) là một đồ thị con \\(T\\) có tất cả các đỉnh của \\(G\\) và có các cạnh của \\(G\\) sao cho các đỉnh liên thông với nhau và đồ thị không có chu trình. 
 
 <center>
 <img src="../images/spanning_tree.png" alt="Cây Khung"/>

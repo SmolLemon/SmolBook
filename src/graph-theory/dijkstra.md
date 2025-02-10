@@ -46,7 +46,7 @@ Kết thúc thuật toán, ta tính được khoảng cách ngắn nhất từ �
 
 ```C++
 const int INF = 1e9; // vô cực
-vector<pair<int, int>> adj[N] // danh sách cạnh lưu đồ thị có trọng số 
+vector<pair<int, int>> adj[N]; // danh sách cạnh lưu đồ thị có trọng số 
 int dist[N], p[N];
 bitset<N> vst;
 int n; 
@@ -70,9 +70,7 @@ void dijkstra(int s){
 			if(vst[v]) continue;
 
 			if(dist[u] + w < dist[v]){			
-				if(pq.find({dist[v], v}) != pq.end()){
-					pq.erase({dist[v], v});
-				}
+				pq.erase({dist[v], v});
 				dist[v] = dist[u] + w;
 				pq.insert({dist[v], v});
 				p[v] = u;
@@ -99,7 +97,7 @@ void dijkstra(int s){
 				   greater<pair<int, int>>> pq;
 
 	// Ta có thể viết: priority_queue<pair<int, int>> pq 
-	// và lưu theo dạng: {[dist[u], u}
+	// và lưu theo dạng: {-dist[u], u}
 
 	pq.push({0, s});
 	int u, d;
@@ -122,7 +120,7 @@ void dijkstra(int s){
 }
 ```
 
-Độ phức tạp thuật toán tương tư cách cài đặt sử dụng `set`: \\(O((|E| + |V|) \log {|V|})\\).
+Độ phức tạp thuật toán tương tư cách cài đặt sử dụng `set`: \\(O((|E| + |V|) \log {|E|})\\).
 
 ## Dijkstra trên đồ thị có trọng số âm
 
@@ -173,11 +171,13 @@ void dijkstra(int s){
 }
 ```
 
-Độ phức tạp thuật toán của ta sẽ giữ nguyên bằng \\(O((|E| + |V|) \log {|V|})\\) nếu đồ thị không có trọng số âm.
+Độ phức tạp thuật toán của ta sẽ giữ nguyên bằng \\(O((|E| + |V|) \log {|E|})\\) nếu đồ thị không có trọng số âm.
 
-Độ phức tạp thuật toán của ta sẽ lớn hơn \\(O((|E| + |V|) \log {|V|})\\) nếu đồ thị có trọng số âm do sẽ có nhiều đỉnh phải cập nhật lại giá trị.
+Độ phức tạp thuật toán của ta sẽ lớn hơn \\(O((|E| + |V|) \log {|E|})\\) nếu đồ thị có trọng số âm do sẽ có nhiều đỉnh phải cập nhật lại giá trị.
 
-Nếu đồ thị có trọng số âm của ta có chu trình âm, tức là có một chu trình với khoảng cách âm, thì thuật toán Dijkstra được sửa đổi để có thể chạy trên đồ thị trọng số âm sẽ chạy trong một vòng lặp vô hạn khi thuật toán cố gắng xây dựng đường đi ngắn nhất bằng cách đi trên chu trình âm ấy vô hạn lần để cho ra kết quả nhỏ nhất.
+## Dijkstra trên đồ thị có chu trình âm
+
+Nếu đồ thị có chu trình âm, tức là có một chu trình với khoảng cách âm, thì thuật toán Dijkstra được sửa đổi để có thể chạy trên đồ thị trọng số âm sẽ chạy trong một vòng lặp vô hạn khi thuật toán cố gắng xây dựng đường đi ngắn nhất bằng cách đi trên chu trình âm ấy vô hạn lần để cho ra kết quả nhỏ nhất.
 
 <center>
 <img src="../images/djikstra_neg_cycle.png" alt="Dijkstra Chu Trình Âm"/>

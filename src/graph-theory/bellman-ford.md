@@ -171,4 +171,4 @@ void SPFA(){
 
 Độ phức tạp thuật toán tương tự với Bellman-Ford \\(O(|V||E|)\\). Tuy nhiên, trên thực tế, thuật toán sẽ chạy nhanh hơn nhiều trong hầu hết các trường hợp. 
 
-Khác với Bellman-ford, thuật toán SPFA không thể xét trường hợp đồ thị có chu trình âm và sẽ rơi vào trường hợp cập nhật khoảng cách vô hạn lần giống [Dijkstra](dijkstra.md#dijkstra-trên-đồ-thị-có-trọng-số-âm).
+Khác với Bellman-ford, thuật toán SPFA không thể xét trường hợp đồ thị có chu trình âm và sẽ rơi vào trường hợp cập nhật khoảng cách vô hạn lần giống [Dijkstra](dijkstra.md#dijkstra-trên-đồ-thị-có-chu-trình-âm).

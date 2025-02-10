@@ -1,16 +1,20 @@
 # Quy hoạch động chữ số
 
+*Được xuất hiện trên [VNOI Wiki](https://wiki.vnoi.info/algo/dp/digit-dp)*
+
+<br>
+
 *Quy hoạch động chữ số* là kĩ thuật QHĐ nhằm giải quyết các bài toán liên quan đến chữ số.
 
 ## Lý thuyết
 
-Các bài QHĐ chữ số sẽ có mô tả như sau: Cho một khoảng số \\([a; b]\\), hãy đếm số lượng số trong khoảng thỏa mãn yêu cầu đề bài.
+Các bài QHĐ chữ số sẽ có mô tả như sau: Cho một đoạn số \\([a; b]\\), hãy đếm số lượng số trong đoạn thỏa mãn yêu cầu đề bài.
 
-Gọi \\(G(X)\\) là số lượng số nằm trong khoảng \\([0; X]\\) thỏa mãn yêu cầu đề bài. Khi này ta có thể tính được đáp án của bài toán bằng công thức: \\(G(b) - G(a - 1)\\) hoặc \\(G(b) - G(a) + g(a)\\) với \\(g(x)\\) là một hàm trả về \\(1\\) nếu \\(x\\) thỏa mãn yêu cầu và \\(0\\) nếu không thỏa mãn.
+Gọi \\(G(X)\\) là số lượng số nguyên nằm trong đoạn \\([0; X]\\) thỏa mãn yêu cầu đề bài. Khi này ta có thể tính được đáp án của bài toán bằng công thức: \\(G(b) - G(a - 1)\\) hoặc \\(G(b) - G(a) + g(a)\\) với \\(g(x)\\) là một hàm trả về \\(1\\) nếu \\(x\\) thỏa mãn yêu cầu và \\(0\\) nếu không thỏa mãn.
 
 ### Xây dựng hàm \\(G(X)\\)
 
-Để xây dựng hàm \\(G(X)\\), ta sẽ xem các số trong khoảng \\([0; X]\\) như một xâu kí tự: Ta có \\(X = \overline{x_{n - 1}x_{n - 2}\dots x_{0}}\\) với \\(n\\) là số chữ số trong \\(X\\). Ta sẽ tạo các số \\(A = \overline{a_{n - 1}a_{n - 2}\dots a_{0}}\\) nhỏ hơn hoặc bằng \\(X\\), và ta thực hiện việc gán giá trị cho các chữ số của \\(A\\) theo chiều từ trái sang phải.
+Để xây dựng hàm \\(G(X)\\), ta sẽ xem các số trong đoạn \\([0; X]\\) như một xâu kí tự: Ta có \\(X = \overline{x_{n - 1}x_{n - 2}\dots x_{0}}\\) với \\(n\\) là số chữ số trong \\(X\\). Ta sẽ tạo các số \\(A = \overline{a_{n - 1}a_{n - 2}\dots a_{0}}\\) nhỏ hơn hoặc bằng \\(X\\), và thực hiện việc gán giá trị cho các chữ số của \\(A\\) theo chiều từ trái sang phải.
 
 Giả sử ta có \\(X = 3141\\):
 
@@ -18,7 +22,7 @@ Giả sử ta có \\(X = 3141\\):
 |---|---|---|---|
 |\\(3\\)|\\(1\\)|\\(4\\)|\\(1\\)|
 
-Ta thực hiện việc gán giá trị cho phần tử \\(a_i\\):
+Ta thực hiện việc gán giá trị cho phần tử \\(a_i\\) theo hai trường hợp: trường hợp có và không có giới hạn.
 
 #### Trường hợp không giới hạn
 
@@ -30,7 +34,7 @@ Giả sử ta đã điền các chữ số ở trước \\(a_1\\) bằng các gi
 
 Trường hợp không giới hạn sẽ xảy ra nếu các số được điền trước \\(a_i\\) có thứ tự từ điển nhỏ hơn hẳn \\(X\\), hay \\(\overline{a_{n - 1}a_{n - 2}\dots a_{i + 1}} \lt \overline{x_{n - 1}x_{n - 2}\dots x_{i + 1}}\\). Khi này, ta có thể điền \\(a_i\\) các chữ số từ \\(0\\) đến \\(9\\).
 
-Ở đây, vì \\(21 < 31\\) nên \\(a_1\\) rơi vào trường hợp không giới hạn. Vì vậy ta có thể gán cho \\(a_1\\) các chữ số từ \\(0\\) đến \\(9\\). Ta có thể kết luận như vậy vì dù có gán \\(a_1\\) bằng chữ số nào đi nữa thì các số có dạng \\(\overline{21**}\\) cũng sẽ nhỏ hơn \\(X\\).
+Ở đây, vì \\(21 < 31\\) nên \\(a_1\\) rơi vào trường hợp không giới hạn. Ta có thể kết luận như vậy vì dù có gán \\(a_1\\) bằng chữ số nào đi nữa thì các số có dạng \\(\overline{21**}\\) cũng sẽ nhỏ hơn \\(X\\). Vì vậy ta có thể gán cho \\(a_1\\) các chữ số từ \\(0\\) đến \\(9\\).
 
 #### Trường hợp có giới hạn
 
@@ -42,7 +46,9 @@ Giả sử ta đã điền các chữ số ở trước \\(a_1\\) bằng các gi
 
 Trường hợp có giới hạn sẽ xảy ra nếu các số được điền trước \\(a_i\\) là một tiền tố của số \\(X\\). Khi này, ta chỉ có thể điền \\(a_i\\) các chữ số từ \\(0\\) đến \\(x_i\\).
 
-Ở đây, ta có \\(31\\) là một tiền tố của \\(X\\) nên rơi vào trường hợp có giới hạn. Ta chỉ có thể gán cho \\(a_1\\) các chữ số từ \\(0\\) đến \\(x_1 = 4\\). Giả sử ta gán \\(a_1 = 5\\). Khi này, các số có dạng \\(\overline{315*}\\) sẽ lớn hơn \\(X\\), và các số có dạng này là các số mà ta không cần xét đến.
+Ở đây, ta có \\(31\\) là một tiền tố của \\(X\\) nên rơi vào trường hợp có giới hạn. Giả sử ta gán \\(a_1 = 5\\). Khi này, các số có dạng \\(\overline{315*}\\) sẽ lớn hơn \\(X\\), và các số có dạng này là các số mà ta không cần xét đến. Vì lí do trên nên ta chỉ có thể gán cho \\(a_1\\) các chữ số từ \\(0\\) đến \\(x_1 = 4\\).
+
+<br> 
 
 Từ \\(2\\) trường hợp trên, ta có các trạng thái QHĐ cần thiết để giải một bài toán QHĐ chữ số:
 
@@ -76,7 +82,7 @@ Tóm tắt: Cho hai số nguyên không âm \\(a\\) và \\(b\\), tính tổng ch
 
 Giới hạn: \\(0 \le a \le b \le 10^{15}\\).
 
-Ví dụ: \\([49; 52] = 4 + 9 + 5 + 0 + 5 + 1 + 5 + 2 = 31\\).
+Ví dụ: \\([49; 52] = (4 + 9) + (5 + 0) + (5 + 1) + (5 + 2) = 31\\).
 
 Ta có các trạng thái QHĐ: \\((idx, smaller, sum)\\) với \\(idx\\), \\(smaller\\) có định nghĩa như trên và \\(sum\\) là tổng của các chữ số đã điền.
 
@@ -84,7 +90,7 @@ Ta có các trạng thái QHĐ: \\((idx, smaller, sum)\\) với \\(idx\\), \\(sm
 
 Khi ta ở trạng thái \\((idx, smaller, sum)\\):
 
-Nếu \\(idx = -1\\), ta không còn vị trí nào để điền giá trị, từ đấy ta trả về giá trị \\(sum\\). Nếu \\(idx\\) lớn hơn \\(-1\\), ta sẽ thực hiện gán giá trị cho \\(a_{idx}\\). 
+Nếu \\(idx = -1\\), ta không còn vị trí nào để điền giá trị, ta trả về giá trị \\(sum\\). Nếu \\(idx\\) lớn hơn \\(-1\\), ta sẽ thực hiện gán giá trị cho \\(a_{idx}\\). 
 
 Ta có thể điền các số từ \\(0\\) đến \\(limit\\) cho số \\(a_{idx}\\), với \\(limit = 9\\) nếu \\(smaller = 1\\), hoặc \\(limit = x_{idx}\\) nếu \\(smaller = 0\\). 
 
@@ -206,21 +212,21 @@ ll G(string &X){
 
 ### Bài 3: [Số lượng số](https://oj.vnoi.info/problem/snad)
 
-Tóm tắt: Cho \\(T\\) cặp số \\([X; Y]\\), đếm số lượng số mà có tích của một số với tổng chữ số của nó đó nằm trong khoảng \\([X; Y]\\).
+Tóm tắt: Cho \\(T\\) cặp số \\([X; Y]\\), đếm số lượng số có tích với tổng chữ số của nó đó nằm trong đoạn \\([X; Y]\\).
 
 Giới hạn: \\(T \lt 21\\), \\(0 \lt X \le Y \lt 10^{19}\\).
 
 Gọi \\(A\\) là một số thỏa mãn điều kiện. Vì \\(A\\) thỏa mãn điều kiện nên:
 
-\\[X \le A \times d(A)\le Y\\]
+\\[X \le A \times s(A)\le Y\\]
 
-Với \\(d(A)\\) là tổng các chữ số của \\(A\\).
+Với \\(s(A)\\) là tổng các chữ số của \\(A\\).
 
-Ta thấy rằng các số \\(X\\), \\(Y\\), \\(A\\) là các số rất lớn, nhưng \\(d(A)\\) lại nhỏ một cách bất ngờ - \\(d(x) \le 171, \forall{x} \lt 10^{19}\\).
+Ta thấy rằng các số \\(X\\), \\(Y\\), \\(A\\) là các số rất lớn, nhưng \\(s(A)\\) lại nhỏ một cách bất ngờ - \\(s(x) \le 171, \forall{x} \lt 10^{19}\\).
 
 Từ đây, ta có thể viết lại công thức trên như sau:
 
-\\[\left\lfloor \frac{X}{d(A)}\right\rfloor \le A \le \left\lfloor \frac{Y}{d(A)}\right\rfloor\\]
+\\[\left\lfloor \frac{X}{s(A)}\right\rfloor \le A \le \left\lfloor \frac{Y}{s(A)}\right\rfloor\\]
 
 Qua công thức này, ta đã chuyển đổi bài toán sang một dạng khác đơn giản hơn: Cho \\(S\\) chạy từ \\(1\\) đến \\(171\\), đếm số lượng số từ \\(\left\lfloor \frac{X}{S}\right\rfloor\\) đến \\(\left\lfloor \frac{Y}{S}\right\rfloor\\) có tổng chữ số bằng \\(S\\). 
 
@@ -286,7 +292,7 @@ ll G(ll X){
 
 #### Tối ưu QHĐ chữ số
 
-Nhiều bài toán QHĐ chữ số (giống như bài này) có thể yêu cầu ta tính đi tính lại các khoảng số với cùng một tính chất. việc này vô tình làm cho thuật toán của ta chạy chậm đi khi phải tính đi tính lại các số.
+Nhiều bài toán QHĐ chữ số (giống như bài này) có thể yêu cầu ta tính đi tính lại các đoạn số với cùng một tính chất. việc này vô tình làm cho thuật toán của ta chạy chậm đi khi phải tính đi tính lại các số.
 
 Một cách tối ưu cực kì hay ho chính là ta sẽ chỉ thực hiện việc `memset` một lần ở ngoài hàm \\(G\\), đồng thời bỏ trạng thái \\(smaller\\) khi lưu kết quả của trạng thái. 
 
@@ -349,17 +355,17 @@ ll G(ll X, ll sum){
 
 ```
 
-Độ phức tạp của thuật toán giờ đây giảm xuống còn: \\(O(10 \times n \times sum)\\)
+Độ phức tạp của thuật toán giờ đây giảm xuống còn: \\(O((10 \times n \times 2 \times sum) \times 171)\\).
 
 ### Bài 4: [NUMTSN - 369 Numbers](https://www.spoj.com/problems/NUMTSN/)
 
-Tóm tắt: Cho \\(T\\) cặp số \\(A\\) và \\(B\\), với mỗi cặp số, đếm số lượng số \\(369\\) nằm trong khoảng \\([A; B]\\), modulo \\(10^9 + 7\\).
+Tóm tắt: Cho \\(T\\) cặp số \\(A\\) và \\(B\\), với mỗi cặp số, đếm số lượng số \\(369\\) nằm trong đoạn \\([A; B]\\), modulo \\(10^9 + 7\\).
 
 Một số \\(X\\) là số \\(369\\) khi số lượng chữ số \\(3\\) bằng số lượng chữ số \\(6\\) và bằng số lượng chữ số \\(9\\) và có ít nhất một chữ số \\(3\\). 
 
 Giới hạn: \\(T \lt 100\\), \\(1 \le A \le B \le 10^{50}\\).
 
-Ta có \\(5\\) trạng thái QHĐ: \\((idx, smaller, three, six, nine)\\) với \\(idx\\), \\(smaller\\) có định nghĩa như các ví dụ trước và \\(three\\), \\(six\\), \\(nine\\) là số lượng số \\(3\\), \\(6\\), và \\(9\\).
+Ta có \\(5\\) trạng thái QHĐ: \\((idx, smaller, three, six, nine)\\) với \\(idx\\), \\(smaller\\) có định nghĩa như các ví dụ trước và \\(three\\), \\(six\\), \\(nine\\) là số lượng chữ số \\(3\\), \\(6\\), và \\(9\\).
 
 Nếu \\(idx = -1\\), hàm \\(f\\) trả về \\(1\\) nếu \\(three > 0, three = six = nine\\), và \\(0\\) trong các trường hợp còn lại.
 
@@ -435,11 +441,11 @@ bool g(string &X){
 
 ### Bài 5: [Số đặc biệt](https://lqdoj.edu.vn/problem/pearlnum)
 
-Tóm tắt: Ta có hàm \\(f(x)\\) trả về tổng bình phương các chữ số trong \\(x\\). Một số \\(x\\) được gọi là số đặc biệt nếu \\(x = 1\\) sau khi áp dụng không hoặc nhiều lần công thức: \\(x = f(x)\\). Cho \\(T\\) cặp số \\([L, R]\\), hãy cho biết số lượng số đặc biệt trong khoảng \\([L, R]\\).
+Tóm tắt: Ta có hàm \\(f(x)\\) trả về tổng bình phương các chữ số trong \\(x\\). Một số \\(x\\) được gọi là số đặc biệt nếu \\(x \neq 1\\) dẫu áp dụng bao nhiên lần cập nhập \\(x\\) bằng công thức: \\(x = f(x)\\). Cho \\(T\\) cặp số \\((L, R)\\), hãy cho biết số lượng số đặc biệt trong đoạn \\([L; R]\\).
 
 Giới hạn: \\(T \le 100\\), \\(1 \le L \le R \le 10^{18}\\).
 
-Một điều dễ nhận thấy đối với bài toán này là với mỗi \\(x \le 10^{18}\\), \\(f(x) \le 1458\\). Vì vậy, ta có thể viết lại bài toán như sau: hãy cho biết số lượng số \\(x\\) trong khoảng \\([L, R]\\) mà \\(f(x)\\) là số đặc biệt.
+Một điều dễ nhận thấy đối với bài toán này là với mỗi \\(x \le 10^{18}\\), \\(f(x) \le 1458\\). Vì vậy, ta có thể viết lại bài toán như sau: hãy cho biết số lượng số \\(x\\) trong đoạn \\([L; R]\\) mà \\(f(x)\\) là số đặc biệt.
 
 Việc tìm các số đặc biệt \\(\le 1458\\) có thể được thực hiện một cách đơn giản.
 
@@ -528,7 +534,7 @@ ll G(ll X){
 
 ### Bài 6: [LUCKY13](https://oj.vnoi.info/problem/lucky13)
 
-Tóm tắt: Cho một hoặc nhiều cặp số nguyên không âm \\(A\\) và \\(B\\), đếm số lượng các số trong khoảng \\([A, B]\\) mà trong dạng biểu diễn không có số \\(13\\).
+Tóm tắt: Cho một hoặc nhiều cặp số nguyên không âm \\(A\\) và \\(B\\), đếm số lượng các số trong đoạn \\([A, B]\\) mà trong dạng biểu diễn không có số \\(13\\).
 
 Giới hạn: \\(0 \le X \le Y \le 10^{15}\\).
 
@@ -588,7 +594,7 @@ ll G(ll X){
 
 Độ phức tạp của thuật toán này là \\(O(10 \times 2 \times n)\\). 
 
-Ngoài các trạng thái biểu thị đoạn số \\(\overline{a_{n - 1}a_{n - 2}\dots a_{idx + 1}}\\) quen thuộc như \\(sum\\), ta còn có một số trạng thái phổ biến khác như:
+Ngoài các trạng thái biểu thị đoạn số \\(\overline{a_{n - 1}a_{n - 2}\dots a_{idx + 1}}\\) như \\(sum\\), ta còn có một số trạng thái khác như:
 
 - \\(nonz\\): biểu thị nếu \\(\overline{a_{n - 1}a_{n - 2}\dots a_{idx + 1}}\\) là các chữ số không vô nghĩa. 
 - \\(prevDigit\\): biểu thị giá trị của \\(a_{idx + 1}\\).

@@ -92,13 +92,15 @@ Một số dạng đồ thị đặc biệt ta cần biết.
 
 ### Đồ thị đầy đủ
 
-Một đồ thị là **đầy đủ** khi tất cả các cặp đỉnh của đồ thị được nối với nhau bởi một cạnh.
+Một đồ thị là **đầy đủ (complete)** khi tất cả các cặp đỉnh của đồ thị được nối với nhau bởi một cạnh.
 
 Nếu một đồ thị \\(G\\) có \\(|V|\\) đỉnh vừa vô hướng vừa đầy đủ, số cạnh của \\(G\\) sẽ là \\(|E| = \frac{|V| \times (|V| - 1)}{2}\\).
 
 <center>
 <img src="../images/complete_graph.svg" alt="Đồ thị đầy đủ"/>
 </center>
+
+Trái ngược với đồ thị đầy đủ, một đồ thị **rỗng (empty)** là khi đồ thị không có cạnh, hay \\(G = (V, \emptyset)\\).
 
 ### Đồ thị hai phía
 

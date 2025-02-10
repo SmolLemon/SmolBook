@@ -56,6 +56,7 @@ Ta sẽ tối ưu hàm Union bằng cách mô tả các tập hợp bằng các 
 |`Union(1, 2)`|<center><img src="../images/dsu2.svg" alt="Union(1, 2)"/></center>|
 |`Union(2, 3)`|<center><img src="../images/dsu3.svg" alt="Union(2, 3)"/></center>|
 |`Union(1, 4)`|<center><img src="../images/dsu4.svg" alt="Union(1, 4)"/></center>|
+
 ```C++
 int Find(int a){
 	while(a != p[a]){
@@ -174,3 +175,32 @@ Bảng dưới đây so sánh độ phức tạp thời gian của 2 hàm `Find`
 |Quick-Union theo kích thước/thứ hạng|\\(O(\log{n})\\)|\\(O(\log{n})\\)|
 |Quick-Union + nén đường đi|\\(O(\log{n})\\)|\\(O(\log{n})\\)|
 |Quick-Union theo kích thước/thứ hạng + nén đường đi|\\(O(log^* n)\\)|\\(O(log^* n)\\)|
+
+Dưới đây là cài đặt DSU theo thứ hạng + nén đường đi trong một [cấu trúc](../programming/struct.md), kèm theo một số hàm hỗ trợ khác.
+
+```C++
+struct UnionFind{
+	vector<int> p, r, sz;
+	int cc; // số tập hợp
+	UnionFind(int _n): cc(_n){
+		p.resize(cc);
+		r.resize(cc, 0);
+		sz.resize(cc, 1);
+		iota(p.begin(), p.end(), 1); // gán p[0] = 0, p[1] = 1, ..., p[cc - 1] = cc - 1
+	}
+	int find(int u) { return p[u] == u ? u : p[u] = find(p[u]); } // cách viết rút gọn
+	int disjointSet() { return CC; }                              // số tập hợp
+	int sizeOfSet(int u) { return sz[find(u)]; }                  // số lượng phần tử trong tập hợp
+	bool isSameSet(int u, int v) { return find(u) == find(v); }   // kiểm tra hai phần tử thuộc 
+    bool Union(int u, int v) {                                    // cùng tập hợp hay không 
+		u = find(u);                                              // hàm Union sẽ trả về nếu hai 
+		v = find(v);                                              // tập hợp được hợp lại với nhau
+		if (u == v) return 0;
+		if(r[u] < r[v]) swap(u, v);
+    	p[v] = u;
+    	r[u] += r[u] == r[v];
+    	sz[u] += sz[v];
+    	return 1;
+    }
+};
+```
