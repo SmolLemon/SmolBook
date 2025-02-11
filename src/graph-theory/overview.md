@@ -150,11 +150,11 @@ Trong đồ thị có hướng, tổng bán bậc vào của tất cả các đ�
 
 Cho một đồ thị \\(G = (V, E)\\):
 
-**1.** Một **đường đi (walk)** (trong \\(G\\)) là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) thuộc \\(G\\) và các cạnh \\((v_0v_1, v_1v_2,..., v_{k - 1}v_k)\\) là các cạnh thuộc đồ thị.
+**1.** Một **đường đi (walk)** (trong \\(G\\)) là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) thuộc \\(G\\) và các cạnh \\((v_0v_1, v_1v_2,..., v_{k - 1}v_k)\\) thuộc đồ thị.
 
-Một **trail** là một đường đi trong đó tất cả các cạnh trên đường đi đôi một phân biệt.
+Một **trail** là một đường đi trong đó các cạnh trên đường đi đôi một phân biệt.
     
-Một **path** là một đường đi trong đó tất cả các đỉnh trên đường đi đôi một phân biệt (suy ra các cạnh trên đường đi cũng đôi một phân biệt).
+Một **path** là một đường đi trong đó các đỉnh trên đường đi đôi một phân biệt (suy ra các cạnh trên đường đi cũng đôi một phân biệt).
 
 **2.** Với \\(w = (v_0, v_1, v_2,..., v_k)\\) là một đường đi trong \\(G\\), ta có:
 - \\(v_0, v_1, v_2,..., v_k\\) là các **đỉnh** của \\(w\\).
@@ -164,12 +164,9 @@ Một **path** là một đường đi trong đó tất cả các đỉnh trên 
 - \\(v_k\\) được gọi là **đỉnh cuối (ending point)** của \\(w\\), ta nói \\(w\\) *kết thúc* tại tại đỉnh \\(v_k\\).
 - Cho hai đỉnh \\(p\\) và \\(q\\) thuộc \\(G\\), ta nói **đường đi từ** \\(p\\) **đến** \\(q\\) là đường đi bắt đầu từ đỉnh \\(p\\) và kết thúc tại đỉnh \\(q\\).
 
-**3.** Một **đường đi khép kín (closed walk, tour)** của \\(G\\) một đường đi mà đỉnh cuối trùng với đỉnh đầu. Hay nói cách khác, là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) với \\(v_0 = v_k\\). 
+**3.** Một **đường đi khép kín (closed walk)** hoặc **tour** của \\(G\\) một đường đi mà đỉnh đầu trùng với đỉnh cuối. Hay nói cách khác, là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) với \\(v_0 = v_k\\). 
 
-**4.** Một **chu trình (cycle)** của \\(G\\) là một đường đi khép kín \\((v_0, v_1, v_2,..., v_k)\\) với \\(k \ge 3\\) và các đỉnh \\((v_0, v_1, v_2,..., v_{k - 1})\\) đôi một phân biệt.
-Một số trường hợp đặc biệt:
-- Nếu \\(G\\) là một đồ thị có hướng hoặc là một đa đồ thị, \\(G\\) tồn tại chu trình có \\(2\\) đỉnh khi trong đồ thị tồn tại hai đỉnh \\(a\\) và \\(b\\) được nối với nhau bởi \\(2\\) cạnh song song. Ví dụ: ![2_node_cycle](../images/2_node_cycle.svg)
-- \\(G\\) tồn tại chu trình có \\(1\\) đỉnh nếu trong đồ thị tồn tại cạnh khuyên. Ví dụ: ![1_node_cycle](../images/1_node_cycle.svg)
+**4.** Một **chu trình (cycle)** của \\(G\\) là một đường đi khép kín với các đỉnh (trừ đỉnh đầu hoặc cuối) đôi một phân biệt. Một **circuit** hoặc **closed trail** là một đường đi khép kín nhưng các cạnh trong chu trình phân biệt nhau.
 
 **5.** Một đường đi (chu trình) là *sơ cấp* nếu nó không đi qua đỉnh nào hai lần trở lên. Một đường đi (chu trình) là *đơn giản* nếu nó không đi qua cạnh nào hai lần trở lên.
 

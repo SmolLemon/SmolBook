@@ -175,12 +175,6 @@ void queen8(int row){
 
 Ta gọi `queen8(0)` để bắt đầu thuật toán.
 
-<center>
-<img src="../images/Eight-queens-animation.gif" alt="8 quân hậu"/>
-
-<sup>Ảnh của Hsilgneymerej - [Wikimedia](https://commons.wikimedia.org/wiki/File:Eight-queens-animation.gif) - Public Domain</sup>
-</center>
-
 ## Chia đôi tập
 
 **Chia đôi tập (Meet in the middle)** là một kĩ thuật tối ưu thuật toán bằng cách chia đôi không gian tìm kiếm ra làm hai và kết hợp kết quả từ hai không gian tìm kiếm lại với nhau để tìm đáp án của bài toán.

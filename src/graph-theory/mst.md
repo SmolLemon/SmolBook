@@ -183,7 +183,7 @@ int prim(){
 			}
 		}
 	}
-	cout << mst;
+	return mst;
 }
 ```
 

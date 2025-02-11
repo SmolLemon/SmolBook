@@ -40,7 +40,7 @@ Dòng thứ ba,
 using namespace std;
 ```
 
-nói với trình biên dịch rằng ta sử dụng những đoạn code từ thư viện chuẩn (**st**an**d**ard library). Nếu không có câu lệnh này, ta cần phải viết rõ rằng ta muốn sử dụng những đoạn code từ thư viện chuẩn bằng `std::` (`std::cout`, `std::endl`, ...).
+nói với trình biên dịch rằng ta sử dụng những đoạn code từ thư viện chuẩn (**st**an**d**ard library - **std**). Nếu không có câu lệnh này, ta cần phải viết rõ rằng ta muốn sử dụng những đoạn code từ thư viện chuẩn bằng `std::` (`std::cout`, `std::endl`, ...).
 
 Dòng thứ năm định nghĩa hàm **main**. Trình biên dịch sẽ tìm và chạy hàm main của ta khi biên dịch chương trình. 
 
