@@ -31,7 +31,7 @@
   - [Hàng đợi hai đầu (Deque)](./data-structures/deque.md)
   - [Bảng thưa (Sparse Table)](./data-structures/sparse-table.md)
   - [Heap]()
-  - [Cây tìm kiếm nhị phân]()
+  - [Cây tìm kiếm nhị phân (Binary Search Tree)]()
   - [Cây phân đoạn (Segment Tree)](./data-structures/segment-tree.md)
   - [Cây chỉ số nhị phân - Cây Fenwick (Fenwick Tree)](./data-structures/fenwick.md)
   - [Disjoint Set Union](./data-structures/dsu.md)

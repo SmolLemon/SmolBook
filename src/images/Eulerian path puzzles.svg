@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-67 -116 367.5 420">
+ <title>Eulerian path puzzles</title>
+ <desc>Using Eulerian paths to draw shapes with a continuous stroke by CMG Lee. 1. As the Haus vom Nikolaus puzzle has two odd vertices (orange), the path must start at one and end at the other. 2. The Annie Pope one with four odd vertices has no solution. 3. If there are no odd vertices, the path can start anywhere and forms a closed circuit. 4. Loose ends are considered odd vertices. 5. The graph must also be connected.</desc>
+ <style type="text/css">
+.main  { font-size:16px; font-family:Helvetica,Arial,sans-serif; text-anchor:middle;
+         fill:none; stroke:#000000; stroke-width:6; stroke-linejoin:round; }
+.main:hover                    { fill-opacity:0; stroke-opacity:0; }
+.active:hover, .nofade, .title { fill-opacity:1; stroke-opacity:1; }
+text   { fill:#000000; stroke:none; cursor:default; }
+.title { font-size:24px; }
+.path, .marker { fill:none; stroke:#009900; stroke-linecap:round; }
+.path { stroke-width:2; stroke-dasharray:3.9,5; marker-start:url(#marker_start); marker-end:url(#marker_end); }
+ </style>
+ <defs>
+  <marker id="marker_start" orient="auto" refX="2" refY="2" markerWidth="4" markerHeight="4">
+   <circle cx="2" cy="2" r="1" class="marker"/>
+  </marker>
+  <marker id="marker_end" orient="auto" refX="3" refY="2" markerWidth="4" markerHeight="4">
+   <path d="M 1,1 L 3,2 L 1,3" class="marker"/>
+  </marker>
+  <circle id="vertex" cx="0" cy="0" r="8" stroke-width="0.5"/>
+  <use id="odd"  xlink:href="#vertex" fill="#ff9900"/>
+  <use id="even" xlink:href="#vertex" fill="#66ccff"/>
+  <g id="haus">
+   <path class="nofade" d="M -50,50 v -100 l 50,-50 l 50,50 v 100 h -100 l 100,-100 h -100 l 100,100"/>
+   <g transform="translate(  0,   0)"><use xlink:href="#even"/><text y="0.7ex">4</text></g>
+   <g transform="translate(  0,-100)"><use xlink:href="#even"/><text y="0.7ex">2</text></g>
+   <g transform="translate(-50, -50)"><use xlink:href="#even"/><text y="0.7ex">4</text></g>
+   <g transform="translate( 50, -50)"><use xlink:href="#even"/><text y="0.7ex">4</text></g>
+   <g transform="translate(-50,  50)"><use xlink:href="#odd" /><text y="0.7ex">3</text></g>
+   <g transform="translate( 50,  50)"><use xlink:href="#odd" /><text y="0.7ex">3</text></g>
+  </g>
+  <path id="x" d="M -10,-10 l 20,20 m -20,0 l 20,-20" stroke="#ff0000" stroke-width="4"/>
+ </defs>
+ <g class="main">
+  <circle class="nofade" r="99999" fill="#ffffff"/>
+  <g class="active">
+   <text class="title" transform="translate(-50,-90)">1.</text>
+   <use xlink:href="#haus"/>
+   <path class="path" d="M -60,41 v -95 l 60,-60 l 60,60 v 114 h -106 l 100,-100 h -108 l 84,84"/>
+  </g>
+  <g class="active" transform="translate(50,190)">
+   <text class="title" transform="translate(-95,-80)">2.</text>
+   <path class="nofade" d="M -50,50 v -100 a 50,50 0 0 1 100,0 v 100 h -100 l 100,-100 h -100 l 100,100 a 50,50 0 0 1 -100,0 a 50,50 0 0 1 0,-100 m 100,0 a 50,50 0 0 1 0,100"/>
+   <g transform="translate(  0,   0)"><use xlink:href="#even"/><text y="0.7ex">4</text></g>
+   <g transform="translate(-50, -50)"><use xlink:href="#odd" /><text y="0.7ex">5</text></g>
+   <g transform="translate( 50, -50)"><use xlink:href="#odd" /><text y="0.7ex">5</text></g>
+   <g transform="translate(-50,  50)"><use xlink:href="#odd" /><text y="0.7ex">5</text></g>
+   <g transform="translate( 50,  50)"><use xlink:href="#odd" /><text y="0.7ex">5</text></g>
+   <path class="path" d="M -60,41 v -95 a 60,55 0 0 1 120,0 v 114 h -106 l 100,-100 h -108 l 110,110 a 58,45 0 0 1 -116,-10 a 45,58 0 0 1 -10,-116"/>
+   <use xlink:href="#x" transform="translate(100,0)"/>
+  </g>
+  <g class="active" transform="translate(137,0)">
+   <text class="title" transform="translate(-50,-90)">3.</text>
+   <use xlink:href="#haus"/>
+   <path class="nofade" d="M -50,50 l 50,50 l 50,-50"/>
+   <g transform="translate(  0, 100)"><use xlink:href="#even"/><text y="0.7ex">2</text></g>
+   <g transform="translate(-50,  50)"><use xlink:href="#even"/><text y="0.7ex">4</text></g>
+   <g transform="translate( 50,  50)"><use xlink:href="#even"/><text y="0.7ex">4</text></g>
+   <path class="path" d="M -27,-87 l 27,-27 l 60,60 v 114 h -106 l 100,-100 h -108 l 104,104 l -50,50 l -60,-60 v -108 l 25,-25"/>
+  </g>
+  <g class="active" transform="translate(235,190)">
+   <text class="title" transform="translate(-30,-70)">4.</text>
+   <path class="nofade" d="M 0,-80 v 30 a 50,50 0,1,0 0.1,0 v 25 a 25,25 0,1,1 -0.1,0 v 110"/>
+   <g transform="translate(  0,  80)"><use xlink:href="#odd" /><text y="0.7ex">1</text></g>
+   <g transform="translate(  0, -80)"><use xlink:href="#odd" /><text y="0.7ex">1</text></g>
+   <g transform="translate(  0, -50)"><use xlink:href="#even"/><text y="0.7ex">4</text></g>
+   <g transform="translate(  0,  50)"><use xlink:href="#even"/><text y="0.7ex">4</text></g>
+   <g transform="translate(  0,  25)"><use xlink:href="#even"/><text y="0.7ex">4</text></g>
+   <g transform="translate(  0, -25)"><use xlink:href="#even"/><text y="0.7ex">4</text></g>
+   <path class="path" d="M -10,-72 v 15 a 59,59 0,1,0 20,0 v 25 a 34,34 0,1,1 -20,0 v 108"/>
+  </g>
+  <g class="active" transform="translate(252,0)">
+   <text class="title" transform="translate(-40,-90)">5.</text>
+   <path class="nofade" d="M -30,-70 q 30,-30 60,0 q -30,30 -60,0 M 0,7 a 36,36 0 1 0 0.1,0 M 0,37 a 36,36 0 1 1 0.1,0"/>
+   <g transform="translate(-30, -70)"><use xlink:href="#even"/><text y="0.7ex">2</text></g>
+   <g transform="translate( 30, -70)"><use xlink:href="#even"/><text y="0.7ex">2</text></g>
+   <g transform="translate(-30,  22)"><use xlink:href="#even"/><text y="0.7ex">4</text></g>
+   <g transform="translate( 30,  22)"><use xlink:href="#even"/><text y="0.7ex">4</text></g>
+   <path class="path" d="M 5,-94 a 42,24 0 1 1 -10,0"/>
+   <use xlink:href="#x" transform="translate(0,-34)"/>
+   <use xlink:href="#x" transform="translate(0,  8)"/>
+   <use xlink:href="#x" transform="translate(0, 37)"/>
+   <use xlink:href="#x" transform="translate(0, 79)"/>
+  </g>
+ </g>
+</svg>
