@@ -86,7 +86,7 @@ void dijkstra(int s){
 
 Một cách cài đặt phổ biến khác có sử dụng `priority_queue` để tìm đỉnh chưa xét có khoảng cách ngắn nhất.
 
-Không giống `set`, ta không thể xóa một phần tử bất kì trong `priority_queue`. Vì thế, ta sẽ áp dụng phương pháp "xóa lười". Giả sử ta thành công cập nhật \\(dist[v]\\), ta sẽ thêm vào `pq` một cặp \\(\\{dist_v, v\\}\\) mới, có \\(dist_v\\) nhỏ hơn so với cặp \\(\\{dist_v, v\\}\\) cũ ở trong `pq`. Giả sử khi ta xét đến cặp \\(\\{dist_v, v\\}\\) cũ trong `pq`, ta có thể bỏ qua cặp giá trị này. 
+Không giống `set`, ta không thể xóa một phần tử bất kì trong `priority_queue`. Vì thế, ta sẽ áp dụng phương pháp "xóa lười". Giả sử ta thành công cập nhật \\(v_{dist}\\), ta sẽ thêm vào `pq` một cặp \\(\\{v_{dist}, v\\}\\) mới, có \\(v_{dist}\\) nhỏ hơn so với cặp \\(\\{v_{dist}, v\\}\\) cũ ở trong `pq`. Giả sử khi ta xét đến cặp \\(\\{v_{dist}, v\\}\\) cũ trong `pq`, ta có thể bỏ qua cặp giá trị này. 
 
 ```C++
 void dijkstra(int s){
@@ -214,11 +214,11 @@ Thuật toán của ta sẽ có độ phức tạp thuật toán bằng \\(O((|E
 
 Hãy nhìn vào các đỉnh trong `pq` trong quá trình chạy thuật toán:
 
-\\[pq = \underbrace{u, \dots, u}\_{dist_u}, \underbrace{v, \dots, v}\_{dist_u + 1}\\]
+\\[pq = \underbrace{u, \dots, u}\_{u_{dist}}, \underbrace{v, \dots, v}\_{u_{dist} + 1}\\]
 
-Từ đây, ta có thể rút gọn việc thêm các cặp giá trị \\(\\{dist_v, v\\}\\) vào `pq` sau mỗi lần cập nhật như sau:
-- Nếu \\(dist_v = dist_u + 1\\), hay cạnh \\(uv\\) có trọng số là \\(1\\), thêm đỉnh \\(v\\) vào cuối `pq`.
-- Nếu \\(dist_v = dist_u + 0\\), hay cạnh \\(uv\\) có trọng số là \\(0\\), thêm đỉnh \\(v\\) vào đầu `pq`.
+Từ đây, ta có thể rút gọn việc thêm các cặp giá trị \\(\\{v_{dist}, v\\}\\) vào `pq` sau mỗi lần cập nhật như sau:
+- Nếu \\(v_{dist} = u_{dist} + 1\\), hay cạnh \\(uv\\) có trọng số là \\(1\\), thêm đỉnh \\(v\\) vào cuối `pq`.
+- Nếu \\(v_{dist} = u_{dist} + 0\\), hay cạnh \\(uv\\) có trọng số là \\(0\\), thêm đỉnh \\(v\\) vào đầu `pq`.
 
 Ta có thể bỏ giá trị \\(dist\\) và chỉ lưu các đỉnh vào trong `pq`. 
 

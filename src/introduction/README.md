@@ -91,7 +91,7 @@ Kỳ thi là dịp phát hiện học sinh giỏi, học sinh xuất sắc các 
 
 **Kỳ thi chọn học sinh giỏi quốc gia trung học phổ thông** (viết tắt là Kỳ thi HSGQG) là kỳ thi chọn học sinh giỏi cấp quốc gia dành cho học sinh bậc trung học phổ thông do Bộ Giáo dục và Đào tạo tổ chức vào khoảng từ tháng 12 đến tháng 1 hằng năm. Những học sinh đạt điểm cao nhất trong kỳ thi này ở một vài bộ môn được Bộ Giáo dục và Đào tạo triệu tập tại Hà Nội, Việt Nam để tham gia kỳ thi chọn các học sinh vào đội tuyển Quốc gia Việt Nam tham dự các cuộc thi Olympic khu vực và quốc tế[^3].
 
-Ở bộ môn tin học, cuộc thi có tên gọi không chính thức là **VOI - Vietnamese Olympiad in Informatics**.
+Ta có thể gọi các kì thi HSGQG là các cuộc thi Olympic trong nước, với tên gọi môn tin học là **Vietnamese Olympiad in Informatics - VOI**.
 
 ### Hội thi Tin học trẻ các cấp
 

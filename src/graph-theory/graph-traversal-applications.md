@@ -120,7 +120,7 @@ bool bipartite(int s){
 		int u = q.front(); q.pop();		
 		for(int v : adj[u]){
 			if(vst[v]) {
-				if(dist[u] != dist[v]) return 0;
+				if(dist[u] == dist[v]) return 0;
 				continue;
 			}
 			dist[v] = dist[u] ^ 1;
@@ -147,7 +147,7 @@ bool bipartite(int u){
 	vst[u] = 1;
 	for(int v : adj[u]){
 		if(vst[v]) {
-			if(dist[u] != dist[v]) return 0;
+			if(dist[u] == dist[v]) return 0;
 			continue;
 		}
 		dist[v] = dist[u] ^ 1;
@@ -222,15 +222,15 @@ Ta sẽ lưu hai thông tin trên cây DFS:
 - \\(num\\): thứ tự duyệt đỉnh của DFS.
 - \\(low\\): đỉnh có thứ tự duyệt nhỏ nhất có thể đi đến được từ một đỉnh.
 
-Ban đầu, khi bắt đầu duyệt đỉnh \\(u\\), ta có \\(num[u] = low[u]\\). Sau đó, trong quá trình duyệt từ đỉnh \\(u\\), ta cập nhật \\(low[u]\\) thành giá trị nhỏ nhất giữa \\(low[u]\\) và \\(low\\) của các đỉnh nằm trong cây con gốc \\(u\\) trong cây DFS, và \\(num\\) của các đỉnh \\(v\\) được nối với \\(u\\) bởi cạnh ngược. 
+Ban đầu, khi bắt đầu duyệt đỉnh \\(u\\), ta có \\(u_{num} = u_{low}\\). Sau đó, trong quá trình duyệt từ đỉnh \\(u\\), ta cập nhật \\(u_{low}\\) thành giá trị nhỏ nhất giữa \\(u_{low}\\) và \\(low\\) của các đỉnh nằm trong cây con gốc \\(u\\) trong cây DFS, và \\(num\\) của các đỉnh \\(v\\) được nối với \\(u\\) bởi cạnh ngược. 
 
 Từ những thông tin này, ta có thể xác định khớp cầu trên đồ thị.
 
-Một đỉnh \\(u\\) là đỉnh khớp khi tồn tại một đỉnh con trên cây DFS \\(v\\) sao cho \\(low[v] \ge num[u]\\). Nếu \\(low[v] \lt num[u]\\) thì \\(v\\) có thể đến được một đỉnh có \\(num\\) nhỏ hơn \\(num[u]\\) bằng cạnh ngược. Nếu điều này không xảy ra, thì để \\(v\\) có thể đi sang các đỉnh khác ngoài các đỉnh trong cây DFS con gốc \\(v\\), ta cần phải đi qua đỉnh \\(u\\), và khi xóa đỉnh \\(u\\) đi thì \\(v\\) không thể đi đến các đỉnh ấy \\(\rightarrow\\) đỉnh \\(u\\) là đỉnh khớp. 
+Một đỉnh \\(u\\) là đỉnh khớp khi tồn tại một đỉnh con trên cây DFS \\(v\\) sao cho \\(v_{low} \ge u_{num}\\). Nếu \\(v_{low} \lt u_{num}\\) thì \\(v\\) có thể đến được một đỉnh có \\(num\\) nhỏ hơn \\(u_{num}\\) bằng cạnh ngược. Nếu điều này không xảy ra, thì để \\(v\\) có thể đi sang các đỉnh khác ngoài các đỉnh trong cây DFS con gốc \\(v\\), ta cần phải đi qua đỉnh \\(u\\), và khi xóa đỉnh \\(u\\) đi thì \\(v\\) không thể đi đến các đỉnh ấy \\(\rightarrow\\) đỉnh \\(u\\) là đỉnh khớp. 
 
 Một trường hợp nữa của đỉnh khớp là khi đỉnh gốc của cây DFS có ít nhất \\(2\\) đỉnh con thì đỉnh gốc cũng là đỉnh khớp.
 
-Một cạnh \\(uv\\) là cạnh cầu khi \\(low[v] \gt num[u]\\) với cách giải thích tương tự với đỉnh khớp. 
+Một cạnh \\(uv\\) là cạnh cầu khi \\(v_{low} \gt u_{num}\\) với cách giải thích tương tự với đỉnh khớp. 
 
 <center>
 <img src="../images/articulation_points_and_bridges.png" alt="Khớp cầu"/>
@@ -327,11 +327,11 @@ void scc(){
 
 Thuật toán của Tarjan là một thuật toán tìm kiếm TPLT mạnh.
 
-Ta sẽ sử dụng \\(num\\) và \\(low\\) giống như phần khớp cầu, tuy nhiên việc cập nhật \\(low\\) sẽ có chút khác biệt. Ta chỉ cập nhât \\(low[u]\\) bằng \\(low[v]\\) nếu ta chưa xác định được \\(v\\) thuộc TPLT mạnh nào.
+Ta sẽ sử dụng \\(num\\) và \\(low\\) giống như phần khớp cầu, tuy nhiên việc cập nhật \\(low\\) sẽ có chút khác biệt. Ta chỉ cập nhât \\(u_{low}\\) bằng \\(v_{low}\\) nếu ta chưa xác định được \\(v\\) thuộc TPLT mạnh nào.
 
 Ta có thuật toán DFS duyệt như sau:
 
-Khi ta bắt đầu duyệt đỉnh \\(u\\), ta thêm \\(u\\) vào một stack. Sau khi kết thúc việc duyệt các phần tử kề đỉnh \\(u\\), nếu \\(num[u] = low[u]\\) thì ta đã tìm được một TPLT, với các đỉnh là những đỉnh nằm trên đỉnh \\(u\\) trong stack. Ta đánh đấu và loại các đỉnh này ra khỏi stack, tiếp tục duyệt các đỉnh khác. 
+Khi ta bắt đầu duyệt đỉnh \\(u\\), ta thêm \\(u\\) vào một stack. Sau khi kết thúc việc duyệt các phần tử kề đỉnh \\(u\\), nếu \\(u_{num} = u_{low}\\) thì ta đã tìm được một TPLT, với các đỉnh là những đỉnh nằm trên đỉnh \\(u\\) trong stack. Ta đánh đấu và loại các đỉnh này ra khỏi stack, tiếp tục duyệt các đỉnh khác. 
 
 <center>
 <img src="../images/tarjan.png" alt="Tarjan"/>

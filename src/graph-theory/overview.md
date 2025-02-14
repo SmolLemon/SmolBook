@@ -164,11 +164,11 @@ Một **path** là một đường đi trong đó các đỉnh trên đường �
 - \\(v_k\\) được gọi là **đỉnh cuối (ending point)** của \\(w\\), ta nói \\(w\\) *kết thúc* tại tại đỉnh \\(v_k\\).
 - Cho hai đỉnh \\(p\\) và \\(q\\) thuộc \\(G\\), ta nói **đường đi từ** \\(p\\) **đến** \\(q\\) là đường đi bắt đầu từ đỉnh \\(p\\) và kết thúc tại đỉnh \\(q\\).
 
-**3.** Một **đường đi khép kín (closed walk)** hoặc **tour** của \\(G\\) một đường đi mà đỉnh đầu trùng với đỉnh cuối. Hay nói cách khác, là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) với \\(v_0 = v_k\\). 
+**3.** Một **đường đi khép kín (closed walk)** của \\(G\\) một đường đi mà đỉnh đầu trùng với đỉnh cuối. Hay nói cách khác, là một dãy các đỉnh \\((v_0, v_1, v_2,..., v_k)\\) với \\(v_0 = v_k\\). 
 
-**4.** Một **chu trình (cycle)** của \\(G\\) là một đường đi khép kín với các đỉnh (trừ đỉnh đầu hoặc cuối) đôi một phân biệt. Một **circuit** hoặc **closed trail** là một đường đi khép kín nhưng các cạnh trong chu trình phân biệt nhau.
+**5.** Một **chu trình (cycle)** của \\(G\\) là một đường đi khép kín với các đỉnh (trừ đỉnh đầu hoặc cuối) đôi một phân biệt. Một **closed trail** hay **circuit** hoặc **tour** một đường đi khép kín nhưng các cạnh trong chu trình đôi một phân biệt.
 
-**5.** Một đường đi (chu trình) là *sơ cấp* nếu nó không đi qua đỉnh nào hai lần trở lên. Một đường đi (chu trình) là *đơn giản* nếu nó không đi qua cạnh nào hai lần trở lên.
+**6.** Một đường đi (chu trình) là *sơ cấp* nếu nó không đi qua đỉnh nào hai lần trở lên. Một đường đi (chu trình) là *đơn giản* nếu nó không đi qua cạnh nào hai lần trở lên.
 
 ### Tính liên thông, khớp, cầu
 
@@ -226,7 +226,9 @@ Cụ thể:
 
 **4.** Khoảng cách từ gốc đến một đỉnh được gọi là **chiều cao (height)** hoặc **chiều sâu (depth)** của đỉnh. Chiều cao của cây \\(T\\) là giá trị của đỉnh có chiều cao lớn nhất.
 
-**5.** **Đường kính (diameter)** của cây \\(T\\) là khoảng cách lớn nhất giữa hai đỉnh trong cây.
+**5.** Ta định nghĩa **tầng (level)** của đỉnh \\(u\\) là khoảng cách từ đỉnh \\(u\\) đến đỉnh gốc. Nếu khoảng cách từ đỉnh \\(u\\) đến đỉnh gốc là \\(2\\), thì đỉnh \\(u\\) ở tầng \\(2\\). Đỉnh gốc ở tầng \\(0\\).
+
+**6.** **Đường kính (diameter)** của cây \\(T\\) là khoảng cách lớn nhất giữa hai đỉnh trong cây.
 
 ## Tổ chức dữ liệu
 
@@ -338,3 +340,7 @@ int main() {
 	return 0;
 }
 ```
+
+<div class="warning">
+Trừ khi được ghi chú cụ thể, các đoạn code trong đồ thị sẽ là đồ thị vô hướng không trọng số, được lưu trên danh sách kề.
+</div>

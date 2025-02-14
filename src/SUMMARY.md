@@ -57,7 +57,7 @@
   - [Cây khung nhỏ nhất](./graph-theory/mst.md)
   - [2-SAT]()
   - [Đường đi Euler](./graph-theory/eulerian-trail.md)
-  - [Cây]()
+  - [Cây](./graph-theory/tree.md)
     - [Đường đi Euler trên cây]()
     - [Tổ tiên chung gần nhất]()
     - [Kĩ thuật phân tách nặng-nhẹ (Heavy-Light Decomposition)]()

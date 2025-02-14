@@ -24,9 +24,9 @@ Khi này, thay vì kiểm tra tất cả học sinh ấy thì ta chỉ cần thu
 
 ## Segment Tree
 
-Segment tree là một [cây](../graph-theory/overview.md#cây), chính xác hơn là một cây nhị phân đầy đủ - mỗi đỉnh hoặc là một đỉnh lá hoặc có hai đỉnh con. Ta sẽ lưu segment tree trên một mảng `st` với chỉ số \\(1\\) đại diện cho gốc của cây. Với mỗi chỉ số \\(p\\), \\(2 \times p\\) và \\(2 \times p + 1\\) là hai chỉ số của hai đỉnh con của nó.
+Segment tree là một CTDL được biểu diễn ở dạng [cây nhị phân](../graph-theory/tree.md#cây-nhị-phân).
 
-Mỗi đỉnh của cây sẽ lưu thông tin về một phân đoạn trên mảng `a`. Gốc của Segment Tree tượng trưng cho đoạn \\([1, n]\\). Với mỗi đỉnh \\(p\\) lưu thông tin về đoạn \\([l, r]\\). Nếu \\(p\\) không phải là đỉnh lá thì hai đỉnh con \\(2 \times p\\) và \\(2 \times p + 1\\) sẽ lần lượt lưu thông tin của hai đoạn \\([l, \left\lfloor (l + r) / 2 \right\rfloor]\\) và \\([\left\lfloor(l + r) / 2\right\rfloor + 1, r]\\). Nếu \\(p\\) là đỉnh lá thì nó chỉ quản lý đúng một phần tử duy nhất trên mảng `a` có chỉ số \\(l = r\\).
+Ta sẽ lưu segment tree trên một mảng `st`. Mỗi đỉnh của cây sẽ lưu thông tin về một phân đoạn trên mảng `a`. Gốc của Segment Tree tượng trưng cho đoạn \\([1, n]\\). Với mỗi đỉnh \\(p\\) lưu thông tin về đoạn \\([l, r]\\). Nếu \\(p\\) không phải là đỉnh lá thì hai đỉnh con \\(2 \times p\\) và \\(2 \times p + 1\\) sẽ lần lượt lưu thông tin của hai đoạn \\([l, \left\lfloor (l + r) / 2 \right\rfloor]\\) và \\([\left\lfloor(l + r) / 2\right\rfloor + 1, r]\\). Nếu \\(p\\) là đỉnh lá thì nó chỉ quản lý đúng một phần tử duy nhất trên mảng `a` có chỉ số \\(l = r\\).
 
 ## Xây dựng segment tree
 

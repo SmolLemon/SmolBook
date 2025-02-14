@@ -1,6 +1,6 @@
 # Đường đi Euler
 
-Cho một đồ thị \\(G = (V, E)\\), **đường đi Euler (Eulerian trail)** của đồ thị là một đường đi đi qua tất cả các cạnh đúng một lần. Tương tự, **chu trình Euler (Eulerian tour/circuit)** của một đồ thị là một đường đi đi qua tất cả các cạnh, và đỉnh bắt đầu và kết thúc của đường đi là cùng một đỉnh.
+Cho một đồ thị \\(G = (V, E)\\), **đường đi Euler (Eulerian trail)** của đồ thị là một đường đi đi qua tất cả các cạnh đúng một lần. Tương tự, **chu trình Euler (Eulerian circuit/tour)** của một đồ thị là một đường đi đi qua tất cả các cạnh, và đỉnh bắt đầu và kết thúc của đường đi là cùng một đỉnh.
 
 Dưới đây là ví dụ của một đường đi Euler trên đồ thị, với các số trên mỗi cạnh là thứ tự của các cạnh trên đường đi, đỉnh màu đỏ là đỉnh bắt đầu, đỉnh màu xanh là đỉnh kết thúc của đường đi:
 
@@ -51,7 +51,6 @@ Từ đây, ta kết luận rằng không tồn tại con đường đi qua tấ
 
 <sup>Một số lời giải cho các hình vẽ - [Cmglee](https://commons.wikimedia.org/wiki/File:Eulerian_path_puzzles.svg) - [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)</sup>
 </center>
-
 
 ## Tìm đường đi Euler
 
