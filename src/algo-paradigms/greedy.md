@@ -1,6 +1,6 @@
 # Tham lam
 
-*Tham thì thâm - Thành ngữ*
+*"Tham thì thâm" - Thành ngữ*
 
 <br>
 

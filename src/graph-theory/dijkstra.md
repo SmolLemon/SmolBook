@@ -1,6 +1,6 @@
 # Thuật toán Dijkstra
 
-*"What is the shortest way to travel from Rotterdam to Groningen. It is the algorithm for the shortest path, which I designed in about 20 minutes. One morning I was shopping in Amsterdam with my young fiancée, and tired, we sat down on the café terrace to drink a cup of coffee and I was just thinking about whether I could do this, and I then designed the algorithm for the shortest path. As I said, it was a 20-minute invention. In fact, it was published in 1959, three years later. The publication is still quite nice. One of the reasons that it is so nice was that I designed it without pencil and paper. (...). Eventually, that algorithm became to my great amazement, one of the cornerstones of my fame."*
+*"What is the shortest way to travel from Rotterdam to Groningen. It is the algorithm for the shortest path, which I designed in about 20 minutes. One morning I was shopping in Amsterdam with my young fiancée, and tired, we sat down on the café terrace to drink a cup of coffee and I was just thinking about whether I could do this, and I then designed the algorithm for the shortest path. As I said, it was a 20-minute invention. In fact, it was published in 1959, three years later. The publication is still quite nice. One of the reasons that it is so nice was that I designed it without pencil and paper. [...] Eventually, that algorithm became to my great amazement, one of the cornerstones of my fame."*
 
 *- Thomas J. Misa, [An interview with Edsger W. Dijkstra](https://dl.acm.org/doi/pdf/10.1145/1787234.1787249)*
 

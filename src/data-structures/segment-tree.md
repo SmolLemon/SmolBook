@@ -26,31 +26,33 @@ Khi này, thay vì kiểm tra tất cả học sinh ấy thì ta chỉ cần thu
 
 Segment tree là một CTDL được biểu diễn ở dạng [cây nhị phân](../graph-theory/tree.md#cây-nhị-phân).
 
-Ta sẽ lưu segment tree trên một mảng `st`. Mỗi đỉnh của cây sẽ lưu thông tin về một phân đoạn trên mảng `a`. Gốc của Segment Tree tượng trưng cho đoạn \\([1, n]\\). Với mỗi đỉnh \\(p\\) lưu thông tin về đoạn \\([l, r]\\). Nếu \\(p\\) không phải là đỉnh lá thì hai đỉnh con \\(2 \times p\\) và \\(2 \times p + 1\\) sẽ lần lượt lưu thông tin của hai đoạn \\([l, \left\lfloor (l + r) / 2 \right\rfloor]\\) và \\([\left\lfloor(l + r) / 2\right\rfloor + 1, r]\\). Nếu \\(p\\) là đỉnh lá thì nó chỉ quản lý đúng một phần tử duy nhất trên mảng `a` có chỉ số \\(l = r\\).
+Ta sẽ lưu segment tree trên một mảng `st`. Mỗi đỉnh của cây sẽ lưu thông tin về một phân đoạn trên mảng `a`. 
+
+Đỉnh gốc \\(1\\) của Segment Tree tượng trưng cho đoạn \\([1, n]\\). Với mỗi đỉnh \\(p\\) lưu thông tin về đoạn \\([l, r]\\). Nếu \\(p\\) không phải là đỉnh lá thì hai đỉnh con \\(2p\\) và \\(2p + 1\\) sẽ lần lượt lưu thông tin của hai đoạn \\([l, \left\lfloor (l + r) / 2 \right\rfloor]\\) và \\([\left\lfloor(l + r) / 2\right\rfloor + 1, r]\\). Nếu \\(p\\) là đỉnh lá thì nó chỉ quản lý đúng một phần tử duy nhất trên mảng `a` có chỉ số \\(l = r\\).
 
 ## Xây dựng segment tree
 
-Để xây dựng segment tree, ta có hàm đệ quy `build(p, l, r)`.
+Để xây dựng segment tree, ta có hàm đệ quy `build(id, l, r)`.
 
-Hàm `build(p, l, r)` của ta hoạt động như sau:
-- Nếu \\(l = r\\), giá trị nhỏ nhất của đoạn \\([l, r]\\) chính là phần tử \\(a[l]\\): \\(st[p] = a[l]\\).
-- Nếu \\(l \neq r\\), ta sẽ tính một cách đệ quy GTNN của hai đỉnh con và tính giá trị của đỉnh \\(p\\) từ giá trị của hai đỉnh con: \\(st[p] = min(st[p \times 2], st[p \times 2 + 1])\\).
+Hàm `build(id, l, r)` của ta hoạt động như sau:
+- Nếu \\(l = r\\), giá trị nhỏ nhất của đoạn \\([l, r]\\) chính là phần tử \\(a[l]\\): \\(st[id] = a[l]\\).
+- Nếu \\(l \neq r\\), ta sẽ tính một cách đệ quy GTNN của hai đỉnh con và tính giá trị của đỉnh \\(id\\) từ giá trị của hai đỉnh con: \\(st[id] = min(st[id \times 2], st[id \times 2 + 1])\\).
 
 ```C++
-void build(int p, int l, int r){
+void build(int id, int l, int r){
 	if(l == r){
 		// Đỉnh lá
-		st[p] = a[l];
+		st[id] = a[l];
 		return;
 	}
 
 	int mid = (l + r) >> 1;
 	// Tính giá trị hai đỉnh con
-	build(p << 1, l, mid);
-	build(p << 1 | 1, mid + 1, r);
+	build(id << 1, l, mid);
+	build(id << 1 | 1, mid + 1, r);
 	
 	// Tính giá trị từ hai đỉnh con
-	st[p] = min(st[p << 1], st[d << 1 | 1]);
+	st[id] = min(st[id << 1], st[d << 1 | 1]);
 }
 ```
 
