@@ -1,8 +1,6 @@
 # Disjoint Set Union
 
-## Định nghĩa
-
-CTDL **Disjoint Sets Union (DSU)** hay với tên gọi khác là **Union-Find Disjoint Sets (UFDS)** là một CTDL quản lí các tập hợp không giao nhau, tức là các tập hợp không có phần tử chung. CTDL này có thể trả lời *hiệu quả* nếu \\(2\\) phần tử có nằm trong cùng một tập hợp hay không, hoặc hợp \\(2\\) tập hợp lại với nhau.
+**Disjoint Sets Union (DSU)**, hoặc **Union-Find Disjoint Sets (UFDS)**, là một CTDL quản lí các tập hợp không giao nhau, tức là các tập hợp không có phần tử chung. DSU có thể trả lời *hiệu quả* nếu \\(2\\) phần tử có nằm trong cùng một tập hợp hay không, và có thể hợp \\(2\\) tập hợp lại với nhau.
 
 Như tên gọi của mình, DSU bao gồm các thao tác chính:
 - **MakeSet**: Tạo một tập hợp có \\(1\\) phần tử là a.

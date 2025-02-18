@@ -84,7 +84,7 @@ void dijkstra(int s){
 
 ## Dijkstra + `priority_queue`
 
-Một cách cài đặt phổ biến khác có sử dụng `priority_queue` để tìm đỉnh chưa xét có khoảng cách ngắn nhất.
+Một cách cài đặt Dijkstra phổ biến khác sử dụng `priority_queue` để tìm đỉnh chưa xét có khoảng cách ngắn nhất. `priority_queue` sẽ xét thứ tự ưu tiên cho các cặp giá trị \\({u_{dist}, u}\\) theo \\(u_{dist}\\) giảm dần, và nếu các \\(u_{dist}\\) bằng nhau thì theo \\(u\\) giảm dần. 
 
 Không giống `set`, ta không thể xóa một phần tử bất kì trong `priority_queue`. Vì thế, ta sẽ áp dụng phương pháp "xóa lười". Giả sử ta thành công cập nhật \\(v_{dist}\\), ta sẽ thêm vào `pq` một cặp \\(\\{v_{dist}, v\\}\\) mới, có \\(v_{dist}\\) nhỏ hơn so với cặp \\(\\{v_{dist}, v\\}\\) cũ ở trong `pq`. Giả sử khi ta xét đến cặp \\(\\{v_{dist}, v\\}\\) cũ trong `pq`, ta có thể bỏ qua cặp giá trị này. 
 
@@ -95,9 +95,6 @@ void dijkstra(int s){
 	priority_queue<pair<int, int>, 
 				   vector<pair<int, int>>, 
 				   greater<pair<int, int>>> pq;
-
-	// Ta có thể viết: priority_queue<pair<int, int>> pq 
-	// và lưu theo dạng: {-dist[u], u}
 
 	pq.push({0, s});
 	int u, d;

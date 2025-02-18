@@ -48,6 +48,8 @@ Cây nhị phân *đầy đủ* -  **full** binary tree, là một cây nhị ph
 <img src="../images/full_binary_tree.png" alt="Cây nhị phân đầy đủ"/>
 </center>
 
+Với cây nhị phân đầy đủ có \\(n\\) đỉnh, chiều cao tối đa của cây có thể đạt được sẽ là \\(O(n)\\).
+
 #### Cây nhị phân hoàn hảo
 
 Cây nhị phân *hoàn hảo* - **perfect** binary tree, là một cây nhị phân với các đỉnh có \\(2\\) đỉnh và các đỉnh lá trong cây có *chung tầng*. Cây nhị phân hoàn hảo cũng là một cây nhị phân đầy đủ.
@@ -55,6 +57,8 @@ Cây nhị phân *hoàn hảo* - **perfect** binary tree, là một cây nhị p
 <center>
 <img src="../images/perfect_binary_tree.png" alt="Cây nhị phân hoàn hảo"/>
 </center>
+
+Với cây nhị phân hoàn hảo, chiều cao tối đa của cây sẽ là \\(O(\log{n})\\).
 
 #### Cây nhị phân hoàn chỉnh
 
@@ -64,10 +68,13 @@ Cây nhị phân *hoàn chỉnh* - **complete** binary tree, là một cây nh�
 <img src="../images/complete_binary_tree.png" alt="Cây nhị phân hoàn chỉnh"/>
 </center>
 
+Với cây nhị phân hoàn chỉnh, chiều cao tối đa của cây sẽ là \\(O(\log{n})\\).
+
 #### Cây nhị phân cân bằng
 
 Cây nhị phân *cân bằng* - **balanced** binary tree, là một cây nhị phân mà với mỗi đỉnh, chênh lệch chiều cao của hai đỉnh không vượt quá \\(1\\). Các cây có \\(1\\) đỉnh thì luôn cân bằng. Cây nhị phân hoàn chỉnh và cây nhị phân hoàn hảo cũng là một cây cân bằng.
 
+Với cây nhị phân cân bằng, chiều cao tối đa của cây sẽ là \\(O(\log{n})\\).
 
 #### Cây suy biến
 
@@ -79,11 +86,13 @@ Cây *suy biến* - **degenerate** tree, là một cây mà các đỉnh không 
 
 Ta có thể gọi cây suy biến bằng một cái tên khác thân thuộc hơn: cây **tre** (vì nhìn cây suy biến rất giống cây tre).
 
+Với cây nhị phân cân bằng, chiều cao tối đa của cây sẽ là \\(O(n)\\).
+
 ### Lưu trữ cây nhị phân
 
 Ngoài các cách [lưu trữ đồ thị](overview.md#tổ-chức-dữ-liệu), ta có thể lưu trữ cây nhị phân trên một mảng.
 
-Giả sử ta lưu một đỉnh ở chỉ số \\(p\\), ta có thể lưu hai nút con trái và phải ở các vị trí \\(2p\\) và \\(2p + 1\\) tương ứng.
+Giả sử ta lưu một đỉnh ở chỉ số \\(p\\), ta có thể lưu hai nút con trái và phải ở các vị trí \\(2p\\) và \\(2p + 1\\) tương ứng. Từ chỉ số \\(p\\), ta có thể tìm được đỉnh cha của \\(p\\) (trừ đỉnh gốc) tại vị trí \\(\left\lfloor \frac{p}{2} \right\rfloor\\)
 
 Với đỉnh gốc có chỉ số \\(1\\), ta lưu các đỉnh trên đồ thị như sau: 
 

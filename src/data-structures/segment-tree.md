@@ -12,7 +12,7 @@ Nếu như các truy vấn chỉ yêu cầu ta tìm GTNN của các đoạn thì
 
 Ta sẽ nói về CTDL **Cây phân đoạn (Segment Tree)** - một CTDL linh hoạt giúp giải quyết bài toán này.
 
-## Tư tưởng
+## Ý tưởng
 
 Giả sử bạn muốn đo chiều cao của tất cả học sinh trong một khu vực. 
 

@@ -31,7 +31,7 @@
   - [Hàng đợi hai đầu (Deque)](./data-structures/deque.md)
   - [Bảng thưa (Sparse Table)](./data-structures/sparse-table.md)
   - [Bảng băm (Hash Table)](./data-structures/hash-table.md)
-  - [Hàng đợi ưu tiên (Priority Queue) và Heap nhị phân (Binary Heap)]()
+  - [Heap](./data-structures/heap.md)
   - [Cây tìm kiếm nhị phân (Binary Search Tree)]()
   - [Cây phân đoạn (Segment Tree)](./data-structures/segment-tree.md)
   - [Cây chỉ số nhị phân - Cây Fenwick (Fenwick Tree)](./data-structures/fenwick.md)
@@ -78,7 +78,7 @@
   - [Ma trận]()
   - [Hình học]()
 - [Xâu]()
-
+  - [Băm (Hashing)]()
 ---
 
 [Phụ lục A - Danh sách thuật toán]()
