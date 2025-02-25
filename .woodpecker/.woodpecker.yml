@@ -8,9 +8,11 @@ when:
 
 steps:
   build:
-    image: peaceiris/mdbook:latest
+    image: alpine:edge
     commands:
-      - mdbook build
+      - curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
+      - rustup update
+      - cargo install --version 0.4.45 mdbook
 
   publish:
     image: bitnami/git

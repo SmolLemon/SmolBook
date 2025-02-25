@@ -4,9 +4,9 @@
 
 ## Ý tưởng
 
-Giả sử ta được cho một mảng giá trị, và ta muốn lưu giá trị trên mảng này. Nếu ta muốn lưu một giá trị của một số, ta có thể lưu bằng cách gán giá trị cho phần tử tại chỉ số bằng số ấy. Thế nhưng giả dụ nếu mà ta muốn lưu giá trị của một *xâu kí tự*, thì cách làm trên sẽ không thực hiện được.
+Giả sử ta muốn lưu các xâu kí tự trên một mảng giá trị. Ta có thể gán các xâu vào các phần tử bất kì. Tuy nhiên việc tìm lại vị trí mà ta đã lưu xâu ấy sẽ rất khó khăn vì ta không có thông tin gì về nó.
 
-Ý tưởng chính của *bảng băm* chính là hô biến xâu thành chỉ số bằng một *hàm băm (hash function)*, và sử dụng chỉ số ấy để lưu giá trị mà ta cần lưu trên phần tử có chỉ số ấy. Đồng thời, việc tìm lại giá trị về xâu cũng sẽ nhanh chóng hơn khi ta chỉ cần sử dụng hàm băm tìm chỉ số từ xâu và lấy thông tin từ phần tử ở chỉ số đó.
+Ý tưởng chính của *bảng băm* chính là hô biến xâu thành chỉ số bằng một *hàm băm (hash function)*, và sử dụng chỉ số ấy để lưu giá trị mà ta cần lưu trên phần tử có chỉ số ấy. Khi này, việc tìm lại giá trị về xâu cũng sẽ nhanh chóng hơn khi ta chỉ cần sử dụng hàm băm tìm chỉ số từ xâu và lấy thông tin từ phần tử ở chỉ số đó.
 
 ## Bảng băm
 

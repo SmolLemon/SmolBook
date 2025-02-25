@@ -184,10 +184,10 @@ struct UnionFind{
 		p.resize(cc);
 		r.resize(cc, 0);
 		sz.resize(cc, 1);
-		iota(p.begin(), p.end(), 1); // gán p[0] = 0, p[1] = 1, ..., p[cc - 1] = cc - 1
+		iota(p.begin(), p.end(), 0); // gán p[0] = 0, p[1] = 1, ..., p[cc - 1] = cc - 1
 	}
 	int find(int u) { return p[u] == u ? u : p[u] = find(p[u]); } // cách viết rút gọn
-	int disjointSet() { return CC; }                              // số tập hợp
+	int disjointSet() { return cc; }                              // số tập hợp
 	int sizeOfSet(int u) { return sz[find(u)]; }                  // số lượng phần tử trong tập hợp
 	bool isSameSet(int u, int v) { return find(u) == find(v); }   // kiểm tra hai phần tử thuộc 
     bool Union(int u, int v) {                                    // cùng tập hợp hay không 
@@ -198,6 +198,7 @@ struct UnionFind{
     	p[v] = u;
     	r[u] += r[u] == r[v];
     	sz[u] += sz[v];
+    	--cc;
     	return 1;
     }
 };

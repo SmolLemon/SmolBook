@@ -14,7 +14,7 @@ Ta sẽ thử giải quyết các bài toán trên đồ thị ở các phần t
 
 ### Kiểm tra đồ thị hai phía
 
-Nếu ta đọc lại cách [xác định đồ thị hai phía](graph-traversal-applications.md#kiểm-tra-đồ-thị-hai-phía), ta thấy thuật toán tận dụng việc đồ thị là hai phía khi nó không có chu trình có lẻ đỉnh. Vì cây không có chu trình nên ta có thể kết luận rằng *mọi* cây đều là đồ thị hai phía. 
+Nếu ta đọc lại cách [xác định đồ thị hai phía](graph-traversal-applications.md#kiểm-tra-đồ-thị-hai-phía), ta thấy thuật toán xác định đồ thị là hai phía nếu nó không tồn tại chu trình có lẻ đỉnh. Vì cây không có chu trình nên ta có thể kết luận rằng *mọi* cây đều là đồ thị hai phía. 
 
 ### Thứ tự tô-pô
 

@@ -42,6 +42,8 @@ Tuy nhiên, TC1 vẫn chưa thỏa mãn! Ta sẽ tiếp tục nổi bọt cho t�
 
 Độ phức tạp của thao tác thêm phần tử là \\(O(\log{n})\\) tương ứng với chiều cao của một cây nhị phân hoàn chỉnh. 
 
+Để xây dựng một heap từ một mảng có \\(n\\) phần tử, ta sẽ lần lượt thêm từng đỉnh một vào heap. Độ phức tạp trung bình sẽ bằng \\(O(n)\\), nhưng trường hợp xấu nhất xảy ra khi các phần tử phải nổi bọt lên đỉnh heap, độ phức tạp cho trường hợp này sẽ bằng \\(O(\log{1} + \log{2} + \dots \log{n}) = O(n\log{n})\\).
+
 ## Xóa phần tử
 
 Ta sẽ thực hiện việc xóa giá trị có thứ tự lớn nhất trong heap. 

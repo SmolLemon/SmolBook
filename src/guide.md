@@ -37,4 +37,4 @@ Sau khi trang được tải, kết quả tìm kiếm sẽ được in đậm. N
 
 ## Code block
 
-Các chương trong Smol Book sẽ có những đoạn code được viết trên code block. Để sao chép nội dung của code block, di chuyển chuột bên trên code block và ấn biểu tượng sao chép (<i class="fa fa-copy fa-button"></i>).
+Các chương trong Smol Book sẽ có những đoạn code được viết trên code block. Để sao chép nội dung của code block, di chuyển chuột bên trên code block và ấn biểu tượng sao chép ở góc trên bên phải.
