@@ -11,7 +11,7 @@ steps:
     image: alpine:edge
     commands:
       - apk add --no-cache mdbook
-      - mdbook build
+      - mdbook build 
 
   publish:
     image: bitnami/git
