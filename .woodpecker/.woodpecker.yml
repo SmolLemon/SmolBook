@@ -10,9 +10,8 @@ steps:
   build:
     image: alpine:edge
     commands:
-      - curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
-      - rustup update
-      - cargo install --version 0.4.45 mdbook
+      - apk add --no-cache mdbook
+      - mdbook build
 
   publish:
     image: bitnami/git
