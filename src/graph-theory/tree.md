@@ -24,6 +24,36 @@ Tiếp tục với việc cây không có chu trình, ta nhận xét rằng cây
 
 Ta đã biết được rằng mọi cạnh của cây đều là cạnh cầu. Đối với đỉnh khớp, ta chỉ cần xét xem nếu đỉnh ấy có phải đỉnh lá hay không: nếu là đỉnh lá thì đỉnh không phải là đỉnh khớp, nếu không phải đỉnh lá thì đỉnh đó là đỉnh khớp.
 
+## Lưu trữ và duyệt cây
+
+Các [thuật toán duyệt](graph-traversal.md) và [tổ chức dữ liệu](overview.md#tổ-chức-dữ-liệu) trên đồ thị có thể sử dụng để duyệt là lưu trữ cây. Ta có chương trình duyệt cy từ một đỉnh bất kì.
+
+```C++
+void dfs(int u, int p){
+	for(int v : adj[u]){
+		if(v == p) continue;
+		dfs(v, u);
+	}
+}
+```
+
+Trong đó \\(u\\) là đỉnh ta đang xét và \\(p\\) là đỉnh trước đó. Để duyệt cây từ một đỉnh \\(x\\), ta viết: `dfs(x, 0)`. Ta choh \\(e = 0\\) để cho hàm viết rằng đỉnh \\(x\\) không có đỉnh trước đó, và ta có thể duyệt từ đỉnh \\(x\\) tới bất kì hướng nào (giả sử đồ thị không có đỉnh \\(0\\)).
+
+Nếu ta duyệt từ đỉnh gốc, ta có thể lưu các thông tin như đỉnh cha `par`, chiều cao `h`, v.v.
+
+```C++
+int par[N]; // par[x] = 0 => x la đỉnh gốc
+int h[N] // h[x] = 0 => x là đỉnh gốc
+void dfs(int u){
+	for(int v : adj[u]){
+		if(v == par[u]) continue;
+		par[v] = u;
+		h[v] = h[u] + 1;
+		dfs(v);
+	}
+}
+```
+
 ## Cây nhị phân
 
 **Cây nhị phân (binary tree)** là một cây với mỗi đỉnh có nhiều nhất *hai* đỉnh con. Hai đỉnh này có tên gọi là đỉnh *trái* và đỉnh *phải*.

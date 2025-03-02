@@ -59,11 +59,11 @@
   - [2-SAT]()
   - [Đường đi Euler](./graph-theory/eulerian-trail.md)
   - [Cây](./graph-theory/tree.md)
-    - [Đường đi Euler trên cây]()
-    - [Tổ tiên chung gần nhất]()
+    - [Đường đi Euler trên cây](./graph-theory/euler-tour-on-tree.md)
+    - [Tổ tiên chung gần nhất](./graph-theory/lca.md)
     - [Kĩ thuật phân tách nặng-nhẹ (Heavy-Light Decomposition)]()
     - [Kĩ thuật phân tách trọng tâm (Centroid Decomposition)]()
-  - [Bài toán luồng cực đại trên mạng]()
+  - [Bài toán luồng cực đại trên mạng](./graph-theory/network-flow.md)
     - [Ứng dụng của luồng cực đại]()
     - [Luồng với chi phí cực tiểu]()
 - [Toán học](./math/README.md)
@@ -79,6 +79,7 @@
   - [Hình học]()
 - [Xâu]()
   - [Băm (Hashing)]()
+  - [Thuật toán Knuth-Morris-Pratt]()
 ---
 
 [Phụ lục A - Danh sách thuật toán]()
