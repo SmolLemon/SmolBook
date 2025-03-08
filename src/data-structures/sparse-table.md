@@ -65,7 +65,7 @@ Ta ví dụ với mảng `a` có \\(12\\) phần tử: \\(a = [1, 4, 2, 3, 7, 2,
 Vì sao lại có một số phần tử lại không được tính? Ví dụ với phần tử \\((10, 2)\\) lưu GTNN trong khoảng \\([10, 13]\\), nhưng khoảng này lại tràn ra ngoài bảng thưa (mảng nằm trong khoảng \\([1, 12]\\) nhưng lại tính GTNN của khoảng \\([10, 13]\\)) nên ta không cần (nói đúng hơn là *không thể*) tính được, vì thế ta bỏ qua việc tính GTNN tại vị trí này trong bảng.
 
 ```C++
-void BuildSparseTable(){
+void build(){
 	for(int i = 1; i <= n; ++i){
 		sp[0][i] = a[i];
 	}
@@ -88,7 +88,7 @@ VD: Truy vấn \\([8, 17]\\) có GTNN bằng \\(min(sp[3][8], sp[1][16])\\).
 Ta có thể tìm nhanh vị trí của giá trị bit lớn nhất của một số \\(x\\) trong C++ bằng cách sử dụng hàm `__lg(x)`.
 
 ```C++
-int RMQ(int l, int r){
+int rmq(int l, int r){
 	int mn = INT_MAX;
 	while(l <= r){
 		int lg = __lg(r - l + 1);
@@ -107,7 +107,7 @@ Ta thực hiện việc tìm GTNN như sau:
 \\[min(l, r) = min(sp[k][l], sp[k][r - 2 ^ {k} + 1])\\]
 
 ```C++
-int RMQ(int l, int r){
+int rmq(int l, int r){
 	int lg = __lg(r - l + 1);
 	return min(sp[lg][l], sp[lg][r - (1 << lg) + 1]);
 }
@@ -115,6 +115,6 @@ int RMQ(int l, int r){
 
 ## Ứng dụng
 
-Bảng thưa thường được dùng để tìm các giá trị trong một khoảng một cách nhanh chóng. Các giá trị như tổng, tích, giá trị nhỏ/lớn nhất, gcd, lcm,... Những giá trị còn được dùng để giải quyết các bài toán lớn hơn, ví dụ như: [tìm LCA trong \\(O(1)\\)](../graph-theory/lca-rmq.md), [nâng nhị phân](../graph-theory/binary-lifting.md),...
+Bảng thưa thường được dùng để tìm các giá trị trong một khoảng một cách nhanh chóng. Các giá trị như tổng, tích, giá trị nhỏ/lớn nhất, gcd, lcm,... Những giá trị còn được dùng để giải quyết các bài toán lớn hơn, ví dụ như: [tìm tổ tiên chung gần nhất của hai đỉnh](../graph-theory/lca.md#phương-pháp-2), [nâng nhị phân](../graph-theory/lca.md#nâng-nhị-phân),...
 
 Một lưu ý nhỏ là bảng thưa chỉ có thể được sử dụng trên mảng tĩnh, tức các giá trị trên mảng không thay đổi. 

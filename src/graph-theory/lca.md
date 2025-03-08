@@ -69,7 +69,7 @@ int ancestor(int u, int k){
 }
 ```
 
-Áp dụng kĩ thuật nâng nhị phân, ta có thể giảm độ phức tạp của phương pháp tìm LCA xuống còn \\(O(\log{n})\\).
+Áp dụng kĩ thuật nâng nhị phân, ta có thể giảm độ phức tạp của phương pháp tìm LCA xuống còn \\(O(n \log{n})\\) cho việc xây dựng bảng thưa và \\(O(\log{n})\\) cho việc xử lí mỗi truy vấn tìm LCA.
 
 ```C++
 int lca(int u, int v){
@@ -93,6 +93,49 @@ int lca(int u, int v){
 ```
 
 ## Phương pháp 2
+
+Ta có thể tìm LCA của hai đỉnh bằng cách sử dụng [kĩ thuật chu trình Euler](euler-tour-technique.md).
+
+<center>
+<img src="../images/lca_init.png" alt="Cây ban đầu"/>
+</center>
+
+Ta sẽ liệt kê các đỉnh trong chu trình Euler, và chiều cao của nó. 
+
+|Chỉ số|\\(1\\)|\\(2\\)|\\(3\\)|\\(4\\)|\\(5\\)|\\(6\\)|\\(7\\)|\\(8\\)|\\(9\\)|\\(10\\)|\\(11\\)|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|Đỉnh|\\(1\\)|\\(2\\)|\\(4\\)|\\(2\\)|\\(5\\)|\\(2\\)|\\(1\\)|\\(3\\)|\\(6\\)|\\(3\\)|\\(1\\)|
+|Chiều cao|\\(1\\)|\\(2\\)|\\(3\\)|\\(2\\)|\\(3\\)|\\(2\\)|\\(1\\)|\\(2\\)|\\(3\\)|\\(2\\)|\\(1\\)|
+
+
+Ta có LCA của hai đỉnh \\(2\\) và \\(6\\) là đỉnh \\(1\\). Một điều nữa mà ta có thể rút ra từ đỉnh \\(1\\) chính là đây là đỉnh thấp nhất trên đường đi từ đỉnh \\(2\\) đến đỉnh \\(6\\) trong chu trình Euler.
+
+Từ đây, ta có thể kết luận rằng ta có thể tìm LCA của hai đỉnh \\(u\\) và \\(v\\) bất kì bằng cách tìm đỉnh có chiều cao nhỏ nhất trong khoảng \\([u_{st}, v_{st}]\\) (nếu \\(v_{st} > u_{st}\\) thì ta đảo lại: \\([v_{st}, u_{st}]\\)).
+
+Ta có thể sử dụng [segment tree](../data-structues/segment-tree.md), hoặc nếu đồ thị không thay đổi, ta có thể áp dụng [kĩ thuật bảng thưa](../data-structures/sparse-table.md). 
+
+```C++
+pair<int, int> sp[K][N];
+void build(){
+    for(int i = 1; i <= n << 1 | 1; ++i){
+        sp[0][i] = {h[euler[i]], euler[i]};
+    }
+    for(int k = 1; (1 << k) <= n << 1 | 1; ++k){
+        for(int i = 1; i + (1 << k) - 1 <= n << 1 | 1; ++i){
+            sp[k][i] = min(sp[k - 1][i], sp[k - 1][i + (1 << (k - 1))]);
+        }
+    }
+}
+
+int lca(int u, int v){
+	int l = st[u], r = st[v];
+	if(l > r) swap(u, v);
+    int lg = __lg(r - l + 1);
+    return min(sp[lg][l], sp[lg][r - (1 << lg) + 1]).second;
+}
+```
+
+Độ phức tạp của phương pháp \\(2\\) với cách áp dụng bảng thưa là \\(O(n \log{n})\\) cho việc xây dựng bảng thưa và \\(O(1)\\) cho việc xử lí mỗi truy vấn tìm LCA.
 
 ## Thuật toán offline tìm LCA của Tarjan
 
