@@ -78,7 +78,7 @@ Ta có thể sử dụng [segment tree](../data-structures/segment-tree.md) ho�
 |Đỉnh|\\(1\\)|\\(2\\)|\\(4\\)|\\(5\\)|\\(3\\)|
 |Giá trị đường đi|\\(1\\)|\\(6\\)|\\(9\\)|\\(8\\)|\\(5\\)|
 
-Ta cần đặt câu hỏi: chuyện gì sẽ xảy ra khi ta cập nhật của một đỉnh? Đáp án là các đỉnh của cây con sẽ được cập nhật giá trị đường đi một cách tương ứng. Giả sử ta tăng giá trị của đỉnh \\(2\\) lên \\(2\\), thì giá trị đường đi của đỉnh \\(2, 4, 5\\) cũng tăng lên \\(2\\).
+Ta cần đặt câu hỏi: chuyện gì sẽ xảy ra khi ta cập nhật của một đỉnh? Đáp án là các đỉnh của cây con sẽ được cập nhật giá trị đường đi một cách tương ứng. Giả sử ta tăng giá trị của đỉnh \\(2\\) lên \\(2\\), thì giá trị đường đi đến đỉnh \\(2, 4, 5\\) cũng tăng lên \\(2\\).
 
 Từ đây, ta có thể sử dụng [segment tree](../data-structures/segment-tree.md) hoặc [cây Fenwick](../data-structures/fenwick.md) để giải quyết bài toán.
 
