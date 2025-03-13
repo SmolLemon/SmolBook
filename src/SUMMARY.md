@@ -65,7 +65,7 @@
     - [Kĩ thuật phân tách nặng-nhẹ (Heavy-Light Decomposition)]()
     - [Kĩ thuật phân tách trọng tâm (Centroid Decomposition)]()
   - [Luồng trên mạng](./graph-theory/flow-network.md)
-    - [Các thuật toán tìm luồng cực đại trên mạng]()
+    - [Các thuật toán tìm luồng cực đại trên mạng](./graph-theory/max-flow-algorithms.md)
     - [Ứng dụng của luồng trên mạng]()
     - [Luồng với chi phí cực tiểu]()
 - [Toán học](./math/README.md)

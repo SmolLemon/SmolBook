@@ -18,6 +18,8 @@ Khi thực hiện thuật toán DFS, ta nhận thấy mỗi đỉnh của đồ 
 
 Tùy vào cách tổ chức đồ thị mà nó sẽ anh hưởng đến độ phức tạp của thuật toán DFS, với các độ phức tạp thời gian \\(O(|V|^2)\\), \\(O(|V| + |E|)\\), \\(O(|V|\times |E|)\\) nếu ta sử dụng ma trận kề, danh sách kề hoặc danh sách cạnh theo thứ tự tương ứng.
 
+Trừ khi đồ thị là cây, ta có: \\(|V| \le |E| \lt |V|^2\\), nên độ phức tạp thời gian của DFS và BFS có thể được viết thành \\(O(|E|)\\).
+
 ## Cài đặt
 
 Việc cài đặt DFS là một việc vô cùng đơn giản. Một chương trình thực hiện DFS điển hình sẽ sử dụng một mảng giá trị `vst` chứa \\(n\\) phần tử (\\(n\\) là số lượng đỉnh trong đồ thị) biểu thị nếu đỉnh \\(u\\) đã được duyệt hay chưa, và một danh sách kề `adj` lưu thông tin về đồ thị:
