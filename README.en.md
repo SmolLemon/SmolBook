@@ -9,7 +9,7 @@
 Smol Book uses [mdBook](https://rust-lang.github.io/mdBook/) to build the site. To run it locally on your machine, download mdBook and follow these steps:
 
 ```shell
-$ git clone https://codeberg.org/SmolLemon/SmolBook.git
+$ git clone https://github.com/SmolLemon/SmolBook.git
 $ cargo install mdbook
 $ cd SmolBook 
 $ mdbook serve --open

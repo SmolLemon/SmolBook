@@ -26,9 +26,7 @@ struct FordFulkerson{
     int s, t;
 
     FordFulkerson(){}
-    FordFulkerson(int _n, int _s, int _t): n(_n), s(_s), t(_t) {
-        adj.resize(n);
-        vst.resize(n, 0);
+    FordFulkerson(int _n, int _s, int _t): n(_n), s(_s), t(_t), adj(_n), vst(_n, 0) {
         edge.clear();
         cnt = 0; // lần tìm đường tăng luồng thứ cnt
     }
@@ -44,6 +42,7 @@ struct FordFulkerson{
     }
 
     ll dfs(int u, ll bottleneck = LLONG_MAX){
+        // tìm đường tăng luồng
         if(vst[u] == cnt) return 0;  // đã đi đến đỉnh đã thăm
         if(u == t) return bottleneck; // tìm thấy đường tăng luồng
         vst[u] = cnt; // thăm đỉnh u khi tìm đường tăng luồng thứ cnt
@@ -72,7 +71,7 @@ struct FordFulkerson{
 };
 ```
 
-Việc tìm các đường tăng luồng bằng DFS bằng \\(O(|E|)\\), nên độ phức tạp của phương pháp Ford-Fulkerson, với cách cài đặt trên là \\(O(v(f^\*)|E|)\\).
+Việc tìm các đường tăng luồng bằng DFS bằng \\(O(|E|)\\), và số lượng đường tăng luồng tối ta có thể tìm được là \\(O(v(f^\*))\\), nên độ phức tạp của phương pháp Ford-Fulkerson là \\(O(v(f^\*)|E|)\\).
 
 Sở dĩ độ phức tạp có dạng như vậy là bởi sẽ có những trường hợp mà thuật toán sẽ chọn những đường tăng luồng không thật sự tối ưu.
 
@@ -105,10 +104,7 @@ struct EdmondsKarp{
     int s, t;
 
     EdmondsKarp(){}
-    EdmondsKarp(int _n, int _s, int _t): n(_n), s(_s), t(_t) {
-        p.resize(n);
-        adj.resize(n);
-        vst.resize(n, 0);
+    EdmondsKarp(int _n, int _s, int _t): n(_n), s(_s), t(_t), adj(_n), vst(_n, 0), p(_n) {
         edge.clear();
         cnt = 0;
     }
@@ -124,6 +120,7 @@ struct EdmondsKarp{
     }
 
     ll bfs(){
+        // tìm đường tăng luồng
         queue<pair<int, ll>> q;
         vst[s] = cnt;
         q.push({s, LLONG_MAX});
@@ -135,6 +132,7 @@ struct EdmondsKarp{
                 v = edge[id].v;
                 c = edge[id].c;
                 if(vst[v] != cnt && c > 0){
+                    vst[v] = cnt;
                     p[v] = make_pair(u, id);
                     tmp = min(bottleneck, c);
                     if(v == t) return tmp; // tìm thấy đường tăng luồng
@@ -143,18 +141,18 @@ struct EdmondsKarp{
             }
         }
 
-        return 0;
+        return 0; // không tìm thấy đường tăng luồng
     }
 
     ll maxflow(){
         ll flow = 0;
         ll bottleneck;
-        while((++cnt, bottleneck = BFS()) > 0){ // tìm thấy đường tăng luồng
+        while((++cnt, bottleneck = bfs()) > 0){ // tìm thấy đường tăng luồng
             // tăng luồng
             flow += bottleneck; 
             int cur = t;
             while(cur != s){
-                edgeflow(p[cur].second);
+                edgeflow(p[cur].second, bottleneck);
                 cur = p[cur].first;
             }
         }
@@ -198,10 +196,7 @@ struct Dinic{
     int s, t;
 
     Dinic(){}
-    Dinic(int _n, int _s, int _t): n(_n), s(_s), t(_t) {
-        adj.resize(n);
-        idx.resize(n);
-        lvl.resize(n);
+    Dinic(int _n, int _s, int _t): n(_n), s(_s), t(_t), adj(_n), idx(_n), lvl(_n) {
         edge.clear();
     }
 
@@ -239,6 +234,7 @@ struct Dinic{
     }
 
     ll dfs(int u, ll bottleneck = LLONG_MAX){
+        // tìm đường tăng luồng
         if(bottleneck == 0) return 0; // không phải đường tăng luồng
         if(u == t) return bottleneck; // tìm thấy đường tăng luồng
         int v, id; ll tmp;
@@ -307,9 +303,7 @@ struct CapacityScaling{
     int s, t;
     ll U;
     CapacityScaling(){}
-    CapacityScaling(int _n, int _s, int _t): n(_n), s(_s), t(_t) {
-        adj.resize(n);
-        vst.resize(n, 0);
+    CapacityScaling(int _n, int _s, int _t): n(_n), s(_s), t(_t), adj(_n), vst(_n, 0) {
         edge.clear();
         cnt = 0;
         U = 0;
@@ -327,18 +321,19 @@ struct CapacityScaling{
     }
 
     bool dfs(int u, ll delta){
-        if(vst[u] == cnt) return false;
-        if(u == t) return true;
+        // tìm đường tăng luồng
+        if(vst[u] == cnt) return false; // đi đến cạnh đã thăm
+        if(u == t) return true; // tìm thấy đường tăng luồng
         vst[u] = cnt;
         int v; ll c;
         for(int id : adj[u]){
             v = edge[id].v, c = edge[id].c;
             if(c >= delta && dfs(v, delta)){
                 edgeflow(id, delta);
-                return true;
+                return true; // tìm thấy đường tăng luồng
             }
         }
-        return false; 
+        return false; // không tìm thấy đường tăng luồng
     }
 
     ll maxflow(){
@@ -371,10 +366,7 @@ struct DinicScaling{
     ll U;
 
     DinicScaling(){}
-    DinicScaling(int _n, int _s, int _t): n(_n), s(_s), t(_t) {
-        adj.resize(n);
-        idx.resize(n);
-        lvl.resize(n);
+    DinicScaling(int _n, int _s, int _t): n(_n), s(_s), t(_t), adj(_n), idx(_n), lvl(_n) {
         edge.clear();
         U = 0;
     }
@@ -411,17 +403,18 @@ struct DinicScaling{
     }
 
     bool dfs(int u, ll delta){
-        if(u == t) return true;
+        // tìm đường tăng luồng
+        if(u == t) return true; // tìm thấy đường tăng luồng
         int v, id;
         for (int& ptr = idx[u]; ptr < (int)adj[u].size(); ++ptr) {
             id = adj[u][ptr]; v = edge[id].v;
             // tìm thấy đường tăng luồng
             if(lvl[u] + 1 == lvl[v] && edge[id].c >= delta && dfs(v, delta)){ 
                 edgeflow(id, delta); // tăng luồng
-                return true;
+                return true; // tìm thấy đường tăng luồng
             }
         }
-        return false;
+        return false; // không tìm thấy đường tăng luồng
     }
     
     ll maxflow(){

@@ -80,7 +80,7 @@ void dijkstra(int s){
 }
 ```
 
-Độ phức tạp thuật toán: \\(O((|E| + |V|) \log {|V|})\\).
+Độ phức tạp thuật toán: \\(O((|V| + |E|) \log {|V|})\\). Nếu đồ thị liên thông, độ phức tạp có thể viết gọn thành \\(O(|E|\log{|V|})\\).
 
 ## Dijkstra + `priority_queue`
 
@@ -117,7 +117,7 @@ void dijkstra(int s){
 }
 ```
 
-Độ phức tạp thuật toán tương tư cách cài đặt sử dụng `set`: \\(O((|E| + |V|) \log {|E|})\\).
+Độ phức tạp thuật toán tương tư cách cài đặt sử dụng `set`: \\(O((|V| + |E|) \log {|E|})\\). Nếu đồ thị liên thông, độ phức tạp có thể viết gọn thành \\(O(|E|\log{|E|})\\).
 
 ## Dijkstra trên đồ thị có trọng số âm
 
@@ -168,9 +168,9 @@ void dijkstra(int s){
 }
 ```
 
-Độ phức tạp thuật toán của ta sẽ giữ nguyên bằng \\(O((|E| + |V|) \log {|E|})\\) nếu đồ thị không có trọng số âm.
+Độ phức tạp thuật toán của ta sẽ giữ nguyên bằng \\(O((|V| + |E|) \log {|E|})\\) nếu đồ thị không có trọng số âm.
 
-Độ phức tạp thuật toán của ta sẽ lớn hơn \\(O((|E| + |V|) \log {|E|})\\) nếu đồ thị có trọng số âm do sẽ có nhiều đỉnh phải cập nhật lại giá trị.
+Độ phức tạp thuật toán của ta sẽ lớn hơn \\(O((|V| + |E|) \log {|E|})\\) nếu đồ thị có trọng số âm do sẽ có nhiều đỉnh phải cập nhật lại giá trị.
 
 ## Dijkstra trên đồ thị có chu trình âm
 
@@ -207,7 +207,7 @@ Giả sử ta chạy thuật toán Dijkstra trên một đồ thị có trọng 
 <img src="../images/bfs01.png" alt="BFS 0/1"/>
 </center>
 
-Thuật toán của ta sẽ có độ phức tạp thuật toán bằng \\(O((|E| + |V|) \log {|V|})\\). 
+Thuật toán của ta sẽ có độ phức tạp thuật toán bằng \\(O((|V| + |E|) \log {|V|})\\). 
 
 Hãy nhìn vào các đỉnh trong `pq` trong quá trình chạy thuật toán:
 
@@ -247,4 +247,4 @@ void bfs01(int s){
 }
 ```
 
-Độ phức tạp thuật toán của BFS \\(0/1\\) bằng với BFS thông thường: \\(O(|V| + |E|)\\) - loại bỏ được \\(\log{|V|}\\) so với Dijkstra.
+Độ phức tạp thuật toán của BFS \\(0/1\\) bằng với BFS thông thường: \\(O(|V| + |E|)\\) - loại bỏ được \\(\log\\) so với Dijkstra.

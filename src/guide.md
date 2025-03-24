@@ -6,7 +6,7 @@ Sử dụng theme `Light` để có trải nghiệm tốt nhất.
 
 ## Điều hướng
 
-Sidebar chứa các chương có trong Smol Book. Nhấn vào tên chương để có thể xem nội dung bên trong. Ở các chương có phím mũi tên giúp mở/đóng các phần trong chương.
+Sidebar chứa mục lục của Smol Book. Nhấn vào tên chương để có thể xem nội dung. Ở các chương có phím mũi tên giúp mở/đóng các phần trong chương.
 
 Thanh sidebar có thể không xuất hiện nếu được xem trên điện thoại hoặc trên trình duyệt với khung cửa sổ nhỏ. Có thể ấn biểu tượng menu (<i class="fa fa-bars"></i>) ở góc trên bên trái của thanh menu để mở thanh sidebar hoặc đóng nó lại nếu nó xuất hiện.
 

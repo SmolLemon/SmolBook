@@ -4,7 +4,7 @@ Luồng trên mạng là một bài toán mà ta cần giải quyết việc di 
 
 ## Mạng
 
-Một **mạng (network)** là một đồ thị có hướng có trọng số \\(G = (V, E)\\) với đỉnh **nguồn (source)** \\(s\\) và đỉnh **thu (target)** \\(t\\). Trọng số \\(c(e)\\) dương của mỗi cung \\(e = uv\\) trong mạng biểu thị cho khả năng thông qua hay sức chứa của cạnh, cho ta viết lượng **luồng (flow)** có thể đi qua. Ngoài ra, đối với các cạnh \\(uv \notin E\\), ta có thể xem nó như một cạnh có sức chứa bằng \\(0\\): \\(c(uv) = 0\\). 
+Một **mạng (network)** là một đồ thị có hướng \\(G = (V, E)\\) với đỉnh **nguồn (source)** \\(s\\) và đỉnh **thu (target)** \\(t\\). Mỗi cung \\(e = uv\\) trên mạng có trọng số \\(c(e)\\) dương biểu thị cho khả năng thông qua hay sức chứa của cạnh, cho ta viết lượng **luồng (flow)** có thể đi qua. Ngoài ra, đối với các cạnh \\(uv \notin E\\), ta có thể xem nó như một cạnh có sức chứa bằng \\(0\\): \\(c(uv) = 0\\). 
 
 Ở ví dụ dưới đây, ta có một mạng biểu thị hệ thống đường ray Xô viết kết nối với các nước Đông Âu vào những năm 1955. Ở các cung trong mạng, ta thấy các ô có nhãn là một số thể hiện sức chứa của cung, và con số ở trên nó thể hiện lượng luồng đi qua nó.
 
@@ -34,9 +34,9 @@ Từ hai kí hiệu này, ta có thể viết lại rằng buộc cân bằng: \
 ### Đồ thị thặng dư
 
 Một **đồ thị thặng dư (residual graph)** \\(G^f\\) của một mạng \\(G\\) là một đồ thị có hướng sao cho:
-- **Đỉnh**: Các đỉnh có trong \\(G\\) đều có trong \\(G^f\\), hay \\(G(V) = G^f(V)\\).
-- **Cạnh xuôi**: Với mỗi cạnh \\(uv\\) có trong \\(G\\), sẽ tồn tại một cạnh \\(uv\\) trong \\(G^f\\) có trọng số chỉ **sức chứa thặng dư (residual capacity)** bằng \\(c(uv) - f(uv)\\). 
-- **Cạnh ngược**: Với mỗi cạnh \\(uv\\) có trong \\(G\\), sẽ tồn tại một cạnh \\(vu\\) trong \\(G^f\\) có trọng số chỉ sức chứa thặng dư bằng \\(f(uv)\\). 
+- **Đỉnh**: Các đỉnh có trong \\(G\\) đều có trong \\(G^f\\), hay \\(G^f(V) = G(V)\\).
+- **Cạnh xuôi**: Với mỗi cung \\(uv\\) có trong \\(G\\), sẽ tồn tại một cạnh có hướng \\(uv\\) trong \\(G^f\\) có trọng số chỉ **sức chứa thặng dư (residual capacity)** bằng \\(c(uv) - f(uv)\\). 
+- **Cạnh ngược**: Với mỗi cung \\(uv\\) có trong \\(G\\), sẽ tồn tại một cạnh có hướng \\(vu\\) trong \\(G^f\\) có trọng số chỉ sức chứa thặng dư bằng \\(f(uv)\\). 
 
 Ở ví dụ dưới đây, ta có một mạng và đồ thị thặng dư của nó.
 
@@ -113,7 +113,7 @@ Từ đây, ta có định lí: \\(v(f) \le c(A, B)\\) - mọi lát cắt đều
 
 ## Luồng cực đại và lát cắt cực tiểu
 
-**Luồng cực đại trên mạng (maximum flow - maxflow)** là bài toán tìm luồng có giá trị lớn nhất trên mạng. 
+**Luồng cực đại trên mạng (maximum flow - maxflow)** là bài toán tìm giá trị của luồng sau khi gửi nhiều luồng nhất có thể trên mạng. 
 
 Ở ví dụ dưới đây, luồng cực đại của mạng này là \\(5\\), và đồ thị thặng dư của nó có dạng như sau.
 
@@ -166,20 +166,19 @@ struct NetworkFlow{
 	vector<vector<int>> adj; // danh sách kề, các đỉnh có chỉ số từ 0 đến n - 1
 	vector<Edge> edge; // danh sách cạnh, chỉ số bắt đầu từ 0
 	int n; // số lượng đỉnh
-	int s, t; // đỉnh nguồn, đỉnh thu
+	int s, t; // đỉnh nguồn - đỉnh thu
 	
 	NetworkFlow(){}
-	NetworkFlow(int _n, int _s, int _t): n(_n), s(_s), t(_t) {
-		adj.resize(n);
+	NetworkFlow(int _n, int _s, int _t): n(_n), s(_s), t(_t), adj(_n) {
 		edge.clear();
 	}
 
-	void addEdge(int u, int v, int c, int bc = 0){ // Thêm cạnh. c: cạnh xuôi, bc: cạnh ngược
+	void addEdge(int u, int v, ll c, ll bc = 0){ // Thêm cạnh
 		adj[u].emplace_back(edge.size()); edge.emplace_back(Edge(u, v, c)); // cạnh xuôi
 		adj[v].emplace_back(edge.size()); edge.emplace_back(Edge(v, u, bc)); // cạnh ngược
 	}
 
-    void edgeflow(int id, ll flow){ // cập nhật khi có [flow] luồng đi qua cạnh [id]
+    void edgeflow(int id, ll flow){ // cập nhật khi có flow luồng đi qua cạnh id
         edge[id].c -= flow; // cạnh uv
         edge[id ^ 1].c += flow; // cạnh vu
     }

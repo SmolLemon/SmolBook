@@ -64,7 +64,7 @@ void Kahn(){
 
 ```
 
-Độ phức tạp thuật toán: \\(O(|V| + |E|)\\)
+Độ phức tạp thuật toán: \\(O(|V| + |E|)\\).
 
 ## Kiểm tra DAG
 
