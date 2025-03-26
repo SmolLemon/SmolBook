@@ -1,7 +1,7 @@
 # Summary
 
 [Smol Book - Cẩm nang Lập trình Thi đấu](./title-page.md)
-[Hướng dẫn](./guide.md)
+[Hướng dẫn sử dụng](./guide.md)
 [Giới thiệu](./introduction.md)
 [Lời cảm ơn](./acknowledgements.md)
 
@@ -61,8 +61,7 @@
   - [Cây](./graph-theory/tree.md)
     - [Kĩ thuật chu trình Euler](./graph-theory/euler-tour-technique.md)
     - [Tổ tiên chung gần nhất](./graph-theory/lca.md)
-    - [Kĩ thuật hợp nhỏ đến lớn (Small-to-large merging)]()
-    - [Kĩ thuật phân tách nặng-nhẹ (Heavy-Light Decomposition)]()
+    - [Kĩ thuật phân tách nặng-nhẹ (Heavy-Light Decomposition)](./graph-theory/hld.md)
     - [Kĩ thuật phân tách trọng tâm (Centroid Decomposition)]()
   - [Luồng trên mạng](./graph-theory/flow-network.md)
     - [Các thuật toán tìm luồng cực đại trên mạng](./graph-theory/max-flow-algorithms.md)
@@ -89,5 +88,6 @@
   - [Thuật toán Aho-Corasick]()
 ---
 
-[Phụ lục A - Danh sách thuật toán]()
-[Phụ lục B - Danh sách bài tập]()
+[Phụ lục A - Thuật toán]()
+[Phụ lục B - Bài tập]()
+[Phụ lục B - Các nguồn tài liệu khác]()

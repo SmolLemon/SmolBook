@@ -38,13 +38,15 @@ Sở dĩ ta cho cạnh ngược có chi phí \\(-a(uv)\\) là bởi cạnh ngư�
 
 Các thuật toán áp dụng phương pháp Ford-Fulkerson khi tìm luồng cực đại sẽ thực hiện tăng luồng với mỗi đường tăng luồng trên mạng mà nó tìm được sau mỗi bước. 
 
-Để cực tiểu hóa chi phí, ta cần tìm đường tăng luồng có chi phí gửi luồng nhỏ nhất có thể ở mỗi bước để cực tiểu hóa chi phí. Việc tìm những đường tăng luồng này có thể được thực hiện bằng các thuật toán tìm được đi ngắn nhất xử lí được trường hợp cạnh có trọng số âm như thuật toán [Bellman-Ford](bellman-ford.md) hoặc thuật toán [Dijkstra](dijkstra.md#dijkstra-trên-đồ-thị-có-trọng-số-âm) sửa đổi. Ở đây, ta sẽ sử dụng thuật toán [Johnson](https://en.wikipedia.org/wiki/Johnson's_algorithm).
+Để cực tiểu hóa chi phí, ta cần tìm đường tăng luồng có chi phí gửi luồng **_nhỏ nhất có thể_** ở mỗi bước để cực tiểu hóa chi phí. Việc tìm những đường tăng luồng này có thể được thực hiện bằng các thuật toán tìm đường đi ngắn nhất xử lí được trường hợp cạnh có trọng số âm như thuật toán [Bellman-Ford](bellman-ford.md) hoặc thuật toán [Dijkstra](dijkstra.md#dijkstra-trên-đồ-thị-có-trọng-số-âm) sửa đổi. Ở đây, ta sẽ sử dụng thuật toán [Johnson](https://en.wikipedia.org/wiki/Johnson's_algorithm).
 
 ### Thuật toán
 
-Trước khi nói về phần cài đặt, ta sẽ giới thiệu sơ lược về thuật toán Johnson.
+Trước khi nói về phần cài đặt thuật toán, ta sẽ giới thiệu về thuật toán Johnson.
 
-Thuật toán Johnson là thuật toán tìm đường đi ngắn nhất trên mọi cặp đỉnh trên đồ thị có hướng. Tuy nhiên, vì ta xét đường đi ngắn nhất giữa đỉnh nguồn và đỉnh thu trên mạng nên khi cài đặt thuật toán sẽ đơn giản hơn.
+#### Thuật toán Johnson
+
+Thuật toán Johnson là thuật toán tìm đường đi ngắn nhất giữa *mọi cặp đỉnh* trên đồ thị có hướng. Tuy nhiên, vì bài toán chỉ yêu cầu ta tìm đường tăng luồng với chi phí nhỏ nhất nên thuật toán sẽ được mô tả một cách đơn giản hơn.
 
 Thuật toán bắt đầu bằng việc gán mỗi đỉnh \\(u\\) trên mạng một giá trị \\(\pi(u)\\) bằng giá trị của đường đi ngắn nhất từ đỉnh \\(s\\) đến đỉnh \\(u\\). Sau đó, ta cập nhật trọng số \\(w(uv)\\) của các cung trên đồ thị bằng giá trị mới \\(w(uv) + (\pi(u) - \pi(v))\\). Ta có thể chứng minh trọng số mới trên các cung sẽ có giá trị không âm bằng bất đẳng thức tam giác (xem ba đỉnh \\(s, u, v\\) là ba đỉnh của một tam giác với độ dài ba cạnh \\(su = \pi(u), sv = \pi(v), uv = w(uv)\\)).
 
@@ -64,9 +66,11 @@ Sau khi tìm đường đi ngắn nhất từ \\(s\\) đến \\(t\\) trên đồ
 
 Về độ phức tạp của thuật toán Johnson: ở bước đầu tiên, vì đồ thị có các trọng số âm nên ta sử dụng thuật toán [Bellman-Ford](bellman-ford.md). Ở bước thứ hai, vì giá trị của các trọng số mới không âm, ta sử dụng thuật toán nhanh hơn để giải quyết - thuật toán [Dijkstra](dijkstra.md). Độ phức tạp của Bellman-Ford và Dijkstra lần lượt là \\(O(mn)\\) và \\(O(m\log{n})\\) nên độ phức tạp của thuật toán sẽ bằng \\(O(nm + m\log{n})\\).
 
-<br>
+#### Cài đặt
 
-Khi áp dụng thuật toán Johnson để tìm luồng với chi phí cực tiểu, bước một chỉ cần thực hiện một lần như một bước tiền xử lí khi mạng có trọng số âm, còn bước hai sẽ thực hiện một hoặc nhiều lần để tìm các đường tăng luồng. 
+Khi áp dụng thuật toán Johnson để tìm các đường tăng luồng, bước một chỉ cần thực hiện một lần như một bước tiền xử lí khi mạng có trọng số âm, còn bước hai sẽ thực hiện một hoặc nhiều lần để tìm các đường tăng luồng ấy. 
+
+Ta có thể hiểu rõ hơn về cách áp dụng qua chương trình mẫu dưới đây.
 
 ```C++
 struct MinCostFlow{
@@ -194,7 +198,7 @@ ll sendKFlow(ll k){
             cur = p[cur].first;
         }
     }
-    if(k != 0) return INF; // không thể gửi k luồng trên mạng
+    if(k != 0) return INF; // không thể gửi K luồng trên mạng
     return cost; // chi phí cực tiểu
 }
 ```

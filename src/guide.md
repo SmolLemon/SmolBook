@@ -1,4 +1,4 @@
-# Hướng dẫn
+# Hướng dẫn sử dụng
 
 Trang này được viết để hướng dẫn người dùng cách tương tác với [Smol Book - Cẩm nang Lập trình Thi đấu](./title-page.md).
 
@@ -29,7 +29,7 @@ Có thể nhấn vào thanh menu ở đầu trang để cuộn lên đầu trang
 
 ## Tìm kiếm
 
-Để thực hiện việc tìm kiếm trên Smol Book, ấn vào biểu tượng tìm kiếm (<i class="fa fa-search"></i>) hoặc nhấn phím `s` trên bàn phím để tìm kiếm. Kết quả tìm kiếm sẽ được hiển thị trên thời gian thực. 
+Để thực hiện việc tìm kiếm trên Smol Book, ấn vào biểu tượng tìm kiếm (<i class="fa fa-search"></i>) trên thanh menu hoặc nhấn phím `s` trên bàn phím để tìm kiếm. Kết quả tìm kiếm sẽ được hiển thị trên thời gian thực. 
 
 Sử dụng phím mũi tên lên xuống để di chuyển giữa các kết quả tìm kiếm. Chọn vào kết quả mong muốn sẽ dẫn bạn đến trang đó.
 

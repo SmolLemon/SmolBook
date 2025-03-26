@@ -179,7 +179,7 @@ Bitmask là một một mảng lưu các giá trị bit. Bitmask còn có thể 
 VD: 
 
 ```
-                     3|2|1|0
+             chỉ số  3|2|1|0
 S = 11 (Thập phân) = 1|0|1|1 (Nhị phân)
 ```
 
@@ -231,7 +231,7 @@ S             = 0011101 (Nhị phân) = 29 (Thập phân)
 i = 2, 1 << i = 0000100 (Nhị phân) =  4 (Thập phân) 
                 ------- AND
               = 0000100 (Nhị phân) =  4 (Thập phân) 
-                -> Bit thứ \\(i\\) có giá trị 1
+                -> Bit thứ i có giá trị 1
 ```
 
 Ngoài ra còn có các kiểm tra khác cũng sử dụng thao tác bit AND: bit thứ \\(i\\) có giá trị `(S >> i) & 1`.
