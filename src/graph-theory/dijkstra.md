@@ -6,7 +6,7 @@
 
 <sup> Comment: Mê cái cách ông ấy nhấn mạnh việc thiết kế một thuật toán chỉ trong vòng \\(20\\) phút. **Tận 2 LẦN!!!** <sup>
 
-**Thuật toán Dijkstra** là thuật toán [*tham lam*](../algo-paradigms/greedy.md) tìm đường đi ngắn nhất từ một đỉnh trên đồ thị.
+**Thuật toán Dijkstra** là thuật toán [*tham lam*](../paradigms/greedy.md) tìm đường đi ngắn nhất từ một đỉnh trên đồ thị.
 
 ## Thuật toán
 

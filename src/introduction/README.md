@@ -35,7 +35,7 @@ Dưới đây là một chương trình C++ giải quyết bài toán *A cộng 
 #define ll long long
 using namespace std;
 
-int main (int argc, char const *argv[]) {
+int main () {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	int a, b; cin >> a >> b;
@@ -76,20 +76,29 @@ Có vô số cuộc thi lập trình phổ biến trên toàn quốc và quốc 
 
 ### Kì thi Học sinh giỏi các cấp (trường/thành phố/tỉnh/...) (môn Tin học)
 
-Mục đích của các cuộc thi này nhằm động viên, khuyến khích học sinh và giáo viên phát huy và nâng cao năng lực của bản thân, đồng thời phát hiện và bồi dưỡng những học sinh có năng khiếu ở các môn học.
+Mục đích của các kì thi này nhằm động viên, khuyến khích học sinh và giáo viên phát huy và nâng cao năng lực của bản thân, đồng thời phát hiện và bồi dưỡng những học sinh có năng khiếu ở các môn học.
 
-### Kỳ thi Olympic truyền thống 30/4 (môn Tin học)
+### Cuộc thi Olympic truyền thống 30/4 (môn Tin học)
 
-**Cuộc thi Olympic truyền thống 30/4** là một cuộc thi học sinh giỏi hàng năm dành cho học sinh khối 10 và 11 của khu vực phía Nam. Cuộc thi này do trường THPT Chuyên Lê Hồng Phong TPHCM sáng lập và được tổ chức lần đầu tiên vào năm 1995 với mục đích phát hiện, bồi dưỡng những học sinh có năng khiếu thuộc các khối lớp 10 và 11, chuẩn bị đội ngũ cho kỳ thi học sinh giỏi quốc gia, tạo điều kiện cho việc giao lưu học hỏi giữa các học sinh giỏi và trao đổi chuyên môn giữa các thầy cô dạy lớp chuyên của các tỉnh phía Nam[^1].
+**Cuộc thi Olympic truyền thống 30/4** là một cuộc thi học sinh giỏi hàng năm dành cho học sinh khối 10 và 11 của khu vực phía Nam. Cuộc thi này do trường THPT Chuyên Lê Hồng Phong TPHCM sáng lập và được tổ chức lần đầu tiên vào năm 1995 với mục đích phát hiện, bồi dưỡng những học sinh có năng khiếu thuộc các khối lớp 10 và 11, chuẩn bị đội ngũ cho kì thi học sinh giỏi quốc gia, tạo điều kiện cho việc giao lưu học hỏi giữa các học sinh giỏi và trao đổi chuyên môn giữa các thầy cô dạy lớp chuyên của các tỉnh phía Nam[^1].
 
-### Kỳ thi chọn Học sinh sinh giỏi khu vực Duyên Hải và đồng bằng Bắc Bộ (môn Tin học)
+### Kì thi chọn Học sinh giỏi khu vực Duyên Hải và đồng bằng Bắc Bộ (môn Tin học)
 
-Kỳ thi do Hội các trường THPT chuyên khu vực duyên hải và đồng bằng Bắc Bộ tổ chức hằng năm. 
-Kỳ thi là dịp phát hiện học sinh giỏi, học sinh xuất sắc các bộ môn để các trường THPT chuyên có kế hoạch lựa chọn, bồi dưỡng các em tham gia các kỳ thi học sinh giỏi quốc gia, khu vực và quốc tế. Đồng thời là dịp để đội ngũ cán bộ quản lý và giáo viên các trường THPT chuyên trao đổi, chia sẻ kinh nghiệm, nâng cao trình độ chuyên môn bồi dưỡng môn chuyên và học sinh giỏi[^2].
+Kì thi do Hội các trường THPT chuyên khu vực duyên hải và đồng bằng Bắc Bộ tổ chức hằng năm. Kì thi là dịp phát hiện học sinh giỏi, học sinh xuất sắc các bộ môn để các trường THPT chuyên có kế hoạch lựa chọn, bồi dưỡng các em tham gia các kì thi học sinh giỏi quốc gia, khu vực và quốc tế. Đồng thời là dịp để đội ngũ cán bộ quản lý và giáo viên các trường THPT chuyên trao đổi, chia sẻ kinh nghiệm, nâng cao trình độ chuyên môn bồi dưỡng môn chuyên và học sinh giỏi[^2].
+
+### Kì thi Olympic Tin học Miền Trung - Tây Nguyên
+
+**Kì thi Olympic Tin học miền Trung – Tây Nguyên** do Trường Đại học Công nghệ Thông tin và Truyền thông Việt – Hàn (VKU), Đại học Đà Nẵng chủ trì, phối hợp cùng Hội Tin học Việt Nam, ICPC Việt Nam, Sở Giáo dục và Đào tạo Thành phố Đà Nẵng và Trường THPT Chuyên Lê Quý Đôn, Đà Nẵng tổ chức với sự đồng hành của Hanwha Life và Quỹ ChildFund Korea (CFK), Hàn Quốc từ kì thi thứ V. Đây là sân chơi hấp dẫn, bổ ích, thúc đẩy đam mê học hỏi, cập nhật, thực hành và sáng tạo các giải pháp lập trình, góp phần cung cấp nguồn nhân lực chất lượng cao trong tương lai cho khu vực miền Trung – Tây Nguyên nói riêng và cả nước nói chung[^3].
+
+Kì thi này cũng là kì thi AI đầu tiên của Việt Nam dành cho các em học sinh bậc trung học với sự xuất hiện của bảng thi "AI Challenge".
+
+### Hue-ICT (phần thi lập trình)
+
+Cuộc thi lập trình dành cho học sinh trung học phổ thông và sản phẩm sáng tạo công nghệ thông tin dành cho sinh viên cao đẳng, đại học là cuộc thi do Trường Đại học Khoa học, Đại học Huế và Hội Công nghệ thông tin và Điện tử viễn thông Thành phố Huế tổ chức hàng năm dưới sự chỉ đạo của Ủy ban nhân dân Thành phố Huế[^4].
 
 ### Kì thi chọn Học sinh giỏi Quốc gia (môn Tin học)
 
-**Kỳ thi chọn học sinh giỏi quốc gia trung học phổ thông** (viết tắt là Kỳ thi HSGQG) là kỳ thi chọn học sinh giỏi cấp quốc gia dành cho học sinh bậc trung học phổ thông do Bộ Giáo dục và Đào tạo tổ chức vào khoảng từ tháng 12 đến tháng 1 hằng năm. Những học sinh đạt điểm cao nhất trong kỳ thi này ở một vài bộ môn được Bộ Giáo dục và Đào tạo triệu tập tại Hà Nội, Việt Nam để tham gia kỳ thi chọn các học sinh vào đội tuyển Quốc gia Việt Nam tham dự các cuộc thi Olympic khu vực và quốc tế[^3].
+**Kì thi chọn học sinh giỏi quốc gia trung học phổ thông** (viết tắt là kì thi HSGQG) là kì thi chọn học sinh giỏi cấp quốc gia dành cho học sinh bậc trung học phổ thông do Bộ Giáo dục và Đào tạo tổ chức vào khoảng từ tháng 12 đến tháng 1 hằng năm. Những học sinh đạt điểm cao nhất trong kì thi này ở một vài bộ môn được Bộ Giáo dục và Đào tạo triệu tập tại Hà Nội, Việt Nam để tham gia kì thi chọn các học sinh vào đội tuyển Quốc gia Việt Nam tham dự các cuộc thi Olympic khu vực và quốc tế[^5].
 
 Ta có thể gọi các kì thi HSGQG là các cuộc thi Olympic trong nước, với tên gọi môn tin học là **Vietnamese Olympiad in Informatics - VOI**.
 
@@ -103,7 +112,7 @@ Ta có thể gọi các kì thi HSGQG là các cuộc thi Olympic trong nước,
 
 ### ICPC
 
-**International Collegiate Programming Contest**, hay **ICPC**, là một cuộc thi lập trình dành cho sinh viên. Đây là cuộc thi lập trình lâu đời nhất, lớn nhất và danh tiếng nhất thế giới. Hằng năm, cuộc thi thu hút hơn 50000 thí sinh từ hơn 3000 trường đại học khác nhau trên toàn thế giới[^4].
+**International Collegiate Programming Contest**, hay **ICPC**, là một cuộc thi lập trình dành cho sinh viên. Đây là cuộc thi lập trình lâu đời nhất, lớn nhất và danh tiếng nhất thế giới. Hằng năm, cuộc thi thu hút hơn 50 000 thí sinh từ hơn 3 000 trường đại học khác nhau trên toàn thế giới[^6].
 
 Mặc dù cuộc thi chỉ giới hạn cho các trường đại học, ở Việt Nam, ban tổ chức ICPC Việt Nam cũng tổ chức Kì thi ICPC cho các bạn học sinh THPT trên khắp cả nước.
 
@@ -117,6 +126,10 @@ Ngoài các cuộc thi lập trình thi đấu trực tiếp, nhiều trang web 
 
 [^2]: <https://baohaiduong.vn/gan-2-000-hoc-sinh-khu-vuc-duyen-hai-va-dong-bang-bac-bo-thi-chon-hoc-sinh-gioi-tai-tp-hai-duong-387551.html>
 
-[^3]: <https://vi.wikipedia.org/wiki/Kỳ_thi_chọn_học_sinh_giỏi_quốc_gia_trung_học_phổ_thông>
+[^3]:<https://vku.udn.vn/vi/olympic-tin-hoc-mien-trung-tay-nguyen-lan-thu-vi-2025-khang-dinh-uy-tin-chat-luong-cua-mot-ky-thi-dat-chuan-muc-quoc-gia-va-quoc-te-voi-su-menh-phat-hien-va-uom-tao-nhan-tai-so/>
 
-[^4]: <https://icpc.global/>
+[^4]: <https://hue-ictc.husc.edu.vn/>
+
+[^5]: <https://vi.wikipedia.org/wiki/kì_thi_chọn_học_sinh_giỏi_quốc_gia_trung_học_phổ_thông>
+
+[^6]: <https://icpc.global/>

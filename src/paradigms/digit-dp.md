@@ -389,7 +389,7 @@ int x[51];
 ll f(int idx, bool smaller, int three, int six, int nine);
 ll G(string &X);
 bool g(string &X);
-int main (int argc, char const *argv[]) {
+int main () {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	memset(dp, -1, sizeof(dp));
@@ -472,7 +472,7 @@ void dfs(int u);
 ll f(int idx, int smaller, int sum);
 ll G(ll X);
 
-int main (int argc, char const *argv[]) {
+int main () {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	memset(dp, -1, sizeof(dp));

@@ -30,7 +30,7 @@ Ta gọi một đồ thị có chu trình Euler là **đồ thị Euler (Euleria
 
 ### Bài toán \\(7\\) cây cầu
 
-Sử dụng thông tin trên, ta có thể giải được **bài toán \\(7\\) cầu ở Königsberg** ở đầu chương [Lý thuyết đồ thị](.).
+Sử dụng thông tin trên, ta có thể giải được **bài toán \\(7\\) cầu ở Königsberg** ở [đầu chương](.).
 
 Ta hình dung thành phố Königsberg như một đồ thị, với hai bên bờ sông và hai hòn đảo là các đỉnh \\(A, C\\) và \\(B, D\\), những cây cầu là các cạnh. 
 

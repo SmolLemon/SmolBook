@@ -4,7 +4,7 @@ Có rất nhiều thuật toán khác nhau có thể giúp ta giải quyết đ�
 
 ## Phương pháp Ford-Fulkerson
 
-**Phương pháp Ford-Fulkerson** là một phương pháp [*tham lam*](../algo-paradigms/greedy.md) tìm luồng cực đại trên mạng.
+**Phương pháp Ford-Fulkerson** là một phương pháp [*tham lam*](../paradigms/greedy.md) tìm luồng cực đại trên mạng.
 
 Cách mà phương pháp này tìm luồng cực đại trên mạng khá là đơn giản: nếu mạng tồn tại đường tăng luồng, ta tăng luồng trên mạng. Quá trình này sẽ lặp lại cho tới khi ta không được đường tăng luồng nào trên mạng nữa nữa, và giá trị của luồng cực đại trên mạng đã được tìm thấy.
 

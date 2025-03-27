@@ -70,8 +70,22 @@ using ll = long long;
 using str = string;
 ```
 
-Để các đoạn code minh hoạ dễ đọc hơn, Smol book chỉ sử dụng một macro duy nhất là 
+Để các đoạn code minh hoạ dễ đọc hơn, Smol book chỉ sử dụng một macro duy nhất là `#define ll long long`.
 
 ```C++
+#include <bits/stdc++.h>
 #define ll long long
+using namespace std;
+// code
+
+int main () {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	// code	
+
+
+
+	
+	return 0;
+}
 ```

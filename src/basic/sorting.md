@@ -76,7 +76,7 @@ Thuật toán sắp xếp có thể được tối ưu xuống còn \\(O(n \log{
 
 ### Sắp xếp trộn (Merge sort)
 
-Thuật toán sắp xếp trộn (Merge sort) là một thuật toán sắp xếp áp dụng mô hình [chia để trị](../algo-paradigms/dnc.md).
+Thuật toán sắp xếp trộn (Merge sort) là một thuật toán sắp xếp áp dụng mô hình [chia để trị](../paradigms/dnc.md).
 
 Mô tả thuật toán:
 

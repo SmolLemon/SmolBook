@@ -20,7 +20,7 @@ Một điều chắc chắn là ta không thể đến và đo chiều cao của
 
 Khi này, thay vì kiểm tra tất cả học sinh ấy thì ta chỉ cần thu thập thông tin tổng hợp từ các trường. Điều này giúp ta thu thập thông tin nhanh hơn và hiệu quả hơn.
 
-Đây chính là ý tưởng chính cho CTDL segment tree: Chia một không gian quản lí lớn thành các không gian quản lí nhỏ hơn - một giải pháp [chia để trị](../algo-paradigms/dnc.md).
+Đây chính là ý tưởng chính cho CTDL segment tree: Chia một không gian quản lí lớn thành các không gian quản lí nhỏ hơn - một giải pháp [chia để trị](../paradigms/dnc.md).
 
 ## Segment Tree
 

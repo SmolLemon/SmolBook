@@ -38,7 +38,7 @@ Ta có thể tính được số lượng cây khung trên một số dạng đ�
 
 Để tìm kiếm *một* cây khung trên đồ thị không trọng số, ta có thể sử dụng thuật toán [DFS hoặc BFS](graph-traversal-applications.md#xây-dựng-cây-khung-của-đồ-thị).
 
-Đối với đồ thị có trọng số, ta có hai thuật toán phổ biến là thuật toán Kruskal và thuật toán Prim, cả hai thuật toán đều có cách tiếp cận [tham lam](../algo-paradigms/greedy.md) với bài toán tìm cây khung nhỏ nhất.
+Đối với đồ thị có trọng số, ta có hai thuật toán phổ biến là thuật toán Kruskal và thuật toán Prim, cả hai thuật toán đều có cách tiếp cận [tham lam](../paradigms/greedy.md) với bài toán tìm cây khung nhỏ nhất.
 
 ### Thuật toán Kruskal
 
