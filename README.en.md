@@ -2,13 +2,16 @@
 
 ## Introduction
 
-[Smol Book - Cẩm nang Lập trình Thi đấu](https://smollemon.github.io/SmolBook/) is a **competitive programming** guidebook for students and for those who are interested in this topic.
+[Smol Book - Cẩm nang Lập trình Thi đấu](https://book.smollemon.page) is a **competitive programming** guidebook for students and for those who are interested in this topic.
 
 ## Running locally
 
-Smol Book uses [mdBook](https://rust-lang.github.io/mdBook/) to build the site. To run it locally on your machine, download mdBook and follow these steps:
+Smol Book uses [mdBook](https://rust-lang.github.io/mdBook/) to build the site. To run it locally on your machine, follow these steps:
 
 ```shell
+$ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
+$ rustup update
+$ cargo install --version 0.4.45 mdbook
 $ git clone https://github.com/SmolLemon/SmolBook.git
 $ cargo install mdbook
 $ cd SmolBook 

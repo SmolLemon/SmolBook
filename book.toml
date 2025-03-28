@@ -8,7 +8,6 @@ multilingual = false
 [output.html]
 mathjax-support = true
 default-theme = "light"
-site-url = "/SmolBook/"
 preferred-dark-theme = "navy"
 smart-punctuation = true
 git-repository-icon = "fa-code-fork"

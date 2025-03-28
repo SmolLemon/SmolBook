@@ -1,6 +1,6 @@
 # Bộ tiền xử lí
 
-**Bộ tiền xử lí (preprocessor)** là những chỉ thị để trình biên dịch tiền xử lý thông tin trước khi bắt đầu biên dịch thực sự. Ta đã được thấy một bộ tiền xử lí `#define` ở các đoạn code trước, thêm các đoạn code từ những file khác vào chương trình của ta.
+**Bộ tiền xử lí (preprocessor)** là những chỉ thị để trình biên dịch tiền xử lí các đoạn trong chương trình trước khi bắt đầu biên dịch thực sự. Ta đã được thấy một bộ tiền xử lí `#define` ở các đoạn code trước, thêm các đoạn code từ những file khác vào chương trình của ta.
 
 Ta sẽ tập trung vào việc sử dụng `#define`. Đây là một bộ tiền xử lí thay thế các biểu tượng trong code thành các biểu tượng khác.
 

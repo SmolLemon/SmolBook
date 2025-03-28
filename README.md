@@ -2,13 +2,16 @@
 
 ## Giới thiệu
 
-[Smol Book - Cẩm nang Lập trình Thi đấu](https://smollemon.github.io/SmolBook/) là một cuốn cẩm nang về **lập trình thi đấu** dành cho các bạn học sinh và những người có hứng thú với bộ môn này.
+[Smol Book - Cẩm nang Lập trình Thi đấu](https://book.smollemon.page) là một cuốn cẩm nang về **lập trình thi đấu** dành cho các bạn học sinh và những người có hứng thú với bộ môn này.
 
 ## Chạy cục bộ
 
-Dự án sử dụng [mdBook](https://rust-lang.github.io/mdBook/) để xây dựng trang web. Để chạy cục bộ dự án, tải mdBook và thực hiện các bước sau:
+Dự án sử dụng [mdBook](https://rust-lang.github.io/mdBook/) để xây dựng trang web. Để chạy cục bộ dự án, hãy thực hiện các bước sau:
 
 ```shell
+$ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
+$ rustup update
+$ cargo install --version 0.4.45 mdbook
 $ git clone https://github.com/SmolLemon/SmolBook.git
 $ cargo install mdbook
 $ cd SmolBook 
