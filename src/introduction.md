@@ -28,8 +28,6 @@ Chương 7 nói về những kiến thức toán học cần thiết để áp d
 
 Chương 8 đồng thời cũng là chương cuối cùng nói về xâu kí tự và cách xử lí, tận dụng những thông tin có trong xâu.
 
-Ngoài ra, Smol Book còn có phần phụ lục với những thông tin hữu ích trong quá trình sử dụng Smol Book. Phụ lục A chứa danh sách những thuật toán được ngắn đến trong Smol Book, và phụ lục B chứa các bài tập để luyện tập sau khi đọc xong Smol Book. Nếu bạn muốn đọc thêm những tài liệu khác liên quan đến lập trình thi đấu, bạn có thể đến phụ lục C.
-
 ## Mã nguồn
 
 Mã nguồn của Smol Book có thể được tìm thấy trên [Codeberg](https://codeberg.org/SmolLemon/SmolBook) và [Github](https://github.com/SmolLemon/SmolBook).

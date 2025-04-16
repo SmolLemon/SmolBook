@@ -1,10 +1,14 @@
 # Luồng với chi phí cực tiểu
 
+*Được xuất hiện trên [VNOI Wiki](https://wiki.vnoi.info/algo/graph-theory/min-cost-flow)*
+
+<br>
+
 Bài toán luồng với chi phí cực tiểu là các bài toán yêu cầu ta phải gửi luồng trên mạng với chi phí nhỏ nhất có thể.
 
 ## Mạng
 
-Giả sử ta được cho một mạng **mạng (network)** là một đồ thị có hướng \\(G = (V, E)\\) gồm các đỉnh và các cung nối các đỉnh lại với nhau. Mỗi cung \\(e\\) trên mạng sẽ có hai trọng số \\(c(e)\\) và \\(a(e)\\) chỉ lượng luồng có thể đi qua và chi phí khi gửi luồng đi qua cung này.
+Giả sử ta được cho một mạng **mạng (network)** là một đồ thị có hướng \\(G = (V, E)\\) gồm các đỉnh và các cung nối các đỉnh lại với nhau. Mỗi cung \\(e\\) trên mạng sẽ có hai trọng số \\(c(e)\\) và \\(a(e)\\) chỉ lượng luồng có thể đi qua và chi phí khi gửi một đơn vị luồng đi qua cung này.
 
 <center>
 <img src="../images/network_with_cost.png" alt="Mạng kèm theo chi phí"/>

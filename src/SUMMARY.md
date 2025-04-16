@@ -61,7 +61,7 @@
     - [Kĩ thuật chu trình Euler](./graph-theory/euler-tour-technique.md)
     - [Tổ tiên chung gần nhất](./graph-theory/lca.md)
     - [Kĩ thuật phân tách nặng-nhẹ (Heavy-Light Decomposition)](./graph-theory/hld.md)
-    - [Kĩ thuật phân tách trọng tâm (Centroid Decomposition)]()
+    - [Kĩ thuật phân tách trọng tâm (Centroid Decomposition)](./graph-theory/cd.md)
   - [Luồng trên mạng](./graph-theory/flow-network.md)
     - [Các thuật toán tìm luồng cực đại trên mạng](./graph-theory/max-flow-algorithms.md)
     - [Luồng với chi phí cực tiểu](./graph-theory/min-cost-flow.md)
@@ -85,9 +85,7 @@
   - [Mảng hậu tố]()
   - [Trie]()
   - [Thuật toán Aho-Corasick]()
+  
 ---
 
-[Phụ lục A - Thuật toán]()
-[Phụ lục B - Bài tập]()
-[Phụ lục C - Các nguồn tài liệu khác]()
 [Lời cảm ơn](./acknowledgement.md)

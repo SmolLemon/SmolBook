@@ -271,7 +271,7 @@ Có thể sử dụng hai thuật toán tìm TPLT mạnh trên đồ thị có h
 
 Thuật toán Kosaraju là một thuật toán tìm TPLT mạnh khá đơn giản.
 
-Ta sẽ thực hiện DFS trên đồ thị. Sau mỗi lần duyệt xong một đỉnh \\(u\\), ta thêm đỉnh \\(u\\) vào một danh sách theo thứ tự ngược lại (nếu đỉnh \\(u\\) được duyệt đầu tiên thì nó sẽ ở cuối danh sách,...). 
+Ta sẽ thực hiện DFS trên đồ thị. Sau mỗi lần duyệt xong một đỉnh \\(u\\), ta thêm đỉnh \\(u\\) vào một danh sách theo thứ tự ngược lại (nếu đỉnh \\(u\\) được duyệt đầu tiên thì nó sẽ ở cuối danh sách,...). Nếu như đồ thị tồn tại thứ tự tô-pô thì danh sách này sẽ chứa thứ tự tô-pô đảo của đồ thị.
 
 Sau đó, đảo ngược các cạnh trên đồ thị (cung \\(uv\\) đổi thành cung \\(vu\\)) và thực hiện DFS theo thứ tự các đỉnh có trong danh sách.
 
@@ -294,11 +294,11 @@ int inCC[N], cc = 0;
 
 void dfs1(int u){
 	vst[u] = 1;
-	arr.push_back(u);
 	for(int v : adj[u]){
 		if(vst[v]) continue;
 		dfs1(v);
 	}
+	arr.push_back(u);
 }
 
 void dfs2(int u){

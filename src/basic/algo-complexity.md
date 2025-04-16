@@ -170,6 +170,6 @@ Khi biết được giá trị \\(n\\), ta có thể ước tính được độ
 
 Tương tự độ phức tạp thời gian, độ phức tạp bộ nhớ ước tính lượng bộ nhớ được sử dụng khi thực hiện thuật toán. 
 
-Những gì được nói ở phần độ phức tạp bộ nhớ cũng tương tự với độ phức tạp thời gian: các [kiểu dữ liệu cơ bản](../programming/data-types.md) (trừ `string`) có độ phức tạp \\(O(1)\\), và một mảng \\(n\\) phần tử có độ phức tạp bộ nhớ \\(O(n)\\).
+Những gì được nói ở phần độ phức tạp bộ nhớ cũng tương tự với độ phức tạp thời gian: các [kiểu dữ liệu cơ bản](../programming/variables-data-types.md) (trừ `string`) có độ phức tạp \\(O(1)\\), và một mảng \\(n\\) phần tử có độ phức tạp bộ nhớ \\(O(n)\\).
 
 Không giống với độ phức tạp thời gian, độ phức tạp bộ nhớ thường khá "thoáng", với giới hạn bộ nhớ của bài thường không quá khắt khe, thế nên ta không cần tìm hiểu quá chi tiết như độ phức tạp thời gian.

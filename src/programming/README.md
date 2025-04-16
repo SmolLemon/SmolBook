@@ -11,11 +11,9 @@ Ngôn ngữ lập trình C++ là một trong ngôn ngữ được sử dụng ph
 - Trình biên dịch C++ (Compiler)
 - Trình soạn thảo văn bản (Text editor)
 
-**GNU Compiler Collection (GCC)** là một trình biên dịch C++ vô cùng phổ biến.
+**GNU Compiler Collection (GCC)** là một trình biên dịch C++ vô cùng phổ biến. Người dùng Windows có thể tải MinGW để sử dụng GCC còn những người dùng GNU/Linux có thể tải về g++ thông qua trình quản lí gói của các bản phân phối GNU/Linux.
 
-Người dùng Windows có thể tải MinGW để sử dụng GCC.
-
-Người dùng GNU+Linux/MacOS có thể tải về g++ thông qua package manager tương ứng.
+### Cài đặt Code::Blocks cho lập trình thi đấu
 
 Một trong những IDE được cài đặt rộng rãi trên các máy thi là [Code::Blocks](https://www.codeblocks.org/).
 
@@ -25,9 +23,7 @@ Trên các máy Windows, để tải về Code::Blocks, ta truy cập [trang web
 <img src="../images/codeblock_download_page.png" alt="Tải về Code::blocks"/>
 </center>
 
-### Cài đặt Code::Blocks cho lập trình thi đấu
-
-Code::Blocks trong các máy thi thường hoặc là mới được tải về hoặc là đang sử dụng các cài đặt mặc định. Mặc định, Code::Blocks sẽ cho trình biên dịch C++ biên dịch chương trình của ta theo tiêu chuẩn C++98 (hơn \\(26\\) năm về trước). 
+Mặc định, Code::Blocks sẽ cho trình biên dịch C++ biên dịch chương trình của ta theo tiêu chuẩn C++98 (hơn \\(26\\) năm về trước). 
 
 Để Code::Blocks chạy chương trình của ta với theo những tiêu chuẩn mới hơn của C++, ta thực hiện các bước sau:
 
@@ -44,4 +40,3 @@ Ngoài việc thêm flag `-std=c++14` để trình biên dịch biên dịch the
 - `Optimize even more (for speed) [-O2]`
 
 Các flag này sẽ cảnh bảo ta về một số cảnh báo khi ta chương trình (`-Wall`, `-Wextra`) và tối ưu chương trình khi chạy (`-O2`).
-

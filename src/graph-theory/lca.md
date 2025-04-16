@@ -112,7 +112,7 @@ Ta có LCA của hai đỉnh \\(2\\) và \\(6\\) là đỉnh \\(1\\). Một đi�
 
 Từ đây, ta có thể kết luận rằng ta có thể tìm LCA của hai đỉnh \\(u\\) và \\(v\\) bất kì bằng cách tìm đỉnh có chiều cao nhỏ nhất trong khoảng \\([u_{st}, v_{st}]\\) (nếu \\(v_{st} > u_{st}\\) thì ta đảo lại: \\([v_{st}, u_{st}]\\)).
 
-Ta có thể sử dụng [segment tree](../data-structues/segment-tree.md), hoặc nếu đồ thị không thay đổi, ta có thể áp dụng [kĩ thuật bảng thưa](../data-structures/sparse-table.md). 
+Ta có thể sử dụng [segment tree](../data-structures/segment-tree.md), hoặc nếu đồ thị không thay đổi, ta có thể áp dụng [kĩ thuật bảng thưa](../data-structures/sparse-table.md). 
 
 ```C++
 pair<int, int> sp[K][N];
@@ -141,7 +141,7 @@ int lca(int u, int v){
 
 Thuật toán tìm LCA của Tarjan có thể tìm LCA của các cặp đỉnh. Thuật toán của Tarjan là một thuật toán *offline*, tức là thuật toán phải biết trước được rằng nó sẽ phải tìm LCA của các cặp đỉnh nào.
 
-Ta sử dụng [DSU](./data-structures/dsu.md). Đầu tiên, mỗi đỉnh của cây sẽ tương đương với một tập hợp. Sau đó, ta sẽ thực hiện duyêt cây bằng [DFS](dfs.md). Với mỗi lần duyệt DFS một đỉnh \\(u\\), ta sẽ thực hiện DFS trên các cây con gốc \\(x\\). Sau mỗi lần duyệt DFS trên các cây con, ta thực hiện `Union(u, x)`. Khi hoàn tất việc duyệt các cây con, ta có thể tìm được LCA của hai đỉnh \\((u, v)\\) chính là đỉnh có chiều cao nhỏ nhất trong tập hợp chứa đỉnh \\(v\\), nếu đỉnh \\(v\\) đã được thăm khi duyệt DFS.
+Ta sử dụng [DSU](../data-structures/dsu.md). Đầu tiên, mỗi đỉnh của cây sẽ tương đương với một tập hợp. Sau đó, ta sẽ thực hiện duyêt cây bằng [DFS](dfs.md). Với mỗi lần duyệt DFS một đỉnh \\(u\\), ta sẽ thực hiện DFS trên các cây con gốc \\(x\\). Sau mỗi lần duyệt DFS trên các cây con, ta thực hiện `Union(u, x)`. Khi hoàn tất việc duyệt các cây con, ta có thể tìm được LCA của hai đỉnh \\((u, v)\\) chính là đỉnh có chiều cao nhỏ nhất trong tập hợp chứa đỉnh \\(v\\), nếu đỉnh \\(v\\) đã được thăm khi duyệt DFS.
 
 Giả sử ta có một cây sau, và ta muốn tìm LCA của các cặp đỉnh \\(4, 5\\) và \\(5, 6\\).
 
