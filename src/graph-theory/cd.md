@@ -150,6 +150,6 @@ Cây trọng tâm sẽ có \\(3\\) tính chất chính:
 1. Chiều cao của cây sẽ không quá \\(\log{n}\\).
 1. LCA của hai đỉnh \\(u, v\\) bất kì trên cây sẽ thuộc đường đi giữa hai đỉnh trên cây gốc.
 
-LCA của hai đỉnh bất kì trên cây trọng tâm có thể dễ dàng được tìm bằng [phương pháp 1](lca.md#phương-pháp-1) mà không cần đến [nâng nhị phân](lca.md#nâng-nhị-phân) nhờ vào tính chất \\(2\\) của cây.
+LCA của hai đỉnh bất kì trên cây trọng tâm có thể dễ dàng được tìm bằng [phương pháp 1](lca.md#phương-pháp-1) trong \\(O(\log{n})\\) mà không cần đến [nâng nhị phân](lca.md#nâng-nhị-phân) nhờ vào tính chất \\(2\\) của cây.
 
 Dựa vào tính chất \\(2\\) và \\(3\\), ta có thể lưu thông tin của \\(O(n\log{n})\\) đường đi từ một đỉnh tới các đỉnh hậu duệ. Sử dụng thông tin này, ta có thể tính giá trị của đường đi giữa hai đỉnh \\(u, v\\) bất kì trên cây gốc bằng cách tìm LCA của \\(u, v\\) trên cây trọng tâm và kết hợp thông tin về hai đường đi \\((u, LCA)\\) và \\((v, LCA)\\) để tìm giá trị của đường đi gốc.
