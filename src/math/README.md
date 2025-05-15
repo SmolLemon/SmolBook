@@ -6,6 +6,6 @@
 
 <br>
 
-Toán học đóng một vai trò quan trọng trong khả năng giải quyết bài toán trong lập trình thi đấu. Việc ta giỏi toán, hoặc ít nhất là thoải mái trước các phép tính phức tạp, sẽ là một lợi thế đáng kể trong lập trình thi đấu. 
+Toán học đóng vai trò quan trọng trong khả năng giải quyết bài toán trong lập trình thi đấu. Việc ta giỏi toán, hoặc ít nhất là thoải mái trước các phép tính phức tạp, sẽ là một lợi thế đáng kể trong lập trình thi đấu. 
 
 Ở chương này, ta sẽ điểm qua các thuật ngữ, khái niệm và các thuật toán trong toán học hữu ích trong lập trình thi đấu.

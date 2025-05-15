@@ -67,7 +67,7 @@
     - [Luồng với chi phí cực tiểu](./graph-theory/min-cost-flow.md)
     - [Ứng dụng của luồng trên mạng]()
 - [Toán học](./math/README.md)
-  - [Kiến thức toán học hữu ích]()
+  - [Kiến thức toán học hữu ích](./math/math.md)
   - [Lí thuyết số](./math/number-theory.md)
     - [Số nguyên tố](./math/prime.md)
     - [Ước số - bội số]()
