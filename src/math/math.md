@@ -49,3 +49,7 @@ Một kĩ thuật hữu ích quan trọng trong việc đếm các phần tử c
 Ta có công thức tính hợp cho \\(3\\) tập hợp \\(A, B, C\\): \\[|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|\\]
 
 Ta có công thức tổng quát để tính hợp của \\(n\\) tập hợp \\(A_1, A_2, \dots, A_n\\): \\[\bigcup_{i = 1}^n A_i = \sum_{J \subset \\{1, 2, \dots, n\\}} (-1)^{|J| + 1}|\bigcap_{j \in J} A_j|\\]
+
+## Các kiến thức khác
+
+Ngoài các kiến thức toán học trên, ta cũng nên tìm hiểu những kiến thức toán học sau đây để bổ sung kiến thức: luỹ thừa, logarit, mệnh đề logic,...

@@ -73,7 +73,7 @@
     - [Ước số - bội số]()
     - [Phi hàm Euler]()
     - [Modulo]()
-    - [Lũy thừa nhị phân]()
+    - [Lũy thừa nhị phân](./math/binary-exponentiation.md)
   - [Tổ hợp]()
   - [Ma trận]()
   - [Hình học]()
