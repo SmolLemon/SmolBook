@@ -1,6 +1,6 @@
 # Kiến thức toán học hữu ích
 
-Ngoài kiến thức cộng trừ nhân chia cơ bản, ta sẽ nói thêm về một số kiến thức toán học hữu ích trong lập trình thi đấu.
+Ta sẽ nói về một số kiến thức toán học hữu ích trong lập trình thi đấu.
 
 ## Công thức tính tổng
 

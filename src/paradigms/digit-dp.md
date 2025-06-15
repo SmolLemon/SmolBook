@@ -161,9 +161,9 @@ Giới hạn: \\(1 \le K \lt 10^{10000}\\), \\(D \lt 100\\).
 
 Bài toán này tương tự với bài toán ở ví dụ \\(1\\), có \\(3\\) trạng thái QHĐ \\((idx, smaller, sum)\\) nhưng có một chút khác biệt.
 
-Nếu \\(idx = -1\\), hàm \\(f\\) của ta trả về \\(1\\) nếu \\(sum = 0\\) và \\(0\\) trong các trường hợp còn lại. Đồng thời, việc chuyển trạng thái \\(sum\\) sang \\(sum'\\) cũng thay đổi thành \\(sum' = (sum + v) \mod{D}\\).
+Nếu \\(idx = -1\\), hàm \\(f\\) của ta trả về \\(1\\) nếu \\(sum = 0\\) và \\(0\\) trong các trường hợp còn lại. Đồng thời, việc chuyển trạng thái \\(sum\\) sang \\(sum'\\) cũng thay đổi thành \\(sum' = (sum + v) \bmod{D}\\).
 
-Một điều nữa là hàm \\(f\\) cũng sẽ xét cả số \\(0\\) mặc dù bài toán không yêu cầu nên kết quả bài toán sẽ là: \\((G(K) - 1) \mod{10^9 + 7}\\).
+Một điều nữa là hàm \\(f\\) cũng sẽ xét cả số \\(0\\) mặc dù bài toán không yêu cầu nên kết quả bài toán sẽ là: \\((G(K) - 1) \bmod{10^9 + 7}\\).
 
 ```C++
 #include <bits/stdc++.h>
@@ -376,7 +376,7 @@ Nếu trạng thái của ta đang là \\((idx, smaller, three, six, nine)\\), v
 - \\(six' = six + 1\\) nếu \\(v = 6\\) hoặc \\(six' = six\\) nếu \\(v \neq 6\\).
 - \\(nine' = nine + 1\\) nếu \\(v = 9\\) hoặc \\(nine' = nine\\) nếu \\(v \neq 9\\).
 
-Vì \\(A, B\\) là những số rất lớn, ta áp dụng cách tính thứ hai được nói ở phần lý thuyết: \\((G(b) - G(a) + g(a)) \mod{10^9 + 7}\\).
+Vì \\(A, B\\) là những số rất lớn, ta áp dụng cách tính thứ hai được nói ở phần lý thuyết: \\((G(b) - G(a) + g(a)) \bmod{10^9 + 7}\\).
 
 ```C++
 #include <bits/stdc++.h>

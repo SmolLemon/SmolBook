@@ -16,7 +16,7 @@ edit-url-template = "https://github.com/SmolLemon/SmolBook/edit/main/{path}"
 
 [output.html.fold]
 enable = true
-level = 2
+level = 3
 
 [output.html.search]
 limit-results = 16

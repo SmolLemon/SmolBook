@@ -6,7 +6,13 @@
 
 Một tính chất của luỹ thừa được áp dụng trong luỹ thừa nhị phân chính là công thức: \\(a^m \times a^n = a^{m + n}\\). Sử dụng công thức này, ta có thể tính được \\(a^n\\) bằng cách tách \\(n\\) ra thành các luỹ thừa nhị phân để dễ dàng tính toán. Ví dụ với \\(a^{12}\\), ta có thể tính như sau: \\[a^{12} = a^{1100_2} = a^8 \times a^4\\]
 
-Các luỹ thừa nhị phân của \\(a\\) có thể dễ dàng được tính: \\[a^1 = a \\\ a^2 = (a^1)^2 \\\ a^4 = (a^2)^2 \\\ \dots \\]
+Các luỹ thừa nhị phân của \\(a\\) có thể dễ dàng được tính: 
+
+\\[
+\begin{align*}
+a^1 &= a \\\\ a^2 &= (a^1)^2 \\\\ a^4 &= (a^2)^2 \\\\ & \dots 
+\end{align*}
+\\]
 
 
 ```C++
@@ -24,9 +30,13 @@ int Pow(int a, int n, int MOD = 1e9 + 7){ // tính a^n mod MOD
 Độ phức tạp của thuật toán là \\(O(\log{n})\\).
 
 Ngoài ra, ta có thể thực hiện quay lui để giải quyết bài toán. Ta có:
-- \\(a^n = 1\\) nếu \\(n\\) bằng \\(0\\)
-- \\(a^n = (a^{\frac{n}{2}})^2\\) nếu \\(n\\) chẵn
-- \\(a^n = (a^{\left\lfloor \frac{n}{2} \right\rfloor})^2 \times a\\) nếu \\(n\\) lẻ
+\\[
+a^n = \begin{cases}
+1 \text{ khi } n = 0 \\\\
+(a^{n/2})^2 \text{ khi } n \gt 0, n \text{ chẵn } \\\\
+(a^{\left\lfloor n/2 \right\rfloor})^2 \times a \text{ khi } n \gt 0, n \text{ lẻ }
+\end{cases}
+\\]
 
 ```C++
 int Pow(int a, int n, int MOD = 1e9 + 7){ // tính a^n mod MOD
@@ -46,8 +56,14 @@ int Pow(int a, int n, int MOD = 1e9 + 7){ // tính a^n mod MOD
 Ở bài viết về [modulo](modulo.md), ta đã được biết cách tính \\((a \times b) \mod {M} = (a \mod {M} \times b \mod {M}) \mod {M}\\). Tuy nhiên, nếu ta viết chương trình theo kiểu này để tính với các giá trị \\(a, b, M \ge 10^{10}\\) thì kể cả khi sử dụng `long long` thì ta vẫn có thể bị tràn số. 
 
 Để giải quyết vấn đề này, ta sử dụng phép nhân Ấn Độ. Phép nhân Ấn Độ cũng giống với luỹ thừa nhị phân, chỉ khác nhau ở việc thay vì sử dụng phép nhân thì ta sử dụng phép cộng. Ví dụ, để tính \\(a \times b\\), ta tính: 
-- \\(a \times b = (a \times \frac{b}{2}) \times 2\\) nếu \\(b\\) chẵn
-- \\(a \times b = (a \times \left\lfloor \frac{b}{2} \right\rfloor) \times 2 + a\\) nếu \\(b\\) lẻ
+
+\\[
+a \times b = \begin{cases}
+(a \times \frac{b}{2}) \times 2 \text { khi } b \text { chẵn } \\\\
+(a \times \left\lfloor \frac{b}{2} \right\rfloor) \times 2 + a \text { khi } b \text{ lẻ } \\\\
+\end{cases}
+\\]
+
 
 
 ```C++
