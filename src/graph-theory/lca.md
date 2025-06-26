@@ -174,7 +174,7 @@ bitset<N> vst;
 int n;
 UnionFind dsu; // CTDL dsu
 
-// hàm dfs: OLCA = Oflline LCA
+// OLCA = Offline LCA
 void OLCA(int u, int p){
 	vst[u] = 1;
 	ancestor[u] = u;

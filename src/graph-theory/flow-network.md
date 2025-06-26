@@ -80,35 +80,35 @@ Mục đích của cạnh ngược trong đồ thị thặng dư là để cho p
 
 ## Lát cắt
 
-Một **lát cắt s-t** \\((A, B)\\) là khi ta chia các đỉnh trong mạng thành hai tập hợp đỉnh rời nhau \\(A\\) và \\(B\\), với \\(s \in A\\) và \\(t \in B\\). Ta đã được thấy một lát cắt ở hệ thống đường ray, với đường nét đứt `the bottleneck` chia các đỉnh thành hai phần trái và phải.
+Một **lát cắt s-t** \\((S, T)\\) là khi ta chia các đỉnh trong mạng thành hai tập hợp đỉnh rời nhau \\(S\\) và \\(T\\), với \\(s \in S\\) và \\(t \in T\\). Ta đã được thấy một lát cắt ở hệ thống đường ray, với đường nét đứt \\(the bottleneck\\) chia các đỉnh thành hai phần trái và phải.
 
-Giá trị của lát cắt s-t: \\(c(A, B)\\) bằng tổng trọng số các cung có hai đầu mút là hai đỉnh ở hai tập khác nhau. 
+Giá trị của lát cắt s-t: \\(c(S, T)\\) bằng tổng trọng số các cung có hai đầu mút là hai đỉnh ở hai tập khác nhau. 
 
-\\[c(A, B) = \sum_{u \in A}\sum_{v \in B} c(uv)\\]
+\\[c(S, T) = \sum_{u \in A}\sum_{v \in B} c(uv)\\]
 
-Ở hình ví dụ về mạng, ta sẽ tạo một lát cắt s-t bằng cách chia thành hai tập hợp \\(A = \\{s, 3\\}\\) và \\(B = \\{t, 1, 2, 4\\}\\). Giá trị của lát cắt này sẽ bằng tổng trọng số của các cung \\(\\{s, 1\\}\\) và \\(\\{3, 4\\}\\).
+Ở hình ví dụ về mạng, ta sẽ tạo một lát cắt s-t bằng cách chia thành hai tập hợp \\(S = \\{s, 3\\}\\) và \\(T = \\{t, 1, 2, 4\\}\\). Giá trị của lát cắt này sẽ bằng tổng trọng số của các cung \\(\\{s, 1\\}\\) và \\(\\{3, 4\\}\\).
 
-\\[c(A, B) = c(\\{s, 1\\}) + c(\\{3, 4\\}) = 1 + 4 = 5\\]
+\\[c(S, T) = c(\\{s, 1\\}) + c(\\{3, 4\\}) = 1 + 4 = 5\\]
 
-Ta định nghĩa với tập \\(S \subseteq V\\):
-- \\(f^{in}(S)\\) là tổng lượng luồng của các cạnh \\(vu\\) với \\(u \in S\\) và \\(v \notin S\\): \\(f^{in}(S) = \sum_{u \in S}\sum_{v \notin S} f(vu)\\).
-- \\(f^{out}(S)\\) là tổng lượng luồng của các cạnh \\(uv\\) với \\(u \in S\\) và \\(v \notin S\\): \\(f^{out}(S) = \sum_{u \in S}\sum_{v \notin S} f(uv)\\).
+Ta định nghĩa với tập \\(U \subseteq V\\):
+- \\(f^{in}(U)\\) là tổng lượng luồng của các cạnh \\(vu\\) với \\(u \in U\\) và \\(v \notin U\\): \\(f^{in}(U) = \sum_{u \in U}\sum_{v \notin U} f(vu)\\).
+- \\(f^{out}(U)\\) là tổng lượng luồng của các cạnh \\(uv\\) với \\(u \in U\\) và \\(v \notin U\\): \\(f^{out}(U) = \sum_{u \in U}\sum_{v \notin U} f(uv)\\).
 
 ### Luồng và lát cắt
 
-Với luồng s-t \\(f\\) và lát cắt s-t \\((A, B)\\) bất kì, ta có: 
+Với luồng s-t \\(f\\) và lát cắt s-t \\((S, T)\\) bất kì, ta có: 
 
-\\[v(f) = f^{out}(A) - f^{in}(A)\\]
+\\[v(f) = f^{out}(S) - f^{in}(S)\\]
 
 Từ công thức trên, ta có thể kết luận
 
-\\[v(f) \le c(A, B)\\]
+\\[v(f) \le c(S, T)\\]
 
 Điều này là bởi:
 
-\\[v(f) = f^{out}(A) - f^{in}(A) \\\ \le f^{out}(A) - 0 = f^{out}(A) = \sum_{u \in A}\sum_{v \notin A} f(uv) \\\ \le \sum_{u \in A}\sum_{v \notin A} c(uv) = c(A, B)\\]
+\\[v(f) = f^{out}(S) - f^{in}(S) \\\ \le f^{out}(S) - 0 = f^{out}(S) = \sum_{u \in S}\sum_{v \notin S} f(uv) \\\ \le \sum_{u \in S}\sum_{v \notin S} c(uv) = c(S, T)\\]
 
-Từ đây, ta có định lí: \\(v(f) \le c(A, B)\\) - mọi lát cắt đều lớn hơn mọi luồng.
+Từ đây, ta có định lí: \\(v(f) \le c(S, T)\\) - mọi lát cắt đều lớn hơn hoặc bằng mọi luồng.
 
 
 ## Luồng cực đại và lát cắt cực tiểu
@@ -131,15 +131,15 @@ Một mối liên hệ thú vị về luồng cực đại và lát cắt cực 
 <img src="../images/maxflow_mincut.png" alt="Luồng cực đại và lát cắt cực tiểu"/>
 </center>
 
-Ta có \\(f^\*\\) là luồng sau khi tìm được luồng cực đại trên mạng. Ta có lát cắt \\((A^\*, B^\*)\\) với tập \\(A^\*\\) là các đỉnh màu xanh chỉ các đỉnh có thể đi đến được từ đỉnh \\(s\\) bằng các cạnh có trọng số dương trong đồ thị thặng dư, còn tập \\(B^\*\\) là các đỉnh còn lại có màu đỏ.
+Ta có \\(f^\*\\) là luồng sau khi tìm được luồng cực đại trên mạng. Ta có lát cắt cực tiểu \\((S^\*, T^\*)\\) với tập \\(S^\*\\) là các đỉnh màu xanh chỉ các đỉnh có thể đi đến được từ đỉnh \\(s\\) bằng các cạnh có trọng số dương trong đồ thị thặng dư, còn tập \\(T^\*\\) là các đỉnh còn lại có màu đỏ.
 
-Ta có các cạnh màu vàng \\(e = uv\\) có \\(u \in A^\*\\) và \\(v \in B^\*\\). Ta nhận xét rằng \\(f(e) = c(e)\\) bởi nếu điều này là sai vì nếu không thì sẽ có một cạnh xuôi \\(uv\\) có trọng số dương và \\(v\\) sẽ thuộc \\(A^\*\\).
+Ta có các cạnh màu vàng \\(e = uv\\) có \\(u \in S^\*\\) và \\(v \in T^\*\\). Ta nhận xét rằng \\(f(e) = c(e)\\) bởi nếu điều này là sai vì nếu không thì sẽ có một cạnh xuôi \\(uv\\) có trọng số dương và \\(v\\) sẽ thuộc \\(S^\*\\).
 
-Ta cũng có các cạnh màu tím \\(e = vu\\) có \\(u \in A^\*\\) và \\(v \in B^\*\\). Ta nhận xét rằng \\(f(e) = 0\\) bởi nếu điều này là sai vì nếu không thì sẽ có một cạnh ngược \\(uv\\) có trọng số dương và \\(v\\) sẽ thuộc \\(A^\*\\).
+Ta cũng có các cạnh màu tím \\(e = vu\\) có \\(u \in S^\*\\) và \\(v \in T^\*\\). Ta nhận xét rằng \\(f(e) = 0\\) bởi nếu điều này là sai vì nếu không thì sẽ có một cạnh ngược \\(uv\\) có trọng số dương và \\(v\\) sẽ thuộc \\(S^\*\\).
 
 Từ đây, ta có:
 
-\\[v(f^\*) = f^{out}(A^\*) - f^{in}(A^\*) \\\ = \sum_{u \in A^\*}\sum_{v \notin A^\*} f(uv) - \sum_{u \in A^\*}\sum_{v \notin A^\*} f(vu) \\\ = \sum_{u \in A^\*}\sum_{v \notin A^\*} c(uv) - \sum_{u \in A^\*}\sum_{v \notin A^\*} 0 \\\ = c(A, B)\\]
+\\[v(f^\*) = f^{out}(S^\*) - f^{in}(S^\*) \\\ = \sum_{u \in S^\*}\sum_{v \notin S^\*} f(uv) - \sum_{u \in S^\*}\sum_{v \notin S^\*} f(vu) \\\ = \sum_{u \in S^\*}\sum_{v \notin S^\*} c(uv) - \sum_{u \in S^\*}\sum_{v \notin S^\*} 0 \\\ = c(S^\*, T^\*)\\]
 
 Vậy giá trị của luồng cực đại bằng giá trị của lát cắt cực tiểu.
 

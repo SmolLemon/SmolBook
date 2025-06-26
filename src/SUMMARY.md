@@ -65,7 +65,7 @@
   - [Luồng trên mạng](./graph-theory/flow-network.md)
     - [Các thuật toán tìm luồng cực đại trên mạng](./graph-theory/max-flow-algorithms.md)
     - [Luồng với chi phí cực tiểu](./graph-theory/min-cost-flow.md)
-    - [Ứng dụng của luồng trên mạng]()
+    - [Ứng dụng của luồng trên mạng](./graph-theory/flow-network-applications.md)
 - [Toán học](./math/README.md)
   - [Kiến thức toán học hữu ích](./math/math.md)
   - [Lí thuyết số](./math/number-theory.md)

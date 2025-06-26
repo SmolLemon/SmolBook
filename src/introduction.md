@@ -4,7 +4,7 @@ Chào mừng đến với *Smol Book - Cẩm nang Lập trình Thi đấu*, mộ
 
 ## Đối tượng hướng tới
 
-Những nội dung của Smol Book được viết với mục tiêu có thể giúp những người mới bắt đầu lập trình thi đấu có thể hiểu được những kiến thức trong bộ môn này một cách dễ dàng.
+Những nội dung của Smol Book được viết với mục tiêu có thể giúp những người mới bắt đầu học lập trình thi đấu có thể hiểu được những kiến thức trong bộ môn này một cách dễ dàng.
 
 ## Nội dung
 

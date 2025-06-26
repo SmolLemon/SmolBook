@@ -2,6 +2,8 @@
 
 Có rất nhiều thuật toán khác nhau có thể giúp ta giải quyết được bài toán tìm [luồng cực đại trên mạng](flow-network.md#luồng-cực-đại-và-lát-cắt-cực-tiểu). Ta sẽ tập trung vào các thuật toán dựa trên phương pháp Ford-Fulkerson.
 
+Các thuật toán được liệt kê dưới đây thực hiện cho luồng với giá trị nguyên dương đi qua các cạnh.
+
 ## Phương pháp Ford-Fulkerson
 
 **Phương pháp Ford-Fulkerson** là một phương pháp [*tham lam*](../paradigms/greedy.md) tìm luồng cực đại trên mạng.
@@ -273,7 +275,7 @@ Thuật toán Dinic sẽ tối ưu hơn so với thuật toán Edmonds-Karp tron
 
 **Capacity scaling** là một phương pháp giải quyết bài toán tìm luồng cực đại trên mạng. 
 
-Quay lại với ví dụ về trường hợp xấu nhất của mạng ở phương pháp Ford-Fulkerson, ta thấy rằng thuật toán sẽ có khả năng chọn những đường tăng luồng có điểm nghẽn thấp. Vậy nếu như ta chỉ xét một số đường tăng luồng nhất định thì sao?
+Quay lại với ví dụ về trường hợp xấu nhất ở phương pháp Ford-Fulkerson, ta thấy rằng thuật toán sẽ có khả năng chọn những đường tăng luồng có điểm nghẽn thấp (như \\(P_3, P_4\\)). Vậy nếu như ta chỉ xét một số đường tăng luồng nhất định thì sao?
 
 <center>
 <img src="../images/ford_fulkerson_worst_case.png" alt="Trường hợp xấu nhất"/>
@@ -283,7 +285,7 @@ Ta có một số \\(\Delta\\). Sau khi chọn giá trị của \\(\Delta\\), ta
 
 Sau khi không còn đường tăng luồng nào có điểm nghẽn lớn hơn hoặc bằng \\(\Delta\\), ta giảm \\(\Delta\\) (thường là giảm đi một nửa: \\(\Delta = \frac{\Delta}{2}\\)) và tiếp tục quá trình.
 
-Đối với các mạng có sức chứa các cung là số nguyên, ta chọn \\(\Delta = 2^{\left\lfloor \log_2{U} \right\rfloor}\\), với \\(U\\) là cung có sức chứa lớn nhất, và việc giảm \\(\Delta\\) sẽ diễn ra cho tới khi \\(\Delta = 1\\).
+Đối với các mạng có sức chứa các cung là số nguyên, ta chọn \\(\Delta = 2^{\left\lfloor \log_2{U} \right\rfloor}\\), với \\(U\\) là cung có sức chứa lớn nhất, và việc giảm \\(\Delta\\) sẽ tiếp tục cho tới khi \\(\Delta = 1\\).
 
 Độ phức tạp của phương pháp capacity scaling là \\(O(|E|^2 \log{U})\\). Nếu ta áp dụng phương pháp này với các thuật toán như Edmonds-Karp hoặc Dinic thì độ phức tạp sẽ bằng \\(O(|V||E| \log{U})\\).
 
