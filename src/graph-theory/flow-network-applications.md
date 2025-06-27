@@ -4,7 +4,7 @@ Ta cùng điểm qua một số ứng dụng và mở rộng của bài toán lu
 
 ## Đa đỉnh nguồn, đa đỉnh thu
 
-Giả sử ta được cho một mạng \\(G = (V, E)\\) với vô số đỉnh nguồn (\\(s_1, s_2, \dots, s_n\\)) và đỉnh nguồn (\\(t_1, t_2, \dots, t_m\\)) và ta được yêu cầu phải tìm luồng cực đại trên mạng này. Ta có thể thay đổi bài toán trên thành bài toán tìm luồng cực đại trên mạng bình thường bằng cách thêm hai đinh có tên gọi là đỉnh **siêu nguồn (supersource)** \\(S\\) và đỉnh **siêu thu (supersink)** \\(T\\). Sau đó, ta thêm các cung nối \\(s\\) với \\(s_1, s_2, \dots, s_n\\) và \\(t_1, t_2, \dots, t_m\\) với \\(T\\) với sức chứa \\(+\infty\\) hoặc một số cực lớn. Việc tìm luồng cực đại trên mạng mới này cũng tương đương với việc tìm luồng cực đại trên mạng gốc.
+Giả sử ta được cho một mạng \\(G = (V, E)\\) với vô số đỉnh nguồn (\\(s_1, s_2, \dots, s_n\\)) và đỉnh nguồn (\\(t_1, t_2, \dots, t_m\\)) và ta được yêu cầu phải tìm luồng cực đại trên mạng này. Ta có thể thay đổi bài toán trên thành bài toán tìm luồng cực đại trên mạng bình thường bằng cách thêm hai đinh có tên gọi là đỉnh **siêu nguồn (supersource)** \\(S\\) và đỉnh **siêu thu (supersink)** \\(T\\). Sau đó, ta thêm các cung nối \\(S\\) với \\(s_1, s_2, \dots, s_n\\) và \\(t_1, t_2, \dots, t_m\\) với \\(T\\) với sức chứa \\(\infty\\) và thực hiện tìm luồng cực đại trên mạng mới này.
 
 ## Tìm các đường đi phân biệt cạnh
 
@@ -55,7 +55,7 @@ Ta sẽ tập trung giải quyết một biến thể của bài toán này: tì
 
 Khi này, giá trị luồng cực đại của đồ thị bằng giá trị cặp phép cực đại, với các cạnh \\(uv\\) thoả mãn \\(f(uv) = 1\\) là các cạnh trong cặp phép.
 
-Vì sức chứa của các cạnh bằng \\(1\\), ta chỉ cần sử dụng thuật toán [Ford-Fulkerson](max-flow-algorithms.md#phương-pháp-ford-fulkerson) để tìm luồng cực đại. Độ phức tạp của thuật toán bằng \\(O(|V||E|)\\).
+Vì sức chứa của các cạnh bằng \\(1\\), ta chỉ cần sử dụng thuật toán đơn giản hơn như [Ford-Fulkerson](max-flow-algorithms.md#phương-pháp-ford-fulkerson) để tìm luồng cực đại. 
 
 ## Bài toán phân việc
 
@@ -81,15 +81,30 @@ Sau khi tìm được luồng cực đại của đồ thị, vì các giá tr�
 - Các phần tử \\(y \in Y\\) xuất hiện trong \\(f(yt)\\) cặp.
 - Tồn tại \\(f(x, y)\\) cặp \\((x, y) \in X \times Y\\).
 
-Sử dụng thuật toán [Dinic](max-flow-algorithms.md#thuật-toán-dinic) để tìm luồng cực đại sẽ cho ta độ phức tạp thuật toán bằng \\(O(|V|^2|E|)\\).
-
 ## Vòng loại bóng chày
 
-Ta có thể sử dụng luồng cực đại để kiểm tra nếu một đội có khả năng giành chức vô địch bóng chày hay không.
+Bài toán vòng loại bóng chày (baseball elimination) được phát biểu như sau: có một giải đấu bóng chày bao gồm \\(n\\) đội, mỗi đội có \\(w_i\\) trận thắng, \\(l_i\\) trận thua, \\(r_i\\) trận còn lại cần phải chơi, và \\(g_{i, j}\\) trận với các đội \\(j\\). Nhiệm vụ của ta là xét xem những đội nào không còn khả năng vô địch, tức là dù kết quả ra sao thì đội đó cũng không đứng nhất bảng hoặc đồng hạng nhất. Ta giả sử không có trận hoà và tất cả trận đấu đều được diễn ra.
+
+Đối với trường hợp đơn giản, ta có thể xác định đội \\(x\\) không có khả năng vô địch giải đấu nếu tồn tại một đội \\(y\\) sao cho \\(w_x + r_x \lt w_y\\).
+
+Đối với khác trường hợp khác, ta sử dụng luồng trên mạng để kiểm tra. Ta xây dựng một mạng:
+- Nối đỉnh nguồn \\(s\\) với các đỉnh \\((i,j)\\) tượng trưng cho trận đấu giữa hai đội bằng một cung có sức chứa \\(g_{i, j}\\). Không tính các trận đấu có sự tham gia của đội \\(x\\). Ta quy ước các đỉnh \\((i, j)\\) thuộc tập \\(X\\).
+- Nối các đỉnh \\((i,j)\\) với hai đỉnh \\(i\\) và \\(j\\) bằng một cung có sức chứa \\(\infty\\). Ta quy ước các đỉnh \\(i, j\\) thuộc tập \\(Y\\).
+- Nối các đỉnh \\(i\\) với đỉnh thu \\(t\\) bằng một cung có sức chứa \\(w_x + r_x - w_i\\).
+
+<center>
+<img src="../images/baseball_elimination.png" alt="Vòng loại bóng chày">
+</center>
+
+Đội \\(x\\) không có khả năng vô địch nếu tập \\(S^\*\\) trong lát cắt cực tiểu \\((S^\*, T^\*)\\) tồn tại một tập con \\(R\\) sao cho \\(R \subseteq Y\\) và điều kiện dưới đây thoả mãn:
+
+\\[ \frac{\sum_{i \in R}w_i + \frac{1}{2} \sum_{i,j \in R, \\ i \neq j} g_{i,j}}{|R|} \gt w_x + r_x\\]
+
+Đơn giản hơn, ta có thể xác định đội \\(x\\) có khả năng vô địch giải đấu nếu giá trị luồng cực đại \\(v(f^\*)\\) bằng tổng sức chứa \\(g_{i, j}\\) các cung \\(\\{s, (i, j)\\}\\) và không thể nếu ngược lại.
 
 ## Chọn dự án
 
-Giả sử bạn là một doanh nhân thành đạt quản lí một công ty lớn. Hiện tại công ty đang thực hiện \\(n\\) dự án \\(P\\), mỗi dự án sẽ đem về số tiền \\(p_i\\). Các dự án có thể sinh lời (\\(p_i > 0\\) - các khoá học, khu vui chơi, mở cửa hàng, v.v.) hoặc thu lỗ (\\(p_i < 0\\) - xậy dựng cơ sở hạ tầng, cập nhập trang thiết bị). Các dự án có thể phụ thuộc lẫn nhau, được biểu thị bằng các cặp trong \\(E\\), ví dụ: nếu \\(uv \in E\\), thì ta cần phải thực hiện dự án \\(v\\) thì ta cần phải thực hiện dự án \\(v\\). Nhiệm vụ của bạn là chọn các dự án sao cho thoả mãn điều kiện, đồng thời số tiền thu được từ các dự án phải lớn nhất có thể.
+Bài toán chọn dự án được phát biểu như sau: hiện tại có một công ty đang thực hiện \\(n\\) dự án \\(P\\), mỗi dự án sẽ đem về số tiền \\(p_i\\). Các dự án có thể sinh lời (\\(p_i > 0\\) - các khoá học, khu vui chơi, mở cửa hàng, v.v.) hoặc thu lỗ (\\(p_i < 0\\) - xậy dựng cơ sở hạ tầng, cập nhập trang thiết bị). Các dự án có thể phụ thuộc lẫn nhau, được biểu thị bằng các cặp trong \\(E\\), ví dụ: nếu \\(uv \in E\\), thì ta cần phải thực hiện dự án \\(v\\) thì ta cần phải thực hiện dự án \\(v\\). Nhiệm vụ của ta là chọn các dự án sao cho thoả mãn điều kiện, đồng thời số tiền thu được từ các dự án phải lớn nhất có thể.
 
 <center>
 <img src="../images/project_selection.png" alt="Các dự án và các yêu cầu">
@@ -103,7 +118,6 @@ Ta sẽ xây dựng mạng để giải quyết bài toán trên:
 - Nối các cặp dự án phụ thuộc lẫn nhau \\(uv \in E\\) bằng một cung với sức chứa \\(\infty\\).
 
 Ta quy ước \\(p_s = p_t = 0\\).
-
 
 Số tiền ta thu được, đồng thời cũng là lợi nhuận tối đa, bằng:
 - \\(C - c(S^\*, T^\*)\\) với \\(C = \sum_{p_u > 0} p_u\\) và \\(c(S^\*, T^\*)\\) là giá trị của lát cắt cực tiểu.

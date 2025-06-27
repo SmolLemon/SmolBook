@@ -23,9 +23,9 @@ Thanh menu cung cấp một số biểu tượng giúp người dùng tương t�
 | <i class="fa fa-search"></i> | Mở thanh tìm kiếm giúp tìm kiếm nội dung. |
 | <i class="fa fa-code-fork"></i> | Mở đường dẫn đến trang Codeberg lưu trữ mã nguồn dự án. |
 | <i class="fa fa-github"></i> | Mở đường dẫn đến trang Github lưu trữ mã nguồn dự án. |
-| <i class="fa fa-pencil"></i> | Mở trang để chỉnh sửa nội dung. |
+| <i class="fa fa-pencil"></i> | Mở trang đề xuất chỉnh sửa nội dung. |
 
-Có thể nhấn vào thanh menu ở đầu trang để cuộn lên đầu trang.
+Ấn vào thanh menu ở đầu trang để cuộn lên đầu trang.
 
 ## Tìm kiếm
 

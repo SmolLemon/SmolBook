@@ -30,8 +30,8 @@ Bây giờ, ta chỉ cần viết `print(name, age)` và chỉ điền tên và 
 
 ```C++
 // trong hàm main
-	print("A", 17); // "Toi la A. Nam nay toi 17 tuoi"
-	print("B", 30); // "Toi la B. Nam nay toi 30 tuoi"
+	print("A", 17); // In ra "Toi la A. Nam nay toi 17 tuoi"
+	print("B", 30); // In ra "Toi la B. Nam nay toi 30 tuoi"
 ```
 
 ## Cấu trúc

@@ -213,22 +213,6 @@ sort(v.begin(), v.end());
 
 Sau khi sắp xếp xong mảng `v` sẽ có các phần tử được xắp xếp theo thứ tự lần lượt là `(1, 2)`, `(1, 5)`, `(2, 3)`.
 
-### Struct
-
-`struct` trong C++ mặc định không có thao tác so sánh. Vì vậy ta phải tự viết thao tác với mỗi `struct` mà ta muốn thực hiện việc sắp xếp bằng hàm `sort`.
-
-Ví dụ:
-
-```C++
-struct phanso {
-	int x, y;
-	bool operator<(const phanso &p) const{
-		return x * p.y < p.x * y;
-	}
-};
-```
-`struct` `phanso` ở ví dự trên có thao tác so sánh theo giá trị của \\(\frac{a}{b}\\):
-
 ### Hàm so sánh
 
 Ta có thể viết hàm so sánh để sắp xếp các phần tử:
@@ -236,7 +220,15 @@ Ta có thể viết hàm so sánh để sắp xếp các phần tử:
 Ví dụ:
 
 ```C++
-bool cmp(const phanso &a, const phanso &b){
+// Cấu trúc `phân số`
+struct phanso {
+	int x, y;
+	bool operator<(const phanso &p) const{ // so sánh hai phân số
+		return x * p.y < p.x * y;
+	}
+};
+
+bool cmp(const phanso &a, const phanso &b){ // hàm so sánh
 	return a.x * b.y < a.x * b.y;
 }
 

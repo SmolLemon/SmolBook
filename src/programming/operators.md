@@ -43,7 +43,10 @@ cout << g << '\n'; // 2
 
 ```C++
 int a = -2, b = 3;
+
 cout << (a % b) << '\n';           // -1 thay vì 2
+
+// khắc phục
 cout << ((a % b) + b) % b << '\n'; // 2
 ```
 
@@ -63,10 +66,10 @@ Việc viết `x++` và `++x` sẽ khác nhau đôi chút - `x++` sẽ trả v�
 ```C++
 int x = 5;
 cout << x++ << '\n'; // 5
-// x == 6
+// x = 6
 
 cout << ++x << '\n'; // 7
-// x == 7
+// x = 7
 ```
 
 ## Toán tử so sánh (`==`, `!=`, `>`, `<`, `<=`, `>=`)
@@ -82,7 +85,7 @@ Các toán tử so sánh cho ta biết mối quan hệ giữa các giá trị c�
 |`a >= b`|Biến `a` có giá trị lớn hơn hoặc bằng biến `b`|
 |`a <= b`|Biến `a` có giá trị bé hơn hoặc bằng biến `b`|
 
-Các toán tử này sẽ trả về giá trị \\(true/false\\). Nếu ta viết `4 < 5` thì nó sẽ trả về \\(1\\) nghĩa là \\(true\\), `4 > 5` thì trả về \\(0\\) nghĩa là \\(false\\).
+Các toán tử này sẽ trả về giá trị đúng hoặc sai. Nếu ta viết `4 < 5` thì nó sẽ trả về \\(1\\) nghĩa là đúng, `4 > 5` thì trả về \\(0\\) nghĩa là sai.
 
 ## Toán tử logic (`!`, `&&`, `||`)
 
@@ -90,19 +93,19 @@ Các toán từ logic (`!`, `&&`, `||`) sẽ thực hiện thao tác với các 
 
 |`a`|`b`|`!a`|`!b`|`a && b`|`a \|\| b`|
 |---|---|---|---|---|---|
-|`true`|`true`|`false`|`false`|`true`|`true`|
-|`true`|`false`|`false`|`true`|`false`|`true`|
-|`false`|`true`|`true`|`false`|`false`|`true`|
-|`false`|`false`|`true`|`true`|`false`|`false`|
+|1|1|0|0|1|1|
+|1|0|0|1|0|1|
+|0|1|1|0|0|1|
+|0|0|1|1|0|0|
 
 Ví dụ:
 
 ```C++
-( (4 < 5) && (5 > 0) )  // (true && true)   => true
-( (4 == 5) || (5 < 0) ) // (false || false) => false
+( (4 < 5) && (5 > 0) )  // (1 && 1)   => 1
+( (4 == 5) || (5 < 0) ) // (1 || 1) => 1
 ```
 
-Khi sử dụng các toán tử logic, C++ có thể chỉ cần xét các toán tử cần thiết để cho ra đáp án. Ví dụ với thao tác `((4 == 5) && (5 < 0))`. Vì C++ kiểm tra `(4 == 5)` trả về `false` trước nên nó sẽ trả về thao tác này là `false` mà không xét `(5 < 0)` là `true` hay `false`.
+Khi sử dụng các toán tử logic, C++ có thể chỉ cần xét các toán tử cần thiết để cho ra đáp án. Ví dụ với thao tác `((4 == 5) && (5 < 0))`. Vì C++ kiểm tra `(4 == 5)` trả về 0 trước nên nó sẽ trả về thao tác này là 0 mà không cần phải xét `(5 < 0)`.
 
 ## Toán tử thao tác bit (`&`, `|`, `^`, `~`, `>>`, `<<`)
 

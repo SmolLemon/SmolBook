@@ -16,9 +16,9 @@ Các máy tính khác nhau sẽ có tốc độ xử lí khác nhau - một số
 
 ## Độ phức tạp thời gian 
 
-Độ phức tạp thời gian của một thuật toán sẽ ước tính thời gian chạy của một thuật toán dựa vào kích thức dữ liệu nhập để biết được nếu độ hiệu quả của thuật toán. Độ phức tạp thời gian được biểu diễn dưới dạng Big-O với kí hiệu \\(O(...)\\), ta thay thế \\(3\\) dấu chấm với kết quả của việc tính độ phức tạp thời gian. 
+Độ phức tạp thời gian của một thuật toán sẽ ước tính thời gian chạy của một thuật toán dựa vào kích thước đầu vào để biết được nếu độ hiệu quả của thuật toán. Độ phức tạp thời gian được biểu diễn dưới dạng Big-O với kí hiệu \\(O(...)\\), ta thay thế \\(3\\) dấu chấm với kết quả của việc tính độ phức tạp thời gian. 
 
-Thông thường, \\(n\\) dùng để tượng trưng cho kích thước dữ liệu nhập. Vì thời gian thực hiện thuật toán có thể thay đổi tùy vào những giá trị khác nhau có trong các dữ liệu nhập có cùng kích thước \\(n\\), ta quan tâm nhiều nhất là trường hợp tệ nhất của thuật toán.
+Thông thường, \\(n\\) dùng để tượng trưng cho kích thước dữ liệu đầu vào. Vì thời gian thực hiện thuật toán có thể thay đổi tùy vào những giá trị khác nhau có trong các dữ liệu đầu vào có cùng kích thước \\(n\\), ta quan tâm nhiều nhất là trường hợp tệ nhất của thuật toán.
 
 ### Cách tính độ phức tạp thời gian
 

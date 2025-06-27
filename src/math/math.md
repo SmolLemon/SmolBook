@@ -1,6 +1,6 @@
-# Kiến thức toán học hữu ích
+# Kiến thức nền tảng
 
-Ta sẽ nói về một số kiến thức toán học hữu ích trong lập trình thi đấu.
+Ta sẽ nói về một số kiến thức nền tảng về toán học trong lập trình thi đấu.
 
 ## Công thức tính tổng
 

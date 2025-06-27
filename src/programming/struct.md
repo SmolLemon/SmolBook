@@ -2,7 +2,7 @@
 
 Sẽ có lúc ta muốn lưu thông tin về một đối tượng nào đó trong C++. Nếu không có kiểu dữ liệu nào có sẵn trong C++, ta có thể xây dựng một **cấu trúc (structure)** để lưu đối tượng ấy.
 
-Ta có một cấu trúc lưu một điểm trên một mặt phẳng 2D.
+Ta có một cấu trúc lưu một điểm trên một mặt phẳng toạ độ.
 
 ```C++
 struct Point{

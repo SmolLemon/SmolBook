@@ -24,14 +24,6 @@ if (a < 5){
 
 Ta cũng có thể thêm một câu lệnh rẽ nhánh khác vào `else`.
 
-```C++
-int a = 5;
-if (a < 5){
-	cout << a << " < 5";
-} else if (a > 5) {
-	cout << a << " > 5";
-}
-```
 
 ```C++
 int a = 5;
@@ -94,7 +86,7 @@ cout << (x < 8 ? "Hi" : "Hello");
 
 ## switch-case
 
-Ta sử dụng lệnh `switch` cho một biến để xét một danh sách các trường hợp - case mà nếu biến có giá trị bằng trường hợp ấy.
+Ta sử dụng lệnh `switch` cho một biến để xét một danh sách các trường hợp (case) mà nếu biến có giá trị bằng trường hợp ấy.
 
 ```C++
 switch ([biến]){

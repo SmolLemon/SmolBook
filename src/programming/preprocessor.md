@@ -70,22 +70,6 @@ using ll = long long;
 using str = string;
 ```
 
-Để các đoạn code minh hoạ dễ đọc hơn, Smol book chỉ sử dụng một macro duy nhất là `#define ll long long`.
+Tác giả không khuyến khích việc lạm dụng template trong các chương trình bởi các đoạn của ta sẽ trở nên khó đọc hơn và những người khác sẽ gặp khó khăn khi đọc đoạn code ấy.
 
-```C++
-#include <bits/stdc++.h>
-#define ll long long
-using namespace std;
-// code
-
-int main () {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	// code	
-
-
-
-	
-	return 0;
-}
-```
+Trong các phần sau, các đoạn code sẽ chỉ áp dụng một template duy nhất: `#define ll long long`

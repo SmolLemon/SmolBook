@@ -1,6 +1,6 @@
 # Giới thiệu
 
-Chào mừng đến với *Smol Book - Cẩm nang Lập trình Thi đấu*, một cuốn cẩm nang về lập trình thi đấu. Được viết theo định dạng giống như sách, Smol Book được viết nên nhằm cung cấp những kiến thức về lập trình thi đấu, giúp bạn hiểu rõ hơn về định nghĩa và cách áp dụng nó cho những bài toán.
+Chào mừng đến với *Smol Book - Cẩm nang Lập trình Thi đấu*! Smol Book được viết nên nhằm cung cấp những kiến thức về lập trình thi đấu, giúp bạn hiểu rõ những kiến thức liên quan đến lập trình thi đấu và cách áp dụng chúng vào những bài toán.
 
 ## Đối tượng hướng tới
 

@@ -1,6 +1,6 @@
 # Giới thiệu về lập trình thi đấu
 
-**Lập trình thi đấu**, tên tiếng anh là **competitive programming**, về cơ bản là một *bộ môn thể thao*, nơi thí sinh viết nên các chương trình máy tính để giải quyết các bài toán.
+**Lập trình thi đấu**, tên tiếng anh là **competitive programming**, về cơ bản là một *bộ môn thể thao trí tuệ*, nơi thí sinh viết nên các chương trình máy tính để giải quyết các bài toán.
 
 ## Thuật toán
 
@@ -8,13 +8,13 @@ Việc giải một bài toán về lập trình thi đấu, ta cần có **thu�
 
 Trong hầu hết các trường hợp, thuật toán có dạng như sau: 
 
-> **dữ liệu đầu vào (input)** \\(\rightarrow\\) thuật toán xử lí dữ liệu đầu vào \\(\rightarrow\\) **dữ liệu đầu ra (output)**. 
+> **dữ liệu đầu vào (input)** \\(\rightarrow\\) thuật toán \\(\rightarrow\\) **dữ liệu đầu ra (output)**
 
 Ta ví dụ với bài toán [**A cộng B**](https://oj.vnoi.info/problem/post):
 
 ![Bài toán A + B](../images/A_+_B_VNOJ.png)
 
-Bài toán cho ta \\(2\\) số \\(A\\) và \\(B\\) và yêu cầu ta tính tổng của hai số ấy. Dữ liệu nhập sẽ là \\(2\\) số \\(A\\) và \\(B\\) trên \\(1\\) dòng và yêu cầu ta in ra tổng hai số.
+Bài toán yêu cầu ta tính tổng của \\(2\\) số \\(A\\) và \\(B\\). Dữ liệu đầu vào sẽ là \\(2\\) số \\(A\\) và \\(B\\) trên \\(1\\) dòng và yêu cầu ta in ra tổng hai số.
 
 Để giải quyết bài toán này, ta thực hiện hai bước chính: **thiết kế thuật toán** và **cài đặt thuật toán**.
 
@@ -22,7 +22,7 @@ Bước thứ nhất, **thiết kế thuật toán**, sẽ yêu cầu ta thiết
 
 Thông thường, các bài toán thường sẽ liên quan đến những chủ đề khác nhau: tổ hợp, lí thuyết số, lí thuyết đồ thị, lí thuyết trò chơi, xử lí xâu, cấu trúc dữ liệu,... và việc áp dụng những kiến thức này cộng thêm với các hướng giải quyết mới sẽ giúp ta thiết kế được một thuật toán hiệu quả.
 
-Đối với bài toán này, thuật toán sẽ lấy hai số \\(A\\) và \\(B\\) từ dữ liệu nhập, làm phép cộng, và trả về tổng hai số.
+Đối với bài toán này, thuật toán sẽ lấy hai số \\(A\\) và \\(B\\), thực hiện việc cộng hai số, và trả về tổng tính được.
 
 Bước thứ hai, **cài đặt thuật toán**, là quá trình thực hiện hóa thuật toán mà ta đã nghĩ ra. Sự hiểu biết về ngôn ngữ lập trình và cách áp dụng nó vào việc cài đặt thuật toán mà một yêu cầu hết sức quan trọng trong quá trình giải quyết bài toán.	 
 
@@ -47,7 +47,7 @@ int main () {
 
 ## Các bài nộp và kết quả
 
-Khi ta nộp chương trình lên các *trình chấm*, máy chấm sẽ chạy chương trình của ta qua một danh sách các dữ liệu nhập (testcase) và kiểm tra đáp án mà chương trình in ra với đáp án của mỗi testcase tương ứng. Với mỗi testcase, máy chấm sẽ trả về cho ta một trong các kết quả sau đây:
+Khi ta nộp chương trình lên các *trình chấm*, máy chấm sẽ chạy chương trình của ta qua một danh sách các dữ liệu đầu vào (testcase) và kiểm tra đáp án mà chương trình in ra với đáp án của mỗi testcase tương ứng. Với mỗi testcase, máy chấm sẽ trả về cho ta một trong các kết quả sau đây:
 
 |Kết quả|Ý nghĩa|
 |---|---|
@@ -60,47 +60,49 @@ Khi ta nộp chương trình lên các *trình chấm*, máy chấm sẽ chạy 
 |<span style="color:gray;">Time Limit Exceeded (TLE)</span>| Chương trình chạy quá thời gian quy định.|
 |<span style="color:Red">Internal Error (IE)</span>| Lỗi đến từ hệ thống máy chấm.|
 
-Tùy theo *thể thức* mà điểm cho mỗi bài sẽ khác nhau. Có thể thức sẽ tính điểm theo `số lượng testcase AC/số lượng testcase`, có thể thức chỉ cho điểm khi ta AC toàn bộ các testcase. 
+Tùy theo *thể thức* mà điểm cho mỗi bài sẽ khác nhau. Có thể thức sẽ tính điểm theo số lượng testcase AC, có thể thức chỉ cho điểm khi ta AC toàn bộ các testcase. 
 
 #### Subtask
 
-Một số bài toán sẽ chia các testcase theo các nhóm khác nhau, giúp thí sinh giành được một phần điểm số cho bài toán. Các nhóm testcase này được gọi là subtask. Các subtask thường sẽ chứa những testcase có giới hạn nhỏ hơn giới hạn bài toán, hoặc có một số tính chất đặc biệt nào đó, hoặc cả hai.
+Một số bài toán sẽ chia các testcase theo các nhóm khác nhau, giúp thí sinh giành được một phần điểm số cho bài toán. Các nhóm testcase này được gọi là subtask. Các subtask thường sẽ chứa những testcase có các giới hạn về dữ liệu đầu vào nhỏ hơn giới hạn bài toán, hoặc có một số tính chất đặc biệt nào đó, hoặc cả hai.
 
 ## Vì sao cần lập trình thi đấu?
 
 Việc giải các bài toán và tham gia các cuộc thi lập trình thi đấu có thể giúp các thí sinh có hứng thú với các ngành liên quan đến khoa học máy tính. Những kiến thức học được từ lập trình thi đấu cũng cải thiện khả năng lập trình và tư duy logic của các lập trình viên, giúp họ có lợi thế trong công việc.
 
+Một số thí sinh tham gia các cuộc thi tin học như Kì thi chọn Học sinh giỏi Quốc gia đoạt giải cao được tuyển thẳng vào các trường đại học trong nước và có cơ hội được học bổng cho các năm học.  
+
 ## Các cuộc thi lập trình
 
-Có vô số cuộc thi lập trình phổ biến trên toàn quốc và quốc tế. Ta cùng điểm qua một số cuộc thi tiêu biểu.
+Có vô số cuộc thi lập trình phổ biến ở trong nước và quốc tế. Ta cùng điểm qua một số cuộc thi tiêu biểu.
 
 ### Kì thi Học sinh giỏi các cấp (trường/thành phố/tỉnh/...) (môn Tin học)
 
 Mục đích của các kì thi này nhằm động viên, khuyến khích học sinh và giáo viên phát huy và nâng cao năng lực của bản thân, đồng thời phát hiện và bồi dưỡng những học sinh có năng khiếu ở các môn học.
 
+### Kì thi chọn Học sinh giỏi Quốc gia (môn Tin học)
+
+**Kì thi chọn học sinh giỏi quốc gia trung học phổ thông** (viết tắt là kì thi HSGQG) là kì thi chọn học sinh giỏi cấp quốc gia dành cho học sinh bậc trung học phổ thông do Bộ Giáo dục và Đào tạo tổ chức vào khoảng từ tháng 12 đến tháng 1 hằng năm. Những học sinh đạt điểm cao nhất trong kì thi này ở một vài bộ môn được Bộ Giáo dục và Đào tạo triệu tập tại Hà Nội, Việt Nam để tham gia kì thi chọn các học sinh vào đội tuyển Quốc gia Việt Nam tham dự các cuộc thi Olympic khu vực và quốc tế[^1].
+
+Ta có thể gọi các kì thi HSGQG là các cuộc thi Olympic trong nước, với tên gọi môn tin học là **Vietnamese Olympiad in Informatics - VOI**.
+
 ### Cuộc thi Olympic truyền thống 30/4 (môn Tin học)
 
-**Cuộc thi Olympic truyền thống 30/4** là một cuộc thi học sinh giỏi hàng năm dành cho học sinh khối 10 và 11 của khu vực phía Nam. Cuộc thi này do trường THPT Chuyên Lê Hồng Phong TPHCM sáng lập và được tổ chức lần đầu tiên vào năm 1995 với mục đích phát hiện, bồi dưỡng những học sinh có năng khiếu thuộc các khối lớp 10 và 11, chuẩn bị đội ngũ cho kì thi học sinh giỏi quốc gia, tạo điều kiện cho việc giao lưu học hỏi giữa các học sinh giỏi và trao đổi chuyên môn giữa các thầy cô dạy lớp chuyên của các tỉnh phía Nam[^1].
+**Cuộc thi Olympic truyền thống 30/4** là một cuộc thi học sinh giỏi hàng năm dành cho học sinh khối 10 và 11 của khu vực phía Nam. Cuộc thi này do trường THPT Chuyên Lê Hồng Phong TPHCM sáng lập và được tổ chức lần đầu tiên vào năm 1995 với mục đích phát hiện, bồi dưỡng những học sinh có năng khiếu thuộc các khối lớp 10 và 11, chuẩn bị đội ngũ cho kì thi học sinh giỏi quốc gia, tạo điều kiện cho việc giao lưu học hỏi giữa các học sinh giỏi và trao đổi chuyên môn giữa các thầy cô dạy lớp chuyên của các tỉnh phía Nam[^2].
 
 ### Kì thi chọn Học sinh giỏi khu vực Duyên Hải và đồng bằng Bắc Bộ (môn Tin học)
 
-Kì thi do Hội các trường THPT chuyên khu vực duyên hải và đồng bằng Bắc Bộ tổ chức hằng năm. Kì thi là dịp phát hiện học sinh giỏi, học sinh xuất sắc các bộ môn để các trường THPT chuyên có kế hoạch lựa chọn, bồi dưỡng các em tham gia các kì thi học sinh giỏi quốc gia, khu vực và quốc tế. Đồng thời là dịp để đội ngũ cán bộ quản lý và giáo viên các trường THPT chuyên trao đổi, chia sẻ kinh nghiệm, nâng cao trình độ chuyên môn bồi dưỡng môn chuyên và học sinh giỏi[^2].
+Kì thi do Hội các trường THPT chuyên khu vực duyên hải và đồng bằng Bắc Bộ tổ chức hằng năm. Kì thi là dịp phát hiện học sinh giỏi, học sinh xuất sắc các bộ môn để các trường THPT chuyên có kế hoạch lựa chọn, bồi dưỡng các em tham gia các kì thi học sinh giỏi quốc gia, khu vực và quốc tế. Đồng thời là dịp để đội ngũ cán bộ quản lý và giáo viên các trường THPT chuyên trao đổi, chia sẻ kinh nghiệm, nâng cao trình độ chuyên môn bồi dưỡng môn chuyên và học sinh giỏi[^3].
 
 ### Kì thi Olympic Tin học Miền Trung - Tây Nguyên
 
-**Kì thi Olympic Tin học miền Trung - Tây Nguyên** do Trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn (VKU), Đại học Đà Nẵng chủ trì, phối hợp cùng Hội Tin học Việt Nam, ICPC Việt Nam, Sở Giáo dục và Đào tạo Thành phố Đà Nẵng và Trường THPT Chuyên Lê Quý Đôn, Đà Nẵng tổ chức với sự đồng hành của Hanwha Life và Quỹ ChildFund Korea (CFK), Hàn Quốc từ kì thi thứ V. Đây là sân chơi hấp dẫn, bổ ích, thúc đẩy đam mê học hỏi, cập nhật, thực hành và sáng tạo các giải pháp lập trình, góp phần cung cấp nguồn nhân lực chất lượng cao trong tương lai cho khu vực miền Trung - Tây Nguyên nói riêng và cả nước nói chung[^3].
+**Kì thi Olympic Tin học miền Trung - Tây Nguyên** do Trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn (VKU), Đại học Đà Nẵng chủ trì, phối hợp cùng Hội Tin học Việt Nam, ICPC Việt Nam, Sở Giáo dục và Đào tạo Thành phố Đà Nẵng và Trường THPT Chuyên Lê Quý Đôn, Đà Nẵng tổ chức với sự đồng hành của Hanwha Life và Quỹ ChildFund Korea (CFK), Hàn Quốc từ kì thi thứ V. Đây là sân chơi hấp dẫn, bổ ích, thúc đẩy đam mê học hỏi, cập nhật, thực hành và sáng tạo các giải pháp lập trình, góp phần cung cấp nguồn nhân lực chất lượng cao trong tương lai cho khu vực miền Trung - Tây Nguyên nói riêng và cả nước nói chung[^4].
 
 Kì thi này cũng là kì thi AI đầu tiên của Việt Nam dành cho các em học sinh bậc trung học với sự xuất hiện của bảng thi "AI Challenge".
 
 ### Hue-ICT (phần thi lập trình)
 
-Cuộc thi lập trình dành cho học sinh trung học phổ thông và sản phẩm sáng tạo công nghệ thông tin dành cho sinh viên cao đẳng, đại học là cuộc thi do Trường Đại học Khoa học, Đại học Huế và Hội Công nghệ thông tin và Điện tử viễn thông Thành phố Huế tổ chức hàng năm dưới sự chỉ đạo của Ủy ban nhân dân Thành phố Huế[^4].
-
-### Kì thi chọn Học sinh giỏi Quốc gia (môn Tin học)
-
-**Kì thi chọn học sinh giỏi quốc gia trung học phổ thông** (viết tắt là kì thi HSGQG) là kì thi chọn học sinh giỏi cấp quốc gia dành cho học sinh bậc trung học phổ thông do Bộ Giáo dục và Đào tạo tổ chức vào khoảng từ tháng 12 đến tháng 1 hằng năm. Những học sinh đạt điểm cao nhất trong kì thi này ở một vài bộ môn được Bộ Giáo dục và Đào tạo triệu tập tại Hà Nội, Việt Nam để tham gia kì thi chọn các học sinh vào đội tuyển Quốc gia Việt Nam tham dự các cuộc thi Olympic khu vực và quốc tế[^5].
-
-Ta có thể gọi các kì thi HSGQG là các cuộc thi Olympic trong nước, với tên gọi môn tin học là **Vietnamese Olympiad in Informatics - VOI**.
+Cuộc thi lập trình dành cho học sinh trung học phổ thông và sản phẩm sáng tạo công nghệ thông tin dành cho sinh viên cao đẳng, đại học là cuộc thi do Trường Đại học Khoa học, Đại học Huế và Hội Công nghệ thông tin và Điện tử viễn thông Thành phố Huế tổ chức hàng năm dưới sự chỉ đạo của Ủy ban nhân dân Thành phố Huế[^5].
 
 ### Hội thi Tin học trẻ các cấp
 
@@ -122,14 +124,14 @@ Ngoài các cuộc thi lập trình thi đấu trực tiếp, nhiều trang web 
 
 --- 
 
-[^1]: <http://www.thpt-lehongphong-tphcm.edu.vn/vi/content/ky-thi-olympic-truyen-thong-304-lan-thu-xxvi-nam-2021>
+[^1]: <https://vi.wikipedia.org/wiki/Kỳ_thi_chọn_học_sinh_giỏi_quốc_gia_trung_học_phổ_thông>
 
-[^2]: <https://baohaiduong.vn/gan-2-000-hoc-sinh-khu-vuc-duyen-hai-va-dong-bang-bac-bo-thi-chon-hoc-sinh-gioi-tai-tp-hai-duong-387551.html>
+[^2]: <http://www.thpt-lehongphong-tphcm.edu.vn/vi/content/ky-thi-olympic-truyen-thong-304-lan-thu-xxvi-nam-2021>
 
-[^3]:<https://vku.udn.vn/vi/olympic-tin-hoc-mien-trung-tay-nguyen-lan-thu-vi-2025-khang-dinh-uy-tin-chat-luong-cua-mot-ky-thi-dat-chuan-muc-quoc-gia-va-quoc-te-voi-su-menh-phat-hien-va-uom-tao-nhan-tai-so/>
+[^3]: <https://baohaiduong.vn/gan-2-000-hoc-sinh-khu-vuc-duyen-hai-va-dong-bang-bac-bo-thi-chon-hoc-sinh-gioi-tai-tp-hai-duong-387551.html>
 
-[^4]: <https://hue-ictc.husc.edu.vn/>
+[^4]:<https://vku.udn.vn/vi/olympic-tin-hoc-mien-trung-tay-nguyen-lan-thu-vi-2025-khang-dinh-uy-tin-chat-luong-cua-mot-ky-thi-dat-chuan-muc-quoc-gia-va-quoc-te-voi-su-menh-phat-hien-va-uom-tao-nhan-tai-so/>
 
-[^5]: <https://vi.wikipedia.org/wiki/kì_thi_chọn_học_sinh_giỏi_quốc_gia_trung_học_phổ_thông>
+[^5]: <https://hue-ictc.husc.edu.vn/>
 
 [^6]: <https://icpc.global/>

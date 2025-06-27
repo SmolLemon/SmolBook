@@ -6,7 +6,7 @@ Các biến có thể được sử dụng để thực hiện các thao tác tr
 
 Để khai báo một biến trong C++, ta xác định và gán các biến vào các kiểu dữ liệu phù hợp.
 
-Giả sử ta muốn khai báo \\(x = 5\\), ta có thể viết:
+Giả sử ta muốn khai báo một biến nguyên \\(x = 5\\), ta có thể viết:
 
 ```C++
 int x = 5;
@@ -41,6 +41,8 @@ Ta cũng có thể khai báo \\(x\\) mà không gán giá trị cho nó.
 int x;
 ```
 
+Nếu như ta khai báo các biến ở ngoài hàm main, các biến toàn cục (global variable) nếu không gán giá trị sẽ có giá trị bằng \\(0\\), còn nếu ta khai báo trong các hàm, các biến cục bộ (local variable) sẽ có giá trị ngẫu nhiên.
+
 ## Kiểu dữ liệu
 
 Ở C++ và các ngôn ngữ lập trình khác, ta có các kiểu dữ liệu cơ bản sau:
@@ -53,7 +55,7 @@ int x;
 |`float`|Số thực độ chính xác đơn|\\(4\\)|\\(\approx -3.4 \times 10^{38}\\) đến \\(\approx 3.4 \times 10^{38}\\)|
 |`double`|Số thực độ chính xác kép|\\(8\\)|\\(\approx -1.7 \times 10^{308}\\) đến \\(\approx 1.7 \times 10^{308}\\)||`bool`|Giá trị đúng/sai|1|`true` hoặc `false` (0 hoặc 1)|
 |`char`|Kí tự|\\(1\\)|\\(-2^{7}\\) đến  \\(2^{7} - 1\\)|
-|`bool`|Boolean|\\(1\\)|\\(0\\) hoặc  \\(1\\)|
+|`bool`|Boolean|\\(1\\)|\\(0\\) hoặc \\(1\\)|
 
 ### Kiểu dữ liệu lưu trữ số nguyên
 
@@ -90,7 +92,7 @@ if(abs((0.1 + 0.2) - 0.3) <= 1e-6){
 }else cout << "False"; 
 ```
 
-Nếu các biến lưu trữ số thực lưu các số nguyên thì nó sẽ cho kết quả chính xác, ví dụ: \\(1 + 2 = 3\\) đúng.
+Nếu các biến lưu trữ số thực lưu các số nguyên thì nó sẽ cho kết quả chính xác, ví dụ: \\(1 + 2 = 3\\).
 
 ### Kiểu dữ liệu lưu trữ kí tự
 
@@ -113,7 +115,7 @@ bool c = (5 < 7); // 5 < 7 đúng -> 1
 bool d = !b; // d = 0
 ```
 
-### auto
+## `auto`
 
 Ta có thể sử dụng `auto` khi khai báo và gán giá trị cho các biến.
 
@@ -121,6 +123,8 @@ Ta có thể sử dụng `auto` khi khai báo và gán giá trị cho các biế
 auto a = 5; // int
 auto b = 3.14; // float
 ```
+
+Khi sử dụng `auto`, ta phải gán giá trị cho biến khi khai báo.
 
 ## `pair` và `tuple`
 
@@ -134,7 +138,7 @@ cout << x.first << '\n'; // giá trị thứ nhất
 cout << x.second << '\n'; // giá trị thứ hai 
 
 pair<int, double> y = make_pair(2, 2.718);
-pair<int, double> z = x;
+pair<int, int> z;
 ```
 
 Với `tuple`, ta có thể lưu với số lượng tùy ý.
@@ -145,7 +149,9 @@ cout << get<0>(a); // 2
 cout << get<1>(a); // 3
 cout << get<2>(a); // 4
 tuple<int, int, int> b = make_tuple(5, 6, 7);
+tuple<bool, bool, bool, bool, bool, bool, bool> notGoodBitset;
 ```
+
 ## `tie`
 
 Sẽ có lúc ta muốn gán nhiều biến với các giá trị khác nhau.
@@ -154,6 +160,7 @@ Sẽ có lúc ta muốn gán nhiều biến với các giá trị khác nhau.
 int a;
 double b;
 bool c;
+// ...
 a = 5;
 b = 1.414;
 c = 0;
@@ -168,7 +175,7 @@ bool c;
 tie(a, b, c) = make_tuple(5, 1.414, 0);
 ```
 
-Trong C++17, ta còn có thể khai báo luôn các biến trong một dòng.
+Từ C++17 trở đi, ta còn có thể khai báo luôn các biến trong một dòng.
 
 ```C++
 auto [a, b, c] = make_tuple(5, 1.414, 0);

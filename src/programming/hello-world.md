@@ -1,6 +1,6 @@
 # Hello world!
 
-Sau khi cài đặt Code::Blocks, ta tạo một dự án C++ bằng cách chọn `Create a new project` - `Console application` - `C++`. Sau khi đặt tên dự án, ta đã khởi tạo thành công một dự án C++.
+Trên Code::Blocks, ta tạo một dự án C++ bằng cách chọn `Create a new project -> Console application -> C++`. Sau khi đặt tên dự án, ta đã khởi tạo thành công một dự án C++.
 
 Sau khi khởi tạo dự án, ta sẽ được chào đón bằng những dòng lệnh mặc định ở file `main.cpp`.
 
@@ -58,11 +58,11 @@ in `Hello world!` ra console và xuống dòng với `endl`.
 	return 0;
 ```
 
-kết thúc hàm bằng cách trả về giá trị \\(0\\). Đối với hàm main, việc trả về \\(0\\) giúp nói với trình biên dịch rằng: Chương trình của ta chạy trơn tru. Ở các phiên bản mới hơn của C++, ta có thể bỏ qua câu lệnh này.
+kết thúc hàm bằng cách trả về giá trị \\(0\\). Đối với hàm main, việc trả về \\(0\\) giúp nói với trình biên dịch rằng: Chương trình của ta chạy trơn tru. Ở các phiên bản mới hơn của C++ (có cả phiên bản C++14   ), ta có thể bỏ qua câu lệnh này.
 
 Ta để ý rằng các câu lệnh trong chương trình C++ luôn kết thúc bằng dấu chấm phẩy (;).
 
-Ta có thể thêm những comment trong chương trình của ta mà không làm ảnh hưởng đến đó
+Ta có thể thêm chú thích vào chương trình mà không làm ảnh hưởng đến việc biên dịch.
 
 ```C++
 #include <iostream>
@@ -76,6 +76,6 @@ int main()
     return 0;
 }
 /*
-    Đây là một comment
+    Đây là một chú thích
 */
 ```
