@@ -2,6 +2,10 @@
 
 Ta sẽ nói về một số kiến thức nền tảng về toán học trong lập trình thi đấu.
 
+## Các kiến thức cần biết
+
+Toán học là một lĩnh vực rộng lớn và phức tạp, trải dài từ những con số cơ bản đến những cấu trúc trừu tượng nhất của vũ trụ. Trong chương này, ta chỉ tập trung vào những kiến thức toán học được sử dụng phổ biến trong lập trình thi đấu. Toàn bộ nội dung trong *[Chương trình Giáo dục Phổ thông môn Toán năm 2018](<3. CT_Toan.pdf>)* là kiến thức *bắt buộc* cần phải biết khi đọc chương này. Một số khái niệm sẽ được giải thích lại để hiểu rõ nhằm áp dụng vào phần **cài đặt thuật toán**.
+
 ## Công thức tính tổng
 
 Một số công thức tính tổng của các dãy số vô cùng hữu ích mà ta nên biết:
@@ -49,7 +53,3 @@ Một kĩ thuật hữu ích quan trọng trong việc đếm các phần tử c
 Ta có công thức tính hợp cho \\(3\\) tập hợp \\(A, B, C\\): \\[|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|\\]
 
 Ta có công thức tổng quát để tính hợp của \\(n\\) tập hợp \\(A_1, A_2, \dots, A_n\\): \\[\bigcup_{i = 1}^n A_i = \sum_{J \subset \\{1, 2, \dots, n\\}} (-1)^{|J| + 1}|\bigcap_{j \in J} A_j|\\]
-
-## Các kiến thức khác
-
-Ngoài các kiến thức toán học trên, ta cũng nên tìm hiểu những kiến thức toán học sau đây để bổ sung kiến thức: luỹ thừa, logarit, mệnh đề logic,...

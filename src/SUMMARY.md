@@ -2,7 +2,7 @@
 
 [Smol Book - Cẩm nang Lập trình Thi đấu](./title-page.md)
 [Hướng dẫn sử dụng](./guide.md)
-[Giới thiệu](./introduction.md)
+[Giới thiệu](./preface.md)
 
 # Mục lục
 

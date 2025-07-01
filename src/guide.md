@@ -1,24 +1,24 @@
 # Hướng dẫn sử dụng
 
-Trang này được viết để hướng dẫn người dùng cách tương tác với [Smol Book - Cẩm nang Lập trình Thi đấu](./title-page.md).
+Trang này được viết để hướng dẫn người dùng cách tương tác với *[Smol Book - Cẩm nang Lập trình Thi đấu](./title-page.md)*.
 
 Sử dụng theme `Light` để có trải nghiệm tốt nhất.
 
 ## Điều hướng
 
-Sidebar chứa mục lục của Smol Book. Nhấn vào tên chương để có thể xem nội dung. Ở các chương có phím mũi tên giúp mở/đóng các phần trong chương.
+Thanh bên ở bên trái chứa mục lục của Smol Book. Để có thể xem nội dung của các chương, nhấn vào tên chương tương ứng. Ở các chương có phím mũi tên giúp mở/đóng các phần trong chương.
 
-Thanh sidebar có thể không xuất hiện nếu được xem trên điện thoại hoặc trên trình duyệt với khung cửa sổ nhỏ. Có thể ấn biểu tượng menu (<i class="fa fa-bars"></i>) ở góc trên bên trái của thanh menu để mở thanh sidebar hoặc đóng nó lại nếu nó xuất hiện.
+Thanh bên có thể không xuất hiện nếu được xem trên điện thoại hoặc trên trình duyệt với khung cửa sổ nhỏ. Có thể ấn biểu tượng menu (<i class="fa fa-bars"></i>) ở góc trên bên trái của thanh menu để mở thanh bên hoặc đóng nó lại nếu nó xuất hiện.
 
 Các **phím mũi tên** ở \\(2\\) bên trang (hoặc ở cuối trang nếu trường hợp giống ở trên) có thể được dùng để di chuyển đến chương trước hoặc chương tiếp theo. Ta có thể sử dụng **hai phím mũi tên trái và phải** trên bàn phím với chức năng tương tự.
 
 ## Thanh menu
 
-Thanh menu cung cấp một số biểu tượng giúp người dùng tương tác với Smol Book.
+Thanh menu ở trên cùng cung cấp một số biểu tượng giúp người dùng tương tác với Smol Book.
 
 | Biểu tượng | Công dụng |
 |------|-------------|
-| <i class="fa fa-bars"></i> | Đóng hoặc mở sidebar chứa danh sách các chương. |
+| <i class="fa fa-bars"></i> | Đóng hoặc mở thanh bên chứa danh sách các chương. |
 | <i class="fa fa-paint-brush"></i> | Mở menu liệt kê danh sách theme. |
 | <i class="fa fa-search"></i> | Mở thanh tìm kiếm giúp tìm kiếm nội dung. |
 | <i class="fa fa-code-fork"></i> | Mở đường dẫn đến trang Codeberg lưu trữ mã nguồn dự án. |
@@ -37,4 +37,4 @@ Sau khi trang được tải, kết quả tìm kiếm sẽ được in đậm. N
 
 ## Code block
 
-Các chương trong Smol Book sẽ có những đoạn code được viết trên code block. Để sao chép nội dung của code block, di chuyển chuột bên trên code block và ấn biểu tượng sao chép ở góc trên bên phải.
+Các chương trong Smol Book sẽ có những đoạn code được viết trên code block. Để sao chép nội dung trong code block, di chuyển chuột bên trên code block và ấn biểu tượng sao chép ở góc trên bên phải. Trang sẽ hiện thị dòng chữ "*Sao chép thành công!*" sau khi nội dung trong code block đã được sao chép.
