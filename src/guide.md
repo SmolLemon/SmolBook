@@ -4,17 +4,17 @@ Trang này được viết để hướng dẫn người dùng cách tương tá
 
 Sử dụng theme `Light` để có trải nghiệm tốt nhất.
 
-## Điều hướng
+## Thanh bên
 
 Thanh bên ở bên trái chứa mục lục của Smol Book. Để có thể xem nội dung của các chương, nhấn vào tên chương tương ứng. Ở các chương có phím mũi tên giúp mở/đóng các phần trong chương.
 
 Thanh bên có thể không xuất hiện nếu được xem trên điện thoại hoặc trên trình duyệt với khung cửa sổ nhỏ. Có thể ấn biểu tượng menu (<i class="fa fa-bars"></i>) ở góc trên bên trái của thanh menu để mở thanh bên hoặc đóng nó lại nếu nó xuất hiện.
 
-Các **phím mũi tên** ở \\(2\\) bên trang (hoặc ở cuối trang nếu trường hợp giống ở trên) có thể được dùng để di chuyển đến chương trước hoặc chương tiếp theo. Ta có thể sử dụng **hai phím mũi tên trái và phải** trên bàn phím với chức năng tương tự.
+Các **phím mũi tên** ở \\(2\\) bên trang (hoặc ở cuối trang nếu trường hợp giống ở trên) có thể được dùng để di chuyển đến chương trước hoặc chương tiếp theo. Có thể sử dụng **hai phím mũi tên trái và phải** trên bàn phím với chức năng tương tự.
 
 ## Thanh menu
 
-Thanh menu ở trên cùng cung cấp một số biểu tượng giúp người dùng tương tác với Smol Book.
+Thanh menu ở trên cùng cung cấp một số biểu tượng với các công dụng sau.
 
 | Biểu tượng | Công dụng |
 |------|-------------|
@@ -29,11 +29,7 @@ Thanh menu ở trên cùng cung cấp một số biểu tượng giúp người 
 
 ## Tìm kiếm
 
-Để thực hiện việc tìm kiếm trên Smol Book, ấn vào biểu tượng tìm kiếm (<i class="fa fa-search"></i>) trên thanh menu hoặc nhấn phím `s` trên bàn phím để tìm kiếm. Kết quả tìm kiếm sẽ được hiển thị trên thời gian thực. 
-
-Sử dụng phím mũi tên lên xuống để di chuyển giữa các kết quả tìm kiếm. Chọn vào kết quả mong muốn sẽ dẫn bạn đến trang đó.
-
-Sau khi trang được tải, kết quả tìm kiếm sẽ được in đậm. Nhấn phím `esc` hoặc nhấn vào từ được in đậm để thoát.
+Để thực hiện việc tìm kiếm trên Smol Book, ấn vào biểu tượng tìm kiếm (<i class="fa fa-search"></i>) trên thanh menu hoặc nhấn phím `s` trên bàn phím để tìm kiếm. Sử dụng phím mũi tên lên xuống để di chuyển giữa các kết quả tìm kiếm. Chọn vào kết quả mong muốn sẽ dẫn bạn đến trang đó. Sau khi trang được tải, kết quả tìm kiếm sẽ được in đậm. Nhấn phím `esc` để kết thúc tìm kiếm.
 
 ## Code block
 

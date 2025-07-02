@@ -18,13 +18,13 @@ Bài toán yêu cầu ta tính tổng của \\(2\\) số \\(A\\) và \\(B\\). D�
 
 Để giải quyết bài toán này, ta thực hiện hai bước chính: **thiết kế thuật toán** và **cài đặt thuật toán**.
 
-Bước thứ nhất, **thiết kế thuật toán**, sẽ yêu cầu ta thiết kế một thuật toán phù hợp để giải quyết bài toán. Nó yêu cầu ta phải có kĩ năng tư duy giải quyết vấn đề và cả tư duy toán học. Thuật toán cần phải nhanh và hiệu quả để có thể giải quyết được bài toán.
+Bước thứ nhất, **thiết kế thuật toán**, sẽ yêu cầu ta thiết kế một thuật toán phù hợp để giải quyết bài toán. Bước này yêu cầu ta phải có kĩ năng tư duy giải quyết vấn đề và cả tư duy toán học. Thuật toán được thiết kế phải nhanh và hiệu quả để có thể giải quyết được bài toán theo các giới hạn của bài.
 
-Thông thường, các bài toán thường sẽ liên quan đến những chủ đề khác nhau: tổ hợp, lí thuyết số, lí thuyết đồ thị, lí thuyết trò chơi, xử lí xâu, cấu trúc dữ liệu,... và việc áp dụng những kiến thức này cộng thêm với các hướng giải quyết mới sẽ giúp ta thiết kế được một thuật toán hiệu quả.
+Thông thường, các bài toán thường sẽ liên quan đến những chủ đề như tổ hợp, lí thuyết số, lí thuyết đồ thị, lí thuyết trò chơi, xử lí xâu, cấu trúc dữ liệu, v.v. Việc áp dụng lí thuyết có sẵn cùng với các hướng giải quyết mới sẽ giúp ta thiết kế thuật toán phù hợp.
 
 Đối với bài toán này, thuật toán sẽ lấy hai số \\(A\\) và \\(B\\), thực hiện việc cộng hai số, và trả về tổng tính được.
 
-Bước thứ hai, **cài đặt thuật toán**, là quá trình thực hiện hóa thuật toán mà ta đã nghĩ ra. Sự hiểu biết về ngôn ngữ lập trình và cách áp dụng nó vào việc cài đặt thuật toán mà một yêu cầu hết sức quan trọng trong quá trình giải quyết bài toán.	 
+Bước thứ hai, **cài đặt thuật toán**, là quá trình thực hiện hóa thuật toán mà ta đã thiết kế. Sự hiểu biết về ngôn ngữ lập trình và cách áp dụng nó vào việc cài đặt thuật toán mà một yêu cầu hết sức quan trọng trong quá trình giải quyết bài toán.	 
 
 Các chương trình cần được viết một cách ngắn gọn và xúc tích (một chương trình dài nhất cũng chỉ tầm vài trăm dòng) bởi trong các cuộc thi lập trình, thời gian là có hạn. Đồng thời, các chương trình cũng phải thỏa mãn những giới hạn mà bài toán đề ra về thời gian thực thi chương trình và giới hạn bộ nhớ mà chương trình được phép sử dụng.
 

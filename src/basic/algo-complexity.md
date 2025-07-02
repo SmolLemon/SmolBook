@@ -16,9 +16,9 @@ Các máy tính khác nhau sẽ có tốc độ xử lí khác nhau - một số
 
 ## Độ phức tạp thời gian 
 
-Độ phức tạp thời gian của một thuật toán sẽ ước tính thời gian chạy của một thuật toán dựa vào kích thước đầu vào để biết được nếu độ hiệu quả của thuật toán. Độ phức tạp thời gian được biểu diễn dưới dạng Big-O với kí hiệu \\(O(...)\\), ta thay thế \\(3\\) dấu chấm với kết quả của việc tính độ phức tạp thời gian. 
+Độ phức tạp thời gian của một thuật toán sẽ ước tính thời gian chạy của một thuật toán dựa vào kích thước đầu vào để biết được nếu độ hiệu quả của thuật toán. Độ phức tạp thời gian được biểu diễn dưới dạng Big-O với kí hiệu \\(O(...)\\).
 
-Thông thường, \\(n\\) dùng để tượng trưng cho kích thước dữ liệu đầu vào. Vì thời gian thực hiện thuật toán có thể thay đổi tùy vào những giá trị khác nhau có trong các dữ liệu đầu vào có cùng kích thước \\(n\\), ta quan tâm nhiều nhất là trường hợp tệ nhất của thuật toán.
+Thông thường, \\(n\\) dùng để tượng trưng cho kích thước dữ liệu đầu vào. Vì thời gian thực hiện thuật toán có thể thay đổi tùy vào những giá trị khác nhau trong dữ liệu đầu vào, dẫu cho chúng có cùng kích thước \\(n\\), nên điều mà ta nên quan tâm chính là các trường hợp tệ nhất của thuật toán.
 
 ### Cách tính độ phức tạp thời gian
 
@@ -34,7 +34,7 @@ Một vòng lặp có độ phức tạp \\(O(n)\\).
 
 ```c++
 for(int i = 1; i <= n; ++i){
-	/* (code) */
+	// code
 }
 ```
 
@@ -43,7 +43,7 @@ Hai vòng lặp lồng nhau có độ phức tạp \\(O(n^{2})\\).
 ```c++
 for(int i = 1; i <= n; ++i){
 	for(int j = 1; j <= n; ++j){
-		/* (code) */
+		// code
 	}
 }
 ```
@@ -54,13 +54,13 @@ Việc tính độ phức tạp thời gian chỉ thể hiện qua độ lớn c
 
 ```c++
 for(int i = 1; i <= 5 * n; ++i){
-	/* (code) */
+	// code
 }
 ```
 
 ```c++
 for(int i = 1; i <= n; i += 2){
-	/* (code) */
+	// code
 }
 ```
 
@@ -70,36 +70,38 @@ Nếu chương trình có nhiều giai đoạn với các độ phức tạp kh�
 
 ```c++
 for(int i = 1; i <= n; ++i){
-	/* (code) */
+	// code
 }
 
 for(int i = 1; i <= n; ++i){
 	for(int j = 1; j <= n; ++j){
-		/* (code) */
+		// code
 	}
 }
 ```
 
-Chương trình trên có \\(2\\) giai đoạn với độ phức tạp lần lượt là \\(O(n)\\) và \\(O(n^{2})\\). Vậy độ phức tạp thời gian của chương trình là \\(O(n^2) + O(n) = O(n^{2})\\).
+Chương trình trên có \\(2\\) giai đoạn với độ phức tạp lần lượt là \\(O(n)\\) và \\(O(n^{2})\\). Vậy độ phức tạp thời gian của chương trình là \\(O(n^2) + O(n) = max(O(n^2), O(n)) = O(n^{2})\\).
 
 Nên nhớ rằng độ phức tạp thời gian chỉ ước tính thời gian của thuật toán dựa trên kích thước đầu vào nên các chương trình như:
 
 ```C++
 for(int i = 1; i <= 100'000; ++i){
-	/* (code) */
+	// code
 }
 ```
 
-Sẽ có độ phức tạp thời gian là \\(O(1)\\), mặc dù đang thực hiện một vòng lặp.
+Sẽ có độ phức tạp thời gian là \\(O(1)\\), mặc dù đang thực hiện một vòng lặp khá lớn.
+
+Đối với các thuật toán có độ phức tạp có logarit (\\(O(\log_{a}{b}), O(n\log_a{n}),\cdots\\)), ta không ghi hệ cơ số của các logarit, tức là các độ phức tạp có logarit sẽ chỉ ghi \\(O(\log{n})\\). Lí do là bởi \\(\log_a{b} = \frac{\log{b}}{\log{a}}\\), và vì \\(\frac{1}{\log{a}}\\) số rất nhỏ nên ta bỏ qua.
 
 #### Các yếu tố khác
 
-Việc tính độ phức tạp thời gian không chỉ có mỗi \\(1\\) giá trị mà còn có thể nhiều hơn. Code dưới đây có độ phức tạp thời gian là \\(O(nm)\\).
+Việc tính độ phức tạp thời gian còn phụ thuộc vào nhiều yếu tố khác. Ví dụ với đoạn dưới đây có độ phức tạp thời gian \\(O(nm)\\).
 
 ```c++
 for(int i = 1; i <= n; ++i){
 	for(int j = 1; j <= m; ++j){
-		/* (code) */
+		// code
 	}
 }
 ```
@@ -138,10 +140,10 @@ Từ đó, độ phức tạp thời gian của thuật toán sẽ là:
 
 ### Một số tên gọi của các độ phức tạp phổ biến
 
-|Độ phức tạp|Tên gọi tiếng anh|Tên gọi tiếng việt|
+|Độ phức tạp|Tên gọi tiếng Anh|Tên gọi tiếng Việt|
 |---|---|---|
 |\\(O(1)\\)| Constant | Hằng số |
-|\\(O(\log{n})\\)| logarithmic | |
+|\\(O(\log{n})\\)| Logarithmic | |
 |\\(O(\sqrt{n})\\)| Square root | |
 |\\(O(n)\\)| Linear | Tuyến tính |
 |\\(O(n^2)\\)| Quadratic | Bậc hai |
@@ -151,20 +153,20 @@ Từ đó, độ phức tạp thời gian của thuật toán sẽ là:
 
 ### Ước tính độ phức tạp thời gian
 
-Ta có thể ước tính độ phức tạp thời gian để xác định xem thuật toán của ta có thể chạy được trong giới hạn thời gian hay không. Máy chấm thường sẽ thực hiện \\(10^8\\) phép tính/giây. Bài cho ta giới hạn 1 giây và ta chạy một thuật toán \\(O(n^2)\\) với \\(n = 10^5\\) thì máy chấm sẽ phải xử lí ít nhất \\((10^5)^{2}\\) = \\(10^{10}\\) phép tính và thời gian chạy sẽ là \\(\frac{10^{10}}{10^8} = 100\\) giây. Vậy là chương trình của ta đã chạy quá thời gian và nhận về lỗi TLE.
+Ta có thể ước tính độ phức tạp thời gian để xác định xem thuật toán của ta có thể chạy được trong giới hạn thời gian hay không. Máy chấm thường sẽ thực hiện \\(10^8\\) phép tính/giây. Nếu bài toán cho ta giới hạn \\(1\\) giây và ta chạy một thuật toán \\(O(n^2)\\) với \\(n = 10^5\\) thì máy chấm sẽ phải xử lí ít nhất \\((10^5)^{2}\\) = \\(10^{10}\\) phép tính và thời gian chạy sẽ tương đương \\(\frac{10^{10}}{10^8} = 100\\) giây. Vậy là chương trình của ta đã chạy quá thời gian và máy chấm trả về kết quả TLE.
 
 Khi biết được giá trị \\(n\\), ta có thể ước tính được độ phức tạp của thuật toán ta cần áp dụng:
 
 |Giá trị của \\(n\\)|Ước tính độ phức tạp|
 |---|---|
 |\\(n \leq 10\\)|\\(O(n!)\\)|
-|\\(n \leq 20\\)|\\(O(2^n)\\)|
+|\\(n \leq 20\\)|\\(O(2^n), O(n^6)\\)|
 |\\(n \leq 100\\)|\\(O(n^4)\\)|
 |\\(n \leq 500\\)|\\(O(n^3)\\)|
 |\\(n \leq 5000\\)|\\(O(n^2)\\)|
-|\\(n \leq 5 \times 10^5\\)|\\(O(n\sqrt{n})\\)|
-|\\(n \leq 10^6\\)|\\(O(n \log{n})\\) hoặc \\(O(n)\\)|
-|\\(n\\) là số lớn|\\(O(1)\\) hoặc \\(O(\log{n})\\)|
+|\\(n \leq 5 \times 10^5\\)|\\(O(n\sqrt{n}), O(n \log^2{n})\\)|
+|\\(n \leq 10^6\\)|\\(O(n), O(n \log{n})\\)|
+|\\(10^9 \le n \le 10^{18}\\)|\\(O(1), O(\log{n})\\)|
 
 ## Độ phức tạp bộ nhớ
 
