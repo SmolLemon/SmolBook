@@ -339,18 +339,18 @@ Các hướng tiếp cận tham lam như chọn những món đồ có khối l�
 
 Ta kí hiệu \\(n\\) là số món đồ, khối lượng và giá trị của từng món lần lượt là \\(w\\) và \\(v\\), và giới hạn khối lượng của cái túi là \\(W\\).
 
-Ta có \\(f(idx, remW)\\) là giá trị mà ta đang có sau khi xét qua \\(idx\\) món đồ, và giới hạn khối lượng hiện tại của túi là \\(remW\\).
+Ta có \\(f(idx, rW)\\) là giá trị mà ta đang có sau khi xét qua \\(idx\\) món đồ, và giới hạn khối lượng còn lại của túi là \\(rW\\).
 
 Ta có hai trường hợp có thể xảy ra:
-- Chọn món đồ thứ \\(idx\\): nếu ta có thể chọn món đồ thứ \\(idx\\) (\\(w_{idx} \le remW\\)), giá trị các món đồ mà ta đã chọn sẽ bằng \\(f(idx - 1, remW - w_{idx}) + v_{idx}\\).
-- Không chọn món đồ thứ \\(idx\\): nếu ta không chọn món đồ thứ \\(idx\\), giá trị các món đồ mà ta chọn sẽ bằng \\(f(idx - 1, remW)\\).
+- Chọn món đồ thứ \\(idx\\): nếu ta có thể chọn món đồ thứ \\(idx\\) (\\(w_{idx} \le rW\\)), giá trị các món đồ mà ta đã chọn sẽ bằng \\(f(idx - 1, rW - w_{idx}) + v_{idx}\\).
+- Không chọn món đồ thứ \\(idx\\): nếu ta không chọn món đồ thứ \\(idx\\), giá trị các món đồ mà ta chọn sẽ bằng \\(f(idx - 1, rW)\\).
 
 Kết quả lớn hơn trong hai trường hợp sẽ là kết quả của hàm \\(f\\).
 
-Từ đây ta có công thức tính \\(f(idx, remW)\\):
-- \\(f(idx, remW) = 0\\) nếu \\(idx = 0\\) hoặc \\(remW = 0\\): không còn món đồ để chọn hoặc túi hết chỗ chứa.
-- \\(f(idx, remW) = f(idx - 1, remW)\\) nếu \\(remW \lt w_{idx}\\).
-- \\(f(idx, remW) = max(f(idx - 1, remW), f(idx - 1, remW - w_{idx}) + v_{idx})\\) nếu \\(remW \ge w_{idx}\\).
+Từ đây ta có công thức tính \\(f(idx, rW)\\):
+- \\(f(idx, rW) = 0\\) nếu \\(idx = 0\\) hoặc \\(rW = 0\\): không còn món đồ để chọn hoặc túi hết chỗ chứa.
+- \\(f(idx, rW) = f(idx - 1, rW)\\) nếu \\(rW \lt w_{idx}\\).
+- \\(f(idx, rW) = max(f(idx - 1, rW), f(idx - 1, rW - w_{idx}) + v_{idx})\\) nếu \\(rW \ge w_{idx}\\).
 
 Kết quả của bài toán bằng \\(f(n, W)\\).
 
