@@ -4,7 +4,7 @@
 
 ## Thuật toán
 
-Việc giải một bài toán về lập trình thi đấu, ta cần có **thuật toán (algorithm)**. Thuật toán là một tập hợp những chỉ dẫn, thường được thực hiện bằng máy tính, nhằm giải quyết một vấn đề nào đó.
+Việc giải một bài toán về lập trình thi đấu, ta cần có **thuật toán (algorithm)**. Thuật toán là một tập hợp những chỉ dẫn, thường được thực hiện bằng máy tính, nhằm giải quyết một vấn đề cụ thể.
 
 Trong hầu hết các trường hợp, thuật toán có dạng như sau: 
 
@@ -18,15 +18,15 @@ Bài toán yêu cầu ta tính tổng của \\(2\\) số \\(A\\) và \\(B\\). D�
 
 Để giải quyết bài toán này, ta thực hiện hai bước chính: **thiết kế thuật toán** và **cài đặt thuật toán**.
 
-Bước thứ nhất, **thiết kế thuật toán**, sẽ yêu cầu ta thiết kế một thuật toán phù hợp để giải quyết bài toán. Bước này yêu cầu ta phải có kĩ năng tư duy giải quyết vấn đề và cả tư duy toán học. Thuật toán được thiết kế phải nhanh và hiệu quả để có thể giải quyết được bài toán theo các giới hạn của bài.
+Bước thứ nhất, **thiết kế thuật toán**, yêu cầu ta thiết kế một thuật toán phù hợp để giải quyết bài toán. Bước này yêu cầu ta phải có kĩ năng tư duy giải quyết vấn đề. Thuật toán được thiết kế phải nhanh và hiệu quả để có thể giải quyết được bài toán theo các giới hạn mà bài đề ra.
 
-Thông thường, các bài toán thường sẽ liên quan đến những chủ đề như tổ hợp, lí thuyết số, lí thuyết đồ thị, lí thuyết trò chơi, xử lí xâu, cấu trúc dữ liệu, v.v. Việc áp dụng lí thuyết có sẵn cùng với các hướng giải quyết mới sẽ giúp ta thiết kế thuật toán phù hợp.
+Thông thường, các bài toán thường sẽ liên quan đến những chủ đề như tổ hợp, lí thuyết số, lí thuyết đồ thị, lí thuyết trò chơi, xử lí xâu, v.v. Việc áp dụng lí thuyết sẵn có cùng với các hướng giải quyết mới sẽ giúp ta thiết kế thuật toán phù hợp.
 
 Đối với bài toán này, thuật toán sẽ lấy hai số \\(A\\) và \\(B\\), thực hiện việc cộng hai số, và trả về tổng tính được.
 
-Bước thứ hai, **cài đặt thuật toán**, là quá trình thực hiện hóa thuật toán mà ta đã thiết kế. Sự hiểu biết về ngôn ngữ lập trình và cách áp dụng nó vào việc cài đặt thuật toán mà một yêu cầu hết sức quan trọng trong quá trình giải quyết bài toán.	 
+Bước thứ hai, **cài đặt thuật toán**, là quá trình biến thuật toán mà ta đã thiết kế thành một chương trình máy tính. Sự hiểu biết về ngôn ngữ lập trình và cách áp dụng nó vào việc cài đặt thuật toán mà một yêu cầu hết sức quan trọng trong quá trình giải quyết bài toán.	 
 
-Các chương trình cần được viết một cách ngắn gọn và xúc tích (một chương trình dài nhất cũng chỉ tầm vài trăm dòng) bởi trong các cuộc thi lập trình, thời gian là có hạn. Đồng thời, các chương trình cũng phải thỏa mãn những giới hạn mà bài toán đề ra về thời gian thực thi chương trình và giới hạn bộ nhớ mà chương trình được phép sử dụng.
+Các chương trình cần được viết một cách ngắn gọn và xúc tích (một chương trình dài nhất cũng chỉ nên dài khoảng vài trăm dòng) bởi trong các cuộc thi lập trình: thời gian là có hạn. Các chương trình cũng phải thoả mãn những giới hạn mà bài toán đề ra như thời gian thực thi và bộ nhớ được sử dụng.
 
 Dưới đây là một chương trình C++ giải quyết bài toán *A cộng B*.
 
@@ -51,7 +51,7 @@ Khi ta nộp chương trình lên các *trình chấm*, máy chấm sẽ chạy 
 
 |Kết quả|Ý nghĩa|
 |---|---|
-|<span style="color:Green">Accepted (AC)</span>| Chương trình in kết quả đúng và thỏa mãn các yêu cầu của bài.|
+|<span style="color:Green">Accepted (AC)</span>| Chương trình in kết quả đúng và thoả mãn các yêu cầu của bài.|
 |<span style="color:Red">Wrong Answer (WA)</span>| Chương trình cho ra kết quả sai.|
 |<span style="color:gray;">Compilation Error (CE)</span>| Chương trình bị lỗi biên dịch.|
 |<span style="color:Orange">Runtime Error (RTE)</span>| Chương trình gặp lỗi khi chạy.|
@@ -60,7 +60,7 @@ Khi ta nộp chương trình lên các *trình chấm*, máy chấm sẽ chạy 
 |<span style="color:gray;">Time Limit Exceeded (TLE)</span>| Chương trình chạy quá thời gian quy định.|
 |<span style="color:Red">Internal Error (IE)</span>| Lỗi đến từ hệ thống máy chấm.|
 
-Tùy theo *thể thức* mà điểm cho mỗi bài sẽ khác nhau. Có thể thức sẽ tính điểm theo số lượng testcase AC, có thể thức chỉ cho điểm khi ta AC toàn bộ các testcase. 
+Tùy vào *thể thức* của mỗi cuộc thi mà điểm cho mỗi bài sẽ khác nhau. Có thể thức sẽ tính điểm theo số lượng testcase AC, có thể thức chỉ cho điểm khi ta AC toàn bộ các testcase. 
 
 #### Subtask
 
@@ -92,7 +92,7 @@ Ta có thể gọi các kì thi HSGQG là các cuộc thi Olympic trong nước,
 
 ### Kì thi chọn Học sinh giỏi khu vực Duyên Hải và đồng bằng Bắc Bộ (môn Tin học)
 
-Kì thi do Hội các trường THPT chuyên khu vực duyên hải và đồng bằng Bắc Bộ tổ chức hằng năm. Kì thi là dịp phát hiện học sinh giỏi, học sinh xuất sắc các bộ môn để các trường THPT chuyên có kế hoạch lựa chọn, bồi dưỡng các em tham gia các kì thi học sinh giỏi quốc gia, khu vực và quốc tế. Đồng thời là dịp để đội ngũ cán bộ quản lý và giáo viên các trường THPT chuyên trao đổi, chia sẻ kinh nghiệm, nâng cao trình độ chuyên môn bồi dưỡng môn chuyên và học sinh giỏi[^3].
+Kì thi do Hội các trường THPT chuyên khu vực duyên hải và đồng bằng Bắc Bộ tổ chức hằng năm. Kì thi là dịp phát hiện học sinh giỏi, học sinh xuất sắc các bộ môn để các trường THPT chuyên có kế hoạch lựa chọn, bồi dưỡng các em tham gia các kì thi học sinh giỏi quốc gia, khu vực và quốc tế. Đồng thời là dịp để đội ngũ cán bộ quản lí và giáo viên các trường THPT chuyên trao đổi, chia sẻ kinh nghiệm, nâng cao trình độ chuyên môn bồi dưỡng môn chuyên và học sinh giỏi[^3].
 
 ### Kì thi Olympic Tin học Miền Trung - Tây Nguyên
 
@@ -124,14 +124,14 @@ Ngoài các cuộc thi lập trình thi đấu trực tiếp, nhiều trang web 
 
 --- 
 
-[^1]: <https://vi.wikipedia.org/wiki/Kỳ_thi_chọn_học_sinh_giỏi_quốc_gia_trung_học_phổ_thông>
+[^1]: Wikipedia, *Kỳ thi chọn học sinh giỏi quốc gia trung học phổ thông*, <https://vi.wikipedia.org/wiki/Kỳ_thi_chọn_học_sinh_giỏi_quốc_gia_trung_học_phổ_thông> [Truy cập ngày 27/6/2025]
 
-[^2]: <http://www.thpt-lehongphong-tphcm.edu.vn/vi/content/ky-thi-olympic-truyen-thong-304-lan-thu-xxvi-nam-2021>
+[^2]: ITC - lehongphong.edu.vn, *Kỳ thi Olympic truyền thống 30/4 lần thứ XXVI năm 2021*, Trường THPT Chuyên Lê Hồng Phong - Tp. Hồ Chí Minh, 2021. <http://www.thpt-lehongphong-tphcm.edu.vn/vi/content/ky-thi-olympic-truyen-thong-304-lan-thu-xxvi-nam-2021> [Truy cập ngày 27/6/2025]
 
-[^3]: <https://baohaiduong.vn/gan-2-000-hoc-sinh-khu-vuc-duyen-hai-va-dong-bang-bac-bo-thi-chon-hoc-sinh-gioi-tai-tp-hai-duong-387551.html>
+[^3]: Thế Anh, *Gần 2.000 học sinh khu vực duyên hải và đồng bằng Bắc Bộ thi chọn học sinh giỏi tại TP Hải Dương*, Báo Hải Phòng, 2024. <https://baohaiduong.vn/gan-2-000-hoc-sinh-khu-vuc-duyen-hai-va-dong-bang-bac-bo-thi-chon-hoc-sinh-gioi-tai-tp-hai-duong-387551.html> [Truy cập ngày 27/6/2025]
 
-[^4]:<https://vku.udn.vn/vi/olympic-tin-hoc-mien-trung-tay-nguyen-lan-thu-vi-2025-khang-dinh-uy-tin-chat-luong-cua-mot-ky-thi-dat-chuan-muc-quoc-gia-va-quoc-te-voi-su-menh-phat-hien-va-uom-tao-nhan-tai-so/>
+[^4]: Trung tâm Học liệu và Truyền thông, *Olympic Tin học Miền Trung-Tây Nguyên lần thứ VI – 2025: khẳng định uy tín, chất lượng của một kỳ thi đạt chuẩn mực quốc gia và quốc tế với sứ mệnh phát hiện và ươm tạo nhân tài số*, Trường Đại học Công nghệ Thông tin và Truyền thông Việt – Hàn, Đại học Đà Nẵng, 2025. <https://vku.udn.vn/vi/olympic-tin-hoc-mien-trung-tay-nguyen-lan-thu-vi-2025-khang-dinh-uy-tin-chat-luong-cua-mot-ky-thi-dat-chuan-muc-quoc-gia-va-quoc-te-voi-su-menh-phat-hien-va-uom-tao-nhan-tai-so/> [Truy cập ngày 27/6/2025]
 
-[^5]: <https://hue-ictc.husc.edu.vn/>
+[^5]: HUE-ICTC 2025, <https://hue-ictc.husc.edu.vn/> [Truy cập ngày 27/6/2025]
 
-[^6]: <https://icpc.global/>
+[^6]: icpc.foundation, <https://icpc.global/> [Truy cập ngày 27/3/2025]

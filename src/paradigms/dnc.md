@@ -46,7 +46,7 @@ Thuật toán sẽ bao gồm các bước:
 
 ## Độ phức tạp thuật toán
  
-Để tính độ phức tạp của các thuật toán áp dụng mô hình chia để trị, ta tiến hành phân tích thuật toán bằng [định lí Master](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)).
+Để tính độ phức tạp của các thuật toán áp dụng mô hình chia để trị, ta tiến hành phân tích thuật toán bằng [định lí thợ](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)).
 
 Giả sử \\(T(n)\\) là số thao tác cần thực hiên của một thuật toán, ta có:
 
@@ -56,7 +56,7 @@ với \\(n\\) là kích thước của dữ liệu, hai hằng số \\(a\\), \\(
 
 Sử dụng công thức này, có thể tích được độ phức tạp của các thuật toán. Ví dụ với thuật toán Merge Sort thì ta có: \\(T(n) = 2T(n / 2) + O(n)\\), từ đây suy ra độ phức tạp sẽ là \\(O(n \log{n})\\).
 
-Có thể xem thông tin về định lí Master tại các nguồn tài liệu khác để hiểu thêm.
+Có thể xem thông tin về định lí thợ tại các nguồn tài liệu khác để hiểu thêm.
 
 ## Phần tử nhỏ thứ \\(k\\)
 
@@ -200,7 +200,7 @@ double closest_pair(vector<point> &p){
 }
 ```
 
-Ta có thể tính được độ phức tạp của thuật toán này bằng định lí master. Ta có:
+Ta có thể tính được độ phức tạp của thuật toán này bằng định lí thợ. Ta có:
 
 \\[T(n) = 2T(n / 2) + O(n\log{n}) \rightarrow T(n) = O(n \log^2{n})\\]
 

@@ -346,7 +346,6 @@ stack<int> st;
 
 void dfs(int u){
     num[u] = low[u] = ++tdfs;
-    vst[u] = 1;
     st.push(u);
     for(int v : adj[u]){
         if(num[v] == 0) dfs(v);

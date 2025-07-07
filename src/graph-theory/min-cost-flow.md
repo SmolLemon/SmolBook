@@ -29,8 +29,8 @@ Ta sẽ xây dựng thuật toán giải quyết bài toán này dựa theo phư
 
 Để xây dựng [đồ thị thặng dư](flow-network.md#Đồ-thị-thặng-dư) \\(G^f\\) cho mạng \\(G\\), ta cần tạo một đồ thị có hướng sao cho:
 - **Đỉnh**: Các đỉnh có trong \\(G\\) đều có trong \\(G^f\\), hay \\(G^f(V) = G(V)\\).
-- **Cạnh xuôi**: Với mỗi cung \\(uv\\) có trong \\(G\\), sẽ tồn tại một cạnh có hướng \\(uv\\) trong \\(G^f\\) có sức chứa thặng dư bằng \\(c(uv) - f(uv)\\) và có chi phí bằng \\(a(uv)\\). 
-- **Cạnh ngược**: Với mỗi cung \\(uv\\) có trong \\(G\\), sẽ tồn tại một cạnh có hướng \\(vu\\) trong \\(G^f\\) có sức chứa thặng dư bằng \\(f(uv)\\) và có chi phí bằng \\(-a(uv)\\). 
+- **Cạnh xuôi**: Với mỗi cung \\(uv\\) có trong \\(G\\), sẽ tồn tại một cạnh có hướng \\(uv\\) trong \\(G^f\\) có sức chứa thặng dư bằng \\(c^f(uv) = c(uv) - f(uv)\\) và có chi phí bằng \\(a(uv)\\). 
+- **Cạnh ngược**: Với mỗi cung \\(uv\\) có trong \\(G\\), sẽ tồn tại một cạnh có hướng \\(vu\\) trong \\(G^f\\) có sức chứa thặng dư bằng \\(c^f(vu) = f(uv)\\) và có chi phí bằng \\(-a(uv)\\). 
 
 <center>
 <img src="../images/residual_graph_with_cost.png" alt="Đồ thị thặng dư kèm theo chi phí"/>

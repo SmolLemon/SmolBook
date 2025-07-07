@@ -35,8 +35,8 @@ Từ hai kí hiệu này, ta có thể viết lại rằng buộc cân bằng: \
 
 Một **đồ thị thặng dư (residual graph)** \\(G^f\\) của một mạng \\(G\\) là một đồ thị có hướng sao cho:
 - **Đỉnh**: Các đỉnh có trong \\(G\\) đều có trong \\(G^f\\), hay \\(G^f(V) = G(V)\\).
-- **Cạnh xuôi**: Với mỗi cung \\(uv\\) có trong \\(G\\), sẽ tồn tại một cạnh có hướng \\(uv\\) trong \\(G^f\\) có trọng số chỉ **sức chứa thặng dư (residual capacity)** bằng \\(c(uv) - f(uv)\\). 
-- **Cạnh ngược**: Với mỗi cung \\(uv\\) có trong \\(G\\), sẽ tồn tại một cạnh có hướng \\(vu\\) trong \\(G^f\\) có trọng số chỉ sức chứa thặng dư bằng \\(f(uv)\\). 
+- **Cạnh xuôi**: Với mỗi cung \\(uv\\) có trong \\(G\\), sẽ tồn tại một cạnh có hướng \\(uv\\) trong \\(G^f\\) có trọng số chỉ **sức chứa thặng dư (residual capacity)** bằng \\(c^f(uv) = c(uv) - f(uv)\\). 
+- **Cạnh ngược**: Với mỗi cung \\(uv\\) có trong \\(G\\), sẽ tồn tại một cạnh có hướng \\(vu\\) trong \\(G^f\\) có trọng số chỉ sức chứa thặng dư bằng \\(c^f(vu) = f(uv)\\). 
 
 Ở ví dụ dưới đây, ta có một mạng và đồ thị thặng dư của nó.
 
@@ -54,11 +54,11 @@ Ta có thể hiểu sức chứa thặng dư của các cạnh xuôi và ngượ
 
 ### Đường tăng luồng
 
-Một **đường tăng luồng (augmenting path)** trên đồ thị thặng dư là một đường đi từ đỉnh nguồn đến đỉnh thu sao cho các cặp cạnh trên đường đi có sức chứa thặng dư dương. Ta có một đường tăng luồng \\(P = (u_1, u_2, \dots, u_k)\\) với \\(u_1 = s\\) và \\(u_k = t\\) thỏa mãn \\(c(u_iu_{i + 1}) > 0\\) với mọi \\(i \lt k\\). 
+Một **đường tăng luồng (augmenting path)** trên đồ thị thặng dư là một đường đi từ đỉnh nguồn đến đỉnh thu sao cho các cặp cạnh trên đường đi có sức chứa thặng dư dương. Ta có một đường tăng luồng \\(P = (u_1, u_2, \dots, u_k)\\) với \\(u_1 = s\\) và \\(u_k = t\\) thỏa mãn \\(c^f(u_iu_{i + 1}) > 0\\) với mọi \\(i \lt k\\). 
 
 **Điểm nghẽn** \\(bottleneck(P, f)\\) của đường tăng luồng \\(P\\) bằng sức chứa thặng dư nhỏ nhất trong tất cả các cạnh của đường đi.
 
-Ta có thể tăng luồng trên đồ thị thặng dư bằng cách tăng một lượng luồng trên các cạnh của đường tăng luồng một lượng bằng với điểm nghẽn của đường tăng luồng ấy. Khi thực hiện tăng luồng trên cạnh \\(uv\\) của đường tăng luồng \\(P\\), ta tăng \\(c(uv)\\) một khoảng bằng \\(bottleneck(P, f)\\) và giảm \\(c(vu)\\) một khoảng tương tự. 
+Ta có thể tăng luồng trên đồ thị thặng dư bằng cách tăng một lượng luồng trên các cạnh của đường tăng luồng một lượng bằng với điểm nghẽn của đường tăng luồng ấy. Khi thực hiện cho luồng đi qua cạnh \\(uv\\) của đường tăng luồng \\(P\\), ta tăng \\(c^f(uv)\\) một khoảng bằng \\(bottleneck(P, f)\\) và giảm \\(c^f(vu)\\) một khoảng tương tự. 
 
 <center>
 <img src="../images/augmenting_path_1.png" alt="Đường tăng luồng"/>
