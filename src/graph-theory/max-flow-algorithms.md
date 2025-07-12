@@ -124,7 +124,7 @@ struct EdmondsKarp{
     ll bfs(){
         // tìm đường tăng luồng
         queue<pair<int, ll>> q;
-        vst[s] = cnt;
+        vst[s] = ++cnt;
         q.push({s, LLONG_MAX});
         int u, v; ll bottleneck, c, tmp;
 
@@ -149,7 +149,7 @@ struct EdmondsKarp{
     ll maxflow(){
         ll flow = 0;
         ll bottleneck;
-        while((++cnt, bottleneck = bfs()) > 0){ // tìm thấy đường tăng luồng
+        while((bottleneck = bfs()) > 0){ // tìm thấy đường tăng luồng
             // tăng luồng
             flow += bottleneck; 
             int cur = t;

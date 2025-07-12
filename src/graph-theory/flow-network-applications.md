@@ -83,7 +83,7 @@ Sau khi tìm được luồng cực đại của đồ thị, vì các giá tr�
 
 ## Vòng loại bóng chày
 
-Bài toán vòng loại bóng chày (baseball elimination) được phát biểu như sau: có một giải đấu bóng chày bao gồm \\(n\\) đội, mỗi đội có \\(w_i\\) trận thắng, \\(l_i\\) trận thua, \\(r_i\\) trận còn lại cần phải chơi, và \\(g_{i, j}\\) trận với các đội \\(j\\). Nhiệm vụ của ta là xét xem những đội nào không còn khả năng vô địch, tức là dù kết quả ra sao thì đội đó cũng không đứng nhất bảng hoặc đồng hạng nhất. Ta giả sử không có trận hoà và tất cả trận đấu đều được diễn ra.
+Bài toán vòng loại bóng chày (baseball elimination) được phát biểu như sau: có một giải đấu bóng chày bao gồm \\(n\\) đội, mỗi đội có \\(w_i\\) trận thắng, \\(l_i\\) trận thua, \\(r_i\\) trận còn lại cần phải chơi, và \\(g_{i, j}\\) trận với các đội \\(j\\). Nhiệm vụ của ta là xét xem những đội nào không còn khả năng vô địch, tức là dù kết quả ra sao thì đội đó cũng không đứng nhất bảng. Ta giả sử không có trận hoà và tất cả trận đấu đều được diễn ra.
 
 Đối với trường hợp đơn giản, ta có thể xác định đội \\(x\\) không có khả năng vô địch giải đấu nếu tồn tại một đội \\(y\\) sao cho \\(w_x + r_x \lt w_y\\).
 
@@ -102,9 +102,11 @@ Bài toán vòng loại bóng chày (baseball elimination) được phát biểu
 
 Đơn giản hơn, ta có thể xác định đội \\(x\\) có khả năng vô địch giải đấu nếu giá trị luồng cực đại \\(v(f^\*)\\) bằng tổng sức chứa \\(g_{i, j}\\) các cung \\(\\{s, (i, j)\\}\\) và không thể nếu ngược lại.
 
+Nếu bài toán có điều kiện rằng nhiều đội đồng hạng nhất thì không có nhà vô địch thì ta sửa lại sức chứa các cung \\(it\\) bằng \\(w_x + r_x - w_i - 1\\). 
+
 ## Chọn dự án
 
-Bài toán chọn dự án được phát biểu như sau: hiện tại có một công ty đang thực hiện \\(n\\) dự án \\(P\\), mỗi dự án sẽ đem về số tiền \\(p_i\\). Các dự án có thể sinh lời (\\(p_i > 0\\) - các khoá học, khu vui chơi, mở cửa hàng, v.v.) hoặc thu lỗ (\\(p_i < 0\\) - xậy dựng cơ sở hạ tầng, cập nhập trang thiết bị). Các dự án có thể phụ thuộc lẫn nhau, được biểu thị bằng các cặp trong \\(E\\), ví dụ: nếu \\(uv \in E\\), thì ta cần phải thực hiện dự án \\(v\\) thì ta cần phải thực hiện dự án \\(v\\). Nhiệm vụ của ta là chọn các dự án sao cho thoả mãn điều kiện, đồng thời số tiền thu được từ các dự án phải lớn nhất có thể.
+Bài toán chọn dự án được phát biểu như sau: hiện tại có một công ty đang thực hiện \\(n\\) dự án \\(P\\), mỗi dự án sẽ đem về số tiền \\(p_i\\). Các dự án có thể sinh lời (\\(p_i > 0\\) - các khoá học, khu vui chơi, mở cửa hàng, v.v.) hoặc thu lỗ (\\(p_i < 0\\) - xậy dựng cơ sở hạ tầng, cập nhập trang thiết bị). Các dự án có thể phụ thuộc lẫn nhau, được biểu thị bằng các cặp trong \\(E\\), ví dụ: nếu \\(uv \in E\\), thì ta cần phải thực hiện dự án \\(u\\) thì ta cần phải thực hiện dự án \\(v\\). Nhiệm vụ của ta là chọn các dự án sao cho thoả mãn điều kiện, đồng thời số tiền thu được từ các dự án phải lớn nhất có thể.
 
 <center>
 <img src="../images/project_selection.png" alt="Các dự án và các yêu cầu">
