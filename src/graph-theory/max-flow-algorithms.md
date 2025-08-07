@@ -256,7 +256,7 @@ struct Dinic{
     ll maxflow(){
         ll flow = 0;
         ll bottleneck;
-        while(bfs()) { // // tồn tại đường tăng luồng
+        while(bfs()) { // tồn tại đường tăng luồng
             fill(idx.begin(), idx.end(), 0);
             while((bottleneck = dfs(s)) > 0){ // tìm thấy đường tăng luồng
                 flow += bottleneck;

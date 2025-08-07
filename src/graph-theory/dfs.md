@@ -1,4 +1,4 @@
-# Thuật toán tìm kiếm theo chiều sâu (Depth-First Search - DFS)
+# Thuật toán tìm kiếm theo chiều sâu
 
 **Thuật toán tìm kiếm theo chiều sâu (Depth-First Search - DFS)** là một thuật toán tìm kiếm trên đồ thị.
 

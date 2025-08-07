@@ -1,6 +1,6 @@
 # Modulo
 
-Ta có đồng hồ điện tử sau.
+Đây là một chiếc đồng hồ điện tử.
 
 <center>
 <img src="../images/1280px-Telechron_clock_2H07-Br_Administrator.JPG" alt="Đồng hồ"/>

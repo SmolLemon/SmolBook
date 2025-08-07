@@ -143,12 +143,13 @@ Từ đó, độ phức tạp thời gian của thuật toán sẽ là:
 |Độ phức tạp|Tên gọi tiếng Anh|Tên gọi tiếng Việt|
 |---|---|---|
 |\\(O(1)\\)| Constant | Hằng số |
-|\\(O(\log{n})\\)| Logarithmic | |
-|\\(O(\sqrt{n})\\)| Square root | |
+|\\(O(\log{n})\\)| Logarithmic | Logarit|
+|\\(O(\sqrt{n})\\)| Square root | Căn bậc hai (căn)|
 |\\(O(n)\\)| Linear | Tuyến tính |
+|\\(O(n\log{n})\\)| Linearithmic |  |
 |\\(O(n^2)\\)| Quadratic | Bậc hai |
 |\\(O(n^3)\\)| Cubic | Bậc ba |
-|\\(O(n^k)\\)| Polynomial |  |
+|\\(O(n^k)\\)| Polynomial |  Luỹ thừa|
 |\\(O(C^n)\\)| Exponential | Hàm mũ |
 
 ### Ước tính độ phức tạp thời gian

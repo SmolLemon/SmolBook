@@ -4,7 +4,7 @@
 
 ## Thuật toán
 
-Việc giải một bài toán về lập trình thi đấu, ta cần có **thuật toán (algorithm)**. Thuật toán là một tập hợp những chỉ dẫn, thường được thực hiện bằng máy tính, nhằm giải quyết một vấn đề cụ thể.
+Để giải một bài toán về lập trình thi đấu, ta cần sử dụng **thuật toán (algorithm)**. Thuật toán là một tập hợp hữu hạn các bước, mỗi bước là các phép toán hoặc thao tác cụ thể, nhằm giải quyết một vấn đề.
 
 Trong hầu hết các trường hợp, thuật toán có dạng như sau: 
 
@@ -20,7 +20,7 @@ Bài toán yêu cầu ta tính tổng của \\(2\\) số \\(A\\) và \\(B\\). D�
 
 Bước thứ nhất, **thiết kế thuật toán**, yêu cầu ta thiết kế một thuật toán phù hợp để giải quyết bài toán. Bước này yêu cầu ta phải có kĩ năng tư duy giải quyết vấn đề. Thuật toán được thiết kế phải nhanh và hiệu quả để có thể giải quyết được bài toán theo các giới hạn mà bài đề ra.
 
-Thông thường, các bài toán thường sẽ liên quan đến những chủ đề như tổ hợp, lí thuyết số, lí thuyết đồ thị, lí thuyết trò chơi, xử lí xâu, v.v. Việc áp dụng lí thuyết sẵn có cùng với các hướng giải quyết mới sẽ giúp ta thiết kế thuật toán phù hợp.
+Thông thường, các bài toán thường sẽ liên quan đến những chủ đề như tổ hợp, lí thuyết đồ thị, xử lí xâu, v.v. Việc áp dụng lí thuyết sẵn có cùng với các hướng giải quyết mới sẽ giúp ta thiết kế thuật toán phù hợp.
 
 Đối với bài toán này, thuật toán sẽ lấy hai số \\(A\\) và \\(B\\), thực hiện việc cộng hai số, và trả về tổng tính được.
 
@@ -64,7 +64,7 @@ Tùy vào *thể thức* của mỗi cuộc thi mà điểm cho mỗi bài sẽ 
 
 #### Subtask
 
-Một số bài toán sẽ chia các testcase theo các nhóm khác nhau, giúp thí sinh giành được một phần điểm số cho bài toán. Các nhóm testcase này được gọi là subtask. Các subtask thường sẽ chứa những testcase có các giới hạn về dữ liệu đầu vào nhỏ hơn giới hạn bài toán, hoặc có một số tính chất đặc biệt nào đó, hoặc cả hai.
+Một số bài toán sẽ chia các testcase theo các nhóm khác nhau, giúp thí sinh giành được một phần điểm số của bài toán. Các nhóm testcase này được gọi là subtask. Các subtask thường sẽ chứa những testcase có các giới hạn về dữ liệu đầu vào nhỏ hơn giới hạn bài toán, hoặc có một số tính chất đặc biệt nào đó, hoặc cả hai.
 
 ## Vì sao cần lập trình thi đấu?
 

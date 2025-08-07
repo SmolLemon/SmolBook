@@ -1,4 +1,4 @@
-# Thuật toán tìm kiếm theo chiều rộng (Breadth-First Search - BFS)
+# Thuật toán tìm kiếm theo chiều rộng
 
 **Thuật toán tìm kiếm theo chiều rộng (Breadth-First Search - BFS)** là một thuật toán tìm kiếm trên đồ thị.
 
