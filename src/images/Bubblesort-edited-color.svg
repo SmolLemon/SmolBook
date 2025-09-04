@@ -1,0 +1,98 @@
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 825" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <defs>
+  <marker id="l" refY="0" refX="0" orient="auto" overflow="visible">
+   <path d="m5.77 0-8.65 5v-10l8.65 5z" fill-rule="evenodd" transform="scale(.2)" stroke="#7646be" stroke-width="1pt" fill="#7646be"/>
+  </marker>
+  <marker id="m" refY="0" refX="0" orient="auto" overflow="visible">
+   <path d="m-2.5-1c0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5 5 2.24 5 5z" fill-rule="evenodd" transform="matrix(.2 0 0 .2 1.48 .2)" stroke="#8c64c8" stroke-width="1pt" fill="#8c64c8"/>
+  </marker>
+  <linearGradient id="c" gradientTransform="translate(-26.246 232)">
+   <stop stop-color="#ff8000" offset="0"/>
+  </linearGradient>
+  <linearGradient id="b">
+   <stop stop-color="#fff65f" offset="0"/>
+  </linearGradient>
+  <linearGradient id="k" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#4b4b50" offset="0"/>
+  </linearGradient>
+  <linearGradient id="j" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#b92864" offset="0"/>
+  </linearGradient>
+  <linearGradient id="i" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#50b4af" offset="0"/>
+  </linearGradient>
+  <linearGradient id="h" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#82f0dc" offset="0"/>
+  </linearGradient>
+  <linearGradient id="g" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#55b4fa" offset="0"/>
+  </linearGradient>
+  <linearGradient id="f" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#8c64c8" offset="0"/>
+  </linearGradient>
+  <linearGradient id="e" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#f0f0c8" offset="0"/>
+  </linearGradient>
+  <linearGradient id="d" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop offset="0"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(75 -227.36)">
+  <use xlink:href="#a" transform="translate(60)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(120)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(180)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(240)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(300)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(360)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(420)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(480)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(540)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(600)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(660)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(720)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(780)" height="100%" width="100%" y="0" x="0"/>
+  <rect id="a" height="825" width="30" y="227.36" x="15" fill="#f0f0f0"/>
+ </g>
+ <g stroke-linejoin="round" transform="translate(75,-75)" fill="none">
+  <g stroke-linecap="round">
+   <path d="m-15 750h240l30 75h600" stroke="#dddd81" stroke-width="20"/>
+   <path d="m-15 750h240l30 75h600" stroke="url(#e)" stroke-width="18"/>
+  </g>
+  <g stroke-linecap="round">
+   <path d="m-15 150h30l210 525h180l30 75h420" stroke="#303034" stroke-width="20"/>
+   <path d="m-15 150h30l210 525h180l30 75h420" stroke="url(#k)" stroke-width="18"/>
+  </g>
+  <g stroke-linecap="round">
+   <path d="m-15 300h60l30-75h180l150 375h120l30 75h300" stroke="#c86400" stroke-width="20"/>
+   <path d="m-15 300h60l30-75h180l150 375h120l30 75h300" stroke="url(#c)" stroke-width="18"/>
+  </g>
+  <g stroke-linecap="round">
+   <path d="m-15 525h150l30-75h150l30-75h120l60 150h90l30 75h210" stroke="#43e9cb" stroke-width="20"/>
+   <path d="m-15 525h150l30-75h150l30-75h120l60 150h90l30 75h210" stroke="url(#h)" stroke-width="18"/>
+  </g>
+  <g stroke-linecap="round">
+   <path d="m-15 450h120l30-75h150l30-75h240l60 150h90l30 75h120" stroke="#429a96" stroke-width="20"/>
+   <path d="m-15 450h120l30-75h150l30-75h240l60 150h90l30 75h120" stroke="url(#i)" stroke-width="18"/>
+  </g>
+  <g stroke-linecap="round">
+   <path d="m-15 825h240l30-75h150l30-75h90l30-75h60l30-75h60l30-75h120" stroke="url(#d)" stroke-width="20"/>
+   <path d="m-15 825h240l30-75h150l30-75h90l30-75h60l30-75h60l30-75h120" stroke="#191919" stroke-width="18"/>
+  </g>
+  <g stroke-linecap="round">
+   <path d="m-15 225h30l30-75h390l30 75h180l60 150h150" stroke="#942050" stroke-width="20"/>
+   <path d="m-15 225h30l30-75h390l30 75h180l60 150h150" stroke="url(#j)" stroke-width="18"/>
+  </g>
+  <g stroke-linecap="round">
+   <path d="m-15 375h90l30-75h150l30-75h150l30-75h270l60 150h60" stroke="#dcd000" stroke-width="20"/>
+   <path d="m-15 375h90l30-75h150l30-75h150l30-75h270l60 150h60" stroke="url(#b)" stroke-width="18"/>
+  </g>
+  <g stroke-linecap="round">
+   <path d="m-15 600h180l30-75h150l30-75h90l30-75h60l30-75h60l30-75h60l30-75h30l30 75h30" stroke="#33a5f9" stroke-width="20"/>
+   <path d="m-15 600h180l30-75h150l30-75h90l30-75h60l30-75h60l30-75h60l30-75h30l30 75h30" stroke="url(#g)" stroke-width="18"/>
+  </g>
+  <g>
+   <path d="m-15 675h210l30-75h150l30-75h90l30-75h60l30-75h60l30-75h60l60-150h30" marker-start="url(#l)" stroke="#7646be" stroke-linecap="round" stroke-width="20"/>
+   <path marker-end="url(#m)" d="m-15 675h210l30-75h150l30-75h90l30-75h60l30-75h60l30-75h60l60-150h30" stroke="url(#f)" stroke-width="18"/>
+  </g>
+ </g>
+</svg>

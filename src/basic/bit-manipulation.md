@@ -2,19 +2,19 @@
 
 ## Số nhị phân
 
-Một số nhị phân là một số được biểu diễn trong hệ cơ số \\(2\\) - các được biểu diễn bằng \\(2\\) chữ số \\(0\\) và \\(1\\).
+Trong cuộc sống thường ngày, ta sử dụng số thập phân với các chữ số từ \\(0\\) đến \\(9\\) trong để biểu diễn số. Khác với chúng ta, máy tính sử dụng số nhị phân, với hai chữ số \\(0\\) và \\(1\\), để biểu diễn số.
 
-Trong lập trình, kiểu dữ liệu lưu các số nguyên có \\(n\\) bit được dùng để lưu một dãy số nhị phân chứa \\(n\\) chữ số. Trong C++, `int` là một kiểu dữ liệu lưu các số nguyên có \\(32\\) bit, còn `long long` là \\(64\\) bit. Ta lấy ví dụ số \\(193\\) lưu trên kiểu dữ liệu `int` sẽ có dãy nhị phân:
-
-\\[00000000000000000000000011000001\\]
-
-Để tìm giá trị của một dãy số nhị phân \\((b_k b_{k-1}... b_1 b_0)\\), ta có công thức:
+Nếu như trong các số thập phân, chữ số đứng trước lớn gấp \\(10\\) lần chữ số đứng sau thì đối với các số nhị phân, con số này là \\(2\\) lần. Từ đây, giá trị của một dãy số nhị phân \\((b_k b_{k-1}... b_1 b_0)\\) sẽ bằng:
 
 \\[b_k \times 2^k + b_{k - 1} \times 2^{k - 1}  + ... + b_{1} \times 2^{1} + b_{0} \times 2^{0}\\]
 
 Ví dụ, số nhị phân \\(1011_2\\) có giá trị bằng:
 
 \\[1011_2 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 = 11\\]
+
+Trong lập trình, kiểu dữ liệu lưu các số nguyên có \\(n\\) bit được dùng để lưu một dãy số nhị phân chứa \\(n\\) chữ số. Trong C++, `int` là một kiểu dữ liệu lưu các số nguyên có \\(32\\) bit, còn `long long` là \\(64\\) bit. Ta lấy ví dụ số \\(193\\) lưu trên kiểu dữ liệu `int` sẽ có dãy nhị phân:
+
+\\[00000000000000000000000011000001\\]
 
 Để biểu diễn giá trị âm trên dãy số nguyên, ta sử dụng **Two's complement (phần bù của \\(2\\))**. Khi này, giá trị của một dãy số nhị phân \\((b_k b_{k-1}... b_1 b_0)\\) là:
 
@@ -24,21 +24,9 @@ Ví dụ, ta có số \\(-209\\) khi biểu diễn dưới dãy nhị phân (\\(
 
 \\[1111111100101111\\]
 
-Khi không áp dụng phần bù của \\(2\\), một số nguyên \\(n\\) bit có thể lưu các giá trị từ \\(0\\) đến \\(2^n - 1\\), tức là ta lưu các số nguyên không âm. Để lưu dạng số này trong C++ ta khai báo `unsigned [int/long long/...] tên_biến;`.
-
-```C++
-unsigned int x = 37;
-```
-
-Khi áp dụng phần bù của \\(2\\), ta có thể lưu các giá trị trong khoảng từ \\({-2}^{n - 1}\\) đến \\(2^{n - 1} - 1\\). Khi này ta có thể lưu cả giá trị các số nguyên âm. Trong C++, ta khai báo `signed [int/long long/...] tên_biến`, ta có thể bỏ `signed`.
-
-```C++
-int x = 73;
-```
+Khi không áp dụng phần bù của \\(2\\), một số nguyên \\(n\\) bit có thể lưu các giá trị từ \\(0\\) đến \\(2^n - 1\\), tức là ta lưu các số nguyên không âm. Để lưu dạng số này trong C++ ta chỉ cần thêm `unsigned` trước các kiểu dữ liệu.
 
 Nếu số ta lưu giá trị lớn hơn giới hạn trên của kiểu dữ liệu, ta sẽ bị *tràn số*.
-
-Đối với các kiểu dữ liệu `signed`, số tiếp theo của \\(2^{n - 1} - 1\\) sẽ là \\(-2^{n - 1}\\). Đối với `unsigned` thì số tiếp theo của \\(2^n - 1\\) sẽ là \\(0\\).
 
 ```C++
 int x = 2147483647;
@@ -49,127 +37,62 @@ cout << x << '\n'; // -2147483648
 
 ## Các toán tử thao tác bit
 
-### Toán tử thao tác AND (\\(\land\\))
+Ta có thể sử dụng các toán tử thao tác bit khi thực hiện các phép tính với bit. Có \\(6\\) thao tác bit cơ bản: AND, OR, XOR, NOT, dịch trái, dịch phải.
 
-Toán tử thao tác **AND** `x & y` trả về một số có giá trị bit ở mỗi vị trí là kết quả của việc thực hiện phép lý phép toán luận lý **AND** với các bit của \\(x\\) và \\(y\\) ở vị trí tương ứng - nếu \\(2\\) bit đều bằng \\(1\\) thì bit có giá trị là \\(1\\), không thì bit có giá trị \\(0\\).
+## AND, OR, XOR, NOT
 
-Ví dụ:
-```
-x = 1110 (Thập phân: 14)
-y = 1011 (Thập phân: 11)
-    ---- AND
-  = 1010 (Thập phân: 10)
-```
+Các toán tử thao tác AND (\\(\land\\)), OR (\\(\lor\\)), XOR (\\(\oplus\\)) và NOT (\\(\lnot\\)) thực hiện các phép tính trên các bit. 
 
-Bản chân trị cho thao tác AND:
+Với hai bit \\(A\\) và \\(B\\):
+- \\(A \land B\\) bằng \\(1\\) nếu cả \\(A\\) và \\(B\\) có giá trị \\(1\\), nếu không thì bằng \\(0\\)
+- \\(A \lor B\\) bằng \\(1\\) nếu \\(A\\) hoặc \\(B\\) có giá trị \\(1\\), nếu không thì bằng \\(0\\)
+- \\(A \oplus B\\) bằng \\(1\\) nếu \\(A\\) và \\(B\\) có giá trị khác nhau, nếu không thì bằng \\(0\\)
+- \\(\lnot A\\) bằng \\(1\\) nếu \\(A\\) bằng \\(0\\), nếu không thì bằng \\(0\\) 
 
-|\\(A\\)|\\(B\\)|\\(A \land B\\)|   
-|---|---|---|
-|\\(1\\)|\\(1\\)|\\(1\\)|
-|\\(1\\)|\\(0\\)|\\(0\\)|
-|\\(0\\)|\\(1\\)|\\(0\\)|
-|\\(0\\)|\\(0\\)|\\(0\\)|
+Bảng chân trị:
 
-### Toán tử thao tác OR (\\(\lor\\))
+|\\(A\\)|\\(B\\)|\\(A \land B\\)|\\(A \lor B\\)|\\(A \oplus B\\)|\\(\lnot A\\)|\\(\lnot B\\)|
+|---|---|---|---|---|---|---|
+|\\(1\\)|\\(1\\)|\\(1\\)|\\(1\\)|\\(0\\)|\\(0\\)|\\(0\\)|
+|\\(1\\)|\\(0\\)|\\(0\\)|\\(1\\)|\\(1\\)|\\(0\\)|\\(1\\)|
+|\\(0\\)|\\(1\\)|\\(0\\)|\\(1\\)|\\(1\\)|\\(1\\)|\\(0\\)|
+|\\(0\\)|\\(0\\)|\\(0\\)|\\(0\\)|\\(0\\)|\\(1\\)|\\(1\\)|
 
-Toán tử thao tác **OR** `x | y` trả về một số có giá trị bit ở mỗi vị trí là kết quả của việc thực hiện phép lý phép toán luận lý **OR** với các bit của \\(x\\) và \\(y\\) ở vị trí tương ứng - nếu có ít nhất \\(1\\) bit trong \\(2\\) bit bằng \\(1\\) thì bit có giá trị \\(1\\), không thì bit có giá trị \\(0\\).
+Trong C++, các kí hiệu của AND, OR, XOR và NOT lần lượt là `&`, `|`, `^` và `!`.
 
-Ví dụ:
+Khi sử dụng các thao tác bit AND, OR, XOR trên các số nguyên, kết quả sẽ là một số với các bit có giá trị bằng giá trị các bit tương ứng khi thực hiện các thao tác. Ví dụ:
 
 ```
-x = 1110 (Thập phân: 14)
-y = 1011 (Thập phân: 11)
-    ---- OR
-  = 1111 (Thập phân: 15)
+a     = 11010 (Thập phân: 26)
+b     = 10100 (Thập phân: 20)
+a & b = 10000 (Thập phân: 16)
 ```
 
-Bản chân trị cho thao tác OR:
+Khi sử dụng thao tác bit NOT trên số nguyên, kết quả sẽ bằng \\(1\\) nếu giá trị số nguyên bằng \\(0\\), và bằng \\(0\\) nếu giá trị khác \\(0\\).
 
-|\\(A\\)|\\(B\\)|\\(A \lor B\\)|   
-|---|---|---|
-|\\(1\\)|\\(1\\)|\\(1\\)|
-|\\(1\\)|\\(0\\)|\\(1\\)| 
-|\\(0\\)|\\(1\\)|\\(1\\)| 
-|\\(0\\)|\\(0\\)|\\(0\\)| 
+### Dịch trái, dịch phải
 
-### Toán tử thao tác XOR (\\(\oplus\\))
-
-Toán tử thao tác **XOR** `x ^ y`  trả về một số có giá trị bit ở mỗi vị trí là kết quả của việc thực hiện phép lý phép toán luận lý **XOR** với các bit của \\(x\\) và \\(y\\) ở vị trí tương ứng - nếu - nếu hai bit của hai số có giá trị khác nhau, bit tương ứng có giá trị \\(1\\), không thì bit có giá trị \\(0\\).
+Toán tử thao tác dịch trái \\(a << n\\), thêm \\(n\\) bit \\(0\\) vào \\(a\\). Tương tự, toán tử thao tác dịch phải \\(a >> n\\), xoá \\(n\\) bit bên phải \\(a\\).
 
 Ví dụ:
 
 ```
-x = 1110 (Thập phân: 14)
-y = 1011 (Thập phân: 11)
-    ---- XOR
-  = 0101 (Thập phân: 5)
+a       =   101 (Thập phân: 5)
+a << 2  = 10100 (Thập phân: 20)
+a >> 2  =     1 (Thập phân: 1)
 ```
 
-Bản chân trị cho thao tác XOR:
-
-|\\(A\\)|\\(B\\)|\\(A \oplus B\\)|   
-|---|---|---|
-|\\(1\\)|\\(1\\)|\\(0\\)| 
-|\\(1\\)|\\(0\\)|\\(1\\)| 
-|\\(0\\)|\\(1\\)|\\(1\\)| 
-|\\(0\\)|\\(0\\)|\\(0\\)| 
-
-### Toán tử thao tác NOT (\\(\neg\\))
-
-Toán tử thao tác **NOT** `~x` về một số có giá trị bit ở mỗi vị trí là kết quả của việc thực hiện phép lý phép toán luận lý **NOT** với các bit của \\(x\\) ở vị trí tương ứng - nếu bit có giá trị là \\(1\\) thì sẽ có giá trị \\(0\\) và ngược lại.
-
-Ví dụ:
-
-```
-x = 1110 (Thập phân: 14)
-    ---- NOT
-  = 0001 (Thập phân: 1)
-```
-
-Bản chân trị cho thao tác NOT:
-
-|\\(A\\)|\\(\neg A\\)|   
-|---|---|
-|\\(1\\)|\\(0\\)|
-|\\(0\\)|\\(1\\)|
-
-Khi thực hiện thao tác NOT với `bool`, ta có để sử dụng thao tác `!x` để trả giá trị ngược lại của biến `bool`. Khi dùng `!` với số nguyên như `int` hay `long long`, nó sẽ trả về \\(1\\) nếu số nguyên có giá trị \\(0\\), và trả về \\(0\\) nếu số nguyên có giá trị khác \\(0\\).
-
-### Toán tử thao tác dịch trái (\\(\ll\\))
-
-Toán tử thao tác dịch trái `a << n` thêm \\(n\\) bit \\(0\\) vào đầu dãy bit.
-
-Ví dụ:
-
-```
-a =   101 (Thập phân: 5) -> Dịch sang trái 2 bit
-  = 10100 (Thập phân: 20)
-```
-
-### Toán tử thao tác dịch phải (\\(\gg\\))
-
-Toán tử thao tác dịch phải `a >> n` xóa \\(n\\) bit vào đầu dãy bit.
-
-Ví dụ:
-
-```
-a = 10101 (Thập phân: 21) -> Dịch sang phải 2 bit
-  =   101 (Thập phân: 5)
-```
-
-## Ứng dụng của các thao tác xử lý bit
-
-Ta sẽ mặc định chỉ số đầu tiên có giá trị là \\(0\\).
+## Ứng dụng của các thao tác xử lí bit
 
 ### Nhân/Chia với \\(2^x\\)
 
-Nếu chỉ nhân hoặc chia một số với một lũy thừa của \\(2\\), ta có thể dịch bit của số nguyên ấy. Mỗi lần dịch 1 bit sang trái sẽ tương đương với nhân số ấy với \\(2\\), mỗi lần dịch \\(1\\) bit sang phải sẽ tương đương với chia lấy phần nguyên cho \\(2\\).
+Nếu chỉ nhân hoặc chia một số với một luỹ thừa của \\(2\\), ta có thể dịch bit của số nguyên ấy. Mỗi lần dịch 1 bit sang trái sẽ tương đương với nhân số ấy với \\(2\\), mỗi lần dịch \\(1\\) bit sang phải sẽ tương đương với chia lấy phần nguyên cho \\(2\\).
 
 ```
-S                  =  28 (Thập phân) =  0011100 (Nhị phân)
-S = S * 2 = S << 1 =  56 (Thập phân) =   111000 (Nhị phân)
-S = S * 8 = S << 3 = 224 (Thập phân) = 11100000 (Nhị phân)
-S = S / 4 = S >> 2 =   7 (Thập phân) =      111 (Nhị phân)
+S                  =  0011100 (Thập phân: 28)
+S = S * 2 = S << 1 =   111000 (Thập phân: 56)
+S = S * 8 = S << 3 = 11100000 (Thập phân: 224)
+S = S / 4 = S >> 2 =      111 (Thập phân: 7)
 ```
 
 ### Bitmask (Mảng bit)
@@ -179,11 +102,11 @@ Bitmask là một một mảng lưu các giá trị bit. Bitmask còn có thể 
 VD: 
 
 ```
-             chỉ số  3|2|1|0
-S = 11 (Thập phân) = 1|0|1|1 (Nhị phân)
+chỉ số  3|2|1|0
+S     = 1|0|1|1 (Thập phân: 11)
 ```
 
-Như ta có thể thấy, khi \\(S = 14\\) thì có thể biểu thị một tập hợp có các phần tử \\(0\\), \\(1\\), \\(3\\).
+Như ta có thể thấy, khi \\(S = 11\\) thì có thể biểu thị một tập hợp có các phần tử \\(0\\), \\(1\\), \\(3\\).
 
 Dưới đây là một số thao tác của bitmask:
 
@@ -192,10 +115,10 @@ Dưới đây là một số thao tác của bitmask:
 Để bật bit thứ \\(i\\) của \\(S\\), ta sử dụng thao tác bit OR: `S = S | (1 << i)`.
 
 ```
-S             = 0011001 (Nhị phân) = 25 (Thập phân)
-i = 2, 1 << i = 0000100 (Nhị phân) =  4 (Thập phân) 
+S             = 0011001 (Thập phân: 25)
+i = 2, 1 << i = 0000100 (Thập phân: 4) 
                 ------- OR
-              = 0011101 (Nhị phân) = 29 (Thập phân)
+              = 0011101 (Thập phân: 29)
 ```
 
 #### Tắt bit thứ \\(i\\)
@@ -203,10 +126,10 @@ i = 2, 1 << i = 0000100 (Nhị phân) =  4 (Thập phân)
 Để tắt bit thứ \\(i\\) của \\(S\\), ta sử dụng thao tác bit AND: `S = S & ~(1 << i)`.
 
 ```
-S                = 0011001 (Nhị phân) = 25 (Thập phân)
-i = 2, ~(1 << i) = 1111011 (Nhị phân) =  4 (Thập phân) 
+S                = 0011001 (Thập phân: 25)
+i = 2, ~(1 << i) = 1111011 (Thập phân: 4)
                    ------- AND
-                 = 0011001 (Nhị phân) = 25 (Thập phân)
+                 = 0011001 (Thập phân: 25)
 ```
 
 #### Đảo bit thứ \\(i\\)
@@ -214,10 +137,10 @@ i = 2, ~(1 << i) = 1111011 (Nhị phân) =  4 (Thập phân)
 Để đảo bit thứ \\(i\\) của \\(S\\), ta sử dụng thao tác bit XOR: `S = S ^ (1 << i)`:
 
 ```
-S             = 0011101 (Nhị phân) = 29 (Thập phân) 
-i = 2, 1 << i = 0000100 (Nhị phân) =  4 (Thập phân) 
+S             = 0011101 (Thập phân: 29) 
+i = 2, 1 << i = 0000100 (Thập phân: 4) 
                 ------- XOR
-              = 0011001 (Nhị phân) = 25 (Thập phân)
+              = 0011001 (Thập phân: 25)
 ```
 
 #### Lấy giá trị, kiểm tra bit thứ \\(i\\)
@@ -227,10 +150,10 @@ i = 2, 1 << i = 0000100 (Nhị phân) =  4 (Thập phân)
 - Nếu \\(T\\) khác \\(0\\), hay \\(T\\) bằng `1 << i`, bit thứ \\(i\\) có giá trị là \\(1\\)
 
 ```
-S             = 0011101 (Nhị phân) = 29 (Thập phân)
-i = 2, 1 << i = 0000100 (Nhị phân) =  4 (Thập phân) 
+S             = 0011101 (Thập phân: 29)
+i = 2, 1 << i = 0000100 (Thập phân: 4) 
                 ------- AND
-              = 0000100 (Nhị phân) =  4 (Thập phân) 
+              = 0000100 (Thập phân: 4) 
                 -> Bit thứ i có giá trị 1
 ```
 
@@ -241,10 +164,10 @@ Ngoài ra còn có các kiểm tra khác cũng sử dụng thao tác bit AND: bi
 Để bật \\(n\\) bit đầu tiên, ta có: `S = (1 << n) - 1`.
 
 ```
-n = 5, 1 << 5 = 100000 (Nhị phân) = 32 (Thập phân) 
-              =      1 (Nhị phân) =  1 (Thập phân)
+n = 5, 1 << 5 = 100000 (Thập phân: 32) 
+              =      1 (Thập phân: 1)
               ------ Trừ
-              =  11111 (Nhị phân) = 31 (Thập phân) 
+              =  11111 (Thập phân: 31) 
 ```
 
 Từ ví dụ trên, ta còn rút thêm được một ứng dụng nữa: Xác định \\(N\\) có phải là một lũy thừa của \\(2\\).
@@ -254,16 +177,16 @@ Từ ví dụ trên, ta còn rút thêm được một ứng dụng nữa: Xác 
 - Nếu `N & (N - 1)` khác \\(0\\), \\(N\\) không là một lũy thừa của \\(2\\) 
 
 ```
-N     = 100000 (Nhị phân) = 32 (Thập phân)
-N - 1 =  11111 (Nhị phân) = 31 (Thập phân)
+N     = 100000 (Thập phân: 32)
+N - 1 =  11111 (Thập phân: 31)
         ------ AND
-      =      0 (Nhị phân) =  0 (Thập phân) 
+      =      0 (Thập phân: 0) 
         -> N là một lũy thừa của 2: 2^5
 
-N     = 100001 (Nhị phân) = 33 (Thập phân)
-N - 1 = 100000 (Nhị phân) = 32 (Thập phân)
+N     = 100001 (Thập phân: 33)
+N - 1 = 100000 (Thập phân: 32)
         ------ AND
-      = 100000 (Nhị phân) = 32 (Thập phân) 
+      = 100000 (Thập phân: 32) 
         -> N không là một lũy thừa của 2
 ```
 
@@ -272,25 +195,25 @@ N - 1 = 100000 (Nhị phân) = 32 (Thập phân)
 **Least significant bit (LSB)** hay bit có giá trị nhỏ nhất là bit có giá trị \\(1\\) đầu tiên trong dãy nhị phân xét từ phải sang trái. Để tìm được biểu diễn giá trị của bit này, ta sử dụng thao tác AND: `x & -x`. Nếu giá trị trả về là \\(0\\) thì không có bit nào có giá trị \\(1\\).
 
 ```
-N  = 00100100 (Nhị phân) =  36 (Thập phân)
--N = 11011100 (Nhị phân) = -36 (Thập phân)
+N  = 00100100 = (Thập phân: 36)
+-N = 11011100 = (Thập phân: -36)
      -------- AND
-   =      100 (Nhị phân) =   4 (Thập phân) 
+   =      100 = (Thập phân: 4) 
     -> Bit được bật bên phải nhất của N có giá trị biểu diễn là 4.
 ```
 
 Để tắt LSB, ta có \\(2\\) cách: `x = x - (x & -x)` hoặc `x = x & (x - 1)`
 
 ```
-N            = 00100100 (Nhị phân) =  36 (Thập phân)
+N            = 00100100 = (Thập phân: 36)
 
--N           = 11011100 (Nhị phân) = -36 (Thập phân)
-N & -N       =      100 (Nhị phân) =   4 (Thập phân)
-N - (N & -N) = 00100000 (Nhị phân) =  32 (Thập phân)
+-N           = 11011100 = (Thập phân: -36)
+N & -N       =      100 = (Thập phân: 4)
+N - (N & -N) = 00100000 = (Thập phân: 32)
              -> Bit được bật bên phải nhất đã được tắt 
 
-N - 1        = 11011011 (Nhị phân) =  35 (Thập phân)
-N & (N - 1)  = 00100000 (Nhị phân) =  32 (Thập phân)
+N - 1        = 11011011 = (Thập phân: 35)
+N & (N - 1)  = 00100000 = (Thập phân: 32)
              -> Bit được bật bên phải nhất đã được tắt 
 ```
 

@@ -143,7 +143,7 @@ double euclid(point x, point y) {
 double calc(vector<point> &points){
 	int n = points.size();
 	if(n <= 3){
-		// Vì N nhỏ (<= 3) nên ta có duyệt trâu
+		// Vì N nhỏ (<= 3) nên ta có thể duyệt trâu
 		double delta = euclid(points[0], points[1]);
 		for(int i = 0; i < n; ++i){
 			for(int j = i + 1; j < n; ++j) {

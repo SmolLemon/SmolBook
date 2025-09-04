@@ -4,15 +4,13 @@ Thuật toán sắp xếp là thuật toán tối quan trọng trong lập trìn
 
 ## Khái niệm
 
-Một bài toán sắp xếp kinh điển sẽ được phát biểu như sau:
+Một bài toán sắp xếp là khi ta một mảng chứa \\(n\\) phần tử và nhiệm vụ của ta là sắp xếp và trả về các phần tử của mảng theo thứ tự tăng dần theo giá trị.
 
-> Cho một mảng chứa \\(n\\) phần tử. Hãy sắp xếp và trả về các phần tử của mảng theo thứ tự tăng dần theo giá trị.
-
-Ví dụ ta có mảng:
+Ta có mảng sau:
 
 \\[[2, 5, 7, 9, 1, 4, 6, 3, 8]\\] 
 
-Thì sau khi sắp xếp ta có mảng mới
+Sau khi sắp xếp, ta có mảng mới với các phần tử tăng dần theo giá trị:
 
 \\[[1, 2, 3, 4, 5, 6, 7, 8, 9]\\]
 
@@ -22,9 +20,7 @@ Các thuật toán sắp xếp \\(O(n^{2})\\) thường khá đơn giản - thư
 
 ### Sắp xếp nổi bọt (Bubble sort)
 
-Thuật toán sắp xếp nổi bọt hoạt động như sau: Ta xét cặp \\(2\\) phần tử liên tiếp. Nếu phần tử đứng trước lớn hơn phần tử đứng sau, hoán đổi vị trí \\(2\\) phần tử. 
-
-Lặp lại cho đến khi nào không còn cặp phần tử nào có thể hoán đổi vị trí.
+Thuật toán sắp xếp nổi bọt hoạt động như sau: duyệt các phần tử, nếu phần từ hiện tại nhỏ hơn phần tử trước đó thì ta hoán đổi vị trí của hai phần tử. Sau \\(n-1\\) lần duyệt, ta có một mảng đã được sắp xếp. 
 
 ```C++
 for(int i = 1; i <= n; ++i){
@@ -36,11 +32,17 @@ for(int i = 1; i <= n; ++i){
 }
 ```
 
+Tên gọi "nổi bọt" là bởi các phần tử lớn hơn sẽ từ từ "nổi bọt" lên cuối mảng, còn các phần tử nhỏ hơn thì "chìm" xuống.
+
+<center>
+<img src="../images/Bubblesort-edited-color.svg" alt="Sắp xếp nổi bọt" height="300px" />
+
+<sup> Minh hoạ thuật toán sắp xếp nổi bọt - [Pmdumuid](https://commons.wikimedia.org/wiki/File:Bubblesort-edited-color.svg) - [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en)</sup>
+</center>
+
 ### Sắp xếp chọn (Selection sort)
 
-thuật toán sắp xếp chọn hoạt động như sau: với mỗi vị trí \\(i\\) từ \\(1\\) đến \\(n\\), ta sẽ tìm số nhỏ nhất từ vị trí \\(i\\) đến vị trí \\(n\\) và hoán đổi phần tử ở vị trí \\(i\\) với phần tử ở vị trí số nhỏ nhất ấy.
-
-Khi này, với mỗi lần hoàn tất duyệt phần tử thứ \\(i\\), ta có \\(i\\) phần tử nhỏ nhất đã được sắp xếp tăng dần.
+Thuật toán sắp xếp chọn hoạt động như sau: thuật toán chia mảng làm hai phần - phần bên trái là một mảng con được sắp xếp tăng dần - phần bên phải là các phần tử còn lại. Thuật toán lần lượt tìm phần tử nhỏ nhất ở bên phải và thêm nó vào cuối phần bên trái.
 
 ```C++
 for(int i = 1; i < n; ++i){
@@ -78,15 +80,7 @@ Thuật toán sắp xếp có thể được tối ưu xuống còn \\(O(n \log{
 
 Thuật toán sắp xếp trộn (Merge sort) là một thuật toán sắp xếp áp dụng mô hình [chia để trị](../paradigms/dnc.md).
 
-Mô tả thuật toán:
-
-- Nếu kích cỡ mảng là \\(1\\), kết thúc sắp xếp.
-- Nếu kích cỡ lớn hơn \\(1\\):
-  - Chia đôi mảng thành \\(2\\) mảng con có kích thước \\(\left\lfloor \frac{n}{2} \right\rfloor \\) và \\(\left\lceil \frac{n}{2} \right\rceil \\)
-  - Sắp xếp \\(2\\) mảng con cách đệ quy bằng merge sort
-  - Hợp \\(2\\) mảng con lại thành một mảng đã sắp xếp
-
-Độ phức tạp của thuật toán là \\(O(n \log{n})\\).
+Thuật toán chia đôi mảng cần sắp xếp thành hai mảng con có kích thước bằng nhau (nếu số phần tử chẵn) hoặc chênh nhau một phần tử (nếu số phần tử lẻ). Sau khi sắp xếp các mảng con một cách đệ quy, thuật toán kết hợp hai mảng con lại để tạo thành mảng gốc với các phần tử đã được sắp xếp.
 
 ```C++
 int arr[N];
@@ -129,23 +123,20 @@ Minh hoạ bằng ảnh:
 
 ### Sắp xếp nhanh (QuickSort)
 
-Thuật toán sắp xếp nhanh là một thuật toán áp dụng mô hình chia để trị. Mặc dù độ phức tạp của thuật toán chậm nhất là \\(O(n^{2})\\) thuật toán lại có độ phức tạp trung bình là \\(O(n \log{n})\\), và khi so sánh trên máy thì nhanh hơn sắp xếp trộn trong nhiều trường hợp.
+Thuật toán sắp xếp nhanh là một thuật toán áp dụng mô hình chia để trị. 
 
-Mô tả thuật toán:
+Thuật toán sẽ chọn phần tử bất kì trong mảng làm "chốt", sau đó thuật toán sẽ sắp xếp lại các phần tử trong mảng như sau: các phần tử nhỏ hơn chốt sẽ ở bên trái, các phần tử còn lại sẽ ở bên phải chốt.
 
-- Nếu kích cỡ mảng là \\(1\\), kết thúc sắp xếp.
-- Nếu kích cỡ lớn hơn \\(1\\):
-  - Chọn một phần tử bất kì trong mảng 
-  - Chia mảng ra thành \\(2\\) mảng con: Một mảng con chứa các số nhỏ hơn phần tử bất kì kia, một mảng con chứa các số còn lại
-  - Sắp xếp \\(2\\) mảng con một cách đệ quy bằng quicksort
-  - Hợp \\(2\\) con mảng con lại thành một mảng đã sắp xếp
+Sau khi sắp xếp lại vị trí các phần tử theo chốt, ta sắp xếp các phần tử ở hai bên mảng một cách đệ quy.
+
+Mặc dù độ phức tạp của thuật toán chậm nhất là \\(O(n^{2})\\) thuật toán lại có độ phức tạp trung bình là \\(O(n \log{n})\\), và khi so sánh trên máy thì nhanh hơn sắp xếp trộn trong nhiều trường hợp.
 
 ```C++
 int a[N];
 void quickSort(int l, int r) {
 	if(l >= r) return;
     int i = l, j = r;
-    int pivot = a[(l + r) >> 1]; // chọn phần tử ở chính giữa mảng 
+    int pivot = a[(l + r) >> 1]; // chọn phần tử ở chính giữa mảng làm chốt
     while (i <= j) {
         while (a[i] < pivot) ++i;
         while (a[j] > pivot) --j;
@@ -180,9 +171,9 @@ Thuật toán sắp xếp đếm là một thuật toán sắp xếp nhanh các 
 
 ## Thuật toán sắp xếp trong C++
 
-Việc tự tay viết cả một thuật toán sắp xếp rất tốn thời gian và rất dễ xảy ra sai sót. Vì vậy ta có thể dùng hàm `sort` có sẵn trong thư viện C++. Điều này không những giúp tiết kiệm thời gian viết mà còn giúp tối ưu chương trình khi những hàm trong thư viện C++ thường rất nhanh và hiệu quả.
+Việc tự tay viết cả một thuật toán sắp xếp rất tốn thời gian và rất dễ xảy ra sai sót. Vì vậy ta có thể dùng hàm `sort` có sẵn trong thư viện C++.
 
-Hàm sort của C++ sẽ sắp xếp các số trong khoảng \\([l, r)\\).
+Hàm `sort` của C++ sẽ sắp xếp các số trong khoảng \\([l, r)\\).
 
 VD: sắp xếp các phần tử trong mảng `a` từ vị trí \\(0\\) đến \\(n - 1\\).
 ```C++
@@ -201,7 +192,7 @@ cout << s; // 'ginorst'
 
 Hàm `sort` trong C++ yêu cầu một thao tác so sánh để có thể thực hiện việc so sánh các phần tử. Hầu hết các kiểu dữ liệu trong C++ đều có phép so sánh, ví dụ như `int` sắp xếp theo giá trị của nó. 
 
-Kiểu dữ liệu `pair` sẽ được sắp xếp theo giá trị của giá trị đầu tiên trong cặp giá trị: `first`. Nếu có nhiều `first` bằng nhau thì sẽ sắp xếp theo giá trị còn lại của pair: `second`.
+Kiểu dữ liệu `pair` sẽ được sắp xếp theo giá trị của giá trị đầu tiên trong cặp giá trị: `first`. Nếu các `first` bằng nhau thì sẽ sắp xếp theo giá trị của `second`.
 
 ```C++
 vector<pair<int, int>> v;
@@ -223,9 +214,6 @@ Ví dụ:
 // Cấu trúc `phân số`
 struct phanso {
 	int x, y;
-	bool operator<(const phanso &p) const{ // so sánh hai phân số
-		return x * p.y < p.x * y;
-	}
 };
 
 bool cmp(const phanso &a, const phanso &b){ // hàm so sánh
