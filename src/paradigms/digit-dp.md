@@ -441,7 +441,7 @@ bool g(string &X){
 
 ### Bài 5: [Số đặc biệt](https://lqdoj.edu.vn/problem/pearlnum)
 
-Tóm tắt: Ta có hàm \\(f(x)\\) trả về tổng bình phương các chữ số trong \\(x\\). Một số \\(x\\) được gọi là số đặc biệt nếu \\(x \neq 1\\) dẫu áp dụng bao nhiên lần cập nhập \\(x\\) bằng công thức: \\(x = f(x)\\). Cho \\(T\\) cặp số \\((L, R)\\), hãy cho biết số lượng số đặc biệt trong đoạn \\([L; R]\\).
+Tóm tắt: Ta có hàm \\(f(x)\\) trả về tổng bình phương các chữ số trong \\(x\\). Một số \\(x\\) được gọi là số đặc biệt nếu \\(x \neq 1\\) dẫu áp dụng bao nhiên lần cập nhật \\(x\\) bằng công thức: \\(x = f(x)\\). Cho \\(T\\) cặp số \\((L, R)\\), hãy cho biết số lượng số đặc biệt trong đoạn \\([L; R]\\).
 
 Giới hạn: \\(T \le 100\\), \\(1 \le L \le R \le 10^{18}\\).
 

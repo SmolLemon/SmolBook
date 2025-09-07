@@ -54,7 +54,7 @@ Phương trình \\(ax + my = 1\\) là một phương trình Diophantine tuyến 
 ```C++
 int modInv(int a, int m){
 	int d, x, y;
-	tie(d, x, y) = extgcd(x, y); // hàm euclid mở rộng ở phần `Ước số - bội số`
+	tie(d, x, y) = extgcd(x, y); // hàm euclid mở rộng ở phần `Ước chung lớn nhất - bội chung nhỏ nhất`
 	if (d != 1) return -1; // không tồn tại nghịch đảo modulo
 	x = (x % m + m) % m; 
 	return x; // nghịch đảo modulo

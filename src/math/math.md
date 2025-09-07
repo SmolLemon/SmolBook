@@ -30,7 +30,7 @@ Ta có công thức tổng quát để tính hợp của \\(n\\) tập hợp \\(
 
 ## Logarit
 
-Sẽ có lúc trong chương trình ta muốn kiểm tra nếu tích hai số có lớn hơn giới hạn của `int` hoặc `long long`. Thay vì nhân hai số và kiểm tra, có thể bị tràn số, ta có thể sử dụng công thức \\(\log{a} + \log{b} = \log{ab}\\) để kiểm tra. Ví dụ, thay vì viết:
+Sẽ có lúc ta muốn kiểm tra nếu tích hai số có lớn hơn giới hạn của `int` hoặc `long long`. Thay vì nhân hai số và kiểm tra (có thể bị tràn số), ta có thể sử dụng công thức \\(\log{a} + \log{b} = \log{ab}\\) để kiểm tra. Ví dụ, thay vì viết:
 
 ```C++
 const ll LIMIT = 1e18;

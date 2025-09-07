@@ -106,7 +106,7 @@ Nếu bài toán có điều kiện rằng nhiều đội đồng hạng nhất 
 
 ## Chọn dự án
 
-Bài toán chọn dự án được phát biểu như sau: hiện tại có một công ty đang thực hiện \\(n\\) dự án \\(P\\), mỗi dự án sẽ đem về số tiền \\(p_i\\). Các dự án có thể sinh lời (\\(p_i > 0\\) - các khoá học, khu vui chơi, mở cửa hàng, v.v.) hoặc thu lỗ (\\(p_i < 0\\) - xậy dựng cơ sở hạ tầng, cập nhập trang thiết bị). Các dự án có thể phụ thuộc lẫn nhau, được biểu thị bằng các cặp trong \\(E\\), ví dụ: nếu \\(uv \in E\\), thì ta cần phải thực hiện dự án \\(u\\) thì ta cần phải thực hiện dự án \\(v\\). Nhiệm vụ của ta là chọn các dự án sao cho thoả mãn điều kiện, đồng thời số tiền thu được từ các dự án phải lớn nhất có thể.
+Bài toán chọn dự án được phát biểu như sau: hiện tại có một công ty đang thực hiện \\(n\\) dự án \\(P\\), mỗi dự án sẽ đem về số tiền \\(p_i\\). Các dự án có thể sinh lời (\\(p_i > 0\\) - các khoá học, khu vui chơi, mở cửa hàng, v.v.) hoặc thu lỗ (\\(p_i < 0\\) - xậy dựng cơ sở hạ tầng, cập nhật trang thiết bị). Các dự án có thể phụ thuộc lẫn nhau, được biểu thị bằng các cặp trong \\(E\\), ví dụ: nếu \\(uv \in E\\), thì ta cần phải thực hiện dự án \\(u\\) thì ta cần phải thực hiện dự án \\(v\\). Nhiệm vụ của ta là chọn các dự án sao cho thoả mãn điều kiện, đồng thời số tiền thu được từ các dự án phải lớn nhất có thể.
 
 <center>
 <img src="../images/project_selection.png" alt="Các dự án và các yêu cầu">

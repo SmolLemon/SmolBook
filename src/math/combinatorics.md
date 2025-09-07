@@ -1,6 +1,6 @@
 # Tổ hợp
 
-Hai hình là hai loại khoá số khác nhau. Để mở được khoá, bạn có thể sẽ thử tất cả các mật khẩu khác nhau trên các khoá số này. Hỏi: nếu bạn áp dụng tất cả mật khẩu của hai khoá mới mở được (giả sử thời gian bấm mật khẩu là như nhau), khoá nào sẽ mở nhanh hơn?
+Hai hình dưới đây là hai loại khoá số khác nhau. Khoá A là khoá số bấm với \\(10\\) số. Khoá B là khoá số xoay 4 vòng, mỗi vòng 10 chữ số. Hỏi: khoá nào có số lượng mật khẩu có thể nhiều hơn?
 
 |Khoá số A|Khoá số B|
 |---|---|

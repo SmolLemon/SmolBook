@@ -26,6 +26,8 @@ Tại chương IV/Điều 8 Quyết định số 1989/QĐ-BGDĐT:
 >
 >		b) Đối với các kí hiệu *iê*, *yê*, *uô*, *uơ*, dấu thanh đặt trên hoặc dưới chữ cái thứ hai, ví dụ: *biển*, *thuyền*, *nhuộm*, *được*,...
 
+Vậy ta viết *Hoá* thay vì *Hóa*.
+
 ## *Hi vọng* hay *Hy vọng*?
 
 Tại chương IV/Điều 9:
@@ -35,6 +37,8 @@ Tại chương IV/Điều 9:
 > 1. Trường hợp âm *i* đứng ngay sau phụ âm đầu thì được viết bằng chữ *i*, ví dụ: *hi vọng*, *kỉ niệm*, *lí luận*, *mĩ thuật*, *bác sĩ*, *tỉ lệ*,...
 >
 > 2. Trường hợp âm tiết chứa âm *i* là tên riêng thì viết theo đúng tên riêng đó, ví dụ: bản *Vy*, *Vi* Văn Định, Nguyễn *Vỹ*, *Thy* Ngọc,...
+
+Vậy ta viết *Hi vọng* thay vì *Hy vọng*.
 
 ## Cách viết thuật ngữ
 

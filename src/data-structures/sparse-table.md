@@ -115,6 +115,6 @@ int rmq(int l, int r){
 
 ## Ứng dụng
 
-Bảng thưa thường được dùng để tìm các giá trị trong một khoảng một cách nhanh chóng. Các giá trị như tổng, tích, giá trị nhỏ/lớn nhất, gcd, lcm,... Những giá trị còn được dùng để giải quyết các bài toán lớn hơn, ví dụ như: [tìm tổ tiên chung gần nhất của hai đỉnh](../graph-theory/lca.md#phương-pháp-2), [nâng nhị phân](../graph-theory/lca.md#nâng-nhị-phân),...
+Bảng thưa thường được dùng để tìm các giá trị trong một khoảng một cách nhanh chóng. Các giá trị như tổng, tích, giá trị nhỏ/lớn nhất, UCLN, BCNN,... Những giá trị còn được dùng để giải quyết các bài toán lớn hơn, ví dụ như: [tìm tổ tiên chung gần nhất của hai đỉnh](../graph-theory/lca.md#phương-pháp-2), [nâng nhị phân](../graph-theory/lca.md#nâng-nhị-phân),...
 
 Một lưu ý nhỏ là bảng thưa chỉ có thể được sử dụng trên mảng tĩnh, tức các giá trị trên mảng không thay đổi. 

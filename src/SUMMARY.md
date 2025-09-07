@@ -70,7 +70,7 @@
   - [Kiến thức nền tảng](./math/math.md)
   - [Lí thuyết số](./math/number-theory.md)
     - [Số nguyên tố](./math/prime.md)
-    - [Ước chung lớn nhất - Bội chung nhỏ nhất]()
+    - [Ước chung lớn nhất - Bội chung nhỏ nhất](./math/gcd-lcm.md)
     - [Phi hàm Euler]()
     - [Modulo](./math/modulo.md)
     - [Lũy thừa nhị phân](./math/binary-exponentiation.md)
