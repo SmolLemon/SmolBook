@@ -170,24 +170,24 @@ n = 5, 1 << 5 = 100000 (Thập phân: 32)
               =  11111 (Thập phân: 31) 
 ```
 
-Từ ví dụ trên, ta còn rút thêm được một ứng dụng nữa: Xác định \\(N\\) có phải là một lũy thừa của \\(2\\).
+Từ ví dụ trên, ta còn rút thêm được một ứng dụng nữa: Xác định \\(N\\) có phải là một luỹ thừa của \\(2\\).
 
 Để làm được điều này, ta sử dụng thao tác AND: `N & (N - 1)`:
-- Nếu `N & (N - 1)` bằng \\(0\\) và \\(N\\) khác \\(0\\), \\(N\\) là một lũy thừa của \\(2\\)
-- Nếu `N & (N - 1)` khác \\(0\\), \\(N\\) không là một lũy thừa của \\(2\\) 
+- Nếu `N & (N - 1)` bằng \\(0\\) và \\(N\\) khác \\(0\\), \\(N\\) là một luỹ thừa của \\(2\\)
+- Nếu `N & (N - 1)` khác \\(0\\), \\(N\\) không là một luỹ thừa của \\(2\\) 
 
 ```
 N     = 100000 (Thập phân: 32)
 N - 1 =  11111 (Thập phân: 31)
         ------ AND
       =      0 (Thập phân: 0) 
-        -> N là một lũy thừa của 2: 2^5
+        -> N là một luỹ thừa của 2: 2^5
 
 N     = 100001 (Thập phân: 33)
 N - 1 = 100000 (Thập phân: 32)
         ------ AND
       = 100000 (Thập phân: 32) 
-        -> N không là một lũy thừa của 2
+        -> N không là một luỹ thừa của 2
 ```
 
 #### Tìm bit có giá trị nhỏ nhất

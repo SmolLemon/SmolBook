@@ -39,7 +39,7 @@ Ta sẽ sử dụng phương pháp **nâng nhị phân (binary lifting)** để 
 
 Kĩ thuật **nâng nhị phân (binary lifting)** là một kĩ thuật được dùng để giải quyết bài toán *tìm tổ tiên thứ \\(k\\)* của một đỉnh \\(u\\). Ta có một hàm chỉ tổ tiên thứ \\(k\\) của một đỉnh \\(u\\) là \\(ancestor(u, k)\\). Ở hình ví dụ ở trên, ta có \\(ancestor(8, 2) = 4\\), \\(ancestor(3, 1) = 2\\),...
 
-Ta có thể áp dụng kĩ thuật chia \\(k\\) ra thành các lũy thừa của \\(2\\) giống như ở [bảng thưa](../data-structures/sparse-table.md), từ đó giúp tìm kiếm nhanh hơn, ví dụ.
+Ta có thể áp dụng kĩ thuật chia \\(k\\) ra thành các luỹ thừa của \\(2\\) giống như ở [bảng thưa](../data-structures/sparse-table.md), từ đó giúp tìm kiếm nhanh hơn, ví dụ.
 
 \\[ancestor(u, 7) = ancestor(ancestor(ancestor(u, 1), 2), 4)\\]
 

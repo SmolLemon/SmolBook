@@ -20,11 +20,11 @@ Gọi bảng `F` này là **bảng dày**. Để **bảng dày** này trở thà
 
 ### Trực quan
 
-Giống như một số nguyên có thể được biểu diễn bằng tổng của các lũy thừa của 2:
+Giống như một số nguyên có thể được biểu diễn bằng tổng của các luỹ thừa của 2:
 
 \\[21 = 10101_2 = 2^4 + 2^2 + 2^0\\]
 
-Các đoạn \\([l, r]\\) có thể được biểu diễn bằng hợp của các đoạn có độ dài là lũy thừa của 2:
+Các đoạn \\([l, r]\\) có thể được biểu diễn bằng hợp của các đoạn có độ dài là luỹ thừa của 2:
 
 \\[[7, 21] = [7, 7 + 2^3) \cup [15, 15 + 2^2) \cup [19, 19 + 2^1) \cup [21, 21 + 2^0)\\]
 
@@ -34,7 +34,7 @@ Tương đương:
 
 Với các đoạn \\([7, 15)\\), \\([15, 19)\\), \\([19, 21)\\), \\([21, 22)\\) có kích thước lần lượt là 8, 4, 2, 1.
 
-Từ đây, ta có ý tưởng xây dựng bảng thưa: Thay vì lưu trữ toàn bộ các GTNN của các đoạn, ta chỉ cần lưu giá trị của các đoạn có độ dài bằng các lũy thừa của 2.
+Từ đây, ta có ý tưởng xây dựng bảng thưa: Thay vì lưu trữ toàn bộ các GTNN của các đoạn, ta chỉ cần lưu giá trị của các đoạn có độ dài bằng các luỹ thừa của 2.
 
 ### Xây dựng bảng thưa
 
@@ -81,7 +81,7 @@ void build(){
 
 Đối với các hàm có tính chất [kết hợp](https://vi.wikipedia.org/wiki/T%C3%ADnh_k%E1%BA%BFt_h%E1%BB%A3p), hay các hàm có tính chất \\(f(f(x, y), z) = f(x, f(y, z))\\), các truy vấn có thể được xử lý trong \\(O(\log{n})\\).
 
-Ta sẽ chia đoạn \\([l, r]\\) thành các phân đoạn có độ dài bằng các lũy thừa của 2 và tìm GTNN của các phân đoạn:
+Ta sẽ chia đoạn \\([l, r]\\) thành các phân đoạn có độ dài bằng các luỹ thừa của 2 và tìm GTNN của các phân đoạn:
 
 VD: Truy vấn \\([8, 17]\\) có GTNN bằng \\(min(sp[3][8], sp[1][16])\\).
 

@@ -1,4 +1,4 @@
-# Lũy thừa nhị phân
+# Luỹ thừa nhị phân
 
 **Luỹ thừa nhị phân (binary exponentation)** là một phương pháp tối ưu để tính nhanh giá trị của \\(a^n\\) với \\(n\\) là một số nguyên. Ngoài ra, luỹ thừa nhị phân cũng có thể được sử dụng để tính các biểu thức có tính chất giao hoán: \\[(a \cdot b) \cdot c = a \cdot (b \cdot c)\\]
 
