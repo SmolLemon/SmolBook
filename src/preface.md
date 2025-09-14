@@ -12,7 +12,7 @@ Những nội dung của Smol Book được viết với mục tiêu có thể g
 
 Các chương trong Smol Book được nhóm lại theo chủ đề, được viết với giả định rằng cuốn cẩm nang sẽ được đọc từ đầu đến cuối. Các chương có thể có nội dung chồng chéo nhau nhưng nhìn chung: những ý tưởng, nội dung của các chương sau được xây dựng từ những gì đã được nói ở các chương trước.
 
-Có tổng cộng 8 chương trong Smol Book, nói về **8** chủ đề khác nhau.
+Có tổng cộng 8 chương trong Smol Book.
 
 Chương 1 giới thiệu về lập trình thi đấu - định nghĩa, cách giải một bài toán và các cuộc thi liên quan đến lập trình thi đấu. 
 

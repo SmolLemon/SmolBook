@@ -29,7 +29,7 @@ Ta có một số phương pháp để tính nghịch đảo modulo:
 
 Đây là một trong những phương pháp đơn giản nhất để tính nghịch đảo modulo. Theo [định lí Euler](https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Bnh_l%C3%BD_Euler), ta có: \\[a^{\phi(p)} \equiv 1 \pmod {p}\\]
 
-Với \\(\phi(p)\\) là [phi hàm Euler](euler-totient-function.md) của \\(p\\). Từ đây, ta suy ra: \\[a \times a^{\phi(p) - 1} \equiv 1 \pmod {p}\\]
+Với \\(\phi(p)\\) là [phi hàm Euler](euler.md) của \\(p\\). Từ đây, ta suy ra: \\[a \times a^{\phi(p) - 1} \equiv 1 \pmod {p}\\]
 
 Vậy, nghịch đảo modulo sẽ bằng \\(a^{-1} = a^{\phi(p) - 1} \bmod{p}\\).
 
