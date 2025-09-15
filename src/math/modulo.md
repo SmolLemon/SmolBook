@@ -1,15 +1,41 @@
 # Modulo
 
-Đây là một chiếc đồng hồ điện tử.
+Nói đến *modulo* tức là nói đến *số dư*. Ví dụ, \\(8\\) chia \\(3\\) bằng \\(2\\) dư \\(1\\). Cụ thể hơn, một số \\(a\\) chia cho số \\(b\\) sẽ cho ta thương bằng \\(q\\) và số dư \\(r\\). Các số này thoả mãn điều kiện \\(a = bq + r\\) với \\(0 \le r \lt b\\).
 
-<center>
-<img src="../images/1280px-Telechron_clock_2H07-Br_Administrator.JPG" alt="Đồng hồ"/>
+## Đồng dư
 
-<sup> Đồng hồ điện tử - [Wissembourg](https://commons.wikimedia.org/wiki/File:Telechron_clock_2H07-Br_Administrator.JPG) - [CC BY-SA 3.0 Umported](https://creativecommons.org/licenses/by-sa/3.0/deed.en)</sup>
-</center>
+Nếu hai số \\(a\\) và \\(b\\) khi chia cho \\(n\\) mà số dư của hai số bằng nhau, ta nói hai số này **đồng dư** modulo \\(n\\). Kí hiệu: \\[a \equiv b \pmod n\\] 
 
-## Tính chất
+Ví dụ: \\(38 \equiv 3 \pmod 5\\) vì cả hai số đều có số dư bằng nhau khi chia cho \\(5\\).
 
+Khi hai số đồng dư với nhau, sẽ tồn tại một số \\(k\\) sao cho \\(a - b = kn\\).
+
+Các số âm cũng có thể đồng dư, ví dụ: \\(2 \equiv -3 \pmod 5\\).
+
+### Tính chất
+
+Với \\(a \equiv b \pmod n\\), \\(a_i \equiv b_i \pmod n \  \forall i\\), ta có một số tính chất của nghịch đảo modulo:
+
+- \\(a \equiv a \pmod n\\)
+- \\(a \equiv b \pmod n \iff b \equiv a \pmod n\\)
+- \\(\begin{cases}
+a \equiv b \pmod n \\\\
+b \equiv c \pmod n
+\end{cases} \implies a \equiv c \pmod n\\)
+- \\(a + k \equiv b + k \pmod n\\) với số nguyên \\(k\\) bất kì
+- \\(ak \equiv bk \pmod n\\) với số nguyên \\(k\\) bất kì
+- \\(ak \equiv bk \pmod kn\\) với số nguyên \\(k\\) bất kì
+- \\(a_1 + a_2 \equiv b_1 + b_2 \pmod kn\\)
+- \\(a_1 - a_2 \equiv b_1 - b_2 \pmod kn\\)
+- \\(a_1a_2 \equiv b_1b_2 \pmod kn\\)
+- \\(a^k \equiv b^k \pmod kn\\) với số nguyên \\(k\\) không âm
+
+Một trong những tính chất quan trọng trong lập trình thi đấu liên quan đến modulo chính là các phép tính cộng, trừ, nhân modulo, cụ thể:
+- \\((a + b) \mod n = ((a \mod n) + (b \mod n)) \mod n\\)
+- \\((a - b) \mod n = ((a \mod n) - (b \mod n)) \mod n\\)
+- \\((a \times b) \mod n = ((a \mod n) \times (b \mod n)) \mod n\\)
+
+Các tính chất này rất hữu ích khi ta cần tính số dư của một giá trị rất lớn.
 
 ## Nghịch đảo modulo
 

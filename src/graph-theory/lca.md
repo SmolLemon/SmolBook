@@ -139,66 +139,72 @@ int lca(int u, int v){
 
 ## Thuật toán offline tìm LCA của Tarjan
 
-Thuật toán tìm LCA của Tarjan có thể tìm LCA của các cặp đỉnh. Thuật toán của Tarjan là một thuật toán *offline*, tức là thuật toán phải biết trước được rằng nó sẽ phải tìm LCA của các cặp đỉnh nào.
+Thuật toán offline tìm LCA của Tarjan, như tên gọi của nó, là một thuật toán offline, tức là thuật toán phải biết trước được rằng nó sẽ phải tìm LCA của các cặp đỉnh nào.
 
-Ta sử dụng [DSU](../data-structures/dsu.md). Đầu tiên, mỗi đỉnh của cây sẽ tương đương với một tập hợp. Sau đó, ta sẽ thực hiện duyêt cây bằng [DFS](dfs.md). Với mỗi lần duyệt DFS một đỉnh \\(u\\), ta sẽ thực hiện DFS trên các cây con gốc \\(x\\). Sau mỗi lần duyệt DFS trên các cây con, ta thực hiện `Union(u, x)`. Khi hoàn tất việc duyệt các cây con, ta có thể tìm được LCA của hai đỉnh \\((u, v)\\) chính là đỉnh có chiều cao nhỏ nhất trong tập hợp chứa đỉnh \\(v\\), nếu đỉnh \\(v\\) đã được thăm khi duyệt DFS.
+Thuật toán sẽ duyệt cây bằng [DFS](dfs.md). Với mỗi đỉnh \\(u\\), ta đánh dấu đỉnh \\(u\\) là đã được duyệt qua. Sau đó, ta thực hiện \\(2\\) quy trình chính:
+- Duyệt cây: với mỗi đỉnh con \\(v\\) của \\(u\\), ta duyệt cây con gốc \\(u\\) và thực hiện union hai tập hợp chứa hai đỉnh \\(u, v\\). Lưu ý rằng phần tử đại diện của tập hợp chứa đỉnh \\(u\\) là đỉnh gần đỉnh gốc nhất.
+- Xử lí truy vấn: với mỗi truy vấn \\((u, v)\\) chứa đỉnh \\(u\\), nếu đỉnh \\(v\\) đã được duyệt qua, ta biết được LCA của truy vấn là phần tử đại diện của tập hợp chứa đỉnh \\(v\\).
 
-Giả sử ta có một cây sau, và ta muốn tìm LCA của các cặp đỉnh \\(4, 5\\) và \\(5, 6\\).
+Giả sử ta có một cây sau, và ta muốn tìm LCA của các cặp đỉnh \\((4, 5)\\) và \\((5, 6)\\).
 
 <center>
 <img src="../images/OLCA_init.png" alt="Cây ban đầu"/>
 </center>
 
-Khi duyệt DFS đến đỉnh \\(5\\), cây sẽ có dạng sau: các đỉnh màu xanh dương là các đỉnh chưa được duyệt còn các đỉnh màu đỏ là các đỉnh đã thăm duyệt, các đỉnh nằm trong mỗi ô có đường màu đỏ là các đỉnh thuộc cùng một tập hợp. 
+Khi duyệt DFS đến đỉnh \\(5\\), cây sẽ có dạng sau: các đỉnh màu xanh dương là các đỉnh chưa được duyệt còn các đỉnh màu xanh lục là các đỉnh đã thăm duyệt, các đỉnh nằm trong mỗi ô có đường màu đỏ là các đỉnh thuộc cùng một tập hợp. 
 
 <center>
 <img src="../images/OLCA_4_5.png" alt="LCA của 4 và 5 là 2"/>
 </center>
 
-Ta có đỉnh có chiều cao nhất trong tập hợp chứa đỉnh \\(4\\) là \\(2\\) nên LCA của \\((4, 5)\\) sẽ là đỉnh \\(2\\).
-
-Tiếp theo khi duyệt đến đỉnh \\(6\\), cây sẽ có dạng:
+Ta có phần tử đại diện của tập hợp chứa đỉnh \\(4\\) là đỉnh \\(2\\) nên LCA của \\((4, 5)\\) sẽ là đỉnh \\(2\\).
 
 <center>
 <img src="../images/OLCA_5_6.png" alt="LCA của 5 và 6 là 1"/>
 </center>
 
-Cũng với lập luận tương tự, ta có LCA của \\((5, 6)\\) sẽ là đỉnh \\(1\\).
-
-Độ phức tạp của thuật toán này sẽ bằng độ phức tạp khi duyệt DFS: \\(O(m + n)\\).
+Cũng với lập luận tương tự, khi duyệt tới đỉnh \\(6\\), ta có LCA của \\((5, 6)\\) sẽ là đỉnh \\(1\\).
 
 ```C++
-vector<int> qry[N];
-int ancestor[N];
-bitset<N> vst;
-int n;
-UnionFind dsu; // CTDL dsu
+UnionFind dsu;
+vector<pair<int, int>> queries; // các truy vấn
+vector<int> qry[N]; // truy vấn sau tiền xử lí
+int ancestor[N]; // phần tử đại diện gần đỉnh gốc nhất
+bitset<N> vst; // đỉnh đã được duyệt hay chưa
+int n; // số lượng đỉnh
 
-// OLCA = Offline LCA
 void OLCA(int u, int p){
-	vst[u] = 1;
-	ancestor[u] = u;
-	for(int v : adj[u]){
-		if(v == p) continue;
-		OLCA(v, u); // xử lí cây con
-		dsu.Union(u, v); // Union tập hợp chứa đỉnh cha và tập hợp chứa đỉnh con
-		ancestor[dsu.find(u)] = u; // đỉnh có chiều cao nhỏ nhất trong tập hợp chứa đỉnh u
-	}
-	for(int v : qry[u]){
-		if(vst[v]){
-			cout << "LCA(" << u << ", " << v << "): " << ancestor[dsu.find(v)] << '\n';
-		}
-	}
+    vst[u] = 1; // đã thăm đỉnh u
+    ancestor[u] = u;
+    for(int v : adj[u]){
+        if(v == p) continue;
+        OLCA(v, u); // xử lí cây con
+        dsu.Union(u, v); // Union tập hợp chứa đỉnh cha và tập hợp chứa đỉnh con
+        ancestor[dsu.find(u)] = u; // đỉnh có chiều cao nhỏ nhất trong tập hợp chứa đỉnh u
+    }
+	
+    for(int v : query[u]){
+        if(vst[v]){
+            cout << "LCA(" << u << ", " << v << "): " << ancestor[dsu.find(v)] << '\n';
+        }
+    }
 }
+
 void lca(){
-	// for (truy vấn (u, v) : các truy vấn){
-	//		qry[u].push_back(v);	
-	//		qry[v].push_back(u);	
-	// }
+    // tiền xử lí các truy vấn
+    for (auto [u, v] : queries){
+        qry[u].push_back(v);	
+        qry[v].push_back(u);	
+    }
 
-	dsu = UnionFind(n);
+    dsu = UnionFind(n);
 
-	// các đỉnh được đánh số từ 0 đến n - 1
-	OLCA(0, -1);
+    // các đỉnh được đánh số từ 0 đến n - 1
+    OLCA(0, -1);
 }
+
 ```
+
+Quá trình duyệt cây có độ phức tạp \\(O(n)\\). Với mỗi đỉnh, ta duyệt các truy vấn tổng cộng là \\(2m\\) lần nên có độ phức tạp \\(O(m)\\). Độ phức tạp của DSU rất nhỏ nên ta cho nó bằng \\(O(1)\\). 
+
+Độ phức tạp của thuật toán bằng \\(O(n + m)\\), với \\(m\\) là số truy vấn.
