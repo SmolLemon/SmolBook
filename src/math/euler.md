@@ -38,9 +38,9 @@ Với \\(p\\) là các ước nguyên tố của \\(n\\).
 int phi(int n){
 	int totient = n;
 	for(int i = 2; 1ll * i * i <= n; ++i){
-		if(n % i == 0){
+		if(n % i == 0){ // i là số nguyên tố
 			while(n % i == 0) n /= i;
-			totient -= totient / i;
+			totient -= totient / i; // (1 - 1/i)
 		}
 	}
 	if(n != 1) totient -= totient / n;
@@ -59,21 +59,43 @@ Ta có thể chỉnh sửa thuật toán [sàng số nguyên tố](prime.md#sàn
 int phi[N];
 
 void sievePhi(int n){
-	for(int i = 1; i <= n; ++i) phi[i] = i;
+    for(int i = 1; i <= n; ++i) phi[i] = i;
     for(int i = 2; i <= n; ++i){
-        if(phi[i] == i){
+        if(phi[i] == i){ // i là số nguyên tố
             for(int j = i; j <= n; j += i){
-               phi[j] -= phi[j] / i;
+               phi[j] -= phi[j] / i; // (1 - 1/i)
             }
         }
     }
 }
 ```
 
+Vì phi hàm Euler là một [hàm nhân tính](https://vi.wikipedia.org/wiki/H%C3%A0m_nh%C3%A2n_t%C3%ADnh), ta có thể tính giá trị phi hàm Euler dựa trên công thức \\[\phi(n) = n - \sum_{d|n}\phi(d)\\]
+
+Với \\(d\\) là các ước của \\(n\\) nhỏ hơn \\(n\\).
+
+```C++
+int phi[N];
+
+void sievePhi(int n){
+    for(int i = 1; i <= n; ++i) phi[i] = i;
+    for(int i = 1; i <= n; ++i){
+        for(int j = i + i; j <= n; j += i){
+           phi[j] -= phi[i];
+        }
+    }
+}
+```
 ## Ứng dụng
 
 ### Định lí Euler
 
 Phi hàm Euler xuất hiện trong [định lí Euler](https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Bnh_l%C3%BD_Euler): với hai số \\(a\\) và \\(p\\) nguyên tố cùng nhau, ta có: \\[a^{\phi(p)} \equiv 1 \pmod p\\]
 
-Từ đây, ta dễ dàng tính được giá trị [nghịch đảo modulo](modulo.md#nghịch-đảo-modulo) của \\(a\\) bằng \\(a^{\phi(p)-1}\\).
+Từ đây, ta dễ dàng tính được giá trị [nghịch đảo modulo](modulo.md#nghịch-đảo-modulo) của \\(a\\) bằng \\(a^{\phi(p)-1} \bmod p\\).
+
+### Luỹ thừa
+
+Với hai số \\(a\\) và \\(p\\) nguyên tố cùng nhau, nếu \\(c \equiv d \pmod{\phi(p)}\\), thì: \\[a^c \equiv a^d \pmod p\\]
+
+Tính chất này rất hữu dụng khi ta muốn tính luỹ thừa bậc \\(b\\) của \\(a\\) với số mũ \\(b\\) rất lớn: \\[a^b \equiv a^{b \bmod \phi(p)} \pmod p\\]

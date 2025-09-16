@@ -170,7 +170,7 @@ n = 5, 1 << 5 = 100000 (Thập phân: 32)
               =  11111 (Thập phân: 31) 
 ```
 
-Từ ví dụ trên, ta còn rút thêm được một ứng dụng nữa: Xác định \\(N\\) có phải là một luỹ thừa của \\(2\\).
+Từ ví dụ trên, ta còn có thêm một ứng dụng nữa: Xác định \\(N\\) có phải là một luỹ thừa của \\(2\\).
 
 Để làm được điều này, ta sử dụng thao tác AND: `N & (N - 1)`:
 - Nếu `N & (N - 1)` bằng \\(0\\) và \\(N\\) khác \\(0\\), \\(N\\) là một luỹ thừa của \\(2\\)
@@ -242,12 +242,14 @@ Như đã nói ở trên, bitmask có thể dùng để biểu diễn tập hợ
 
 Bảng sau sẽ cho ta thấy các thao tác của tập hợp và cách áp dụng tương ứng với bitmask sử dụng các toán tử thao tác:
 
-|Thao tác|Ký hiệu cho tập hợp|Ký hiệu cho bit|
+|Thao tác|Kí hiệu cho tập hợp|Kí hiệu cho bit|
 |---|---|---|
 |Giao|\\(A \cap B\\)|\\(A \land B\\)|
 |Hợp|\\(A \cup B\\)|\\(A \lor B\\)|
 |Hiệu|\\(A \backslash B\\)|\\(A \land (\neg B)\\)|
 |Phần bù|\\(\bar{A}\\)|\\(\neg A\\)|
+
+**Ghi chú**: \\(\neg A\\) đảo giá trị các bit trong bitmask.
 
 ## Một số hàm liên quan đến bit trong C++
 

@@ -28,7 +28,7 @@ int a[4] = {1, 4, 3};
 
 Đoạn code trên sẽ gán \\(3\\) phần tử đầu tiên của mảng `a` với giá trị tương ứng.
 
-Một điều nữa cần lưu ý rằng nếu ta khai báo một *mảng toàn cục (global array)* thì các phần tử trong mảng sẽ có giá trị mặc định. Nếu là mảng số nguyên thì sẽ có giá trị \\(0\\), mảng boolean thì sẽ là `false`. Mặc khác, nếu ta khai báo một mảng trong một hàm (như hàm main) thì giá trị của các phần tử trong mảng có thể có giá trị ngẫu nhiên.
+Một điều nữa cần lưu ý rằng nếu ta khai báo một *mảng toàn cục (global array)* thì các phần tử trong mảng sẽ có giá trị mặc định. Nếu là mảng số nguyên thì sẽ có giá trị \\(0\\), mảng boolean thì sẽ là `false`. Mặc khác, nếu ta khai báo một *mảng cục bộ (local array)*, là các mảng được khai báo trong một hàm, thì giá trị của các phần tử trong mảng có thể có giá trị ngẫu nhiên.
 
 ## `vector`
 

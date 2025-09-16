@@ -2,11 +2,11 @@
 
 ## Biến
 
-Các biến có thể được sử dụng để thực hiện các thao tác trong lập trình hoặc giải quyết các công thức giống toán. Tuy nhiên, khác với toán, ta không thể viết các biến tùy ý được - C++ không cho phép các thao tác như tạo biến \\(x = 5\\).
+Các biến có thể được sử dụng để thực hiện các thao tác trong lập trình hoặc giải quyết các công thức giống như trong toán học. Tuy nhiên, khác với toán, ta không thể viết các biến một cách tuỳ ý.
 
 Để khai báo một biến trong C++, ta xác định và gán các biến vào các kiểu dữ liệu phù hợp.
 
-Giả sử ta muốn khai báo một biến nguyên \\(x = 5\\), ta có thể viết:
+Giả sử ta muốn khai báo một biến số nguyên \\(x = 5\\), ta có thể viết:
 
 ```C++
 int x = 5;
@@ -41,7 +41,7 @@ Ta cũng có thể khai báo \\(x\\) mà không gán giá trị cho nó.
 int x;
 ```
 
-Nếu như ta khai báo các biến ở ngoài hàm main, các biến toàn cục (global variable) nếu không gán giá trị sẽ có giá trị bằng \\(0\\), còn nếu ta khai báo trong các hàm, các biến cục bộ (local variable) sẽ có giá trị ngẫu nhiên.
+Nếu như ta khai báo các biến ở ngoài hàm main, các *biến toàn cục (global variable)* nếu không gán giá trị sẽ có giá trị bằng \\(0\\), còn nếu ta khai báo trong các hàm, các *biến cục bộ (local variable)* sẽ có giá trị ngẫu nhiên.
 
 ## Kiểu dữ liệu
 

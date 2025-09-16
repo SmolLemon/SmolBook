@@ -11,7 +11,7 @@ if (a < 5){
 
 Ở đây, ta có \\(a = 4 < 5\\) nên ta sẽ in `4 < 5`.
 
-Nếu ta muốn xét cả trường hợp \\(a \ge 5\\), ta sẽ "rẽ nhánh" câu lệnh thực hiện đoạn code khác khi điều kiện \\(a < 5\\) không thỏa mãn. 
+Nếu ta muốn xét cả trường hợp \\(a \ge 5\\), chương trình sẽ "rẽ nhánh" câu lệnh thực hiện đoạn code khác khi điều kiện \\(a < 5\\) không thỏa mãn. 
 
 ```C++
 int a = 5;

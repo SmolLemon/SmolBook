@@ -45,7 +45,9 @@ kiểu_trả_về tên_hàm(tham_số_1, tham_số_2, ..., tham_số_n){
 ```
 
 Trong đó:
-- **Kiểu trả về** là kiểu dữ liệu mà hàm sẽ trả về cho ta nếu ta gọi hàm đó. Để trả về giá trị trong một hàm, ta viết `return` và sau đó và một giá trị nào đó. Ta đã được thấy hàm `main` trả về \\(0\\) để báo hiệu trình biên dịch rằng chương trình đã biên dịch thành công. Có thể có những hàm không trả về giá trị gì như hàm `print` ở trên, nên kiểu trả về của nó sẽ là `void`. Ta vẫn có thể viết `return` trong một hàm `void` để kết thúc sớm một hàm, nhưng ta không thêm giá trị trả về ở sau nó giống như hàm `print`. 
+- **Kiểu trả về** là kiểu dữ liệu mà hàm sẽ trả về cho ta nếu ta gọi hàm đó. Để trả về giá trị trong một hàm, ta viết `return` và sau đó và một giá trị nào đó. 
+	
+	Có thể có những hàm không trả về giá trị gì như hàm `print` ở trên, nên kiểu trả về của nó sẽ là `void`. Ta vẫn có thể viết `return` trong một hàm `void` để kết thúc sớm một hàm, nhưng ta không thêm giá trị trả về ở sau nó giống như hàm `print`. 
 - **Tên hàm** là tên của hàm.
 - **Tham số** là những thông tin mà ta cho hàm để hàm thực thi. Ở hàm `print`, ta có hai tham số là `name` và `age`. Các hàm có thể không có tham số.
 
@@ -99,9 +101,9 @@ void change(int val){
 
 int main(){
 	int v = 5;
-	cout << "Truoc: " << v << '\n';
+	cout << "Truoc: " << v << '\n'; // 5
 	change(v);
-	cout << "Sau: " << v << '\n';
+	cout << "Sau: " << v << '\n'; // 5
 }
 ```
 
@@ -116,9 +118,9 @@ void change(int &val){
 
 int main(){
 	int v = 5;
-	cout << "Truoc: " << v << '\n';
+	cout << "Truoc: " << v << '\n'; // 5
 	change(v);
-	cout << "Sau: " << v << '\n';
+	cout << "Sau: " << v << '\n'; // 10
 }
 ```
 

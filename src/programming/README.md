@@ -17,7 +17,7 @@ Ngôn ngữ lập trình C++ là một trong ngôn ngữ được sử dụng ph
 
 Một trong những IDE được cài đặt rộng rãi trên các máy thi là [Code::Blocks](https://www.codeblocks.org/).
 
-Trên các máy Windows, để tải về Code::Blocks, ta truy cập [trang web](https://www.codeblocks.org/downloads/binaries/) của Code::Blocks và tải về phiên bản mingw-setup bằng \\(1\\) trong \\(2\\) đường dẫn mà trang chỉ ta đến, sau đó thực hiện việc tải Code::Blocks.
+Trên các máy Windows, để tải về Code::Blocks, ta truy cập [trang web](https://www.codeblocks.org/downloads/binaries/) của Code::Blocks và tải về phiên bản `codeblocks-XX.XXmingw-setup.exe` bằng \\(1\\) trong \\(2\\) đường dẫn mà trang chỉ ta đến, sau đó thực hiện việc tải Code::Blocks.
 
 <center>
 <img src="../images/codeblock_download_page.png" alt="Tải về Code::blocks"/>

@@ -96,7 +96,7 @@ cin.tie(NULL);
 
 `cin.tie(NULL)` tắt  đồng bộ giữa `cin` và `cout`. `tie()` được dùng để đảm bảo tất cả các dữ liệu của `cout` sẽ được xuất ra màn hình trước khi thực hiện `cin` nhập dữ liệu. Điều này sẽ giúp ích cho các chương trình cần sự tương tác giữa người và chương trình, hoặc chương trình và chương trình - thứ mà ngoài dạng bài toán tương tác ra thì không cần thiết trong lập trình thi đấu. Việc tương tác này sẽ chương trình của ta sẽ chạy chậm đi. Ta tắt tính năng này để gia tăng tốc độ chương trình.
 
-Một số chương trình còn có cả `cout.tie(0)` nhưng điều này là không cần thiết.
+Ta có thể thêm `cout.tie(0)` nhưng điều này là không cần thiết.
 
 ## `endl` vs `'\n'`
 
