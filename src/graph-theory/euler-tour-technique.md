@@ -38,7 +38,7 @@ void dfs(int u, int p){
 
 ## Ứng dụng
 
-Việc lưu trứ một cây thành một mảng bằng kĩ thuật chu trình Euler giúp ta giải quyết hiệu quả một số dạng bài toán.
+Việc lưu trữ một cây thành một mảng bằng kĩ thuật chu trình Euler giúp ta giải quyết hiệu quả một số dạng bài toán.
 
 ### Truy vấn các cây con
 

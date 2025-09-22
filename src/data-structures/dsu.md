@@ -1,19 +1,19 @@
 # Disjoint Set Union
 
-**Disjoint Sets Union (DSU)**, hoặc **Union-Find Disjoint Sets (UFDS)**, là một CTDL quản lí các tập hợp không giao nhau, tức là các tập hợp không có phần tử chung. DSU có thể trả lời *hiệu quả* nếu \\(2\\) phần tử có nằm trong cùng một tập hợp hay không, và có thể hợp \\(2\\) tập hợp lại với nhau.
+**Disjoint Set Union (DSU)**, hoặc **Union-Find Disjoint Sets (UFDS)**, là một CTDL quản lí các tập hợp không giao nhau, tức là các tập hợp không có phần tử chung. DSU có thể trả lời *hiệu quả* nếu \\(2\\) phần tử có nằm trong cùng một tập hợp hay không, và có thể hợp \\(2\\) tập hợp lại với nhau.
 
 Như tên gọi của mình, DSU bao gồm các thao tác chính:
-- **MakeSet**: Tạo một tập hợp có \\(1\\) phần tử là a.
-- **Union**: Hợp tập hợp chứa phần tử a và tập hợp chứa phần tử b thành một tập hợp, và
-- **Find**: Tìm phần tử đại diện của tập hợp chứa phần tử a.
+- **MakeSet**: Tạo một tập hợp có \\(1\\) phần \\(a\\).
+- **Union**: Hợp tập hợp chứa phần tử \\(a\\) và tập hợp chứa phần tử \\(b\\) thành một tập hợp, và
+- **Find**: Tìm phần tử đại diện của tập hợp chứa phần tử \\(a\\).
 
 Mỗi tập hợp sẽ có một phần tử làm phần tử *đại diện*, dùng để xác định tập hợp mà nó nằm trong. Đây cũng là giá trị trả về của thao tác **Find**.
 
-Để kiểm tra nếu \\(2\\) phần tử có nằm trong cùng một tập hợp không thì ta kiểm tra nếu `Find(a) = Find(b)` hay nếu tập hợp chứa a và tập hợp chứa b đều có cùng một phần tử đại diện.
+Để kiểm tra nếu \\(2\\) phần tử có nằm trong cùng một tập hợp không thì ta kiểm tra nếu `Find(a) = Find(b)` hay nếu tập hợp chứa \\(a\\) và tập hợp chứa \\(b\\) đều có cùng một phần tử đại diện.
 
 ## Cài đặt
 
-Để cài đặt DSU, ta có mảng `p` có n phần tử dùng để lưu các phần tử đại diện của tập hợp - ví dụ: `p[i]` lưu phần tử đại diện của tập hợp chứa `i`.
+Để cài đặt DSU, ta có mảng `p` có \\(n\\) phần tử dùng để lưu các phần tử đại diện của tập hợp - ví dụ: `p[i]` lưu phần tử đại diện của tập hợp chứa \\(i\\).
 
 Ta có cài đặt DSU bằng Quick-Find:
 
@@ -46,7 +46,7 @@ Như ta có thể thấy, hàm `Union` có độ phức tạp thời gian quá l
 
 ### Quick-Union
 
-Ta sẽ tối ưu hàm Union bằng cách mô tả các tập hợp bằng các đồ thị cây hay *rừng cây*. `p[i]` giờ đây sẽ chỉ cha của đỉnh `i` trong đồ thị cây. Khi thực hiện `Union(a, b)` ta chỉ cần thay đổi cha của gốc của cây chứa a thành gốc của cây chứa của b hay `p[Find(a)] = Find(b)`. Và khi thực hiện `Find(a)` ta tìm gốc của cây bằng cách xét dãy `a`, `p[a]`, `p[p[a]]`, ... cho tới khi tìm tìm được phần tử trong dãy có giá trị giống phần tử trước nó, tức là ta đã tìm được gốc của cây. 
+Ta sẽ tối ưu hàm Union bằng cách mô tả các tập hợp bằng các đồ thị cây hay *rừng cây*. `p[i]` giờ đây sẽ chỉ cha của đỉnh \\(i\\) trong đồ thị cây. Khi thực hiện `Union(a, b)` ta chỉ cần thay đổi cha của gốc của cây chứa \\(a\\) thành gốc của cây chứa của \\(b\\) hay `p[Find(a)] = Find(b)`. Và khi thực hiện `Find(a)` ta tìm gốc của cây bằng cách xét dãy `a`, `p[a]`, `p[p[a]]`,... cho tới khi tìm được phần tử trong dãy có giá trị giống phần tử trước nó, tức là ta đã tìm được gốc của cây. 
 
 |Thao tác|Minh họa|
 |---|---|
@@ -82,9 +82,9 @@ Như đã nói ở trên, trên trung bình, các cây có độ cao tương đ�
 
 #### Union theo thứ hạng
 
-Ta có Union theo thứ hạng: Khi Union tập hợp chứa a và tâp hợp chứa b, cây nào có thứ hạng cao hơn sẽ là cha của cây có thứ hạng thấp hơn, nếu \\(2\\) cây có thứ hạng bằng nhau thì gốc của đỉnh nào làm cha cũng được, nhưng thứ hạng của cây có đỉnh được chọn phải tăng thêm \\(1\\).
+Ta có Union theo thứ hạng: Khi Union tập hợp chứa \\(a\\) và tâp hợp chứa \\(b\\), cây nào có thứ hạng cao hơn sẽ là cha của cây có thứ hạng thấp hơn, nếu \\(2\\) cây có thứ hạng bằng nhau thì gốc của đỉnh nào làm cha cũng được, nhưng thứ hạng của cây có đỉnh được chọn phải tăng thêm \\(1\\).
 
-Ta sẽ tạo một mảng `r` lưu thứ hạng của tập hợp chứa đỉnh i. Ban đầu, các giá trị trong `r` sẽ bằng \\(0\\).
+Ta sẽ tạo một mảng `r` lưu thứ hạng của tập hợp chứa \\(i\\). Ban đầu, các giá trị trong `r` sẽ bằng \\(0\\).
 
 Hàm `Find` sẽ tương tự với Find trong Quick-Union.
 
@@ -101,15 +101,15 @@ void Union(int a, int b){
 
 Ta có giả thiết: Một cây có thứ hạng \\(k\\) sẽ có ít nhất \\(2^{k}\\) đỉnh. 
 
-> Chứng minh: Nếu \\(k\\) bằng 0, thì điều này là chính xác vì khi cây có thứ hạng bằng 0 thì chỉ có \\(1\\) đỉnh. Ta cũng nhận thấy rằng để có cây có thứ hạng \\(k\\) thì nó phải được Union theo thứ hạng từ \\(2\\) cây có thứ hạng \\(k - 1\\), khi đó số đỉnh trong cây có thứ hạng \\(k\\) sẽ lớn hơn hoặc bằng \\(2^{k - 1} + 2^{k - 1} = 2^k\\).
+> Chứng minh: Nếu \\(k\\) bằng \\(0\\), thì điều này là chính xác vì khi cây có thứ hạng bằng \\(0\\) thì chỉ có \\(1\\) đỉnh. Ta cũng nhận thấy rằng để có cây có thứ hạng \\(k\\) thì nó phải được Union theo thứ hạng từ \\(2\\) cây có thứ hạng \\(k - 1\\), khi đó số đỉnh trong cây có thứ hạng \\(k\\) sẽ lớn hơn hoặc bằng \\(2^{k - 1} + 2^{k - 1} = 2^k\\).
 
-Từ đây ta có thể nhận định rằng thứ hạng cao nhất có thể khi liên tiếp thực hiện Union theo thứ hạng n phần tử là \\(\log{n}\\).
+Từ đây ta có thể nhận định rằng thứ hạng cao nhất có thể khi liên tiếp thực hiện Union theo thứ hạng \\(n\\) phần tử là \\(\log{n}\\).
 
 #### Union theo kích thước
 
-Ta có Union theo kích thước: Khi Union tập hợp chứa a và tâp hợp chứa b, cây có nhiều đỉnh hơn sẽ là cha của gốc của cây có ít đỉnh hơn, nếu \\(2\\) cây có số lượng đỉnh bằng nhau thì lấy cây nào làm cha cũng được.
+Ta có Union theo kích thước: Khi Union tập hợp chứa \\(a\\) và tâp hợp chứa \\(b\\), cây có nhiều đỉnh hơn sẽ là cha của gốc của cây có ít đỉnh hơn, nếu \\(2\\) cây có số lượng đỉnh bằng nhau thì lấy cây nào làm cha cũng được.
 
-Ta sẽ tạo một mảng `sz` lưu kích thước của tập hợp chứa đỉnh `i`. Ban đầu, các giá trị trong `sz` sẽ bằng 1.
+Ta sẽ tạo một mảng `sz` lưu kích thước của tập hợp chứa \\(i\\). Ban đầu, các giá trị trong `sz` sẽ bằng \\(1\\).
 
 Hàm `Find` sẽ tương tự với Find trong Quick-Union.
 
@@ -129,11 +129,11 @@ Tương tự với Union theo thứ hạng, ta có giả thiết: Một đỉnh 
 > Chứng minh: Chiều cao của đỉnh \\(x\\) nằm trong cây \\(T_1\\) sẽ không thay đổi trừ khi được hợp lại với cây \\(T_2\\) có kích thước lớn hơn \\(T_1\\).
 >
 > Khi này:
->	- Chiều cao của \\(x\\) tăng lên 1
+>	- Chiều cao của \\(x\\) tăng lên \\(1\\)
 >	- Kích thước của cây mới \\(T_3\\) chứa đỉnh \\(x\\) sẽ gấp đôi cây cũ hoặc hơn: 
 > \\[size(T_3) = size(T_1) + size(T_2) \ge 2 \times size(T_1)\\]
 
-Giống với Union theo thứ hạng, ta có thể nhận định rằng chiều cao lớn nhất có thể khi liên tiếp Union theo thứ hạng n phần tử là \\(\log{n}\\).
+Giống với Union theo thứ hạng, ta có thể nhận định rằng chiều cao lớn nhất có thể khi liên tiếp Union theo thứ hạng \\(n\\) phần tử là \\(\log{n}\\).
 
 <br>
 

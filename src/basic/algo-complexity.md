@@ -64,7 +64,7 @@ for(int i = 1; i <= n; i += 2){
 }
 ```
 
-Lặp với số lần lần lượt là \\(5 \times n\\), \\(\left\lceil \frac{n}{2} \right\rceil \\) vẫn có độ phức tạp thời gian là \\(O(n)\\).
+Lặp với số lần lần lượt là \\(5n\\), \\(\left\lceil \frac{n}{2} \right\rceil \\) vẫn có độ phức tạp thời gian là \\(O(n)\\).
 
 Nếu chương trình có nhiều giai đoạn với các độ phức tạp khác nhau, ta sẽ chọn giai đoạn có độ phức tạp lớn nhất trong tất cả các giai đoạn làm độ phức tạp thời gian của cả thuật toán.
 

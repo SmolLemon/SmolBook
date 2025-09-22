@@ -142,7 +142,7 @@ int lca(int u, int v){
 Thuật toán offline tìm LCA của Tarjan, như tên gọi của nó, là một thuật toán offline, tức là thuật toán phải biết trước được rằng nó sẽ phải tìm LCA của các cặp đỉnh nào.
 
 Thuật toán sẽ duyệt cây bằng [DFS](dfs.md). Với mỗi đỉnh \\(u\\), ta đánh dấu đỉnh \\(u\\) là đã được duyệt qua. Sau đó, ta thực hiện \\(2\\) quy trình chính:
-- Duyệt cây: với mỗi đỉnh con \\(v\\) của \\(u\\), ta duyệt cây con gốc \\(u\\) và thực hiện union hai tập hợp chứa hai đỉnh \\(u, v\\). Lưu ý rằng phần tử đại diện của tập hợp chứa đỉnh \\(u\\) là đỉnh gần đỉnh gốc nhất.
+- Duyệt cây: với mỗi đỉnh con \\(v\\) của \\(u\\), ta duyệt cây con gốc \\(u\\) và thực hiện union hai tập hợp chứa hai đỉnh \\(u, v\\). Lưu ý rằng phần tử đại diện của tập hợp chứa đỉnh \\(u\\) bất kì là đỉnh gần đỉnh gốc nhất.
 - Xử lí truy vấn: với mỗi truy vấn \\((u, v)\\) chứa đỉnh \\(u\\), nếu đỉnh \\(v\\) đã được duyệt qua, ta biết được LCA của truy vấn là phần tử đại diện của tập hợp chứa đỉnh \\(v\\).
 
 Giả sử ta có một cây sau, và ta muốn tìm LCA của các cặp đỉnh \\((4, 5)\\) và \\((5, 6)\\).
@@ -180,10 +180,10 @@ void OLCA(int u, int p){
         if(v == p) continue;
         OLCA(v, u); // xử lí cây con
         dsu.Union(u, v); // Union tập hợp chứa đỉnh cha và tập hợp chứa đỉnh con
-        ancestor[dsu.find(u)] = u; // đỉnh có chiều cao nhỏ nhất trong tập hợp chứa đỉnh u
+        ancestor[dsu.find(u)] = u; // đỉnh gần gốc nhất của tập hợp chứa đỉnh u
     }
 	
-    for(int v : query[u]){
+    for(int v : qry[u]){
         if(vst[v]){
             cout << "LCA(" << u << ", " << v << "): " << ancestor[dsu.find(v)] << '\n';
         }
@@ -205,6 +205,18 @@ void lca(){
 
 ```
 
+Có lẽ điều làm bạn lăn tăn nhất về thuật toán này chính là phần in ra LCA của cặp đỉnh \\((u, v)\\). 
+
+Giả sử \\(LCA(u, v) = w\\), ta có thể thấy: hai đỉnh \\(u\\), \\(v\\) sẽ nằm trong hai cây con khác nhau của đỉnh \\(w\\).
+
+Sau khi duyệt cây con của \\(w\\) chứa đỉnh \\(u\\) (giả sử cây con chứa đỉnh \\(u\\) duyệt trước), toàn bộ các đỉnh của cây con sẽ chỉ đến đỉnh \\(w\\) là đỉnh đại diện của tập hợp chứa các đỉnh ấy cho tới khi chương trình duyệt xong đỉnh \\(w\\). Khi này, lúc duyệt sang cây con chứa đỉnh \\(v\\), đỉnh đại diện của tập hợp chứa đỉnh \\(u\\) (tức là đỉnh \\(w\\)) sẽ là LCA của cặp đỉnh \\((u, v)\\).
+
+Sử dụng lập luận trên, ta cũng có thể kết luận được rằng việc in \\(LCA(u, v)\\) của truy vấn \\((u, v)\\) chỉ xảy ra đúng một lần mặc dù truy vấn sẽ được xét \\(2\\) lần trong thuật toán.
+
+### Độ phức tạp thuật toán
+
 Quá trình duyệt cây có độ phức tạp \\(O(n)\\). Với mỗi đỉnh, ta duyệt các truy vấn tổng cộng là \\(2m\\) lần nên có độ phức tạp \\(O(m)\\). Độ phức tạp của DSU rất nhỏ nên ta cho nó bằng \\(O(1)\\). 
 
 Độ phức tạp của thuật toán bằng \\(O(n + m)\\), với \\(m\\) là số truy vấn.
+
+Mặc dù thuật toán của Tarjan có độ phức tạp nhỏ hơn các phương pháp đã được nói ở trên, trên thực tế, nếu dữ liệu nhập không đủ lớn, thuật toán của Tarjan sẽ chậm hơn do những hạn chế về việc cài đặt thuật toán.

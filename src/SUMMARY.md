@@ -74,7 +74,7 @@
     - [Phi hàm Euler](./math/euler.md)
     - [Modulo](./math/modulo.md)
     - [Luỹ thừa nhị phân](./math/binary-exponentiation.md)
-  - [Tổ hợp](./math/combinatorics.md)
+  - [Đại số tổ hợp](./math/combinatorics.md)
   - [Ma trận]()
   - [Hình học]()
 - [Xử lí xâu](./string/README.md)

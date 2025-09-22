@@ -4,7 +4,7 @@ Ta sẽ nói về một số kiến thức nền tảng về toán học trong l
 
 ## Các kiến thức cần biết
 
-Toán học là một lĩnh vực rộng lớn và phức tạp, trải dài từ những con số cơ bản đến những cấu trúc trừu tượng nhất của vũ trụ. Trong chương này, ta chỉ tập trung vào những kiến thức toán học được sử dụng phổ biến trong lập trình thi đấu. Toàn bộ nội dung trong *[Chương trình Giáo dục Phổ thông môn Toán năm 2018](<3. CT_Toan.pdf>)* là kiến thức *bắt buộc* cần phải biết khi đọc chương này. Một số khái niệm sẽ được giải thích lại để hiểu rõ nhằm áp dụng vào phần **cài đặt thuật toán**.
+Toán học là một lĩnh vực rộng lớn và phức tạp, trải dài từ những con số cơ bản đến những cấu trúc trừu tượng nhất của vũ trụ. Trong chương này, ta chỉ tập trung vào những kiến thức toán học được sử dụng phổ biến trong lập trình thi đấu. Toàn bộ nội dung trong *[Chương trình Giáo dục Phổ thông môn Toán năm 2018](<3. CT_Toan.pdf>)* là kiến thức *bắt buộc* cần phải biết khi đọc chương này. Một số khái niệm sẽ được giải thích lại.
 
 ## Công thức tính tổng
 

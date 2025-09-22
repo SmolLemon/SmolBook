@@ -23,7 +23,7 @@ Thuật toán Euclid là thuật toán UCLN dựa trên nhận xét rằng với
 Ví dụ, để tính \\(UCLN(180, 196)\\):
 
 \\[
-\begin{align}
+\begin{align*}
 UCLN (180, 196) & \rightarrow & UCLN(180, 196 - 180) = UCLN(180, 16)  \\\\
 				& \rightarrow & UCLN(180 - 16, 16) = UCLN(164, 16)  \\\\
 				& \rightarrow & UCLN(164 - 16, 16) = UCLN(148, 16)  \\\\
@@ -31,7 +31,7 @@ UCLN (180, 196) & \rightarrow & UCLN(180, 196 - 180) = UCLN(180, 16)  \\\\
 				& \rightarrow & UCLN(20 - 16, 16) = UCLN(4, 16)  \\\\
 				& \cdots \\\\
 				& \rightarrow & UCLN(4, 8 - 4) = UCLN(4, 4)  \\\\
-\end{align}
+\end{align*}
 \\]
 
 Vậy \\(UCLN(180, 196) = 4\\).

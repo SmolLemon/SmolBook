@@ -87,12 +87,18 @@ int arr[N];
 int tmp[N];
 void mergesort(int l, int r){
 	if(l >= r) return;
-
+	// chia đổi mảng
 	int k = (l + r) >> 1;
+
+
+	// sắp xếp hai mảng con
 	mergesort(l, k); 
 	mergesort(k + 1, r);
+
 	int i = l, j = k + 1;
 	int id = 1;
+
+	// kết hợp hai mảng con
 	while(i <= k && j <= r){
 		if(arr[i] < arr[j]){
 			tmp[id] = arr[i];
@@ -137,6 +143,8 @@ void quickSort(int l, int r) {
 	if(l >= r) return;
     int i = l, j = r;
     int pivot = a[(l + r) >> 1]; // chọn phần tử ở chính giữa mảng làm chốt
+
+    // chia đôi mảng
     while (i <= j) {
         while (a[i] < pivot) ++i;
         while (a[j] > pivot) --j;
@@ -146,6 +154,8 @@ void quickSort(int l, int r) {
             --j;
         }
     }
+
+    // sắp xếp hai mảng con
     if (l < j) quickSort(l, j);
     if (i < r) quickSort(i, r);
 }

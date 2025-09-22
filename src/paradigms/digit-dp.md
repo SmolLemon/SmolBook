@@ -6,7 +6,7 @@
 
 *Quy hoạch động chữ số* là kĩ thuật QHĐ nhằm giải quyết các bài toán liên quan đến chữ số.
 
-## Lý thuyết
+## Lí thuyết
 
 Các bài QHĐ chữ số sẽ có mô tả như sau: Cho một đoạn số \\([a; b]\\), hãy đếm số lượng số trong đoạn thỏa mãn yêu cầu đề bài.
 

@@ -18,7 +18,9 @@ Tuy nhiên, xét đến việc các phần tử trong \\(2\\) mảng đã đư�
 
 Chương trình của ta có các bước như sau: 
 - Khi hai phần tử đều không rỗng, tìm phần tử nhỏ nhất của \\(2\\) mảng `a` và `b`. Nếu phần tử nhỏ nhất của `a` nhỏ hơn của `b` thì thêm phần tử đấy vào mảng `c` là loại bỏ phần tử ấy khỏi a, nếu không thì ngược lại. 
-- Tiếp tục thực hiện bước trên cho tới khi một trong hai mảng rỗng. Khi đấy ta thêm các phần tử còn lại của mảng còn lại vào mảng `c`. 
+- Tiếp tục thực hiện bước trên cho tới khi một trong hai mảng rỗng. Khi đấy ta thêm các phần tử của mảng còn lại vào mảng `c`. 
+
+Vì mảng đã được sắp xếp nên khi ta xoá phần tử nhỏ nhất của mảng, phần tử nhỏ nhất sẽ là phần tử tiếp theo.
 
 Ta có ví dụ sau:
 
@@ -51,6 +53,7 @@ Mỗi lần một con trỏ trỏ đến phần tử được chọn, con trỏ 
 Ta có \\(n\\), \\(m\\) lần lượt là kích thước của mảng `a` và `b`, phần tử đầu tiên của \\(2\\) mảng có chỉ số \\(1\\). Mảng nào có con trỏ trỏ ra ngoài mảng thì ta sẽ thêm các phần tử còn lại của mảng kia vào mảng `c`.
 
 ```C++
+int i = 0, j = 0; // các phần tử được đánh số từ 0
 while(i <= n || j <= m){
 	if(j > m || (i <= n && a[i] < b[j])){
 		c[i + j] = a[i];
@@ -94,7 +97,7 @@ Dễ thấy, \\(1 + 15 = 16 \gt 11\\). Vì vậy, ta dịch con trỏ \\(j\\) sa
 
 Khi này, \\(2 + 9 = 11 \\), mảng tồn tại cặp số có tổng bằng \\(x\\).
 
-Độ phức tạp của thuật toán là \\(O(n \log{n})\\)
+Độ phức tạp của thuật toán là \\(O(n \log{n})\\).
 
 ## Tổng mảng con
 

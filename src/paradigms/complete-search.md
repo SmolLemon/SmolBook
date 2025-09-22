@@ -228,7 +228,7 @@ Nếu \\(n\\) lớn (Ví dụ: \\(n = 32\\)) thì thuật toán trên sẽ quá 
 
 Ta áp dụng kĩ thuật chia đôi tập.
 
-Đầu tiên, lưu giá trị của các cách chọn của \\(n / 2\\) đồng xu đầu tiên vào một danh sách.
+Đầu tiên, lưu giá trị của các cách chọn của \\(\left\lfloor \frac{n}{2} \right\rfloor\\) đồng xu đầu tiên vào một danh sách.
 
 Sau đó, thực hiện xét giá trị các cách chọn của các đồng xu còn lại. Gọi \\(sum\\) là giá trị của một cách chọn các đồng xu còn lại kia. Nếu \\(X - sum\\) được lưu trong danh sách thì tồn tại cách chọn các đồng xu.
 

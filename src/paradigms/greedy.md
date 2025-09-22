@@ -24,11 +24,14 @@ Nhiệm vụ của ta là sử dụng ít tờ tiền nhất sao cho tổng giá
 Một thuật toán tham lam giải quyết bài toán này là ta lần lượt trừ số tiền hiện tại bằng giá trị tờ tiền lớn nhất có thể cho đến khi số tiền hiện tại bằng \\(0\\).
 
 Ta có:
-
-\\[670 \rightarrow 670 - 500 = 170\\]
-\\[170 \rightarrow 170 - 100 = 70 \\]
-\\[70 \rightarrow 70 - 50 = 20\\]
-\\[20 \rightarrow 20 - 20 = 0\\]
+\\[
+\begin{align*}
+670 & \rightarrow  670 - 500  = 170 \\\\
+170 & \rightarrow  170 - 100  = 70 \\\\
+70  & \rightarrow  70 - 50    = 20 \\\\
+20  & \rightarrow  20 - 20    = 0 \\\\
+\end{align*}
+\\]
 
 Thuật toán trên thỏa mãn hai tính chất của một thuật toán tham lam:
 

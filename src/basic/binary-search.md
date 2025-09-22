@@ -92,7 +92,7 @@ Ta tạo hàm \\(f(x)\\) trả về \\(true\\) nếu hình vuông cạnh \\(x\\)
 
 Ta biết được \\(f(x)\\) là một hàm đơn điệu vì nếu ta có thể xếp \\(n\\) hình chữ nhật vào hình vuông cạnh \\(x\\) thì ta cũng thực hiện được với hình vuông cạnh \\(x + 1\\).
 
-Ta có số lượng hình chữ nhật \\(a \times b\\) nhiều nhất có thể được xếp trong hình vuông cạnh \\(x\\) là \\(\left\lfloor \frac{x}{a} \right\rfloor \times \left\lfloor \frac{x}{b} \right\rfloor \\) **(người đọc tự chứng minh)**. Từ đây ta có hàm \\(f(x)\\):
+Ta có số lượng hình chữ nhật kích thước \\(a \times b\\) nhiều nhất có thể được xếp trong hình vuông cạnh \\(x\\) là \\(\left\lfloor \frac{x}{a} \right\rfloor \times \left\lfloor \frac{x}{b} \right\rfloor \\). Từ đây ta có hàm \\(f(x)\\):
 - \\(f(x) = 1\\) nếu \\(\left\lfloor \frac{x}{a} \right\rfloor \times \left\lfloor \frac{x}{b} \right\rfloor \le n\\)
 - \\(f(x) = 0\\) trong trường hợp ngược lại.
 

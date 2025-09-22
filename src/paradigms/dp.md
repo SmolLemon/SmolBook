@@ -15,9 +15,13 @@ QHĐ thường được sử dụng cho các bài toán:
 \\[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...\\]
 
 Ta có hàm \\(f(n)\\) trả về giá trị của số Fibonacci thứ \\(n\\):
-- \\(f(n) = 0\\) nếu \\(n = 1\\).
-- \\(f(n) = 1\\) nếu \\(n = 2\\).
-- \\(f(n) = f(n - 1) + f(n - 2)\\) nếu \\(n \gt 2\\).
+\\[
+f(n) = \begin{cases}
+f(n) = 0 \\ nếu \\ n = 1 \\\\
+f(n) = 1 \\ nếu \\ n = 2 \\\\
+f(n) = f(n - 1) + f(n - 2) \\ nếu \\ n \gt 2 \\\\
+\end{cases}
+\\]
 
 Ta có hàm đệ quy quay lui tính số Fibonacci thứ \\(n\\):
 
@@ -114,7 +118,7 @@ Quá trình ta xây dựng các bài toán từ nhỏ đến lớn, và điền 
 
 ### Top-Down hay Bottom-Up?
 
-Đối với nhiều bài toán QHĐ, việc giải quyết bài toán theo hướng top-down thông thường sẽ dễ hiểu và cách cài đặt đơn giản hơn nhiều so hướng giải quyết bottom-up. Mặc khác, với hướng tiếp cận bottom-up, chương trình của ta sẽ ngắn gọn hơn (trong hầu hết trường hợp), và sẽ chạy nhanh hơn so với top-down do không gọi hàm nhiều. 
+Đối với nhiều bài toán QHĐ, việc giải quyết bài toán theo hướng top-down thông thường sẽ dễ hiểu và cách cài đặt đơn giản hơn nhiều so hướng giải quyết bottom-up. Mặc khác, với hướng tiếp cận bottom-up, chương trình của ta sẽ ngắn gọn hơn chạy nhanh hơn so với top-down (trong hầu hết trường hợp).
 
 ## Bài toán đổi tiền
 
