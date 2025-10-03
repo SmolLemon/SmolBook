@@ -5,16 +5,23 @@
 ## Cách tính
 
 Từ định nghĩa, ta có thể tính được \\(\phi(p) = p - 1\\) và \\(\phi(p^k) = p^k - p^{k-1}\\) với \\(p\\) là một số nguyên tố.
-- Đối với \\(\phi(p) = p - 1\\), ta dễ dàng thấy được rằng với các số \\(x\\) từ \\(1\\) đến \\(p-1\\): \\(UCLN(x, p) = 1\\).
-- Đối với \\(\phi(p^k) = p^k - p^{k-1}\\), ta thấy các số \\(x\\) thoả mãn \\(UCLN(x, p) > 1\\) chỉ có thể là các số là bội số của \\(p\\), tức là các số thuộc tập hợp \\(\\{p, 2p, 3p, \cdots, p^{k-1}p\\}\\). Vì trong \\(p^k\\) số từ \\(1\\) đến \\(p\\) có \\(p^k\\) bội số của \\(p\\) nên ta có \\(p^k - p^{k-1}\\) số nguyên tố cùng nhau với \\(p^k\\).
+- Đối với \\(\phi(p) = p - 1\\), ta dễ dàng thấy được rằng với các số \\(x\\) từ \\(1\\) đến \\(p-1\\): \\(\text{UCLN}(x, p) = 1\\).
+- Đối với \\(\phi(p^k) = p^k - p^{k-1}\\), ta thấy các số \\(x\\) thoả mãn \\(\text{UCLN}(x, p^k) > 1\\) chỉ có thể là các bội số của \\(p\\), tức là các số thuộc tập hợp \\(\\{p, 2p, 3p, \cdots, p^{k-1}p\\}\\). Vì trong \\(p^k\\) số từ \\(1\\) đến \\(p\\) có \\(p^{k-1}\\) số là bội số của \\(p\\) nên ta có \\(p^k - p^{k-1}\\) số nguyên tố cùng nhau với \\(p^k\\).
 
-Nếu như ta đã biết giá trị phi hàm Euler của hai số \\(a\\) và \\(b\\), ta có thể tính được giá trị \\(\phi(ab)\\).
+Nếu đã biết trước giá trị phi hàm Euler của hai số \\(a\\) và \\(b\\), ta có thể tính được giá trị \\(\phi(ab)\\).
 - Nếu \\(a, b\\) nguyên tố cùng nhau: \\[\phi(ab) = \phi(a) \times \phi(b)\\]
-- Nếu \\(a, b\\) không nguyên tố cùng nhau, với \\(d = UCLN(a, b)\\): \\[\phi(ab) = \phi(a) \times \phi(b) \times \frac{d}{\phi(d)}\\]
+- Nếu \\(a, b\\) không nguyên tố cùng nhau, với \\(d = \text{UCLN}(a, b)\\): \\[\phi(ab) = \phi(a) \times \phi(b) \times \frac{d}{\phi(d)}\\]
 
-Với các số \\(n = p_1^{q_1}p_2^{q_2}\cdots p_k^{q_k}\\) với \\(p\\) là các số nguyên tố, \\(q\\) là luỹ thừa tương ứng, giá trị của \\(\phi(n)\\) bằng:
+Từ các công thức trên, ta có thể tính giá trị phi hàm Euler của các số \\(n = p_1^{q_1}p_2^{q_2}\cdots p_k^{q_k}\\) với \\(p\\) là các số nguyên tố, \\(q\\) là luỹ thừa tương ứng:
 
-\\[\phi(n) = \prod_{i = 1}^{k} p_i^{k_i-1} (p_i - 1)\\]
+\\[
+\begin{align}
+\phi(n) &= \phi\left(\prod_{i = 1}^{k}p_i^{q_i}\right) \\\\
+        &= \prod_{i = 1}^{k}\phi(p_i^{q_i}) \\\\
+        &= \prod_{i = 1}^{k}(p_i^{q_i} - p_i^{q_i-1}) \\\\
+		&= \prod_{i = 1}^{k} p_i^{q_i-1} (p_i - 1)
+\end{align}
+\\]
 
 Ví dụ, \\(\phi(24) = \phi(2^3 \times 3^1) = 2^2 \times (2 - 1) \times 3^0 \times (3 - 1) = 8\\).
 
@@ -23,14 +30,14 @@ Ví dụ, \\(\phi(24) = \phi(2^3 \times 3^1) = 2^2 \times (2 - 1) \times 3^0 \ti
 \\[
 \begin{align}
 \phi(n) &= \prod_{i = 1}^{k} p_i^{k_i-1} (p_i - 1) \\\\
-		&= \prod_{i = 1}^{k} p_i^{k_i} (1 - \frac{1}{p_i}) \\\\
-		&= n \times \prod_{i = 1}^{k} (1 - \frac{1}{p_i})
+		&= \prod_{i = 1}^{k} p_i^{k_i} \left(1 - \frac{1}{p_i}\right) \\\\
+		&= n \times \prod_{i = 1}^{k} \left(1 - \frac{1}{p_i}\right)
 \end{align}
 \\]
 
 Từ đây, ta có công thức tính \\(\phi(n)\\) bằng:
 
-\\[\phi(n) = n \times \prod_{p|n} (1 - \frac{1}{p})\\]
+\\[\phi(n) = n \times \prod_{p|n} \left(1 - \frac{1}{p}\right)\\]
 
 Với \\(p\\) là các ước nguyên tố của \\(n\\).
 
@@ -40,7 +47,7 @@ int phi(int n){
 	for(int i = 2; 1ll * i * i <= n; ++i){
 		if(n % i == 0){ // i là số nguyên tố
 			while(n % i == 0) n /= i;
-			totient -= totient / i; // (1 - 1/i)
+			totient -= totient / i; // tương đương totient * (1 - 1/i)
 		}
 	}
 	if(n != 1) totient -= totient / n;
@@ -63,7 +70,7 @@ void sievePhi(int n){
     for(int i = 2; i <= n; ++i){
         if(phi[i] == i){ // i là số nguyên tố
             for(int j = i; j <= n; j += i){
-               phi[j] -= phi[j] / i; // (1 - 1/i)
+               phi[j] -= phi[j] / i; // tương đương phi[j] * (1 - 1/i)
             }
         }
     }

@@ -2,7 +2,7 @@
 
 Ta cùng điểm qua một số ứng dụng và mở rộng của bài toán luồng trên mạng. 
 
-## Đa đỉnh nguồn, đa đỉnh thu
+## Nhiều đỉnh nguồn, đỉnh thu
 
 Giả sử ta được cho một mạng \\(G = (V, E)\\) với vô số đỉnh nguồn (\\(s_1, s_2, \dots, s_n\\)) và đỉnh nguồn (\\(t_1, t_2, \dots, t_m\\)) và ta được yêu cầu phải tìm luồng cực đại trên mạng này. Ta có thể thay đổi bài toán trên thành bài toán tìm luồng cực đại trên mạng bình thường bằng cách thêm hai đinh có tên gọi là đỉnh **siêu nguồn (supersource)** \\(S\\) và đỉnh **siêu thu (supersink)** \\(T\\). Sau đó, ta thêm các cung nối \\(S\\) với \\(s_1, s_2, \dots, s_n\\) và \\(t_1, t_2, \dots, t_m\\) với \\(T\\) với sức chứa \\(\infty\\) và thực hiện tìm luồng cực đại trên mạng mới này.
 
@@ -26,7 +26,7 @@ Giả sử ta có luồng \\(0 - 1\\) \\(f\\). Vì luồng cực đại của \\
 
 ## Sức chứa đỉnh
 
-Một số mạng không những có sức chứa cạnh mà nó còn có cả sức chứa đỉnh. Khi này, với mỗi đỉnh \\(u\\) trong mạng, ta tạo hai đỉnh mới \\(u_{in}\\) - \\(u_{out}\\) và nối hai đỉnh này bằng một cung có sức chứa bằng với sức chứa đỉnh.
+Một số mạng không những có sức chứa cạnh mà nó còn có cả sức chứa đỉnh. Khi này, với mỗi đỉnh \\(u\\) trong mạng, ta tạo hai đỉnh mới \\(u_{in}\\), \\(u_{out}\\), sau đó nối hai đỉnh này bằng một cung có sức chứa bằng với sức chứa đỉnh.
 
 <center>
 <img src="../images/node_capacity.png" alt="Sức chứa đỉnh">
@@ -106,7 +106,7 @@ Nếu bài toán có điều kiện rằng nhiều đội đồng hạng nhất 
 
 ## Chọn dự án
 
-Bài toán chọn dự án được phát biểu như sau: hiện tại có một công ty đang thực hiện \\(n\\) dự án \\(P\\), mỗi dự án sẽ đem về số tiền \\(p_i\\). Các dự án có thể sinh lời (\\(p_i > 0\\) - các khoá học, khu vui chơi, mở cửa hàng, v.v.) hoặc thu lỗ (\\(p_i < 0\\) - xậy dựng cơ sở hạ tầng, cập nhật trang thiết bị). Các dự án có thể phụ thuộc lẫn nhau, được biểu thị bằng các cặp trong \\(E\\), ví dụ: nếu \\(uv \in E\\), thì ta cần phải thực hiện dự án \\(u\\) thì ta cần phải thực hiện dự án \\(v\\). Nhiệm vụ của ta là chọn các dự án sao cho thoả mãn điều kiện, đồng thời số tiền thu được từ các dự án phải lớn nhất có thể.
+Bài toán chọn dự án được phát biểu như sau: hiện tại có một công ty đang thực hiện \\(n\\) dự án \\(P\\), mỗi dự án sẽ đem về số tiền \\(p_i\\). Các dự án có thể sinh lời (\\(p_i > 0\\) - các khoá học, khu vui chơi, mở cửa hàng, v.v.) hoặc thu lỗ (\\(p_i < 0\\) - xây dựng cơ sở hạ tầng, cập nhật trang thiết bị, v.v.). Các dự án có thể phụ thuộc lẫn nhau, được biểu thị bằng các cặp trong \\(E\\), ví dụ: nếu \\(uv \in E\\), thì nếu thực hiện dự án \\(u\\) thì trước tiên ta cần phải thực hiện dự án \\(v\\). Nhiệm vụ của ta là chọn các dự án sao cho thoả mãn điều kiện, đồng thời số tiền thu được từ các dự án phải lớn nhất có thể.
 
 <center>
 <img src="../images/project_selection.png" alt="Các dự án và các yêu cầu">

@@ -14,13 +14,13 @@ Ta sẽ nói về hai quy tắc đếm: quy tắc cộng và quy tắc nhân.
 
 ### Quy tắc cộng
 
-Nếu như một công việc có hai phuơng án:
+Nếu như một công việc có hai phuơng án khác nhau:
 - Phương án một có \\(n_1\\) cách,
 - Phương án hai có \\(n_2\\) cách
 
 Thì số cách thực hiện công việc sẽ bằng: \\(n_1 + n_2\\) cách.
 
-Cụ thể hơn, nếu có \\(k\\) phương án thực hiện công việc, mỗi phương án có \\(n_i\\) cách, thì số công việc sẽ bằng: \\[n = n_1 + n_2 + \cdots + n_k\\]
+Cụ thể hơn, nếu có \\(k\\) phương án khác nhau nhằm thực hiện công việc, mỗi phương án có \\(n_i\\) cách, thì số công việc sẽ bằng: \\[n = n_1 + n_2 + \cdots + n_k\\]
 
 Ví dụ, một cửa hàng có \\(5\\) món xôi và \\(4\\) món phở, số cách chọn món ăn sẽ bằng \\(5 + 4 = 9\\) món.
 

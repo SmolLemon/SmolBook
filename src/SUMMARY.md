@@ -40,7 +40,7 @@
   - [Tham lam](./paradigms/greedy.md)
   - [Chia để trị](./paradigms/dnc.md)
   - [Quy hoạch động](./paradigms/dp.md)
-    - [Quy hoạch động Bitmask]()
+    - [Quy hoạch động bitmask]()
     - [Quy hoạch động chữ số](./paradigms/digit-dp.md)
     - [Quy hoạch động trên cây]()
 - [Lí thuyết đồ thị](./graph-theory/README.md)

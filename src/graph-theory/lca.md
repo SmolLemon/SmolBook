@@ -141,8 +141,8 @@ int lca(int u, int v){
 
 Thuật toán offline tìm LCA của Tarjan, như tên gọi của nó, là một thuật toán offline, tức là thuật toán phải biết trước được rằng nó sẽ phải tìm LCA của các cặp đỉnh nào.
 
-Thuật toán sẽ duyệt cây bằng [DFS](dfs.md). Với mỗi đỉnh \\(u\\), ta đánh dấu đỉnh \\(u\\) là đã được duyệt qua. Sau đó, ta thực hiện \\(2\\) quy trình chính:
-- Duyệt cây: với mỗi đỉnh con \\(v\\) của \\(u\\), ta duyệt cây con gốc \\(u\\) và thực hiện union hai tập hợp chứa hai đỉnh \\(u, v\\). Lưu ý rằng phần tử đại diện của tập hợp chứa đỉnh \\(u\\) bất kì là đỉnh gần đỉnh gốc nhất.
+Trước tiên, thuật toán sẽ tạo \\(n\\) tập hợp, mỗi tập hợp sẽ chứa một đỉnh trên cây. Sau đó, thuật toán duyệt cây bằng [DFS](dfs.md). Với mỗi đỉnh \\(u\\), ta đánh dấu đỉnh \\(u\\) là đã được duyệt qua. Sau đó, ta thực hiện \\(2\\) quy trình chính:
+- Duyệt cây: với mỗi đỉnh con \\(v\\) của \\(u\\), ta duyệt cây con gốc \\(v\\) và thực hiện hợp hai tập hợp chứa hai đỉnh \\(u, v\\). Lưu ý rằng phần tử đại diện của tập hợp chứa đỉnh \\(u\\) bất kì là đỉnh gần đỉnh gốc nhất.
 - Xử lí truy vấn: với mỗi truy vấn \\((u, v)\\) chứa đỉnh \\(u\\), nếu đỉnh \\(v\\) đã được duyệt qua, ta biết được LCA của truy vấn là phần tử đại diện của tập hợp chứa đỉnh \\(v\\).
 
 Giả sử ta có một cây sau, và ta muốn tìm LCA của các cặp đỉnh \\((4, 5)\\) và \\((5, 6)\\).
@@ -165,24 +165,31 @@ Ta có phần tử đại diện của tập hợp chứa đỉnh \\(4\\) là đ
 
 Cũng với lập luận tương tự, khi duyệt tới đỉnh \\(6\\), ta có LCA của \\((5, 6)\\) sẽ là đỉnh \\(1\\).
 
+<br>
+
+Một số cách cài đặt DSU ở trên sẽ **không** đảm bảo việc sau khi hợp hai tập hợp, phần tử đại diện của tập hợp chứa đỉnh \\(u\\) sẽ là đỉnh gần gốc nhất. Để khắc phục điều này, ta cần một biến `ancestor` để khắc phục điều này. `ancestor` của một đỉnh \\(u\\) là đỉnh gần gốc nhất trong tất cả các đỉnh nằm trong tập hợp chứa đỉnh \\(u\\). Ở phần duyệt các cây con của \\(u\\), sau khi hợp hai tập hợp, Ta sẽ gán `ancestor` của đỉnh đại diện là đỉnh gần gốc nhất, ở đây là đỉnh \\(u\\). Đoạn code dưới đây thực hiện điều này có dạng: `ancestor[dsu.find(u)] = u`.
+
 ```C++
 UnionFind dsu;
 vector<pair<int, int>> queries; // các truy vấn
 vector<int> qry[N]; // truy vấn sau tiền xử lí
-int ancestor[N]; // phần tử đại diện gần đỉnh gốc nhất
+int ancestor[N]; // đỉnh gần gốc nhất trong tập hợp chứa đỉnh u
 bitset<N> vst; // đỉnh đã được duyệt hay chưa
 int n; // số lượng đỉnh
 
 void OLCA(int u, int p){
     vst[u] = 1; // đã thăm đỉnh u
     ancestor[u] = u;
+
+    // duyệt cây
     for(int v : adj[u]){
         if(v == p) continue;
         OLCA(v, u); // xử lí cây con
         dsu.Union(u, v); // Union tập hợp chứa đỉnh cha và tập hợp chứa đỉnh con
-        ancestor[dsu.find(u)] = u; // đỉnh gần gốc nhất của tập hợp chứa đỉnh u
+        ancestor[dsu.find(u)] = u;
     }
 	
+	// xử lí truy vấn
     for(int v : qry[u]){
         if(vst[v]){
             cout << "LCA(" << u << ", " << v << "): " << ancestor[dsu.find(v)] << '\n';
@@ -202,14 +209,15 @@ void lca(){
     // các đỉnh được đánh số từ 0 đến n - 1
     OLCA(0, -1);
 }
-
 ```
+
+### Chứng minh
 
 Có lẽ điều làm bạn lăn tăn nhất về thuật toán này chính là phần in ra LCA của cặp đỉnh \\((u, v)\\). 
 
-Giả sử \\(LCA(u, v) = w\\), ta có thể thấy: hai đỉnh \\(u\\), \\(v\\) sẽ nằm trong hai cây con khác nhau của đỉnh \\(w\\).
+Giả sử \\(LCA(u, v) = w\\), ta có thể thấy: khi ta duyệt đỉnh \\(w\\), hai đỉnh \\(u\\), \\(v\\) sẽ nằm trong hai cây con khác nhau của đỉnh \\(w\\).
 
-Sau khi duyệt cây con của \\(w\\) chứa đỉnh \\(u\\) (giả sử cây con chứa đỉnh \\(u\\) duyệt trước), toàn bộ các đỉnh của cây con sẽ chỉ đến đỉnh \\(w\\) là đỉnh đại diện của tập hợp chứa các đỉnh ấy cho tới khi chương trình duyệt xong đỉnh \\(w\\). Khi này, lúc duyệt sang cây con chứa đỉnh \\(v\\), đỉnh đại diện của tập hợp chứa đỉnh \\(u\\) (tức là đỉnh \\(w\\)) sẽ là LCA của cặp đỉnh \\((u, v)\\).
+Sau khi duyệt cây con của \\(w\\) chứa đỉnh \\(u\\) (giả sử cây con chứa đỉnh \\(u\\) được duyệt trước), toàn bộ các đỉnh của cây con sẽ chỉ đến đỉnh \\(w\\) là đỉnh đại diện của tập hợp chứa các đỉnh ấy cho tới khi chương trình duyệt xong đỉnh \\(w\\). Khi này, lúc duyệt sang cây con chứa đỉnh \\(v\\), đỉnh đại diện của tập hợp chứa đỉnh \\(u\\) (tức là đỉnh \\(w\\)) sẽ là LCA của cặp đỉnh \\((u, v)\\).
 
 Sử dụng lập luận trên, ta cũng có thể kết luận được rằng việc in \\(LCA(u, v)\\) của truy vấn \\((u, v)\\) chỉ xảy ra đúng một lần mặc dù truy vấn sẽ được xét \\(2\\) lần trong thuật toán.
 

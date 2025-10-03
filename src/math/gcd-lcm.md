@@ -77,6 +77,8 @@ Trong C++, ta có sẵn hàm `__gcd` để tìm UCLN.
 
 Với hai số nguyên \\(a\\) và \\(b\\), ta có **bội chung nhỏ nhất - BCNN (Least Common Multiple - LCM)** của hai số là số nguyên dương nhỏ nhất là bội số của cả \\(a\\) và \\(b\\). Ví dụ, BCNN của \\(6\\) và \\(8\\) là \\(BCNN(6, 8) = 48\\).
 
+Quy ước: \\(BCNN(0, a) = 0\\)
+
 ### Tìm BCNN
 
 #### Phân tích thừa số nguyên tố
