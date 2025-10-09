@@ -1,5 +1,9 @@
 # Phi hàm Euler
 
+*Được xuất hiện trên [VNOI Wiki](https://wiki.vnoi.info/algo/algebra/phi-ham-euler)*
+
+<br>
+
 **Hàm số Euler** hay **phi hàm Euler** của một số nguyên dương \\(n\\) là số lượng số bé hơn hoặc bằng \\(n\\) và nguyên tố cùng nhau với \\(n\\). Kí hiệu của hàm số Euler là \\(\phi(n)\\) (hoặc \\(\varphi(n)\\)).
 
 ## Cách tính

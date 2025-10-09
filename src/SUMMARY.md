@@ -84,8 +84,7 @@
   - [Thuật toán Z]()
   - [Thuật toán Manacher]()
   - [Mảng hậu tố]()
-  - [Trie]()
-  - [Thuật toán Aho-Corasick]()
+  - [Trie](./string/trie.md)
   
 ---
 
