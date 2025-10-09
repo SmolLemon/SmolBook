@@ -6,7 +6,7 @@ Sử dụng theme `Light` để có trải nghiệm tốt nhất.
 
 ## Thanh bên
 
-Thanh bên ở bên trái chứa mục lục của Smol Book. Để có thể xem nội dung của các chương, nhấn vào tên chương tương ứng. Ở các chương có phím mũi tên giúp mở/đóng các phần trong chương.
+**Thanh bên** ở bên trái chứa mục lục của Smol Book. Để có thể xem nội dung của các chương, nhấn vào tên chương tương ứng. Ở các chương có phím mũi tên giúp mở/đóng các phần trong chương.
 
 Thanh bên có thể không xuất hiện nếu được xem trên điện thoại hoặc trên trình duyệt với khung cửa sổ nhỏ. Có thể ấn biểu tượng menu (<i class="fa fa-bars"></i>) ở góc trên bên trái của thanh menu để mở thanh bên hoặc đóng nó lại nếu nó xuất hiện.
 
@@ -29,8 +29,12 @@ Thanh menu ở trên cùng cung cấp một số biểu tượng với các côn
 
 ## Tìm kiếm
 
-Để thực hiện việc tìm kiếm trên Smol Book, ấn vào biểu tượng tìm kiếm (<i class="fa fa-search"></i>) trên thanh menu hoặc nhấn phím `s` trên bàn phím để tìm kiếm. Sử dụng phím mũi tên lên xuống để di chuyển giữa các kết quả tìm kiếm. Chọn vào kết quả mong muốn sẽ dẫn bạn đến trang đó. Sau khi trang được tải, kết quả tìm kiếm sẽ được in đậm. Nhấn phím `esc` để kết thúc tìm kiếm.
+Để thực hiện việc tìm kiếm trên Smol Book, ấn vào biểu tượng tìm kiếm (<i class="fa fa-search"></i>) trên thanh menu hoặc nhấn các phím `/`, `s` trên bàn phím để tìm kiếm. Sử dụng phím mũi tên lên xuống để di chuyển giữa các kết quả tìm kiếm. Chọn vào kết quả mong muốn sẽ dẫn bạn đến trang đó và kết quả tìm kiếm sẽ được in đậm. Nhấn phím `esc` để kết thúc tìm kiếm.
 
 ## Code block
 
 Các chương trong Smol Book sẽ có những đoạn code được viết trên code block. Để sao chép nội dung trong code block, di chuyển chuột bên trên code block và ấn biểu tượng sao chép ở góc trên bên phải. Trang sẽ hiện thị dòng chữ "*Sao chép thành công!*" sau khi nội dung trong code block đã được sao chép.
+
+## Phím tắt
+
+Ấn phím '?' để xem các phím tắt trên Smol Book.
