@@ -122,8 +122,6 @@ Mặc dù cuộc thi chỉ giới hạn cho các trường đại học, ở Vi�
 
 Ngoài các cuộc thi lập trình thi đấu trực tiếp, nhiều trang web được tạo ra nhằm hỗ trợ và cung cấp nhiều điều bổ ích cho các thí sinh trên toàn thế giới. Các trang như [VNOJ](https://oj.vnoi.info/), [Codeforces](https://codeforces.com/), [Atcoder](https://atcoder.jp/),... là một trong những ví dụ điển hình. Các trang này tổ chức các cuộc thi online, có nhiều dạng bài phong phú, một số trang còn hỗ trợ tìm kiếm việc làm liên quan đến lập trình!
 
---- 
-
 [^1]: Wikipedia, *Kỳ thi chọn học sinh giỏi quốc gia trung học phổ thông*, <https://vi.wikipedia.org/wiki/Kỳ_thi_chọn_học_sinh_giỏi_quốc_gia_trung_học_phổ_thông> [Truy cập ngày 27/6/2025]
 
 [^2]: ITC - lehongphong.edu.vn, *Kỳ thi Olympic truyền thống 30/4 lần thứ XXVI năm 2021*, Trường THPT Chuyên Lê Hồng Phong - Tp. Hồ Chí Minh, 2021. <http://www.thpt-lehongphong-tphcm.edu.vn/vi/content/ky-thi-olympic-truyen-thong-304-lan-thu-xxvi-nam-2021> [Truy cập ngày 27/6/2025]

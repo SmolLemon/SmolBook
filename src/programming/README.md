@@ -2,7 +2,7 @@
 
 Đối với những người lớn lên trong chương trình giáo dục phổ thông cũ thì ngôn ngữ lập trình Pascal là một điều không thể thiếu trong bộ môn Tin học, hoặc Python đối với chương trình mới. Tuy nhiên, trong lập trình thi đấu, ta (chủ yếu) sử dụng ngôn ngữ lập trình C++.
 
-Ngôn ngữ lập trình C++ là một trong ngôn ngữ được sử dụng phổ biến, nếu không muốn nói là phổ biến nhất trong lập trình thi đấu. Chính vì thế, tất cả các đoạn code minh họa trong Smol Book sẽ được viết trên C++, phiên bản C++14 để phù hợp với **[Themis [Θέμις] - Chương trình chấm bài tự động](https://dsapblog.wordpress.com/2013/12/24/themis/)** - phần mềm chấm thi *chính thức* của Bộ Giáo dục và Đào tạo, thường xuyên được sử dụng để chấm thi trong các kỳ thi Học sinh giỏi cấp Tỉnh, Khu vực và Quốc gia - chạy các bài nộp C++ theo phiên bản C++14.
+Ngôn ngữ lập trình C++ là một trong ngôn ngữ được sử dụng phổ biến, nếu không muốn nói là phổ biến nhất trong lập trình thi đấu. Chính vì thế, tất cả các đoạn code minh họa trong *Cẩm nang Lập trình Thi đấu* sẽ được viết trên C++, phiên bản C++14 để phù hợp với **[Themis [Θέμις] - Chương trình chấm bài tự động](https://dsapblog.wordpress.com/2013/12/24/themis/)** - phần mềm chấm thi *chính thức* của Bộ Giáo dục và Đào tạo, thường xuyên được sử dụng để chấm thi trong các kỳ thi Học sinh giỏi cấp Tỉnh, Khu vực và Quốc gia - chạy các bài nộp C++ theo phiên bản C++14.
 
 ## Cài đặt môi trường code C++
 

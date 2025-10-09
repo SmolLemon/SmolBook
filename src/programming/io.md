@@ -66,7 +66,7 @@ while(cin >> x){
 Một số bài toán có thể yêu cầu ta xét một số lượng từ không xác định trên một dòng. 
 
 ```C++
-smol book cam nang lap trinh thi dau
+cam nang lap trinh thi dau
 ```
 
 Để xử lí trường hợp này, ta sử dụng `getline` để lấy dữ liệu của dòng, và dùng `stringstream` để tách từng từ có trên dòng ấy:

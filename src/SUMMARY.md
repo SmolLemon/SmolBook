@@ -1,6 +1,6 @@
 # Summary
 
-[Smol Book - Cẩm nang Lập trình Thi đấu](./title-page.md)
+[Cẩm nang Lập trình Thi đấu](./title-page.md)
 [Hướng dẫn sử dụng](./guide.md)
 [Giới thiệu](./preface.md)
 
@@ -80,7 +80,7 @@
 - [Xử lí xâu](./string/README.md)
   - [Xâu kí tự](./string/string.md)
   - [Băm]()
-  - [Thuật toán Knuth-Morris-Pratt]()
+  - [Thuật toán Knuth-Morris-Pratt (KMP)]()
   - [Thuật toán Z]()
   - [Thuật toán Manacher]()
   - [Mảng hậu tố]()

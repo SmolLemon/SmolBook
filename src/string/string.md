@@ -7,13 +7,21 @@ char xinchao_vn[] = "Xin chao the gioi";
 string hello_en = "Hello world";
 ```
 
+Ở chương \\(8\\) này, ta coi kí tự các xâu xuất phát từ vị trí \\(0\\).
+
 ## Thuật ngữ
 
 Một số thuật ngữ liên quan đến xâu kí tự bao gồm:
 
-- **Xâu con (substring)**: một xâu T của xâu S được gọi là một *xâu con* khi nó là một chuỗi các kí tự liên tiếp tồn tại trong S. Ví dụ: xâu `chao` là xâu con của xâu `xinchao_vn`.
-- **Tiền số (prefix)**: một xâu T của xâu S là một *tiền tố* khi nó là chuỗi các kí tự liên tiếp **đầu tiên** của S. Ví dụ: xâu `Hello` là tiền tố của xâu `hello_en`.
-- **Hậu số (suffix)**: một xâu T của xâu S là một *hậu tố* khi nó là chuỗi các kí tự liên tiếp **cuối cùng** của S. Ví dụ: xâu `gioi` là tiền tố của xâu `xinchao_vn`.
+- **Xâu con (substring)**: một xâu T của xâu S được gọi là một *xâu con* khi nó là một chuỗi các kí tự liên tiếp tồn tại trong S. Ví dụ: xâu `chao` là xâu con của xâu `Xin chao the gioi`.
+- **Tiền số (prefix)**: một xâu T của xâu S là một *tiền tố* khi nó là chuỗi các kí tự liên tiếp **đầu tiên** của S. Ví dụ: xâu `Hello` là tiền tố của xâu `Hello world`.
+- **Hậu số (suffix)**: một xâu T của xâu S là một *hậu tố* khi nó là chuỗi các kí tự liên tiếp **cuối cùng** của S. Ví dụ: xâu `gioi` là tiền tố của xâu `Xin chao the gioi`.
+
+## Thứ tự từ điển
+
+Ta xét xâu \\(X = x_0x_1\dots c_n\\) bé hơn xâu \\(Y = y_0y_1\dots c_m\\) theo *thứ tự từ điển* nếu xâu X là tiền tố của xâu Y hoặc tồn tại một chỉ số \\(i \lt min(n, m)\\) sao cho \\(x_j = y_j\\) với mọi \\(j \lt i\\) và \\(x_i\\) là kí tự xuất hiện trước kí tự \\(y_i\\) theo bảng ACSII.
+
+Ví dụ, ta có `1000 < 11` vì tại chỉ số \\(1\\) thì \\(0 < 1\\). Hoặc `aaa > aa` vì xâu `aa` là tiền tố của xâu `aaa`.  
 
 ## Các dạng xâu đặc biệt
 

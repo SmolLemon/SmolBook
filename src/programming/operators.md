@@ -53,8 +53,8 @@ cout << ((a % b) + b) % b << '\n'; // 2
 Đối với xâu kí tự, toán tử `+` được dùng để gán các xâu kí tự lại với nhau.
 
 ```C++
-string a = string("Smol") + ' ' + "Book";    
-cout << a << '\n'; // "Smol Book"
+string a = string("Cam") + ' ' + "nang";    
+cout << a << '\n'; // "Cam nang"
 ```
 
 ## Toán tử tăng giảm (`++`, `--`)
