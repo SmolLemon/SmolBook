@@ -12,7 +12,7 @@ Những nội dung của cuốn cẩm nang được viết với mục tiêu có
 
 Các chương trong cuốn cẩm nang được nhóm lại theo chủ đề, được viết với giả định rằng cuốn cẩm nang sẽ được đọc từ đầu đến cuối. Các chương có thể có nội dung chồng chéo nhau nhưng nhìn chung: những ý tưởng, nội dung của các chương sau được xây dựng từ những gì đã được nói ở các chương trước.
 
-Có tổng cộng 8 chương trong cuốn cẩm nang này.
+Có tổng cộng 9 chương trong cuốn cẩm nang này.
 
 Chương 1 giới thiệu về lập trình thi đấu - định nghĩa, cách giải một bài toán và các cuộc thi liên quan đến lập trình thi đấu. 
 
@@ -29,6 +29,8 @@ Chương 6 cho ta một cái nhìn chi tiết về những nội dung trong lí 
 Chương 7 nói về những kiến thức toán học cần thiết để áp dụng cho lập trình thi đấu.
 
 Chương 8 đồng thời cũng là chương cuối cùng nói về xâu kí tự và cách xử lí, tận dụng những thông tin có trong xâu.
+
+Chương 9 tổng hợp các kiến thức không nhằm hoàn toàn trong chủ để của các chương trước.
 
 ## Mã nguồn
 

@@ -13,7 +13,6 @@ $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
 $ rustup update
 $ cargo install --version 0.4.52 mdbook
 $ git clone https://github.com/SmolLemon/SmolBook.git
-$ cargo install mdbook
 $ cd SmolBook 
 $ mdbook serve --open
 ```

@@ -14,7 +14,7 @@ Trước khi giải quyết bài toán trên, ta sẽ xét một trường hợp
 <img src="../images/degenerate_tree.png" alt="Cây suy biến">
 </center>
 
-Khi này, việc giải quyết bài toán là vô cùng dễ dàng: ta lưu giá trị các đỉnh vào các CTDL như [segment tree](../data-structures/segment-tree.md) hoặc [cây Fenwick](../data-structures/fenwick.md), sau đó giải quyết các truy vấn bằng cách tìm giá trị của các phân đoạn.
+Khi này, việc giải quyết bài toán là vô cùng dễ dàng: ta lưu giá trị các đỉnh vào các CTDL như [cây phân đoạn](../data-structures/segment-tree.md) hoặc [cây Fenwick](../data-structures/fenwick.md), sau đó giải quyết các truy vấn bằng cách tìm giá trị của các phân đoạn.
 
 Ý tưởng chính của HLD là phiên bản mở rộng từ ý tưởng cây tre. Nó sẽ phân tách cây ra thành các đường đi. Sau đó, từ các đường đi này, ta có thể tìm được đáp án của bài toán. HLD phân tách các cây bằng cách sử dụng các cạnh nặng và nhẹ. Ta định nghĩa **cạnh nặng** là các cạnh \\(uv\\) nối đỉnh \\(u\\) và đỉnh con \\(v\\) khi cây con gốc \\(v\\) có kích thước ít nhất là hơn một nửa kích thước cây con gốc \\(u\\), các cạnh còn lại là **cạnh nhẹ**.
 
@@ -111,15 +111,15 @@ int lca(int u, int v){
 
 ### Bài toán ví dụ
 
-Để giải quyết bài toán ví dụ, ta cho mỗi đường đi nặng trên cây một segment tree. Trong quá trình di chuyển hai đỉnh đến LCA, ta tổng hợp kết quả từ các đường đi nặng và tính kết quả cho từng truy vấn. 
+Để giải quyết bài toán ví dụ, ta cho mỗi đường đi nặng trên cây một [cây phân đoạn](../data-structures/segment-tree.md). Trong quá trình di chuyển hai đỉnh đến LCA, ta tổng hợp kết quả từ các đường đi nặng và tính kết quả cho từng truy vấn. 
 
-Để tối ưu, ta kết hợp các segment tree từ các đường đi nặng thành một segment tree duy nhất khi cài đặt.
+Để tối ưu, ta kết hợp các cây phân đoạn từ các đường đi nặng thành một cây phân đoạn duy nhất khi cài đặt.
 
 ```C++
 int v[N]; // giá trị đỉnh i
 /*
-Segment tree tính tổng trên các phân đoạn
-Ở các phân đoạn id có l == r sẽ có giá trị bằng v[euler[l]]
+Cây phân đoạn tính tổng trên các phân đoạn
+Ở các phân đoạn id [l, r], các phân đoạn có l == r sẽ có giá trị bằng v[euler[l]]
 */
 int query(int a, int b){
 	int res = 0;
@@ -138,4 +138,4 @@ int query(int a, int b){
 
 Hai đỉnh \\(a, b\\) đi đến LCA đi qua \\(O(\log{n})\\) đường đi nặng, mỗi đường đi nặng cần \\(O(\log{n})\\) thời gian lấy giá trị nên độ phức tạp cho từng truy vấn là \\(O(\log^2{n})\\).
 
-Khi cập nhật giá trị một đỉnh \\(u\\) bất kì, ta sẽ thay đổi giá trị `v[u]` là cập nhật trên segment tree. Đô phức tạp sẽ là \\(O(\log{n})\\).
+Khi cập nhật giá trị một đỉnh \\(u\\) bất kì, ta sẽ thay đổi giá trị `v[u]` trên cây phân đoạn. Đô phức tạp sẽ là \\(O(\log{n})\\).

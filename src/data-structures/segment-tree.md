@@ -20,19 +20,19 @@ Một điều chắc chắn là ta không thể đến và đo chiều cao của
 
 Khi này, thay vì kiểm tra tất cả học sinh ấy thì ta chỉ cần thu thập thông tin tổng hợp từ các trường. Điều này giúp ta thu thập thông tin nhanh hơn và hiệu quả hơn.
 
-Đây chính là ý tưởng chính cho CTDL segment tree: Chia một không gian quản lí lớn thành các không gian quản lí nhỏ hơn - một giải pháp [chia để trị](../paradigms/dnc.md).
+Đây chính là ý tưởng chính cho CTDL cây phân đoạn: Chia một không gian quản lí lớn thành các không gian quản lí nhỏ hơn - một giải pháp [chia để trị](../paradigms/dnc.md).
 
-## Segment Tree
+## Cây phân đoạn
 
-Segment tree là một CTDL được biểu diễn ở dạng [cây nhị phân](../graph-theory/tree.md#cây-nhị-phân).
+**Cây phân đoạn** là một CTDL được biểu diễn ở dạng [cây nhị phân](../graph-theory/tree.md#cây-nhị-phân).
 
-Ta sẽ lưu segment tree trên một mảng `st`. Mỗi đỉnh của cây sẽ lưu thông tin về một phân đoạn trên mảng `a`. 
+Ta lưu cây phân đoạn trên một mảng `st`. Mỗi đỉnh của cây sẽ lưu thông tin về một phân đoạn trên mảng `a`. 
 
-Đỉnh gốc \\(1\\) của Segment Tree tượng trưng cho đoạn \\([1, n]\\). Với mỗi đỉnh \\(p\\) lưu thông tin về đoạn \\([l, r]\\). Nếu \\(p\\) không phải là đỉnh lá thì hai đỉnh con \\(2p\\) và \\(2p + 1\\) sẽ lần lượt lưu thông tin của hai đoạn \\([l, \left\lfloor (l + r) / 2 \right\rfloor]\\) và \\([\left\lfloor(l + r) / 2\right\rfloor + 1, r]\\). Nếu \\(p\\) là đỉnh lá thì nó chỉ quản lý đúng một phần tử duy nhất trên mảng `a` có chỉ số \\(l = r\\).
+Đỉnh gốc \\(1\\) của cây phân đoạn tượng trưng cho đoạn \\([1, n]\\). Với mỗi đỉnh \\(p\\) lưu thông tin về đoạn \\([l, r]\\). Nếu \\(p\\) không phải là đỉnh lá thì hai đỉnh con \\(2p\\) và \\(2p + 1\\) sẽ lần lượt lưu thông tin của hai đoạn \\([l, \left\lfloor (l + r) / 2 \right\rfloor]\\) và \\([\left\lfloor(l + r) / 2\right\rfloor + 1, r]\\). Nếu \\(p\\) là đỉnh lá thì nó chỉ quản lý đúng một phần tử duy nhất trên mảng `a` có chỉ số \\(l = r\\).
 
-## Xây dựng segment tree
+## Xây dựng cây phân đoạn
 
-Để xây dựng segment tree, ta có hàm đệ quy `build(id, l, r)`.
+Để xây dựng một cây phân đoạn, ta có hàm đệ quy `build(id, l, r)`.
 
 Hàm `build(id, l, r)` của ta hoạt động như sau:
 - Nếu \\(l = r\\), giá trị nhỏ nhất của đoạn \\([l, r]\\) chính là phần tử \\(a[l]\\): \\(st[id] = a[l]\\).
@@ -56,13 +56,13 @@ void build(int id, int l, int r){
 }
 ```
 
-Ta xây dựng segment tree bằng cách gọi `build(1, 1, n)`.
+Ta xây dựng cây phân đoạn bằng cách gọi `build(1, 1, n)`.
 
 <center>
 <img src="../images/segment_tree_build.png" alt="Segment Tree Build"/>
 </center>
 
-Ta có thể thấy số lượng đỉnh cần tính sẽ là độ phức tạp của việc xây dựng segment tree. Ta có thể tính được số lượng đỉnh trong segment tree sẽ không vượt quá \\(4n\\), nên độ phức tạp thuật toán và không gian sẽ bằng \\(O(4n) \approx O(n)\\).
+Ta có thể thấy số lượng đỉnh cần tính sẽ là độ phức tạp của việc xây dựng cây phân đoạn. Ta có thể tính được số lượng đỉnh trong cây phân đoạn sẽ không vượt quá \\(4n\\), nên độ phức tạp thuật toán và không gian sẽ bằng \\(O(4n) \approx O(n)\\).
 
 ## Trả lời truy vấn
 
@@ -142,7 +142,7 @@ Có thể thấy thao tác cập nhật \\(O(n)\\) này thì sẽ không hề hi
 	
 ### Cập nhật lười
 
-**Cập nhật lười**, hay **lazy propagation**, là một kĩ thuật giúp ta thực hiện truy vấn cập nhật đoạn hiệu quả trên segment tree.
+**Cập nhật lười**, hay **lazy propagation**, là một kĩ thuật giúp ta thực hiện truy vấn cập nhật đoạn hiệu quả trên cây phân đoạn.
 
 Giả sử ta thực hiện cập nhật phân đoạn trên một đỉnh, ta sẽ lưu cập nhật này và không cập nhật đỉnh ấy. 
 

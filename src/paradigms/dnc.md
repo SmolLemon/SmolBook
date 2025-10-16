@@ -8,7 +8,7 @@
 
 Giống như khi ta đọc và nhớ một số điện thoại, ta không nhớ một lúc \\(10\\) chữ số `xxxxxxxxx` mà ta chia nó ra thành \\(3\\) phần nhỏ hơn `xxxx-xxx-xxx` để dễ ghi nhớ.
 
-Ta đã được thấy mô hình này được áp dụng ở các thuật toán như [tìm kiếm nhị phân](../basic/binary-search.md), [merge sort](../basic/sorting.md#sắp-xếp-trộn-merge-sort), [quicksort](../basic/sorting.md#sắp-xếp-nhanh-quicksort), trong các CTDL như [segment tree](../data-structures/segment-tree.md).
+Ta đã được thấy mô hình này được áp dụng ở các thuật toán như [tìm kiếm nhị phân](../basic/binary-search.md), [sắp xép trộn](../basic/sorting.md#sắp-xếp-trộn-merge-sort), [sắp xếp nhanh](../basic/sorting.md#sắp-xếp-nhanh-quicksort), trong các CTDL như [cây phân đoạn](../data-structures/segment-tree.md).
 
 ## Tư tưởng
 
@@ -18,9 +18,9 @@ Một thuật toán áp dụng chia để trị có \\(3\\) bước chính:
 - **Trị**: Giải các bài toán con. Nếu bài toán nhỏ ấy đủ nhỏ, ta sẽ tìm đáp án của bài toán nhỏ ấy. Nếu không thì giải bài toán con một cách đệ quy.
 - **Hợp**: Kết hợp các đáp án của các bài toán con để cho ra đáp án của bài toán ban đầu. 
 
-## Merge Sort
+## Thuật toán sắp xếp trộn
 
-Ta đã được thấy mô hình chia để trị qua thuật toán [merge sort](../basic/sorting.md#sắp-xếp-trộn-merge-sort).
+Ta đã được thấy mô hình chia để trị qua thuật toán [sắp xếp trộn](../basic/sorting.md#sắp-xếp-trộn-merge-sort).
 
 Ta có một mảng \\(8\\) phần tử:
 
@@ -32,7 +32,7 @@ Thuật toán sẽ bao gồm các bước:
 
 **Chia**: Thuật toán chia mảng thảnh hai mảng con.
 
-**Trị**: Sắp xếp các mảng con một cách đệ quy bằng Merge sort.
+**Trị**: Sắp xếp các mảng con một cách đệ quy.
 
 <center>
 <img src="../images/dc_merge_sort_divide.svg" alt="Mảng chia thành 2 mảng con"/>
@@ -54,7 +54,7 @@ Giả sử \\(T(n)\\) là số thao tác cần thực hiên của một thuật 
 
 với \\(n\\) là kích thước của dữ liệu, hai hằng số \\(a\\), \\(b\\) lần lượt là số bài toán con và tỉ lệ kích thước dữ liệu của bài toán gốc và bài toán con, còn hàm \\(f(n)\\) chính là số thao tác để thực hiện việc chia bài toán và hợp các bài toán con.
 
-Sử dụng công thức này, có thể tích được độ phức tạp của các thuật toán. Ví dụ với thuật toán Merge Sort thì ta có: \\(T(n) = 2T(n / 2) + O(n)\\), từ đây suy ra độ phức tạp sẽ là \\(O(n \log{n})\\).
+Sử dụng công thức này, có thể tích được độ phức tạp của các thuật toán. Ví dụ với thuật toán sắp xếp trộn thì ta có: \\(T(n) = 2T(n / 2) + O(n)\\), từ đây suy ra độ phức tạp sẽ là \\(O(n \log{n})\\).
 
 Có thể xem thông tin về định lí thợ tại các nguồn tài liệu khác để hiểu thêm.
 
@@ -64,11 +64,11 @@ Bài toán: Cho một mảng `a` có \\(n\\) phần tử. Hãy tìm và in ra gi
 
 VD: Phần tử nhỏ thứ \\(3\\) của mảng `a = [18, 43, 6, 15, 9, 37, 10, 42]` có giá trị bằng \\(10\\).
 
-Ta có thể sắp xếp lại các phần tử trong mảng bằng một thuật toán sắp xếp nào đấy (Ví dụ: [QuickSort](../basic/sorting.md#sắp-xếp-nhanh-quicksort) - \\(O(n\log{n})\\)) và in ra phần tử thứ \\(k\\) trong mảng. 
+Ta có thể sắp xếp lại các phần tử trong mảng bằng một thuật toán sắp xếp nào đấy (Ví dụ: [thuật toán sắp xếp nhanh](../basic/sorting.md#sắp-xếp-nhanh-quicksort) - \\(O(n\log{n})\\)) và in ra phần tử thứ \\(k\\) trong mảng. 
 
 Độ phức tạp của thuật toán sẽ là \\(O(n\log{n})\\).
 
-Tuy nhiên, ta có thể xử lý bài toán với độ phức tạp \\(O(n)\\) một cách đơn giản bằng cách áp dụng mô hình chia để trị và có phần giống với QuickSort.
+Tuy nhiên, ta có thể xử lý bài toán với độ phức tạp \\(O(n)\\) một cách đơn giản bằng cách áp dụng mô hình chia để trị và có phần giống với thuật toán sắp xếp nhanh.
 
 Thuật toán của ta sẽ chọn một phần tử ngẫu nhiên trong mảng \\(a[p]\\) và sắp xếp lại các phần tử trong mảng `a`: các phần tử \\(a[x] \le a[p]\\) sẽ được xếp bên trái \\(a[p]\\), các phần tử còn lại sẽ được xếp ở bên phải \\(a[p]\\). Gọi chỉ số của phần tử \\(a[p]\\) sau khi sắp xếp lại mảng `a` là \\(q\\), ta có 3 trường hợp có thể xảy ra:
 - Trường hợp 1: \\(q = k\\): \\(a[q]\\) chính là đáp án của bài toán. Ta trả về giá trị cần tìm và kết thúc thuật toán.

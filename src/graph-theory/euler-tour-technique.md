@@ -64,7 +64,7 @@ Khi này, với \\(u_i\\) và \\(u_{sz}\\) lần lượt là chỉ số của đ
 
 Như ví dụ ở trên, với đỉnh \\(2\\) có chỉ số \\(2\\) và kích thước của cây con gốc \\(2\\) là \\(3\\), ta xác đỉnh các đỉnh thuộc cây con gốc \\(2\\) là các đỉnh \\(2, 4, 5\\) với các chỉ số lần lượt là \\(2, 3, 4\\). Tổng giá trị của cây con gốc \\(2\\) sẽ có thể tính được bằng cách tính tổng giá trị của các phần tử liên tiếp nhau này.
 
-Ta có thể sử dụng [segment tree](../data-structures/segment-tree.md) hoặc [cây Fenwick](../data-structures/fenwick.md) để giải quyết bài toán trên.
+Ta có thể sử dụng [cây phân đoạn](../data-structures/segment-tree.md) hoặc [cây Fenwick](../data-structures/fenwick.md) để giải quyết bài toán trên.
 
 ### Truy vấn các đường đi
 
@@ -81,7 +81,7 @@ Ta có thể sử dụng [segment tree](../data-structures/segment-tree.md) ho�
 
 Ta cần đặt câu hỏi: chuyện gì sẽ xảy ra khi ta cập nhật của một đỉnh? Đáp án là các đỉnh của cây con sẽ được cập nhật giá trị đường đi một cách tương ứng. Giả sử ta tăng giá trị của đỉnh \\(2\\) lên \\(2\\), thì giá trị đường đi từ gốc đến các đỉnh \\(2, 4, 5\\) cũng tăng lên \\(2\\).
 
-Từ đây, ta có thể sử dụng [segment tree](../data-structures/segment-tree.md) hoặc [cây Fenwick](../data-structures/fenwick.md) để giải quyết bài toán.
+Từ đây, ta có thể sử dụng [cây phân đoạn](../data-structures/segment-tree.md) hoặc [cây Fenwick](../data-structures/fenwick.md) để giải quyết bài toán.
 
 ### Tổ tiên chung gần nhất
 

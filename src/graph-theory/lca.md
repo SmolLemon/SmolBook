@@ -112,7 +112,7 @@ Ta có LCA của hai đỉnh \\(2\\) và \\(6\\) là đỉnh \\(1\\). Một đi�
 
 Từ đây, ta có thể kết luận rằng ta có thể tìm LCA của hai đỉnh \\(u\\) và \\(v\\) bất kì bằng cách tìm đỉnh có chiều cao nhỏ nhất trong khoảng \\([u_{st}, v_{st}]\\) (nếu \\(v_{st} > u_{st}\\) thì ta đảo lại: \\([v_{st}, u_{st}]\\)).
 
-Ta có thể sử dụng [segment tree](../data-structures/segment-tree.md), hoặc nếu đồ thị không thay đổi, ta có thể áp dụng [kĩ thuật bảng thưa](../data-structures/sparse-table.md). 
+Ta có thể sử dụng [cây phân đoạn](../data-structures/segment-tree.md), hoặc nếu đồ thị không thay đổi, ta có thể áp dụng [kĩ thuật bảng thưa](../data-structures/sparse-table.md). 
 
 ```C++
 pair<int, int> sp[K][N];
