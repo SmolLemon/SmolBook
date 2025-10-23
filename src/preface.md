@@ -30,7 +30,7 @@ Chương 7 nói về những kiến thức toán học cần thiết để áp d
 
 Chương 8 đồng thời cũng là chương cuối cùng nói về xâu kí tự và cách xử lí, tận dụng những thông tin có trong xâu.
 
-Chương 9 tổng hợp các kiến thức không nhằm hoàn toàn trong chủ để của các chương trước.
+Chương 9 tổng hợp các kiến thức không nằm hoàn toàn trong chủ để của các chương trước.
 
 ## Mã nguồn
 

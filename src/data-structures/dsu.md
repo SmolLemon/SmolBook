@@ -174,7 +174,7 @@ Bảng dưới đây so sánh độ phức tạp thời gian của 2 hàm `Find`
 |Quick-Union + nén đường đi|\\(O(\log{n})\\)|\\(O(\log{n})\\)|
 |Quick-Union theo kích thước/thứ hạng + nén đường đi|\\(O(log^* n)\\)|\\(O(log^* n)\\)|
 
-Dưới đây là cài đặt DSU theo thứ hạng + nén đường đi trong một [cấu trúc](../programming/struct.md), kèm theo một số hàm hỗ trợ khác.
+Dưới đây là DSU tạo sẵn \\(n\\) tập hợp, cài đặt theo thứ hạng + nén đường đi trong một [cấu trúc](../programming/struct.md), kèm theo một số hàm hỗ trợ khác.
 
 ```C++
 struct UnionFind{

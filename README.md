@@ -6,7 +6,7 @@
 
 ## Chạy cục bộ
 
-Cuốn cẩm nang sử dụng [mdBook](https://rust-lang.github.io/mdBook/) để xây dựng phiên bản HTML. Để chạy cục bộ, hãy thực hiện các bước sau:
+Cuốn cẩm nang sử dụng [mdBook](https://github.com/rust-lang/mdBook) để xây dựng phiên bản HTML. Để chạy cục bộ, hãy thực hiện các bước sau:
 
 ```shell
 $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh

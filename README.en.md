@@ -6,7 +6,7 @@
 
 ## Running locally
 
-The guidebook uses [mdBook](https://rust-lang.github.io/mdBook/) to build the HTML version. To run it locally on your machine, follow these steps:
+The guidebook uses [mdBook](https://github.com/rust-lang/mdBook) to build the HTML version. To run it locally on your machine, follow these steps:
 
 ```shell
 $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh

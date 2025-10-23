@@ -86,11 +86,11 @@
   - [Xâu kí tự](./string/string.md)
   - [Băm]()
   - [Thuật toán Knuth-Morris-Pratt (KMP)](./string/kmp.md)
-  - [Thuật toán Z]()
-  - [Thuật toán Manacher]()
+  - [Thuật toán Z](./string/z-algo.md)
+  - [Thuật toán Manacher](./string/manacher.md)
   - [Mảng hậu tố]()
   - [Trie](./string/trie.md)
-- [Mẹo vặt]()
+- [Khác](./miscellaneous/README.md)
 ---
 
 [Lời cảm ơn](./acknowledgement.md)
