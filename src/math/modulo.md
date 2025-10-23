@@ -30,6 +30,8 @@ b \equiv c \pmod n
 - \\(a_1a_2 \equiv b_1b_2 \pmod kn\\)
 - \\(a^k \equiv b^k \pmod kn\\) với số nguyên \\(k\\) không âm
 
+#### Cộng, trừ nhân modulo
+
 Một trong những tính chất quan trọng trong lập trình thi đấu liên quan đến modulo chính là các phép tính cộng, trừ, nhân modulo, cụ thể:
 - \\((a + b) \mod n = ((a \mod n) + (b \mod n)) \mod n\\)
 - \\((a - b) \mod n = ((a \mod n) - (b \mod n)) \mod n\\)

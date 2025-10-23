@@ -10,13 +10,13 @@ Giả sử ta muốn lưu các xâu kí tự trên một mảng giá trị. Ta c
 
 ## Bảng băm
 
-Bảng băm là một CTDL lưu các cặp dữ liệu \\(key, value\\). Các \\(key\\) sẽ là thứ quyết định các \\(value\\) được lưu ở đâu trong bảng băm. Ở ví dụ dưới đây, ta sẽ cho \\(k = value\\) để dễ minh họa giải thích.
+Bảng băm là một CTDL lưu các cặp dữ liệu \\(\\{key, value\\}\\). Các \\(key\\) sẽ là thứ quyết định các \\(value\\) được lưu ở đâu trong bảng băm. Ở ví dụ dưới đây, ta sẽ cho \\(key = value\\) để dễ minh họa giải thích.
 
 <br>
 
-Ta có mảng `h` gồm \\(8\\) có thể lưu xâu kí tự (zero-indexed), và ta muốn lưu \\(8\\) xâu sau vào mảng: *Anh*, *Bao*, *Hien*, *Hoang*, *Huy*, *Khang*, *Hao*, *Phuc* (các tên không dấu).
+Ta có mảng \\(h\\) có kích thước \\(8\\) có thể lưu xâu kí tự (chỉ số bắt đầu từ \\(0\\)), và ta muốn lưu \\(8\\) xâu sau vào mảng: *Anh*, *Bao*, *Hien*, *Hoang*, *Huy*, *Khang*, *Hao*, *Phuc* (các tên không dấu).
 
-Ta có hàm băm `getHash` băm các xâu để tạo chỉ số để lưu xâu trên mảng `h`. `getHash` sẽ tạo chỉ số bằng cách tính tổng ASCII của các kí tự trong xâu, modulo cho kích thước mảng.
+Ta có hàm băm `getHash` băm các xâu để tạo chỉ số để lưu xâu trên mảng \\(h\\). `getHash` sẽ tạo chỉ số bằng cách tính tổng ASCII của các kí tự trong xâu, modulo cho kích thước mảng.
 
 ```C++
 int getHash(string &s){
@@ -28,7 +28,7 @@ int getHash(string &s){
 }
 ```
 
-Như xâu *Anh* khi đưa vào hàm `getHash` sẽ trả về chỉ số \\((65 + 110 + 104) \mod{8} = 7\\). Vì vậy, xâu *Anh* sẽ được lưu tại chỉ số \\(7\\) của mảng `h`.
+Như xâu *Anh* khi đưa vào hàm `getHash` sẽ trả về chỉ số \\((65 + 110 + 104) \mod{8} = 7\\). Vì vậy, xâu *Anh* sẽ được lưu tại chỉ số \\(7\\) của mảng \\(h\\).
 
 <center>
 <img src="../images/hash_table_anh_saved.png" alt="Lưu 'Anh' vào mảng h"/>
@@ -46,7 +46,7 @@ Và tiếp tục với *Hien*, *Hoang*, *Huy*, *Khang*, *Hao*.
 <img src="../images/hash_table_hien_hoang_huy_khang_hao_saved.png" alt="Lưu 'Hien', 'Hoang', 'Huy', 'Khang', 'Hao* vào mảng h"/>
 </center>
 
-Đến xâu cuối cùng *Phuc*, `getHash` sẽ băm xâu *Phuc* ra và cho ta chí số \\(0\\), nhưng tại chỉ số \\(0\\) đã có *Hao* rồi. Xử lí sao bây giờ?
+Đến xâu cuối cùng *Phuc*, `getHash` sẽ băm xâu *Phuc* ra và cho ta chí số \\(0\\), nhưng tại chỉ số \\(0\\) đã có *Hao* rồi. Thế thì phải xử lí trường hợp này như thế nào?
 
 ## Hash collision
 

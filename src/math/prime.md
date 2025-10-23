@@ -147,7 +147,7 @@ Ta có thể sàng số nguyên tố trong một khoảng lớn \\((l \le r \le 
 
 Việc cần đánh dấu các bội số của các số nguyên tố \\(\le \sqrt{n}\\) đã có thể tìm được tất cả các số nguyên tố \\(\le n\\). Từ đây suy ra rằng ta chỉ cần tìm tất cả các số nguyên tố nhỏ hơn \\(\sqrt{r}\\) để sàng các số nguyên tố trong khoảng \\([l; r]\\).
 
-Sau đó, với mỗi số nguyên tố \\(p\\) nhỏ hơn \\(\sqrt{r}\\), ta đánh dấu từ bội số thứ \\(p\\) hoặc từ bội số nhỏ nhất của \\(p\\) mà lớn hơn hoặc bằng \\(l\\).
+Do đó, với mỗi số nguyên tố \\(p\\) nhỏ hơn \\(\sqrt{r}\\), ta đánh dấu từ bội số thứ \\(p\\) hoặc từ bội số nhỏ nhất của \\(p\\) mà lớn hơn hoặc bằng \\(l\\).
 
 ```C++
 bitset<N> isPrime;
@@ -169,7 +169,7 @@ void sieve(ll l, ll r){
 	isPrime.set(); 
 	// x là số nguyên tố nếu isPrime[x - l] == true
 	for(int i : prime){
-		// (l + i - 1) / i * i là bội số nhỏ nhất của i lớn hơn hoặc bằng l
+		// ((l + i - 1) / i) * i là bội số nhỏ nhất của i lớn hơn hoặc bằng l
 		for(ll j = max(1ll * i * i, (l + i - 1) / i * i); j <= r; j += i){
 			isPrime[j - L] = 0;
 		}

@@ -1,14 +1,6 @@
 # Cây phân đoạn (Segment Tree)
 
-Quay lại với bài toán ở phần [bảng thưa](./sparse-table.md):
-
-> Cho một mảng `a` có \\(n\\) phần tử và \\(q\\) truy vấn có dạng `(l, r)`. Với mỗi truy vấn, tìm và in ra giá trị nhỏ nhất (GTNN) của các phần tử trong khoảng \\([l, r]\\).
-
-Mảng `a` ví dụ:
-
-\\[a = [5, 2, 7, 8, 3, 1, 4, 6]\\]
-
-Nếu như các truy vấn chỉ yêu cầu ta tìm GTNN của các đoạn thì bảng thưa là một lựa chọn phù hợp để giải quyết bài toán. Tuy nhiên nếu bài toán có thêm các truy vấn yêu cầu thay đổi giá trị của các phần tử trong mảng, thì ta cần phải cập nhật phần tử và xây dựng lại bảng thưa, khiến cho bảng thưa không còn hiệu quả.
+Quay lại với [bảng thưa](./sparse-table.md), nếu như các truy vấn chỉ yêu cầu ta tìm GTNN của các đoạn thì bảng thưa là một lựa chọn phù hợp để giải quyết bài toán. Tuy nhiên nếu bài toán có thêm các truy vấn yêu cầu thay đổi giá trị của các phần tử trong mảng thì ta cần phải cập nhật phần tử và xây dựng lại bảng thưa, khiến cho bảng thưa không còn hiệu quả.
 
 Ta sẽ nói về CTDL **Cây phân đoạn (Segment Tree)** - một CTDL linh hoạt giúp giải quyết bài toán này.
 
@@ -35,8 +27,8 @@ Ta lưu cây phân đoạn trên một mảng `st`. Mỗi đỉnh của cây s�
 Để xây dựng một cây phân đoạn, ta có hàm đệ quy `build(id, l, r)`.
 
 Hàm `build(id, l, r)` của ta hoạt động như sau:
-- Nếu \\(l = r\\), giá trị nhỏ nhất của đoạn \\([l, r]\\) chính là phần tử \\(a[l]\\): \\(st[id] = a[l]\\).
-- Nếu \\(l \neq r\\), ta sẽ tính một cách đệ quy GTNN của hai đỉnh con và tính giá trị của đỉnh \\(id\\) từ giá trị của hai đỉnh con: \\(st[id] = min(st[id \times 2], st[id \times 2 + 1])\\).
+- Nếu \\(l = r\\), giá trị nhỏ nhất của đoạn \\([l, r]\\) chính là phần tử \\(a_l\\): \\(st_{id} = a_l\\).
+- Nếu \\(l \neq r\\), ta sẽ tính một cách đệ quy GTNN của hai đỉnh con và tính giá trị của đỉnh \\(id\\) từ giá trị của hai đỉnh con: \\(st_{id} = min(st_{id \times 2}, st_{id \times 2 + 1})\\).
 
 ```C++
 void build(int id, int l, int r){

@@ -214,11 +214,13 @@ sort(v.begin(), v.end());
 
 Sau khi sắp xếp xong mảng `v` sẽ có các phần tử được xắp xếp theo thứ tự lần lượt là `(1, 2)`, `(1, 5)`, `(2, 3)`.
 
+Ta có thể so sánh các [cấu trúc](../programming/struct.md) nếu như ta đã viết các toán tử so sánh cho nó.
+
 ### Hàm so sánh
 
 Ta có thể viết hàm so sánh để sắp xếp các phần tử:
 
-Ví dụ:
+Ví dụ dưới đây sắp xếp các phân số theo giá trị tăng dần:
 
 ```C++
 // Cấu trúc `phân số`
@@ -227,6 +229,7 @@ struct phanso {
 };
 
 bool cmp(const phanso &a, const phanso &b){ // hàm so sánh
+	// a/b < c/d => ad < cb
 	return a.x * b.y < a.x * b.y;
 }
 

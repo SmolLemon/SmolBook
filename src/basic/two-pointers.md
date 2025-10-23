@@ -6,7 +6,7 @@ Nghe thì đơn giản nhưng đây lại là một kĩ thuật rất hữu ích
 
 ## Gộp mảng
 
-> Cho \\(2\\) mảng `a` và `b` được sắp xếp tăng dần. In ra một mảng `c` gồm các phần tử của \\(2\\) mảng kia được sắp xếp theo thứ tự tăng dần.
+Ta có bài toán sau: cho \\(2\\) mảng \\(a\\) và \\(b\\) được sắp xếp tăng dần. Hãy in ra một mảng \\(c\\) gồm các phần tử của \\(2\\) mảng kia được sắp xếp theo thứ tự tăng dần.
 
 Cách dễ nhất để thực hiện bài toán này là một thuật toán gồm các bước như sau:
 - Gộp tất cả các phần tử trong \\(2\\) mảng vào một mảng mới
@@ -14,11 +14,11 @@ Cách dễ nhất để thực hiện bài toán này là một thuật toán g�
 
 Thuật toán này đơn giản và có độ phức tạp là \\(O(n \log{n})\\).
 
-Tuy nhiên, xét đến việc các phần tử trong \\(2\\) mảng đã được sắp xếp tăng dần, ta có thể sử dụng kĩ thuật \\(2\\) con trỏ để tạo mảng `c` với độ phức tạp nhỏ hơn.
+Tuy nhiên, xét đến việc các phần tử trong \\(2\\) mảng đã được sắp xếp tăng dần, ta có thể sử dụng kĩ thuật \\(2\\) con trỏ để tạo mảng \\(c\\) với độ phức tạp nhỏ hơn.
 
 Chương trình của ta có các bước như sau: 
-- Khi hai phần tử đều không rỗng, tìm phần tử nhỏ nhất của \\(2\\) mảng `a` và `b`. Nếu phần tử nhỏ nhất của `a` nhỏ hơn của `b` thì thêm phần tử đấy vào mảng `c` là loại bỏ phần tử ấy khỏi a, nếu không thì ngược lại. 
-- Tiếp tục thực hiện bước trên cho tới khi một trong hai mảng rỗng. Khi đấy ta thêm các phần tử của mảng còn lại vào mảng `c`. 
+- Khi hai phần tử đều không rỗng, tìm phần tử nhỏ nhất của \\(2\\) mảng \\(a\\) và \\(b\\). Nếu phần tử nhỏ nhất của \\(a\\) nhỏ hơn của \\(b\\) thì thêm phần tử đấy vào mảng \\(c\\) là loại bỏ phần tử ấy khỏi \\(a\\), nếu không thì ngược lại. 
+- Tiếp tục thực hiện bước trên cho tới khi một trong hai mảng rỗng. Khi đấy ta thêm các phần tử còn lại của mảng không rỗng vào mảng \\(c\\). 
 
 Vì mảng đã được sắp xếp nên khi ta xoá phần tử nhỏ nhất của mảng, phần tử nhỏ nhất sẽ là phần tử tiếp theo.
 
@@ -27,13 +27,13 @@ Ta có ví dụ sau:
 \\[a = [1, 3, 4]\\]
 \\[b = [2, 5, 6]\\]
 
-Vì mảng `a` đã được sắp xếp tăng dần nên phần tử đầu tiên của mảng `a` là phần tử nhỏ nhất, mảng `b` cũng tương tự. \\(1\\) và \\(2\\) là phần tử nhỏ nhất của \\(2\\) mảng. Vì \\(1\\) là phần tử nhỏ hơn nên ta thêm \\(1\\) vào mảng `c` và loại bỏ \\(1\\) khỏi mảng `a`.
+Vì mảng \\(a\\) đã được sắp xếp tăng dần nên phần tử đầu tiên của mảng \\(a\\) là phần tử nhỏ nhất, mảng \\(b\\) cũng tương tự. \\(1\\) và \\(2\\) là phần tử nhỏ nhất của \\(2\\) mảng. Vì \\(1\\) là phần tử nhỏ hơn nên ta thêm \\(1\\) vào mảng \\(c\\) và loại bỏ \\(1\\) khỏi mảng \\(a\\).
 
 \\[a = [\color{red}{\not{1}}, 3, 4]\\]
 \\[b = [2, 5, 6]\\]
 \\[c = [1]\\]
 
-Vì \\(1\\) đã được xóa bỏ nên ta xét phần tử nhỏ nhất tiếp theo của mảng a là \\(3\\).
+Vì \\(1\\) đã được xóa bỏ nên ta xét phần tử nhỏ nhất tiếp theo của mảng \\(a\\) là \\(3\\).
 
 Vì \\(2\\) là phần tử nhỏ hơn nên ta tiếp tục thuật toán:
 
@@ -43,14 +43,14 @@ Vì \\(2\\) là phần tử nhỏ hơn nên ta tiếp tục thuật toán:
 
 Và ta tiếp tục thuật toán cho tới khi cả \\(2\\) mảng đều rỗng.
 
-Để thực hiện thuật toán này, ta sử dụng kĩ thuật hai con trỏ. Ta tạo \\(2\\) con trỏ \\(i\\) và \\(j\\) cho \\(2\\) mảng `a` và `b`. \\(2\\) con trỏ này sẽ trỏ vào vị trí phần tử đầu tiên của \\(2\\) mảng. 
+Để thực hiện thuật toán này, ta sử dụng kĩ thuật hai con trỏ. Ta tạo \\(2\\) con trỏ \\(i\\) và \\(j\\) cho \\(2\\) mảng \\(a\\) và \\(b\\). \\(2\\) con trỏ này sẽ trỏ vào vị trí phần tử đầu tiên của \\(2\\) mảng. 
 
 Mỗi lần một con trỏ trỏ đến phần tử được chọn, con trỏ đấy sẽ di chuyển đến vị trí tiếp theo trong mảng.
 
 \\[a = [\color{red}{\not{1}}, \overset{\underset{\downarrow}{i}}{3}, 4]\\]
 \\[b = [\underset{\overset{\uparrow}{j}}{2}, 5, 6]\\]
 
-Ta có \\(n\\), \\(m\\) lần lượt là kích thước của mảng `a` và `b`, phần tử đầu tiên của \\(2\\) mảng có chỉ số \\(1\\). Mảng nào có con trỏ trỏ ra ngoài mảng thì ta sẽ thêm các phần tử còn lại của mảng kia vào mảng `c`.
+Ta có \\(n\\), \\(m\\) lần lượt là kích thước của mảng \\(a\\) và \\(b\\), phần tử đầu tiên của \\(2\\) mảng có chỉ số \\(1\\). Mảng nào có con trỏ trỏ ra ngoài mảng thì ta sẽ thêm các phần tử còn lại của mảng kia vào mảng \\(c\\).
 
 ```C++
 int i = 0, j = 0; // các phần tử được đánh số từ 0
@@ -69,9 +69,7 @@ while(i <= n || j <= m){
 
 ## Bài toán 2SUM
 
-Bài toán 2SUM được phát biểu như sau:
-
-> Cho một mảng \\(n\\) phần tử và một số \\(x\\). Tìm cặp số có tổng giá trị bằng \\(x\\) hoặc thông báo rằng cặp số ấy không tồn tại.
+Bài toán 2SUM được phát biểu như sau: cho một mảng \\(n\\) phần tử và một số \\(x\\). Tìm cặp số có tổng giá trị bằng \\(x\\) hoặc thông báo rằng cặp số ấy không tồn tại.
 
 Để giải bài toán này, ta sẽ sắp xếp các phần tử trong mảng và đặt \\(2\\) con trỏ ở hai vị trí đầu và cuối mảng. Nếu tổng của các phần tử được \\(2\\) con trỏ trỏ tới có tổng lớn hơn \\(x\\), ta dịch con trỏ ở cuối mảng sang trái, nếu nhỏ hơn thì dịch con trỏ ở đầu mảng sang phải. Tiếp tục thực hiện cho tới khi tìm được cặp số thỏa mãn, hoặc khi không thể duyệt được nữa. 
 
@@ -101,9 +99,7 @@ Khi này, \\(2 + 9 = 11 \\), mảng tồn tại cặp số có tổng bằng \\(
 
 ## Tổng mảng con
 
-Bài toán được phát biểu như sau:
-
-> Cho một mảng \\(n\\) phần tử nguyên dương và một số \\(x\\). Tìm mảng con có tổng giá trị bằng \\(x\\) hoặc thông báo rằng mảng con ấy không tồn tại.
+Bài toán được phát biểu như sau: cho một mảng \\(n\\) phần tử nguyên dương và một số \\(x\\). Tìm mảng con có tổng giá trị bằng \\(x\\) hoặc thông báo rằng mảng con ấy không tồn tại.
 
 Cách giải bài toán này gần giống với bài toán 2SUM ở trên: 
 

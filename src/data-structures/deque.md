@@ -47,22 +47,20 @@ Deque được dùng để giải quyết bài toàn tìm đường đi ngắn n
 
 ### Deque trên đoạn tịnh tiến
 
-Ta có bài toán:
+Ta có bài toán sau: cho một mảng \\(a\\) có \\(n\\) phần tử bắt đầu từ chỉ số \\(1\\). Với mỗi đoạn con có độ dài \\(k\\), tìm phần tử nhỏ nhất với mỗi đoạn con này.
 
-> Cho mảng `a` có \\(n\\) phần tử bắt đầu từ chỉ số \\(1\\). Với mỗi đoạn con có độ dài \\(k\\), tìm phần tử nhỏ nhất với mỗi đoạn con này.
-
-Ví dụ với `n = 9` và `k = 3` và mảng `a`:
+Ví dụ với \\(n = 9\\), \\(k = 3\\) và mảng \\(a\\):
 
 \\[[1, 5, 6, 2, 8, 3, 4, 9]\\]
 
 Ta có giá trị nhỏ nhất của các đoạn \\([1, 3], [2, 4], ..., [7, 9]\\) lần lượt là: 
-- \\([1, 3]: 1\\)
-- \\([2, 4]: 2\\)
-- \\([3, 5]: 2\\)
-- \\([4, 6]: 2\\)
-- \\([5, 7]: 2\\)
-- \\([6, 8]: 3\\)
-- \\([7, 9]: 3\\)
+- \\(min([1, 3]) = 1\\)
+- \\(min([2, 4]) = 2\\)
+- \\(min([3, 5]) = 2\\)
+- \\(min([4, 6]) = 2\\)
+- \\(min([5, 7]) = 2\\)
+- \\(min([6, 8]) = 3\\)
+- \\(min([7, 9]) = 3\\)
 
 Có một cách giải quyết tối ưu bài toán này, áp dụng tư tưởng của [stack đơn điệu](stack.md#stack-đơn-điệu).
 

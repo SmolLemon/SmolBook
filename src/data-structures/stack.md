@@ -10,51 +10,6 @@ Ngoài ra, giá trị phần tử ở đỉnh stack có thể được biết b�
 
 Ta có thể hình dung stack như một chồng đĩa: Chiếc đĩa cuối cùng được cho vào và đĩa nằm trên các đĩa còn lại và sẽ là đĩa đầu tiên được lấy ra. Quá trình này được mô tả là **Last In**, **First Out - LIFO (Vào sau, ra trước)**.
 
-## Cài đặt 
-
-Ta cài đặt stack bằng mảng:
-
-- Cho một mảng `st` và chỉ số `top`.
-- Để thêm một phần tử, gán `st[top]` với một giá trị và tăng chỉ số `top` lên \\(1\\). 
-- Để loại bỏ một phần tử, giảm chỉ số của `top` xuống 1.
-- Giá trị ở cuối mảng sẽ là giá trị ở đỉnh stack: `st[top]`
-- Stack rỗng khi trong mảng không có phần tử: `top = 0`
-- Kích thước của stack là số phần tử là số phần tử trong stack: `top`
-
-```C++
-const int N = 1e5 + 10; 
-struct Stack{
-	int st[N];
-	int top = 0;
-	// Các thao tác chính: push, pop
-	void push(int x){
-		st[++top] = x;
-	}
-
-	// Tiện thể kiểm tra có thể pop phần tử ra khỏi stack được không  
-	bool pop(){ 
-		if(top == 0) return 0;
-		--top;
-		return 1;
-	}
-
-	// Các thao tác khác: peek, isEmpty, size.
-	int peek(){
-		return st[top];
-	}
-
-	bool isEmpty(){
-		return top == 0;
-	}
-
-	int size(){
-		return top;
-	}
-}
-```
-
-Dễ thấy, các thao tác của stack đều có độ phức tạp thời gian là \\(O(1)\\).
-
 ## Stack trong thư viện chuẩn 
 
 Để sử dụng stack trong thư viện chuẩn, ta khai báo thư viện `<stack>` trong C++.
@@ -107,159 +62,16 @@ Ta có:
 
 ## Ứng dụng
 
-Dưới đây là một số ứng dụng của stack.
-
-### Xử lí các sự kiện theo trình tự LIFO
-
-Bài toán ví dụ: [Backspace](https://open.kattis.com/problems/backspace).
-
-Tóm tắt: Cho một xâu kí tự chứa các chữ cái và dấu `<`. Với mỗi chuỗi dấu `<` ta xóa các chữ cái ở trước chuỗi một số lượng bằng độ dài của chuỗi và đồng thời xóa chuỗi `<` khỏi xâu. Hãy in ra xâu kí tự sau khi thực hiện các thao tác trên.
-
-Ta dùng `string` để biểu diễn stack. Với mỗi kí tự được xét từ trái sang phải, nếu gặp dấu `<` thì xóa kí tự cuối trong xâu, nếu không thì thêm kí tự vào cuối xâu.
-
-Bài giải:
-
-```C++
-#include <bits/stdc++.h>
-#define ll long long
-using namespace std;
-
-int main () {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	string s; cin >> s;
-	string ans = "";	
-	for(char c : s){
-		if(c == '<') ans.pop_back();
-		else ans += c;
-	}
-	cout << ans;
-
-	
-	return 0;
-}
-```
-
-### Ký pháp nghịch đảo Ba Lan 
-
-**Ký pháp nghịch đảo Ba Lan (Reverse Polish notation - RPN)** hay **kí pháp hậu tố (postfix notation)**, là một phương pháp viết các biểu thức toán học, với các toán tử (ta sẽ giới hạn với các toán tử cộng, trừ, nhân, chia) được viết sau các toán hạng. Từ **Ba lan** trong tên gọi dùng để chỉ quốc tịch của người phát minh ra kí pháp là [Jan Łukasiewicz](https://en.wikipedia.org/wiki/Jan_%C5%81ukasiewicz).
-
-Giả sử ta có biểu thức được viết ở dạng **kí pháp trung tố (infix notation)** - toán tử được viết ở giữa các toán hạng:
-
-\\[4 \times (1 + 2 \times (9 / 3) - 5)\\] 
-
-thì khi viết theo RPN sẽ được biểu diễn thành:
-
-\\[4\ 1\ 2\ 9\ 3\ / \times +\ 5 - \times \\]
-
-Cái lợi của RPN chính là ta có thể tính toán một biểu thức mội cách dễ dàng trong thời gian tuyến tính. 
-
-Ta sử dụng một stack. Khi duyệt biểu thức từ trái sang phải, nếu phần tử được xét đến là một toán hạng, ta thêm phần tử ấy vào stack. Nếu là một toán tử thì ta sẽ thực hiện việc tính 2 toán hạng ở đỉnh stack với toán tử tương ứng. Sau đó, thêm kết quả tương ứng vào stack của ta. Sau khi duyệt xong, phần tử ở đỉnh stack (đồng thời cũng là phần tử duy nhất còn trong stack) sẽ là giá trị của biểu thức.
-
-```C++
-stack<int> st;
-// Giả sử xâu s là một RPN lưu các toán hạng là các số từ 
-// 0 đến 9 và các toán tử và toán hạng được viết liền nhau
-string s;
-
-for(char c : s){
-	if(isdigit(c)){
-		st.push(c - '0');
-	}else{
-		int a = st.top(); st.pop();
-		int b = st.top(); st.pop();
-		switch (c){
-			case '+': {st.push(a + b); break; }
-			case '-': {st.push(a - b); break; }
-			case '*': {st.push(a * b); break; }
-			case '/': {st.push(a / b); break; }
-		}
-	}
-}
-cout << st.top();
-```
-
-#### Chuyển từ trung tố sang hậu tố
-
-Để chuyển một biểu thức từ hạng trung tố sang hậu tố, ta sử dụng **thuật toán shunting yard** của Dijkstra. 
-
-Ta có code được viết như sau:
-
-```C++
-int priority(char c){
-	if (c == '*' || c == '/') return 2;
-	if (c == '+' || c == '-') return 1;
-	return 0; // c == '('
-}
-
-string s;
-stack<char> st;
-for(char c : s){
-	if(isdigit(c)) {
-		cout << c << ' ';
-	} else if(c == '(') {
-		st.push(c);
-	} else if(c == ')'){
-		while(st.size() && st.top() != '(') {
-			cout << st.top() << ' ';
-			st.pop();
-		}
-		st.pop();
-	}
-	else {
-		while(st.size() && st.top() != '(' && priority(st.top()) >= priority(c)) {
-			cout << st.top() << ' ';
-			st.pop();
-		}
-		st.push(c);
-	} 
-}
-while(st.size()) {
-	cout << st.top() << ' ';
-	st.pop();
-}
-```
-
-Qua đoạn code trên, ta thấy thuật toán hoạt động vô cùng đơn giản trong thời gian tuyến tính. 
-- Nếu phần tử đang xét là một toán hạng, ta in thẳng các toán hạng. 
-- Nếu là dấu mở ngoặc, ta thêm dấu ấy vào stack. 
-- Nếu là toán tử thì trước khi thêm toán hạng ấy vào stack, ta sẽ thực hiện việc in và loại bỏ các toán tử có thứ tự ưu tiên lớn hơn hoặc bằng toán tử đang xét (thứ tự ưu tiên của các toán tử cộng trừ nhân chia giống với quy tắc thực hiện tính biểu thức: nhân chia trước, cộng trừ sau, thực hiện các phép tính từ trái sang phải) cho tới khi ta không còn có thể loại bỏ toán tử khỏi stack hoặc phần tử ở đỉnh stack là dấu mở ngoặc. 
-- Nếu là dấu đóng ngoặc, loại bỏ và in ra các phần tử có trong stack cho tới khi phần tử ở đỉnh là dấu mở ngoặc, và loại bỏ dấu mở ngoặc này khỏi stack. 
-- Sau khi kết thúc duyệt, nếu stack không rỗng thì in nốt các toán hạng còn lại trong stack cho tới khi stack rỗng.
-
-Ta cũng ví dụ bằng biểu thức ở đầu:
-
-|Phần tử |Thao tác|Stack|Dữ liệu ra|Ghi chú|
-|---|---|---|---|---|
-|4|In số 4||4||
-|\\(\times\\)|Thêm vào stack|\\(\times\\)|4||
-|\\((\\)|Thêm vào stack|\\(\times\\) (|4||
-|1|In số 1|\\(\times\\) (|4 1||
-|+|Thêm vào stack|\\(\times\\) ( + |4 1||
-|2|In số 2|\\(\times\\) ( + |4 1 2||
-|\\(\times\\)|Thêm vào stack|\\(\times\\) ( + \\(\times\\)|4 1 2|Thứ hạng ưu tiên của \\(\times\\) lớn hơn +|
-|\\((\\)|Thêm vào stack|\\(\times\\) ( + \\(\times\\) (|4 1 2||
-|9|In số 9|\\(\times\\) ( + \\(\times\\) (|4 1 2 9||
-|/|Thêm vào stack|\\(\times\\) ( + \\(\times\\) ( /|4 1 2 9||
-|3|In số 3|\\(\times\\) ( + \\(\times\\) ( /|4 1 2 9 3||
-|\\()\\)|In, loại bỏ các toán tử|\\(\times\\) ( + \\(\times\\)|4 1 2 9 3 / |Loại bỏ cho tới khi gặp "(", đồng thời xóa luôn "("|
-|-|Thêm vào stack|\\(\times\\) ( -|4 1 2 9 3 / \\(\times\\) + |Loại bỏ các toán tử có thứ tự ưu tiên lớn hơn hoặc bằng|
-|5|In ra 5|\\(\times\\) ( -|4 1 2 9 3 / \\(\times\\) + 5 ||
-|\\()\\)|In, loại bỏ các toán tử |\\(\times\\)|4 1 2 9 3 / \\(\times\\) + 5 - ||
-|Kết thúc|In các toán tử còn lại||4 1 2 9 3 / \\(\times\\) + 5 - \\(\times\\)||
-
-Sau khi kết thúc thuật toán shunting yard, ta thành công chuyển đổi biểu thức từ dạng kí pháp trung tố thành kí pháp hậu tố.
+Dưới đây là một số ứng dụng của stack trong lập trình thi đấu.
 
 ### Dãy ngoặc đúng 
 
-Ta ví dụ một bài toán: 
+Ta ví dụ một bài toán: cho xâu S gồm các kí tự \\((\\) và \\()\\). Kiểm tra xem xâu S có phải là một dãy ngoặc đúng không?
 
-> Cho xâu S gồm các kí tự \\((\\) và \\()\\). Kiểm tra xem xâu S có phải là một dãy ngoặc đúng không?
->
-> Định nghĩa:
-> 	- Xâu rỗng là một dãy ngoặc đúng.
-> 	- Nếu A là dãy ngoặc đúng thì (A) cũng là một dãy ngoặc đúng.
-> 	- Nếu A và B là dãy ngoặc đúng thì AB cũng là một dãy ngoặc đúng.
+Định nghĩa của một dãy ngoặc đúng:
+- Xâu rỗng là một dãy ngoặc đúng.
+- Nếu A là dãy ngoặc đúng thì (A) cũng là một dãy ngoặc đúng.
+- Nếu A và B là dãy ngoặc đúng thì AB cũng là một dãy ngoặc đúng.
 
 **Ý tưởng**: Duyệt qua từng dấu ngoặc trong dãy ngoặc. Nếu gặp dấu ngoặc mở thì thêm vào stack, nếu là dấu ngoặc đóng thì loại bỏ một dấu ngoặc mở trong stack. Dãy ngoặc sẽ không được gọi là dãy ngoặc đúng nếu trong lúc duyệt đến dấu ngoặc đóng thì stack rỗng hoặc sau khi duyệt xong thì stack không rỗng.
 
@@ -274,8 +86,8 @@ int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	string s; cin >> s;
-	if(f(s)) cout << "YES\n";
-	else cout << "NO\n";
+	if(f(s)) cout << "YES";
+	else cout << "NO";
 	return 0;
 }
 
@@ -356,9 +168,7 @@ Ta áp dụng việc khử đệ quy khi hàm đệ quy quá sâu và có thể 
 
 Stack đơn điệu là kiểu stack mà các phần tử từ đáy đến đỉnh có giá trị tăng dần hoặc giảm dần.
 
-Ta ví dụ một bài toán: 
-
-> Cho mảng `a` có \\(n\\) phần tử bắt đầu từ chỉ số \\(1\\). Với mỗi phần tử trong mảng, tìm phần tử gần nhất bên trái có giá trị lớn hơn phần tử đang xét. Nếu phần tử ấy không tồn tại thì in ra \\(-1\\).
+Ta có bài toán ví dụ: cho một mảng \\(a\\) có \\(n\\) phần tử bắt đầu từ chỉ số \\(1\\). Với mỗi phần tử trong mảng, tìm phần tử gần nhất bên trái có giá trị lớn hơn phần tử đang xét. Nếu phần tử ấy không tồn tại thì in ra \\(-1\\).
 
 Với cách giải thông thường, ta sẽ sử dụng \\(2\\) vòng lặp lồng nhau để giải bài toán.
 

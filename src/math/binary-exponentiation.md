@@ -10,7 +10,10 @@ Các luỹ thừa nhị phân của \\(a\\) có thể dễ dàng được tính:
 
 \\[
 \begin{align*}
-a^1 &= a \\\\ a^2 &= (a^1)^2 \\\\ a^4 &= (a^2)^2 \\\\ & \dots 
+a^1 &= a \\\\ 
+a^2 &= \left(a^1\right)^2 \\\\ 
+a^4 &= \left(a^2\right)^2 \\\\ 
+& \dots 
 \end{align*}
 \\]
 
@@ -33,8 +36,8 @@ Ngoài ra, ta có thể thực hiện quay lui để giải quyết bài toán. 
 \\[
 a^n = \begin{cases}
 1 \text{ khi } n = 0 \\\\
-(a^{n/2})^2 \text{ khi } n \gt 0, n \text{ chẵn } \\\\
-(a^{\left\lfloor n/2 \right\rfloor})^2 \times a \text{ khi } n \gt 0, n \text{ lẻ }
+\left(a^{n/2}\right)^2 \text{ khi } n \gt 0, n \text{ chẵn } \\\\
+\left(a^{\left\lfloor n/2 \right\rfloor}\right)^2 \times a \text{ khi } n \gt 0, n \text{ lẻ }
 \end{cases}
 \\]
 
@@ -53,14 +56,14 @@ int Pow(int a, int n, int MOD = 1e9 + 7){ // tính a^n mod MOD
 
 ## Phép nhân Ấn Độ
 
-Ở bài viết về [modulo](modulo.md), ta đã được biết cách tính \\((a \times b) \mod {M} = (a \mod {M} \times b \mod {M}) \mod {M}\\). Tuy nhiên, nếu ta viết chương trình theo kiểu này để tính với các giá trị \\(a, b, M \ge 10^{10}\\) thì kể cả khi sử dụng `long long` thì ta vẫn có thể bị tràn số. 
+Ở bài viết về [modulo](modulo.md), ta đã được biết cách tính \\((a \times b) \mod {M} = ((a \mod {M}) \times (b \mod {M})) \mod {M}\\). Tuy nhiên, nếu ta viết chương trình theo kiểu này để tính với các giá trị \\(a, b, M \ge 10^{10}\\) thì kể cả khi sử dụng `long long` thì ta vẫn có thể bị tràn số. 
 
 Để giải quyết vấn đề này, ta sử dụng phép nhân Ấn Độ. Phép nhân Ấn Độ cũng giống với luỹ thừa nhị phân, chỉ khác nhau ở việc thay vì sử dụng phép nhân thì ta sử dụng phép cộng. Ví dụ, để tính \\(a \times b\\), ta tính: 
 
 \\[
 a \times b = \begin{cases}
-(a \times \frac{b}{2}) \times 2 \text { khi } b \text { chẵn } \\\\
-(a \times \left\lfloor \frac{b}{2} \right\rfloor) \times 2 + a \text { khi } b \text{ lẻ } \\\\
+\left(a \times \frac{b}{2}\right) \times 2 \text { khi } b \text { chẵn } \\\\
+\left(a \times \left\lfloor \frac{b}{2} \right\rfloor \right) \times 2 + a \text { khi } b \text{ lẻ } \\\\
 \end{cases}
 \\]
 

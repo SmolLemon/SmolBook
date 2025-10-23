@@ -24,7 +24,7 @@ Ta sẽ phân tích từng dòng lệnh của chương trình trên.
 #include <iostream>
 ```
 
-Trình biên dịch sẽ thêm header `iostream` chứa các phương pháp nhập xuất từ *thư viện chuẩn* của C++. **Standard Template Library (STL)** hay thư viện chuẩn của C++ bao gồm template (khuôn mẫu) của các thuật toán, cấu trúc dữ liệu mà ta có thể sử dụng trong chương trình của ta. Với STL, ta không cần phải tự viết các khái niệm này. Ví dụ, thư viện `stack` có sẵn CTDL [stack](../data-structures/stack.md) để ta sử dụng thay vì phải tự viết.
+Trình biên dịch sẽ thêm header `iostream` chứa các phương pháp nhập xuất từ *thư viện chuẩn* của C++. **Standard Template Library (STL)** hay thư viện chuẩn của C++ bao gồm template (khuôn mẫu) của các thuật toán, cấu trúc dữ liệu mà ta có thể sử dụng trong chương trình của ta. Với STL, ta không cần phải tự viết các khái niệm này. Ví dụ, thư viện `stack` có sẵn CTDL [stack](../data-structures/stack.md#stack-trong-thư-viện-chuẩn) để ta sử dụng thay vì phải tự viết.
 
 > Để thuận tiện hơn khi lập trình, ở đầu chương trình C++, ta thêm header đặc biệt
 > 

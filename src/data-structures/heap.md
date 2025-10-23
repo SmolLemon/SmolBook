@@ -76,7 +76,7 @@ Ta sẽ hoán đổi giá trị ấy với giá trị có thứ tự ưu tiên l
 
 ## Hàng đợi ưu tiên (priority queue)
 
-Một **hàng đợi ưu tiên (priority queue)** sẽ khác với một [hàng đợi](queue.md) thông thường, nó sẽ sắp xếp các phần tử bên trong theo một *thứ tự ưu tiên*. Nó giống như việc một bệnh nhân cần cấp cứu khẩn cấp sẽ được ưu tiên chữa trị hơn là một bệnh nhân bị ho cảm.
+Một **hàng đợi ưu tiên (priority queue)** sẽ khác với một [hàng đợi](queue.md) thông thường, nó sẽ sắp xếp các phần tử bên trong theo một *thứ tự ưu tiên*. Nó giống như việc một bệnh nhân cần cấp cứu khẩn cấp sẽ được ưu tiên chữa trị hơn là một bệnh nhân bị cảm nhẹ.
 
 Hàng đợi ưu tiên sẽ có các thao tác thêm phần tử và tìm/xóa phần tử có thứ tự ưu tiên lớn nhất.
 

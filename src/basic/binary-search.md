@@ -1,30 +1,24 @@
 # Thuật toán tìm kiếm nhị phân
 
-Bài toán mở đầu: 
-
-> Cho một mảng `a` chứa \\(n\\) phần tử phân biệt được sắp xếp tăng dần. Kiểm tra xem có tồn tại phần tử có giá trị \\(x\\) trong mảng hay không.
-
-Để giải quyết bài toán này, ta có thể duyệt qua tất cả các phần tử và kiểm tra phần tử nào có giá trị bằng \\(x\\), nhưng độ phức tạp thời gian sẽ là \\(O(n)\\). Ta có thể giải được bài toán này một cách tối ưu bằng **thuật toán tìm kiếm nhị phân**.
+Giả sử như ta muốn kiểm tra xem nếu phần tử có giá trị \\(x\\) có tồn tại trong một mảng \\(a\\) chứa \\(n\\) phần tử phân biệt được sắp xếp tăng dần hay không, ta có thể duyệt qua tất cả các phần tử và kiểm tra phần tử nào có giá trị bằng \\(x\\). Tuy nhiên, độ phức tạp của thuật toán này sẽ là \\(O(n)\\). Thay vì thế, ta có thể giải được bài toán này một cách tối ưu bằng **thuật toán tìm kiếm nhị phân**.
 
 ## Thuật toán
 
-Ta nhận xét, vì mảng `a` đã được sắp xếp tăng dần, nên phần tử đứng sau luôn lớn hơn phần tử đứng trước.
-
-Giả sử phần tử `a[i]` nhỏ hơn \\(x\\), ta có thể nhận thấy ngay được rằng mọi phần tử đứng sau `a[i]` đều nhỏ hơn \\(x\\).
+Vì mảng \\(a\\) đã được sắp xếp tăng dần, nên ta nhận xét các phần tử đứng sau luôn lớn hơn các phần tử đứng trước. Vậy nên, nếu như \\(a_i\\) nhỏ hơn \\(x\\), ta có thể nhận thấy ngay được rằng mọi phần tử có chỉ số nhỏ hơn \\(i\\) đều nhỏ hơn \\(x\\).
 
 Khi này, ta có thuật toán nhị phân:
-- Tìm giá trị của phần tử ở giữa mảng.
+- Tìm giá trị của phần tử ở giữa mảng \\(a\\).
 - Xét trường hợp:
-	- Nếu phần tử bằng \\(x\\), vậy ta kết luận có phần tử có giá trị bằng \\(x\\). Khi này ta kết thúc tìm kiếm nhị phân. 
-	- Nếu phần tử nhỏ hơn \\(x\\), phần tử ấy và mọi phần tử đứng sau nó đều nhỏ hơn \\(x\\). Loại bỏ tất cả phần tử từ đầu mảng đến phần ở giữa ấy. 
-	- Nếu phần tử ấy lớn hơn \\(x\\), phần tử ấy và mọi phần tử đứng trước nó đều lớn hơn \\(x\\). Loại bỏ tất cả phần tử từ cuối mảng đến phần tử ấy. 
-- Tiếp tục thực hiện tìm kiếm nhị phân cho tới khi không còn phần tử nào để thực hiện việc tìm kiếm, khi này ta thông báo rằng mảng không tồn tại phần tử có giá trị \\(x\\).
+	- Nếu phần tử ấy bằng \\(x\\), ta kết luận rằng mảng \\(a\\) có phần tử có giá trị bằng \\(x\\). 
+	- Nếu phần tử ấy nhỏ hơn \\(x\\), ta loại bỏ tất cả phần tử đứng *trước* phần từ ấy trong mảng. 
+	- Nếu phần tử ấy lớn hơn \\(x\\), ta loại bỏ tất cả phần tử đứng *sau* phần từ ấy trong mảng. 
+- Nếu như không còn phần tử nào để thực hiện việc tìm kiếm, ta kết luận rằng mảng \\(a\\) không tồn tại phần tử có giá trị \\(x\\).
 
 ```C++
 bool tknp(int a[], int n, int x){
 	int l = 1, r = n;
 	while(l <= r){
-		int mid = (l + r) >> 1; // dịch 1 bit sang phải, tương đương với `(l + r) / 2`
+		int mid = (l + r) >> 1; // tương đương với `(l + r) / 2`
 		if(a[mid] == x) return 1;
 		else if(a[mid] > x) r = mid - 1;
 		else l = mid + 1;
@@ -78,17 +72,9 @@ int k = f(l) ? l : -1;
 
 ## Tìm kiếm nhị phân đáp án
 
-Ta có dạng bài toán được phát biểu như sau:
+Ta có bài toán sau: Cho \\(n\\) hình chữ nhật kích thước \\(a \times b\\). Tính độ dài của hình vuông nhỏ nhất chứa tất cả \\(n\\) hình chữ nhật này.
 
-> Tất cả các số được chia làm số đẹp và không đẹp. Nếu \\(x\\) là một số đẹp thì \\(x + 1\\) cũng là số đẹp. Tìm số đẹp nhỏ nhất.
-
-Dễ thấy, dạng bài toán này giống với tìm kiếm nhị phân trên hàm đơn điệu được nói ở phần trên. Chính vì thế bài toán này có thể được giải quyết bằng tìm kiếm nhị phân.
-
-Ta sẽ ứng dụng cách giải quyết này cho bài toán sau:
-
-> Cho \\(n\\) hình chữ nhật kích thước \\(a \times b\\). Tính độ dài của hình vuông nhỏ nhất chứa tất cả \\(n\\) hình chữ nhật này.
-
-Ta tạo hàm \\(f(x)\\) trả về \\(true\\) nếu hình vuông cạnh \\(x\\) chứa được tất cả \\(n\\) hình chữ nhật, và \\(false\\) nếu không thể.
+Ta có hàm \\(f(x)\\) trả về \\(true\\) nếu hình vuông cạnh \\(x\\) chứa được tất cả \\(n\\) hình chữ nhật, và \\(false\\) nếu không thể.
 
 Ta biết được \\(f(x)\\) là một hàm đơn điệu vì nếu ta có thể xếp \\(n\\) hình chữ nhật vào hình vuông cạnh \\(x\\) thì ta cũng thực hiện được với hình vuông cạnh \\(x + 1\\).
 
@@ -100,7 +86,7 @@ Việc còn lại bây giờ là tìm kiếm nhị phân số \\(x\\) nhỏ nh�
 
 ## Tìm kiếm nhị phân với số thực
 
-Với cách thực hiện tìm kiếm nhị phân với số thực thì ta cần có cách áp dụng thuật toán theo cách khác. Số thực khó so sánh bằng, như đã nói ở phần [số thực](../programming/data-types.md#số-thực), nếu sử dụng kiểu `while (l <= r)`, vòng lặp sẽ chạy vô tận và chương trình sẽ bị TLE.
+Với cách thực hiện tìm kiếm nhị phân với số thực thì ta cần có cách áp dụng thuật toán theo cách khác. [kiểu dữ liệu số thực](../programming/variables-data-types.html#kiểu-dữ-liệu-lưu-trữ-số-thực) khó có thể so sánh bằng. Vậy nên, nếu ta viết `while (l <= r)`, vòng lặp while sẽ chạy vô tận và chương trình sẽ bị TLE.
 
 Để thực hiện việc tìm kiếm nhị phân với số thực, ta chỉnh sửa code như sau:
 
@@ -146,7 +132,7 @@ auto lu = equal_range(a, a + n, x);
 cout << lu.second - lu.first;
 ```
 
-Ta cũng có hàm `binary_search` kiểm tra nếu giá trị \\(x\\) tồn tại trong mảng `a` hay không.
+Ta cũng có hàm `binary_search` kiểm tra nếu giá trị \\(x\\) tồn tại trong mảng \\(a\\) hay không.
 
 ```C++
 cout << binary_search(a, a + n, x); // Trả về 1 nếu x có trong a và 0 nếu ngược lại
