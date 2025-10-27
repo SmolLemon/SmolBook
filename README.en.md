@@ -19,7 +19,7 @@ $ mdbook serve --open
 
 ## Source code
 
-The guidebook's source code can be found on [Codeberg](https://codeberg.org/SmolLemon/SmolBook) and [Github](https://github.com/SmolLemon/SmolBook).
+Cẩm nang Lập trình Thi đấu source code is available at <https://codeberg.org/SmolLemon/SmolBook> and <https://github.com/SmolLemon/SmolBook>.
 
 ## Copyright
 

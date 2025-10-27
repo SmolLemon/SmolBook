@@ -4,23 +4,15 @@ Quay lại với [bảng thưa](./sparse-table.md), nếu như các truy vấn c
 
 Ta sẽ nói về CTDL **Cây phân đoạn (Segment Tree)** - một CTDL linh hoạt giúp giải quyết bài toán này.
 
-## Ý tưởng
-
-Giả sử bạn muốn đo chiều cao của tất cả học sinh trong một khu vực. 
-
-Một điều chắc chắn là ta không thể đến và đo chiều cao của tất cả học sinh trong khu vực ấy được - nó tốn quả nhiều thời gian và không hề hiệu quả. Thay vì thế, ta có thể bàn giao công việc này cho các trường trong khu vực, mỗi trường đó lại để giáo viên chủ nhiệm đo chiều cao của các em học sinh trong lớp và báo cáo lại để nhà trường tổng hợp lại. 
-
-Khi này, thay vì kiểm tra tất cả học sinh ấy thì ta chỉ cần thu thập thông tin tổng hợp từ các trường. Điều này giúp ta thu thập thông tin nhanh hơn và hiệu quả hơn.
-
-Đây chính là ý tưởng chính cho CTDL cây phân đoạn: Chia một không gian quản lí lớn thành các không gian quản lí nhỏ hơn - một giải pháp [chia để trị](../paradigms/dnc.md).
-
 ## Cây phân đoạn
 
-**Cây phân đoạn** là một CTDL được biểu diễn ở dạng [cây nhị phân](../graph-theory/tree.md#cây-nhị-phân).
+Ý tưởng chính của CTDL **cây phân đoạn** là chia một không gian quản lí lớn thành các không gian quản lí nhỏ hơn - một giải pháp [chia để trị](../paradigms/dnc.md).
 
-Ta lưu cây phân đoạn trên một mảng `st`. Mỗi đỉnh của cây sẽ lưu thông tin về một phân đoạn trên mảng `a`. 
+Cây phân đoạn được biểu diễn ở dạng [cây nhị phân](../graph-theory/tree.md#cây-nhị-phân).
 
-Đỉnh gốc \\(1\\) của cây phân đoạn tượng trưng cho đoạn \\([1, n]\\). Với mỗi đỉnh \\(p\\) lưu thông tin về đoạn \\([l, r]\\). Nếu \\(p\\) không phải là đỉnh lá thì hai đỉnh con \\(2p\\) và \\(2p + 1\\) sẽ lần lượt lưu thông tin của hai đoạn \\([l, \left\lfloor (l + r) / 2 \right\rfloor]\\) và \\([\left\lfloor(l + r) / 2\right\rfloor + 1, r]\\). Nếu \\(p\\) là đỉnh lá thì nó chỉ quản lý đúng một phần tử duy nhất trên mảng `a` có chỉ số \\(l = r\\).
+Ta lưu cây phân đoạn trên một mảng \\(st\\). Mỗi đỉnh của cây sẽ lưu thông tin về một phân đoạn trên mảng \\(a\\). 
+
+Đỉnh gốc \\(1\\) của cây phân đoạn tượng trưng cho đoạn \\([1, n]\\). Với mỗi đỉnh \\(p\\) lưu thông tin về đoạn \\([l, r]\\). Nếu \\(p\\) không phải là đỉnh lá thì hai đỉnh con \\(2p\\) và \\(2p + 1\\) sẽ lần lượt lưu thông tin của hai đoạn \\([l, \left\lfloor (l + r) / 2 \right\rfloor]\\) và \\([\left\lfloor(l + r) / 2\right\rfloor + 1, r]\\). Nếu \\(p\\) là đỉnh lá thì nó chỉ quản lý đúng một phần tử duy nhất trên mảng \\(a\\) có chỉ số \\(l = r\\).
 
 ## Xây dựng cây phân đoạn
 
@@ -44,7 +36,7 @@ void build(int id, int l, int r){
 	build(id << 1 | 1, mid + 1, r);
 	
 	// Tính giá trị từ hai đỉnh con
-	st[id] = min(st[id << 1], st[d << 1 | 1]);
+	st[id] = min(st[id << 1], st[id << 1 | 1]);
 }
 ```
 
@@ -124,7 +116,7 @@ Thuật toán của ta sẽ đi qua số lượng đỉnh bằng với chiều c
 
 Giả sử ta áp dụng cách cập nhật đoạn tương tự cách làm với cập nhật điểm, số lượng phân đoạn ta cần cập nhật có thể lên đến \\(O(n)\\). 
 
-Nếu ta cập nhật: "thay đổi các phần tử trong khoảng \\([2, 7]\\) thành \\(9\\)":
+Ví dụ, nếu ta cập nhật "thay đổi các phần tử trong khoảng \\([2, 7]\\) thành \\(9\\)":
 
 <center>
 <img src="../images/segment_tree_range_update.png" alt="Segment Tree Range Update"/>

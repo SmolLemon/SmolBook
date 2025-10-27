@@ -8,7 +8,7 @@ Tuy nhiên, thuật toán Bellman-Ford có thể giải quyết được trườ
 
 Ban đầu, thuật toán sẽ gán khoảng cách đến đỉnh bắt đầu \\(s\\) là \\(0\\), và \\(\infty\\) cho khoảng cách đến các đỉnh còn lại. 
 
-Ta sẽ duyệt các cạnh của đồ thị và bắt đầu cập nhật khoảng cách của các đỉnh: với mỗi cạnh \\(uv\\) có trọng số \\(w\\) trong đồ thị, ta cập nhật \\(v_{dist}\\) thành \\(u_{dist} + w\\) nếu \\(u_{dist} + w < v_{dist}\\). 
+Ta sẽ duyệt các cạnh của đồ thị và bắt đầu cập nhật khoảng cách của các đỉnh: với mỗi cạnh \\(uv\\) có trọng số \\(w\\) trong đồ thị, ta cập nhật \\(dist_v\\) thành \\(dist_u + w\\) nếu \\(dist_u + w < dist_v\\). 
 
 Ta chỉ cần duyệt các cạnh trong danh sách cạnh nhiều nhất \\(|V| - 1\\) lần để tìm được đường đi ngắn nhất từ đỉnh \\(s\\) đến các đỉnh còn lại. Thứ tự duyệt các cạnh không làm ảnh hưởng đến kết quả cuối cùng.
 
@@ -138,7 +138,7 @@ Một nhận xét từ thuật toán Ballman-Ford để có thuật toán SPFA l
 
 Nhận xét này vô cùng quan trọng bởi nếu số lượng các đỉnh tìm được khoảng cách lớn nhất ngày càng tăng thì số lượng cạnh ta cần duyệt sẽ giảm đi, giúp tối ưu thuật toán. 
 
-Ta có cài đặt thuật toán: Tạo một `queue` lưu các đỉnh. Ban đầu `queue` sẽ chứa đỉnh \\(s\\). Sau đó, với mỗi lần lấy và loại bỏ đỉnh \\(u\\) ở đầu `queue`, với mỗi cung \\(uv\\) có trọng số \\(w\\), nếu \\(v_{dist}\\) có thể được cập nhật thì ta sẽ cập nhật \\(v_{dist}\\) và thêm đỉnh \\(v\\) vào cuối `queue` nếu \\(v\\) chưa nằm trong `queue`.
+Ta có cài đặt thuật toán: Tạo một `queue` lưu các đỉnh. Ban đầu `queue` sẽ chứa đỉnh \\(s\\). Sau đó, với mỗi lần lấy và loại bỏ đỉnh \\(u\\) ở đầu `queue`, với mỗi cung \\(uv\\) có trọng số \\(w\\), nếu \\(dist_v\\) có thể được cập nhật thì ta sẽ cập nhật \\(dist_v\\) và thêm đỉnh \\(v\\) vào cuối `queue` nếu \\(v\\) chưa nằm trong `queue`.
 
 ```C++
 void SPFA(){

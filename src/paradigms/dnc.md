@@ -38,7 +38,7 @@ Thuật toán sẽ bao gồm các bước:
 <img src="../images/dc_merge_sort_divide.svg" alt="Mảng chia thành 2 mảng con"/>
 </center>
 
-**Hợp**: Gộp các mảng con lại với nhau (có thể hợp một cách hiệu quả bằng [hai con trỏ](../basic/two-pointers.md#gộp-mảng)).
+**Hợp**: Gộp các mảng con lại với nhau. Ta có thể hợp hai mảng con làm một một cách hiệu quả bằng [hai con trỏ](../basic/two-pointers.md#gộp-mảng).
 
 <center>
 <img src="../images/dc_merge_sort_conquer.svg" alt="Hợp các mảng con"/>
@@ -60,20 +60,20 @@ Có thể xem thông tin về định lí thợ tại các nguồn tài liệu k
 
 ## Phần tử nhỏ thứ \\(k\\)
 
-Bài toán: Cho một mảng `a` có \\(n\\) phần tử. Hãy tìm và in ra giá trị của phần tử nhỏ thứ \\(k\\) trong mảng (các phần tử bắt đầu từ \\(1\\)).
+Bài toán: Cho một mảng \\(a\\) có \\(n\\) phần tử. Hãy tìm và in ra giá trị của phần tử nhỏ thứ \\(k\\) trong mảng (các phần tử bắt đầu từ \\(1\\)).
 
-VD: Phần tử nhỏ thứ \\(3\\) của mảng `a = [18, 43, 6, 15, 9, 37, 10, 42]` có giá trị bằng \\(10\\).
+VD: Phần tử nhỏ thứ \\(3\\) của mảng \\(a = [18, 43, 6, 15, 9, 37, 10, 42]\\) có giá trị bằng \\(10\\).
 
-Ta có thể sắp xếp lại các phần tử trong mảng bằng một thuật toán sắp xếp nào đấy (Ví dụ: [thuật toán sắp xếp nhanh](../basic/sorting.md#sắp-xếp-nhanh-quicksort) - \\(O(n\log{n})\\)) và in ra phần tử thứ \\(k\\) trong mảng. 
+Ta có thể sắp xếp lại các phần tử và in ra phần tử thứ \\(k\\) trong mảng. 
 
 Độ phức tạp của thuật toán sẽ là \\(O(n\log{n})\\).
 
-Tuy nhiên, ta có thể xử lý bài toán với độ phức tạp \\(O(n)\\) một cách đơn giản bằng cách áp dụng mô hình chia để trị và có phần giống với thuật toán sắp xếp nhanh.
+Tuy nhiên, ta có thể xử lí bài toán với độ phức tạp \\(O(n)\\) một cách đơn giản bằng cách áp dụng mô hình chia để trị và có phần giống với [thuật toán sắp xếp nhanh](../basic/sorting.md#sắp-xếp-nhanh-quicksort).
 
-Thuật toán của ta sẽ chọn một phần tử ngẫu nhiên trong mảng \\(a[p]\\) và sắp xếp lại các phần tử trong mảng `a`: các phần tử \\(a[x] \le a[p]\\) sẽ được xếp bên trái \\(a[p]\\), các phần tử còn lại sẽ được xếp ở bên phải \\(a[p]\\). Gọi chỉ số của phần tử \\(a[p]\\) sau khi sắp xếp lại mảng `a` là \\(q\\), ta có 3 trường hợp có thể xảy ra:
-- Trường hợp 1: \\(q = k\\): \\(a[q]\\) chính là đáp án của bài toán. Ta trả về giá trị cần tìm và kết thúc thuật toán.
-- Trường hợp 2: \\(q \lt k\\): Đáp án của bài toán sẽ nằm ở bên trái \\(a[q]\\), hay các phần tử có chỉ số trong khoảng \\([1..q - 1]\\).
-- Trường hợp 3: \\(q \gt k\\): Đáp án của bài toán sẽ nằm ở bên phải \\(a[q]\\), hay các phần tử có chỉ số trong khoảng \\([q + 1..n]\\).
+Thuật toán của ta sẽ chọn một phần tử ngẫu nhiên trong mảng \\(a_p\\) và sắp xếp lại các phần tử trong mảng \\(a\\): các phần tử \\(a_x \le a_p\\) sẽ được xếp bên trái \\(a_p\\), các phần tử còn lại sẽ được xếp ở bên phải \\(a_p\\). Gọi chỉ số của phần tử \\(a_p\\) sau khi sắp xếp lại mảng \\(a\\) là \\(q\\), ta có \\(3\\) trường hợp có thể xảy ra:
+- Trường hợp 1: \\(q = k\\): \\(a_q\\) chính là đáp án của bài toán. Ta trả về giá trị cần tìm và kết thúc thuật toán.
+- Trường hợp 2: \\(q \lt k\\): Đáp án của bài toán nằm ở các phần tử có chỉ số *nhỏ* hơn \\(q\\), hay các phần tử có chỉ số trong khoảng \\([1, q - 1]\\).
+- Trường hợp 3: \\(q \gt k\\): Đáp án của bài toán nằm ở các phần tử có chỉ số *lớn* hơn \\(q\\), hay các phần tử có chỉ số trong khoảng \\([q + 1, n]\\).
 
 Các trường hợp \\(2\\) và \\(3\\) sẽ được thuật toán xử lý một cách đệ quy cho tới khi tìm được đáp án. 
 

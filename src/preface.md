@@ -6,7 +6,7 @@
 
 ## Đối tượng hướng tới
 
-Những nội dung của cuốn cẩm nang được viết với mục tiêu có thể giúp những người mới bắt đầu học lập trình thi đấu có thể hiểu được những kiến thức trong bộ môn này một cách dễ dàng.
+Những nội dung của cuốn cẩm nang được viết với mục tiêu có thể giúp các bạn THCS, THPT hay chỉ đơn giản là những người mới bắt đầu học lập trình thi đấu có thể hiểu được những kiến thức trong bộ môn này một cách dễ dàng.
 
 ## Nội dung
 
@@ -34,7 +34,7 @@ Chương 9 tổng hợp các kiến thức không nằm hoàn toàn trong chủ 
 
 ## Mã nguồn
 
-Mã nguồn của *Cẩm nang Lập trình Thi đấu* có thể được tìm thấy trên [Codeberg](https://codeberg.org/SmolLemon/SmolBook) và [Github](https://github.com/SmolLemon/SmolBook).
+Mã nguồn của *Cẩm nang Lập trình Thi đấu* có thể được tìm thấy tại <https://codeberg.org/SmolLemon/SmolBook> và <https://github.com/SmolLemon/SmolBook>.
 
 ## Bản quyền 
 

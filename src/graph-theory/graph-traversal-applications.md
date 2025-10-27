@@ -27,7 +27,6 @@ Có thể dễ dàng nhận thấy rằng khi ta thực hiện DFS hoặc BFS m�
 int cc = 0;
 for(int i = 1; i <= n; ++i){
 	if(vst[i] == 0) {
-		// bfs(i);
 		dfs(i);
 		++cc;
 	}
@@ -102,7 +101,7 @@ void bfs(int s){
 
 ## Kiểm tra đồ thị hai phía
 
-Ta có thể xác định nếu đồ thị của ta là [đồ thị hai phía](overview.md#Đồ-thị-hai-phía) hay không bằng cách tìm chu trình có lẻ đỉnh trong đồ thị.
+Ta có thể xác định nếu đồ thị của ta là [đồ thị hai phía](graph.md#Đồ-thị-hai-phía) hay không bằng cách tìm chu trình có lẻ đỉnh trong đồ thị.
 
 Ta chỉnh sửa đoạn code ở phần trên như sau: sau khi xác định đường đi ngắn nhất, ta các cặp cạnh \\(uv\\): nếu khoảng cách của hai đỉnh \\(u\\), \\(v\\) không đồng chằn hoặc đồng lẻ thì đồ thị không phải đồ thị hai phía. Nếu điều này không xảy ra thì đồ thị của ta là đồ thị hai phía.
 
@@ -161,13 +160,13 @@ bool bipartite(int u){
 
 **Thứ tự tô-pô (Topological Ordering)** của một đồ thị có hướng \\(G = (V, E)\\) là thứ tự sắp xếp của các đỉnh trên một đoạn thẳng sao cho với mỗi cạnh \\(uv\\), đỉnh \\(u\\) đứng trước đỉnh \\(v\\) trong thứ tự sắp xếp.
 
-Ta có thể tìm thứ tự tô-pô của một [DAG](overview.md#directed-acyclic-graph-dag) bằng DFS hoặc thuật toán Kahn.
+Ta có thể tìm thứ tự tô-pô của một [DAG](graph.md#directed-acyclic-graph-dag) bằng DFS hoặc thuật toán Kahn.
 
 Xem chi tiết tại phần [thuật toán sắp xếp Tô-pô](topo.md).
 
 ## Phát hiện chu trình
 
-Đối với đồ thị vô hướng, việc xác định sự tồn tại của chu trình khá đơn giản: đồ thị không có chu trình nếu nó là một [cây](overview.md#cây). Nếu không phải cây thì đồ thị chắc chắn có chu trình.
+Đối với đồ thị vô hướng, việc xác định sự tồn tại của chu trình khá đơn giản: đồ thị không có chu trình nếu nó là một [cây](graph.md#cây). Nếu không phải cây thì đồ thị chắc chắn có chu trình.
 
 Đối với đồ thị có hướng, ta sẽ giải quyết theo hướng khác bằng DFS.
 
@@ -182,7 +181,7 @@ Từ \\(3\\) giai đoạn này, ta có thể phân loại các cạnh của đ�
 - **Cạnh ngược/hai phía (Back/Bidirectional Edge)**: đây là cạnh không thuộc cây DFS. Khi ta đi từ đỉnh \\(u\\) sang đỉnh \\(v\\) thì cạnh \\(uv\\) là cạnh ngược khi đỉnh \\(u\\) ở giai đoạn \\(2\\) và đỉnh \\(v\\) ở giai đoạn \\(2\\). Cạnh ngược giúp ta biết được đỉnh \\(v\\) là tổ tiên của đỉnh \\(u\\) trên cây DFS. Nếu \\(v\\) là cha của đỉnh \\(u\\) thì cạnh của ta là cạnh hai phía.
 - **Cạnh xuôi/chéo (Forward/Cross Edge)**: đây là cạnh không thuộc cây DFS. Khi ta đi từ đỉnh \\(u\\) sang đỉnh \\(v\\) thì cạnh \\(uv\\) là cạnh xuôi/chéo khi đỉnh \\(u\\) ở giai đoạn \\(2\\) và đỉnh \\(v\\) ở giai đoạn \\(3\\). Điểm khác nhau giữa cạnh xuôi và cạnh chéo là cạnh xuôi sẽ chỉ một đỉnh đến một đỉnh hậu duệ của nó còn cạnh chéo thì không.  
 
-Ta sẽ tìm được chu trình nếu cây DFS tồn tại cạnh ngược trên đồ thị. Chu trình hai đỉnh cũng có thể tồn tại nếu tồn tại cạnh hai phía.
+Ta sẽ tìm được chu trình nếu cây DFS tồn tại **cạnh ngược** trên đồ thị. Chu trình hai đỉnh cũng có thể tồn tại nếu tồn tại cạnh hai phía.
 
 ```C++
 int vst[N];
@@ -216,7 +215,7 @@ void dfs(int u, int p){
 
 ## Tìm khớp, cầu
 
-Bài toán tìm [khớp cầu](overview.md#tính-liên-thông-khớp-cầu) trên đồ thị vô hướng có thể được giải quyết hiệu quả bằng DFS.
+Bài toán tìm [khớp cầu](graph.md#tính-liên-thông-khớp-cầu) trên đồ thị vô hướng có thể được giải quyết hiệu quả bằng DFS.
 
 Ta sẽ lưu hai thông tin trên cây DFS:
 - \\(num\\): thứ tự duyệt đỉnh của DFS.

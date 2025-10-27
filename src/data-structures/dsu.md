@@ -19,22 +19,22 @@ Ta có cài đặt DSU bằng Quick-Find:
 
 ```C++
 int MakeSet(int a){
-	if(p[a] == -1){ // -1 biểu thị nếu tập hợp chưa được tạo
-		p[a] = a;
-	}
+    if(p[a] == -1){ // -1 biểu thị nếu tập hợp chưa được tạo
+        p[a] = a;
+    }
 }
 int Find(int a){
-	return p[a];
+    return p[a];
 }
 
 void Union(int a, int b){
-	a = Find(a);
-	b = Find(b);
-	for(int i = 1; i <= n; ++i){
-		if(p[i] == a){
-			p[i] = b;
-		}
-	}
+    a = Find(a);
+    b = Find(b);
+    for(int i = 1; i <= n; ++i){
+        if(p[i] == a){
+            p[i] = b;
+        }
+    }
 }
 ```
 
@@ -57,16 +57,16 @@ Ta sẽ tối ưu hàm Union bằng cách mô tả các tập hợp bằng các 
 
 ```C++
 int Find(int a){
-	while(a != p[a]){
-		a = p[a];
-	}
-	return a;
+    while(a != p[a]){
+        a = p[a];
+    }
+    return a;
 }
 
 void Union(int a, int b){
-	a = Find(a);
-	b = Find(b);
-	p[a] = b;
+    a = Find(a);
+    b = Find(b);
+    p[a] = b;
 }
 ```
 
@@ -76,7 +76,7 @@ Vì sao `Find` lại là \\(O(n)\\)? Giả sử việc `Union` sẽ tạo thành
 
 Tuy vậy, cách thực hiện `Union` của Quick-Union vẫn nhanh hơn `Union` của Quick-Find. `Union` của Quick-Find thì duyệt các phần tử trong `p`, còn `Union` của Quick-Union thì phụ thuộc vào chiều cao của cây. Trên trung bình, các cây được tạo bởi Quick-Union có độ cao khá bé nên nó nhanh hơn Quick-Find. 
 
-### Tối ưu Union 
+### Tối ưu hàm Union 
 
 Như đã nói ở trên, trên trung bình, các cây có độ cao tương đối nhỏ. Dẫu vậy, làm cách nào để ta đảm bảo được chiều cao của các cây ấy đều nhỏ trong mọi trường hợp? Ta sẽ thay đổi cách thực hiện hàm Union.
 
@@ -90,12 +90,12 @@ Hàm `Find` sẽ tương tự với Find trong Quick-Union.
 
 ```C++
 void Union(int a, int b){
-	a = Find(a);
-	b = Find(b);
-	if(a == b) return;
-	if(r[a] < r[b]) swap(a, b);
-	p[b] = a;
-	if(r[a] == r[b]) ++r[a];
+    a = Find(a);
+    b = Find(b);
+    if(a == b) return;
+    if(r[a] < r[b]) swap(a, b);
+    p[b] = a;
+    if(r[a] == r[b]) ++r[a];
 }
 ```
 
@@ -115,12 +115,12 @@ Hàm `Find` sẽ tương tự với Find trong Quick-Union.
 
 ```C++
 void Union(int a, int b){
-	a = Find(a);
-	b = Find(b);
-	if(a == b) return;
-	if(sz[a] < sz[b]) swap(a, b);
-	p[b] = a;
-	sz[a] += sz[b];
+    a = Find(a);
+    b = Find(b);
+    if(a == b) return;
+    if(sz[a] < sz[b]) swap(a, b);
+    p[b] = a;
+    sz[a] += sz[b];
 }
 ```
 
@@ -129,8 +129,8 @@ Tương tự với Union theo thứ hạng, ta có giả thiết: Một đỉnh 
 > Chứng minh: Chiều cao của đỉnh \\(x\\) nằm trong cây \\(T_1\\) sẽ không thay đổi trừ khi được hợp lại với cây \\(T_2\\) có kích thước lớn hơn \\(T_1\\).
 >
 > Khi này:
->	- Chiều cao của \\(x\\) tăng lên \\(1\\)
->	- Kích thước của cây mới \\(T_3\\) chứa đỉnh \\(x\\) sẽ gấp đôi cây cũ hoặc hơn: 
+>   - Chiều cao của \\(x\\) tăng lên \\(1\\)
+>   - Kích thước của cây mới \\(T_3\\) chứa đỉnh \\(x\\) sẽ gấp đôi cây cũ hoặc hơn: 
 > \\[size(T_3) = size(T_1) + size(T_2) \ge 2 \times size(T_1)\\]
 
 Giống với Union theo thứ hạng, ta có thể nhận định rằng chiều cao lớn nhất có thể khi liên tiếp Union theo thứ hạng \\(n\\) phần tử là \\(\log{n}\\).
@@ -149,8 +149,8 @@ Kĩ thuật nén đường đi rất đơn giản: Khi đã tìm được gốc 
 
 ```C++
 int Find(int a){
-	if(a != p[a]) p[a] = Find(p[a]);
-	return p[a];
+    if(a != p[a]) p[a] = Find(p[a]);
+    return p[a];
 }
 ```
 
@@ -178,28 +178,29 @@ Dưới đây là DSU tạo sẵn \\(n\\) tập hợp, cài đặt theo thứ h�
 
 ```C++
 struct UnionFind{
-	vector<int> p, r, sz;
-	int cc; // số tập hợp
-	UnionFind(int _n): cc(_n){
-		p.resize(cc);
-		r.resize(cc, 0);
-		sz.resize(cc, 1);
-		iota(p.begin(), p.end(), 0); // gán p[0] = 0, p[1] = 1, ..., p[cc - 1] = cc - 1
-	}
-	int find(int u) { return p[u] == u ? u : p[u] = find(p[u]); } // cách viết rút gọn
-	int disjointSet() { return cc; }                              // số tập hợp
-	int sizeOfSet(int u) { return sz[find(u)]; }                  // số lượng phần tử trong tập hợp
-	bool isSameSet(int u, int v) { return find(u) == find(v); }   // kiểm tra hai phần tử thuộc 
-    bool Union(int u, int v) {                                    // cùng tập hợp hay không 
-		u = find(u);                                              // hàm Union sẽ trả về nếu hai 
-		v = find(v);                                              // tập hợp được hợp lại với nhau
-		if (u == v) return 0;
-		if(r[u] < r[v]) swap(u, v);
-    	p[v] = u;
-    	r[u] += r[u] == r[v];
-    	sz[u] += sz[v];
-    	--cc;
-    	return 1;
+    vector<int> p, r, sz;
+    int cc; // số tập hợp
+    UnionFind(int _n): cc(_n){
+        p.resize(cc);
+        r.resize(cc, 0);
+        sz.resize(cc, 1);
+        iota(p.begin(), p.end(), 0); // gán p[0] = 0, p[1] = 1, ..., p[cc - 1] = cc - 1
+    }
+    int find(int u) { return p[u] == u ? u : p[u] = find(p[u]); } // - cách viết rút gọn
+    int disjointSet() { return cc; }                              // - số tập hợp
+    int sizeOfSet(int u) { return sz[find(u)]; }                  // - số lượng phần tử trong tập hợp
+    bool isSameSet(int u, int v) { return find(u) == find(v); }   // - kiểm tra hai phần tử thuộc 
+                                                                  // cùng tập hợp hay không 
+    bool Union(int u, int v) {
+        u = find(u);                                              // - hàm Union sẽ trả về nếu hai 
+        v = find(v);                                              // tập hợp được hợp lại với nhau
+        if (u == v) return 0;
+        if(r[u] < r[v]) swap(u, v);
+        p[v] = u;
+        r[u] += r[u] == r[v];
+        sz[u] += sz[v];
+        --cc;
+        return 1;
     }
 };
 ```

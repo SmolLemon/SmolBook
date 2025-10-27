@@ -151,6 +151,7 @@ Từ đó, độ phức tạp thời gian của thuật toán sẽ là:
 |\\(O(n^3)\\)| Cubic | Bậc ba |
 |\\(O(n^k)\\)| Polynomial |  Luỹ thừa|
 |\\(O(C^n)\\)| Exponential | Hàm mũ |
+|\\(O(n!)\\)| Factorial | Giai thừa |
 
 ### Ước tính độ phức tạp thời gian
 

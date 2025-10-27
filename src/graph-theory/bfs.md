@@ -18,7 +18,7 @@ Giả sử ta bắt đầu thực hiện BFS từ đỉnh \\(1\\), thuật toán
 
 ## Cài đặt
 
-Việc cài đặt thuật toán BFS là một việc đơn giản nếu ta sử dụng [CTDL Queue](../data-structures/queue.md). Ban đầu, đỉnh gốc \\(s\\) sẽ được thêm vào queue của ta. Sau đó, thuật toán sẽ thực hiện 2 bước chính:
+Việc cài đặt thuật toán BFS là một việc đơn giản nếu ta sử dụng [CTDL queue](../data-structures/queue.md). Ban đầu, đỉnh gốc \\(s\\) sẽ được thêm vào queue của ta. Sau đó, thuật toán sẽ thực hiện 2 bước chính:
 - Lấy giá trị và loại bỏ đỉnh \\(u\\) ở đầu queue.
 - Với mỗi đỉnh \\(v\\) kề với đỉnh \\(u\\) và chưa được ghé thăm: thêm đỉnh \\(v\\) vào cuối queue.
 

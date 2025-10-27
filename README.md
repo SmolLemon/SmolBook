@@ -19,7 +19,7 @@ $ mdbook serve --open
 
 ## Mã nguồn
 
-Mã nguồn của cuốn cẩm nang có thể được tìm thấy trên [Codeberg](https://codeberg.org/SmolLemon/SmolBook) và [Github](https://github.com/SmolLemon/SmolBook).
+Mã nguồn của *Cẩm nang Lập trình Thi đấu* được có thể được tìm thấy tại <https://codeberg.org/SmolLemon/SmolBook> và <https://github.com/SmolLemon/SmolBook>.
 
 ## Bản quyền 
 

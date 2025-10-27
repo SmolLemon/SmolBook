@@ -1,6 +1,6 @@
 # Duyệt toàn bộ
 
-**Duyệt toàn bộ (Complete search)**, hay với các tên gọi khác như *duyệt trâu*, *vét cạn*, *brute force*, là một mô hình thuật toán. Các thuật toán duyệt toàn bộ sẽ giải quyết bài toán bằng cách kiểm tra (gần như) toàn bộ không gian tìm kiếm của bài để tìm kiếm kết quả thỏa mãn, ví dụ như kiểm tra các phần tử, các cặp giá trị, các tập con, hoán vị, v.v. 
+**Duyệt toàn bộ (Complete search)**, hay với các tên gọi khác như *duyệt trâu*, *vét cạn*, *brute force* đều được dùng để chỉ chung một mô hình thuật toán. Các thuật toán duyệt toàn bộ sẽ giải quyết bài toán bằng cách kiểm tra (gần như) toàn bộ không gian tìm kiếm của bài để tìm kiếm kết quả thỏa mãn, ví dụ như kiểm tra các phần tử, các cặp giá trị, các tập con, hoán vị, v.v. 
 
 Ưu điểm của duyệt toàn bộ là luôn đảm bảo cho ra kết quả chính xác. Tuy nhiên, thời gian thực thi lại lâu, độ phức tạp lớn. 
 
@@ -193,11 +193,9 @@ Như nếu hai bạn đồng ý cùng đi đến một địa điểm nào đó 
 <img src="../images/mitm2.png" alt="Hẹn nhau tại một địa điểm"/>
 </center>
 
-Một bài toán ví dụ cho kĩ thuật chia đôi tập như sau:
+<br>
 
-> Cho \\(n\\) đồng xu với các giá trị khác nhau. Kiểm tra liệu có tồn tại cách chọn các đồng xu sao cho tổng giá trị của nó bằng \\(X\\) hay không?
->
-> Giới hạn: \\(n \le 40\\).
+Một bài toán ví dụ cho kĩ thuật chia đôi tập như sau: cho \\(n\\) đồng xu với các giá trị khác nhau. Kiểm tra liệu có tồn tại cách chọn các đồng xu sao cho tổng giá trị của nó bằng \\(X\\) hay không? Giới hạn: \\(n \le 40\\).
 
 Ta sử dụng phương pháp [sinh tập con](#sinh-tập-con) ở đầu chương để tìm cách chọn đồng xu.
 
@@ -258,11 +256,11 @@ void search2(int idx, int fin, ll sum){
 	search2(idx + 1, fin, sum + c[idx]);
 	search2(idx + 1, fin, sum); 
 }
-// Trong hàm main
-	// ...
+void solve(){
 	search1(0, n / 2, 0);
 	sort(arr.begin(), arr.end());
 	search2(n / 2, n, 0);
+}
 ```
 
 Độ phức tạp thuật toán của ta sẽ là \\(O(2^{n / 2}\log{2^{n / 2}}) \approx O(2^{n / 2}\log{n})\\) - không vượt quá giới hạn thời gian kể cả khi \\(n = 40\\).

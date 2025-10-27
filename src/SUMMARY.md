@@ -41,7 +41,7 @@
   - [Chia để trị](./paradigms/dnc.md)
   - [Quy hoạch động](./paradigms/dp.md)
     - [Quy hoạch động chữ số](./paradigms/digit-dp.md)
-    - [Quy hoạch động bitmask]()
+    - [Quy hoạch động bitmask](./paradigms/bitmask-dp.md)
     - [Quy hoạch động chia để trị]()
     - [Quy hoạch động bao lồi]()
     - [Quy hoạch động Sum over Subsets (SoS)]()
@@ -91,6 +91,7 @@
   - [Mảng hậu tố]()
   - [Trie](./string/trie.md)
 - [Khác](./miscellaneous/README.md)
+  - [Chia căn]()
 ---
 
 [Lời cảm ơn](./acknowledgement.md)

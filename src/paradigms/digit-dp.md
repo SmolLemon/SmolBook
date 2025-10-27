@@ -8,13 +8,13 @@
 
 ## Lí thuyết
 
-Các bài QHĐ chữ số sẽ có mô tả như sau: Cho một đoạn số \\([a; b]\\), hãy đếm số lượng số trong đoạn thỏa mãn yêu cầu đề bài.
+Các bài QHĐ chữ số sẽ có mô tả như sau: Cho một đoạn số \\([a, b]\\), hãy đếm số lượng số trong đoạn thỏa mãn yêu cầu đề bài.
 
-Gọi \\(G(X)\\) là số lượng số nguyên nằm trong đoạn \\([0; X]\\) thỏa mãn yêu cầu đề bài. Khi này ta có thể tính được đáp án của bài toán bằng công thức: \\(G(b) - G(a - 1)\\) hoặc \\(G(b) - G(a) + g(a)\\) với \\(g(x)\\) là một hàm trả về \\(1\\) nếu \\(x\\) thỏa mãn yêu cầu và \\(0\\) nếu không thỏa mãn.
+Gọi \\(G(X)\\) là số lượng số nguyên nằm trong đoạn \\([0, X]\\) thỏa mãn yêu cầu đề bài. Khi này ta có thể tính được đáp án của bài toán bằng công thức \\(G(b) - G(a - 1)\\) hoặc \\(G(b) - G(a) + g(a)\\) với \\(g(x)\\) là một hàm trả về \\(1\\) nếu \\(x\\) thỏa mãn yêu cầu và \\(0\\) nếu không thỏa mãn.
 
 ### Xây dựng hàm \\(G(X)\\)
 
-Để xây dựng hàm \\(G(X)\\), ta sẽ xem các số trong đoạn \\([0; X]\\) như một xâu kí tự: Ta có \\(X = \overline{x_{n - 1}x_{n - 2}\dots x_{0}}\\) với \\(n\\) là số chữ số trong \\(X\\). Ta sẽ tạo các số \\(A = \overline{a_{n - 1}a_{n - 2}\dots a_{0}}\\) nhỏ hơn hoặc bằng \\(X\\), và thực hiện việc gán giá trị cho các chữ số của \\(A\\) theo chiều từ trái sang phải.
+Để xây dựng hàm \\(G(X)\\), ta sẽ xem các số trong đoạn \\([0, X]\\) như một xâu kí tự: Ta có \\(X = \overline{x_{n - 1}x_{n - 2}\dots x_{0}}\\) với \\(n\\) là số chữ số trong \\(X\\). Ta sẽ tạo các số \\(A = \overline{a_{n - 1}a_{n - 2}\dots a_{0}}\\) nhỏ hơn hoặc bằng \\(X\\), và thực hiện việc gán giá trị cho các chữ số của \\(A\\) theo chiều từ trái sang phải.
 
 Giả sử ta có \\(X = 3141\\):
 
@@ -82,7 +82,7 @@ Tóm tắt: Cho hai số nguyên không âm \\(a\\) và \\(b\\), tính tổng ch
 
 Giới hạn: \\(0 \le a \le b \le 10^{15}\\).
 
-Ví dụ: \\([49; 52] = (4 + 9) + (5 + 0) + (5 + 1) + (5 + 2) = 31\\).
+Ví dụ: \\([49, 52] = (4 + 9) + (5 + 0) + (5 + 1) + (5 + 2) = 31\\).
 
 Ta có các trạng thái QHĐ: \\((idx, smaller, sum)\\) với \\(idx\\), \\(smaller\\) có định nghĩa như trên và \\(sum\\) là tổng của các chữ số đã điền.
 
@@ -212,7 +212,7 @@ ll G(string &X){
 
 ### Bài 3: [Số lượng số](https://oj.vnoi.info/problem/snad)
 
-Tóm tắt: Cho \\(T\\) cặp số \\([X; Y]\\), đếm số lượng số có tích với tổng chữ số của nó đó nằm trong đoạn \\([X; Y]\\).
+Tóm tắt: Cho \\(T\\) cặp số \\([X, Y]\\), đếm số lượng số có tích với tổng chữ số của nó đó nằm trong đoạn \\([X, Y]\\).
 
 Giới hạn: \\(T \lt 21\\), \\(0 \lt X \le Y \lt 10^{19}\\).
 
@@ -359,7 +359,7 @@ ll G(ll X, ll sum){
 
 ### Bài 4: [NUMTSN - 369 Numbers](https://www.spoj.com/problems/NUMTSN/)
 
-Tóm tắt: Cho \\(T\\) cặp số \\(A\\) và \\(B\\), với mỗi cặp số, đếm số lượng số \\(369\\) nằm trong đoạn \\([A; B]\\), modulo \\(10^9 + 7\\).
+Tóm tắt: Cho \\(T\\) cặp số \\(A\\) và \\(B\\), với mỗi cặp số, đếm số lượng số \\(369\\) nằm trong đoạn \\([A, B]\\), modulo \\(10^9 + 7\\).
 
 Một số \\(X\\) là số \\(369\\) khi số lượng chữ số \\(3\\) bằng số lượng chữ số \\(6\\) và bằng số lượng chữ số \\(9\\) và có ít nhất một chữ số \\(3\\). 
 
@@ -441,11 +441,11 @@ bool g(string &X){
 
 ### Bài 5: [Số đặc biệt](https://lqdoj.edu.vn/problem/pearlnum)
 
-Tóm tắt: Ta có hàm \\(f(x)\\) trả về tổng bình phương các chữ số trong \\(x\\). Một số \\(x\\) được gọi là số đặc biệt nếu \\(x \neq 1\\) dẫu áp dụng bao nhiên lần cập nhật \\(x\\) bằng công thức: \\(x = f(x)\\). Cho \\(T\\) cặp số \\((L, R)\\), hãy cho biết số lượng số đặc biệt trong đoạn \\([L; R]\\).
+Tóm tắt: Ta có hàm \\(f(x)\\) trả về tổng bình phương các chữ số trong \\(x\\). Một số \\(x\\) được gọi là số đặc biệt nếu \\(x \neq 1\\) dẫu áp dụng bao nhiên lần cập nhật \\(x\\) bằng công thức: \\(x = f(x)\\). Cho \\(T\\) cặp số \\((L, R)\\), hãy cho biết số lượng số đặc biệt trong đoạn \\([L, R]\\).
 
 Giới hạn: \\(T \le 100\\), \\(1 \le L \le R \le 10^{18}\\).
 
-Một điều dễ nhận thấy đối với bài toán này là với mỗi \\(x \le 10^{18}\\), \\(f(x) \le 1458\\). Vì vậy, ta có thể viết lại bài toán như sau: hãy cho biết số lượng số \\(x\\) trong đoạn \\([L; R]\\) mà \\(f(x)\\) là số đặc biệt.
+Một điều dễ nhận thấy đối với bài toán này là với mỗi \\(x \le 10^{18}\\), \\(f(x) \le 1458\\). Vì vậy, ta có thể viết lại bài toán như sau: hãy cho biết số lượng số \\(x\\) trong đoạn \\([L, R]\\) mà \\(f(x)\\) là số đặc biệt.
 
 Việc tìm các số đặc biệt \\(\le 1458\\) có thể được thực hiện một cách đơn giản.
 

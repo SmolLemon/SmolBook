@@ -4,7 +4,7 @@
 
 *- Thomas J. Misa, [An interview with Edsger W. Dijkstra](https://dl.acm.org/doi/pdf/10.1145/1787234.1787249)*
 
-<sup> Comment: Mê cái cách ông ấy nhấn mạnh việc thiết kế một thuật toán chỉ trong vòng \\(20\\) phút. **Tận 2 LẦN!!!** <sup>
+<sup> Bình luận: Mê cái cách ông ấy nhấn mạnh việc thiết kế một thuật toán chỉ trong vòng \\(20\\) phút. **Tận 2 LẦN!!!** <sup>
 
 **Thuật toán Dijkstra** là thuật toán [*tham lam*](../paradigms/greedy.md) tìm đường đi ngắn nhất từ một đỉnh trên đồ thị.
 
@@ -84,9 +84,9 @@ void dijkstra(int s){
 
 ## Dijkstra + `priority_queue`
 
-Một cách cài đặt Dijkstra phổ biến khác sử dụng `priority_queue` để tìm đỉnh chưa xét có khoảng cách ngắn nhất. `priority_queue` sẽ xét thứ tự ưu tiên cho các cặp giá trị \\(\\{u_{dist}, u\\}\\) theo \\(u_{dist}\\) giảm dần, và nếu các \\(u_{dist}\\) bằng nhau thì theo \\(u\\) giảm dần. 
+Một cách cài đặt Dijkstra phổ biến khác sử dụng `priority_queue` để tìm đỉnh chưa xét có khoảng cách ngắn nhất. `priority_queue` sẽ xét thứ tự ưu tiên cho các cặp giá trị \\(\\{dist_u, u\\}\\) theo \\(dist_u\\) giảm dần, và nếu các \\(dist_u\\) bằng nhau thì theo \\(u\\) giảm dần. 
 
-Không giống `set`, ta không thể xóa một phần tử bất kì trong `priority_queue`. Vì thế, ta sẽ áp dụng phương pháp "xóa lười". Giả sử ta thành công cập nhật \\(v_{dist}\\), ta sẽ thêm vào `pq` một cặp \\(\\{v_{dist}, v\\}\\) mới, có \\(v_{dist}\\) nhỏ hơn so với cặp \\(\\{v_{dist}, v\\}\\) cũ ở trong `pq`. Giả sử khi ta xét đến cặp \\(\\{v_{dist}, v\\}\\) cũ trong `pq`, ta có thể bỏ qua cặp giá trị này. 
+Không giống `set`, ta không thể xóa một phần tử bất kì trong `priority_queue`. Vì thế, ta sẽ áp dụng phương pháp "xóa lười". Giả sử ta thành công cập nhật \\(dist_v\\), ta sẽ thêm vào `pq` một cặp \\(\\{dist_v, v\\}\\) mới, có \\(dist_v\\) nhỏ hơn so với cặp \\(\\{dist_v, v\\}\\) cũ ở trong `pq`. Giả sử khi ta xét đến cặp \\(\\{dist_v, v\\}\\) cũ trong `pq`, ta có thể bỏ qua cặp giá trị này. 
 
 ```C++
 void dijkstra(int s){
@@ -184,7 +184,7 @@ Nếu đồ thị có chu trình âm, tức là có một chu trình với kho�
 
 ## Tìm con đường ngắn nhất
 
-Nếu ta để ý thì sẽ thấy một mảng `p` bí ẩn ở trong các đoạn code. Mảng `p` này mang ý nghĩa: Để tìm được đường đi ngắn nhất từ \\(s\\) đến \\(u\\), ta cần tìm đường đi ngắn nhất từ \\(s\\) đến \\(p[u]\\), cộng thêm trọng số của cạnh \\({u, p[u]}\\).
+Thuật toán của ta có một mảng \\(p\\) bí ẩn. Mảng \\(p\\) này mang ý nghĩa: Để tìm được đường đi ngắn nhất từ \\(s\\) đến \\(u\\), ta cần tìm đường đi ngắn nhất từ \\(s\\) đến \\(p_u\\), cộng thêm trọng số của cạnh \\({u, p_u}\\).
 
 Sử dụng thông tin này ta có thể tìm được các đỉnh của (một) đường đi ngắn nhất từ đỉnh \\(s\\) đên một đỉnh bất kì.
 
@@ -211,11 +211,11 @@ Thuật toán của ta sẽ có độ phức tạp thuật toán bằng \\(O((|V
 
 Hãy nhìn vào các đỉnh trong `pq` trong quá trình chạy thuật toán:
 
-\\[pq = \underbrace{u, \dots, u}\_{u_{dist}}, \underbrace{v, \dots, v}\_{u_{dist} + 1}\\]
+\\[pq = \underbrace{u, \dots, u}\_{dist_u}, \underbrace{v, \dots, v}\_{dist_u + 1}\\]
 
-Từ đây, ta có thể rút gọn việc thêm các cặp giá trị \\(\\{v_{dist}, v\\}\\) vào `pq` sau mỗi lần cập nhật như sau:
-- Nếu \\(v_{dist} = u_{dist} + 1\\), hay cạnh \\(uv\\) có trọng số là \\(1\\), thêm đỉnh \\(v\\) vào cuối `pq`.
-- Nếu \\(v_{dist} = u_{dist} + 0\\), hay cạnh \\(uv\\) có trọng số là \\(0\\), thêm đỉnh \\(v\\) vào đầu `pq`.
+Từ đây, ta có thể rút gọn việc thêm các cặp giá trị \\(\\{dist_v, v\\}\\) vào `pq` sau mỗi lần cập nhật như sau:
+- Nếu \\(dist_v = dist_u + 1\\), hay cạnh \\(uv\\) có trọng số là \\(1\\), thêm đỉnh \\(v\\) vào cuối `pq`.
+- Nếu \\(dist_v = dist_u + 0\\), hay cạnh \\(uv\\) có trọng số là \\(0\\), thêm đỉnh \\(v\\) vào đầu `pq`.
 
 Ta có thể bỏ giá trị \\(dist\\) và chỉ lưu các đỉnh vào trong `pq`. 
 

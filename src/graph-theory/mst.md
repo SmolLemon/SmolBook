@@ -22,9 +22,8 @@ Vì là một [cây](overview.md#cây), nên cây khung sẽ có các tính ch�
 
 Ngoài ra, ta có một số nhận xét:
 
-**1.** Nếu đồ thị có \\(n\\) đỉnh, thì cây khung sẽ có \\(n - 1\\) cạnh. 
-
-**2.** Một đồ thị có thể có nhiều hơn một cây khung. Với đồ thị ở đầu bài, ngoài cây khung trên, ta còn có các cây khung khác như:
+1. Nếu đồ thị có \\(n\\) đỉnh, thì cây khung sẽ có \\(n - 1\\) cạnh. 
+1. Một đồ thị có thể có nhiều hơn một cây khung. Với đồ thị ở đầu bài, ngoài cây khung trên, ta còn có các cây khung khác như:
 
 <center>
 <img src="../images/spanning_tree_2.png" alt="Cây khung thứ 2"/>
@@ -38,7 +37,7 @@ Ta có thể tính được số lượng cây khung trên một số dạng đ�
 
 Để tìm kiếm *một* cây khung trên đồ thị không trọng số, ta có thể sử dụng thuật toán [DFS hoặc BFS](graph-traversal-applications.md#xây-dựng-cây-khung-của-đồ-thị).
 
-Đối với đồ thị có trọng số, ta có hai thuật toán phổ biến là thuật toán Kruskal và thuật toán Prim, cả hai thuật toán đều có cách tiếp cận [tham lam](../paradigms/greedy.md) với bài toán tìm cây khung nhỏ nhất.
+Đối với đồ thị có trọng số, ta có hai thuật toán phổ biến tìm cây khung nhỏ nhất là **thuật toán Kruskal** và **thuật toán Prim**, cả hai thuật toán đều có cách tiếp cận [tham lam](../paradigms/greedy.md) với bài toán tìm cây khung nhỏ nhất.
 
 ### Thuật toán Kruskal
 

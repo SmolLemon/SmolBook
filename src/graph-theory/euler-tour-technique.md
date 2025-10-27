@@ -4,7 +4,7 @@
 
 ## Tìm chu trình Euler trên cây
 
-Cây không có chu trình Euler, nếu may mắn thì ta có thể tìm được một đường đi Euler trên [cây tre](tree.md#cây-suy-biến), nhưng nhìn chung thì điều đấy là không thể. Để cây của ta xuất hiện chu trình Euler, ta sẽ biến đổi các cạnh vô hướng \\(uv\\) trong cây thành hai cạnh có hướng \\(uv\\) và \\(vu\\). Khi này, cây sẽ xuất hiện chu trình Euler.
+Cây không có chu trình Euler. Nếu may mắn thì ta có thể tìm được một đường đi Euler trên [cây tre](tree.md#cây-suy-biến), nhưng nhìn chung thì điều đấy là không thể. Để cây của ta xuất hiện chu trình Euler, ta sẽ biến đổi các cạnh vô hướng \\(uv\\) trong cây thành hai cạnh có hướng \\(uv\\) và \\(vu\\). Khi này, cây sẽ xuất hiện chu trình Euler.
 
 Bắt đầu từ đỉnh gốc, ta xây dựng chu trình Euler trên cây bằng cách duyệt DFS trên cây và ghi lại các đỉnh khi duyệt DFS. Sẽ có tổng cộng \\(2n - 1\\) lần ghi đỉnh khi duyệt DFS, với \\(n\\) là số đỉnh của cây.
 
