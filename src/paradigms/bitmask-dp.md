@@ -51,8 +51,10 @@ int mat[N][N]; // đồ thị ma trận kề
 int n, s; // các đỉnh được đánh số từ 0
 
 void solve(){
-	for(int mask = 0; mask < (1 << n); ++mask) {
-		for(int i = 0; i < n; ++i) dp[i][mask] = INT_MAX; 
+	for(int i = 0; i < n; ++i) {
+		for(int mask = 0; mask < (1 << n); ++mask) {
+			dp[i][mask] = INT_MAX; 
+		}
 	}
 
 	// đỉnh xuất phát

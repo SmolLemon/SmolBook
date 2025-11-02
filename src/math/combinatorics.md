@@ -42,7 +42,7 @@ Một **hoán vị** của một tập hợp chứa \\(n\\) là một cách sắ
 
 Ví dụ, ta có hoán vị của một tập hợp của các phần tử có giá trị từ \\(1\\) đến \\(5\\): \\[\\{5, 2, 1, 4, 3\\}\\]
 
-Số hoán vị của tập hợp chứa \\(n\\) phần tử bằng: \\[P_n = P(n) = n! = n \times (n - 1) \times (n - 2) \cdots 2 \times 1\\]
+Số hoán vị của tập hợp chứa \\(n\\) phần tử bằng: \\[P_n = P(n) = n! = n \times (n - 1) \times (n - 2) \times \cdots \times 2 \times 1\\]
 
 Quy ước: \\(0! = 1\\).
 
@@ -54,7 +54,7 @@ Ví dụ, ta có xâu `BOOK` là một xâu có \\(n\\) kí tự, có tổng c�
 
 Có \\(2\\) dạng chỉnh hợp: chỉnh lợp có lặp và chỉnh hợp không lặp. Một **chỉnh hợp không lặp chập \\(k\\) của \\(n\\)** là một cách sắp xếp có thứ tự \\(k\\) phần tử từ tập hợp \\(n\\) phần tử, các phần tử không được chọn nhiều hơn \\(1\\) lần \\(\left( 1 \le k \le n \right)\\).
 
-Số chỉnh hợp không lặp chập \\(k\\) của \\(n\\) bằng: \\[P^k_n = P(n, k) = \frac{n!}{(n - k)!} = n \times (n - 1) \cdots (n - k + 1)\\]
+Số chỉnh hợp không lặp chập \\(k\\) của \\(n\\) bằng: \\[P^k_n = P(n, k) = \frac{n!}{(n - k)!} = n \times (n - 1) \times \cdots \times (n - k + 1)\\]
 
 **Chỉnh hợp có lặp**, khác với chỉnh hợp không lặp, cho phép các phần tử được chọn nhiều hơn \\(1\\) lần.
 
@@ -72,9 +72,149 @@ Số chỉnh hợp có lặp sẽ là thứ giúp ta tính được số lượn
 
 Một **Tổ hợp chập \\(k\\) của \\(n\\)** là một cách chọn \\(k\\) phần tử của tâp hợp \\(n\\) phần tử \\(\left( 0 \le k \le n \right)\\).
 
-Số tổ hợp chập \\(k\\) của \\(n\\) bằng: \\[C^k_n = \binom{n}{k} = \frac{n!}{k!(n-k)!}\\]
+Số tổ hợp chập \\(k\\) của \\(n\\) bằng: \\[C^k_n = \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{n \times (n - 1) \times \cdots \times (n - k + 1)}{1\times 2 \cdots k}\\]
+
+Ta quy ước \\(C^k_n = 0\\) nếu \\(k < 0\\) hoặc \\(k > n\\).
 
 Chỉnh hợp không lặp giống với tổ hợp ở chỗ là cả hai đều đếm cách chọn các phần tử trong tập hợp. Điểm khác nhau nằm ở chỗ chỉnh lợp không lặp đếm cả cách xếp còn tổ hợp thì không. Từ đây, ta có: \\[C^k_n = \frac{P^k_n}{k!}\\]
 
 Một trường hợp tổng quát hơn của tổ hợp chính là đếm cách chọn các phần tử cho \\(k\\) nhóm, mỗi nhóm \\(n_i\\) phần tử \\(\left( \sum_{i = 1}^{k} n_i = n \right)\\). Số cách chọn sẽ bằng: \\[\binom{n}{n_1, n_2, \cdots, n_k} = \binom{n}{n_1}\binom{n-n_1}{n_2}\cdots \binom{n_k}{n_k} = \frac{n!}{n_1!n_2!\cdots n_k!}\\]
 
+## Cài đặt
+
+Vì giá trị của hoán vị, chỉnh hợp, tổ hợp rất lớn nên ta tập trung vào tính giá trị modulo của các giá trị này.
+
+### Hoán vị
+
+Vì hoán vị chỉ đơn giản là tích các số từ \\(1\\) đến \\(n\\) nên việc cài đặt vô cùng đơn giản.
+
+```C++
+const int MOD;
+int mul(int a, int b) {
+	return (1ll * a * b) % MOD;
+}
+int fac(int n) {
+	int res = 1;
+	for(int i = 2; i <= n; ++i) res = mul(res, i);
+	return res;
+}
+```
+
+Độ phức tạp của cách này là \\(O(n)\\).
+
+Ta có thể tính trước các giai thừa nhằm tránh việc phải tính đi tính lại.
+
+```C++
+int fac[N];
+void preprocess(){
+	fac[0] = 1;
+	for(int i = 1; i < N; ++i) {
+		fac[i] = mul(fac[i-1], i);
+	}
+}
+```
+
+Độ phức tạp của cách tính này cũng là \\(O(n)\\).
+
+### Chỉnh hợp
+
+Đối với chỉnh hợp có lặp, ta có thể sử dụng [lũy thừa nhị phân](binary-exponentiation.md) để tính giá trị của \\(n^k\\).
+
+Đói với chỉnh hợp không lặp, hoặc là ta có thể duyệt các giá trị cần tính:
+
+```C++
+int npk(int n, int k) {
+	int res = 1;
+	for(int i = n - k + 1; i <= n; ++i) {
+		res = mul(res, i);
+	}
+	return res;
+}
+```
+
+
+Hoặc ta có thể tính trước các giai thừa và tính giá trị của \\(n! \times (k!)^{-1}\\) nếu \\(k!\\) và \\(MOD\\) nguyên tố cùng nhau.
+
+```C++
+int npk(int n, int k) {
+	return mul(fac[n], modInv(fac[k], MOD)); // hàm modInv(a, m) ở phần modulo
+}
+```
+
+Độ phức tạp của hai cách tính này lần lượt là \\(O(k)\\) và \\(O(\log{MOD})\\).
+
+### Tổ hợp
+
+Ta có thể tính tổ hợp theo nhiều cách khác nhau.
+
+Cách thứ nhất là sử dụng công thức đệ quy: \\[C^k_n = C^{k-1} _ {n-1} + C^{k} _ {n-1} \\]
+
+Với các trường hợp cơ sở: \\(C^{0} _ n = C^{n} _ {n} = 1\\)
+
+```C++
+int ncr[N][K];
+
+void preprocess(){
+	for(int i = 1; i < N; ++i) {
+		ncr[i][0] = ncr[i][i] = 1;
+	}
+	for(int i = 1; i < N; ++i) {
+		for(int j = 1; j < min(i, K); ++j) {
+			ncr[i][j] = ncr[i-1][j] + ncr[i-1][j-1];
+			if(ncr[i][j] >= MOD) ncr[i][j] -= MOD;
+		}
+	}
+}
+```
+
+Độ phức tạp của cách tính thứ nhất là \\(O(nk)\\).
+
+Cách thứ hai là duyệt các giá trị cần tính. Áp dụng công thức \\(C^k_n = \frac{P^k_n}{k!}\\), ta có thể tận dụng cách tính thứ nhất của hàm `npk` ở trên, rồi chia kết quả của hàm cho \\(k!\\).
+
+```C++
+int ncr(int n, int k){
+	int res = 1, div = 1;
+	for(int i = 1; i <= k; ++i) {
+		res = mul(res, n - i + 1);
+		div = mul(div, i);
+	}
+	return mul(res, modInv(div, MOD));
+}
+```
+Độ phức tạp của cách tính thứ hai là \\(O(k + \log{MOD})\\).
+
+Cách thứ ba là tính trước các giái thừa và tính giá trị của \\(n! \times (k!)^{-1} \times \left((n-k)!\right)^{-1}\\) nếu \\(k!\\) và \\((n-k)!\\) nguyên tố cùng nhau với \\(MOD\\).
+
+```C++
+int npk(int n, int k) {
+	return mul(fac[n], mul(modInv(fac[n-k], MOD), modInv(fac[k], MOD))); 
+}
+```
+
+Độ phức tạp của cách tính thứ ba là \\(O(\log{MOD})\\).
+
+Ngoài các cách tính tổng quát trên, nếu \\(MOD\\) là một số số nguyên tố với giá trị nhỏ, ta có thể sử dụng [định lí Lucas](https://en.wikipedia.org/wiki/Lucas%27s_theorem) để tính giá trị tổ hợp.
+
+Cụ thể, với hai số \\(n\\), \\(k\\) và một số nguyên tố \\(p\\), ta có:
+
+\\[C^k _ n \equiv C^{k_m} _ {n_m} \times C^{k_{m-1}} _ {n_{m-1}} \times \cdots \times C^{k_1} _ {n_1} \times C^{k_0} _ {n_0} \pmod p\\]
+
+Với:
+
+\\[k = k_m \times p^m + k_{m - 1} \times p^{m - 1}  + ... + k_{1} \times p^{1} + k_{0}\\]
+
+Và:
+
+\\[n = n_m \times p^m + n_{m - 1} \times p^{m - 1}  + ... + n_{1} \times p^{1} + n_{0}\\]
+
+```C++
+int lucas_ncr(int n, int k){
+	if(k == 0) return 1;
+	int ni = n % MOD;
+	int ki = k % MOD;
+	if(ni < ki) return 0;
+	return mul(lucas_ncr(n / MOD, k / MOD), ncr(ni, ki));
+}
+```
+
+Độ phức tạp của thuật toán khi áp dụng định lí Lucas là \\(O(\log_p{n} + NCR)\\) với \\(NCR\\) là độ phức tạp của việc tính \\(C^k_n\\) theo các cách được nói ở trên.
