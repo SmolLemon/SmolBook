@@ -1,4 +1,4 @@
-# Cây chỉ số nhị phân - Cây Fenwick (Fenwick Tree)
+# Cây chỉ số nhị phân - Cây Fenwick
 
 **Cây chỉ số nhị phân (Binary Indexed Tree)** hay **cây Fenwick (Fenwick Tree)** là một CTDL giúp ta trả lời các truy vấn trên đoạn một cách hiệu quả. Mặc dù không "mạnh" bằng [cây phân đoạn](./segment-tree.md) nhưng CTDL này vẫn được sử dụng thường xuyên trong lập trình thi đấu vì khả năng cài đặt nhanh và tính đơn giản của nó.
 

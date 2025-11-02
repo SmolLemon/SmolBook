@@ -1,4 +1,4 @@
-# Bảng thưa (Sparse Table)
+# Bảng thưa
 
 Giả sử ta có một mảng \\(a\\) có \\(n\\) phần tử và \\(q\\) truy vấn có dạng `(l, r)`. Với mỗi truy vấn, tìm và in ra giá trị nhỏ nhất (GTNN) của các phần tử trong khoảng \\([l, r]\\).
 

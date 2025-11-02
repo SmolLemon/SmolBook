@@ -120,6 +120,10 @@ Quá trình ta xây dựng các bài toán từ nhỏ đến lớn, và điền 
 
 Đối với nhiều bài toán QHĐ, việc giải quyết bài toán theo hướng top-down thông thường sẽ dễ hiểu và cách cài đặt đơn giản hơn nhiều so hướng giải quyết bottom-up. Mặc khác, với hướng tiếp cận bottom-up, chương trình của ta sẽ ngắn gọn hơn chạy nhanh hơn so với top-down (trong hầu hết trường hợp).
 
+### QHĐ "đẩy" và "kéo"
+
+Ngoài hai cách cài đặt *từ trên xuống* và *từ dưới lên*, ta còn có hai cách truyền giá trị QHĐ đó là "kéo" và "đẩy" giá trị. Với việc "kéo" giá trị, điều này có nghĩa là để tính được giá trị của trạng thái QHĐ, ta cần lấy kết quả của các trạng thái trước đó để tính kết quả cần tìm. Đối với việc "đẩy" giá trị, điều này có nghĩa là sau khi tính xong trạng thái QHĐ hiện tại, ta đẩy kết quả lên các trạng thái sau phụ thuộc vào kết quả tính được của trạng thái hiện tại này.  
+
 ## Bài toán đổi tiền
 
 Ở phần [tham lam](greedy.md#bài-toán-đổi-tiền---coin-change), ta được biết rằng thuật toán tham lam chỉ có thể tìm ra đáp án tối ưu cho bài toán đổi tiền đối với một số tập hợp mệnh giá tờ tiền nhất định.
