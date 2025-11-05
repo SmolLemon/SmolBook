@@ -18,19 +18,19 @@ Chương 1 giới thiệu về lập trình thi đấu - định nghĩa, cách g
 
 Chương 2 hướng dẫn sơ bộ về ngôn ngữ lập trình C++, đồng thời giải thích những kiến thức lập trình C++ liên quan đến lập trình thi đấu.
 
-Chương 3 là phần nhập môn về lập trình thi đấu. Ta sẽ được giới thiệu về những kiến thức, kĩ thuật, thuật toán cơ bản, có tính ứng dụng cao trong lập trình thi đấu. 
+Chương 3 là chương nhập môn. Ta sẽ được giới thiệu về những kiến thức, kĩ thuật, thuật toán cơ bản, có tính ứng dụng cao trong lập trình thi đấu. 
 
-Chương 4 giải thích về các cấu trúc dữ liệu. Ta sẽ biết cách sử dụng các cấu trúc dữ liệu sao cho hiệu quả để xây dựng thuật toán nhằm giải quyết bài toán. 
+Chương 4 giải thích về các cấu trúc dữ liệu. Ta sẽ biết cách sử dụng các cấu trúc dữ liệu sao cho hiệu quả để xây dựng thuật toán giúp giải quyết bài toán. 
 
-Chương 5 hỗ trợ ta qua các phương pháp lập "dàn bài" cho thuật toán phù hợp với từng dạng bài toán.
+Chương 5 tổng hợp các phương pháp lập "dàn bài" cho thuật toán của ta sao cho phù hợp với từng dạng bài toán.
 
-Chương 6 cho ta một cái nhìn chi tiết về những nội dung trong lí thuyết đồ thị cần thiết cho lập trình thi đấu.
+Chương 6 cung cấp cái nhìn chi tiết về những nội dung trong lí thuyết đồ thị cần thiết cho lập trình thi đấu.
 
 Chương 7 nói về những kiến thức toán học cần thiết để áp dụng cho lập trình thi đấu.
 
 Chương 8 đồng thời cũng là chương cuối cùng nói về xâu kí tự và cách xử lí, tận dụng những thông tin có trong xâu.
 
-Chương 9 tổng hợp các kiến thức không nằm hoàn toàn trong chủ để của các chương trước.
+Chương 9 tổng hợp các kiến thức không nằm hoàn toàn trong chủ đề của các chương trước.
 
 ## Mã nguồn
 

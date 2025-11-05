@@ -4,7 +4,7 @@
 
 <br>
 
-*Quy hoạch động chữ số* là kĩ thuật QHĐ nhằm giải quyết các bài toán liên quan đến chữ số.
+**Quy hoạch động chữ số** là một kĩ thuật QHĐ giải quyết các bài toán liên quan đến chữ số.
 
 ## Lí thuyết
 
@@ -74,7 +74,7 @@ Khi này, ta sẽ gọi hàm \\(f\\) để tính \\(G(X)\\):
 
 Ta cùng xem qua một số bài toán ví dụ để hiểu rõ hơn.
 
-## Thực hành
+## Vận dụng
 
 ### Bài 1: [Free Contest Testing Round 3 - DIGITSUM](https://oj.vnoi.info/problem/fct003_digitsum)
 
@@ -183,7 +183,7 @@ int main () {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cin >> K >> D;
-	cout << G(K);		
+	cout << G(K);
 	
 	return 0;
 }
@@ -294,7 +294,7 @@ ll G(ll X){
 
 Nhiều bài toán QHĐ chữ số (giống như bài này) có thể yêu cầu ta tính đi tính lại các đoạn số với cùng một tính chất. việc này vô tình làm cho thuật toán của ta chạy chậm đi khi phải tính đi tính lại các số.
 
-Một cách tối ưu cực kì hay ho chính là ta sẽ chỉ thực hiện việc `memset` một lần ở ngoài hàm \\(G\\), đồng thời bỏ trạng thái \\(smaller\\) khi lưu kết quả của trạng thái. 
+Một cách tối ưu cực kì hay ho chính là ta sẽ chỉ thực hiện việc `memset` một lần ở ngoài hàm \\(G\\), đồng thời bỏ trạng thái \\(smaller\\) khi lưu kết quả của trạng thái.
 
 Vì các giá trị của trạng thái QHĐ có \\(smaller = 0\\) phụ thuộc vào một giá trị cụ thể, nên không thể sử dụng lại cho các số tiếp theo. Bằng cách loại bỏ trạng thái \\(smaller\\) khi lưu kết quả của trạng thái và xét riêng từng trường hợp \\(smaller\\), ta có thể sử dụng lại các kết quả đã được tính ở những lần trước.
 

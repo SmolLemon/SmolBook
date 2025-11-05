@@ -44,14 +44,14 @@ Tuy nhiên, TC1 vẫn chưa thỏa mãn! Ta sẽ tiếp tục nổi bọt cho t�
 
 Để xây dựng một heap từ một mảng có \\(n\\) phần tử, ta sẽ lần lượt thêm từng đỉnh một vào heap. Độ phức tạp trung bình sẽ bằng \\(O(n)\\), nhưng trường hợp xấu nhất xảy ra khi các phần tử phải nổi bọt lên đỉnh heap, độ phức tạp cho trường hợp này sẽ bằng \\(O(\log{1} + \log{2} + \dots \log{n}) = O(n\log{n})\\).
 
-## Xóa phần tử
+## Xoá phần tử
 
-Ta sẽ thực hiện việc xóa giá trị có thứ tự lớn nhất trong heap. 
+Ta sẽ thực hiện việc xoá giá trị có thứ tự lớn nhất trong heap. 
 
-Để thỏa mãn TC2, ta sẽ hoán đổi giá trị của đỉnh gốc và đỉnh cuối cùng của cây, sau đó xóa đỉnh cuối cùng này ra khỏi heap
+Để thỏa mãn TC2, ta sẽ hoán đổi giá trị của đỉnh gốc và đỉnh cuối cùng của cây, sau đó xoá đỉnh cuối cùng này ra khỏi heap
 
 <center>
-<img src="../images/heap_dequeue_top.png" alt="Hoán đổi và xóa"/>
+<img src="../images/heap_dequeue_top.png" alt="Hoán đổi và xoá"/>
 </center>
 
 Thế nhưng TC1 lại không thỏa mãn! Giống với việc thêm phần tử, ta cũng sẽ hoán đổi các giá trị của các đỉnh, nhưng thay vì "nổi lên", nó lại "chìm xuống".
@@ -59,10 +59,10 @@ Thế nhưng TC1 lại không thỏa mãn! Giống với việc thêm phần t�
 Ta sẽ hoán đổi giá trị ấy với giá trị có thứ tự ưu tiên lớn hơn trong các đỉnh con, và cứ tiếp tục cho tới khi không thể chìm được nữa. 
 
 <center>
-<img src="../images/heap_bubble_down_fin.png" alt="Hoán đổi và xóa"/>
+<img src="../images/heap_bubble_down_fin.png" alt="Hoán đổi và xoá"/>
 </center>
 
-Độ phức tạp của thao tác xóa phần tử cũng bằng \\(O(\log{n})\\).
+Độ phức tạp của thao tác xoá phần tử cũng bằng \\(O(\log{n})\\).
 
 ## Tìm phần tử
 
@@ -78,7 +78,7 @@ Ta sẽ hoán đổi giá trị ấy với giá trị có thứ tự ưu tiên l
 
 Một **hàng đợi ưu tiên (priority queue)** sẽ khác với một [hàng đợi](queue.md) thông thường, nó sẽ sắp xếp các phần tử bên trong theo một *thứ tự ưu tiên*. Nó giống như việc một bệnh nhân cần cấp cứu khẩn cấp sẽ được ưu tiên chữa trị hơn là một bệnh nhân bị cảm nhẹ.
 
-Hàng đợi ưu tiên sẽ có các thao tác thêm phần tử và tìm/xóa phần tử có thứ tự ưu tiên lớn nhất.
+Hàng đợi ưu tiên sẽ có các thao tác thêm phần tử và tìm/xoá phần tử có thứ tự ưu tiên lớn nhất.
 
 Ta có thể cài đặt hàng đợi ưu tiên theo heap giống như trên trên hoặc sử dụng `priority_queue` có sẵn trong thư viện STL.
 
@@ -94,7 +94,7 @@ pq.push(2);
 
 cout << pq.top(); << '\n'; // phần tử có thứ tự ưu tiên lớn nhất - 3
 
-pq.pop(); // xóa phần tử có thứ tự ưu tiên lớn nhất
+pq.pop(); // xoá phần tử có thứ tự ưu tiên lớn nhất
 
 cout << pq.top() << '\n'; // 2
 ```

@@ -1,12 +1,16 @@
 # Cẩm nang Lập trình Thi đấu
 
+*Written by [Smol Lemon](https://smollemon.page/)*
+
+The *HTML format* version is available online at <https://book.smollemon.page>.
+
 ## Introduction
 
 [Cẩm nang Lập trình Thi đấu](https://book.smollemon.page) is a **competitive programming** guidebook for students and for those who are interested in this topic.
 
 ## Running locally
 
-The guidebook uses [mdBook](https://github.com/rust-lang/mdBook) to build the HTML version. To run it locally on your machine, follow these steps:
+The guidebook uses [mdBook](https://github.com/rust-lang/mdBook) with a modified theme to build the HTML version. To run it locally on your machine, follow these steps:
 
 ```shell
 $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh

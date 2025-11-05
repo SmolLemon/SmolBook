@@ -1,8 +1,6 @@
 # Hướng dẫn sử dụng
 
-Trang này được viết để hướng dẫn người dùng cách tương tác với phiên bản HTML của *[Cẩm nang Lập trình Thi đấu](./title-page.md)*.
-
-Sử dụng theme `Light` để có trải nghiệm tốt nhất.
+Trang này được viết để hướng dẫn người dùng cách tương tác với trang.
 
 ## Thanh bên
 

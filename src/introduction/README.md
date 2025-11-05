@@ -96,7 +96,7 @@ Kì thi do Hội các trường THPT chuyên khu vực duyên hải và đồng 
 
 ### Kì thi Olympic Tin học Miền Trung - Tây Nguyên
 
-**Kì thi Olympic Tin học miền Trung - Tây Nguyên** do Trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn (VKU), Đại học Đà Nẵng chủ trì, phối hợp cùng Hội Tin học Việt Nam, ICPC Việt Nam, Sở Giáo dục và Đào tạo Thành phố Đà Nẵng và Trường THPT Chuyên Lê Quý Đôn, Đà Nẵng tổ chức với sự đồng hành của Hanwha Life và Quỹ ChildFund Korea (CFK), Hàn Quốc từ kì thi thứ V. Đây là sân chơi hấp dẫn, bổ ích, thúc đẩy đam mê học hỏi, cập nhật, thực hành và sáng tạo các giải pháp lập trình, góp phần cung cấp nguồn nhân lực chất lượng cao trong tương lai cho khu vực miền Trung - Tây Nguyên nói riêng và cả nước nói chung[^4].
+**Kì thi Olympic Tin học miền Trung - Tây Nguyên** do Trường đại học Công nghệ Thông tin và Truyền thông Việt-Hàn (VKU), Đại học Đà Nẵng chủ trì, phối hợp cùng Hội Tin học Việt Nam, ICPC Việt Nam, Sở Giáo dục và Đào tạo thành phố Đà Nẵng tổ chức. Đây là sân chơi hấp dẫn, bổ ích, thúc đẩy đam mê học hỏi, cập nhật, thực hành và sáng tạo các giải pháp lập trình, góp phần cung cấp nguồn nhân lực chất lượng cao trong tương lai cho khu vực miền Trung - Tây Nguyên nói riêng và cả nước nói chung[^4].
 
 Kì thi này cũng là kì thi AI đầu tiên của Việt Nam dành cho các em học sinh bậc trung học với sự xuất hiện của bảng thi "AI Challenge".
 

@@ -118,9 +118,9 @@ void preprocess(){
 
 ### Chỉnh hợp
 
-Đối với chỉnh hợp có lặp, ta có thể sử dụng [lũy thừa nhị phân](binary-exponentiation.md) để tính giá trị của \\(n^k\\).
+Đối với chỉnh hợp có lặp, ta có thể sử dụng [luỹ thừa nhị phân](binary-exponentiation.md) để tính giá trị của \\(n^k\\).
 
-Đói với chỉnh hợp không lặp, hoặc là ta có thể duyệt các giá trị cần tính:
+Đối với chỉnh hợp không lặp, hoặc là ta có thể duyệt các giá trị cần tính:
 
 ```C++
 int npk(int n, int k) {
@@ -183,7 +183,7 @@ int ncr(int n, int k){
 ```
 Độ phức tạp của cách tính thứ hai là \\(O(k + \log{MOD})\\).
 
-Cách thứ ba là tính trước các giái thừa và tính giá trị của \\(n! \times (k!)^{-1} \times \left((n-k)!\right)^{-1}\\) nếu \\(k!\\) và \\((n-k)!\\) nguyên tố cùng nhau với \\(MOD\\).
+Cách thứ ba là tính trước các giai thừa và tính giá trị của \\(n! \times (k!)^{-1} \times \left((n-k)!\right)^{-1}\\) nếu \\(k!\\) và \\((n-k)!\\) nguyên tố cùng nhau với \\(MOD\\).
 
 ```C++
 int npk(int n, int k) {
@@ -193,7 +193,7 @@ int npk(int n, int k) {
 
 Độ phức tạp của cách tính thứ ba là \\(O(\log{MOD})\\).
 
-Ngoài các cách tính tổng quát trên, nếu \\(MOD\\) là một số số nguyên tố với giá trị nhỏ, ta có thể sử dụng [định lí Lucas](https://en.wikipedia.org/wiki/Lucas%27s_theorem) để tính giá trị tổ hợp.
+Ngoài các cách tính tổng quát trên, nếu \\(MOD\\) là một số nguyên tố có giá trị nhỏ, ta có thể sử dụng [định lí Lucas](https://en.wikipedia.org/wiki/Lucas%27s_theorem) để tính giá trị tổ hợp.
 
 Cụ thể, với hai số \\(n\\), \\(k\\) và một số nguyên tố \\(p\\), ta có:
 

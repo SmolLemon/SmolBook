@@ -7,7 +7,7 @@ char xinchao_vn[] = "Xin chao the gioi";
 string hello_en = "Hello world";
 ```
 
-Ở chương \\(8\\) này, ta coi kí tự các xâu xuất phát từ vị trí \\(0\\).
+Ta quy ước các các kí tự của xâu có chỉ số từ \\(0\\).
 
 ## Thuật ngữ
 

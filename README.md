@@ -1,12 +1,16 @@
 # Cẩm nang Lập trình Thi đấu
 
+*Được viết bởi [Smol Lemon](https://smollemon.page/)*
+
+Phiên bản *định dạng HTML* của *Cẩm nang Lập trình Thi đấu* có thể được truy cập trực tuyến tại <https://book.smollemon.page>.
+
 ## Giới thiệu
 
 [Cẩm nang Lập trình Thi đấu](https://book.smollemon.page) là một cuốn cẩm nang về **lập trình thi đấu** dành cho các bạn học sinh và những người có hứng thú với bộ môn này.
 
 ## Chạy cục bộ
 
-Cuốn cẩm nang sử dụng [mdBook](https://github.com/rust-lang/mdBook) để xây dựng phiên bản HTML. Để chạy cục bộ, hãy thực hiện các bước sau:
+Cẩm nang sử dụng [mdBook](https://github.com/rust-lang/mdBook) với bộ theme được chỉnh sửa để xây dựng định dạng HTML. Để chạy cục bộ, hãy thực hiện các bước sau:
 
 ```shell
 $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh

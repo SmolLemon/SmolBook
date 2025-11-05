@@ -10,7 +10,7 @@
 
 Từ định nghĩa, ta có thể tính được \\(\phi(p) = p - 1\\) và \\(\phi(p^k) = p^k - p^{k-1}\\) với \\(p\\) là một số nguyên tố.
 - Đối với \\(\phi(p) = p - 1\\), ta dễ dàng thấy được rằng với các số \\(x\\) từ \\(1\\) đến \\(p-1\\): \\(\text{UCLN}(x, p) = 1\\).
-- Đối với \\(\phi(p^k) = p^k - p^{k-1}\\), ta thấy các số \\(x\\) thoả mãn \\(\text{UCLN}(x, p^k) > 1\\) chỉ có thể là các bội số của \\(p\\), tức là các số thuộc tập hợp \\(\\{p, 2p, 3p, \cdots, p^{k-1}p\\}\\). Vì trong \\(p^k\\) số từ \\(1\\) đến \\(p\\) có \\(p^{k-1}\\) số là bội số của \\(p\\) nên ta có \\(p^k - p^{k-1}\\) số nguyên tố cùng nhau với \\(p^k\\).
+- Đối với \\(\phi(p^k) = p^k - p^{k-1}\\), ta thấy các số \\(x\\) thoả mãn \\(\text{UCLN}(x, p^k) > 1\\) chỉ có thể là các bội số của \\(p\\), tức là các số thuộc tập hợp \\(\\{p, 2p, 3p, \cdots, p^{k-1}p\\}\\). Vì trong \\(p^k\\) số từ \\(1\\) đến \\(p^k\\) có \\(p^{k-1}\\) số là bội số của \\(p\\) nên ta có \\(p^k - p^{k-1}\\) số nguyên tố cùng nhau với \\(p^k\\).
 
 Nếu đã biết trước giá trị phi hàm Euler của hai số \\(a\\) và \\(b\\), ta có thể tính được giá trị \\(\phi(ab)\\).
 - Nếu \\(a, b\\) nguyên tố cùng nhau: \\[\phi(ab) = \phi(a) \times \phi(b)\\]

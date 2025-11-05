@@ -1,8 +1,8 @@
 # Quy ước chính tả tiếng Việt
 
-Nhằm chuẩn hóa và đảm bảo tính thống nhất trong việc biên soạn Smol Book, ta thống nhất sử dụng các quy ước chính tả tiếng Việt theo [*Quyết định số 1989/QĐ-BGDĐT ngày 25 tháng 5 năm 2018 quy định về chính tả trong chương trình, sách giáo khoa phổ thông*](https://thuvienphapluat.vn/van-ban/Giao-duc/Quyet-dinh-1989-QD-BGDDT-2018-quy-dinh-chinh-ta-Chuong-trinh-sach-giao-khoa-giao-duc-pho-thong-445355.aspx).
+Nhằm chuẩn hóa và đảm bảo tính thống nhất trong việc biên soạn *Cẩm nang Lập trình Thi đấu*, ta thống nhất sử dụng các quy ước chính tả tiếng Việt theo [*Quyết định số 1989/QĐ-BGDĐT ngày 25 tháng 5 năm 2018 quy định về chính tả trong chương trình, sách giáo khoa phổ thông*](https://thuvienphapluat.vn/van-ban/Giao-duc/Quyet-dinh-1989-QD-BGDDT-2018-quy-dinh-chinh-ta-Chuong-trinh-sach-giao-khoa-giao-duc-pho-thong-445355.aspx).
 
-Dưới đây là một số điều trong quy ước cần để ý nếu bạn muốn đề xuất chỉnh sửa nội dung trong Smol Book.
+Dưới đây là một số điều trong quy ước mà bạn cần để ý nếu bạn muốn đề xuất chỉnh sửa nội dung trong *Cẩm nang Lập trình Thi đấu*.
 
 ## *Hoá* hay *Hóa*?
 
