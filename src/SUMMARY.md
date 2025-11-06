@@ -94,7 +94,7 @@
     - [Quy hoạch động chia để trị]()
     - [Quy hoạch động bao lồi]()
     - [Quy hoạch động trên DAG]()
-    - [Quy hoạch động trên cây]()
+    - [Quy hoạch động trên cây](./misc/tree-dp.md)
     - [Các phương pháp tối ưu khác]()
   - [Trình chấm]()
 ---

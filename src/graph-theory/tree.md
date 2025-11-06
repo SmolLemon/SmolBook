@@ -1,6 +1,6 @@
 # Cây
 
-Ta đã biết đến [cây](overview.md#cây) và [các định nghĩa, tính chất](overview.html#cây-1) của nó. 
+Ta đã biết đến [cây](graph.md#cây) và [các định nghĩa, tính chất](graph.md#cây-1) của nó. 
 
 Ở phần này, ta sẽ tìm hiểu thêm về một số dạng cây khác, các bài toán liên quan và những kĩ thuật liên quan đến cây.
 

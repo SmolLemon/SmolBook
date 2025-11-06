@@ -1,6 +1,6 @@
 # Quy hoạch động
 
-**Quy hoạch động (Dynamic Programming - DP)**, từ giờ sẽ được viết tắt thành *QHĐ*, là phương pháp chia một bài toán lớn thành các bài toán con có thước nhỏ hơn với mục tiêu tìm được đáp án của bài toán ban đầu bằng kết quả của những bài toán con đã giải được. 
+**Quy hoạch động (Dynamic Programming - DP)**, gọi tắt là *QHĐ*, là phương pháp chia một bài toán lớn thành các bài toán con có thước nhỏ hơn với mục tiêu tìm được đáp án của bài toán ban đầu bằng kết quả của những bài toán con đã giải được. 
 
 Khác với [chia để trị](dnc.md) với việc chia bài toán lớn thành các các bài toán con rời nhau, QHĐ sẽ chia bài toán thành **các bài toán con gối nhau (overlapping subproblem)**. Giống với [tham lam](greedy.md), các bài toán QHĐ cũng có **cấu trúc con tối ưu**.
 
