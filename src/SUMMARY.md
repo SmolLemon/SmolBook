@@ -96,7 +96,7 @@
     - [Quy hoạch động trên DAG]()
     - [Quy hoạch động trên cây](./misc/tree-dp.md)
     - [Các phương pháp tối ưu khác]()
-  - [Trình chấm]()
+  - [Trình chấm bài](./misc/checker.md)
 ---
 
 [Lời cảm ơn](./acknowledgement.md)
