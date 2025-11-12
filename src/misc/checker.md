@@ -14,15 +14,16 @@ Trình chấm bài của ta sẽ có \\(4\\) hàm khác nhau, thực hiện các
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
-const int NUM_TEST_CHECKER = 100; // số lần kiểm tra đúng sai
-const int NUM_TEST_STRESS = 100; // số lần stress test
+const int NUM_TEST_CHECKER = 100; // Số lần kiểm tra đúng sai
+const int NUM_TEST_STRESS = 100; // Số lần stress test
+const double TIME_LIMIT_SECOND = 1.0L; // Giới hạn thời gian
 const string NAME = "main"; // Tên file chương trình, dữ liệu nhâp, dữ liệu xuất
-mt19937 rd(time(NULL)); // hàm sinh số ngẫu nhiên
+mt19937 rd(time(NULL)); // Hàm sinh số ngẫu nhiên
 
 int rand(int l, int r); // Hàm sinh số ngẫu nhiên trên khoảng [l, r]
 void genTest(); // Hàm sinh test
-void checker(); // Hàm kiểm tra đúng sai
-void stressTest(double second); // Hàm stress test
+bool checker(); // Hàm kiểm tra đúng sai
+bool stressTest(double second); // Hàm stress test
 
 int main () {
 	ios_base::sync_with_stdio(0);
@@ -30,12 +31,12 @@ int main () {
 	// Kiểm tra đúng sai
 	for(int t = 1; t <= NUM_TEST_CHECKER; ++t) {
 		genTest();
-		checker();
+		if(checker() == 0) return 0;
 	}
 	// Stress test
 	for(int t = 1; t <= NUM_TEST_STRESS; ++t) {
 		genTest();
-		stressTest(1.0L);
+		if(stressTest(TIME_LIMIT_SECOND) == 0) return 0;
 	}
 
 	return 0;
@@ -50,7 +51,7 @@ int main () {
 mt19937 rd([seed]);
 ```
 
-Nếu ta muốn sinh số siêu ngẫu nhiên, ta có thể cho `seed` là một số bất kì, ví dụ như hàm `time(NULL)`, hoặc ta có thể gán cho `seed` một giá trị cụ thể để kiểm tra khi ta gặp các bộ test được xây dựng mà chương trình ta chạy sai. 
+Nếu ta muốn sinh số siêu ngẫu nhiên, ta có thể cho `seed` là một số bất kì, ví dụ như hàm `time(NULL)` - một hàm trả về thời gian hiện tại, hoặc ta có thể gán cho `seed` một giá trị cụ thể để kiểm tra khi ta gặp các bộ test được xây dựng mà chương trình ta chạy sai. 
 
 Từ hàm sinh số này, ta có thể sinh số ngẫu nhiên trong khoảng \\([l, r]\\) bằng công thức: \\[randNum = l + (rd() \bmod (r - l + 1))\\].
 
@@ -78,20 +79,21 @@ void genTest(){
 Chương trình chuẩn không nhất thiết phải tối ưu, nhưng file xuất ra phải đảm bảo có kết quả chính xác để có thể có thể đối chiếu với file xuất của chương trình cần kiểm tra. 
 
 ```C++
-void checker(){
-	// - Chạy hai chương trình
+bool checker(){
+	// - Chạy hai chương trình trên Windows
 	// - Các chương trình cần được biên dịch trước khi chạy trình chấm
-	// - Đuôi file có thể thay đổi tuỳ thuộc vào hệ điều hành
+	// - Tuỳ vào hệ điều hành là cách gọi chạy chương trình trên cmd sẽ khác nhau
 	system((NAME + ".exe").c_str()); // chương trình cần kiểm tra
-	system((NAME + "_trau.exe").c_str()); // chương trình "chuẩn"
+	system((NAME + "_chuan.exe").c_str()); // chương trình "chuẩn"
 
 	// - Hàm `fc` ở Windows so sánh hai file xuất
-	// - Tuỳ thuộc vào hệ điều hành mà tên chương trình kiểm tra hai file có thể khác nhau
-	if (system(("fc " + NAME + ".OUT" + NAME + ".ANS").c_str()) != 0) {
+	// - Tuỳ vào hệ điều hành mà tên chương trình kiểm tra hai file có thể khác nhau
+	if (system(("fc " + NAME + ".OUT " + NAME + ".ANS").c_str()) != 0) {
 		cout << "WRONG ANSWER (WA)" << endl;
-		return ;
+		return 0;
 	}
 	cout << "ACCEPTED (AC)" << endl;
+	return 1;
 }
 ```
 
@@ -100,8 +102,8 @@ void checker(){
 Hàm stress test sẽ chạy chương trình cần kiểm tra và đo thời gian chạy của nó.  
  
 ```C++
-void stressTest(double second){
-	int nanoSecond = second * 1'000'000; // chuyển đổi từ giây sang micro giây
+bool stressTest(double second){
+	int microSecond = second * 1'000'000; // chuyển đổi từ giây sang micro giây
 
 	// Bắt đầu chương trình
 	auto a = chrono::high_resolution_clock::now();
@@ -113,11 +115,12 @@ void stressTest(double second){
 	auto duration = chrono::duration_cast<microseconds>(b - a);
 	int execTime = duration.count();
 
-	if(execTime > second) {
+	if(execTime > microSecond) {
 		cout << "TIME LIMIT EXCEEDED (TLE)" << endl;
-		return; 
+		return 0; 
 	}
 	cout << "ACCEPTED (AC)" << endl;
+	return 1;
 }
 ```
 
@@ -131,25 +134,26 @@ void stressTest(double second){
 using namespace std;
 const int NUM_TEST_CHECKER = 100;
 const int NUM_TEST_STRESS = 100;
+const double TIME_LIMIT_SECOND = 1.0L;
 const string NAME = "main";
 mt19937 rd(time(NULL));
 
 int rand(int l, int r);
 void genTest();
-void checker();
-void stressTest(double second);
+bool checker();
+bool stressTest(double second);
 
 int main () {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	for(int t = 1; t <= NUM_TEST_CHECKER; ++t) {
 		genTest();
-		checker();
+		if(checker() == 0) return 0;
 	}
 
 	for(int t = 1; t <= NUM_TEST_STRESS; ++t) {
 		genTest();
-		stressTest(1.0L);
+		if(stressTest(TIME_LIMIT_SECOND) == 0) return 0;
 	}
 
 	return 0;
@@ -165,19 +169,20 @@ void genTest(){
 	inp.close();
 }
 
-void checker(){
+bool checker(){
 	system((NAME + ".exe").c_str());
-	system((NAME + "_trau.exe").c_str());
+	system((NAME + "_chuan.exe").c_str());
 
-	if (system(("fc " + NAME + ".OUT" + NAME + ".ANS").c_str()) != 0) {
+	if (system(("fc " + NAME + ".OUT " + NAME + ".ANS").c_str()) != 0) {
 		cout << "WRONG ANSWER (WA)" << endl;
-		return ;
+		return 0;
 	}
 	cout << "ACCEPTED (AC)" << endl;
+	return 1;
 }
 
-void stressTest(double second){
-	int nanoSecond = second * 1'000'000;
+bool stressTest(double second){
+	int microSecond = second * 1'000'000;
 
 	auto a = chrono::high_resolution_clock::now();
 	system((NAME + ".exe").c_str());
@@ -186,10 +191,11 @@ void stressTest(double second){
 	auto duration = chrono::duration_cast<microseconds>(b - a);
 	int execTime = duration.count();
 
-	if(execTime > second) {
+	if(execTime > microSecond) {
 		cout << "TIME LIMIT EXCEEDED (TLE)" << endl;
-		return; 
+		return 0; 
 	}
 	cout << "ACCEPTED (AC)" << endl;
+	return 1;
 }
 ```

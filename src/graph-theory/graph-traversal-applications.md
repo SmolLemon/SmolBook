@@ -2,6 +2,10 @@
 
 Hai thuật toán tìm kiếm trên đồ thị đã được nói ở phần trước tuy đơn giản nhưng lại có tính ứng dụng rất cao. Ta sẽ điểm qua một số ứng dụng của nó.
 
+## Tìm đường kính của cây
+
+Để tìm đường kính của cây, ta có thể thực hiện thuật toán tìm kiếm \\(2\\) lần: lần thứ nhất tìm đường đi dài nhất từ đỉnh gốc đến một đỉnh \\(u\\), lần thứ \\(2\\) tìm đường đi dài nhất từ đỉnh \\(u\\) đến một đỉnh \\(v\\) trên cây. Khoảng cách giữa hai đỉnh \\(u\\) và \\(v\\) trên cây là đường kính của cây.
+
 ## Xây dựng cây khung của đồ thị
 
 Một **cây khung (spanning tree)** của một đồ thị vô hướng, liên thông \\(G\\) là một đồ thị con \\(T\\) có tất cả các đỉnh của \\(G\\) và có các cạnh của \\(G\\) sao cho các đỉnh liên thông với nhau và đồ thị không có chu trình. 

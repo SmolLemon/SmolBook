@@ -4,7 +4,7 @@
 
 ## Lí thuyết
 
-Xét đến tính các định nghĩa, tính chất của [cây](../graph-theory/graph.md#cây-1), ta có thể dễ dàng liên hệ nó với QHĐ:
+Xét đến tính các định nghĩa, tính chất của [cây](../graph-theory/graph.md#cây-1). Ta định nghĩa một cây con gốc \\(u\\) là tập hợp tất cả các đỉnh có tổ tiên là đỉnh \\(u\\). Từ đây, ta có thể dễ dàng liên hệ nó với QHĐ:
 - Một cây con của cây tương đương với các bài toán con của QHĐ.
 - Các cây con có gốc là một đỉnh có thể thuộc các cây con có gốc là các đỉnh tổ tiên của đỉnh đó. Điều này giống với tính chất *các bài toán con gối nhau* của QHĐ.
 - Giá trị của đỉnh lá tương đương với các trường hợp cơ sở.
@@ -31,7 +31,7 @@ Với kiến thức trên, ta có thể xử lí các bài toán yêu cầu kĩ 
 
 ### Bài 1: Nhánh có tổng lớn nhất
 
-Bài toán tìm nhánh có tổng lớn nhất cho ta một cây có đỉnh gốc là \\(1\\), với giá trị \\(a_u\\) được gán trên mỗi đỉnh \\(u\\). Bài toán yêu cầu ta tìm con đường từ đỉnh gốc tới một đỉnh trên cây sao cho giá trị các đỉnh trên đường đi là lớn nhất.
+Bài toán *tìm nhánh có tổng lớn nhất* cho ta một cây có đỉnh gốc là \\(1\\), với giá trị \\(a_u\\) được gán trên mỗi đỉnh \\(u\\). Bài toán yêu cầu ta tìm con đường từ đỉnh gốc tới một đỉnh trên cây sao cho giá trị các đỉnh trên đường đi là lớn nhất.
 
 Nếu nhìn ở dạng cây tre, ta thấy bài toán này tương tự với bài toán [dãy con có tổng lớn nhất](../paradigms/dp.md#dãy-con-có-tổng-lớn-nhất). Từ đây, với \\(f(u)\\) là trị lớn nhất trong các đường đi từ đỉnh \\(u\\) đến các đỉnh con thuộc cây con gốc \\(u\\), ta có công thức:
 
@@ -66,7 +66,7 @@ int solve() {
 
 ### Bài 2: Tập hợp có tổng lớn nhất
 
-Bài toán tìm tập hợp có tổng lớn nhất cho ta một cây có đỉnh gốc là \\(1\\), với giá trị \\(a_u\\) được gán trên mỗi đỉnh \\(u\\). Bài toán yêu cầu ta tìm tập hợp các đỉnh thuộc cây sao cho không có cặp đỉnh nào trong tập hợp có cạnh nối hai đỉnh và tổng giá trị của nó là lớn nhất.
+Bài toán tìm *tập hợp có tổng lớn nhất* cho ta một cây có đỉnh gốc là \\(1\\), với giá trị \\(a_u\\) được gán trên mỗi đỉnh \\(u\\). Bài toán yêu cầu ta tìm tập hợp các đỉnh thuộc cây sao cho không có cặp đỉnh nào trong tập hợp có cạnh nối hai đỉnh và tổng giá trị của nó là lớn nhất.
 
 Ta có \\(f(t, u)\\) chỉ kết quả khi thêm (\\(t = 1\\)) hoặc không thêm (\\(t = 0\\)) đỉnh \\(u\\) vào tập hợp của ta. Nếu ta thêm đỉnh \\(u\\) vào tập hợp, ta *không thể* thêm bất kì đỉnh con nào của \\(u\\) vào tập hợp. Ngược lại, nếu ta không thêm đỉnh \\(u\\), ta có thể tuỳ ý thêm hoặc không thêm các đỉnh con của nó, miễn sao kết quả cuối cùng là lớn nhất.
 
@@ -107,4 +107,48 @@ int solve() {
 
 Độ phức tạp thuật toán là \\(O(n)\\).
 
-### Bài 3: Knapsack trên cây
+### Bài 3: Đường kính của cây
+
+Ngoài cách tìm đường kính của cây bằng [\\(2\\) lần DFS hoặc BFS](../graph-theory/graph-traversal-applications.md#tìm-đường-kính-của-cây), ta có thể giải quyết bằng QHĐ.
+
+Ta có \\(f(u)\\) là độ dài đường đi dài nhất từ \\(u\\) đến một đỉnh thuộc cây con của \\(u\\), còn \\(g(u)\\) là độ dài đường đi dài nhất từ một đỉnh thuộc cây con gốc \\(u\\), đi qua đinh \\(u\\) và đi đến đỉnh còn lại thuộc cây con.
+
+Đầu tiên, ta có công thức cho \\(f(u)\\) như sau: \\[f(u) = 1 + \max_{v \in child(u)}(f(v))\\]
+
+Với trường hợp cơ sở: \\(f(u) = 0\\) với \\(u\\) là đỉnh lá.
+
+Còn với \\(g(u)\\), ta có công thức: \\[g(u) = 2 + \max_{v, w \in child(u), v \neq w}(f(v) + f(w))\\]
+
+Đối với cách tính \\(g(u)\\), ta có thể tối ưu bằng cách chỉ lưu thông tin về hai đỉnh \\(v, w\\) có \\(f(v)\\) là giá trị lớn nhất, còn \\(f(w)\\) là giá trị lớn nhì.
+
+Đáp án của bài toán là \\(\max_{1 \le i \le n} max(f(i), g(i))\\).
+
+```C++
+int dp[N];
+
+int dfs(int u){
+	// dp[x], dp[y] lớn nhất, lớn nhì với x, y là đỉnh con của u
+	pair<int, int> f(-1, -1); 
+	int res = 0;
+	
+	for(int v : child[u]) {
+		res = max(res, dfs(v));
+		dp[u] = max(dp[u], 1 + dp[v]);
+		f = max(f, {f.first, dp[v]});
+		f = max(f, {dp[v], f.first});
+	}
+
+	res = max(res, dp[u]);
+
+	if(f.second == -1) return res;
+	return max(res, f.first + f.second + 2);
+}
+
+int solve(){
+	return dfs(1);
+}
+```
+
+Độ phức tạp thuật toán là \\(O(n)\\).
+
+### Bài 4: Cái túi trên cây

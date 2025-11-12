@@ -73,7 +73,7 @@ Và tiếp tục với *Hien*, *Hoang*, *Huy*, *Khang*, *Hao*.
 
 ## Hệ số tải
 
-**Hệ số tải (load factor)** \\(\alpha\\) cho biết độ hiệu quả của hàm băm khi lưu các giá trị, được tính bằng công thức:
+**Hệ số tải (load factor)** \\(\alpha\\) cho biết độ hiệu quả của bảng băm khi lưu các giá trị, được tính bằng công thức:
 
 \\[\alpha = \frac{n}{m}\\]
 

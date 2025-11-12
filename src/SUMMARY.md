@@ -77,7 +77,7 @@
 - [Xử lí xâu](./string/README.md)
   - [Xâu kí tự](./string/string.md)
   - [Các bài toán kinh điển](./string/classic.md)
-  - [Băm]()
+  - [Băm xâu](./string/string-hashing.md)
   - [Thuật toán Knuth-Morris-Pratt (KMP)](./string/kmp.md)
   - [Thuật toán Z](./string/z-algo.md)
   - [Thuật toán Manacher](./string/manacher.md)

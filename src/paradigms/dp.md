@@ -378,13 +378,15 @@ int f(int idx, int rw){
 }
 ```
 
-Ta cũng có cách cài đặt bottom-up. Ở đây, ta tối ưu bộ nhớ bằng cách loại bỏ trạng thái \\(idx\\) của bài toán khi lưu:
+Ta cũng có cách cài đặt bottom-up. Ở đây, \\(rW\\) chỉ khối lượng các món đồ không vượt quá \\(rW\\). Ngoài ra, ta tối ưu bộ nhớ bằng cách loại bỏ trạng thái \\(idx\\) của bài toán khi lưu:
 
 ```C++
 int dp[M]; // M là giới hạn của W
 int n, W;
 
 for(int i = 1; i <= n; ++i){
+	// Vì dp[j] phụ thuộc vào các trạng thái k <= j, 
+	// ta thực hiện duyệt ngược
 	for(int j = W; j >= w[i]; --j){
 		dp[j] = max(dp[j], dp[j - w[i]] + v[i]);
 	}
