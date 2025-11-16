@@ -8,4 +8,4 @@ Xem [hướng dẫn](./guide.md) để biết cách tương tác với trang.
 
 Hãy sử dụng theme `Light` để có trải nghiệm tốt nhất.
 
-Dự án đang trong quá trình hoàn thiện 🚧.
+<p style="color: crimson;">Dự án đang trong quá trình hoàn thiện 🚧.</p>

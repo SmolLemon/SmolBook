@@ -1,6 +1,6 @@
-# Bảng băm (Hash Table)
+# Bảng băm (Hash table)
 
-**Bảng băm (Hash Table)** là một CTDL cho phép ta lưu trữ và truy cập thông tin một cách nhanh chóng, dẫu cho dữ liệu có lớn cỡ nào đi nữa.
+**Bảng băm (Hash table)** là một CTDL cho phép ta lưu trữ và truy cập thông tin một cách nhanh chóng, dẫu cho dữ liệu có lớn cỡ nào đi nữa.
 
 ## Ý tưởng
 

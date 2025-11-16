@@ -1,8 +1,8 @@
-# Cây phân đoạn (Segment Tree)
+# Cây phân đoạn (segment tree)
 
 Quay lại với [bảng thưa](./sparse-table.md), nếu như các truy vấn chỉ yêu cầu ta tìm GTNN của các đoạn thì bảng thưa là một lựa chọn phù hợp để giải quyết bài toán. Tuy nhiên nếu bài toán có thêm các truy vấn yêu cầu thay đổi giá trị của các phần tử trong mảng thì ta cần phải cập nhật phần tử và xây dựng lại bảng thưa, khiến cho bảng thưa không còn hiệu quả.
 
-Ta sẽ nói về CTDL **Cây phân đoạn (Segment Tree)** - một CTDL linh hoạt giúp giải quyết bài toán này.
+Ta sẽ nói về CTDL **cây phân đoạn (segment tree)** - một CTDL linh hoạt giúp giải quyết bài toán này.
 
 ## Cây phân đoạn
 

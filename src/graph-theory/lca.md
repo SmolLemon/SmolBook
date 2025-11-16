@@ -76,12 +76,11 @@ int lca(int u, int v){
 	if(h[u] < h[v]) swap(u, v);
 	u = ancestor(u, h[u] - h[v]); 
 
-	// h[u] == h[v]
+	// v là đỉnh LCA
 	if(u == v) return u;
 
-	// nhảy đến đỉnh gần nhất không phải LCA
+	// Nhảy đến đỉnh con của LCA
 	for(int i = __lg(h[u]); i >= 0; --i){
-		// nhảy lên đỉnh có chiều cao lớn hơn LCA
 		if(sp[i][u] != sp[i][v]){ 
 			u = sp[i][u];
 			v = sp[i][v];

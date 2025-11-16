@@ -112,7 +112,7 @@ bool stressTest(double second){
 	auto b = chrono::high_resolution_clock::now();
 	
 	// Thời gian chạy chương trình (micro giây)
-	auto duration = chrono::duration_cast<microseconds>(b - a);
+	auto duration = chrono::duration_cast<chrono::microseconds>(b - a);
 	int execTime = duration.count();
 
 	if(execTime > microSecond) {
@@ -188,7 +188,7 @@ bool stressTest(double second){
 	system((NAME + ".exe").c_str());
 	auto b = chrono::high_resolution_clock::now();
 	
-	auto duration = chrono::duration_cast<microseconds>(b - a);
+	auto duration = chrono::duration_cast<chrono::microseconds>(b - a);
 	int execTime = duration.count();
 
 	if(execTime > microSecond) {

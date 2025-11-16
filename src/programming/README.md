@@ -4,9 +4,9 @@
 
 Ngôn ngữ lập trình C++ là một trong ngôn ngữ được sử dụng phổ biến, nếu không muốn nói là phổ biến nhất trong lập trình thi đấu. Chính vì thế, tất cả các đoạn code minh họa trong *Cẩm nang Lập trình Thi đấu* sẽ được viết trên C++, phiên bản C++14 để phù hợp với **[Themis [Θέμις] - Chương trình chấm bài tự động](https://dsapblog.wordpress.com/2013/12/24/themis/)** - phần mềm chấm thi *chính thức* của Bộ Giáo dục và Đào tạo, thường xuyên được sử dụng để chấm thi trong các kì thi Học sinh giỏi cấp Tỉnh, Khu vực và Quốc gia - chạy các bài nộp C++ theo phiên bản C++14.
 
-## Cài đặt môi trường code C++
+## Cài đặt môi trường lập trình C++
 
-Để chạy chương trình code C++ cần \\(2\\) phần mềm chính:
+Để chạy một chương trình C++, ta cần \\(2\\) phần mềm chính:
 
 - Trình biên dịch C++ (Compiler)
 - Trình soạn thảo văn bản (Text editor)
@@ -40,3 +40,7 @@ Ngoài việc thêm flag `-std=c++14` để trình biên dịch biên dịch the
 - `Optimize even more (for speed) [-O2]`
 
 Các flag này sẽ cảnh bảo ta về một số cảnh báo khi ta biên dịch chương trình (`-Wall`, `-Wextra`) và tối ưu chương trình khi chạy (`-O2`).
+
+## Lập trình C++ trực tuyến
+
+Nếu máy của bạn không có khả năng cài đặt \\(2\\) phần mềm kể trên, ta hoàn toàn có thể thay thế bằng các trang lập trinh C++ trực tuyến như **[Ideone](https://ideone.com/)**, **[USACO IDE](https://ide.usaco.guide/)**, **[Online GDB](https://www.onlinegdb.com/)**, v.v.
