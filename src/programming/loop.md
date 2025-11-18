@@ -52,6 +52,7 @@ for (int x : a){
 
 Thì vòng lặp sẽ duyệt và in các phần tử trong `a` ra màn hình: `1 2 3 4 5 `. 
 
+> [!IMPORTANT]
 > Từ C++17 trở đi, ta có thể dùng mẹo sau để chương trình của ta dễ đọc hơn.
 > 
 > Giả sử ta cần in cặp giá trị của `pair` trong một mảng, thay vì viết:

@@ -40,6 +40,7 @@ Từ trong hình ta có \\(6\\) đường đi khác nhau: \\((1, 3, 7, 11), (2, 
 
 Ta có thể chứng minh rằng việc phân tách theo các cạnh nặng nhẹ sẽ giúp kĩ thuật của ta trở nên tối ưu. Giả sử ta có một đỉnh \\(u\\) nằm trong cây, ta nhận định rằng đường đi từ \\(u\\) đến đỉnh gốc sẽ không đi qua quá \\(O(\log{n})\\) cạnh nhẹ.
 
+> [!NOTE]
 > Xét đỉnh \\(u\\) có cạnh \\(up\\) nối với đỉnh cha \\(p\\) của nó là một cạnh nhẹ. Vì \\(up\\) không phải là cạnh nặng nên ta có thể suy luận ra rằng tồn tại một đỉnh \\(v\\) và cạnh \\(pv\\) là cạnh nặng. 
 > 
 > Gọi \\(size(u), size(v)\\) là kích thước của cây con gốc \\(u\\) và \\(v\\). Từ nhận định trên ta có: \\(size(u) + size(v) \ge 2 \times size(u)\\). Vì cây chỉ có \\(n\\) đỉnh nên điều này chỉ xảy ra không quá \\(O(\log{n})\\) lần.

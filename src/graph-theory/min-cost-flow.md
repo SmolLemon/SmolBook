@@ -56,6 +56,7 @@ Thuật toán bắt đầu bằng việc gán mỗi đỉnh \\(u\\) trên mạng
 
 Sau khi tìm đường đi ngắn nhất từ \\(s\\) đến \\(t\\) trên đồ thị có các trọng số mới này, ta có thể tìm lại giá trị của đường đi ngắn nhất trên đồ thị gốc bằng cách trừ đi \\(\pi(u) - \pi(v)\\) với mỗi cạnh \\(uv\\) trên đường đi ngắn nhất, hoặc chỉ cần trừ đi \\(\pi(s) - \pi(t)\\). Ta có thể chứng minh được rằng đường đi ngắn nhất từ \\(s\\) đến \\(t\\) trên đồ thị với các trọng số mới cũng là đường đi ngắn nhất từ \\(s\\) đến \\(t\\) trên đồ thị gốc.
 
+> [!NOTE]
 > Chứng minh:
 >
 > Ta có \\(p = (s, p_1, p_2, \dots, p_k, t)\\) là một đường đi ngắn nhất trên đồ thị có trọng số mới. Giá trị của đường đi trên đồ thị bằng:

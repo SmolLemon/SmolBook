@@ -62,6 +62,7 @@ Số chỉnh hợp có lặp chập \\(k\\) của \\(n\\) bằng: \\[n^k = \unde
 
 Số chỉnh hợp có lặp sẽ là thứ giúp ta tính được số lượng mật khẩu của hai loại khoá:
 
+> [!NOTE]
 > Khoá số A có \\(10\\) ô bấm, mỗi ô bấm có hai trạng thái: bật và tắt. Vậy, tập hợp các trạng thái của mỗi ô bấm là \\(n = 2\\), và số lượng ô bấm là \\(k = 10\\). Từ đây, số lượng mật khẩu sẽ bằng số chỉnh hợp có lặp chập \\(k\\) của \\(n\\), tức là bằng: \\[2^{10} = 1\ 024\\]
 > 
 > Khoá số B có \\(4\\) vòng số xoay, mỗi vòng số có \\(10\\) chữ số từ \\(0\\) đến \\(9\\). Vậy, tập hợp các trạng thái của mỗi vòng số là \\(n = 10\\), và số lượng vòng số xoay là \\(k = 4\\). Từ đây, số lượng mật khẩu sẽ bằng số chỉnh hợp có lặp chập \\(k\\) của \\(n\\), tức là bằng: \\[{10}^{4} = 10\ 000\\]

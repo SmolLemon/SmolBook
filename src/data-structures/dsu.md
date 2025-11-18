@@ -101,6 +101,7 @@ void Union(int a, int b){
 
 Ta có giả thiết: Một cây có thứ hạng \\(k\\) sẽ có ít nhất \\(2^{k}\\) đỉnh. 
 
+> [!NOTE]
 > Chứng minh: Nếu \\(k\\) bằng \\(0\\), thì điều này là chính xác vì khi cây có thứ hạng bằng \\(0\\) thì chỉ có \\(1\\) đỉnh. Ta cũng nhận thấy rằng để có cây có thứ hạng \\(k\\) thì nó phải được Union theo thứ hạng từ \\(2\\) cây có thứ hạng \\(k - 1\\), khi đó số đỉnh trong cây có thứ hạng \\(k\\) sẽ lớn hơn hoặc bằng \\(2^{k - 1} + 2^{k - 1} = 2^k\\).
 
 Từ đây ta có thể nhận định rằng thứ hạng cao nhất có thể khi liên tiếp thực hiện Union theo thứ hạng \\(n\\) phần tử là \\(\log{n}\\).
@@ -126,6 +127,7 @@ void Union(int a, int b){
 
 Tương tự với Union theo thứ hạng, ta có giả thiết: Một đỉnh \\(x\\) bất kì sẽ không có chiều cao quá \\(\log{n}\\).
 
+> [!NOTE]
 > Chứng minh: Chiều cao của đỉnh \\(x\\) nằm trong cây \\(T_1\\) sẽ không thay đổi trừ khi được hợp lại với cây \\(T_2\\) có kích thước lớn hơn \\(T_1\\).
 >
 > Khi này:

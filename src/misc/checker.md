@@ -83,8 +83,13 @@ bool checker(){
 	// - Chạy hai chương trình trên Windows
 	// - Các chương trình cần được biên dịch trước khi chạy trình chấm
 	// - Tuỳ vào hệ điều hành là cách gọi chạy chương trình trên cmd sẽ khác nhau
-	system((NAME + ".exe").c_str()); // chương trình cần kiểm tra
-	system((NAME + "_chuan.exe").c_str()); // chương trình "chuẩn"
+
+	// Chương trình cần kiểm tra
+	if(system((NAME + ".exe").c_str()) != 0){
+		cout << "RUNTIME ERROR (RTE)" << endl;
+		return 0;
+	}
+	system((NAME + "_chuan.exe").c_str()); // Chương trình "chuẩn"
 
 	// - Hàm `fc` ở Windows so sánh hai file xuất
 	// - Tuỳ vào hệ điều hành mà tên chương trình kiểm tra hai file có thể khác nhau
@@ -103,11 +108,14 @@ Hàm stress test sẽ chạy chương trình cần kiểm tra và đo thời gia
  
 ```C++
 bool stressTest(double second){
-	int microSecond = second * 1'000'000; // chuyển đổi từ giây sang micro giây
+	int microSecond = second * 1'000'000; // Chuyển đổi từ giây sang micro giây
 
 	// Bắt đầu chương trình
 	auto a = chrono::high_resolution_clock::now();
-	system((NAME + ".exe").c_str());
+	if(system((NAME + ".exe").c_str()) != 0){
+		cout << "RUNTIME ERROR (RTE)" << endl;
+		return 0;
+	}
 	// Kết thúc chương trình
 	auto b = chrono::high_resolution_clock::now();
 	
@@ -170,7 +178,10 @@ void genTest(){
 }
 
 bool checker(){
-	system((NAME + ".exe").c_str());
+	if(system((NAME + ".exe").c_str()) != 0){
+		cout << "RUNTIME ERROR (RTE)" << endl;
+		return 0;
+	}
 	system((NAME + "_chuan.exe").c_str());
 
 	if (system(("fc " + NAME + ".OUT " + NAME + ".ANS").c_str()) != 0) {
@@ -185,7 +196,10 @@ bool stressTest(double second){
 	int microSecond = second * 1'000'000;
 
 	auto a = chrono::high_resolution_clock::now();
-	system((NAME + ".exe").c_str());
+	if(system((NAME + ".exe").c_str()) != 0){
+		cout << "RUNTIME ERROR (RTE)" << endl;
+		return 0;
+	}
 	auto b = chrono::high_resolution_clock::now();
 	
 	auto duration = chrono::duration_cast<chrono::microseconds>(b - a);

@@ -4,7 +4,7 @@
 
 *- Thomas J. Misa, [An interview with Edsger W. Dijkstra](https://dl.acm.org/doi/pdf/10.1145/1787234.1787249)*
 
-<sup> Bình luận: Mê cái cách ông ấy nhấn mạnh việc thiết kế một thuật toán chỉ trong vòng \\(20\\) phút. **Tận 2 LẦN!!!** <sup>
+<sup> Bình luận: Mê cái cách ông ấy nhấn mạnh việc thiết kế một thuật toán chỉ trong vòng \\(20\\) phút. **Tận 2 LẦN!!!** </sup>
 
 **Thuật toán Dijkstra** là thuật toán [*tham lam*](../paradigms/greedy.md) tìm đường đi ngắn nhất từ một đỉnh trên đồ thị.
 

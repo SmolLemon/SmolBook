@@ -3,14 +3,11 @@ title = "Cẩm nang Lập trình Thi đấu"
 authors = ["Smol Lemon"]
 description = "Cẩm nang Lập trình Thi đấu"
 language = "vi"
-multilingual = false
 
 [output.html]
 mathjax-support = true
 default-theme = "light"
 preferred-dark-theme = "navy"
-smart-punctuation = true
-git-repository-icon = "fa-code-fork"
 git-repository-url = "https://codeberg.org/SmolLemon/SmolBook"
 edit-url-template = "https://github.com/SmolLemon/SmolBook/edit/main/{path}"
 

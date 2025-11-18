@@ -109,7 +109,6 @@ Với \\(m = ka + r \\ (k = \left \lfloor \frac{m}{a} \right \rfloor,\ r = m \bm
 \\]
 
 Nguyên nhân \\(m\\) phải là số nguyên tố là bởi như đã nói ở trên: để tìm nghịch đảo modulo của \\(a\\) với modulo \\(m\\) thì \\(a, m\\) phải nguyên tố cùng nhau. Mặc dù ta có thể đảm bảo \\(a\\) với \\(m\\) nguyên tố cùng nhau, nhưng chưa chắc ta có thể đảm bảo \\(r\\) và \\(m\\) cũng nguyên tố cùng nhau.
-</details>
 
 Khi duyệt từ \\([1; m - 1]\\), các giá trị \\(r^{-1}\\) đã được tính trước do \\(r \lt a\\).
 

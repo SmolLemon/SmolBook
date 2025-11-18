@@ -16,4 +16,5 @@ Bài toán này - **bài toán \\(7\\) cầu ở Königsberg**, đã được gi
 
 Ở chương này, ta sẽ nói về một trong những dạng bài phổ biến nhất trong lập trình thi đấu: **lí thuyết đồ thị**. Ta sẽ tìm hiều định nghĩa, các dạng của đồ thị, một số khái niệm, tính chất liên quan, cách lưu trữ đồ thị trong chương trình và một số thuật toán liên quan đến đồ thị.
 
+> [!NOTE]
 > Lời giải cho bài toán bài toán \\(7\\) cầu ở Königsberg nằm ở phần [đường đi Euler](eulerian-trail.md#bài-toán-7-cây-cầu).

@@ -341,6 +341,5 @@ int main() {
 }
 ```
 
-<div class="warning">
-Trừ khi được ghi chú cụ thể, các đoạn code trong đồ thị sẽ là đồ thị vô hướng không trọng số, được lưu trên danh sách kề.
-</div>
+> [!IMPORTANT]
+> Trừ khi được ghi chú cụ thể, các đoạn code trong đồ thị sẽ là đồ thị vô hướng không trọng số, được lưu trên danh sách kề.
