@@ -22,7 +22,7 @@ Bước thứ nhất, **thiết kế thuật toán**, yêu cầu ta thiết kế
 
 Thông thường, các bài toán thường sẽ liên quan đến những chủ đề như tổ hợp, lí thuyết đồ thị, xử lí xâu, v.v. Việc áp dụng lí thuyết sẵn có cùng với các hướng giải quyết mới sẽ giúp ta thiết kế thuật toán phù hợp.
 
-Đối với bài toán này, thuật toán sẽ lấy hai số \\(A\\) và \\(B\\), thực hiện việc cộng hai số, và trả về tổng tính được.
+Đối với bài toán này, thuật toán sẽ lấy hai số \\(A\\) và \\(B\\), thực hiện việc cộng hai số và trả về tổng tính được.
 
 Bước thứ hai, **cài đặt thuật toán**, là quá trình biến thuật toán mà ta đã thiết kế thành một chương trình máy tính. Sự hiểu biết về ngôn ngữ lập trình và cách áp dụng nó vào việc cài đặt thuật toán mà một yêu cầu hết sức quan trọng trong quá trình giải quyết bài toán.	 
 

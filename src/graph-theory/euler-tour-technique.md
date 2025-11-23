@@ -21,7 +21,7 @@ Ta có \\(v_{st}\\) và \\(v_{en}\\) lần lượt là vị trí đầu tiên v�
 Ta cũng lưu \\(euler_i\\) đỉnh ở vị trí thứ \\(i\\) trong chu trình Euler của ta. Ví dụ: \\(euler_6 = 2\\).
 
 ```C++
-int st[N << 1 | 1], en[N << 1 | 1], euler[N << 1 | 1];
+int st[N << 1], en[N << 1], euler[N << 1];
 int tdfs = 0;
 
 void dfs(int u, int p){

@@ -86,6 +86,7 @@ bool checker(){
 
 	// Chương trình cần kiểm tra
 	if(system((NAME + ".exe").c_str()) != 0){
+		// Chương trình chạy lỗi
 		cout << "RUNTIME ERROR (RTE)" << endl;
 		return 0;
 	}

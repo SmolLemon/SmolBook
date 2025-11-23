@@ -15,7 +15,7 @@ Giả sử ta được cho một mạng **mạng (network)** là một đồ th�
 <p>Số bên trái là sức chứa, số bên phải là chi phí</p>
 </center>
 
-Nhiệm vụ của ta khi gửi luồng \\(f\\) trên mạng, ta cần cực tiểu hóa chi phí gửi luồng từ đỉnh nguồn \\(s\\) đến đỉnh thu \\(t\\).
+Nhiệm vụ của ta khi gửi luồng \\(f\\) trên mạng, ta cần cực tiểu hoá chi phí gửi luồng từ đỉnh nguồn \\(s\\) đến đỉnh thu \\(t\\).
 
 \\[min \sum_{e \in E} f(e)a(e)\\]
 
@@ -42,7 +42,7 @@ Sở dĩ ta cho cạnh ngược có chi phí \\(-a(uv)\\) là bởi cạnh ngư�
 
 Các thuật toán áp dụng phương pháp Ford-Fulkerson khi tìm luồng cực đại sẽ thực hiện tăng luồng với mỗi đường tăng luồng trên mạng mà nó tìm được sau mỗi bước. 
 
-Để cực tiểu hóa chi phí, ta cần tìm đường tăng luồng có chi phí gửi luồng **_nhỏ nhất có thể_** ở mỗi bước để cực tiểu hóa chi phí. Việc tìm những đường tăng luồng này có thể được thực hiện bằng các thuật toán tìm đường đi ngắn nhất xử lí được trường hợp cạnh có trọng số âm như thuật toán [Bellman-Ford](bellman-ford.md) hoặc thuật toán [Dijkstra](dijkstra.md#dijkstra-trên-đồ-thị-có-trọng-số-âm) sửa đổi. Ở đây, ta sẽ sử dụng thuật toán [Johnson](https://en.wikipedia.org/wiki/Johnson's_algorithm).
+Để cực tiểu hoá chi phí, ta cần tìm đường tăng luồng có chi phí gửi luồng **_nhỏ nhất có thể_** ở mỗi bước để cực tiểu hoá chi phí. Việc tìm những đường tăng luồng này có thể được thực hiện bằng các thuật toán tìm đường đi ngắn nhất xử lí được trường hợp cạnh có trọng số âm như thuật toán [Bellman-Ford](bellman-ford.md) hoặc thuật toán [Dijkstra](dijkstra.md#dijkstra-trên-đồ-thị-có-trọng-số-âm) sửa đổi. Ở đây, ta sẽ sử dụng thuật toán [Johnson](https://en.wikipedia.org/wiki/Johnson's_algorithm).
 
 ### Thuật toán
 
@@ -57,7 +57,7 @@ Thuật toán bắt đầu bằng việc gán mỗi đỉnh \\(u\\) trên mạng
 Sau khi tìm đường đi ngắn nhất từ \\(s\\) đến \\(t\\) trên đồ thị có các trọng số mới này, ta có thể tìm lại giá trị của đường đi ngắn nhất trên đồ thị gốc bằng cách trừ đi \\(\pi(u) - \pi(v)\\) với mỗi cạnh \\(uv\\) trên đường đi ngắn nhất, hoặc chỉ cần trừ đi \\(\pi(s) - \pi(t)\\). Ta có thể chứng minh được rằng đường đi ngắn nhất từ \\(s\\) đến \\(t\\) trên đồ thị với các trọng số mới cũng là đường đi ngắn nhất từ \\(s\\) đến \\(t\\) trên đồ thị gốc.
 
 > [!NOTE]
-> Chứng minh:
+> **Chứng minh:**
 >
 > Ta có \\(p = (s, p_1, p_2, \dots, p_k, t)\\) là một đường đi ngắn nhất trên đồ thị có trọng số mới. Giá trị của đường đi trên đồ thị bằng:
 > 

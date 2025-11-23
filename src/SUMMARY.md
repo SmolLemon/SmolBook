@@ -98,6 +98,8 @@
     - [Quy hoạch động trên cây](./misc/tree-dp.md)
     - [Các phương pháp tối ưu khác]()
   - [Trình chấm bài](./misc/checker.md)
+  - [Bài toán tương tác với máy chấm]()
+  - [Cây Li Chao (Cây phân đoạn trên tập đoạn thẳng)]()
 ---
 
 [Lời cảm ơn](./acknowledgement.md)

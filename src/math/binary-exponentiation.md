@@ -56,7 +56,7 @@ int Pow(int a, int n, int MOD = 1e9 + 7){ // tính a^n mod MOD
 
 ## Phép nhân Ấn Độ
 
-Ở bài viết về [modulo](modulo.md), ta đã được biết cách tính \\((a \times b) \mod {M} = ((a \mod {M}) \times (b \mod {M})) \mod {M}\\). Tuy nhiên, nếu ta viết chương trình theo kiểu này để tính với các giá trị \\(a, b, M \ge 10^{10}\\) thì kể cả khi sử dụng `long long` thì ta vẫn có thể bị tràn số. 
+Ở phần [modulo](modulo.md), ta đã được biết cách tính \\((a \times b) \mod {M} = ((a \mod {M}) \times (b \mod {M})) \mod {M}\\). Tuy nhiên, nếu ta viết chương trình theo kiểu này để tính với các giá trị \\(a, b, M \ge 10^{10}\\) thì kể cả khi sử dụng `long long` thì ta vẫn có thể bị tràn số. 
 
 Để giải quyết vấn đề này, ta sử dụng phép nhân Ấn Độ. Phép nhân Ấn Độ cũng giống với luỹ thừa nhị phân, chỉ khác nhau ở việc thay vì sử dụng phép nhân thì ta sử dụng phép cộng. Ví dụ, để tính \\(a \times b\\), ta tính: 
 

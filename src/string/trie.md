@@ -58,7 +58,7 @@ Có hai cách cài đặt Trie phổ biến: cài đặt bằng con trỏ và c�
 
 Dưới đây là hai cách cài đặt trie lưu trữ các xâu kí tự chứa các kí tự in thường: `a..z`.
 
-Cài đặt bằng con trỏ:
+Cài đặt bằng mảng:
 
 ```C++
 struct Trie{
@@ -117,7 +117,7 @@ struct Trie{
 };
 ```
 
-Cài đặt bằng mảng:
+Cài đặt bằng con trỏ:
 
 ```C++
 struct Trie{
@@ -130,7 +130,9 @@ struct Trie{
 		}
 	} *root; // đỉnh gốc
 
-	Trie() {}
+	Trie() {
+		root = new Node();
+	}
 	
 	void insert(string &s) {
 		Node *node = root;
@@ -156,11 +158,11 @@ struct Trie{
 	bool delete_string(Node *node, string &s, int i) {
 		if(i != s.size()) {
 			int id = s[i] - 'a';
-			bool childDeleted = delete_string(node->child[id] s, i+1);
+			bool childDeleted = delete_string(node->child[id], s, i+1);
 			if(childDeleted) node->child[id] = NULL;
-		} else --trie[p].end;
+		} else --trie->fin;
 
-		if(p != 0) {
+		if(i != 0) {
 			if(--node->cnt == 0){
 				delete(node);
 				return true;

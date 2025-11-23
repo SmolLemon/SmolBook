@@ -116,11 +116,11 @@ Ta có thể sử dụng [cây phân đoạn](../data-structures/segment-tree.md
 ```C++
 pair<int, int> sp[K][N];
 void build(){
-    for(int i = 1; i <= n << 1 | 1; ++i){
+    for(int i = 1; i < n << 1; ++i){
         sp[0][i] = {h[euler[i]], euler[i]};
     }
-    for(int k = 1; (1 << k) <= n << 1 | 1; ++k){
-        for(int i = 1; i + (1 << k) - 1 <= n << 1 | 1; ++i){
+    for(int k = 1; (1 << k) < n << 1; ++k){
+        for(int i = 1; i + (1 << k) - 1 < n << 1; ++i){
             sp[k][i] = min(sp[k - 1][i], sp[k - 1][i + (1 << (k - 1))]);
         }
     }
@@ -138,7 +138,9 @@ int lca(int u, int v){
 
 ## Thuật toán offline tìm LCA của Tarjan
 
-Thuật toán offline tìm LCA của Tarjan, như tên gọi của nó, là một thuật toán offline, tức là thuật toán phải biết trước được rằng nó sẽ phải tìm LCA của các cặp đỉnh nào.
+*Được xuất hiện trên [Tạp chí VNOI - Số 1](https://oj.vnoi.info/post/1261-huynh_khang/modern)*
+
+Thuật toán offline tìm LCA của Tarjan, đúng như tên gọi của nó, là một thuật toán offline, tức là thuật toán phải biết trước được rằng nó sẽ phải tìm LCA của các cặp đỉnh nào.
 
 Trước tiên, thuật toán sẽ tạo \\(n\\) tập hợp, mỗi tập hợp sẽ chứa một đỉnh trên cây. Sau đó, thuật toán duyệt cây bằng [DFS](dfs.md). Với mỗi đỉnh \\(u\\), ta đánh dấu đỉnh \\(u\\) là đã được duyệt qua. Sau đó, ta thực hiện \\(2\\) quy trình chính:
 - Duyệt cây: với mỗi đỉnh con \\(v\\) của \\(u\\), ta duyệt cây con gốc \\(v\\) và thực hiện hợp hai tập hợp chứa hai đỉnh \\(u, v\\). Lưu ý rằng phần tử đại diện của tập hợp chứa đỉnh \\(u\\) bất kì là đỉnh gần đỉnh gốc nhất.
@@ -210,15 +212,16 @@ void lca(){
 }
 ```
 
-### Chứng minh
-
-Có lẽ điều làm bạn lăn tăn nhất về thuật toán này chính là phần in ra LCA của cặp đỉnh \\((u, v)\\). 
-
-Giả sử \\(LCA(u, v) = w\\), ta có thể thấy: khi ta duyệt đỉnh \\(w\\), hai đỉnh \\(u\\), \\(v\\) sẽ nằm trong hai cây con khác nhau của đỉnh \\(w\\).
-
-Sau khi duyệt cây con của \\(w\\) chứa đỉnh \\(u\\) (giả sử cây con chứa đỉnh \\(u\\) được duyệt trước), toàn bộ các đỉnh của cây con sẽ chỉ đến đỉnh \\(w\\) là đỉnh đại diện của tập hợp chứa các đỉnh ấy cho tới khi chương trình duyệt xong đỉnh \\(w\\). Khi này, lúc duyệt sang cây con chứa đỉnh \\(v\\), đỉnh đại diện của tập hợp chứa đỉnh \\(u\\) (tức là đỉnh \\(w\\)) sẽ là LCA của cặp đỉnh \\((u, v)\\).
-
-Sử dụng lập luận trên, ta cũng có thể kết luận được rằng việc in \\(LCA(u, v)\\) của truy vấn \\((u, v)\\) chỉ xảy ra đúng một lần mặc dù truy vấn sẽ được xét \\(2\\) lần trong thuật toán.
+> [!NOTE]
+> Có lẽ điều làm bạn lăn tăn nhất về thuật toán này chính là phần in ra LCA của cặp đỉnh \\((u, v)\\). 
+> 
+> **Chứng minh:**
+> 
+> Giả sử \\(LCA(u, v) = w\\), ta có thể thấy: khi ta duyệt đỉnh \\(w\\), hai đỉnh \\(u\\), \\(v\\) sẽ nằm trong hai cây con khác nhau của đỉnh \\(w\\).
+> 
+> Sau khi duyệt cây con của \\(w\\) chứa đỉnh \\(u\\) (giả sử cây con chứa đỉnh \\(u\\) được duyệt trước), toàn bộ các đỉnh của cây con sẽ chỉ đến đỉnh \\(w\\) là đỉnh đại diện của tập hợp chứa các đỉnh ấy cho tới khi chương trình duyệt xong đỉnh \\(w\\). Khi này, lúc duyệt sang cây con chứa đỉnh \\(v\\), đỉnh đại diện của tập hợp chứa đỉnh \\(u\\) (tức là đỉnh \\(w\\)) sẽ là LCA của cặp đỉnh \\((u, v)\\).
+> 
+> Sử dụng lập luận trên, ta cũng có thể kết luận được rằng việc in \\(LCA(u, v)\\) của truy vấn \\((u, v)\\) chỉ xảy ra đúng một lần mặc dù truy vấn sẽ được xét \\(2\\) lần trong thuật toán.
 
 ### Độ phức tạp thuật toán
 

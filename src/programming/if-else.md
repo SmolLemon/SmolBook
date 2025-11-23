@@ -1,6 +1,6 @@
 # Câu lệnh rẽ nhánh
 
-Câu lệnh rẽ nhánh sẽ thực hiện một đoạn code nếu thỏa mãn điều kiện.
+Câu lệnh rẽ nhánh sẽ thực hiện một đoạn code nếu thoả mãn điều kiện.
 
 ```C++
 int a = 4;

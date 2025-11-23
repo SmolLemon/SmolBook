@@ -281,19 +281,19 @@ Kích thước của bitset phải cố định.
 
 Ta có thể gán các giá trị bit ban đầu cho bitset theo nhiều cách khác nhau:
 
-**1. Không gán trá trị:** khi này các bit sẽ có giá trị là \\(0\\).
+**1. Không gán giá trị:** khi này các bit sẽ có giá trị là \\(0\\).
 
 ```C++
 bitset<kích_thước> tên_bitset;
 ```
 
-**2. Gán trá trị bằng số:** khi này các bit sẽ có giá trị tương ứng với các bit của số tương ứng khi biểu diễn thành số nhị phân.
+**2. Gán giá trị bằng số:** khi này các bit sẽ có giá trị tương ứng với các bit của số tương ứng khi biểu diễn thành số nhị phân.
 
 ```C++
 bitset<kích_thước> tên_bitset(số_thập_phân);
 ```
 
-**3. Gán trá trị bằng xâu nhị phân:** khi này các bit sẽ có giá trị tương ứng với các kí tự trong xâu nhị phân.
+**3. Gán giá trị bằng xâu nhị phân:** khi này các bit sẽ có giá trị tương ứng với các kí tự trong xâu nhị phân.
 
 ```C++
 bitset<kích_thước> tên_bitset(xâu_nhị_phân);

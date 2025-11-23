@@ -38,9 +38,10 @@ Một đồ thị không có **khuyên**, không có các cạnh song song, vô 
 <img src="../images/simple_graph.svg" alt="Đơn đồ thị"/>
 </center>
 
-Note: 
-- **Khuyên** là các cạnh có dạng \\( uu \\).
-- Hai hoặc nhiều cạnh **song song** với nhau khi các cạnh có chung hai điểm đầu mút.
+> [!NOTE]
+> **Khuyên** là các cạnh có dạng \\( uu \\).
+>
+> Hai hoặc nhiều cạnh **song song** với nhau khi các cạnh có chung hai điểm đầu mút.
 
 ### Đa đồ thị
 
