@@ -41,7 +41,7 @@ Các tính chất này rất hữu ích khi ta cần tính số dư của một 
 
 ## Nghịch đảo modulo
 
-*Phần "Nghịch đảo modulo" được xuất hiện trên [VNOI Wiki](https://wiki.vnoi.info/vi/algo/math/modular-inverse)*
+*Được xuất hiện trên [VNOI Wiki](https://wiki.vnoi.info/vi/algo/math/modular-inverse)*
 
 <br>
 

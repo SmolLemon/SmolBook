@@ -25,15 +25,15 @@ Một thuật toán chạy "trâu" cho bài toán này có thể thực hiện c
 
 Ta cần rút ra một số nhận xét để có thể giải quyết được bài toán này. 
 
-Giả sử ta đã xây dựng được con đường ngắn nhất đi từ đỉnh \\(S\\) đến một đỉnh \\(u\\) nào đó trên đồ thị. Điều ta cần làm là lưu trạng thái của con đường ngắn nhất này để thực hiện QHĐ. Ta nhận xét rằng ta không cần quan tâm đến cách mà con đường này được hình thành, cụ thể hơn là thứ tự các đỉnh mà con đường này đi qua. Ta chỉ cần nhớ là đường đi này đi qua những đỉnh nào, và cuối đường đi ấy là đỉnh gì. 
+Giả sử ta đã xây dựng được con đường ngắn nhất đi từ đỉnh \\(S\\) đến một đỉnh \\(u\\) nào đó trên đồ thị. Điều ta cần làm là lưu trạng thái của con đường ngắn nhất này để thực hiện QHĐ. Ta nhận xét rằng ta không cần quan tâm đến cách mà con đường này được hình thành, cụ thể hơn là thứ tự các đỉnh mà con đường này đi qua. Ta chỉ cần nhớ là đường đi này đi qua những đỉnh nào và đỉnh cuối của đường đi đó. 
 
 Từ đây, ta có hai trạng thái quy hoạch động. Với mỗi đường đi ngắn nhất, ta có:
 - \\(X\\) là tập hợp các đỉnh trên đường đi. 
-- \\(u\\) là đỉnh cuối cùng của đường đi ấy.
+- \\(u\\) là đỉnh cuối của đường đi ấy.
 
 Giờ đây, nếu ta muốn tìm con đường ngắn nhất tới đỉnh \\(v\\), từ trạng thái \\((X, u)\\), ta có thể di chuyển tới trạng thái \\((X \cup \\{v\\}, v)\\) nếu tồn tại cạnh \\(uv\\) trên đồ thị.
 
-Từ đây, với \\(f(X, u)\\) là đường đi ngắn nhất từ đỉnh \\(S\\) tới đỉnh \\(u\\) chứa các đỉnh nằm trong tập \\(X\\), kết quả của bài toán sẽ bằng: \\[\min_{1 \le i \le n} f(G(V), i)\\]
+Từ đây, với \\(f(X, u)\\) là đường đi ngắn nhất từ đỉnh \\(S\\) tới đỉnh \\(u\\) đi qua các đỉnh nằm trong tập \\(X\\), kết quả của bài toán sẽ bằng: \\[\min_{1 \le i \le n} f(G(V), i)\\]
 
 Và \\(f(X, u)\\) có giá trị bằng: \\[f(X, u) = \min_{v \in X, uv \in E} (f(X \backslash \\{u\\}, v) + w(uv))\\]
 

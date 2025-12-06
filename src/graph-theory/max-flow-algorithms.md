@@ -152,10 +152,8 @@ struct EdmondsKarp{
         while((bottleneck = bfs()) > 0){ // tìm thấy đường tăng luồng
             // tăng luồng
             flow += bottleneck; 
-            int cur = t;
-            while(cur != s){
+            for(int cur = t; cur != s; cur = p[cur].first) {
                 edgeflow(p[cur].second, bottleneck);
-                cur = p[cur].first;
             }
         }
         return flow;

@@ -80,7 +80,7 @@ void FloydWarshall(){
 
 Độ phức tạp thuật toán là \\(O(|V|^3)\\).
 
-Sẽ có những lúc mà ta viết nhầm các vòng lặp lồng nhau trong thuật toán Floyd-Warshall - thay vì viết \\(k \rightarrow i \rightarrow j\\) thì lại viết nhầm thành \\(i \rightarrow j \rightarrow k\\) - cho ra kết quả sai. Dẫu vậy, lỗi này vẫn có thể cho ra kết quả đúng bằng cách lặp lại vòng lặp \\(3\\) lần: [bài viết](https://arxiv.org/abs/1904.01210).
+Sẽ có những lúc mà ta viết nhầm các vòng lặp lồng nhau trong thuật toán Floyd-Warshall - thay vì viết \\(k \rightarrow i \rightarrow j\\) thì lại viết nhầm thành \\(i \rightarrow j \rightarrow k\\) - cho ra kết quả sai. Dẫu vậy, lỗi này vẫn có thể cho ra kết quả đúng bằng cách lặp lại vòng lặp \\(3\\) lần [^1].
 
 ## Phát hiện chu trình âm
 
@@ -129,3 +129,5 @@ void printpath(int u, int v) {
 - Bellman-Ford/SPFA: \\(O(|V| \times (|V||E|)) \approx O(|V|^4)\\) với \\(|E| = O(|V|^2)\\). 
 
 Ta thấy, các thuật toán khác nếu không chậm hơn Floyd-Warshall thì độ dài các đoạn code cũng sẽ dài hơn Floyd-Warshall một cách đáng kể. 
+
+[^1]: [Ikumi Hide, Soh Kumabe, Takanori Maehara, Incorrect implementations of the Floyd--Warshall algorithm give correct solutions after three repeats, 2019](https://arxiv.org/abs/1904.01210)

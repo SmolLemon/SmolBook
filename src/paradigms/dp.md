@@ -114,11 +114,12 @@ for(int i = 3; i <= n; ++i){
 
 Độ phức tạp của thuật toán tương tự QHĐ Top-Down: \\(O(n)\\).
 
-Quá trình ta xây dựng các bài toán từ nhỏ đến lớn, và điền các kết quả ấy vào bảng QHĐ của ta được gọi là **tabulation**, tạm dịch sang tiếng Việt có nghĩa là **kĩ thuật ghi bàn**.	
+Quá trình ta xây dựng các bài toán từ nhỏ đến lớn, và điền các kết quả ấy vào bảng QHĐ của ta được gọi là **tabulation**, tạm dịch sang tiếng Việt có nghĩa là **kĩ thuật ghi bảng**.
 
-### Top-Down hay Bottom-Up?
-
-Đối với nhiều bài toán QHĐ, việc giải quyết bài toán theo hướng top-down thông thường sẽ dễ hiểu và cách cài đặt đơn giản hơn nhiều so hướng giải quyết bottom-up. Mặc khác, với hướng tiếp cận bottom-up, chương trình của ta sẽ ngắn gọn hơn chạy nhanh hơn so với top-down (trong hầu hết trường hợp).
+> [!NOTE]
+> **Top-Down hay Bottom-Up?**
+> 
+> Đối với nhiều bài toán QHĐ, việc giải quyết bài toán theo hướng top-down thông thường sẽ dễ hiểu và cách cài đặt đơn giản hơn nhiều so hướng giải quyết bottom-up. Mặc khác, với hướng tiếp cận bottom-up, chương trình của ta sẽ ngắn gọn hơn chạy nhanh hơn so với top-down (trong hầu hết trường hợp).
 
 ### QHĐ "đẩy" và "kéo"
 

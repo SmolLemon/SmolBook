@@ -71,7 +71,7 @@ Số chỉnh hợp có lặp sẽ là thứ giúp ta tính được số lượn
 
 ### Tổ hợp
 
-Một **Tổ hợp chập \\(k\\) của \\(n\\)** là một cách chọn \\(k\\) phần tử của tâp hợp \\(n\\) phần tử \\(\left( 0 \le k \le n \right)\\).
+Một **tổ hợp chập \\(k\\) của \\(n\\)** là một cách chọn \\(k\\) phần tử của tâp hợp \\(n\\) phần tử \\(\left( 0 \le k \le n \right)\\).
 
 Số tổ hợp chập \\(k\\) của \\(n\\) bằng: \\[C^k_n = \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{n \times (n - 1) \times \cdots \times (n - k + 1)}{1\times 2 \cdots k}\\]
 

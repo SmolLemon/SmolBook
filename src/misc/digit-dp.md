@@ -72,6 +72,8 @@ Khi này, ta sẽ gọi hàm \\(f\\) để tính \\(G(X)\\):
 - \\(n\\) là số chữ số của \\(X\\).
 - \\(S_1, S_2, \dots ,S_k\\) là số trạng thái của các tính chất.
 
+Một số hằng số trong độ phức tạp sẽ được giữ lại.
+
 Ta cùng xem qua một số bài toán ví dụ để hiểu rõ hơn.
 
 ## Vận dụng
@@ -90,7 +92,7 @@ Ta có các trạng thái QHĐ: \\((idx, smaller, sum)\\) với \\(idx\\), \\(sm
 
 Khi ta ở trạng thái \\((idx, smaller, sum)\\):
 
-Nếu \\(idx = -1\\), ta không còn vị trí nào để điền giá trị, ta trả về giá trị \\(sum\\). Nếu \\(idx\\) lớn hơn \\(-1\\), ta sẽ thực hiện gán giá trị cho \\(a_{idx}\\). 
+Nếu \\(idx = -1\\), ta không còn vị trí nào để điền giá trị, ta trả về giá trị \\(sum\\). Nếu \\(idx\\) khác \\(-1\\), ta sẽ thực hiện gán giá trị cho \\(a_{idx}\\). 
 
 Ta có thể điền các số từ \\(0\\) đến \\(limit\\) cho số \\(a_{idx}\\), với \\(limit = 9\\) nếu \\(smaller = 1\\), hoặc \\(limit = x_{idx}\\) nếu \\(smaller = 0\\). 
 
@@ -163,7 +165,7 @@ Bài toán này tương tự với bài toán ở ví dụ \\(1\\), có \\(3\\) 
 
 Nếu \\(idx = -1\\), hàm \\(f\\) của ta trả về \\(1\\) nếu \\(sum = 0\\) và \\(0\\) trong các trường hợp còn lại. Đồng thời, việc chuyển trạng thái \\(sum\\) sang \\(sum'\\) cũng thay đổi thành \\(sum' = (sum + v) \bmod{D}\\).
 
-Một điều nữa là hàm \\(f\\) cũng sẽ xét cả số \\(0\\) mặc dù bài toán không yêu cầu nên kết quả bài toán sẽ là: \\((G(K) - 1) \bmod{10^9 + 7}\\).
+Một điều nữa là hàm \\(f\\) cũng sẽ xét cả số \\(0\\) mặc dù bài toán không yêu cầu số \\(0\\) nên kết quả bài toán sẽ là: \\((G(K) - 1) \bmod{10^9 + 7}\\).
 
 ```C++
 #include <bits/stdc++.h>

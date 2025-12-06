@@ -154,7 +154,7 @@ bool bipartite(int u){
 			continue;
 		}
 		dist[v] = dist[u] ^ 1;
-		bipartite(v);
+		if(bipartite(v) == 0) return 0;
 	}
 	return 1;
 }
@@ -286,7 +286,7 @@ Số lần ta thực hiện DFS sẽ là số TPLT mạnh trong đồ thị và 
 
 
 ```C++
-// Đồ thị với các đỉnh bị đảo ngược
+// Đồ thị với các cạnh bị đảo ngược
 vector<int> rev[N];
 
 bitset<N> vst;

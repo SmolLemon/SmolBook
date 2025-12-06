@@ -36,7 +36,7 @@ Ta sẽ xây dựng thuật toán giải quyết bài toán này dựa theo phư
 <img src="../images/residual_graph_with_cost.png" alt="Đồ thị thặng dư kèm theo chi phí"/>
 </center>
 
-Sở dĩ ta cho cạnh ngược có chi phí \\(-a(uv)\\) là bởi cạnh ngược là các cạnh được dùng để hủy luồng đi qua cung trên mạng, và vì luồng đã bị hủy nên ta cũng loại bỏ chi phí khi đi qua cung ấy. 
+Sở dĩ ta cho cạnh ngược có chi phí \\(-a(uv)\\) là bởi cạnh ngược là các cạnh được dùng để huỷ luồng đi qua cung trên mạng, và vì luồng đã bị huỷ nên ta cũng loại bỏ chi phí khi đi qua cung ấy. 
 
 ### Đường tăng luồng
 
@@ -157,11 +157,9 @@ struct MinCostFlow{
         // tìm thấy đường tăng luồng
         // tìm điểm nghẽn và chi phí
         ll flow = INF, cost = 0;
-        int cur = t;
-        while(cur != s){
+        for(int cur = t; cur != s; cur = p[cur].first) {
             flow = min(flow, edge[p[cur].second].c);
             cost += edge[p[cur].second].w;
-            cur = p[cur].first;
         }
         return {flow, cost}; 
     }
@@ -173,10 +171,8 @@ struct MinCostFlow{
             // tăng luồng
             flow += bottleneck; 
             cost += c * bottleneck;
-            int cur = t;
-            while(cur != s){
+            for(int cur = t; cur != s; cur = p[cur].first) {
                 edgeflow(p[cur].second, bottleneck);
-                cur = p[cur].first;
             }
         }
         return {flow, cost}; // {luồng cực đại, chi phí cực tiểu}

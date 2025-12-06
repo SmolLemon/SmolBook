@@ -60,7 +60,10 @@ Ta ví dụ với mảng \\(a\\) có \\(12\\) phần tử: \\(a = [1, 4, 2, 3, 7
 |**\\(2\\)**|\\(1\\)|\\(2\\)|\\(2\\)|\\(2\\)|\\(2\\)|\\(2\\)|\\(3\\)|\\(3\\)|\\(0\\)|**\\(X\\)**|**\\(X\\)**|**\\(X\\)**|
 |**\\(3\\)**|\\(1\\)|\\(2\\)|\\(2\\)|\\(2\\)|\\(0\\)|**\\(X\\)**|**\\(X\\)**|**\\(X\\)**|**\\(X\\)**|**\\(X\\)**|**\\(X\\)**|**\\(X\\)**|
 
-Vì sao lại có một số phần tử lại không được tính? Ví dụ với phần tử \\((10, 2)\\) lưu GTNN trong khoảng \\([10, 13]\\), nhưng khoảng này lại tràn ra ngoài bảng thưa (mảng nằm trong khoảng \\([1, 12]\\) nhưng lại tính GTNN của khoảng \\([10, 13]\\)) nên ta không cần (nói đúng hơn là *không thể*) tính được, vì thế ta bỏ qua việc tính GTNN tại vị trí này trong bảng.
+> [!IMPORTANT]
+> **Vì sao lại có một số phần tử lại không được tính?**
+>
+> Ví dụ với phần tử \\((10, 2)\\) lưu GTNN trong khoảng \\([10, 13]\\), nhưng khoảng này lại tràn ra ngoài bảng thưa (mảng nằm trong khoảng \\([1, 12]\\) nhưng lại tính GTNN của khoảng \\([10, 13]\\)) nên ta không cần (nói đúng hơn là *không thể*) tính được, vì thế ta bỏ qua việc tính GTNN tại vị trí này trong bảng.
 
 ```C++
 void build(){

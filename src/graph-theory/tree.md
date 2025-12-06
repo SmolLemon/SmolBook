@@ -26,7 +26,7 @@ Ta đã biết được rằng mọi cạnh của cây đều là cạnh cầu. 
 
 ## Lưu trữ và duyệt cây
 
-Các [thuật toán duyệt](graph-traversal.md) và [tổ chức dữ liệu](overview.md#tổ-chức-dữ-liệu) trên đồ thị có thể sử dụng để duyệt là lưu trữ cây. Ta có chương trình duyệt cy từ một đỉnh bất kì.
+Các [thuật toán duyệt](graph-traversal.md) và [tổ chức dữ liệu](overview.md#tổ-chức-dữ-liệu) trên đồ thị có thể sử dụng để duyệt là lưu trữ cây. Ta có chương trình duyệt cây từ một đỉnh bất kì.
 
 ```C++
 void dfs(int u, int p){
@@ -37,12 +37,12 @@ void dfs(int u, int p){
 }
 ```
 
-Trong đó \\(u\\) là đỉnh ta đang xét và \\(p\\) là đỉnh trước đó. Để duyệt cây từ một đỉnh \\(x\\), ta viết: `dfs(x, 0)`. Ta choh \\(e = 0\\) để cho hàm viết rằng đỉnh \\(x\\) không có đỉnh trước đó, và ta có thể duyệt từ đỉnh \\(x\\) tới bất kì hướng nào (giả sử đồ thị không có đỉnh \\(0\\)).
+Trong đó \\(u\\) là đỉnh ta đang xét và \\(p\\) là đỉnh trước đó. Để duyệt cây từ một đỉnh \\(x\\), ta viết: `dfs(x, 0)`. Ta chọn \\(p = 0\\) để cho hàm viết rằng đỉnh \\(x\\) không có đỉnh trước đó, và ta có thể duyệt từ đỉnh \\(x\\) tới bất kì hướng nào (giả sử đồ thị không có đỉnh \\(0\\)).
 
 Nếu ta duyệt từ đỉnh gốc, ta có thể lưu các thông tin như đỉnh cha `par`, chiều cao `h`, v.v.
 
 ```C++
-int par[N]; // par[x] = 0 => x la đỉnh gốc
+int par[N]; // par[x] = 0 => x là đỉnh gốc
 int h[N] // h[x] = 0 => x là đỉnh gốc
 void dfs(int u){
 	for(int v : adj[u]){

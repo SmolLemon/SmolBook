@@ -12,7 +12,7 @@ Giả sử ta chọn một đỉnh \\(c\\) bất kì trên cây, khi này ta đ�
 - Trường hợp \\(1\\): các đường đi giữa các cặp đỉnh **_có_** đi qua đỉnh \\(c\\).
 - Trường hợp \\(2\\): các đường đi giữa các cặp đỉnh **_không_** đi qua đỉnh \\(c\\).
 
-Ta có thể đếm số lượng các đường đi thuộc trường hợp \\(1\\) thoả mãn yêu cầu bằng cách kết hợp các đường đi từ đỉnh \\(c\\), tức là kết hợp các đường đi của các cặp đỉnh \\(u, c\\) với các đường đi của các cặp đỉnh \\(c, v\\). Một đường đi đơn lẻ từ đỉnh \\(c\\) đến một đỉnh bất kì cũng có thể là một đường đi thoả mãn.
+Ta có thể đếm số lượng các đường đi thuộc trường hợp \\(1\\) thoả mãn yêu cầu bằng cách kết hợp các đường đi từ đỉnh \\(c\\), tức là kết hợp các đường đi của các cặp đỉnh \\(\\{u, c\\}\\) với các đường đi của các cặp đỉnh \\(\\{c, v\\}\\). Một đường đi đơn lẻ từ đỉnh \\(c\\) đến một đỉnh bất kì cũng có thể là một đường đi thoả mãn.
 
 Nếu ta xoá đỉnh \\(c\\), các đường đi thuộc trường hợp \\(2\\) sẽ tập trung lại với nhau để hình thành nên các cây con. Khi này, ta có thể xử lí các cây con này một cách đệ quy theo phương pháp mà ta đã nói ở trên.
 

@@ -16,7 +16,7 @@ Trong lập trình, kiểu dữ liệu lưu các số nguyên có \\(n\\) bit đ
 
 \\[00000000000000000000000011000001\\]
 
-Để biểu diễn giá trị âm trên dãy số nguyên, ta sử dụng **Two's complement (phần bù của \\(2\\))**. Khi này, giá trị của một dãy số nhị phân \\((b_k b_{k-1}... b_1 b_0)\\) là:
+Để biểu diễn giá trị âm trên dãy số nguyên, máy tính sử dụng **two's complement (phần bù của \\(2\\))**. Khi này, giá trị của một dãy số nhị phân \\((b_k b_{k-1}... b_1 b_0)\\) là:
 
 \\[b_k \times {-2}^k + b_{k - 1} \times 2^{k - 1}  + ... + b_{1} \times 2^{1} + b_{0} \times 2^{0}\\]
 
@@ -89,10 +89,10 @@ a >> 2  =     1 (Thập phân: 1)
 Nếu chỉ nhân hoặc chia một số với một luỹ thừa của \\(2\\), ta có thể dịch bit của số nguyên ấy. Mỗi lần dịch 1 bit sang trái sẽ tương đương với nhân số ấy với \\(2\\), mỗi lần dịch \\(1\\) bit sang phải sẽ tương đương với chia lấy phần nguyên cho \\(2\\).
 
 ```
-S                  =  0011100 (Thập phân: 28)
-S = S * 2 = S << 1 =   111000 (Thập phân: 56)
-S = S * 8 = S << 3 = 11100000 (Thập phân: 224)
-S = S / 4 = S >> 2 =      111 (Thập phân: 7)
+S              =    11100 (Thập phân: 28)
+S * 2 = S << 1 =   111000 (Thập phân: 56)
+S * 8 = S << 3 = 11100000 (Thập phân: 224)
+S / 4 = S >> 2 =      111 (Thập phân: 7)
 ```
 
 ### Bitmask (Mảng bit)
