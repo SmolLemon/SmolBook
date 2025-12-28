@@ -50,6 +50,6 @@ arr.emplace_back(3);
 
 Ta có thể truy cập phần tử giống như mảng tĩnh. Ví dụ, `arr[2]` truy cập phần tử thứ \\(3\\) trong mảng `arr`.
 
-`vector` còn có những câu lệnh khác như `size()` - trả về kích thước của mảng, `empty()` - trả về \\(true/false\\) nếu mảng rỗng hoặc không rỗng, `clear()` - xóa hết các phần tử trong mảng,...
+`vector` còn có những câu lệnh khác như `size()` - trả về kích thước của mảng, `empty()` - trả về \\(true/false\\) nếu mảng rỗng hoặc không rỗng, `clear()` - xoá hết các phần tử trong mảng,...
 
 `string` là một kiểu dữ liệu lưu trữ các xâu. Ta có thể xem `string` là một mảng động dành riêng cho các kí tự.

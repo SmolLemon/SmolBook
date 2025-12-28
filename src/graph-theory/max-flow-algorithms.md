@@ -175,9 +175,9 @@ Thuật toán Dinic giống như thuật toán Edmonds-Karp ở chỗ nó sẽ t
 <img src="../images/dinic_level_graph.png" alt="Bước 1 Dinic"/>
 </center>
 
-Tiếp theo, thuật toán sẽ tìm các đường tăng luồng \\(P\\) thỏa mãn điều kiện rằng với mỗi đỉnh trong đường tăng luồng trừ đỉnh cuối, đỉnh tiếp theo sẽ có giá trị tầng lớn hơn \\(1\\).
+Tiếp theo, thuật toán sẽ tìm các đường tăng luồng \\(P\\) thoả mãn điều kiện rằng với mỗi đỉnh trong đường tăng luồng trừ đỉnh cuối, đỉnh tiếp theo sẽ có giá trị tầng lớn hơn \\(1\\).
 
-Thuật toán sẽ tiếp tục tìm các đường tăng luồng cho tới khi xuất hiện **luồng chặn (blocking flow)** - xảy ra khi không còn đường tăng luồng thỏa mãn điều kiện đã nói ở trên. Khi này, thuật toán quay trở lại bước đầu tiên.
+Thuật toán sẽ tiếp tục tìm các đường tăng luồng cho tới khi xuất hiện **luồng chặn (blocking flow)** - xảy ra khi không còn đường tăng luồng thoả mãn điều kiện đã nói ở trên. Khi này, thuật toán quay trở lại bước đầu tiên.
 
 Thuật toán sẽ kết thúc khi đã tìm được luồng cực đại trên mạng.
 

@@ -33,7 +33,7 @@ Ta có:
 \end{align*}
 \\]
 
-Thuật toán trên thỏa mãn hai tính chất của một thuật toán tham lam:
+Thuật toán trên thoả mãn hai tính chất của một thuật toán tham lam:
 
 - Cấu trúc con tối ưu: Lời giải tối ưu cho \\(670\\) nghìn đồng sử dụng đáp án của lời giải tối ưu cho \\(170\\) nghìn đồng. Lời giải cho \\(170\\) lại sử dụng đáp án của lời giải \\(70\\) nghìn đồng và cứ tiếp tục như thế.
 - Tính tham lam: Sử dụng thuật toán tham lam, ta có thể tìm ra kết quả tối ưu của bài toán (bỏ qua phần chứng minh).

@@ -86,7 +86,7 @@ void dijkstra(int s){
 
 Một cách cài đặt Dijkstra phổ biến khác sử dụng `priority_queue` để tìm đỉnh chưa xét có khoảng cách ngắn nhất. `priority_queue` sẽ xét thứ tự ưu tiên cho các cặp giá trị \\(\\{dist_u, u\\}\\) theo \\(dist_u\\) giảm dần, và nếu các \\(dist_u\\) bằng nhau thì theo \\(u\\) giảm dần. 
 
-Không giống `set`, ta không thể xóa một phần tử bất kì trong `priority_queue`. Vì thế, ta sẽ áp dụng phương pháp "xóa lười". Giả sử ta thành công cập nhật \\(dist_v\\), ta sẽ thêm vào `pq` một cặp \\(\\{dist_v, v\\}\\) mới, có \\(dist_v\\) nhỏ hơn so với cặp \\(\\{dist_v, v\\}\\) cũ ở trong `pq`. Giả sử khi ta xét đến cặp \\(\\{dist_v, v\\}\\) cũ trong `pq`, ta có thể bỏ qua cặp giá trị này. 
+Không giống `set`, ta không thể xoá một phần tử bất kì trong `priority_queue`. Vì thế, ta sẽ áp dụng phương pháp "xoá lười". Giả sử ta thành công cập nhật \\(dist_v\\), ta sẽ thêm vào `pq` một cặp \\(\\{dist_v, v\\}\\) mới, có \\(dist_v\\) nhỏ hơn so với cặp \\(\\{dist_v, v\\}\\) cũ ở trong `pq`. Giả sử khi ta xét đến cặp \\(\\{dist_v, v\\}\\) cũ trong `pq`, ta có thể bỏ qua cặp giá trị này. 
 
 ```C++
 void dijkstra(int s){
@@ -101,7 +101,7 @@ void dijkstra(int s){
 	int v, w;
 	while(pq.size()){
 		tie(d, u) = pq.top(); pq.pop();
-		if(d > dist[u]) continue; // xóa lười
+		if(d > dist[u]) continue; // xoá lười
 		if(vst[u]) continue;
 
 		for(auto it : adj[u]){

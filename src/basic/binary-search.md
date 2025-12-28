@@ -100,7 +100,7 @@ for(int i = 1; i <= [iteration_count]; ++i){
 }
 ```
 
-Thay đổi `[iterator_count]` để tạo sự cân bằng giữa độ chính xác kết quả và tốc độ thuật toán. Thường thì ta sẽ chọn `100` cho `[iterator_count]`.
+Thay đổi `[iterator_count]` để tạo sự cân bằng giữa độ chính xác kết quả và tốc độ thuật toán. Thường thì ta sẽ chọn `[iterator_count]` trong khoảng \\([40, 60]\\).
 
 ## Hàm tìm kiếm nhị phân trong C++
 

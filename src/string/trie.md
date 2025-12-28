@@ -16,7 +16,7 @@ Dưới đây là ví dụ của một trie lưu trữ \\(4\\) xâu "mèo", "cá
 
 ## Thêm xâu
 
-Quá trình thêm xâu S vào tập hợp diễn ra như sau: gọi đỉnh đang duyệt trên cây là \\(p\\), ban đầu ta cho \\(p\\) nằm tại gốc. Ta bắt đầu duyệt các kí tự trên sâu S. Giả sử kí tự hiện tại đang duyệt là `c`. Nếu có đỉnh con của \\(p\\) được nối với cạnh có trọng số là `c`, ta di chuyển tới đỉnh con ấy. Nếu như không có thì ta cần tạo một đỉnh con mới tương ứng rồi sau đó mới di chuyển.  
+Quá trình thêm xâu \\(S\\) vào tập hợp diễn ra như sau: gọi đỉnh đang duyệt trên cây là \\(p\\), ban đầu ta cho \\(p\\) nằm tại gốc. Ta bắt đầu duyệt các kí tự trên sâu S. Giả sử kí tự hiện tại đang duyệt là `c`. Nếu có đỉnh con của \\(p\\) được nối với cạnh có trọng số là `c`, ta di chuyển tới đỉnh con ấy. Nếu như không có thì ta cần tạo một đỉnh con mới tương ứng rồi sau đó mới di chuyển.  
 
 Ví dụ, khi ta thêm xâu "muỗi" không dấu: từ đỉnh gốc \\(0\\) ta đi xuống đỉnh \\(2\\) bằng cạnh có trọng số là kí tự `m`. Tiếp theo, vì ta không có cạnh nào có trọng số `u` đi tới đỉnh con của đỉnh \\(2\\) nên ta tạo một đỉnh mới tương ứng và tiếp tục duyệt. Quá trình này lặp lại cho tới khi ta duyệt xong kí tự cuối cùng, tức là kí tự `i`.
 
@@ -24,11 +24,11 @@ Ví dụ, khi ta thêm xâu "muỗi" không dấu: từ đỉnh gốc \\(0\\) ta
 <img src="../images/trie_insert.png" alt="Thêm xâu muỗi vào trie"/>
 </center>
 
-Độ phức tạp của việc thêm xâu S là \\(O(|S|)\\).
+Độ phức tạp của việc thêm xâu \\(S\\) là \\(O(|S|)\\).
 
 ## Tìm kiếm xâu
 
-Đối với quá trình tìm kiếm xâu S trong trie thì quá trình duyệt cũng tương tự với việc thêm xâu. Điểm khác biệt là nếu không có đường đi hình thành xâu S thì ta trả về là không tìm được. Khi như có đường đi, ta kiểm tra xem nếu S có phải là một xâu kí tự trong trie hay không. Để thực hiện điều này ta gần gán giá trị cho các đỉnh trên cây biểu thị rằng xâu hình thành từ đường đi từ đỉnh gốc đến đỉnh này là xâu kí tự mà ta đã thêm. Ở đây, ta thấy các đỉnh màu xanh lá (\\(6, 7, 8, 9, 12\\)) biểu thị giá trị ấy.
+Đối với quá trình tìm kiếm xâu \\(S\\) trong trie thì quá trình duyệt cũng tương tự với việc thêm xâu. Điểm khác biệt là nếu không có đường đi hình thành xâu \\(S\\) thì ta trả về là không tìm được. Khi như có đường đi, ta kiểm tra xem nếu \\(S\\) có phải là một xâu kí tự trong trie hay không. Để thực hiện điều này ta gần gán giá trị cho các đỉnh trên cây biểu thị rằng xâu hình thành từ đường đi từ đỉnh gốc đến đỉnh này là xâu kí tự mà ta đã thêm. Ở đây, ta thấy các đỉnh màu xanh lá (\\(6, 7, 8, 9, 12\\)) biểu thị giá trị ấy.
 
 <center>
 <img src="../images/trie_find.png" alt="Tìm kiếm xâu trong trie"/>
@@ -36,13 +36,13 @@ Ví dụ, khi ta thêm xâu "muỗi" không dấu: từ đỉnh gốc \\(0\\) ta
 
 Khi ta tìm kiếm một xâu như xâu "cá" không dấu, mặc dù tồn tại đường đi trên cây nhưng do đỉnh \\(3\\) không được gán giá trị nêu trên nên ta kết luận xâu "cá" không có trong trie. Ở một ví dụ khác, xâu "cóc" không dấu không có trong trie do không tồn tại đường đi trên trie hình thành nên xâu này.
 
-Độ phức tạp của việc tìm kiếm xâu S là \\(O(|S|)\\).
+Độ phức tạp của việc tìm kiếm xâu \\(S\\) là \\(O(|S|)\\).
 
 ## Xoá xâu
 
-Trước khi thực hiện xoá xâu S thì ta cần phải biết được rằng nếu xâu S có tồn tại trong trie hay không. Sau khi đã xác định sự tồn tại của xâu S, ta thực hiện việc xoá xâu S. 
+Trước khi thực hiện xoá xâu \\(S\\) thì ta cần phải biết được rằng nếu xâu \\(S\\) có tồn tại trong trie hay không. Sau khi đã xác định sự tồn tại của xâu \\(S\\), ta thực hiện việc xoá xâu \\(S\\). 
 
-Trước hết, ở các đỉnh của trie, ta thêm một biến biểu thị số lượng xâu có tiền tố là đường đi từ gốc đến đỉnh ấy. Sau đó, ta thực hiện trừ \\(1\\) các giá trị trên các đỉnh là tiền tố của xâu S. Cuối cùng, thực hiện xoá các đỉnh mà biến của nó bằng \\(0\\).
+Trước hết, ở các đỉnh của trie, ta thêm một biến biểu thị số lượng xâu có tiền tố là đường đi từ gốc đến đỉnh ấy. Sau đó, ta thực hiện trừ \\(1\\) các giá trị trên các đỉnh là tiền tố của xâu \\(S\\). Cuối cùng, thực hiện xoá các đỉnh mà biến của nó bằng \\(0\\).
 
 <center>
 <img src="../images/trie_deletion.png" alt="Xoá xâu trong trie"/>
@@ -50,7 +50,7 @@ Trước hết, ở các đỉnh của trie, ta thêm một biến biểu thị 
 
 Giả sử ta muốn xoá xâu "mèo" không dấu. Ta thấy rằng xâu "mèo" có tồn tại trên trie nên ta sẽ thực hiện việc xoá xâu. Các đỉnh \\(2, 5, 9\\), vì là các tiền tố của xâu "mèo", sẽ bị giảm giá trị xuống còn \\(1, 0, 0\\) thay vì \\(2, 1, 1\\) như ban đầu. Vì không có xâu nào có tiền tố là "me" và "meo" nên ta thực hiện việc xoá hai đỉnh \\(5, 9\\).
 
-Độ phức tạp của việc xoá xâu S là \\(O(|S|)\\).
+Độ phức tạp của việc xoá xâu \\(S\\) là \\(O(|S|)\\).
 
 ## Cài đặt
 

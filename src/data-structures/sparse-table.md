@@ -78,9 +78,9 @@ void build(){
 }
 ```
 
-### Xử lý truy vấn
+### Xử lí truy vấn
 
-Đối với các hàm có tính chất [kết hợp](https://vi.wikipedia.org/wiki/T%C3%ADnh_k%E1%BA%BFt_h%E1%BB%A3p), hay các hàm có tính chất \\(f(f(x, y), z) = f(x, f(y, z))\\), các truy vấn có thể được xử lý trong \\(O(\log{n})\\).
+Đối với các hàm có tính chất [kết hợp](https://vi.wikipedia.org/wiki/T%C3%ADnh_k%E1%BA%BFt_h%E1%BB%A3p), hay các hàm có tính chất \\(f(f(x, y), z) = f(x, f(y, z))\\), các truy vấn có thể được xử lí trong \\(O(\log{n})\\).
 
 Ta sẽ chia đoạn \\([l, r]\\) thành các phân đoạn có độ dài bằng các luỹ thừa của 2 và tìm GTNN của các phân đoạn:
 
@@ -100,7 +100,7 @@ int rmq(int l, int r){
 }
 ```
 
-Đối với các hàm cho phép *trùng lặp* các phần tử, hay các hàm thỏa mãn \\(f(a, a) = a\\), ta có thể thực hiện việc tính kết quả trong \\(O(1)\\).
+Đối với các hàm cho phép *trùng lặp* các phần tử, hay các hàm thoả mãn \\(f(a, a) = a\\), ta có thể thực hiện việc tính kết quả trong \\(O(1)\\).
 
 Ta thực hiện việc tìm GTNN như sau:
 - Gọi \\(k\\) là số nguyên lớn nhất sao cho \\(2^k \le r - l + 1\\), GTNN của đoạn \\((l, r)\\) bằng:

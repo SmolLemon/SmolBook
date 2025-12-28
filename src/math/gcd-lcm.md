@@ -131,7 +131,7 @@ Ta còn có cách cài đặt đệ quy có độ phức tạp tương tự:
 tuple<int, int, int> extgcd(int a, int b){
 	if(b == 0) return {a, 1, 0};
 	int x, y, d; 
-	tie(d, x, y) = ext_gcd(b, a % b);
+	tie(d, x, y) = extgcd(b, a % b);
 	return make_tuple(d, y, x - y * (a / b));
 }
 ```

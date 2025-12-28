@@ -132,13 +132,13 @@ Ta chọn đỉnh \\(1\\).
 <img src="../images/mst_prim_1.png" alt="Đỉnh 1"/>
 </center>
 
-Bước tiếp theo, ta thấy cạnh \\(\\{1, 2\\}\\) là cạnh có trọng số nhỏ nhất, có hai đỉnh đầu mút thỏa mãn yêu cầu nên ta thêm cạnh \\(\\{1, 2\\}\\) và đỉnh \\(2\\) vào cây khung.
+Bước tiếp theo, ta thấy cạnh \\(\\{1, 2\\}\\) là cạnh có trọng số nhỏ nhất, có hai đỉnh đầu mút thoả mãn yêu cầu nên ta thêm cạnh \\(\\{1, 2\\}\\) và đỉnh \\(2\\) vào cây khung.
 
 <center>
 <img src="../images/mst_prim_2.png" alt="Thêm đỉnh 2 và cạnh {1, 2}"/>
 </center>
 
-Sau đó, ta thấy cạnh \\(\\{2, 7\\}\\) là cạnh có trọng số nhỏ nhất, có hai đỉnh đầu mút thỏa mãn yêu cầu nên ta thêm cạnh \\(\\{2, 7\\}\\) và đỉnh \\(7\\) vào cây khung.
+Sau đó, ta thấy cạnh \\(\\{2, 7\\}\\) là cạnh có trọng số nhỏ nhất, có hai đỉnh đầu mút thoả mãn yêu cầu nên ta thêm cạnh \\(\\{2, 7\\}\\) và đỉnh \\(7\\) vào cây khung.
 
 <center>
 <img src="../images/mst_prim_3.png" alt="Thêm đỉnh 7 và cạnh {2, 7}"/>
@@ -188,7 +188,7 @@ int prim(){
 
 Độ phức tạp của thuật toán là \\(O((|V| + |E|)\log{|V|})\\). 
 
-Ta thấy cách cài đặt của thuật Prim rất giống với cách cài đặt của thuật toán [Dijkstra](dijkstra.md#thuật-toán). Và cũng tương tự với Dijkstra, ta cũng có thể áp dụng kĩ thuật [xóa lười](dijkstra.md#dijkstra--priority_queue) với thuật toán Prim.
+Ta thấy cách cài đặt của thuật Prim rất giống với cách cài đặt của thuật toán [Dijkstra](dijkstra.md#thuật-toán). Và cũng tương tự với Dijkstra, ta cũng có thể áp dụng kĩ thuật [xoá lười](dijkstra.md#dijkstra--priority_queue) với thuật toán Prim.
 
 Dưới đây là cách cài đặt sử dụng `priority_queue`.
 

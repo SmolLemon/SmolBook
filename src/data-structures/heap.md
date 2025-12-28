@@ -1,6 +1,6 @@
 # Heap
 
-**Heap** là một cấu trúc dữ liệu lưu các giá trị trên [cây](../graph-theory/tree.md). Các giá trị được lưu trên heap phải thỏa mãn *tính chất heap (heap property)*:
+**Heap** là một cấu trúc dữ liệu lưu các giá trị trên [cây](../graph-theory/tree.md). Các giá trị được lưu trên heap phải thoả mãn *tính chất heap (heap property)*:
 - Các đỉnh cha có *thứ tự ưu tiên* lớn hơn các đỉnh con của nó (TC1)
 
 Ta có heap *max* với các giá trị *lớn hơn* sẽ có thứ tự ưu tiên *lớn hơn*, và heap *min* thì ngược lại.
@@ -20,13 +20,13 @@ Giả sử ta có một heap sau chứa \\(11\\) phần tử:
 
 Và ta muốn thêm một phần tử có giá trị \\(12\\) vào heap.
 
-Đầu tiên, để việc thêm phần tử thỏa mãn TC2, ta sẽ thêm phần tử này vào vị trí \\(12\\).
+Đầu tiên, để việc thêm phần tử thoả mãn TC2, ta sẽ thêm phần tử này vào vị trí \\(12\\).
 
 <center>
 <img src="../images/heap_enqueue_12.png" alt="Thêm phần tử 12"/>
 </center>
 
-Mặc dù đã thỏa mãn TC2 nhưng TC1 lại không thỏa mãn (đỉnh cha của đỉnh \\(12\\) (đỉnh \\(6\\)) có thứ tự ưu tiên nhỏ hơn). 
+Mặc dù đã thoả mãn TC2 nhưng TC1 lại không thoả mãn (đỉnh cha của đỉnh \\(12\\) (đỉnh \\(6\\)) có thứ tự ưu tiên nhỏ hơn). 
 
 Để giải quyết vấn đề này, ta cần cho giá trị này "nổi" lên - Vì đỉnh cha của đỉnh \\(12\\) có giá trị với thứ tự ưu tiên nhỏ hơn, ta hoán đổi giá trị của hai đỉnh \\(12\\) và \\(6\\).
 
@@ -34,10 +34,10 @@ Mặc dù đã thỏa mãn TC2 nhưng TC1 lại không thỏa mãn (đỉnh cha 
 <img src="../images/heap_bubble_up_6_12.png" alt="Hoán đổi 6 và 12"/>
 </center>
 
-Tuy nhiên, TC1 vẫn chưa thỏa mãn! Ta sẽ tiếp tục nổi bọt cho tới khi TC1 thỏa mãn thì dừng lại.
+Tuy nhiên, TC1 vẫn chưa thoả mãn! Ta sẽ tiếp tục nổi bọt cho tới khi TC1 thoả mãn thì dừng lại.
 
 <center>
-<img src="../images/heap_bubble_up_fin.png" alt="Hoán đổi cho tới khi thỏa mãn"/>
+<img src="../images/heap_bubble_up_fin.png" alt="Hoán đổi cho tới khi thoả mãn"/>
 </center>
 
 Độ phức tạp của thao tác thêm phần tử là \\(O(\log{n})\\) tương ứng với chiều cao của một cây nhị phân hoàn chỉnh. 
@@ -48,13 +48,13 @@ Tuy nhiên, TC1 vẫn chưa thỏa mãn! Ta sẽ tiếp tục nổi bọt cho t�
 
 Ta sẽ thực hiện việc xoá giá trị có thứ tự lớn nhất trong heap. 
 
-Để thỏa mãn TC2, ta sẽ hoán đổi giá trị của đỉnh gốc và đỉnh cuối cùng của cây, sau đó xoá đỉnh cuối cùng này ra khỏi heap
+Để thoả mãn TC2, ta sẽ hoán đổi giá trị của đỉnh gốc và đỉnh cuối cùng của cây, sau đó xoá đỉnh cuối cùng này ra khỏi heap
 
 <center>
 <img src="../images/heap_dequeue_top.png" alt="Hoán đổi và xoá"/>
 </center>
 
-Thế nhưng TC1 lại không thỏa mãn! Giống với việc thêm phần tử, ta cũng sẽ hoán đổi các giá trị của các đỉnh, nhưng thay vì "nổi lên", nó lại "chìm xuống".
+Thế nhưng TC1 lại không thoả mãn! Giống với việc thêm phần tử, ta cũng sẽ hoán đổi các giá trị của các đỉnh, nhưng thay vì "nổi lên", nó lại "chìm xuống".
 
 Ta sẽ hoán đổi giá trị ấy với giá trị có thứ tự ưu tiên lớn hơn trong các đỉnh con, và cứ tiếp tục cho tới khi không thể chìm được nữa. 
 

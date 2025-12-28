@@ -22,7 +22,7 @@ Ta định nghĩa **cạnh nặng** là các cạnh \\(uv\\) nối đỉnh \\(u\
 
 Từ các cạnh nặng ta có thể tạo thành các đường đi trên đỉnh giúp giải bài toán. Ta gọi các đường đi được tạo thành bởi các cạnh nặng là một **đường đi nặng**. Đối với các đỉnh không được nối bởi bất đường đi nặng nào, ta có thể coi đỉnh đó là một đường đi nặng có \\(1\\) đỉnh.
 
-Để có thể có nhiều cạnh nặng, ta có thể cho phép cạnh \\(uv\\) là cạnh nặng nếu đỉnh \\(v\\) là đỉnh có cây con lớn nhất trong tất cả các đỉnh con của \\(u\\), nếu có nhiều đỉnh thỏa mãn thì chọn một đỉnh bất kì.
+Để có thể có nhiều cạnh nặng, ta có thể cho phép cạnh \\(uv\\) là cạnh nặng nếu đỉnh \\(v\\) là đỉnh có cây con lớn nhất trong tất cả các đỉnh con của \\(u\\), nếu có nhiều đỉnh thoả mãn thì chọn một đỉnh bất kì.
 
 Ở ví dụ dưới đây, nếu áp dụng định nghĩa cũ thì sẽ không xuất hiện cạnh nặng, còn nếu áp dụng định nghĩa mới thì ta sẽ có một cạnh nặng \\(\\{1, 2\\}\\) hoặc \\(\\{1, 3\\}\\), \\(\\{1, 4\\}\\).
 

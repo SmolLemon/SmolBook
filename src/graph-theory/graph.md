@@ -85,7 +85,7 @@ Một đồ thị **không có trọng số (unweighted)** là một đồ thị
 
 ### Đồ thị con
 
-Một đồ thị \\(G_s = (V, E)\\) là **đồ thị con (subgraph)** của một đồ thị \\(G = (V, E)\\) khi tập đỉnh và tập cạnh của \\(G_s\\) là tập con của các tập hợp tương ứng của \\(G\\), hay \\(V(G_s) \subseteq V(G) \\) và \\(E(G_s) \subseteq E(G) \\) thỏa mãn.
+Một đồ thị \\(G_s = (V, E)\\) là **đồ thị con (subgraph)** của một đồ thị \\(G = (V, E)\\) khi tập đỉnh và tập cạnh của \\(G_s\\) là tập con của các tập hợp tương ứng của \\(G\\), hay \\(V(G_s) \subseteq V(G) \\) và \\(E(G_s) \subseteq E(G) \\) thoả mãn.
 
 ## Các dạng đồ thị đặc biệt
 
@@ -137,7 +137,7 @@ Cho một đồ thị \\(G = (V, E)\\):
 
 **1.** Hai đỉnh \\(u\\) và \\(v\\) của \\(G\\) **kề nhau (adjacent)** khi \\(uv \in E\\), hay \\(uv\\) là một cạnh của \\(G\\). Khi này, ta nói cạnh \\(uv\\) là cạnh **liên thuộc (incident)** với hai đỉnh \\(u\\) và \\(v\\), đồng thời \\(u\\), \\(v\\) là hai **đỉnh đầu mút (endpoints)** của cạnh \\(uv\\).
 
-**2.** Cho đỉnh \\(u \in V\\), các đỉnh **hàng xóm (neighbours)** với đỉnh \\(u\\) là tất cả các đỉnh \\(v \in V\\) thỏa mãn \\(uv \in E\\), hay tất cả các đỉnh \\(v\\) kề với \\(u\\).
+**2.** Cho đỉnh \\(u \in V\\), các đỉnh **hàng xóm (neighbours)** với đỉnh \\(u\\) là tất cả các đỉnh \\(v \in V\\) thoả mãn \\(uv \in E\\), hay tất cả các đỉnh \\(v\\) kề với \\(u\\).
 
 **3.** Cho đỉnh \\(u \in V\\), **bậc (degree)** của đỉnh \\(u\\) chính là số lượng hàng xóm của đỉnh \\(u\\). Kí hiệu: \\(deg(u)\\). Ta có một số bổ đề về bậc như [bổ đề bắt tay](https://en.wikipedia.org/wiki/Handshaking_lemma): 
 \\[\sum_{u \in V} deg(u) = 2|E|\\]
@@ -178,15 +178,15 @@ Cho một đồ thị \\(G = (V, E)\\):
 **1.** Hai đỉnh \\(u\\) và \\(v\\) của \\(G\\) **liên thông** nếu tồn tại ít nhất \\(1\\) đường đi từ \\(u\\) đến \\(v\\).
 
 **2.** \\(G\\) **liên thông (connected)** khi mọi cặp đỉnh của \\(G\\) tồn tại đường đi. 
-\\(G\\) **song liên thông (biconnected)** nếu nó liên thông và không có đỉnh khớp, nghĩa là nếu xóa một đỉnh bất kì thì đồ thị vẫn liên thông.
+\\(G\\) **song liên thông (biconnected)** nếu nó liên thông và không có đỉnh khớp, nghĩa là nếu xoá một đỉnh bất kì thì đồ thị vẫn liên thông.
 
 **3.** Đối với một đồ thị có hướng:
 - Một đồ thị có hướng \\(G\\) được gọi là **liên thông mạnh (strongly connected)** nếu mọi cặp đỉnh của \\(G\\) tồn tại đường đi.
 - Một đồ thị có hướng \\(G\\) được gọi là **liên thông yếu (weakly connected)** nếu khi ta xem đồ thị \\(G\\) là một đồ thị vô hướng thì \\(G\\) liên thông.
 
-**4.** Đỉnh \\(u\\) thuộc \\(G\\) được gọi là **khớp (articulation point)** nếu khi ta xóa bỏ đỉnh \\(u\\) khỏi đồ thị thì \\(G\\) không còn liên thông.
+**4.** Đỉnh \\(u\\) thuộc \\(G\\) được gọi là **khớp (articulation point)** nếu khi ta xoá bỏ đỉnh \\(u\\) khỏi đồ thị thì \\(G\\) không còn liên thông.
 
-**5.** Cạnh \\(uv\\) thuộc \\(G\\) được gọi là **cầu (bridge)** nếu khi ta xóa bỏ cạnh \\(uv\\) khỏi đồ thị thì \\(G\\) không còn liên thông.
+**5.** Cạnh \\(uv\\) thuộc \\(G\\) được gọi là **cầu (bridge)** nếu khi ta xoá bỏ cạnh \\(uv\\) khỏi đồ thị thì \\(G\\) không còn liên thông.
 
 **6.** Nếu \\(G\\) không liên thông, \\(G\\) sẽ tồn tại nhiều đồ thị con liên thông, rời nhau. Mỗi đồ thị con đó được gọi là một **thành phần liên thông (TPLT) (connected component)** của \\(G\\).
 
@@ -196,7 +196,7 @@ Cho một đồ thị \\(G = (V, E)\\):
 
 Cho một đồ thị \\(G = (V, E)\\):
 
-**1.** \\(G\\) là cây khi nó thỏa mãn ít nhất \\(2\\) điều kiện dưới đây:
+**1.** \\(G\\) là cây khi nó thoả mãn ít nhất \\(2\\) điều kiện dưới đây:
 - \\(G\\) không có chu trình
 - \\(G\\) liên thông
 - Số cạnh bằng số đỉnh trừ \\(1\\) hay \\(|E(G)| = |V(G)| - 1\\) 
@@ -207,7 +207,7 @@ Cho một đồ thị \\(G = (V, E)\\):
 
 **4.** Thêm một cạnh bất kì chưa có trong \\(G\\) sẽ xuất hiện một chu trình. 
 
-Đồng thời, việc xóa một cạnh bất kì trong \\(G\\) sẽ làm tăng số TPLT của cây \\(\rightarrow\\) tất cả các cạnh của \\(G\\) đều là cạnh cầu.
+Đồng thời, việc xoá một cạnh bất kì trong \\(G\\) sẽ làm tăng số TPLT của cây \\(\rightarrow\\) tất cả các cạnh của \\(G\\) đều là cạnh cầu.
 
 #### Gốc, lá, quan hệ giữa các đỉnh trong cây
 

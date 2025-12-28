@@ -204,6 +204,7 @@ Ta có thể tính được độ phức tạp của thuật toán này bằng �
 
 \\[T(n) = 2T(n / 2) + O(n\log{n}) \rightarrow T(n) = O(n \log^2{n})\\]
 
-**Câu hỏi:** Liệu thuật toán có thể được giảm thành \\(O(n\log{n})\\) không?
-
-Có! Ta hoàn toàn có thể đạt được độ phức tạp \\(O(n\log{n})\\) nếu ta sắp xếp trước các điểm theo tọa độ \\(y\\) thay vì sắp xếp các đỉnh ấy sau mỗi lần thực hiện chia để trị.
+> [!NOTE]
+> **Câu hỏi:** Liệu thuật toán có thể được giảm thành \\(O(n\log{n})\\) không?
+> 
+> Có! Ta hoàn toàn có thể đạt được độ phức tạp \\(O(n\log{n})\\) nếu ta sắp xếp trước các điểm theo tọa độ \\(y\\) thay vì sắp xếp các đỉnh ấy sau mỗi lần thực hiện chia để trị.

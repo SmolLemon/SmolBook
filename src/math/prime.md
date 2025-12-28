@@ -118,7 +118,7 @@ void sieve(int n){
 Độ phức tạp của thuật toán sàng là \\(O(n\log{\log{n}})\\).
 
 Ta có một số phương pháp tối ưu khi sàng số nguyên tố.
-- Đánh dấu từ bội số thứ \\(p\\) của số nguyên tố \\(p\\). Dễ thấy, khi xóa các bội số của \\(p\\), các bội số từ \\(2\\) đến \\(p - 1\\) của \\(p\\) đều đã được đánh dấu ở các lần trước đó. Ví dụ, ta không cần đánh dấu bội số thứ \\(3\\) của số nguyên tố \\(7\\), tức số \\(21\\), bởi vì số này đã được đánh dấu tại lần đánh dấu các bội số của số nguyên tố \\(3\\).
+- Đánh dấu từ bội số thứ \\(p\\) của số nguyên tố \\(p\\). Dễ thấy, khi xoá các bội số của \\(p\\), các bội số từ \\(2\\) đến \\(p - 1\\) của \\(p\\) đều đã được đánh dấu ở các lần trước đó. Ví dụ, ta không cần đánh dấu bội số thứ \\(3\\) của số nguyên tố \\(7\\), tức số \\(21\\), bởi vì số này đã được đánh dấu tại lần đánh dấu các bội số của số nguyên tố \\(3\\).
 - Chỉ đánh dấu các bội số của các số từ \\(2\\) đến \\(\sqrt{n}\\). Việc sàng về cơ bản đã hoàn thành khi ta duyệt tới \\(\sqrt{n}\\) - tất cả các bội số của các số nguyên tố đã được đánh dấu. 
 
 #### Tìm thừa số nguyên tố nhỏ nhất

@@ -2,7 +2,7 @@
 
 Kĩ thuật hai con trỏ là kĩ thuật sử dụng hai con trỏ để thực hiện việc duyệt các phần tử trong mảng.
 
-Nghe thì đơn giản nhưng đây lại là một kĩ thuật rất hữu ích với nhiều ứng dụng khác nhau. Hãy cùng tim hiểu một số ứng dụng của kĩ thuật hai con trỏ qua một số bài toán.
+Nghe thì đơn giản nhưng đây lại là một kĩ thuật rất hữu ích với nhiều ứng dụng khác nhau. Ta sẽ tìm hiểu một số ứng dụng của kĩ thuật hai con trỏ qua một số bài toán.
 
 ## Gộp mảng
 
@@ -33,7 +33,7 @@ Vì mảng \\(a\\) đã được sắp xếp tăng dần nên phần tử đầu
 \\[b = [2, 5, 6]\\]
 \\[c = [1]\\]
 
-Vì \\(1\\) đã được xóa bỏ nên ta xét phần tử nhỏ nhất tiếp theo của mảng \\(a\\) là \\(3\\).
+Vì \\(1\\) đã được xoá bỏ nên ta xét phần tử nhỏ nhất tiếp theo của mảng \\(a\\) là \\(3\\).
 
 Vì \\(2\\) là phần tử nhỏ hơn nên ta tiếp tục thuật toán:
 
@@ -71,7 +71,7 @@ while(i <= n || j <= m){
 
 Bài toán 2SUM được phát biểu như sau: cho một mảng \\(n\\) phần tử và một số \\(x\\). Tìm cặp số có tổng giá trị bằng \\(x\\) hoặc thông báo rằng cặp số ấy không tồn tại.
 
-Để giải bài toán này, ta sẽ sắp xếp các phần tử trong mảng và đặt \\(2\\) con trỏ ở hai vị trí đầu và cuối mảng. Nếu tổng của các phần tử được \\(2\\) con trỏ trỏ tới có tổng lớn hơn \\(x\\), ta dịch con trỏ ở cuối mảng sang trái, nếu nhỏ hơn thì dịch con trỏ ở đầu mảng sang phải. Tiếp tục thực hiện cho tới khi tìm được cặp số thỏa mãn, hoặc khi không thể duyệt được nữa. 
+Để giải bài toán này, ta sẽ sắp xếp các phần tử trong mảng và đặt \\(2\\) con trỏ ở hai vị trí đầu và cuối mảng. Nếu tổng của các phần tử được \\(2\\) con trỏ trỏ tới có tổng lớn hơn \\(x\\), ta dịch con trỏ ở cuối mảng sang trái, nếu nhỏ hơn thì dịch con trỏ ở đầu mảng sang phải. Tiếp tục thực hiện cho tới khi tìm được cặp số thoả mãn, hoặc khi không thể duyệt được nữa. 
 
 Ta ví dụ bằng mảng sau và một số \\(x = 11\\):
 

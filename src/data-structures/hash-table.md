@@ -10,7 +10,7 @@ Giả sử ta muốn lưu các xâu kí tự trên một mảng giá trị. Ta c
 
 ## Bảng băm
 
-Bảng băm là một CTDL lưu các cặp dữ liệu \\(\\{key, value\\}\\). Các \\(key\\) sẽ là thứ quyết định các \\(value\\) được lưu ở đâu trong bảng băm. Ở ví dụ dưới đây, ta sẽ cho \\(key = value\\) để dễ minh họa giải thích.
+Bảng băm là một CTDL lưu các cặp dữ liệu \\(\\{key, value\\}\\). Các \\(key\\) sẽ là thứ quyết định các \\(value\\) được lưu ở đâu trong bảng băm. Ở ví dụ dưới đây, ta sẽ cho \\(key = value\\) để dễ minh hoạ giải thích.
 
 <br>
 
@@ -130,7 +130,7 @@ ump["a"] = 1;
 ump["b"] = 2;
 ump["c"] = 3;
 cout << (ump.find("a") != ump.end()) << '\n'; // nếu "a" có trong ump -> 1
-ump.erase("a"); // xóa "a"
+ump.erase("a"); // xoá "a"
 cout << ump["b"] + ump["c"] << '\n'; // 5
 ```
 

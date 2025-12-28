@@ -8,9 +8,9 @@
 
 ## Lí thuyết
 
-Các bài QHĐ chữ số sẽ có mô tả như sau: Cho một đoạn số \\([a, b]\\), hãy đếm số lượng số trong đoạn thỏa mãn yêu cầu đề bài.
+Các bài QHĐ chữ số sẽ có mô tả như sau: Cho một đoạn số \\([a, b]\\), hãy đếm số lượng số trong đoạn thoả mãn yêu cầu đề bài.
 
-Gọi \\(G(X)\\) là số lượng số nguyên nằm trong đoạn \\([0, X]\\) thỏa mãn yêu cầu đề bài. Khi này ta có thể tính được đáp án của bài toán bằng công thức \\(G(b) - G(a - 1)\\) hoặc \\(G(b) - G(a) + g(a)\\) với \\(g(x)\\) là một hàm trả về \\(1\\) nếu \\(x\\) thỏa mãn yêu cầu và \\(0\\) nếu không thỏa mãn.
+Gọi \\(G(X)\\) là số lượng số nguyên nằm trong đoạn \\([0, X]\\) thoả mãn yêu cầu đề bài. Khi này ta có thể tính được đáp án của bài toán bằng công thức \\(G(b) - G(a - 1)\\) hoặc \\(G(b) - G(a) + g(a)\\) với \\(g(x)\\) là một hàm trả về \\(1\\) nếu \\(x\\) thoả mãn yêu cầu và \\(0\\) nếu không thoả mãn.
 
 ### Xây dựng hàm \\(G(X)\\)
 
@@ -218,7 +218,7 @@ Tóm tắt: Cho \\(T\\) cặp số \\([X, Y]\\), đếm số lượng số có t
 
 Giới hạn: \\(T \lt 21\\), \\(0 \lt X \le Y \lt 10^{19}\\).
 
-Gọi \\(A\\) là một số thỏa mãn điều kiện. Vì \\(A\\) thỏa mãn điều kiện nên:
+Gọi \\(A\\) là một số thoả mãn điều kiện. Vì \\(A\\) thoả mãn điều kiện nên:
 
 \\[X \le A \times s(A)\le Y\\]
 

@@ -1,14 +1,12 @@
 # Ngăn xếp (Stack)
 
-## Định nghĩa
-
 **Stack (ngăn xếp)** là một CTDL lưu trữ các phần tử gồm \\(2\\) thao tác chính:
   - **Push**: Thêm một phần tử vào *cuối* danh sách, và
   - **Pop**: Loại bỏ phần tử ở *cuối* danh sách.
 
 Ngoài ra, giá trị phần tử ở đỉnh stack có thể được biết bằng thao tác **Peek**. 
 
-Ta có thể hình dung stack như một chồng đĩa: Chiếc đĩa cuối cùng được cho vào và đĩa nằm trên các đĩa còn lại và sẽ là đĩa đầu tiên được lấy ra. Quá trình này được mô tả là **Last In**, **First Out - LIFO (Vào sau, ra trước)**.
+Ta có thể hình dung stack như một chồng đĩa: chiếc đĩa cuối cùng được cho vào và đĩa nằm trên các đĩa còn lại và sẽ là đĩa đầu tiên được lấy ra. Quá trình này được mô tả là **Last In**, **First Out - LIFO (Vào sau, ra trước)**.
 
 ## Stack trong thư viện chuẩn 
 
@@ -28,7 +26,7 @@ Các phương thức phổ biến của stack:
 - `empty()`: Trả về giá trị đúng nếu stack không có phần tử và ngược lại
 - `size()`: Trả về số phần tử trong stack
 
-Giống như khi ta cài đặt thủ công, các thao tác nói trên có độ phức tạp thời gian \\(O(1)\\).
+Các thao tác nói trên có độ phức tạp thời gian \\(O(1)\\).
 
 ```C++
 #include <bits/stdc++.h>
@@ -106,7 +104,7 @@ bool f(string &s){
 
 ### Khử đệ quy bằng stack
 
-Stack có thể được dùng để thực hiện các thuật toán đệ quy nhờ vào tính chất **LIFO**. Thực tế, khi chạy chương trình sẽ có một stack riêng biệt chịu trách nhiệm trong việc quản lí các hàm. Stack ấy được gọi là **call stack**. Khi một hàm được gọi call stack sẽ lưu các lần gọi hàm và các dữ liệu liên quan và chỉ bị xóa đi khi hàm đã thực hiện xong.
+Stack có thể được dùng để thực hiện các thuật toán đệ quy nhờ vào tính chất **LIFO**. Thực tế, khi chạy chương trình sẽ có một stack riêng biệt chịu trách nhiệm trong việc quản lí các hàm. Stack ấy được gọi là **call stack**. Khi một hàm được gọi call stack sẽ lưu các lần gọi hàm và các dữ liệu liên quan và chỉ bị xoá đi khi hàm đã thực hiện xong.
 
 Ta ví dụ với hàm tính giai thừa:
 
@@ -123,7 +121,7 @@ int main () {
 }
 ```
 
-Trước tiên `main()` sẽ được thêm vào call stack, tiếp theo là `f(5)`, `f(4)` cho tới `f(1)`. Khi này ta có hình minh họa:
+Trước tiên `main()` sẽ được thêm vào call stack, tiếp theo là `f(5)`, `f(4)` cho tới `f(1)`. Khi này ta có hình minh hoạ:
 
 ```
 |         |
@@ -136,7 +134,7 @@ Trước tiên `main()` sẽ được thêm vào call stack, tiếp theo là `f(
 |_________| <- main()
 ```
 
-Sau khi hàm `f(1)` thực hiện xong, nó sẽ trả về giá trị và được xóa khỏi call stack. Tiếp đến là `f(2)`,`f(3)` tới `f(5)` và chương trình của ta đã chạy xong!
+Sau khi hàm `f(1)` thực hiện xong, nó sẽ trả về giá trị và được xoá khỏi call stack. Tiếp đến là `f(2)`,`f(3)` tới `f(5)` và chương trình của ta đã chạy xong!
 
 Nếu ta gọi các hàm quá nhiều, call stack sẽ tràn bộ nhớ và ta nhận về lỗi [**Stack Overflow**](https://en.wikipedia.org/wiki/Stack_overflow).
 
@@ -201,7 +199,7 @@ int main () {
 Để tối ưu thuật toán, ta thực hiện các bước sau với mọi \\(i\\) từ \\(1\\) đến \\(n\\):
 
 - Trước khi thêm vào \\(a_i\\), thực hiện loại bỏ các phần tử ở đỉnh stack cho đến khi đỉnh stack có giá trị lớn hơn \\(a_i\\) hoặc stack rỗng.
-- Nếu stack rỗng, ta in giá trị thông báo không có phần tử thỏa mãn, nếu không rỗng thì in ra phần tử ở đỉnh stack.
+- Nếu stack rỗng, ta in giá trị thông báo không có phần tử thoả mãn, nếu không rỗng thì in ra phần tử ở đỉnh stack.
 - Thêm \\(a_i\\) vào stack.
 
 Dễ thấy các giá trị trong stack sẽ tạo thành dãy đơn điệu tăng dần từ đáy đến đỉnh stack.

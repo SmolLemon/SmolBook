@@ -33,7 +33,7 @@ int f(int n){
 }
 ```
 
-Ta có hình minh họa quá trình hàm \\(f\\) tìm giá trị của số Fibonacci thứ \\(5\\):
+Ta có hình minh hoạ quá trình hàm \\(f\\) tìm giá trị của số Fibonacci thứ \\(5\\):
 
 <center>
 <img src="../images/5th_fibonacci.png" alt="Số Fibonacci thứ 5"/>

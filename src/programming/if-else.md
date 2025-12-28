@@ -11,7 +11,7 @@ if (a < 5){
 
 Ở đây, ta có \\(a = 4 < 5\\) nên ta sẽ in `4 < 5`.
 
-Nếu ta muốn xét cả trường hợp \\(a \ge 5\\), chương trình sẽ "rẽ nhánh" câu lệnh thực hiện đoạn code khác khi điều kiện \\(a < 5\\) không thỏa mãn. 
+Nếu ta muốn xét cả trường hợp \\(a \ge 5\\), chương trình sẽ "rẽ nhánh" câu lệnh thực hiện đoạn code khác khi điều kiện \\(a < 5\\) không thoả mãn. 
 
 ```C++
 int a = 5;
@@ -108,8 +108,8 @@ switch ([biến]){
 Chương trình của ta sẽ thực hiện các bước sau:
 - `switch` xét một biến nào đó.
 - Với mỗi `case`, chương trình sẽ kiểm tra nếu biến có giá trị bằng `case` không. Nếu bằng, chương trình sẽ thực hiện đoạn code trong `case`.
-- `break;` để thoát khỏi `switch` nếu `case` thỏa mãn. Có thể không viết `break`.
-- Nếu không có case nào thỏa mãn, chương trình sẽ chạy đoạn code trong `default`. Có thể không viết `default` 
+- `break;` để thoát khỏi `switch` nếu `case` thoả mãn. Có thể không viết `break`.
+- Nếu không có case nào thoả mãn, chương trình sẽ chạy đoạn code trong `default`. Có thể không viết `default` 
 
 ```C++
 int score = 10;

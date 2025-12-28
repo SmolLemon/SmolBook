@@ -15,7 +15,7 @@ The guidebook uses [mdBook](https://github.com/rust-lang/mdBook) with a modified
 ```shell
 $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
 $ rustup update
-$ cargo install --version 0.5.0 mdbook
+$ cargo install --version 0.5.1 mdbook
 $ git clone https://github.com/SmolLemon/SmolBook.git
 $ cd SmolBook 
 $ mdbook serve --open

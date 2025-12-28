@@ -6,19 +6,19 @@ Ta đã được biết về băm nói chung qua CTDL [bảng băm](../data-stru
 
 ## Thuật toán
 
-Công năng của thuật toán băm xâu được thể hiện rõ qua ví dụ về bài toán so khớp chuỗi. **Bài toán so khớp chuỗi** là một bài toán về xâu kí tự, yêu cầu ta tìm các xâu S có độ dài \\(m\\) xuất hiện dưới dạng xâu con của một xâu T có độ dài \\(n\\). Thông thường các bài toán này có \\(n\\) rất lớn. 
+Công năng của thuật toán băm xâu được thể hiện rõ qua ví dụ về bài toán so khớp chuỗi. **Bài toán so khớp chuỗi** là một bài toán về xâu kí tự, yêu cầu ta tìm các xâu \\(S\\) có độ dài \\(m\\) xuất hiện dưới dạng xâu con của một xâu \\(T\\) có độ dài \\(n\\). Thông thường các bài toán này có \\(n\\) rất lớn. 
 
-Ta có thuật toán sau: kiểm tra *tất cả* các xâu con có độ dài \\(m\\) của xâu T và kiểm tra xem liệu nó có bằng xâu S hay không. 
+Ta có thuật toán sau: kiểm tra *tất cả* các xâu con có độ dài \\(m\\) của xâu \\(T\\) và kiểm tra xem liệu nó có bằng xâu \\(S\\) hay không. 
 
-Dễ thấy, độ phức tạp của thuật toán trên sẽ bằng \\(O(nm)\\), do ở xâu T tồn tại \\(n - m + 1\\) xâu con có độ dài \\(m\\) và với mỗi xâu con này, ta cần kiểm tra từng kí tự của nó với kí tự ở xâu T tương ứng có khác nhau hay không.
+Dễ thấy, độ phức tạp của thuật toán trên sẽ bằng \\(O(nm)\\), do ở xâu \\(T\\) tồn tại \\(n - m + 1\\) xâu con có độ dài \\(m\\) và với mỗi xâu con này, ta cần kiểm tra từng kí tự của nó với kí tự ở xâu \\(T\\) tương ứng có khác nhau hay không.
 
 Thuật toán băm xâu sẽ thực hiện "băm" các xâu thành một giá trị nào đó thông qua [hàm băm](#hàm-băm). Với giá trị này, ta có thể nhanh chóng kiểm tra xem nếu hai xâu có giống nhau hay không bằng cách kiểm tra giá trị băm của nó, từ đó giảm đáng kể độ phức tạp thuật toán.
 
-Quay lại với bài toán so khớp chuỗi, với hàm băm, ta có thể so sánh xâu con của T với S trong \\(O(1)\\), từ đây độ phức tạp giảm xuống chỉ còn \\(O(n)\\). 
+Quay lại với bài toán so khớp chuỗi, với hàm băm, ta có thể so sánh xâu con của \\(T\\) với \\(S\\) trong \\(O(1)\\), từ đây độ phức tạp giảm xuống chỉ còn \\(O(n)\\). 
 
 ## Hàm băm
 
-Gọi hàm \\(hash(s)\\) là một hàm trả về giá trị băm của một xâu s. Phương pháp phổ biến để tính giá trị băm của một xâu S với độ dài \\(n\\) có dạng như sau:
+Gọi hàm \\(hash(s)\\) là một hàm trả về giá trị băm của một xâu \\(s\\). Phương pháp phổ biến để tính giá trị băm của một xâu \\(S\\) với độ dài \\(n\\) có dạng như sau:
 
 \\[
 \begin{align}
@@ -47,13 +47,13 @@ int Hash(string &s) {
 
 ### Giá trị băm của xâu con
 
-Để tính giá trị băm của các xâu con của s, ta có thể tiền xử lí các tiền tố của s, từ đó tính được giá trị băm của các xâu con. Gọi \\(hsh(i)\\) là giá trị băm của \\(i\\) kí tự đầu tiên của xâu s, ta có: \\[hsh(l) = (hsh(l - 1) \times p + s_{l - 1}) \bmod{m}\\]
+Để tính giá trị băm của các xâu con của \\(s\\), ta có thể tiền xử lí các tiền tố của nó, từ đó tính được giá trị băm của các xâu con. Gọi \\(hsh(i)\\) là giá trị băm của \\(i\\) kí tự đầu tiên của xâu \\(s\\), ta có: \\[hsh(l) = (hsh(l - 1) \times p + s_{l - 1}) \bmod{m}\\]
 
 Với trường hợp cơ sở \\(hsh(0) = 0\\).
 
 Dễ thấy: \\(hash(s_0s_1\cdots s_{i-1}) = hsh(i)\\).
 
-Lưu trữ các giá trị \\(hsh(i)\\), ta có thể tính nhanh giá trị băm của xâu con của s gồm các kí tự từ kí tự thứ \\(i\\) đến kí tự thứ \\(j\\) bằng: \\[hash(s_{i-1}s_{i-2}\cdots s_{j-2}s_{j-1}) = (hsh(j) - hsh(i-1)\times p^{j - i + 1}) \bmod{m}\\]
+Lưu trữ các giá trị \\(hsh(i)\\), ta có thể tính nhanh giá trị băm của xâu con của \\(s\\) gồm các kí tự từ kí tự thứ \\(i\\) đến kí tự thứ \\(j\\) bằng: \\[hash(s_{i-1}s_{i-2}\cdots s_{j-2}s_{j-1}) = (hsh(j) - hsh(i-1)\times p^{j - i + 1}) \bmod{m}\\]
 
 ```C++
 int hsh[N], Pow[N];
@@ -76,11 +76,11 @@ Việc tiền xử lí tính giá trị băm của các tiền tố có độ ph
 
 ## Hạn chế va chạm băm
 
-Ta có xác suất về khả năng **va chạm băm** của hai xâu a và b, hay \\(hash(a) = hash(b)\\) nằm trong khoảng \\(P \equiv \frac{1}{m}\\). Từ đây, ta có xác suất việc *không xảy ra* va chạm băm sẽ bằng \\(\left(1 - \frac{1}{m}\right)\\). Tổng quát hơn, ta có khả năng không xảy ra va chạm băm khi so sánh \\(n\\) cặp xâu sẽ bằng \\(\left(1 - \frac{1}{m}\right)^n\\).
+Ta có xác suất về khả năng **va chạm băm** của hai xâu \\(a\\) và \\(b\\), hay \\(hash(a) = hash(b)\\) nằm trong khoảng \\(P \equiv \frac{1}{m}\\). Từ đây, ta có xác suất việc *không xảy ra* va chạm băm sẽ bằng \\(\left(1 - \frac{1}{m}\right)\\). Tổng quát hơn, ta có khả năng không xảy ra va chạm băm khi so sánh \\(n\\) cặp xâu sẽ bằng \\(\left(1 - \frac{1}{m}\right)^n\\).
 
 Nếu \\(m = 10^9 + 7\\), ta có thể yên tâm so sánh một vài, thâm chí là hơn \\(100\\) cặp cũng không sao, nhưng nếu bài yêu cầu so sánh các xâu con của một xâu có độ dài \\(10^5\\) thì xác suất không xảy ra va chạm băm sẽ chỉ còn là \\(0,0067\\).
 
 Để khắc phục vấn đề này, ta có thể tăng giá trị của \\(m\\), hoặc modulo \\(\left(\sum_{i=0}^{n-1} s_i \times p^{n-i-1}\right)\\) cho nhiều tham số \\(m\\) khác nhau với hiệu quả tương đương. Với phương pháp thứ hai, ta xét hai xâu bằng cách xét giá trị băm trên modulo của từng tham số \\(m\\), nếu tất cả giống nhau thì hai xâu giống nhau, không thì ngược lại. Giả sử ta có \\(k\\) tham số \\(m\\), xác suất xảy ra va chạm băm khi so sánh xâu bằng: \\[P = \frac{1}{m_1 \times m_2 \times \cdots \times m_k}\\]
 
-
-Lưu ý rằng không nên có quá nhiều tham số \\(m\\) do việc modulo nhiều lần có thể làm chậm chương trình. 
+> [!IMPORTANT]
+> Lưu ý rằng không nên có quá nhiều tham số \\(m\\) do việc modulo nhiều lần có thể làm chậm chương trình. 

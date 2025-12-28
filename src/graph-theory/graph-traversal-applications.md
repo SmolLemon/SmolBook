@@ -229,7 +229,7 @@ Ban đầu, khi bắt đầu duyệt đỉnh \\(u\\), ta có \\(u_{num} = u_{low
 
 Từ những thông tin này, ta có thể xác định khớp cầu trên đồ thị.
 
-Một đỉnh \\(u\\) là đỉnh khớp khi tồn tại một đỉnh con \\(v\\) trên cây DFS sao cho \\(v_{low} \ge u_{num}\\). Nếu \\(v_{low} \lt u_{num}\\) thì \\(v\\) có thể đến được một đỉnh có \\(num\\) nhỏ hơn \\(u_{num}\\) bằng cạnh ngược. Nếu điều này không xảy ra, thì để \\(v\\) có thể đi sang các đỉnh khác ngoài các đỉnh trong cây DFS con gốc \\(v\\), ta cần phải đi qua đỉnh \\(u\\), và khi xóa đỉnh \\(u\\) đi thì \\(v\\) không thể đi đến các đỉnh ấy \\(\rightarrow\\) đỉnh \\(u\\) là đỉnh khớp. 
+Một đỉnh \\(u\\) là đỉnh khớp khi tồn tại một đỉnh con \\(v\\) trên cây DFS sao cho \\(v_{low} \ge u_{num}\\). Nếu \\(v_{low} \lt u_{num}\\) thì \\(v\\) có thể đến được một đỉnh có \\(num\\) nhỏ hơn \\(u_{num}\\) bằng cạnh ngược. Nếu điều này không xảy ra, thì để \\(v\\) có thể đi sang các đỉnh khác ngoài các đỉnh trong cây DFS con gốc \\(v\\), ta cần phải đi qua đỉnh \\(u\\), và khi xoá đỉnh \\(u\\) đi thì \\(v\\) không thể đi đến các đỉnh ấy \\(\rightarrow\\) đỉnh \\(u\\) là đỉnh khớp. 
 
 Một trường hợp nữa của đỉnh khớp là khi đỉnh gốc của cây DFS có ít nhất \\(2\\) đỉnh con thì đỉnh gốc cũng là đỉnh khớp.
 

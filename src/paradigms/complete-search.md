@@ -1,6 +1,6 @@
 # Duyệt toàn bộ
 
-**Duyệt toàn bộ (Complete search)**, hay với các tên gọi khác như *duyệt trâu*, *vét cạn*, *brute force* đều được dùng để chỉ chung một mô hình thuật toán. Các thuật toán duyệt toàn bộ sẽ giải quyết bài toán bằng cách kiểm tra (gần như) toàn bộ không gian tìm kiếm của bài để tìm kiếm kết quả thỏa mãn, ví dụ như kiểm tra các phần tử, các cặp giá trị, các tập con, hoán vị, v.v. 
+**Duyệt toàn bộ (Complete search)**, hay với các tên gọi khác như *duyệt trâu*, *vét cạn*, *brute force* đều được dùng để chỉ chung một mô hình thuật toán. Các thuật toán duyệt toàn bộ sẽ giải quyết bài toán bằng cách kiểm tra (gần như) toàn bộ không gian tìm kiếm của bài để tìm kiếm kết quả thoả mãn, ví dụ như kiểm tra các phần tử, các cặp giá trị, các tập con, hoán vị, v.v. 
 
 Ưu điểm của duyệt toàn bộ là luôn đảm bảo cho ra kết quả chính xác. Tuy nhiên, thời gian thực thi lại lâu, độ phức tạp lớn. 
 

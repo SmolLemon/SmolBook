@@ -49,7 +49,7 @@ int sum(int i){
 	int sum = 0;
 	while(i > 0){
 		sum += ft[i];
-		i -= i & -i; // xóa LSB(i)
+		i -= i & -i; // xoá LSB(i)
 	}
 	return sum;
 }
@@ -67,7 +67,7 @@ int sum(int i){
 
 Hàm `sum(i)` này giúp ta có thể tính toán hiệu quả tổng của \\(i\\) số đầu tiên trong mảng \\(a\\). Từ đây ta có thể tính `query(l, r) = sum(r) - sum(l - 1)`.
 
-Vì với mỗi thao tác ta xóa \\(LSB(i)\\) khỏi \\(i\\) nên độ phức tạp của hàm `sum` bằng \\(O(\log{n})\\). 
+Vì với mỗi thao tác ta xoá \\(LSB(i)\\) khỏi \\(i\\) nên độ phức tạp của hàm `sum` bằng \\(O(\log{n})\\). 
 
 Thực tế trong hầu hết trường hợp số thao tác mà `sum(i)` thực hiện sẽ nhỏ hơn \\(\log{i}\\) do không phải lúc nào \\(i\\) cũng có \\(\log{i}\\) bit được bật.
 

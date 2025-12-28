@@ -1,7 +1,5 @@
 # Hàng đợi hai đầu (Deque)
 
-## Định nghĩa
-
 **Hàng đợi hai đầu (Double-ended queue - deque, dequeue)** là một CTDL cho phép việc thêm và loại bỏ phần tử ở đầu và cuối phần tử. 
 
 Deque cũng giống như một hàng đợi bình thường nhưng khác ở chỗ các phần tử ở cuối queue có thể được loại bỏ. Giống như khi bạn đi siêu thị và đứng xếp hàng tại quầy. Nếu có quá nhiều người xếp hàng chờ thanh toán thì bạn có thể rời từ cuối hàng và sang quầy khác.
@@ -29,7 +27,7 @@ Các phương thức phổ biến của deque:
 	- `at(x)`, thao tác `[]`: Trả về giá trị của phần tử trong deque tại một chỉ số
 	- `empty()`: Trả về giá trị đúng nếu deque không có phần tử và ngược lại
 	- `size()`: Trả về số phần tử trong deque
-	- `clear()`: Xóa toàn bộ các phần tử trong deque
+	- `clear()`: Xoá toàn bộ các phần tử trong deque
 
 Các phương thức trên đều có độ phức tạp \\(O(1)\\), ngoại trừ `clear()` có độ phức tạp \\(O(n)\\).
 
@@ -66,7 +64,7 @@ Có một cách giải quyết tối ưu bài toán này, áp dụng tư tưởn
 
 Với mỗi \\(i\\), ta thêm phần tử có chỉ số \\(i\\) vào cuối deque. Trước khi thêm vào, loại bỏ các phần tử ở cuối deque có giá trị lớn hơn phần tử sẽ được thêm vào. Khi này phần tử ở đầu deque là phần tử nhỏ nhất trong khoảng tử đầu mảng đến phần tử chỉ số \\(i\\).
 
-Để giải quyết bài toán gốc, ta thực hiện việc xóa phần tử như sau: Xóa các phần tử ở đầu deque nếu chỉ số của phần tử ấy nhỏ hơn \\(i - k + 1\\). Sau khi xóa xong, phần tử ở đầu deque sẽ là phần tử ở đầu hàng đợi hai đầu này.
+Để giải quyết bài toán gốc, ta thực hiện việc xoá phần tử như sau: xoá các phần tử ở đầu deque nếu chỉ số của phần tử ấy nhỏ hơn \\(i - k + 1\\). Sau khi xoá xong, phần tử ở đầu deque sẽ là phần tử ở đầu hàng đợi hai đầu này.
 
 ```C++
 #include <bits/stdc++.h>

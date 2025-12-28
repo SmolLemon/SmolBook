@@ -16,7 +16,7 @@ Một **mạng (network)** là một đồ thị có hướng \\(G = (V, E)\\) v
 
 Ta có **luồng s-t (s-t flow)** là một hàm \\(f : E \rightarrow \mathbb{R}^+\\) gán các số thực cho các cung trong mạng. Mỗi giá trị \\(f(e)\\) sẽ tượng trưng cho lượng luồng đi qua cung \\(e\\).
 
-\\(f\\) cần thỏa mãn các rằng buộc:
+\\(f\\) cần thoả mãn các rằng buộc:
 - Sức chứa: không thể có lượng luồng đi qua cung mà lớn hơn sức chứa của nó: \\(0 \le f(e) \le c(e)\\).
 - Cân bằng: Ngoại trừ hai đỉnh \\(s\\) và \\(t\\), lượng luồng đi vào một đỉnh phải bằng lượng luồng đi ra đỉnh đó. Với mỗi đỉnh \\(u\\) thuộc mạng không phải \\(s, t\\), ta có: 
 \\[\sum_{v \in V} f(vu) = \sum_{v \in V} f(uv)\\]
@@ -54,7 +54,7 @@ Ta có thể hiểu sức chứa thặng dư của các cạnh xuôi và ngượ
 
 ### Đường tăng luồng
 
-Một **đường tăng luồng (augmenting path)** trên đồ thị thặng dư là một đường đi từ đỉnh nguồn đến đỉnh thu sao cho các cặp cạnh trên đường đi có sức chứa thặng dư dương. Ta có một đường tăng luồng \\(P = (u_1, u_2, \dots, u_k)\\) với \\(u_1 = s\\) và \\(u_k = t\\) thỏa mãn \\(c^f(u_iu_{i + 1}) > 0\\) với mọi \\(i \lt k\\). 
+Một **đường tăng luồng (augmenting path)** trên đồ thị thặng dư là một đường đi từ đỉnh nguồn đến đỉnh thu sao cho các cặp cạnh trên đường đi có sức chứa thặng dư dương. Ta có một đường tăng luồng \\(P = (u_1, u_2, \dots, u_k)\\) với \\(u_1 = s\\) và \\(u_k = t\\) thoả mãn \\(c^f(u_iu_{i + 1}) > 0\\) với mọi \\(i \lt k\\). 
 
 **Điểm nghẽn** \\(bottleneck(P, f)\\) của đường tăng luồng \\(P\\) bằng sức chứa thặng dư nhỏ nhất trong tất cả các cạnh của đường đi.
 
@@ -68,7 +68,7 @@ Ta có thể tăng luồng trên đồ thị thặng dư bằng cách tăng mộ
 <img src="../images/augmenting_the_flow_1.png" alt="Tăng luồng"/>
 </center>
 
-Mục đích của cạnh ngược trong đồ thị thặng dư là để cho phép ta *hủy* những luồng đã gửi qua cạnh này. Giả sử như nếu ta gửi một lượng luồng \\(X\\) đi từ \\(u\\) sang \\(v\\), thì việc gửi một lượng luồng \\(Y\\) qua cạnh ngược đi từ \\(v\\) sang \\(u\\) giống như việc hủy \\(Y\\) luồng đi từ \\(u\\) sang \\(v\\) vậy.
+Mục đích của cạnh ngược trong đồ thị thặng dư là để cho phép ta *huỷ* những luồng đã gửi qua cạnh này. Giả sử như nếu ta gửi một lượng luồng \\(X\\) đi từ \\(u\\) sang \\(v\\), thì việc gửi một lượng luồng \\(Y\\) qua cạnh ngược đi từ \\(v\\) sang \\(u\\) giống như việc huỷ \\(Y\\) luồng đi từ \\(u\\) sang \\(v\\) vậy.
 
 <center>
 <img src="../images/augmenting_path_2.png" alt="Đường tăng luồng"/>

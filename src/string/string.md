@@ -13,9 +13,9 @@ Ta quy ước các các kí tự của xâu có chỉ số từ \\(0\\).
 
 Một số thuật ngữ liên quan đến xâu kí tự bao gồm:
 
-- **Xâu con (substring)**: một xâu T của xâu S được gọi là một *xâu con* khi nó là một chuỗi các kí tự liên tiếp tồn tại trong S. Ví dụ: xâu `chao` là xâu con của xâu `Xin chao the gioi`.
-- **Tiền số (prefix)**: một xâu T của xâu S là một *tiền tố* khi nó là chuỗi các kí tự liên tiếp **đầu tiên** của S. Ví dụ: xâu `Hello` là tiền tố của xâu `Hello world`.
-- **Hậu số (suffix)**: một xâu T của xâu S là một *hậu tố* khi nó là chuỗi các kí tự liên tiếp **cuối cùng** của S. Ví dụ: xâu `gioi` là tiền tố của xâu `Xin chao the gioi`.
+- **Xâu con (substring)**: một xâu \\(T\\) của xâu \\(S\\) được gọi là một *xâu con* khi nó là một chuỗi các kí tự liên tiếp tồn tại trong \\(S\\). Ví dụ: xâu `chao` là xâu con của xâu `Xin chao the gioi`.
+- **Tiền số (prefix)**: một xâu \\(T\\) của xâu \\(S\\) là một *tiền tố* khi nó là chuỗi các kí tự liên tiếp **đầu tiên** của \\(S\\). Ví dụ: xâu `Hello` là tiền tố của xâu `Hello world`.
+- **Hậu số (suffix)**: một xâu \\(T\\) của xâu \\(S\\) là một *hậu tố* khi nó là chuỗi các kí tự liên tiếp **cuối cùng** của \\(S\\). Ví dụ: xâu `gioi` là tiền tố của xâu `Xin chao the gioi`.
 
 ## Thứ tự từ điển
 

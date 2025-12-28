@@ -77,7 +77,7 @@ Thì vòng lặp sẽ duyệt và in các phần tử trong `a` ra màn hình: `
 
 ## Vòng lặp `while`
 
-Vòng lặp `while` thực hiện các đoạn code nếu điều kiện thỏa mãn:
+Vòng lặp `while` thực hiện các đoạn code nếu điều kiện thoả mãn:
 
 ```C++
 while ([điều kiện]){

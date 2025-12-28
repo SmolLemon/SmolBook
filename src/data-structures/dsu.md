@@ -48,7 +48,7 @@ Như ta có thể thấy, hàm `Union` có độ phức tạp thời gian quá l
 
 Ta sẽ tối ưu hàm Union bằng cách mô tả các tập hợp bằng các đồ thị cây hay *rừng cây*. `p[i]` giờ đây sẽ chỉ cha của đỉnh \\(i\\) trong đồ thị cây. Khi thực hiện `Union(a, b)` ta chỉ cần thay đổi cha của gốc của cây chứa \\(a\\) thành gốc của cây chứa của \\(b\\) hay `p[Find(a)] = Find(b)`. Và khi thực hiện `Find(a)` ta tìm gốc của cây bằng cách xét dãy `a`, `p[a]`, `p[p[a]]`,... cho tới khi tìm được phần tử trong dãy có giá trị giống phần tử trước nó, tức là ta đã tìm được gốc của cây. 
 
-|Thao tác|Minh họa|
+|Thao tác|Minh hoạ|
 |---|---|
 |Ban đầu|<center><img src="../images/dsu1.svg" alt="Ban đầu"/></center>|
 |`Union(1, 2)`|<center><img src="../images/dsu2.svg" alt="Union(1, 2)"/></center>|

@@ -60,7 +60,7 @@ Giả sử ta đang ở đỉnh \\(p\\) lưu GTNN của đoạn \\([u, v]\\), ta
 
 Ta tính GTNN của đoạn \\([l, r]\\) bằng việc xuất phát từ đỉnh \\(1\\) và thực hiện các bước ở trên
 
-Hình dưới đây minh họa thao tác trả lời truy vấn tìm GTNN của đoạn \\([3, 7]\\).
+Hình dưới đây minh hoạ thao tác trả lời truy vấn tìm GTNN của đoạn \\([3, 7]\\).
 
 <center>
 <img src="../images/segment_tree_answer.png" alt="Segment Tree Answer"/>
@@ -134,7 +134,7 @@ Giả sử ta thực hiện cập nhật phân đoạn trên một đỉnh, ta s
 <img src="../images/lazy_propagation.png" alt="Lazy Propagation"/>
 </center>
 
-Chỉ khi đỉnh này được xét đến thì ta mới thực hiện cập nhật giá trị trên đỉnh ấy mà ta đã lưu. Sau khi cập nhật xong thì ta lưu cập nhật lên các đỉnh con và xóa thông tin cập nhật trên đỉnh này,
+Chỉ khi đỉnh này được xét đến thì ta mới thực hiện cập nhật giá trị trên đỉnh ấy mà ta đã lưu. Sau khi cập nhật xong thì ta lưu cập nhật lên các đỉnh con và xoá thông tin cập nhật trên đỉnh này,
 
 <center>
 <img src="../images/lazy_propagation_applied.png" alt="Lazy Propagation Applied"/>
