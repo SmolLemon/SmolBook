@@ -52,7 +52,7 @@
     - [Thuật toán Floyd-Warshall](./graph-theory/floyd-warshall.md)
   - [Thuật toán sắp xếp Tô-pô](./graph-theory/topo.md)
   - [Cây khung nhỏ nhất](./graph-theory/mst.md)
-  - [2-SAT]()
+  - [2-SAT](./graph-theory/2-SAT.md)
   - [Đường đi Euler](./graph-theory/eulerian-trail.md)
   - [Cây](./graph-theory/tree.md)
     - [Kĩ thuật chu trình Euler](./graph-theory/euler-tour-technique.md)

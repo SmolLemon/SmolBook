@@ -4,7 +4,7 @@
 
 *Cẩm nang Lập trình Thi đấu* được viết nên nhằm cung cấp những kiến thức về lập trình thi đấu, giúp bạn hiểu rõ những kiến thức liên quan đến lập trình thi đấu và cách áp dụng chúng vào những bài toán.
 
-## Đối tượng hướng tới
+## Đối tượng 
 
 Những nội dung của cuốn cẩm nang được viết với mục tiêu có thể giúp các bạn THCS, THPT hay chỉ đơn giản là những người mới bắt đầu học lập trình thi đấu có thể hiểu được những kiến thức trong bộ môn này một cách dễ dàng.
 
