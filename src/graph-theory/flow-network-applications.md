@@ -1,14 +1,14 @@
 # Ứng dụng của luồng trên mạng
 
-Ta cùng điểm qua một số ứng dụng và mở rộng của bài toán luồng trên mạng. 
+Ta cùng điểm qua một số ứng dụng tiêu biểu và mở rộng của bài toán luồng trên mạng. 
 
 ## Nhiều đỉnh nguồn, đỉnh thu
 
-Giả sử ta được cho một mạng \\(G = (V, E)\\) với vô số đỉnh nguồn (\\(s_1, s_2, \dots, s_n\\)) và đỉnh nguồn (\\(t_1, t_2, \dots, t_m\\)) và ta được yêu cầu phải tìm luồng cực đại trên mạng này. Ta có thể thay đổi bài toán trên thành bài toán tìm luồng cực đại trên mạng bình thường bằng cách thêm hai đinh có tên gọi là đỉnh **siêu nguồn (supersource)** \\(S\\) và đỉnh **siêu thu (supersink)** \\(T\\). Sau đó, ta thêm các cung nối \\(S\\) với \\(s_1, s_2, \dots, s_n\\) và \\(t_1, t_2, \dots, t_m\\) với \\(T\\) với sức chứa \\(\infty\\) và thực hiện tìm luồng cực đại trên mạng mới này.
+Giả sử ta được cho một mạng \\(G = (V, E)\\) với vô số đỉnh nguồn (\\(s_1, s_2, \dots, s_n\\)) và đỉnh thu (\\(t_1, t_2, \dots, t_m\\)) và ta được yêu cầu phải tìm luồng cực đại trên mạng này. Ta có thể thay đổi bài toán trên thành bài toán tìm luồng cực đại trên mạng thông thường bằng cách thêm hai đinh có tên gọi là đỉnh **siêu nguồn (supersource)** \\(S\\) và đỉnh **siêu thu (supersink)** \\(T\\). Sau đó, ta thêm các cung nối \\(S\\) với \\(s_1, s_2, \dots, s_n\\) và \\(t_1, t_2, \dots, t_m\\) với \\(T\\) với sức chứa \\(\infty\\) và thực hiện tìm luồng cực đại trên mạng mới này.
 
 ## Tìm các đường đi phân biệt cạnh
 
-Ta có một đồ thị có hướng, và nhiệm vụ của ta là tìm \\(k\\) đường đi từ đỉnh \\(s\\) đến đỉnh \\(t\\) sao cho các đường đi phân biệt cạnh (các cung trên đồ thị xuất hiện nhiều nhất một lần trong tất cả các đường đi). Ở ví dụ dưới đây, ta có thể có hai đường đi phân biệt cạnh được tô hai màu lục và đỏ trên đồ thị sau:
+Ta có một đồ thị có hướng, và nhiệm vụ của ta là tìm \\(k\\) đường đi từ đỉnh \\(s\\) đến đỉnh \\(t\\) sao cho các đường đi phân biệt cạnh (các cung trên đồ thị xuất hiện nhiều nhất một lần trong tất cả các đường đi). Ở ví dụ dưới đây, ta tìm được hai đường đi phân biệt cạnh được tô hai màu lục và đỏ trên đồ thị sau:
 
 <center>
 <img src="../images/edge_disjoint_path.png" alt="Hai đường đi phân biệt cạnh">
@@ -20,13 +20,15 @@ Nếu ta được yêu cầu in ra các đường đi thì sau khi cho \\(k\\) l
 - Bắt đầu từ đỉnh nguồn, chọn cạnh \\(uv\\) có \\(f(uv) = 1\\) và di chuyển đến \\(v\\).
 - Nếu đỉnh hiện tại không phải đỉnh thu, lặp lại bước trên.
 
-Từ giá trị luồng cực đại của mạng đơn vị được xây dựng từ đồ thị gốc, ta có thể biết được số lượng tối đa đường đi phân biệt cạnh trên đồ thị sẽ bằng bao nhiêu. Ta có định lí sau: *Tồn tại \\(k\\) đường đi phân biệt cạnh khi và chỉ khi giá trị luồng cực đại bằng \\(k\\)*.
+Từ giá trị luồng cực đại của mạng đơn vị được xây dựng từ đồ thị gốc, ta có thể biết được số lượng tối đa đường đi phân biệt cạnh trên đồ thị sẽ bằng bao nhiêu từ định lí sau: *tồn tại \\(k\\) đường đi phân biệt cạnh khi và chỉ khi giá trị luồng cực đại bằng \\(k\\)*.
 
-Giả sử ta có luồng \\(0 - 1\\) \\(f\\). Vì luồng cực đại của \\(f = k\\) nên ta sẽ có một danh sách các cạnh \\(uv\\) với \\(f(uv) = 1\\). Từ danh sách cạnh này, ta có thể tìm được \\(k\\) đường đi phân biệt luồng với phương pháp tìm các đường đi phần biệt luồng đã được nói ở trên.
+Giả sử ta có luồng cực đại \\(f^\*\\). Khi \\(v(f^\*) = k\\), ta có một danh sách các cạnh \\(uv\\) với \\(f(uv) = 1\\). Từ danh sách cạnh này, ta có thể tìm được \\(k\\) đường đi phân biệt luồng với phương pháp tìm các đường đi phần biệt luồng đã được nói ở trên.
 
 ## Sức chứa đỉnh
 
-Một số mạng không những có sức chứa cạnh mà nó còn có cả sức chứa đỉnh. Khi này, với mỗi đỉnh \\(u\\) trong mạng, ta tạo hai đỉnh mới \\(u_{in}\\), \\(u_{out}\\), sau đó nối hai đỉnh này bằng một cung có sức chứa bằng với sức chứa đỉnh.
+Một số mạng không những có sức chứa cạnh mà nó còn có cả sức chứa đỉnh.
+
+Để giải quyết trường hợp này, với mỗi đỉnh \\(u\\) trong mạng, ta tạo hai đỉnh mới \\(u_{in}\\), \\(u_{out}\\), sau đó nối hai đỉnh này bằng một cung có sức chứa bằng với sức chứa đỉnh.
 
 <center>
 <img src="../images/node_capacity.png" alt="Sức chứa đỉnh">
@@ -42,7 +44,7 @@ Các cạnh \\(uv\\) trong mạng từ đây cũng được nối lại thành c
 
 Các **bài toán cặp ghép (matching)** trong lí thuyết đồ thị yêu cầu ta tìm một danh sách cạnh sao cho các đỉnh đầu mút của các cạnh không giống nhau.
 
-Ta sẽ tập trung giải quyết một biến thể của bài toán này: tìm cặp phép trên [đồ thị hai phía](graph.md#Đồ-thị-hai-phía).
+Ta sẽ tập trung giải quyết một biến thể của bài toán này: tìm cặp phép trên [đồ thị hai phía](graph.md#đồ-thị-hai-phía).
 
 Để tìm cặp ghép cực đại trên đồ thị hai phía (Max Cardinality Bipartite Maching - MCBM), ta xây dụng một mạng đơn vị như sau:
 - Nối đỉnh nguồn \\(s\\) với các đỉnh \\(u \in X\\) bằng một cung.
@@ -55,7 +57,7 @@ Ta sẽ tập trung giải quyết một biến thể của bài toán này: tì
 
 Khi này, giá trị luồng cực đại của đồ thị bằng giá trị cặp phép cực đại, với các cạnh \\(uv\\) thoả mãn \\(f(uv) = 1\\) là các cạnh trong cặp phép.
 
-Vì sức chứa của các cạnh bằng \\(1\\), ta chỉ cần sử dụng thuật toán đơn giản hơn như [Ford-Fulkerson](max-flow-algorithms.md#phương-pháp-ford-fulkerson) để tìm luồng cực đại. 
+Vì sức chứa của các cạnh bằng \\(1\\), ta có thể sử dụng các thuật toán luồng cực đại đơn giản hơn như [Ford-Fulkerson](max-flow-algorithms.md#phương-pháp-ford-fulkerson) để tìm luồng cực đại. 
 
 ## Bài toán phân việc
 
@@ -66,28 +68,28 @@ Một bài toán phân việc không trọng số trên đồ thị hai phía s�
 - Các phần tử \\(y \in Y\\) có thể xuất hiện trong tối đa \\(C(y)\\) cặp.
 - Các cặp \\((x, y) \in X \times Y\\) có thể xuất hiện tối đa \\(C(x, y)\\) lần.
 
-Bài toán cặp ghép cực đại trên đồ thị hai phía là một dạng đặc biệt của bài toán phân việc với \\(C(x), x(y) = 1\\) và \\(C(x, y)\\) bằng \\(0\\) hoặc \\(1\\) tuỳ vào việc cạnh \\(xy\\) có tồn tại trong đồ thị hay không.
+Bài toán cặp ghép cực đại trên đồ thị hai phía là một dạng đặc biệt của bài toán phân việc với \\(C(x), C(y) = 1\\) và \\(C(x, y)\\) bằng \\(0\\) hoặc \\(1\\) tuỳ vào việc cạnh \\(xy\\) có tồn tại trong đồ thị hay không.
 
 Ta có thể hình dung với bài toán ví dụ sau: có \\(n\\) học sinh đi đến một thư viện, mỗi học sinh có nhu cầu mượn \\(C(x)\\) cuốn sách. Trong thư viện có \\(m\\) đầu sách khác nhau, mỗi đầu sách thì lại có \\(C(y)\\) cuốn sách. Theo quy định của thư viện, mỗi học sinh chỉ được mượn tối đa \\(C(x, y)\\) cuốn sách với mỗi đầu sách. Bạn, với tư cách là một thủ thư, sẽ cho các bạn học sinh mượn sách từ thư viện sao số số cuốn sách được cho mượn là nhiều nhất có thể.
 
 Để giải bài toán này, ta xây dụng một mạng gần giống với bài toán cặp ghép cực đại, với những thay đổi về sức chứa của các cung như sau:
 - Tạo các cung \\(sx\\) với sức chứa \\(C(x)\\) với mỗi đỉnh \\(x \in X\\). 
 - Tạo các cung \\(yt\\) với sức chứa \\(C(y)\\) với mỗi đỉnh \\(y \in Y\\).
-- Tạo các cung \\(xy\\) với sức chứa \\(C(x, y)\\) với mỗi cạnh \\((x, y) \in X \times Y\\).
+- Tạo các cung \\(xy\\) với sức chứa \\(C(x, y)\\) với mỗi cặp \\((x, y) \in X \times Y\\).
 
 
 Sau khi tìm được luồng cực đại của đồ thị, vì các giá trị luồng đi qua các cạnh là một số nguyên, ta có thể biết được các thông tin như sau:
 - Các phần tử \\(x \in X\\) xuất hiện trong \\(f(sx)\\) cặp.
 - Các phần tử \\(y \in Y\\) xuất hiện trong \\(f(yt)\\) cặp.
-- Tồn tại \\(f(x, y)\\) cặp \\((x, y) \in X \times Y\\).
+- Tồn tại \\(f(xy)\\) cặp \\((x, y) \in X \times Y\\).
 
 ## Vòng loại bóng chày
 
-Bài toán vòng loại bóng chày (baseball elimination) được phát biểu như sau: có một giải đấu bóng chày bao gồm \\(n\\) đội, mỗi đội có \\(w_i\\) trận thắng, \\(l_i\\) trận thua, \\(r_i\\) trận còn lại cần phải chơi, và \\(g_{i, j}\\) trận với các đội \\(j\\). Nhiệm vụ của ta là xét xem những đội nào không còn khả năng vô địch, tức là dù kết quả ra sao thì đội đó cũng không đứng nhất bảng. Ta giả sử không có trận hoà và tất cả trận đấu đều được diễn ra.
+**Bài toán vòng loại bóng chày (baseball elimination)** được phát biểu như sau: có một giải đấu bóng chày bao gồm \\(n\\) đội, mỗi đội có \\(w_i\\) trận thắng, \\(l_i\\) trận thua, \\(r_i\\) trận còn lại cần phải chơi, và \\(g_{i, j}\\) trận với các đội \\(j\\). Nhiệm vụ của ta là xét xem những đội nào không còn khả năng vô địch, tức là dù kết quả ra sao thì đội đó cũng không đứng nhất bảng. Ta giả sử không có trận hoà và tất cả trận đấu đều được diễn ra.
 
 Đối với trường hợp đơn giản, ta có thể xác định đội \\(x\\) không có khả năng vô địch giải đấu nếu tồn tại một đội \\(y\\) sao cho \\(w_x + r_x \lt w_y\\).
 
-Đối với khác trường hợp khác, ta sử dụng luồng trên mạng để kiểm tra. Ta xây dựng một mạng:
+Đối với khác trường hợp khác, ta sử dụng luồng trên mạng để kiểm tra. Ta xây dựng mạng như sau:
 - Nối đỉnh nguồn \\(s\\) với các đỉnh \\((i,j)\\) tượng trưng cho trận đấu giữa hai đội bằng một cung có sức chứa \\(g_{i, j}\\). Không tính các trận đấu có sự tham gia của đội \\(x\\). Ta quy ước các đỉnh \\((i, j)\\) thuộc tập \\(X\\).
 - Nối các đỉnh \\((i,j)\\) với hai đỉnh \\(i\\) và \\(j\\) bằng một cung có sức chứa \\(\infty\\). Ta quy ước các đỉnh \\(i, j\\) thuộc tập \\(Y\\).
 - Nối các đỉnh \\(i\\) với đỉnh thu \\(t\\) bằng một cung có sức chứa \\(w_x + r_x - w_i\\).
@@ -106,12 +108,12 @@ Nếu bài toán có điều kiện rằng nhiều đội đồng hạng nhất 
 
 ## Chọn dự án
 
-Bài toán chọn dự án được phát biểu như sau: hiện tại có một công ty đang thực hiện \\(n\\) dự án \\(P\\), mỗi dự án sẽ đem về số tiền \\(p_i\\). Các dự án có thể sinh lời (\\(p_i > 0\\) - các khoá học, khu vui chơi, mở cửa hàng, v.v.) hoặc thu lỗ (\\(p_i < 0\\) - xây dựng cơ sở hạ tầng, cập nhật trang thiết bị, v.v.). Các dự án có thể phụ thuộc lẫn nhau, được biểu thị bằng các cặp trong \\(E\\), ví dụ: nếu \\(uv \in E\\), thì nếu thực hiện dự án \\(u\\) thì trước tiên ta cần phải thực hiện dự án \\(v\\). Nhiệm vụ của ta là chọn các dự án sao cho thoả mãn điều kiện, đồng thời số tiền thu được từ các dự án phải lớn nhất có thể.
+**Bài toán chọn dự án** được phát biểu như sau: hiện tại có một công ty đang thực hiện \\(n\\) dự án \\(P\\), mỗi dự án sẽ đem về số tiền \\(p_i\\). Các dự án có thể sinh lời (\\(p_i > 0\\) - các khoá học, khu vui chơi, mở cửa hàng, v.v.) hoặc thu lỗ (\\(p_i < 0\\) - xây dựng cơ sở hạ tầng, cập nhật trang thiết bị, v.v.). Các dự án có thể phụ thuộc lẫn nhau, được biểu thị bằng các cặp trong \\(E\\), ví dụ: nếu \\(uv \in E\\), thì nếu thực hiện dự án \\(u\\) thì trước tiên ta cần phải thực hiện dự án \\(v\\). Nhiệm vụ của ta là chọn các dự án sao cho thoả mãn điều kiện, đồng thời số tiền thu được từ các dự án phải lớn nhất có thể.
 
 <center>
 <img src="../images/project_selection.png" alt="Các dự án và các yêu cầu">
 
-<sup>Các dự án sinh lời là các ô tròn, các dự án thu lỗi là các ô vuông, các mũi tên chỉ sự phụ thuộc của các dự án</sup>
+<sup>Các dự án sinh lời là các ô tròn, các dự án thu lỗ là các ô vuông, các mũi tên chỉ sự phụ thuộc của các dự án</sup>
 </center>
 
 Ta sẽ xây dựng mạng để giải quyết bài toán trên:
@@ -130,22 +132,64 @@ Số tiền ta thu được, đồng thời cũng là lợi nhuận tối đa, b
 
 <sup>
 
-Các dự án sinh lời là các ô tròn, các dự án thu lỗi là các ô vuông, các mũi tên chỉ sự phụ thuộc của các dự án<br>
+Các dự án sinh lời là các ô tròn, các dự án thu lỗ là các ô vuông, các mũi tên chỉ sự phụ thuộc của các dự án<br>
 Ta có \\(C = 17\\), \\(c(S^\*, T^\*) = 6\\), suy ra lợi nhuận tối đa sẽ bằng \\(11\\).
 
 </sup>
 </center>
 
-Ta có thể chứng minh lí do vì sao lợi nhuận tối đa của các dự án được chọn lại có giá trị bằng \\(C - c(S^\*, T^\*)\\) và \\(\sum_{u \in S^\*} p_u\\):
+Ta có thể chứng minh lí do vì sao lợi nhuận tối đa của các dự án được chọn lại có giá trị bằng \\(C - c(S^\*, T^\*)\\) và \\(\sum_{u \in S^\*} p_u\\)
 
-- Đầu tiên, vì mạng tồn tại các cạnh có sức chứa \\(\infty\\), nên lát cắt cực tiểu sẽ chỉ bao gồm các cung \\(su\\) và \\(vt\\). Khi này, \\(c(S^\*, T^\*)\\) sẽ bằng: \\[\sum_{u \in T^\*, p_u > 0} p_u + \sum_{u \in S^\*, p_u < 0} (-p_u)\\]
-- Từ đây, với \\(C = \sum_{p_u > 0} p_u\\), ta suy ra: 
+> [!NOTE]
+> **Chứng minh:**
+> 
+> Đầu tiên, vì mạng tồn tại các cạnh có sức chứa \\(\infty\\), nên lát cắt cực tiểu sẽ chỉ bao gồm các cung \\(su\\) và \\(vt\\). Khi này, \\(c(S^\*, T^\*)\\) sẽ bằng: \\[\sum_{u \in T^\*, p_u > 0} p_u + \sum_{u \in S^\*, p_u < 0} (-p_u)\\]
+> 
+> Từ đây, với \\(C = \sum_{p_u > 0} p_u\\), ta suy ra: 
+> 
+> \\[
+> \begin{align}
+> C - c(S^\*, T^\*) &= \sum_{p_u > 0} p_u - \left(\sum_{u \in T^\*, p_u > 0} p_u + \sum_{u \in S^\*, p_u < 0} (-p_u)\right) \\\\
+> &= \left(\sum_{p_u > 0} p_u - \sum_{u \in T^\*, p_u > 0} p_u \right) - \sum_{u \in S^\*, p_u < 0} (-p_u) \\\\
+> &= \sum_{u \in S^\*, p_u > 0} p_u - \sum_{u \in S^\*, p_u < 0} p_u \\\\
+> &= \sum_{u \in S^\*} p_u
+> \end{align}
+> \\]
 
-\\[
-\begin{align}
-C - c(S^\*, T^\*) &= \sum_{p_u > 0} p_u - (\sum_{u \in T^\*, p_u > 0} p_u + \sum_{u \in S^\*, p_u < 0} (-p_u)) \\\\
-&= (\sum_{p_u > 0} p_u - \sum_{u \in T^\*, p_u > 0} p_u) - \sum_{u \in S^\*, p_u < 0} (-p_u) \\\\
-&= \sum_{u \in S^\*, p_u > 0} p_u - \sum_{u \in S^\*, p_u < 0} p_u \\\\
-&= \sum_{u \in S^\*} p_u
-\end{align}
-\\]
+
+## Lưu thông theo cung cầu
+
+**Bài toán lưu thông theo cung cầu (circulation with demands)** là một bài toán về một mạng \\(G = (V, E)\\) nhiều đỉnh nguồn và đỉnh thu. Mỗi đỉnh nguồn \\(s_i\\), hay đỉnh "cung" theo cách gọi của bài toán, sẽ có giá trị \\(d_{s_i} < 0\\), tức là đỉnh nguồn này có khả năng gửi đi \\(-d_{s_i}\\) đơn vị luồng. Các đỉnh thu \\(t_j\\), hay đỉnh "cầu", sẽ có giá trị \\(d_{t_j} > 0\\), tức là các đỉnh thu này có khả năng nhận \\(d_{t_j}\\) đơn vị luồng. Các đỉnh còn lại trong đồ thị sẽ có giá trị \\(d = 0\\).
+
+<center>
+<img src="../images/circulation_with_demand.png" alt="lưu thông theo cung cầu">
+</center>
+
+Khi thực hiện **lưu thông** trên mạng, ta cần thoả mãn hai điều kiện:
+1. Với mỗi cạnh \\(e \in E\\), \\(0 \le f(e) \le c(e)\\)
+2. Với mỗi đỉnh \\(u \in V\\), \\(f^{in}(u) - f^{out}(u) = d(u)\\)
+ 
+Dễ thấy, điều kiện để có lưu thông trên mạng là: \\[\sum_{u, d(u) > 0} d_u = \sum_{u, d(u) < 0} -d_u = D\\]
+
+Từ đây, ta xây dựng một mạng mới \\(G^{\'} = G\\) với các thay đổi:
+- Thêm đỉnh siêu nguồn \\(S\\) và đỉnh siêu thu \\(T\\)
+- Nối đỉnh \\(S\\) với từng đỉnh nguồn \\(s\\) bằng cung có sức chứa \\(-d_s\\).
+- Nối các đỉnh thu \\(t\\) với đỉnh \\(T\\) bằng cung có sức chứa \\(d_t\\).
+
+Ta xác định mạng \\(G\\) có thể thực hiện lưu thông nếu giá trị luồng cực đại của \\(G^{\'}\\) bằng \\(D\\).
+
+### Trường hợp có cận dưới
+
+Một số bài toán lưu thông theo cung cầu sẽ cho ta thêm điều kiện cận dưới cho các cung trên đồ thị. Cụ thể hơn, gọi giá trị \\(l(e)\\) là cận dưới của cạnh \\(e = uv\\). Khi này, lượng luồng \\(f(e)\\) đi qua cạnh \\(e\\) phải thoả mãn: \\[l(e) \le f(e) \le c(e)\\]
+
+<center>
+<img src="../images/demand_with_lower_bound.png" alt="Trường hợp có cận dưới">
+</center>
+
+Ý tưởng của bài toán này khá đơn giản: ta sẽ cho đỉnh \\(u\\) cung cấp một lượng luồng \\(l(e)\\) đi qua cạnh \\(e\\). Sau khi đã cho \\(l(e)\\) đơn vị luồng đi qua, ta cập nhật lại các giá trị liên quan: \\(d(u)\\) thành \\(d(u) - l(e)\\), \\(d(v)\\) thành \\(d(v) + l(e)\\), \\(c(e)\\) thành \\(c(e) - l(e)\\).
+
+<center>
+<img src="../images/demand_with_lower_bound_solution.png" alt="Giải pháp cho trường hợp có cận dưới">
+</center>
+
+Sau khi đã cập nhật xong, ta thực hiện việc giải quyết bài toán này như bình thường.

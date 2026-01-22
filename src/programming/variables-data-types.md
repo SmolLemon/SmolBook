@@ -76,7 +76,7 @@ float c = 12;
 double d = 3.1415926;
 ```
 
-Ta cần cẩn thận khi so sánh hai số thực. Ví dụ: \\(0.1 + 0.2\\) sẽ không bằng \\(0.3\\).
+Vì cách [cài đặt kiểu dữ liệu số thực trong C++](https://en.wikipedia.org/wiki/IEEE_754), ta cần cẩn thận thực hiện các số, biến sử dụng kiểu dữ liệu này. Ví dụ: \\(0.1 + 0.2\\) sẽ không bằng \\(0.3\\).
 
 ```C++
 if(0.1 + 0.2 == 0.3){

@@ -90,7 +90,7 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 ```
 
-\\(2\\) câu lệnh này được thêm là có lý do của nó. Nó giúp tăng tốc chương trình bằng cách thay đổi cách nhập xuất của C++.
+\\(2\\) câu lệnh này được thêm là có lí do của nó. Nó giúp tăng tốc chương trình bằng cách thay đổi cách nhập xuất của C++.
 
 > [!NOTE]
 > `ios_base::sync_with_stdio(false)` tắt đồng bộ giữa cách nhập xuất của C và C++. Tính năng này giúp ta có thể sử dụng linh hoạt giữa hai cách nhập xuất khác nhau. Khi tắt tính năng này, chương trình của ta sẽ chạy nhanh hơn nếu bài toán yêu cầu nhập xuất dữ liệu nhiều lần. Lưu ý rằng nếu tắt đồng bộ thì không nên sử dụng đồng thời \\(2\\) cách nhập xuất.
@@ -101,7 +101,7 @@ cin.tie(NULL);
 
 ## `endl` vs `'\n'`
 
-Nếu như ta muốn xuống dòng khi xuất dữ liệu, ta nên sử dụng kí tự xuống dòng `'\n'` thay vì sử dụng `endl`. `endl` là một câu lệnh trong C++ thực hiện hai nhiệm vụ: xuống dòng và xuất dữ liệu ra màn hình. Chính cái nhiệm vụ thứ hai là lí do ta không nên sử dụng `endl` trong hầu hết trường hợp bởi nếu bài toán yêu cầu dữ liệu ra phải xuống dòng liên tục thì việc in dữ liệu ra màn hình sẽ làm chậm chương trình đi.
+Nếu như ta muốn xuống dòng khi xuất dữ liệu, ta nên sử dụng kí tự xuống dòng `'\n'` thay vì sử dụng `endl`. `endl` là một câu lệnh trong C++ thực hiện hai nhiệm vụ: xuống dòng và xuất dữ liệu ra màn hình, tức là tương đương với câu lệnh `'\n << flush`. Chính cái nhiệm vụ thứ hai là lí do ta không nên sử dụng `endl` trong hầu hết trường hợp bởi nếu bài toán yêu cầu dữ liệu ra phải xuống dòng liên tục thì việc in dữ liệu ra màn hình sẽ làm chậm chương trình đi.
 
 ## In các chữ số thập phân
 

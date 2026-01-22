@@ -112,9 +112,15 @@ Cuộc thi lập trình dành cho học sinh trung học phổ thông và sản 
 
 **Olympic Tin học Quốc tế** (**International Olympiad in Informatics - IOI**) là một cuộc thi quốc tế lập trình thi đấu thường niên dành cho học sinh trung học (cấp 2 và 3). Cuộc thi đầu tiên được tổ chức vào năm 1989 tại Bulgaria.
 
+### Olympic Tin học Sinh Viên Việt Nam
+
+*Được Hội Tin học Việt Nam và Hội Sinh viên Việt Nam khởi xướng, tổ chức từ năm 1992*, Olympic Tin học Sinh viên Toàn quốc (OLP) đã khuyến khích phong trào học tập, rèn luyện, nghiên cứu sáng tạo CNTT-TT của sinh viên trong các trường Đại học, Cao đẳng.
+
+Olympic Tin học Sinh viên Việt Nam là hoạt động phong trào đã có tác dụng rất to lớn và thiết thực đối với sinh viên cũng như sự nghiệp phát triển nguồn nhân lực CNTT-TT của nước nhà. Việc Bộ Giáo dục và Đào tạo cùng phối hợp tham gia và chỉ đạo cuộc thi đã khẳng định vị thế của sự kiện quan trọng này. [^6]
+
 ### ICPC
 
-**International Collegiate Programming Contest**, hay **ICPC**, là một cuộc thi lập trình dành cho sinh viên. Đây là cuộc thi lập trình lâu đời nhất, lớn nhất và danh tiếng nhất thế giới. Hằng năm, cuộc thi thu hút hơn 50 000 thí sinh từ hơn 3 000 trường đại học khác nhau trên toàn thế giới[^6].
+**International Collegiate Programming Contest**, hay **ICPC**, là một cuộc thi lập trình dành cho sinh viên. Đây là cuộc thi lập trình lâu đời nhất, lớn nhất và danh tiếng nhất thế giới. Hằng năm, cuộc thi thu hút hơn 50 000 thí sinh từ hơn 3 000 trường đại học khác nhau trên toàn thế giới[^7].
 
 Mặc dù cuộc thi chỉ giới hạn cho các trường đại học, ở Việt Nam, ban tổ chức ICPC Việt Nam cũng tổ chức Kì thi ICPC cho các bạn học sinh THPT trên khắp cả nước.
 
@@ -132,4 +138,6 @@ Ngoài các cuộc thi lập trình thi đấu trực tiếp, nhiều trang web 
 
 [^5]: HUE-ICTC 2025, <https://hue-ictc.husc.edu.vn/> [Truy cập ngày 27/6/2025]
 
-[^6]: icpc.foundation, <https://icpc.global/> [Truy cập ngày 27/3/2025]
+[^6]: Olympic Tin học Sinh Viên VN, <https://www.olp.vn/olympic-tin-h%E1%BB%8Dc-sinh-vi%C3%AAn> [Truy cập ngày 1/1/2026]
+
+[^7]: icpc.foundation, <https://icpc.global/> [Truy cập ngày 27/3/2025]

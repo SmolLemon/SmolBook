@@ -378,7 +378,7 @@ Nếu trạng thái của ta đang là \\((idx, smaller, three, six, nine)\\), v
 - \\(six' = six + 1\\) nếu \\(v = 6\\) hoặc \\(six' = six\\) nếu \\(v \neq 6\\).
 - \\(nine' = nine + 1\\) nếu \\(v = 9\\) hoặc \\(nine' = nine\\) nếu \\(v \neq 9\\).
 
-Vì \\(A, B\\) là những số rất lớn, ta áp dụng cách tính thứ hai được nói ở phần lý thuyết: \\((G(b) - G(a) + g(a)) \bmod{10^9 + 7}\\).
+Vì \\(A, B\\) là những số rất lớn, ta áp dụng cách tính thứ hai được nói ở phần lí thuyết: \\((G(b) - G(a) + g(a)) \bmod{10^9 + 7}\\).
 
 ```C++
 #include <bits/stdc++.h>
