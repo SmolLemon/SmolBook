@@ -7,7 +7,7 @@ Trước khi đến với lí thuyết đồ thị, ta có một câu hỏi nh�
 > <center>
 > <img src="../images/Konigsberg_Bridge.png" alt="Königsberg"/>
 > 
-> <sup> Hình ảnh thành phố Königsberg - [Wikimedia](https://commons.wikimedia.org/wiki/File:Konigsberg_Bridge.png) - Public Domain</sup>
+> <sup> Hình ảnh thành phố Königsberg - [Merian-Erben](https://commons.wikimedia.org/wiki/File:Konigsberg_Bridge.png) - Public Domain</sup>
 > </center>
 >
 > Bài toán đặt ra ở đây là: Hãy tìm một con đường đi qua \\(7\\) cây cầu ít nhất một lần và chỉ một lần duy nhất.

@@ -4,7 +4,7 @@ Ta cùng điểm qua một số ứng dụng tiêu biểu và mở rộng của 
 
 ## Nhiều đỉnh nguồn, đỉnh thu
 
-Giả sử ta được cho một mạng \\(G = (V, E)\\) với vô số đỉnh nguồn (\\(s_1, s_2, \dots, s_n\\)) và đỉnh thu (\\(t_1, t_2, \dots, t_m\\)) và ta được yêu cầu phải tìm luồng cực đại trên mạng này. Ta có thể thay đổi bài toán trên thành bài toán tìm luồng cực đại trên mạng thông thường bằng cách thêm hai đinh có tên gọi là đỉnh **siêu nguồn (supersource)** \\(S\\) và đỉnh **siêu thu (supersink)** \\(T\\). Sau đó, ta thêm các cung nối \\(S\\) với \\(s_1, s_2, \dots, s_n\\) và \\(t_1, t_2, \dots, t_m\\) với \\(T\\) với sức chứa \\(\infty\\) và thực hiện tìm luồng cực đại trên mạng mới này.
+Giả sử ta được cho một mạng \\(G = (V, E)\\) với vô số đỉnh nguồn (\\(s_1, s_2, \dots, s_n\\)) và đỉnh thu (\\(t_1, t_2, \dots, t_m\\)) và ta được yêu cầu phải tìm luồng cực đại trên mạng này. Ta có thể thay đổi bài toán trên thành bài toán tìm luồng cực đại trên mạng thông thường bằng cách thêm hai đỉnh có tên gọi là đỉnh **siêu nguồn (supersource)** \\(S\\) và đỉnh **siêu thu (supersink)** \\(T\\). Sau đó, ta thêm các cung nối \\(S\\) với \\(s_1, s_2, \dots, s_n\\) và \\(t_1, t_2, \dots, t_m\\) với \\(T\\) với sức chứa \\(\infty\\). Bằng việc cho luồng đi qua từ đỉnh \\(S\\) đến đỉnh \\(T\\), về cơ bản ta đã tìm được luồng cực đại trên mạng gốc.
 
 ## Tìm các đường đi phân biệt cạnh
 
@@ -14,7 +14,7 @@ Ta có một đồ thị có hướng, và nhiệm vụ của ta là tìm \\(k\\
 <img src="../images/edge_disjoint_path.png" alt="Hai đường đi phân biệt cạnh">
 </center>
 
-Để giải quyết bài toán, ta xây dựng *mạng đơn vị* từ đồ thị có hướng trên (mạng đơn vị là mạng với các cạnh có sức chứa \\(1\\)). Nếu ta có thể cho \\(k\\) luồng đi qua mạng này thì tức là ta đã tìm được \\(k\\) đường đi phần biệt cạnh. 
+Để giải quyết bài toán, ta xây dựng *mạng đơn vị* từ đồ thị có hướng trên (mạng đơn vị là mạng với các cạnh có sức chứa \\(1\\)). Nếu ta có thể cho \\(k\\) luồng đi qua mạng này thì tức là ta đã tìm được \\(k\\) đường đi phân biệt cạnh. 
 
 Nếu ta được yêu cầu in ra các đường đi thì sau khi cho \\(k\\) luồng \\(0 - 1\\) (mỗi cạnh hoặc là không có luồng đi qua, hoặc là có đúng \\(1\\) đơn vị luồng) đi qua mạng, ta có thể sử dụng các cạnh \\(e\\) có \\(f(e) = 1\\) để tìm các đường đi phân biệt cạnh:
 - Bắt đầu từ đỉnh nguồn, chọn cạnh \\(uv\\) có \\(f(uv) = 1\\) và di chuyển đến \\(v\\).
@@ -22,13 +22,13 @@ Nếu ta được yêu cầu in ra các đường đi thì sau khi cho \\(k\\) l
 
 Từ giá trị luồng cực đại của mạng đơn vị được xây dựng từ đồ thị gốc, ta có thể biết được số lượng tối đa đường đi phân biệt cạnh trên đồ thị sẽ bằng bao nhiêu từ định lí sau: *tồn tại \\(k\\) đường đi phân biệt cạnh khi và chỉ khi giá trị luồng cực đại bằng \\(k\\)*.
 
-Giả sử ta có luồng cực đại \\(f^\*\\). Khi \\(v(f^\*) = k\\), ta có một danh sách các cạnh \\(uv\\) với \\(f(uv) = 1\\). Từ danh sách cạnh này, ta có thể tìm được \\(k\\) đường đi phân biệt luồng với phương pháp tìm các đường đi phần biệt luồng đã được nói ở trên.
+Giả sử ta có luồng cực đại \\(f^\*\\). Khi \\(v(f^\*) = k\\), ta có một danh sách các cạnh \\(uv\\) với \\(f(uv) = 1\\). Từ danh sách cạnh này, ta có thể tìm được \\(k\\) đường đi phân biệt luồng với phương pháp tìm các đường đi phân biệt luồng đã được nói ở trên.
 
 ## Sức chứa đỉnh
 
 Một số mạng không những có sức chứa cạnh mà nó còn có cả sức chứa đỉnh.
 
-Để giải quyết trường hợp này, với mỗi đỉnh \\(u\\) trong mạng, ta tạo hai đỉnh mới \\(u_{in}\\), \\(u_{out}\\), sau đó nối hai đỉnh này bằng một cung có sức chứa bằng với sức chứa đỉnh.
+Để giải quyết trường hợp này, ta có thể biến đổi mạng này thành một mạng thông thường bằng cách tạo hai đỉnh mới \\(u_{in}\\), \\(u_{out}\\) với mỗi đỉnh \\(u\\) trong mạng. Ta nối hai đỉnh này bằng một cung có sức chứa bằng với sức chứa đỉnh.
 
 <center>
 <img src="../images/node_capacity.png" alt="Sức chứa đỉnh">
@@ -44,24 +44,24 @@ Các cạnh \\(uv\\) trong mạng từ đây cũng được nối lại thành c
 
 Các **bài toán cặp ghép (matching)** trong lí thuyết đồ thị yêu cầu ta tìm một danh sách cạnh sao cho các đỉnh đầu mút của các cạnh không giống nhau.
 
-Ta sẽ tập trung giải quyết một biến thể của bài toán này: tìm cặp phép trên [đồ thị hai phía](graph.md#đồ-thị-hai-phía).
+Ta sẽ tập trung giải quyết một biến thể của bài toán này: tìm cặp ghép trên [đồ thị hai phía](graph.md#đồ-thị-hai-phía).
 
-Để tìm cặp ghép cực đại trên đồ thị hai phía (Max Cardinality Bipartite Maching - MCBM), ta xây dụng một mạng đơn vị như sau:
+Để tìm cặp ghép cực đại trên đồ thị hai phía (Max Cardinality Bipartite Matching - MCBM), ta xây dụng một mạng đơn vị như sau:
 - Nối đỉnh nguồn \\(s\\) với các đỉnh \\(u \in X\\) bằng một cung.
 - Nối các đỉnh \\(u \in X\\) với các đỉnh \\(v \in Y\\) nếu \\(uv\\) là một cạnh trong đồ thị gốc.
 - Nối các đỉnh \\(v \in Y\\) với đỉnh thu \\(t\\) bằng một cung.
 
 <center>
-<img src="../images/mcbm.png" alt="Cặp phép cực đại">
+<img src="../images/mcbm.png" alt="Cặp ghép cực đại">
 </center>
 
-Khi này, giá trị luồng cực đại của đồ thị bằng giá trị cặp phép cực đại, với các cạnh \\(uv\\) thoả mãn \\(f(uv) = 1\\) là các cạnh trong cặp phép.
+Khi này, giá trị luồng cực đại của đồ thị bằng giá trị cặp ghép cực đại, với các cạnh \\(uv\\) thoả mãn \\(f(uv) = 1\\) là các cạnh trong cặp ghép.
 
 Vì sức chứa của các cạnh bằng \\(1\\), ta có thể sử dụng các thuật toán luồng cực đại đơn giản hơn như [Ford-Fulkerson](max-flow-algorithms.md#phương-pháp-ford-fulkerson) để tìm luồng cực đại. 
 
 ## Bài toán phân việc
 
-Bài toán cặp phép cực đại trên đồ thị hai phía là một phần nhỏ của **bài toán phân việc (assignment problem)**.
+Bài toán cặp ghép cực đại trên đồ thị hai phía là một phần nhỏ của **bài toán phân việc (assignment problem)**.
 
 Một bài toán phân việc không trọng số trên đồ thị hai phía sẽ bao gồm hai tập hợp \\(X\\) và \\(Y\\). Nhiệm vụ của ta là tìm số lượng cặp \\((x, y)\\) nhiều nhất có thể với \\(x \in X, y \in Y\\) với các điều kiện sau:
 - Các phần tử \\(x \in X\\) có thể xuất hiện trong tối đa \\(C(x)\\) cặp.
@@ -193,3 +193,5 @@ Một số bài toán lưu thông theo cung cầu sẽ cho ta thêm điều ki�
 </center>
 
 Sau khi đã cập nhật xong, ta thực hiện việc giải quyết bài toán này như bình thường.
+
+Giả sử ta có \\(f^\*(e)\\) là lượng luồng đi qua cạnh \\(e\\) sau khi cập nhật các giá trị. Từ đây, lượng luồng \\(f(e)\\) đi qua cạnh \\(e\\) ban đầu sẽ bằng: \\[f(e) = f^\*(e) + l(e)\\]

@@ -114,7 +114,7 @@ Cuộc thi lập trình dành cho học sinh trung học phổ thông và sản 
 
 ### Olympic Tin học Sinh Viên Việt Nam
 
-*Được Hội Tin học Việt Nam và Hội Sinh viên Việt Nam khởi xướng, tổ chức từ năm 1992*, Olympic Tin học Sinh viên Toàn quốc (OLP) đã khuyến khích phong trào học tập, rèn luyện, nghiên cứu sáng tạo CNTT-TT của sinh viên trong các trường Đại học, Cao đẳng.
+*Được Hội Tin học Việt Nam và Hội Sinh viên Việt Nam khởi xướng, tổ chức từ năm 1992, __Olympic Tin học Sinh viên Toàn quốc (OLP)__* đã khuyến khích phong trào học tập, rèn luyện, nghiên cứu sáng tạo CNTT-TT của sinh viên trong các trường Đại học, Cao đẳng.
 
 Olympic Tin học Sinh viên Việt Nam là hoạt động phong trào đã có tác dụng rất to lớn và thiết thực đối với sinh viên cũng như sự nghiệp phát triển nguồn nhân lực CNTT-TT của nước nhà. Việc Bộ Giáo dục và Đào tạo cùng phối hợp tham gia và chỉ đạo cuộc thi đã khẳng định vị thế của sự kiện quan trọng này. [^6]
 
