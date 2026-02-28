@@ -65,7 +65,21 @@ Khoảng cách Euclid giữa hai điểm \\(A(3, 4)\\) và \\(B(7, 2)\\) là \\(
 </sup>
 </center>
 
-## Cài đặt
+### Biến đổi điểm
+
+Giả sử như ta muốn *quay* điểm \\(A\\) ngược chiều kim đồng hồ một góc \\(\alpha\\) theo gốc toạ độ, ta có thể sử dụng công thức sau:
+
+\\[\begin{bmatrix}x^{\'}\\\\y^{\'}\end{bmatrix} = \begin{bmatrix} \cos{\alpha} & -\sin{\alpha}\\\\ \sin{\alpha} & \cos{\alpha}\end{bmatrix} \times \begin{bmatrix}x\\\\y\end{bmatrix}\\]
+
+Toạ độ điểm sau khi xoay là:
+\\[
+\begin{align}
+x^{\'} = x\cos{\alpha} - y\sin{\alpha} \\\\
+y^{\'} = x\sin{\alpha} + y\cos{\alpha} \\\\
+\end{align}
+\\]
+
+### Cài đặt
 
 ```C++
 struct Point{
@@ -80,7 +94,7 @@ int manhattan(const Point& a, const Point& b) {
 }
 
 // Thay đổi toạ độ
-Point rotate(const Point& a){
+Point rotate45(const Point& a){
 	return Point(a.x + a.y, a.y - a.x);
 }
 
@@ -93,9 +107,15 @@ int manhattanRotated(const Point& a, const Point& b) {
 double euclid(const Point& a, const Point& b) {
 	return sqrtl((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
 }
+
+// Quay một điểm một góc alpha (rad) theo gốc toạ độ
+// Point lúc này phải để kiểu dữ liệu số thực như 'double' hoặc 'long double'
+Point rotate(const Point& a, const double &alpha){
+	return Point(a.x * cosl(alpha) - a.y * sin(alpha), 
+					a.x * sin(alpha) + a.y * cos(alpha));
+}
 ```
 
-### Biến đổi điểm
 
 ## Vector
 

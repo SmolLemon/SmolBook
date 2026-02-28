@@ -1,5 +1,9 @@
 # Ứng dụng của luồng trên mạng
 
+*Được xuất hiện trên [VNOI Wiki](https://wiki.vnoi.info/vi/algo/graph-theory/flow-application)*
+
+<br>
+
 Ta cùng điểm qua một số ứng dụng tiêu biểu và mở rộng của bài toán luồng trên mạng. 
 
 ## Nhiều đỉnh nguồn, đỉnh thu
@@ -16,11 +20,12 @@ Ta có một đồ thị có hướng, và nhiệm vụ của ta là tìm \\(k\\
 
 Để giải quyết bài toán, ta xây dựng *mạng đơn vị* từ đồ thị có hướng trên (mạng đơn vị là mạng với các cạnh có sức chứa \\(1\\)). Nếu ta có thể cho \\(k\\) luồng đi qua mạng này thì tức là ta đã tìm được \\(k\\) đường đi phân biệt cạnh. 
 
-Nếu ta được yêu cầu in ra các đường đi thì sau khi cho \\(k\\) luồng \\(0 - 1\\) (mỗi cạnh hoặc là không có luồng đi qua, hoặc là có đúng \\(1\\) đơn vị luồng) đi qua mạng, ta có thể sử dụng các cạnh \\(e\\) có \\(f(e) = 1\\) để tìm các đường đi phân biệt cạnh:
-- Bắt đầu từ đỉnh nguồn, chọn cạnh \\(uv\\) có \\(f(uv) = 1\\) và di chuyển đến \\(v\\).
+Nếu ta được yêu cầu in ra các đường đi thì sau khi cho \\(k\\) luồng \\(0 - 1\\) (mỗi cạnh hoặc là không có luồng đi qua, hoặc là có đúng \\(1\\) đơn vị luồng đi qua mạng), ta có thể sử dụng các cạnh \\(e\\) có \\(f(e) = 1\\) để tìm các đường đi phân biệt cạnh:
+- Bắt đầu từ đỉnh nguồn, xét đỉnh \\(u\\) hiện tại, chọn cạnh \\(uv\\) có \\(f(uv) = 1\\) và di chuyển đến đỉnh \\(v\\).
 - Nếu đỉnh hiện tại không phải đỉnh thu, lặp lại bước trên.
 
-Từ giá trị luồng cực đại của mạng đơn vị được xây dựng từ đồ thị gốc, ta có thể biết được số lượng tối đa đường đi phân biệt cạnh trên đồ thị sẽ bằng bao nhiêu từ định lí sau: *tồn tại \\(k\\) đường đi phân biệt cạnh khi và chỉ khi giá trị luồng cực đại bằng \\(k\\)*.
+Từ giá trị luồng cực đại của mạng đơn vị được xây dựng từ đồ thị gốc, ta có thể biết được số lượng tối đa đường đi phân biệt cạnh trên đồ thị sẽ bằng bao nhiêu từ định lí sau: 
+> Tồn tại tối đa \\(k\\) đường đi phân biệt cạnh khi và chỉ khi giá trị luồng cực đại bằng \\(k\\).
 
 Giả sử ta có luồng cực đại \\(f^\*\\). Khi \\(v(f^\*) = k\\), ta có một danh sách các cạnh \\(uv\\) với \\(f(uv) = 1\\). Từ danh sách cạnh này, ta có thể tìm được \\(k\\) đường đi phân biệt luồng với phương pháp tìm các đường đi phân biệt luồng đã được nói ở trên.
 
@@ -87,9 +92,9 @@ Sau khi tìm được luồng cực đại của đồ thị, vì các giá tr�
 
 **Bài toán vòng loại bóng chày (baseball elimination)** được phát biểu như sau: có một giải đấu bóng chày bao gồm \\(n\\) đội, mỗi đội có \\(w_i\\) trận thắng, \\(l_i\\) trận thua, \\(r_i\\) trận còn lại cần phải chơi, và \\(g_{i, j}\\) trận với các đội \\(j\\). Nhiệm vụ của ta là xét xem những đội nào không còn khả năng vô địch, tức là dù kết quả ra sao thì đội đó cũng không đứng nhất bảng. Ta giả sử không có trận hoà và tất cả trận đấu đều được diễn ra.
 
-Đối với trường hợp đơn giản, ta có thể xác định đội \\(x\\) không có khả năng vô địch giải đấu nếu tồn tại một đội \\(y\\) sao cho \\(w_x + r_x \lt w_y\\).
+Dễ nhất, ta có thể xác định đội \\(x\\) không có khả năng vô địch giải đấu nếu tồn tại một đội \\(y\\) sao cho \\(w_x + r_x \lt w_y\\). Ta không cần luồng để giải quyết trường hợp này.
 
-Đối với khác trường hợp khác, ta sử dụng luồng trên mạng để kiểm tra. Ta xây dựng mạng như sau:
+Đối với các trường hợp còn lại, ta sử dụng luồng trên mạng để kiểm tra. Ta xây dựng mạng như sau:
 - Nối đỉnh nguồn \\(s\\) với các đỉnh \\((i,j)\\) tượng trưng cho trận đấu giữa hai đội bằng một cung có sức chứa \\(g_{i, j}\\). Không tính các trận đấu có sự tham gia của đội \\(x\\). Ta quy ước các đỉnh \\((i, j)\\) thuộc tập \\(X\\).
 - Nối các đỉnh \\((i,j)\\) với hai đỉnh \\(i\\) và \\(j\\) bằng một cung có sức chứa \\(\infty\\). Ta quy ước các đỉnh \\(i, j\\) thuộc tập \\(Y\\).
 - Nối các đỉnh \\(i\\) với đỉnh thu \\(t\\) bằng một cung có sức chứa \\(w_x + r_x - w_i\\).
@@ -138,7 +143,7 @@ Ta có \\(C = 17\\), \\(c(S^\*, T^\*) = 6\\), suy ra lợi nhuận tối đa s�
 </sup>
 </center>
 
-Ta có thể chứng minh lí do vì sao lợi nhuận tối đa của các dự án được chọn lại có giá trị bằng \\(C - c(S^\*, T^\*)\\) và \\(\sum_{u \in S^\*} p_u\\)
+Ta có thể chứng minh lí do vì sao hai công thức \\(C - c(S^\*, T^\*)\\) và \\(\sum_{u \in S^\*} p_u\\) lại cùng trả về đáp án đúng.
 
 > [!NOTE]
 > **Chứng minh:**
@@ -159,7 +164,7 @@ Ta có thể chứng minh lí do vì sao lợi nhuận tối đa của các dự
 
 ## Lưu thông theo cung cầu
 
-**Bài toán lưu thông theo cung cầu (circulation with demands)** là một bài toán về một mạng \\(G = (V, E)\\) nhiều đỉnh nguồn và đỉnh thu. Mỗi đỉnh nguồn \\(s_i\\), hay đỉnh "cung" theo cách gọi của bài toán, sẽ có giá trị \\(d_{s_i} < 0\\), tức là đỉnh nguồn này có khả năng gửi đi \\(-d_{s_i}\\) đơn vị luồng. Các đỉnh thu \\(t_j\\), hay đỉnh "cầu", sẽ có giá trị \\(d_{t_j} > 0\\), tức là các đỉnh thu này có khả năng nhận \\(d_{t_j}\\) đơn vị luồng. Các đỉnh còn lại trong đồ thị sẽ có giá trị \\(d = 0\\).
+**Bài toán lưu thông theo cung cầu (circulation with demands)** là một bài toán về một mạng \\(G = (V, E)\\) nhiều đỉnh nguồn và đỉnh thu. Mỗi đỉnh nguồn \\(s_i\\), hay đỉnh "cung" theo cách gọi của bài toán, sẽ có giá trị \\(d(s_i) < 0\\), tức là đỉnh nguồn này có khả năng gửi đi \\(-d(s_i)\\) đơn vị luồng. Các đỉnh thu \\(t_j\\), hay đỉnh "cầu", sẽ có giá trị \\(d(t_j) > 0\\), tức là các đỉnh thu này có khả năng nhận \\(d(t_j)\\) đơn vị luồng. Các đỉnh còn lại trong đồ thị sẽ có giá trị \\(d = 0\\).
 
 <center>
 <img src="../images/circulation_with_demand.png" alt="lưu thông theo cung cầu">
@@ -169,7 +174,7 @@ Khi thực hiện **lưu thông** trên mạng, ta cần thoả mãn hai điều
 1. Với mỗi cạnh \\(e \in E\\), \\(0 \le f(e) \le c(e)\\)
 2. Với mỗi đỉnh \\(u \in V\\), \\(f^{in}(u) - f^{out}(u) = d(u)\\)
  
-Dễ thấy, điều kiện để có lưu thông trên mạng là: \\[\sum_{u, d(u) > 0} d_u = \sum_{u, d(u) < 0} -d_u = D\\]
+Dễ thấy, điều kiện để có lưu thông trên mạng là: \\[\sum_{u, d(u) > 0} d(u) = \sum_{u, d(u) < 0} -d(u) = D\\]
 
 Từ đây, ta xây dựng một mạng mới \\(G^{\'} = G\\) với các thay đổi:
 - Thêm đỉnh siêu nguồn \\(S\\) và đỉnh siêu thu \\(T\\)

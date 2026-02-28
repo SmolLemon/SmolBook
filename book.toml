@@ -8,6 +8,7 @@ language = "vi"
 mathjax-support = true
 default-theme = "light"
 preferred-dark-theme = "navy"
+site-url = "/SmolBook/"
 git-repository-url = "https://codeberg.org/SmolLemon/SmolBook"
 edit-url-template = "https://github.com/SmolLemon/SmolBook/edit/main/{path}"
 

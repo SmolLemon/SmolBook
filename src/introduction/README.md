@@ -120,7 +120,7 @@ Olympic Tin học Sinh viên Việt Nam là hoạt động phong trào đã có 
 
 ### ICPC
 
-**International Collegiate Programming Contest**, hay **ICPC**, là một cuộc thi lập trình dành cho sinh viên. Đây là cuộc thi lập trình lâu đời nhất, lớn nhất và danh tiếng nhất thế giới. Hằng năm, cuộc thi thu hút hơn 50 000 thí sinh từ hơn 3 000 trường đại học khác nhau trên toàn thế giới[^7].
+**International Collegiate Programming Contest**, hay **ICPC**, là một cuộc thi lập trình dành cho sinh viên. Đây là cuộc thi lập trình lâu đời nhất, lớn nhất và danh tiếng nhất thế giới. Hằng năm, cuộc thi thu hút hơn 50.000 thí sinh từ hơn 3.000 trường đại học khác nhau trên toàn thế giới[^7].
 
 Mặc dù cuộc thi chỉ giới hạn cho các trường đại học, ở Việt Nam, ban tổ chức ICPC Việt Nam cũng tổ chức Kì thi ICPC cho các bạn học sinh THPT trên khắp cả nước.
 
